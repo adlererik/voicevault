@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+base="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+args=()
+for arg in "$@"; do
+    case "$arg" in
+        -march=x86-64) args+=(-mcpu=x86_64) ;;
+        --target=x86_64-unknown-linux-gnu) args+=(--target=x86_64-linux-gnu) ;;
+        *) args+=("$arg") ;;
+    esac
+done
+export ZIG_GLOBAL_CACHE_DIR="$base/.lab-cache/zig-global"
+export ZIG_LOCAL_CACHE_DIR="$base/.lab-cache/zig-local"
+exec "$base/.lab-cache/zig/zig" c++ "${args[@]}"

@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -euo pipefail
+base="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+runtime="$base/.lab-cache/cxx-runtime"
+mkdir -p -- "$runtime"
+if [[ -s "$runtime/libc++.so" && -e "$runtime/libcxx.a" && -e "$runtime/libcxxabi.a" ]]; then
+    printf 'Using local Zig libc++ runtime\n'
+    exit 0
+fi
+"$base/scripts/zig-cxx" --target=x86_64-linux-gnu -x c++ - \
+    -o "$runtime/probe" -v >"$runtime/build.log" 2>&1 <<'CPP'
+#include <string>
+int main(int argc, char **argv) {
+    return argc > 1 && std::string(argv[1]).empty();
+}
+CPP
+python3 - "$runtime" <<'PY'
+from pathlib import Path
+import shlex
+import sys
+
+runtime = Path(sys.argv[1])
+link = next(
+    shlex.split(line) for line in reversed((runtime / "build.log").read_text().splitlines())
+    if line.startswith("ld.lld ") and str(runtime / "probe") in line
+)
+for name, link_name in (("libc++.a", "libcxx.a"), ("libc++abi.a", "libcxxabi.a")):
+    archive = next(Path(arg).resolve() for arg in link if Path(arg).name == name)
+    if not archive.is_file():
+        raise SystemExit(f"Missing Zig archive {archive}")
+    destination = runtime / link_name
+    destination.unlink(missing_ok=True)
+    destination.symlink_to(archive)
+(runtime / "libc++.so").write_text("GROUP ( libcxx.a libcxxabi.a )\n")
+PY

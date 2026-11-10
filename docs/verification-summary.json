@@ -1,0 +1,149 @@
+{
+  "date": "2026-11-10",
+  "repository": "adlererik/quietlink-lab",
+  "statuses": {
+    "unit": "pass",
+    "protocol": "pass",
+    "codec": "pass",
+    "isolation": "pass",
+    "fuzz": "pass",
+    "kani": "pass",
+    "dependencies": "pass",
+    "timing": "pass",
+    "dashboard": "pass"
+  },
+  "checks": {
+    "unit": 5,
+    "protocol": 2,
+    "codec": 6,
+    "isolation": 1,
+    "fuzz": 6,
+    "kani": 3,
+    "dependencies": 2,
+    "timing": 4,
+    "dashboard": 2
+  },
+  "host": {
+    "kernel": "7.2.13-200.fc44.x86_64",
+    "architecture": "x86_64",
+    "cpu_model": "Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz",
+    "logical_cpus": 8,
+    "rust_pin": "1.99.1",
+    "cpu_quota": null
+  },
+  "thresholds": {
+    "p99_absolute_send_error_ns": 5000000,
+    "missed_fraction": 0.001,
+    "overload_catch_up_bursts": 0,
+    "jitter_records": 8,
+    "fragment_assemblies": 8
+  },
+  "fuzz": {
+    "handshake": {
+      "runs": 2116,
+      "seconds": 31
+    },
+    "record": {
+      "runs": 1905,
+      "seconds": 31
+    },
+    "codec": {
+      "runs": 20012,
+      "seconds": 31
+    }
+  },
+  "timing": {
+    "idle": {
+      "passed": true,
+      "directions": {
+        "alice_to_bob_tx": {
+          "p99_absolute_send_error_ms": 0.374048,
+          "missed_slots": 0,
+          "scheduled_slots": 1500,
+          "catch_up_bursts": 0,
+          "jitter_peak": 5,
+          "reassembly_peak": 1,
+          "peak_rss_kib": 5624
+        },
+        "bob_to_alice_tx": {
+          "p99_absolute_send_error_ms": 0.525271,
+          "missed_slots": 0,
+          "scheduled_slots": 1500,
+          "catch_up_bursts": 0,
+          "jitter_peak": 5,
+          "reassembly_peak": 1,
+          "peak_rss_kib": 5668
+        }
+      }
+    },
+    "contention": {
+      "passed": true,
+      "directions": {
+        "alice_to_bob_tx": {
+          "p99_absolute_send_error_ms": 2.009835,
+          "missed_slots": 0,
+          "scheduled_slots": 1500,
+          "catch_up_bursts": 0,
+          "jitter_peak": 5,
+          "reassembly_peak": 1,
+          "peak_rss_kib": 5716
+        },
+        "bob_to_alice_tx": {
+          "p99_absolute_send_error_ms": 1.21714,
+          "missed_slots": 0,
+          "scheduled_slots": 1500,
+          "catch_up_bursts": 0,
+          "jitter_peak": 5,
+          "reassembly_peak": 1,
+          "peak_rss_kib": 5528
+        }
+      }
+    },
+    "overload": {
+      "passed": true,
+      "directions": {
+        "alice_to_bob_tx": {
+          "p99_absolute_send_error_ms": 15.791061,
+          "missed_slots": 50,
+          "scheduled_slots": 150,
+          "catch_up_bursts": 0,
+          "jitter_peak": 4,
+          "reassembly_peak": 1,
+          "peak_rss_kib": 4536
+        },
+        "bob_to_alice_tx": {
+          "p99_absolute_send_error_ms": 15.186549,
+          "missed_slots": 50,
+          "scheduled_slots": 150,
+          "catch_up_bursts": 0,
+          "jitter_peak": 4,
+          "reassembly_peak": 1,
+          "peak_rss_kib": 4652
+        }
+      }
+    },
+    "blocked-phone": {
+      "passed": true,
+      "directions": {
+        "alice_to_bob_tx": {
+          "p99_absolute_send_error_ms": 0.140567,
+          "missed_slots": 145,
+          "scheduled_slots": 150,
+          "catch_up_bursts": 0,
+          "jitter_peak": 5,
+          "reassembly_peak": 1,
+          "peak_rss_kib": 4832
+        },
+        "bob_to_alice_tx": {
+          "p99_absolute_send_error_ms": 0.679206,
+          "missed_slots": 0,
+          "scheduled_slots": 150,
+          "catch_up_bursts": 0,
+          "jitter_peak": 0,
+          "reassembly_peak": 0,
+          "peak_rss_kib": 4748
+        }
+      }
+    }
+  }
+}

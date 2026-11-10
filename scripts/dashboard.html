@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quietlink Lab · Call trace</title>
+<style>
+:root{color-scheme:dark;--bg:#101719;--panel:#182326;--line:#344346;--muted:#a8bbba;--text:#edf5f2;--mint:#78edbe;--red:#ff9b95;--amber:#ffd489}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif}
+main{max-width:1100px;margin:auto;padding:42px 22px} h1,h2,p{margin:0} h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.03;letter-spacing:-.055em} h2{font-size:1.12rem}
+header,.title-row,.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap} header{align-items:flex-end;margin-bottom:29px}
+.eyebrow,.badge,.mono,th{font-family:ui-monospace,monospace;letter-spacing:.055em}
+.eyebrow{font-size:.76rem;color:var(--mint);text-transform:uppercase;margin-bottom:11px} .summary{color:var(--muted);margin-top:12px}
+.panel{border:1px solid var(--line);border-radius:16px;background:var(--panel);margin-bottom:16px;padding:20px}
+.topology{display:grid;grid-template-columns:repeat(5,1fr);position:relative;gap:10px;margin:23px 0;isolation:isolate}
+.topology:before{content:"";position:absolute;top:33px;left:8%;right:8%;height:1px;background:var(--line);z-index:-1}
+.node{text-align:center;min-width:0;color:var(--muted);font-size:.8rem}
+.node .icon{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:13px;margin:9px auto 8px;background:#233236;font:600 1rem ui-monospace,monospace}
+.node.endpoint .icon{border-color:#528d77;color:var(--mint);background:#203b35} .node strong{display:block;color:var(--text)}
+.pulse{position:absolute;width:10px;height:10px;top:28px;left:0;border-radius:50%;pointer-events:none;background:var(--mint);box-shadow:0 0 11px currentColor;z-index:2}
+.pulse[data-action=drop],.pulse[data-action=tamper],.pulse[data-action=reject],.pulse[data-action=inject]{background:var(--red);color:var(--red)}
+.pulse[data-action=replay],.pulse[data-action=duplicate],.pulse[data-action=delay]{background:var(--amber);color:var(--amber)}
+.controls{justify-content:flex-start;padding-top:15px;border-top:1px solid var(--line)} button,select{font:inherit;color:var(--text);background:#213034;border:1px solid #465a5d;border-radius:8px;padding:6px 11px} button:enabled{cursor:pointer} button:disabled{opacity:.55}
+button:focus-visible,select:focus-visible{outline:2px solid var(--mint);outline-offset:2px} .progress{margin-left:auto;color:var(--muted)}
+.grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(235px,1fr);gap:16px} .badge{display:inline-block;font-size:.73rem;border:1px solid currentColor;border-radius:5px;padding:2px 6px;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+[data-status=pass]{color:var(--mint)} [data-status=fail]{color:var(--red)} [data-status=blocked]{color:var(--amber)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:7px 13px;margin:13px 0 0} dt,.muted{color:var(--muted)} dd{margin:0;overflow-wrap:anywhere}
+table{border-collapse:collapse;width:100%;margin-top:10px;font-size:.85rem} th{text-align:left;color:var(--muted);font-size:.73rem}
+th,td{padding:7px 4px;border-bottom:1px solid var(--line);vertical-align:top} tr:last-child td{border-bottom:0} footer{color:var(--muted);font-size:.82rem}
+@media(max-width:670px){main{padding:26px 12px}.grid{grid-template-columns:1fr;gap:0}.panel{padding:14px}.node span:not(.icon){display:none}.topology{gap:2px}}
+</style>
+</head>
+<body>
+<main>
+<header><div><p class="eyebrow">Software voice research · loopback only</p><h1>Quietlink Lab</h1><p class="summary">Authenticated call traces, simulated hostile links and verification results.</p></div><span id="phase" class="badge" role="status">Loading</span></header>
+<section class="panel"><h2>Running now</h2><p id="current-check" class="summary" role="status">Waiting for the next check.</p></section>
+<section class="panel" aria-labelledby="topology-title">
+<div class="title-row"><h2 id="topology-title">Call path</h2><span class="muted mono">20 ms slots · 128-byte records</span></div>
+<div id="path" class="topology">
+  <div class="node endpoint" data-node="Alice"><span class="icon">A</span><strong>Alice</strong><span>Endpoint</span></div>
+  <div class="node" data-node="Phone A"><span class="icon">PA</span><strong>Phone A</strong><span>Hostile</span></div>
+  <div class="node" data-node="Relay"><span class="icon">R</span><strong>Relay</strong><span>Hostile</span></div>
+  <div class="node" data-node="Phone B"><span class="icon">PB</span><strong>Phone B</strong><span>Hostile</span></div>
+  <div class="node endpoint" data-node="Bob"><span class="icon">B</span><strong>Bob</strong><span>Endpoint</span></div>
+</div>
+<div class="controls">
+<button id="play" type="button">Play</button><button id="step" type="button">Step</button><button id="replay" type="button">Replay</button>
+<label for="filter">Test</label><select id="filter"><option value="">All tests</option></select>
+<span class="progress mono" id="progress">0 / 0</span>
+</div>
+</section>
+<div class="grid">
+<section class="panel"><div class="title-row"><h2>Selected event</h2><span class="badge" id="event-status">—</span></div>
+<dl><dt>Test</dt><dd id="event-test">—</dd><dt>Action</dt><dd id="event-action">—</dd><dt>Route</dt><dd id="event-route">—</dd><dt>Expected</dt><dd id="event-expected">—</dd><dt>Observed</dt><dd id="event-observed">—</dd></dl></section>
+<section class="panel"><h2>Suite verdicts</h2><table><thead><tr><th>Group</th><th>Status</th></tr></thead><tbody id="verdicts"></tbody></table></section>
+</div>
+<footer>Synthetic calls only. Trace data contains actions and outcomes. WAVs and diagnostic logs are separate files in the run directory.</footer>
+</main>
+<script id="initial" type="application/json">@@REPORT@@</script>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const initial = JSON.parse($("initial").textContent);
+const events = [], visible = [], tests = new Set();
+const nodes = new Map([...document.querySelectorAll("[data-node]")].map(n => [n.dataset.node, n]));
+const rows = new Map();
+let position = 0, playing = initial.live, suspended = initial.live, stream = null;
+function setPhase(label) { $("phase").textContent = label; }
+function update() {
+  $("progress").textContent = position + " / " + visible.length;
+  $("play").textContent = playing ? "Pause" : "Play";
+  for (const button of ["play", "step", "replay"]) $(button).disabled = suspended;
+}
+function addGroup(group, status, reason) {
+  if (!rows.has(group)) {
+    const row = $("verdicts").insertRow();
+    row.insertCell().textContent = group;
+    const pill = document.createElement("span");
+    pill.className = "badge";
+    row.insertCell().append(pill);
+    rows.set(group, pill);
+  }
+  const pill = rows.get(group);
+  pill.textContent = status;
+  pill.dataset.status = status;
+  pill.title = reason;
+}
+function add(event) {
+  if (event.action === "group") addGroup(event.test, event.status, event.observed);
+  if (event.action === "check") $("current-check").textContent = event.test + " · " + (event.status === "info" ? event.observed : event.status.toUpperCase() + " · " + event.observed);
+  events.push(event);
+  if (!tests.has(event.test)) {
+    tests.add(event.test);
+    const option = new Option(event.test, event.test);
+    $("filter").append(option);
+  }
+  if (!$("filter").value || $("filter").value === event.test) visible.push(event);
+}
+function animate(event) {
+  const a = nodes.get(event.from), b = nodes.get(event.to);
+  if (suspended || !a || !b || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const pulse = document.createElement("i");
+  const path = $("path");
+  pulse.className = "pulse";
+  pulse.dataset.action = event.action;
+  path.append(pulse);
+  const center = node => node.offsetLeft + node.offsetWidth / 2 - 5;
+  const animation = pulse.animate([
+    {transform: "translateX(" + center(a) + "px)", opacity: 1},
+    {transform: "translateX(" + center(b) + "px)", opacity: 0}
+  ], {duration: 205, easing: "ease-out"});
+  animation.onfinish = () => pulse.remove();
+}
+function show(event) {
+  $("event-test").textContent = event ? event.test : "—";
+  $("event-action").textContent = event ? event.action + " · slot " + event.tick : "—";
+  $("event-route").textContent = event && event.from ? event.from + " → " + event.to : "—";
+  $("event-expected").textContent = event ? event.expected : "—";
+  $("event-observed").textContent = event ? event.observed : "—";
+  $("event-status").textContent = event ? event.status : "—";
+  $("event-status").dataset.status = event ? event.status : "";
+  if (event) animate(event);
+}
+function step() {
+  if (suspended || position >= visible.length) return;
+  show(visible[position++]);
+  if (position >= visible.length && !stream) playing = false;
+  update();
+}
+$("play").onclick = () => { playing = !playing; update(); };
+$("step").onclick = () => { playing = false; step(); update(); };
+$("replay").onclick = () => { position = 0; playing = true; update(); };
+$("filter").onchange = () => {
+  const test = $("filter").value;
+  visible.splice(0);
+  for (const event of events) if (!test || test === event.test) visible.push(event);
+  position = 0;
+  show(null);
+  update();
+};
+for (const event of initial.events) add(event);
+for (const group of ["unit", "protocol", "codec", "isolation", "fuzz", "kani", "dependencies", "timing", "dashboard"]) {
+  if (!rows.has(group)) addGroup(group, "pending", "This group has not completed yet.");
+}
+setPhase(initial.live ? "Connecting" : "Offline replay");
+if (!initial.live) $("current-check").textContent = "Saved run · review the results and replay its events below.";
+if (initial.live) {
+  stream = new EventSource("/events");
+  stream.addEventListener("trace", message => { add(JSON.parse(message.data)); update(); });
+  stream.addEventListener("phase", message => {
+    const phase = JSON.parse(message.data);
+    suspended = phase === "timing";
+    if (suspended) $("current-check").textContent = "Measuring call timing · live updates and animation resume afterward.";
+    if (suspended) for (const pulse of document.querySelectorAll(".pulse")) pulse.remove();
+    setPhase(suspended ? "Timing · trace paused" : phase === "done" ? "Run complete" : "Live");
+    if (phase === "done") { stream.close(); stream = null; $("current-check").textContent = "All checks finished · review the suite verdicts below."; }
+    update();
+  });
+  stream.onerror = () => setPhase("Stream reconnecting");
+}
+setInterval(() => { if (playing && !suspended) step(); }, 230);
+update();
+</script>
+</body>
+</html>

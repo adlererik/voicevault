@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+umask 077
+project="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+export CARGO_HOME="$project/.lab-cache/cargo"
+export KANI_HOME="$project/.lab-cache/kani"
+export CARGO_TARGET_DIR="$project/target"
+export CARGO_BUILD_JOBS="${CARGO_BUILD_JOBS:-2}"
+export PATH="$CARGO_HOME/bin:$project/.lab-cache/bin:$HOME/.cargo/bin:$PATH"
+unset RUSTUP_TOOLCHAIN
+exec python3 "$project/scripts/lab.py" "$@"

@@ -1,0 +1,50 @@
+$ cargo deny --locked --manifest-path platform/Cargo.toml check
+warning[duplicate]: found 2 duplicate entries for crate 'syn'
+   ┌─ /home/erikclean/src/secure-voice-lab/platform/Cargo.lock:39:1
+   │  
+39 │ ╭ syn 2.0.119 registry+https://github.com/rust-lang/crates.io-index
+40 │ │ syn 3.0.10 registry+https://github.com/rust-lang/crates.io-index
+   │ ╰────────────────────────────────────────────────────────────────┘ lock entries
+   │  
+   ├ syn v2.0.119
+     └── curve25519-dalek-derive v0.1.1
+         └── curve25519-dalek v4.1.3
+             ├── ed25519-dalek v2.2.0
+             │   ├── protocol v0.1.0
+             │   │   ├── device-core v0.1.0
+             │   │   │   └── quietlink-m33-probe v0.1.0
+             │   │   └── quietlink-m33-probe v0.1.0 (*)
+             │   └── quietlink-m33-probe v0.1.0 (*)
+             ├── protocol v0.1.0 (*)
+             └── snow v0.10.0
+                 └── protocol v0.1.0 (*)
+   ├ syn v3.0.10
+     └── cortex-m-rt-macros v0.7.7
+         └── cortex-m-rt v0.7.7
+             └── quietlink-m33-probe v0.1.0
+
+warning[license-exception-not-encountered]: license exception was not encountered
+   ┌─ deny.toml:10:9
+   │
+10 │ name = "libfuzzer-sys"
+   │         ━━━━━━━━━━━━━ unmatched license exception
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ deny.toml:7:78
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                              ━━━━━━━ unmatched license allowance
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ deny.toml:7:48
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                ━━━ unmatched license allowance
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ deny.toml:7:70
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                      ━━━━ unmatched license allowance
+
+advisories ok, bans ok, licenses ok, sources ok

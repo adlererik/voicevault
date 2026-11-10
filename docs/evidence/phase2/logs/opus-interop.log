@@ -1,0 +1,14 @@
+$ /home/erikclean/src/secure-voice-lab/target/release/lab-runner interop /home/erikclean/src/secure-voice-lab/.lab-cache/reference/opus-1.6.1 /home/erikclean/Documents/ChatGPT/SecureCall/outputs/quietlink-phase2-final/interop
+libopus 1.6.1
+Decoding with 16000 Hz output (1 channels)
+average bitrate:              24.000 kb/s
+maximum bitrate:              24.000 kb/s
+bitrate standard deviation:    0.000 kb/s
+opus-rs -> libopus: 32000 samples, tone powers 13564027 / 0
+libopus 1.6.1
+Encoding 16000 Hz input at 24.000 kb/s in auto bandwidth with 320-sample frames.
+average bitrate:              24.000 kb/s
+maximum bitrate:              24.000 kb/s
+active bitrate:               24.000 kb/s
+bitrate standard deviation:    0.000 kb/s
+libopus -> opus-rs: 32320 samples, tone powers 13809719 / 1

@@ -1,0 +1,2 @@
+$ /usr/bin/python3 /home/erikclean/src/secure-voice-lab/scripts/dashboard.py
+Loopback bind, read-only HTTP, SSE pause/resume, event schema, verdicts and offline data passed

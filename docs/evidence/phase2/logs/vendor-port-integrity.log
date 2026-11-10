@@ -1,0 +1,2 @@
+$ /usr/bin/python3 /home/erikclean/src/secure-voice-lab/scripts/check_vendor.py
+PASS: 178 upstream files verified; initialization-only patch; encoder field coverage verified

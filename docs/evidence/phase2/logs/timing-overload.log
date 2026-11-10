@@ -1,0 +1,94 @@
+$ /home/erikclean/src/secure-voice-lab/target/release/lab-runner wall /home/erikclean/Documents/ChatGPT/SecureCall/outputs/quietlink-phase2-final/timing/overload overload
+{"test":"overload","tick":0,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":0,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":1,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":1,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":1,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":1,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":2,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":2,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":2,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":2,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":2,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":5,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":5,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":5,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":5,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":5,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":6,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":6,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":6,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":6,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":7,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":7,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":7,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":7,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":8,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":8,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":8,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":8,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":8,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":8,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":9,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":9,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":9,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"muted","status":"info"}
+{"test":"overload","tick":9,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":9,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":9,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"muted","status":"info"}
+{"test":"overload","tick":10,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":10,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":10,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":10,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":10,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":10,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":11,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":11,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":11,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":11,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":11,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":11,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":14,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":14,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":14,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":14,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":14,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":14,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":15,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":15,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":15,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":15,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":16,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":16,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":16,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":16,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":17,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":17,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":17,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":17,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":17,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":17,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":18,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":18,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":18,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"muted","status":"info"}
+{"test":"overload","tick":18,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":18,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":18,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"muted","status":"info"}
+{"test":"overload","tick":19,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":19,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":19,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":19,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":19,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":19,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"concealed","status":"info"}
+{"test":"overload","tick":20,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":20,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":20,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":20,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":20,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":20,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":20,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":23,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":23,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":23,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"overload","tick":23,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"overload","tick":23,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"overload","tick":150,"action":"verdict","from":"","to":"","expected":"scenario timing, queue, burst and applicable WAV gates","observed":"gates met","status":"pass"}

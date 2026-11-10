@@ -2,3 +2,6 @@
 vendor/opus-rs/** whitespace=-blank-at-eol
 # Unified diff context includes intentional single-space blank lines.
 vendor/*.patch whitespace=-blank-at-eol
+
+# Keep captured diagnostic logs byte-for-byte, including upstream whitespace.
+docs/evidence/** whitespace=-blank-at-eol,-blank-at-eof

@@ -61,14 +61,14 @@ The [security design](docs/SECURITY_DESIGN.md) explains every control, the packe
 
 ## Screenshots
 
-Actual screenshots of the saved, verified local run from **2026-11-10**. They show the responsive dashboard at the browser's captured width. Click an image for its full-size view. These are replayed test results, not hardware photos or a new live call.
+Actual browser captures from the **2026-11-10 phase-two run**. The first and third show the completed eleven-group results; the middle capture shows the real live view while the extended fuzz campaigns were still running. These are software test views, not hardware photos.
 
 <table>
-  <tr><th>Completed suite</th><th>Malformed authenticated audio</th><th>Fragment-flood defense</th></tr>
+  <tr><th>Completed eleven-group suite</th><th>Live verification progress</th><th>Authenticated malformed audio</th></tr>
   <tr>
-    <td><a href="docs/screenshots/dashboard-overview.jpg"><img src="docs/screenshots/dashboard-overview.jpg" width="240" alt="Quietlink dashboard with all nine verification groups passing"></a></td>
-    <td><a href="docs/screenshots/authenticated-peer-rejection.jpg"><img src="docs/screenshots/authenticated-peer-rejection.jpg" width="240" alt="Authenticated-peer test rejecting malformed Opus and using loss concealment"></a></td>
-    <td><a href="docs/screenshots/fragment-flood.jpg"><img src="docs/screenshots/fragment-flood.jpg" width="240" alt="Fragment-flood scenario passing bounded assembly and backpressure checks"></a></td>
+    <td><a href="docs/screenshots/phase2-overview.jpg"><img src="docs/screenshots/phase2-overview.jpg" width="240" alt="All eleven required verification groups passed"></a></td>
+    <td><a href="docs/screenshots/phase2-live.jpg"><img src="docs/screenshots/phase2-live.jpg" width="240" alt="Live lifecycle fuzzing in progress with completed groups shown"></a></td>
+    <td><a href="docs/screenshots/phase2-authenticated-peer.jpg"><img src="docs/screenshots/phase2-authenticated-peer.jpg" width="240" alt="Malformed authenticated Opus concealed after framing checks; all eleven groups pass"></a></td>
   </tr>
 </table>
 
@@ -76,11 +76,11 @@ The dashboard supports Pause, Step, Replay, and test filtering. Its live view id
 
 ## What has been verified
 
-The expanded suite requires **11 groups**: unit, protocol, lifecycle, platform, codec, isolation, fuzz, Kani, dependencies, timing and dashboard. Its run-specific verdict and measurements are recorded in [complete results](docs/RESULTS.md) and the [machine-readable summary](docs/verification-summary.json).
+The fresh complete phase-two run **passed all 11 required groups**: unit, protocol, lifecycle, platform, codec, isolation, fuzz, Kani, dependencies, timing and dashboard. Its run-specific verdict and measurements are recorded in [complete results](docs/RESULTS.md) and the [machine-readable summary](docs/verification-summary.json).
 
 The suite includes published Noise KK and XX vectors against the actual selected crypto resolver, 18 lifecycle/fault/property tests, six fuzz targets at least 120 seconds each, four bounded Kani harnesses, libopus interoperability, all 12 applicable official mono decoder vectors, and an in-place constructor comparison. Native idle and CPU-contention calls retain the p99 send-error ≤ 5 ms and missed-slot ≤ 0.1% gates.
 
-The ARM diagnostic executes real Opus, Noise, link and policy code without Linux. The [platform report](docs/PLATFORM.md) explains flash/RAM gates, stack watermark, driver reserves and public fixture keys. Passing CPU emulation demonstrates functional paths and linked capacity. It does not establish real-time performance or hardware isolation.
+The ARM diagnostic executes real Opus, Noise, link and policy code without Linux. The recorded image occupies 707,168 bytes; static RAM including a 32 KiB reserved heap is 552,324 bytes. With a 128 KiB stack and 64 KiB future-driver/display allowance, 37,500 bytes of the 768 KiB main-RAM budget remain unassigned. The [platform report](docs/PLATFORM.md) explains flash/RAM gates, stack watermark, driver reserves and public fixture keys. Passing CPU emulation demonstrates functional paths and linked capacity. It does not establish real-time performance or hardware isolation.
 
 ## Repository structure
 

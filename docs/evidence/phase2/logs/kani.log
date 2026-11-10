@@ -1,0 +1,2830 @@
+$ cargo kani -p call-state
+Kani Rust Verifier 0.68.0 (cargo plugin)
+CBMC 6.11.0
+warning: use of an unstable feature
+ --> <crate attribute>:1:12
+  |
+1 | #![feature(register_tool)]
+  |            ^^^^^^^^^^^^^
+  |
+  = note: requested on the command line with `--force-warn unstable-features`
+
+warning: Found the following unsupported constructs:
+             - caller_location (1)
+             - foreign function (1)
+         
+         Verification will fail if one or more of these constructs is reachable.
+         See https://model-checking.github.io/kani/rust-feature-support.html for more details.
+
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s
+Checking harness proofs::active_requires_local_consent_and_both_confirmations...
+CBMC 6.11.0 (cbmc-6.11.0)
+CBMC version 6.11.0 (cbmc-6.11.0) 64-bit x86_64 linux
+Reading GOTO program from file /home/erikclean/src/secure-voice-lab/target/kani/x86_64-unknown-linux-gnu/debug/build/call-state/1d42382bd67bc6a6/out/call_state-1d42382bd67bc6a6__RNvNtCs90gTg4eprxF_10call_state6proofs52active_requires_local_consent_and_both_confirmations.out
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 16 object bits, 48 offset bits (user-specified)
+Starting Bounded Model Checking
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs52active_requires_local_consent_and_both_confirmations.0 iteration 1 file crates/call-state/src/lib.rs line 197 column 9 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs52active_requires_local_consent_and_both_confirmations.0 iteration 2 file crates/call-state/src/lib.rs line 197 column 9 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 216 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 215 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs52active_requires_local_consent_and_both_confirmations.0 iteration 3 file crates/call-state/src/lib.rs line 197 column 9 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 216 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 215 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs52active_requires_local_consent_and_both_confirmations.0 iteration 4 file crates/call-state/src/lib.rs line 197 column 9 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 216 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 215 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs52active_requires_local_consent_and_both_confirmations.0 iteration 5 file crates/call-state/src/lib.rs line 197 column 9 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 216 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 215 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs52active_requires_local_consent_and_both_confirmations.0 iteration 6 file crates/call-state/src/lib.rs line 197 column 9 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 216 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 215 column 17 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs52active_requires_local_consent_and_both_confirmations.0 iteration 7 file crates/call-state/src/lib.rs line 197 column 9 function proofs::active_requires_local_consent_and_both_confirmations thread 0
+Runtime Symex: 0.749335s
+size of program expression: 5871 steps
+slicing removed 4097 assignments
+Generated 1018 VCC(s), 10 remaining after simplification
+Runtime Postprocess Equation: 0.00475147s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.0349001s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 2.5762e-05s
+Solving with CaDiCaL 3.0.0
+7319 variables, 10934 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 0.0455882s
+Runtime decision procedure: 0.0811244s
+
+RESULTS:
+Check 1: core::option::Option::<i32>::unwrap_unchecked.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:1127:15 in function core::option::Option::<i32>::unwrap_unchecked
+
+Check 2: CallState::sent.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:102:15 in function CallState::sent
+
+Check 3: CallState::can_send.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:92:15 in function CallState::can_send
+
+Check 4: proofs::active_requires_local_consent_and_both_confirmations.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:197:18 in function proofs::active_requires_local_consent_and_both_confirmations
+
+Check 5: proofs::active_requires_local_consent_and_both_confirmations.assertion.1
+	 - Status: SUCCESS
+	 - Description: "assertion failed: state.sent_ready && state.peer_ready"
+	 - Location: crates/call-state/src/lib.rs:216:17 in function proofs::active_requires_local_consent_and_both_confirmations
+
+Check 6: proofs::active_requires_local_consent_and_both_confirmations.assertion.2
+	 - Status: SUCCESS
+	 - Description: "assertion failed: state.consent && state.sent_confirm && state.peer_confirm"
+	 - Location: crates/call-state/src/lib.rs:215:17 in function proofs::active_requires_local_consent_and_both_confirmations
+
+Check 7: core::panic::Location::<'_>::caller.unsupported_construct.1
+	 - Status: SUCCESS
+	 - Description: "caller_location is not currently supported by Kani. Please post your example at https://github.com/model-checking/kani/issues/374"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/location.rs:181:9 in function core::panic::Location::<'_>::caller
+
+Check 8: core::fmt::Arguments::<'_>::from_str.assertion.1
+	 - Status: UNREACHABLE
+	 - Description: "attempt to shift left with overflow"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/mod.rs:820:38 in function core::fmt::Arguments::<'_>::from_str
+
+Check 9: core::panicking::panic_nounwind_fmt::runtime.unsupported_construct.1
+	 - Status: SUCCESS
+	 - Description: "call to foreign "Rust" function `_RNvCskSgPeDzUGbv_7___rustc17rust_begin_unwind` is not currently supported by Kani. Please post your example at https://github.com/model-checking/kani/issues/new/choose"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs:110:17 in function core::panicking::panic_nounwind_fmt::runtime
+
+Check 10: CallState::receive.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:109:5 in function CallState::receive
+
+Check 11: core::hint::unreachable_unchecked.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/hint.rs:111:14 in function core::hint::unreachable_unchecked
+
+Check 12: CallState::sent.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 13: CallState::sent.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 14: CallState::sent.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 15: CallState::sent.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 16: CallState::sent.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 17: CallState::sent.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 18: CallState::sent.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 19: CallState::sent.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 20: CallState::sent.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 21: CallState::sent.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 22: CallState::sent.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 23: CallState::sent.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 24: CallState::active.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 25: CallState::active.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 26: CallState::active.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 27: CallState::active.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 28: CallState::active.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 29: CallState::active.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 30: CallState::active.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 31: CallState::active.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 32: CallState::active.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 33: CallState::active.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 34: CallState::active.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 35: CallState::active.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 36: CallState::active.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 37: CallState::active.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 38: CallState::active.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 39: CallState::active.pointer_dereference.16
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 40: CallState::active.pointer_dereference.17
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 41: CallState::active.pointer_dereference.18
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 42: CallState::consent.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 43: CallState::consent.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 44: CallState::consent.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 45: CallState::consent.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 46: CallState::consent.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 47: CallState::consent.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 48: CallState::consent.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 49: CallState::consent.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 50: CallState::consent.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 51: CallState::consent.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 52: CallState::consent.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 53: CallState::consent.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 54: CallState::receive.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 55: CallState::receive.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 56: CallState::receive.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 57: CallState::receive.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 58: CallState::receive.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 59: CallState::receive.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 60: CallState::receive.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 61: CallState::receive.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 62: CallState::receive.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 63: CallState::receive.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 64: CallState::receive.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 65: CallState::receive.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 66: CallState::receive.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 67: CallState::receive.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 68: CallState::receive.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 69: CallState::receive.pointer_dereference.16
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 70: CallState::receive.pointer_dereference.17
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 71: CallState::receive.pointer_dereference.18
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 72: CallState::receive.pointer_dereference.19
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 73: CallState::receive.pointer_dereference.20
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 74: CallState::receive.pointer_dereference.21
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 75: CallState::receive.pointer_dereference.22
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 76: CallState::receive.pointer_dereference.23
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 77: CallState::receive.pointer_dereference.24
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 78: CallState::receive.pointer_dereference.25
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 79: CallState::receive.pointer_dereference.26
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 80: CallState::receive.pointer_dereference.27
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 81: CallState::receive.pointer_dereference.28
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 82: CallState::receive.pointer_dereference.29
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 83: CallState::receive.pointer_dereference.30
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 84: CallState::receive.pointer_dereference.31
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 85: CallState::receive.pointer_dereference.32
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 86: CallState::receive.pointer_dereference.33
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 87: CallState::receive.pointer_dereference.34
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 88: CallState::receive.pointer_dereference.35
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 89: CallState::receive.pointer_dereference.36
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 90: CallState::receive.pointer_dereference.37
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 91: CallState::receive.pointer_dereference.38
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 92: CallState::receive.pointer_dereference.39
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 93: CallState::receive.pointer_dereference.40
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 94: CallState::receive.pointer_dereference.41
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 95: CallState::receive.pointer_dereference.42
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 96: CallState::can_send.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 97: CallState::can_send.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 98: CallState::can_send.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 99: CallState::can_send.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 100: CallState::can_send.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 101: CallState::can_send.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 102: CallState::can_send.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 103: CallState::can_send.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 104: CallState::can_send.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 105: CallState::can_send.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 106: CallState::can_send.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 107: CallState::can_send.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 108: CallState::can_send.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 109: CallState::can_send.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 110: CallState::can_send.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 111: CallState::can_send.pointer_dereference.16
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 112: CallState::can_send.pointer_dereference.17
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 113: CallState::can_send.pointer_dereference.18
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 114: CallState::can_send.pointer_dereference.19
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 115: CallState::can_send.pointer_dereference.20
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 116: CallState::can_send.pointer_dereference.21
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 117: CallState::can_send.pointer_dereference.22
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 118: CallState::can_send.pointer_dereference.23
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 119: CallState::can_send.pointer_dereference.24
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 120: CallState::can_send.pointer_dereference.25
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 121: CallState::can_send.pointer_dereference.26
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 122: CallState::can_send.pointer_dereference.27
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 123: CallState::can_send.pointer_dereference.28
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 124: CallState::can_send.pointer_dereference.29
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 125: CallState::can_send.pointer_dereference.30
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 126: CallState::can_send.pointer_dereference.31
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 127: CallState::can_send.pointer_dereference.32
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 128: CallState::can_send.pointer_dereference.33
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 129: CallState::can_send.pointer_dereference.34
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 130: CallState::can_send.pointer_dereference.35
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 131: CallState::can_send.pointer_dereference.36
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 132: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 133: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 134: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 135: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 136: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 137: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 138: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 139: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 140: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 141: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 142: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 143: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 144: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 145: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 146: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 147: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 148: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 149: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 150: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 151: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 152: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 153: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 154: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 155: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+
+SUMMARY:
+ ** 0 of 155 failed (1 unreachable)
+
+VERIFICATION:- SUCCESSFUL
+Verification Time: 0.9685496s
+
+Checking harness proofs::replay_rejects_duplicate_and_preserves_preflight...
+CBMC 6.11.0 (cbmc-6.11.0)
+CBMC version 6.11.0 (cbmc-6.11.0) 64-bit x86_64 linux
+Reading GOTO program from file /home/erikclean/src/secure-voice-lab/target/kani/x86_64-unknown-linux-gnu/debug/build/call-state/1d42382bd67bc6a6/out/call_state-1d42382bd67bc6a6__RNvNtCs90gTg4eprxF_10call_state6proofs48replay_rejects_duplicate_and_preserves_preflight.out
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 16 object bits, 48 offset bits (user-specified)
+Starting Bounded Model Checking
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 29 column 5 function Replay::eligible thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs line 2439 column 15 function <core::option::Option<u64> as core::cmp::PartialEq>::eq thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 29 column 5 function Replay::eligible thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 43 column 5 function Replay::commit thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 29 column 5 function Replay::eligible thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 186 column 9 function proofs::replay_rejects_duplicate_and_preserves_preflight thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 29 column 5 function Replay::eligible thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 187 column 9 function proofs::replay_rejects_duplicate_and_preserves_preflight thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs line 2439 column 15 function <core::option::Option<u64> as core::cmp::PartialEq>::eq thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs line 452 column 17 function core::panicking::assert_failed_inner thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs line 407 column 5 function core::panicking::assert_failed::<Replay, Replay> thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs line 52 column 21 function proofs::replay_rejects_duplicate_and_preserves_preflight thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs line 452 column 17 function core::panicking::assert_failed_inner thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs line 407 column 5 function core::panicking::assert_failed::<bool, bool> thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs line 52 column 21 function proofs::replay_rejects_duplicate_and_preserves_preflight thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs line 452 column 17 function core::panicking::assert_failed_inner thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs line 407 column 5 function core::panicking::assert_failed::<Replay, Replay> thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs line 52 column 21 function proofs::replay_rejects_duplicate_and_preserves_preflight thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 181 column 9 function proofs::replay_rejects_duplicate_and_preserves_preflight thread 0
+Runtime Symex: 0.548845s
+size of program expression: 5149 steps
+slicing removed 3248 assignments
+Generated 334 VCC(s), 39 remaining after simplification
+Runtime Postprocess Equation: 0.00413179s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.108207s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 1.6506e-05s
+Solving with CaDiCaL 3.0.0
+33078 variables, 90439 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.540156s
+Runtime decision procedure: 0.653319s
+Running propositional reduction
+Solving with CaDiCaL 3.0.0
+33079 variables, 90440 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.984222s
+Runtime decision procedure: 0.988084s
+Running propositional reduction
+Solving with CaDiCaL 3.0.0
+33080 variables, 90441 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.718973s
+Runtime decision procedure: 0.722225s
+Running propositional reduction
+Solving with CaDiCaL 3.0.0
+33081 variables, 90442 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 0.263759s
+Runtime decision procedure: 0.263972s
+
+RESULTS:
+Check 1: proofs::replay_rejects_duplicate_and_preserves_preflight.assertion.1
+	 - Status: SUCCESS
+	 - Description: "assertion failed: !replay.eligible(a)"
+	 - Location: crates/call-state/src/lib.rs:186:9 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 2: proofs::replay_rejects_duplicate_and_preserves_preflight.assertion.2
+	 - Status: SUCCESS
+	 - Description: "assertion failed: !replay.eligible(b)"
+	 - Location: crates/call-state/src/lib.rs:187:9 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 3: proofs::replay_rejects_duplicate_and_preserves_preflight.assertion.3
+	 - Status: SUCCESS
+	 - Description: "assertion failed: replay.commit(a)"
+	 - Location: crates/call-state/src/lib.rs:181:9 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 4: Replay::eligible.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:29:5 in function Replay::eligible
+
+Check 5: Replay::eligible.assertion.1
+	 - Status: SUCCESS
+	 - Description: "attempt to subtract with overflow"
+	 - Location: crates/call-state/src/lib.rs:35:32 in function Replay::eligible
+
+Check 6: Replay::eligible.assertion.2
+	 - Status: SUCCESS
+	 - Description: "attempt to shift left with overflow"
+	 - Location: crates/call-state/src/lib.rs:36:50 in function Replay::eligible
+
+Check 7: core::panicking::assert_failed_inner.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:0:0 in function core::panicking::assert_failed_inner
+
+Check 8: core::panicking::assert_failed_inner.assertion.1
+	 - Status: SUCCESS
+	 - Description: "This is a placeholder message; Kani doesn't support message formatted at runtime"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs:447:23 in function core::panicking::assert_failed_inner
+
+Check 9: core::panicking::assert_failed_inner.assertion.2
+	 - Status: SUCCESS
+	 - Description: "This is a placeholder message; Kani doesn't support message formatted at runtime"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs:452:17 in function core::panicking::assert_failed_inner
+
+Check 10: <core::option::Option<u64> as core::cmp::PartialEq>::eq.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 11: Replay::commit.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:43:5 in function Replay::commit
+
+Check 12: Replay::commit.assertion.1
+	 - Status: SUCCESS
+	 - Description: "attempt to subtract with overflow"
+	 - Location: crates/call-state/src/lib.rs:48:65 in function Replay::commit
+
+Check 13: Replay::commit.assertion.2
+	 - Status: SUCCESS
+	 - Description: "attempt to shift left with overflow"
+	 - Location: crates/call-state/src/lib.rs:48:60 in function Replay::commit
+
+Check 14: Replay::commit.assertion.3
+	 - Status: SUCCESS
+	 - Description: "attempt to subtract with overflow"
+	 - Location: crates/call-state/src/lib.rs:49:27 in function Replay::commit
+
+Check 15: Replay::commit.assertion.4
+	 - Status: SUCCESS
+	 - Description: "attempt to subtract with overflow"
+	 - Location: crates/call-state/src/lib.rs:50:43 in function Replay::commit
+
+Check 16: Replay::commit.assertion.5
+	 - Status: SUCCESS
+	 - Description: "attempt to shift left with overflow"
+	 - Location: crates/call-state/src/lib.rs:50:29 in function Replay::commit
+
+Check 17: Replay::commit.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:47:15 in function Replay::commit
+
+Check 18: Replay::commit.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:47:15 in function Replay::commit
+
+Check 19: Replay::commit.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:47:15 in function Replay::commit
+
+Check 20: Replay::commit.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:47:15 in function Replay::commit
+
+Check 21: Replay::commit.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:47:15 in function Replay::commit
+
+Check 22: Replay::commit.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:47:15 in function Replay::commit
+
+Check 23: Replay::commit.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:48:39 in function Replay::commit
+
+Check 24: Replay::commit.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:48:39 in function Replay::commit
+
+Check 25: Replay::commit.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:48:39 in function Replay::commit
+
+Check 26: Replay::commit.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:48:39 in function Replay::commit
+
+Check 27: Replay::commit.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:48:39 in function Replay::commit
+
+Check 28: Replay::commit.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:48:39 in function Replay::commit
+
+Check 29: Replay::commit.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:48:18 in function Replay::commit
+
+Check 30: Replay::commit.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:48:18 in function Replay::commit
+
+Check 31: Replay::commit.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:48:18 in function Replay::commit
+
+Check 32: Replay::commit.pointer_dereference.16
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:48:18 in function Replay::commit
+
+Check 33: Replay::commit.pointer_dereference.17
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:48:18 in function Replay::commit
+
+Check 34: Replay::commit.pointer_dereference.18
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:48:18 in function Replay::commit
+
+Check 35: Replay::commit.pointer_dereference.19
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:48:47 in function Replay::commit
+
+Check 36: Replay::commit.pointer_dereference.20
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:48:47 in function Replay::commit
+
+Check 37: Replay::commit.pointer_dereference.21
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:48:47 in function Replay::commit
+
+Check 38: Replay::commit.pointer_dereference.22
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:48:47 in function Replay::commit
+
+Check 39: Replay::commit.pointer_dereference.23
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:48:47 in function Replay::commit
+
+Check 40: Replay::commit.pointer_dereference.24
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:48:47 in function Replay::commit
+
+Check 41: Replay::commit.pointer_dereference.25
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:49:38 in function Replay::commit
+
+Check 42: Replay::commit.pointer_dereference.26
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:49:38 in function Replay::commit
+
+Check 43: Replay::commit.pointer_dereference.27
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:49:38 in function Replay::commit
+
+Check 44: Replay::commit.pointer_dereference.28
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:49:38 in function Replay::commit
+
+Check 45: Replay::commit.pointer_dereference.29
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:49:38 in function Replay::commit
+
+Check 46: Replay::commit.pointer_dereference.30
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:49:38 in function Replay::commit
+
+Check 47: Replay::commit.pointer_dereference.31
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:49:18 in function Replay::commit
+
+Check 48: Replay::commit.pointer_dereference.32
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:49:18 in function Replay::commit
+
+Check 49: Replay::commit.pointer_dereference.33
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:49:18 in function Replay::commit
+
+Check 50: Replay::commit.pointer_dereference.34
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:49:18 in function Replay::commit
+
+Check 51: Replay::commit.pointer_dereference.35
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:49:18 in function Replay::commit
+
+Check 52: Replay::commit.pointer_dereference.36
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:49:18 in function Replay::commit
+
+Check 53: Replay::commit.pointer_dereference.37
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:50:30 in function Replay::commit
+
+Check 54: Replay::commit.pointer_dereference.38
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:50:30 in function Replay::commit
+
+Check 55: Replay::commit.pointer_dereference.39
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:50:30 in function Replay::commit
+
+Check 56: Replay::commit.pointer_dereference.40
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:50:30 in function Replay::commit
+
+Check 57: Replay::commit.pointer_dereference.41
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:50:30 in function Replay::commit
+
+Check 58: Replay::commit.pointer_dereference.42
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:50:30 in function Replay::commit
+
+Check 59: Replay::commit.pointer_dereference.43
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:50:17 in function Replay::commit
+
+Check 60: Replay::commit.pointer_dereference.44
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:50:17 in function Replay::commit
+
+Check 61: Replay::commit.pointer_dereference.45
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:50:17 in function Replay::commit
+
+Check 62: Replay::commit.pointer_dereference.46
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:50:17 in function Replay::commit
+
+Check 63: Replay::commit.pointer_dereference.47
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:50:17 in function Replay::commit
+
+Check 64: Replay::commit.pointer_dereference.48
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:50:17 in function Replay::commit
+
+Check 65: Replay::commit.pointer_dereference.49
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:51:17 in function Replay::commit
+
+Check 66: Replay::commit.pointer_dereference.50
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:51:17 in function Replay::commit
+
+Check 67: Replay::commit.pointer_dereference.51
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:51:17 in function Replay::commit
+
+Check 68: Replay::commit.pointer_dereference.52
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:51:17 in function Replay::commit
+
+Check 69: Replay::commit.pointer_dereference.53
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:51:17 in function Replay::commit
+
+Check 70: Replay::commit.pointer_dereference.54
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:51:17 in function Replay::commit
+
+Check 71: Replay::commit.pointer_dereference.55
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:54:17 in function Replay::commit
+
+Check 72: Replay::commit.pointer_dereference.56
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:54:17 in function Replay::commit
+
+Check 73: Replay::commit.pointer_dereference.57
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:54:17 in function Replay::commit
+
+Check 74: Replay::commit.pointer_dereference.58
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:54:17 in function Replay::commit
+
+Check 75: Replay::commit.pointer_dereference.59
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:54:17 in function Replay::commit
+
+Check 76: Replay::commit.pointer_dereference.60
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:54:17 in function Replay::commit
+
+Check 77: Replay::commit.pointer_dereference.61
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:55:17 in function Replay::commit
+
+Check 78: Replay::commit.pointer_dereference.62
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:55:17 in function Replay::commit
+
+Check 79: Replay::commit.pointer_dereference.63
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:55:17 in function Replay::commit
+
+Check 80: Replay::commit.pointer_dereference.64
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:55:17 in function Replay::commit
+
+Check 81: Replay::commit.pointer_dereference.65
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:55:17 in function Replay::commit
+
+Check 82: Replay::commit.pointer_dereference.66
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:55:17 in function Replay::commit
+
+Check 83: Replay::eligible.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:33:15 in function Replay::eligible
+
+Check 84: Replay::eligible.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:33:15 in function Replay::eligible
+
+Check 85: Replay::eligible.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:33:15 in function Replay::eligible
+
+Check 86: Replay::eligible.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:33:15 in function Replay::eligible
+
+Check 87: Replay::eligible.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:33:15 in function Replay::eligible
+
+Check 88: Replay::eligible.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:33:15 in function Replay::eligible
+
+Check 89: Replay::eligible.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:34:39 in function Replay::eligible
+
+Check 90: Replay::eligible.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:34:39 in function Replay::eligible
+
+Check 91: Replay::eligible.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:34:39 in function Replay::eligible
+
+Check 92: Replay::eligible.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:34:39 in function Replay::eligible
+
+Check 93: Replay::eligible.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:34:39 in function Replay::eligible
+
+Check 94: Replay::eligible.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:34:39 in function Replay::eligible
+
+Check 95: Replay::eligible.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:34:18 in function Replay::eligible
+
+Check 96: Replay::eligible.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:34:18 in function Replay::eligible
+
+Check 97: Replay::eligible.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:34:18 in function Replay::eligible
+
+Check 98: Replay::eligible.pointer_dereference.16
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:34:18 in function Replay::eligible
+
+Check 99: Replay::eligible.pointer_dereference.17
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:34:18 in function Replay::eligible
+
+Check 100: Replay::eligible.pointer_dereference.18
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:34:18 in function Replay::eligible
+
+Check 101: Replay::eligible.pointer_dereference.19
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:36:38 in function Replay::eligible
+
+Check 102: Replay::eligible.pointer_dereference.20
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:36:38 in function Replay::eligible
+
+Check 103: Replay::eligible.pointer_dereference.21
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:36:38 in function Replay::eligible
+
+Check 104: Replay::eligible.pointer_dereference.22
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:36:38 in function Replay::eligible
+
+Check 105: Replay::eligible.pointer_dereference.23
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:36:38 in function Replay::eligible
+
+Check 106: Replay::eligible.pointer_dereference.24
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:36:38 in function Replay::eligible
+
+Check 107: core::panicking::assert_failed_inner.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs:446:11 in function core::panicking::assert_failed_inner
+
+Check 108: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 109: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 110: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 111: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 112: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 113: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 114: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 115: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 116: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 117: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 118: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 119: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 120: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:52:85 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 121: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:52:85 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 122: proofs::replay_rejects_duplicate_and_preserves_preflight.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:52:85 in function proofs::replay_rejects_duplicate_and_preserves_preflight
+
+Check 123: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 124: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 125: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 126: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 127: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 128: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 129: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 130: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 131: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 132: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 133: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 134: <Replay as core::cmp::PartialEq>::eq.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:25:5 in function <Replay as core::cmp::PartialEq>::eq
+
+Check 135: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 136: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 137: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 138: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 139: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 140: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 141: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 142: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 143: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 144: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 145: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 146: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 147: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 148: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 149: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 150: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.16
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 151: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.17
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 152: <core::option::Option<u64> as core::cmp::PartialEq>::eq.pointer_dereference.18
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:2439:15 in function <core::option::Option<u64> as core::cmp::PartialEq>::eq
+
+Check 153: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:54 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 154: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:54 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 155: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:54 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 156: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:54 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 157: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:54 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 158: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:54 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 159: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:63 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 160: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:63 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 161: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:63 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 162: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:63 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 163: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:63 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+Check 164: core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2153:63 in function core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+
+SUMMARY:
+ ** 0 of 164 failed
+
+VERIFICATION:- SUCCESSFUL
+Verification Time: 3.8835886s
+
+Checking harness proofs::closed_call_cannot_be_reactivated...
+CBMC 6.11.0 (cbmc-6.11.0)
+CBMC version 6.11.0 (cbmc-6.11.0) 64-bit x86_64 linux
+Reading GOTO program from file /home/erikclean/src/secure-voice-lab/target/kani/x86_64-unknown-linux-gnu/debug/build/call-state/1d42382bd67bc6a6/out/call_state-1d42382bd67bc6a6__RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.out
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 16 object bits, 48 offset bits (user-specified)
+Starting Bounded Model Checking
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 1 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 2 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 3 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 4 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 5 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 6 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 7 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 8 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 9 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Unwinding loop _RNvNtCs90gTg4eprxF_10call_state6proofs33closed_call_cannot_be_reactivated.0 iteration 10 file crates/call-state/src/lib.rs line 153 column 9 function proofs::closed_call_cannot_be_reactivated thread 0
+Runtime Symex: 0.723542s
+size of program expression: 6314 steps
+slicing removed 4911 assignments
+Generated 768 VCC(s), 10 remaining after simplification
+Runtime Postprocess Equation: 0.00546147s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.037614s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 1.7033e-05s
+Solving with CaDiCaL 3.0.0
+10988 variables, 14389 clauses
+SAT checker: instance is SATISFIABLE
+Runtime Solver: 0.000609572s
+Runtime decision procedure: 0.0387794s
+
+RESULTS:
+Check 1: proofs::closed_call_cannot_be_reactivated.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:153:18 in function proofs::closed_call_cannot_be_reactivated
+
+Check 2: proofs::closed_call_cannot_be_reactivated.assertion.1
+	 - Status: SUCCESS
+	 - Description: "attempt to calculate the remainder with a divisor of zero"
+	 - Location: crates/call-state/src/lib.rs:154:19 in function proofs::closed_call_cannot_be_reactivated
+
+Check 3: proofs::closed_call_cannot_be_reactivated.arithmetic_overflow.1
+	 - Status: SUCCESS
+	 - Description: "attempt to calculate the remainder with a divisor of zero"
+	 - Location: crates/call-state/src/lib.rs:154:19 in function proofs::closed_call_cannot_be_reactivated
+
+Check 4: proofs::closed_call_cannot_be_reactivated.assertion.2
+	 - Status: SUCCESS
+	 - Description: "assertion failed: !state.active()"
+	 - Location: crates/call-state/src/lib.rs:169:13 in function proofs::closed_call_cannot_be_reactivated
+
+Check 5: proofs::closed_call_cannot_be_reactivated.assertion.3
+	 - Status: SUCCESS
+	 - Description: "assertion failed: !state.can_send(Control::Confirm)"
+	 - Location: crates/call-state/src/lib.rs:170:13 in function proofs::closed_call_cannot_be_reactivated
+
+Check 6: proofs::closed_call_cannot_be_reactivated.assertion.4
+	 - Status: SUCCESS
+	 - Description: "assertion failed: !state.can_send(Control::Ready)"
+	 - Location: crates/call-state/src/lib.rs:171:13 in function proofs::closed_call_cannot_be_reactivated
+
+Check 7: CallState::sent.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:102:15 in function CallState::sent
+
+Check 8: core::option::Option::<i32>::unwrap_unchecked.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:1127:15 in function core::option::Option::<i32>::unwrap_unchecked
+
+Check 9: core::fmt::Arguments::<'_>::from_str.assertion.1
+	 - Status: UNREACHABLE
+	 - Description: "attempt to shift left with overflow"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/mod.rs:820:38 in function core::fmt::Arguments::<'_>::from_str
+
+Check 10: core::panic::Location::<'_>::caller.unsupported_construct.1
+	 - Status: SUCCESS
+	 - Description: "caller_location is not currently supported by Kani. Please post your example at https://github.com/model-checking/kani/issues/374"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/location.rs:181:9 in function core::panic::Location::<'_>::caller
+
+Check 11: core::hint::unreachable_unchecked.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/hint.rs:111:14 in function core::hint::unreachable_unchecked
+
+Check 12: CallState::receive.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:109:5 in function CallState::receive
+
+Check 13: CallState::can_send.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:92:15 in function CallState::can_send
+
+Check 14: core::panicking::panic_nounwind_fmt::runtime.unsupported_construct.1
+	 - Status: SUCCESS
+	 - Description: "call to foreign "Rust" function `_RNvCskSgPeDzUGbv_7___rustc17rust_begin_unwind` is not currently supported by Kani. Please post your example at https://github.com/model-checking/kani/issues/new/choose"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs:110:17 in function core::panicking::panic_nounwind_fmt::runtime
+
+Check 15: CallState::sent.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 16: CallState::sent.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 17: CallState::sent.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 18: CallState::sent.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 19: CallState::sent.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 20: CallState::sent.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:104:31 in function CallState::sent
+
+Check 21: CallState::sent.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 22: CallState::sent.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 23: CallState::sent.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 24: CallState::sent.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 25: CallState::sent.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 26: CallState::sent.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:103:33 in function CallState::sent
+
+Check 27: CallState::close.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:85:9 in function CallState::close
+
+Check 28: CallState::close.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:85:9 in function CallState::close
+
+Check 29: CallState::close.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:85:9 in function CallState::close
+
+Check 30: CallState::close.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:85:9 in function CallState::close
+
+Check 31: CallState::close.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:85:9 in function CallState::close
+
+Check 32: CallState::close.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:85:9 in function CallState::close
+
+Check 33: CallState::active.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 34: CallState::active.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 35: CallState::active.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 36: CallState::active.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 37: CallState::active.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 38: CallState::active.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:124:10 in function CallState::active
+
+Check 39: CallState::active.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 40: CallState::active.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 41: CallState::active.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 42: CallState::active.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 43: CallState::active.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 44: CallState::active.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:124:25 in function CallState::active
+
+Check 45: CallState::active.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 46: CallState::active.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 47: CallState::active.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 48: CallState::active.pointer_dereference.16
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 49: CallState::active.pointer_dereference.17
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 50: CallState::active.pointer_dereference.18
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:124:44 in function CallState::active
+
+Check 51: CallState::consent.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 52: CallState::consent.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 53: CallState::consent.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 54: CallState::consent.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 55: CallState::consent.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 56: CallState::consent.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:80:13 in function CallState::consent
+
+Check 57: CallState::consent.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 58: CallState::consent.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 59: CallState::consent.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 60: CallState::consent.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 61: CallState::consent.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 62: CallState::consent.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:81:13 in function CallState::consent
+
+Check 63: CallState::receive.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 64: CallState::receive.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 65: CallState::receive.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 66: CallState::receive.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 67: CallState::receive.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 68: CallState::receive.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:110:12 in function CallState::receive
+
+Check 69: CallState::receive.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 70: CallState::receive.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 71: CallState::receive.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 72: CallState::receive.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 73: CallState::receive.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 74: CallState::receive.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:115:31 in function CallState::receive
+
+Check 75: CallState::receive.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 76: CallState::receive.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 77: CallState::receive.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 78: CallState::receive.pointer_dereference.16
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 79: CallState::receive.pointer_dereference.17
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 80: CallState::receive.pointer_dereference.18
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:115:52 in function CallState::receive
+
+Check 81: CallState::receive.pointer_dereference.19
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 82: CallState::receive.pointer_dereference.20
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 83: CallState::receive.pointer_dereference.21
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 84: CallState::receive.pointer_dereference.22
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 85: CallState::receive.pointer_dereference.23
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 86: CallState::receive.pointer_dereference.24
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:115:74 in function CallState::receive
+
+Check 87: CallState::receive.pointer_dereference.25
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 88: CallState::receive.pointer_dereference.26
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 89: CallState::receive.pointer_dereference.27
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 90: CallState::receive.pointer_dereference.28
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 91: CallState::receive.pointer_dereference.29
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 92: CallState::receive.pointer_dereference.30
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:116:17 in function CallState::receive
+
+Check 93: CallState::receive.pointer_dereference.31
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 94: CallState::receive.pointer_dereference.32
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 95: CallState::receive.pointer_dereference.33
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 96: CallState::receive.pointer_dereference.34
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 97: CallState::receive.pointer_dereference.35
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 98: CallState::receive.pointer_dereference.36
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:114:34 in function CallState::receive
+
+Check 99: CallState::receive.pointer_dereference.37
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 100: CallState::receive.pointer_dereference.38
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 101: CallState::receive.pointer_dereference.39
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 102: CallState::receive.pointer_dereference.40
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 103: CallState::receive.pointer_dereference.41
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 104: CallState::receive.pointer_dereference.42
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:114:55 in function CallState::receive
+
+Check 105: CallState::can_send.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 106: CallState::can_send.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 107: CallState::can_send.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 108: CallState::can_send.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 109: CallState::can_send.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 110: CallState::can_send.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:89:12 in function CallState::can_send
+
+Check 111: CallState::can_send.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 112: CallState::can_send.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 113: CallState::can_send.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 114: CallState::can_send.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 115: CallState::can_send.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 116: CallState::can_send.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:94:31 in function CallState::can_send
+
+Check 117: CallState::can_send.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 118: CallState::can_send.pointer_dereference.14
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 119: CallState::can_send.pointer_dereference.15
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 120: CallState::can_send.pointer_dereference.16
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 121: CallState::can_send.pointer_dereference.17
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 122: CallState::can_send.pointer_dereference.18
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:94:52 in function CallState::can_send
+
+Check 123: CallState::can_send.pointer_dereference.19
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 124: CallState::can_send.pointer_dereference.20
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 125: CallState::can_send.pointer_dereference.21
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 126: CallState::can_send.pointer_dereference.22
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 127: CallState::can_send.pointer_dereference.23
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 128: CallState::can_send.pointer_dereference.24
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:94:74 in function CallState::can_send
+
+Check 129: CallState::can_send.pointer_dereference.25
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 130: CallState::can_send.pointer_dereference.26
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 131: CallState::can_send.pointer_dereference.27
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 132: CallState::can_send.pointer_dereference.28
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 133: CallState::can_send.pointer_dereference.29
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 134: CallState::can_send.pointer_dereference.30
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:93:33 in function CallState::can_send
+
+Check 135: CallState::can_send.pointer_dereference.31
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 136: CallState::can_send.pointer_dereference.32
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 137: CallState::can_send.pointer_dereference.33
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 138: CallState::can_send.pointer_dereference.34
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 139: CallState::can_send.pointer_dereference.35
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 140: CallState::can_send.pointer_dereference.36
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:93:50 in function CallState::can_send
+
+Check 141: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 142: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 143: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 144: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 145: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 146: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:50 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 147: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 148: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 149: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 150: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 151: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 152: core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs:2192:59 in function core::cmp::impls::<impl core::cmp::PartialOrd for i32>::lt
+
+Check 153: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 154: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 155: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 156: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 157: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 158: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1101:23 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 159: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 160: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 161: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 162: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 163: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+Check 164: <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs:1103:13 in function <core::ops::Range<i32> as core::iter::range::RangeIteratorImpl>::spec_next
+
+
+SUMMARY:
+ ** 0 of 164 failed (1 unreachable)
+
+VERIFICATION:- SUCCESSFUL
+Verification Time: 0.91326565s
+
+Checking harness proofs::protected_security_counter_never_rolls_back...
+CBMC 6.11.0 (cbmc-6.11.0)
+CBMC version 6.11.0 (cbmc-6.11.0) 64-bit x86_64 linux
+Reading GOTO program from file /home/erikclean/src/secure-voice-lab/target/kani/x86_64-unknown-linux-gnu/debug/build/call-state/1d42382bd67bc6a6/out/call_state-1d42382bd67bc6a6__RNvNtCs90gTg4eprxF_10call_state6proofs43protected_security_counter_never_rolls_back.out
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Running with 16 object bits, 48 offset bits (user-specified)
+Starting Bounded Model Checking
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 142 column 13 function proofs::protected_security_counter_never_rolls_back thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs line 452 column 17 function core::panicking::assert_failed_inner thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs line 407 column 5 function core::panicking::assert_failed::<u64, u64> thread 0
+aborting path on assume(false) at file /home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs line 52 column 21 function proofs::protected_security_counter_never_rolls_back thread 0
+aborting path on assume(false) at file crates/call-state/src/lib.rs line 140 column 9 function proofs::protected_security_counter_never_rolls_back thread 0
+Runtime Symex: 0.283492s
+size of program expression: 2791 steps
+slicing removed 1595 assignments
+Generated 63 VCC(s), 3 remaining after simplification
+Runtime Postprocess Equation: 0.00138072s
+Passing problem to propositional reduction
+converting SSA
+Runtime Convert SSA: 0.0128731s
+Running propositional reduction
+Post-processing
+Runtime Post-process: 2.1289e-05s
+Solving with CaDiCaL 3.0.0
+2980 variables, 4767 clauses
+SAT checker: instance is UNSATISFIABLE
+Runtime Solver: 0.0748223s
+Runtime decision procedure: 0.0881947s
+
+RESULTS:
+Check 1: proofs::protected_security_counter_never_rolls_back.assertion.1
+	 - Status: SUCCESS
+	 - Description: "assertion failed: b > before && b < u64::MAX"
+	 - Location: crates/call-state/src/lib.rs:142:13 in function proofs::protected_security_counter_never_rolls_back
+
+Check 2: proofs::protected_security_counter_never_rolls_back.assertion.2
+	 - Status: SUCCESS
+	 - Description: "assertion failed: counter.value() >= before"
+	 - Location: crates/call-state/src/lib.rs:140:9 in function proofs::protected_security_counter_never_rolls_back
+
+Check 3: core::panicking::assert_failed_inner.unreachable.1
+	 - Status: SUCCESS
+	 - Description: "unreachable code"
+	 - Location: crates/call-state/src/lib.rs:0:0 in function core::panicking::assert_failed_inner
+
+Check 4: core::panicking::assert_failed_inner.assertion.1
+	 - Status: SUCCESS
+	 - Description: "This is a placeholder message; Kani doesn't support message formatted at runtime"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs:447:23 in function core::panicking::assert_failed_inner
+
+Check 5: core::panicking::assert_failed_inner.assertion.2
+	 - Status: SUCCESS
+	 - Description: "This is a placeholder message; Kani doesn't support message formatted at runtime"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs:452:17 in function core::panicking::assert_failed_inner
+
+Check 6: SecurityCounter::value.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:11:9 in function SecurityCounter::value
+
+Check 7: SecurityCounter::value.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:11:9 in function SecurityCounter::value
+
+Check 8: SecurityCounter::value.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:11:9 in function SecurityCounter::value
+
+Check 9: SecurityCounter::value.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:11:9 in function SecurityCounter::value
+
+Check 10: SecurityCounter::value.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:11:9 in function SecurityCounter::value
+
+Check 11: SecurityCounter::value.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:11:9 in function SecurityCounter::value
+
+Check 12: SecurityCounter::advance.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:14:20 in function SecurityCounter::advance
+
+Check 13: SecurityCounter::advance.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:14:20 in function SecurityCounter::advance
+
+Check 14: SecurityCounter::advance.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:14:20 in function SecurityCounter::advance
+
+Check 15: SecurityCounter::advance.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:14:20 in function SecurityCounter::advance
+
+Check 16: SecurityCounter::advance.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:14:20 in function SecurityCounter::advance
+
+Check 17: SecurityCounter::advance.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:14:20 in function SecurityCounter::advance
+
+Check 18: SecurityCounter::advance.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: crates/call-state/src/lib.rs:17:9 in function SecurityCounter::advance
+
+Check 19: SecurityCounter::advance.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: crates/call-state/src/lib.rs:17:9 in function SecurityCounter::advance
+
+Check 20: SecurityCounter::advance.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: crates/call-state/src/lib.rs:17:9 in function SecurityCounter::advance
+
+Check 21: SecurityCounter::advance.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: crates/call-state/src/lib.rs:17:9 in function SecurityCounter::advance
+
+Check 22: SecurityCounter::advance.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: crates/call-state/src/lib.rs:17:9 in function SecurityCounter::advance
+
+Check 23: SecurityCounter::advance.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: crates/call-state/src/lib.rs:17:9 in function SecurityCounter::advance
+
+Check 24: core::panicking::assert_failed_inner.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panicking.rs:446:11 in function core::panicking::assert_failed_inner
+
+Check 25: proofs::protected_security_counter_never_rolls_back.pointer_dereference.1
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::protected_security_counter_never_rolls_back
+
+Check 26: proofs::protected_security_counter_never_rolls_back.pointer_dereference.2
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::protected_security_counter_never_rolls_back
+
+Check 27: proofs::protected_security_counter_never_rolls_back.pointer_dereference.3
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::protected_security_counter_never_rolls_back
+
+Check 28: proofs::protected_security_counter_never_rolls_back.pointer_dereference.4
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::protected_security_counter_never_rolls_back
+
+Check 29: proofs::protected_security_counter_never_rolls_back.pointer_dereference.5
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::protected_security_counter_never_rolls_back
+
+Check 30: proofs::protected_security_counter_never_rolls_back.pointer_dereference.6
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:22 in function proofs::protected_security_counter_never_rolls_back
+
+Check 31: proofs::protected_security_counter_never_rolls_back.pointer_dereference.7
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer NULL"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::protected_security_counter_never_rolls_back
+
+Check 32: proofs::protected_security_counter_never_rolls_back.pointer_dereference.8
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer invalid"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::protected_security_counter_never_rolls_back
+
+Check 33: proofs::protected_security_counter_never_rolls_back.pointer_dereference.9
+	 - Status: SUCCESS
+	 - Description: "dereference failure: deallocated dynamic object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::protected_security_counter_never_rolls_back
+
+Check 34: proofs::protected_security_counter_never_rolls_back.pointer_dereference.10
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::protected_security_counter_never_rolls_back
+
+Check 35: proofs::protected_security_counter_never_rolls_back.pointer_dereference.11
+	 - Status: SUCCESS
+	 - Description: "dereference failure: pointer outside object bounds"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::protected_security_counter_never_rolls_back
+
+Check 36: proofs::protected_security_counter_never_rolls_back.pointer_dereference.12
+	 - Status: SUCCESS
+	 - Description: "dereference failure: invalid integer address"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:47:35 in function proofs::protected_security_counter_never_rolls_back
+
+Check 37: proofs::protected_security_counter_never_rolls_back.pointer_dereference.13
+	 - Status: SUCCESS
+	 - Description: "dereference failure: dead object"
+	 - Location: ../../../runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/macros/mod.rs:52:85 in function proofs::protected_security_counter_never_rolls_back
+
+
+SUMMARY:
+ ** 0 of 37 failed
+
+VERIFICATION:- SUCCESSFUL
+Verification Time: 1.1397421s
+
+Manual Harness Summary:
+Complete - 4 successfully verified harnesses, 0 failures, 4 total.

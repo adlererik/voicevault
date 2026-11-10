@@ -1,0 +1,5 @@
+$ cargo build --locked --release -p lab-runner
+   Compiling protocol v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/protocol)
+   Compiling device-core v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/device-core)
+   Compiling lab-runner v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/lab-runner)
+    Finished `release` profile [optimized] target(s) in 13.37s

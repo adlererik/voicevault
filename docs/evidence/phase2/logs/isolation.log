@@ -1,0 +1,4 @@
+$ /home/erikclean/src/secure-voice-lab/target/release/lab-runner isolation
+{"test":"isolation","tick":0,"action":"reject","from":"Phone A","to":"Alice","expected":"deny file, socket/connect, memory and descriptor syscalls","observed":"denied by seccomp","status":"pass"}
+{"test":"isolation","tick":0,"action":"reject","from":"Phone B","to":"Alice","expected":"deny file, socket/connect, memory and descriptor syscalls","observed":"denied by seccomp","status":"pass"}
+{"test":"isolation","tick":0,"action":"reject","from":"Relay","to":"Alice","expected":"deny file, socket/connect, memory and descriptor syscalls","observed":"denied by seccomp","status":"pass"}

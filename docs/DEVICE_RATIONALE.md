@@ -25,7 +25,7 @@ The device cannot stop the phone or telecom operator from refusing delivery. It 
 
 ## Choices still open
 
-The initial MCU capacity reference is STM32U585-class, not a final bill of materials. Secure elements need to be selected against supported Ed25519/X25519 operations, key custody, counters, transactional behavior, endurance and integration costs. Some operations may remain in trusted MCU RAM. A secure element does not automatically keep all live audio keys inside it.
+Trezor currently lists an STM32U5G Cortex-M33 at 160 MHz for Safe 7, alongside TROPIC01 and OPTIGA. The lab uses an STM32U585-class capacity gate as its explicitly named reference, rather than claiming an exact Safe 7 component clone. The final bill of materials remains open. [Trezor hardware specification](https://trezor.io/learn/security-privacy/how-trezor-keeps-you-safe/trezor-hardware-built-in-security) Secure elements need to be selected against supported Ed25519/X25519 operations, key custody, counters, transactional behavior, endurance and integration costs. Some operations may remain in trusted MCU RAM. A secure element does not automatically keep all live audio keys inside it.
 
 Nostr is a possible future invitation carrier, not part of the implementation. Nostr's standard event signatures are BIP340 Schnorr on secp256k1, rather than Ed25519. Device identities can remain Ed25519 behind an independently authenticated opaque invitation adapter. Decentralized relays alone do not remove metadata or authenticate a caller. [Nostr NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md)
 

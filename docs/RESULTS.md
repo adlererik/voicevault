@@ -1,52 +1,75 @@
-# Earlier verification results (before phase two)
+# Verification results: phase two
 
-This historical native run on 2026-11-10 passed all nine required software groups. The CLI exited zero. The original supplied report verifier also accepted every required status and artifact. A [machine-readable summary](verification-summary.json) records the measured results.
+The fresh complete native run on **2026-11-10** passed all **11 required groups** and exited zero. Run ID: `quietlink-phase2-final`. Tested implementation commit: `52aa06c`; subsequent commits add documentation, provenance and evidence only. The [machine-readable summary](verification-summary.json), [raw verdict](evidence/phase2/verdict.json), [timing data](evidence/phase2/timing.json) and [ARM report](evidence/phase2/platform/platform.json) identify the measurements and limits. Earlier interrupted development attempts are not counted as successful runs.
 
 | Group | Result | Checks |
-| --- | --- | ---: |
-| unit | PASS | 5 |
+|---|---|---:|
+| unit | PASS | 6 |
 | protocol | PASS | 2 |
-| codec | PASS | 6 |
+| lifecycle | PASS | 1 |
+| platform | PASS | 1 |
+| codec | PASS | 8 |
 | isolation | PASS | 1 |
-| fuzz | PASS | 6 |
+| fuzz | PASS | 9 |
 | kani | PASS | 3 |
-| dependencies | PASS | 2 |
+| dependencies | PASS | 3 |
 | timing | PASS | 4 |
 | dashboard | PASS | 2 |
 
-The unit group includes formatting of both workspaces, Clippy with warnings denied, unit tests, and the release build. Protocol checks include the Noise KK reference vector, property tests, reconnect/key-direction tests, and deterministic hostile-link scenarios. All 12 applicable RFC 8251 mono decoder vectors passed at 16 kHz, and audio interoperated with libopus in both directions. Kani verified both harnesses on the actual replay and call-state implementation. Both locked dependency graphs passed the advisory, license, bans, and source checks.
+The checks include formatting, Clippy with warnings denied, Rust tests, the release build, actual KK and XX resolver/reference vectors, virtual adversarial calls, 18 lifecycle test functions (including two 256-case property checks), Linux worker isolation, native call measurements, upstream libopus interoperability, all twelve applicable official mono decoder vectors, the constructor comparison and vendored-source integrity, three locked dependency graphs, four Kani harnesses, six extended fuzz campaigns and dashboard/verdict agreement. Raw per-check logs are linked through the verdict.
 
-## Timing
+## Native call timing
 
-The host was Fedora Linux 44, kernel `7.2.13-200.fc44.x86_64`, with `Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz` and 8 logical CPUs. The exact stable Rust pin was `1.99.1`. Idle and CPU contention each ran for 30 seconds with 1,500 slots per direction. Both directions met the unchanged gates: p99 absolute send error ≤ 5 ms and missed slots ≤ 0.1%.
+Host: `Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz`; kernel `7.2.13-200.fc44.x86_64`; exact Rust pin `1.99.1`. Idle and CPU contention each run for 30 seconds and 1,500 slots per direction. Gates remain p99 absolute send error ≤ 5 ms and missed slots ≤ 0.1%. Overload and blocked-phone scenarios deliberately cause misses; their gates require bounded queues and zero catch-up bursts. The new signed invitation/accepted-context path and bounded radio ingress are active in these calls.
 
 | Scenario | Direction | p99 send error (ms) | Missed / scheduled | Catch-up bursts |
-| --- | --- | ---: | ---: | ---: |
-| idle | Alice → Bob | 0.374 | 0/1500 | 0 |
-| idle | Bob → Alice | 0.525 | 0/1500 | 0 |
-| contention | Alice → Bob | 2.010 | 0/1500 | 0 |
-| contention | Bob → Alice | 1.217 | 0/1500 | 0 |
-| overload | Alice → Bob | 15.791 | 50/150 | 0 |
-| overload | Bob → Alice | 15.187 | 50/150 | 0 |
-| blocked-phone | Alice → Bob | 0.141 | 145/150 | 0 |
-| blocked-phone | Bob → Alice | 0.679 | 0/150 | 0 |
+|---|---|---:|---:|---:|
+| idle | Alice → Bob | 1.497 | 0/1500 | 0 |
+| idle | Bob → Alice | 1.028 | 0/1500 | 0 |
+| contention | Alice → Bob | 2.829 | 0/1500 | 0 |
+| contention | Bob → Alice | 1.027 | 0/1500 | 0 |
+| overload | Alice → Bob | 15.169 | 50/150 | 0 |
+| overload | Bob → Alice | 15.155 | 50/150 | 0 |
+| blocked-phone | Alice → Bob | 0.160 | 145/150 | 0 |
+| blocked-phone | Bob → Alice | 1.134 | 0/150 | 0 |
 
-The overload and blocked-phone runs deliberately induce missed output. Their gates require bounded queues and zero catch-up bursts. Every missed slot index is recorded in the detailed timing artifacts. The received WAV checks confirmed Bob's 700 Hz tone at Alice and Alice's 400 Hz tone at Bob.
+Recovered WAVs contain the opposite endpoint's expected generated tone. Digital playout timing excludes a real headset, ADC/DAC and radio path; it is not total hardware mouth-to-ear latency. Full per-direction values, queues, CPU times and missed-slot indices are in the timing artifact.
 
-## Fuzzing
+## Extended fuzzing and bounded proofs
 
-All targets ran with instrumentation and AddressSanitizer, a fixed seed, bounded input length, and a 30-second minimum. The final run found no crashes.
+All six campaigns ran with instrumentation/AddressSanitizer, bounded input size and seed 870321. No campaign reported a crash in this run. This is finite smoke fuzzing, not an audit or exhaustive exploration.
 
 | Target | Seconds | Executions |
-| --- | ---: | ---: |
-| handshake | 31 | 2,116 |
-| record | 31 | 1,905 |
-| codec | 31 | 20,012 |
+|---|---:|---:|
+| handshake | 121 | 4,626 |
+| record | 121 | 3,965 |
+| codec | 121 | 34,630 |
+| enrollment | 121 | 6,055 |
+| lifecycle | 121 | 7,257 |
+| update-radio | 121 | 55,948 |
 
-The original empty-input panic was in the handshake fuzz harness. Its mutation tail now uses checked slicing, and the final fuzz run includes empty input. The account-local C++ adapter handles Zig's target spelling and runtime linking without system package installation.
+Kani verified four harnesses: replay duplicate/preflight behavior, consent plus mutual confirmation before activity, closed-call irreversibility over the encoded ten-step trace, and monotonic security counter advancement for symbolic 64-bit values. The consent trace has seven steps. These checks cover the actual small state/counter implementation, not cryptographic primitives, all updater branches, the kernel or all arbitrary-length executions. [Raw Kani log](evidence/phase2/logs/kani.log)
 
-## Dashboard and scope
+## Linked Cortex-M33 fit
 
-The live read-only dashboard reports each check as it starts and finishes, shows the five-node call path, and shares verdicts with the CLI. Pause, Step, Replay, and test filtering were exercised in the browser. Opening it during timing now shows the paused measurement state. Automated checks cover loopback binding, read-only HTTP, stream pause/resume, the event schema, and the saved report's verdict mapping. Each full run saves a self-contained offline replay.
+The diagnostic executes actual Opus, Noise, fragmentation/reassembly and playout plus selected enrollment, invitation, sealed storage, entropy, radio and offline boot/update paths. It processes 32 echo-fixture audio frames with nonzero recovered PCM. It uses public fixture keys, and must never be deployed.
 
-This run validates local synthetic software calls. MCU timing, physical BLE, microphones, speakers, acoustic leakage, and radio/power side channels require the separate hardware validation described in the [threat model](THREAT_MODEL.md). The trusted executable, host OS, and initial loader are part of the trusted base.
+| Measurement or allowance | Bytes |
+|---|---:|
+| Linked image | 707,168 |
+| Image slot budget | 983,040 |
+| Static RAM including 32 KiB heap reservation | 552,324 |
+| Reserved guarded stack | 131,072 |
+| Observed stack high-water mark | 85,092 |
+| Observed cumulative allocations | 3,328 |
+| Future display/DMA/driver reserve | 65,536 |
+| Unassigned RAM after reservations | 37,500 |
+| Main RAM budget | 786,432 |
+
+The ELF hash and section listing are in the [ARM report](evidence/phase2/platform/platform.json). QEMU MPS2 AN505 models the CPU, not STM32 peripherals. The capacity reference is STM32U585-class main SRAM with ECC off. The 64 KiB display/driver reserve assumes partial rendering. Actual MCU throughput, worst-case stack, BLE, interrupts, secure elements, entropy quality, power, acoustic leakage and physical isolation remain unmeasured. [Platform details](PLATFORM.md)
+
+## Assurance limits
+
+The assumed attacker controls both phones and telecommunications, including phone compromise by zero-day or zero-click exploits. Supply-chain attacks are excluded. This lab starts with already-compromised phones and trusted endpoint software. It does not emulate an NSA exploit chain or establish protection from all future endpoint vulnerabilities.
+
+The implemented five-minute media epoch stops and drops its owned transport keys, then requires a fresh authenticated handshake. Seamless renewal is unfinished. Long-lived key owners are zeroizing, but complete Snow KDF/stack and audio-buffer erasure has not been established. Secure-element storage, flash and protected counters are software abstractions. Independent review and hardware validation remain decision gates. [Assurance case](ASSURANCE.md)

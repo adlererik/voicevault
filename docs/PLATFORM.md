@@ -16,7 +16,7 @@ The codec's inline encoder is 308,880 bytes and its decoder 178,572 bytes on thi
 
 Each run saves exact values and ELF hash in `platform/platform.json`, plus sections, dependency graph, emulator log and a clearly labeled diagnostic ELF. The software reserves a 32 KiB heap, a guarded 128 KiB stack and 64 KiB for future display, DMA, interrupts and drivers. The heap allocator is diagnostic-only, scrubs retired allocations and counts cumulative allocations without reuse. Its number is conservative cumulative demand for the exercised path, not a production allocator benchmark. Cortex-M runtime paints the stack and sets MSPLIM; the report records observed high-water use and requires at least 16 KiB of remaining stack margin. [Runtime stack features](https://docs.rs/cortex-m-rt/0.7.7/cortex_m_rt/)
 
-The 64 KiB peripheral allowance assumes partial display rendering. It cannot hold a full 240×240 RGB565 framebuffer, which alone needs 115,200 bytes. A full framebuffer, different codec mode, larger contact store, ECC or an RTOS can invalidate this budget. The final board needs a new whole-firmware link and worst-case measurement.
+The 64 KiB peripheral allowance assumes partial display rendering. A Safe 7-sized 520×380 RGB565 framebuffer would need 395,200 bytes, far beyond that allowance; even 240×240 needs 115,200 bytes. Partial/tiled rendering is therefore an explicit assumption. [Safe 7 display specification](https://trezor.io/learn/security-privacy/how-trezor-keeps-you-safe/trezor-hardware-built-in-security) A full framebuffer, different codec mode, larger contact store, ECC or an RTOS can invalidate this budget. The final board needs a new whole-firmware link and worst-case measurement.
 
 ## Repeating the check
 

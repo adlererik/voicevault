@@ -1,0 +1,322 @@
+{
+  "unit": "pass",
+  "protocol": "pass",
+  "lifecycle": "pass",
+  "platform": "pass",
+  "codec": "pass",
+  "isolation": "pass",
+  "fuzz": "pass",
+  "kani": "pass",
+  "dependencies": "pass",
+  "timing": "pass",
+  "dashboard": "pass",
+  "schema": 1,
+  "details": {
+    "unit": {
+      "status": "pass",
+      "reason": "6 checks passed",
+      "checks": [
+        {
+          "check": "format",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/format.log"
+        },
+        {
+          "check": "format-fuzz",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/format-fuzz.log"
+        },
+        {
+          "check": "format-platform",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/format-platform.log"
+        },
+        {
+          "check": "clippy",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/clippy.log"
+        },
+        {
+          "check": "unit",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/unit.log"
+        },
+        {
+          "check": "release-build",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/release-build.log"
+        }
+      ]
+    },
+    "protocol": {
+      "status": "pass",
+      "reason": "2 checks passed",
+      "checks": [
+        {
+          "check": "protocol-tests",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/protocol-tests.log"
+        },
+        {
+          "check": "virtual",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/virtual.log"
+        }
+      ]
+    },
+    "lifecycle": {
+      "status": "pass",
+      "reason": "1 checks passed",
+      "checks": [
+        {
+          "check": "lifecycle-tests",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/lifecycle-tests.log"
+        }
+      ]
+    },
+    "platform": {
+      "status": "pass",
+      "reason": "1 checks passed",
+      "checks": [
+        {
+          "check": "m33-linked-execution",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/m33-linked-execution.log"
+        }
+      ]
+    },
+    "isolation": {
+      "status": "pass",
+      "reason": "1 checks passed",
+      "checks": [
+        {
+          "check": "isolation",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/isolation.log"
+        }
+      ]
+    },
+    "timing": {
+      "status": "pass",
+      "reason": "4 checks passed",
+      "checks": [
+        {
+          "check": "timing-idle",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/timing-idle.log"
+        },
+        {
+          "check": "timing-contention",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/timing-contention.log"
+        },
+        {
+          "check": "timing-overload",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/timing-overload.log"
+        },
+        {
+          "check": "timing-blocked-phone",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/timing-blocked-phone.log"
+        }
+      ]
+    },
+    "codec": {
+      "status": "pass",
+      "reason": "8 checks passed",
+      "checks": [
+        {
+          "check": "codec-unit",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/codec-unit.log"
+        },
+        {
+          "check": "vendor-port-integrity",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/vendor-port-integrity.log"
+        },
+        {
+          "check": "inplace-constructor",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/inplace-constructor.log"
+        },
+        {
+          "check": "reference-source",
+          "status": "pass",
+          "reason": "verified vendored libopus",
+          "log": "logs/reference-source.log"
+        },
+        {
+          "check": "reference-build",
+          "status": "pass",
+          "reason": "using local build of verified source",
+          "log": "logs/reference-source.log"
+        },
+        {
+          "check": "vector-source",
+          "status": "pass",
+          "reason": "verified official RFC 8251 vectors",
+          "log": "logs/vector-source.log"
+        },
+        {
+          "check": "opus-interop",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/opus-interop.log"
+        },
+        {
+          "check": "opus-vectors",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/opus-vectors.log"
+        }
+      ]
+    },
+    "dependencies": {
+      "status": "pass",
+      "reason": "3 checks passed",
+      "checks": [
+        {
+          "check": "cargo-deny",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/cargo-deny.log"
+        },
+        {
+          "check": "cargo-deny-fuzz",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/cargo-deny-fuzz.log"
+        },
+        {
+          "check": "cargo-deny-platform",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/cargo-deny-platform.log"
+        }
+      ]
+    },
+    "kani": {
+      "status": "pass",
+      "reason": "3 checks passed",
+      "checks": [
+        {
+          "check": "kani-locked-graph",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/kani-locked-graph.log"
+        },
+        {
+          "check": "kani",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/kani.log"
+        },
+        {
+          "check": "kani-lock-integrity",
+          "status": "pass",
+          "reason": "Cargo.lock unchanged",
+          "log": null
+        }
+      ]
+    },
+    "fuzz": {
+      "status": "pass",
+      "reason": "9 checks passed",
+      "checks": [
+        {
+          "check": "fuzz-locked-graph",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/fuzz-locked-graph.log"
+        },
+        {
+          "check": "fuzz-cxx-runtime",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/fuzz-cxx-runtime.log"
+        },
+        {
+          "check": "fuzz-handshake",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/fuzz-handshake.log"
+        },
+        {
+          "check": "fuzz-record",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/fuzz-record.log"
+        },
+        {
+          "check": "fuzz-codec",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/fuzz-codec.log"
+        },
+        {
+          "check": "fuzz-enrollment",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/fuzz-enrollment.log"
+        },
+        {
+          "check": "fuzz-lifecycle",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/fuzz-lifecycle.log"
+        },
+        {
+          "check": "fuzz-update-radio",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/fuzz-update-radio.log"
+        },
+        {
+          "check": "fuzz-lock-integrity",
+          "status": "pass",
+          "reason": "fuzz Cargo.lock unchanged",
+          "log": null
+        }
+      ]
+    },
+    "dashboard": {
+      "status": "pass",
+      "reason": "2 checks passed",
+      "checks": [
+        {
+          "check": "dashboard",
+          "status": "pass",
+          "reason": "completed successfully",
+          "log": "logs/dashboard.log"
+        },
+        {
+          "check": "dashboard-mapping",
+          "status": "pass",
+          "reason": "actual report mapping matches",
+          "log": "logs/dashboard-mapping.log"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+$ cargo deny --locked --manifest-path fuzz/Cargo.toml check
+warning[duplicate]: found 3 duplicate entries for crate 'getrandom'
+   ┌─ /home/erikclean/src/secure-voice-lab/fuzz/Cargo.lock:23:1
+   │  
+23 │ ╭ getrandom 0.2.17 registry+https://github.com/rust-lang/crates.io-index
+24 │ │ getrandom 0.3.4 registry+https://github.com/rust-lang/crates.io-index
+25 │ │ getrandom 0.4.3 registry+https://github.com/rust-lang/crates.io-index
+   │ ╰─────────────────────────────────────────────────────────────────────┘ lock entries
+   │  
+   ├ getrandom v0.2.17
+     └── ring v0.17.14
+         └── snow v0.10.0
+             └── protocol v0.1.0
+                 ├── device-core v0.1.0
+                 │   └── quietlink-fuzz v0.0.0
+                 └── quietlink-fuzz v0.0.0 (*)
+   ├ getrandom v0.3.4
+     └── snow v0.10.0
+         └── protocol v0.1.0
+             ├── device-core v0.1.0
+             │   └── quietlink-fuzz v0.0.0
+             └── quietlink-fuzz v0.0.0 (*)
+   ├ getrandom v0.4.3
+     ├── jobserver v0.1.35
+     │   └── cc v1.11.1
+     │       ├── (build) libfuzzer-sys v0.4.13
+     │       │   └── quietlink-fuzz v0.0.0
+     │       └── (build) ring v0.17.14
+     │           └── snow v0.10.0
+     │               └── protocol v0.1.0
+     │                   ├── device-core v0.1.0
+     │                   │   └── quietlink-fuzz v0.0.0 (*)
+     │                   └── quietlink-fuzz v0.0.0 (*)
+     └── protocol v0.1.0 (*)
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ deny.toml:7:78
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                              ━━━━━━━ unmatched license allowance
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ deny.toml:7:70
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                      ━━━━ unmatched license allowance
+
+warning[duplicate]: found 2 duplicate entries for crate 'r-efi'
+   ┌─ /home/erikclean/src/secure-voice-lab/fuzz/Cargo.lock:38:1
+   │  
+38 │ ╭ r-efi 5.3.0 registry+https://github.com/rust-lang/crates.io-index
+39 │ │ r-efi 6.0.0 registry+https://github.com/rust-lang/crates.io-index
+   │ ╰─────────────────────────────────────────────────────────────────┘ lock entries
+   │  
+   ├ r-efi v5.3.0
+     └── getrandom v0.3.4
+         └── snow v0.10.0
+             └── protocol v0.1.0
+                 ├── device-core v0.1.0
+                 │   └── quietlink-fuzz v0.0.0
+                 └── quietlink-fuzz v0.0.0 (*)
+   ├ r-efi v6.0.0
+     └── getrandom v0.4.3
+         ├── jobserver v0.1.35
+         │   └── cc v1.11.1
+         │       ├── (build) libfuzzer-sys v0.4.13
+         │       │   └── quietlink-fuzz v0.0.0
+         │       └── (build) ring v0.17.14
+         │           └── snow v0.10.0
+         │               └── protocol v0.1.0
+         │                   ├── device-core v0.1.0
+         │                   │   └── quietlink-fuzz v0.0.0 (*)
+         │                   └── quietlink-fuzz v0.0.0 (*)
+         └── protocol v0.1.0 (*)
+
+advisories ok, bans ok, licenses ok, sources ok

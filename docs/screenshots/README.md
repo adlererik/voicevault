@@ -1,9 +1,13 @@
 # Dashboard screenshots
 
-The three JPEGs in this folder show the earlier nine-group software run from 2026-11-10. They are historical replay screenshots. The second-phase code adds lifecycle and platform groups; use the latest recorded results and new screenshot for current status.
+Actual browser captures from the phase-two run, 2026-11-10:
 
-- `dashboard-overview.jpg`: earlier completed suite.
-- `authenticated-peer-rejection.jpg`: an authenticated peer's malformed Opus frame is rejected and loss concealment is used.
-- `fragment-flood.jpg`: bounded incomplete assemblies, expiration, duplication and backpressure checks.
+| Capture | Meaning |
+|---|---|
+| [Completed suite](phase2-overview.jpg) | All eleven required groups passed. |
+| [Live progress](phase2-live.jpg) | Captured during lifecycle fuzzing, before the final groups completed. |
+| [Authenticated malformed audio](phase2-authenticated-peer.jpg) | A valid peer's malformed Opus is rejected after authentication, with loss concealment. All eleven groups have passed. |
 
-These are actual browser captures of test events, not generated hardware illustrations. The dashboard can show a live run or replay embedded saved events. It contains descriptions and verdicts, not secret keys or plaintext voice samples.
+These are actual browser captures of test events. The dashboard shows running checks, then can replay saved sends, drops, tampering and receiver responses. Streaming pauses during native timing measurements. It contains descriptions and verdicts, not secret keys or plaintext voice samples.
+
+The older `dashboard-overview.jpg`, `authenticated-peer-rejection.jpg` and `fragment-flood.jpg` remain historical captures of the earlier nine-group run. They do not represent the phase-two suite. See [current recorded results](../RESULTS.md).

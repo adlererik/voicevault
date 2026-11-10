@@ -1,0 +1,82 @@
+$ cargo deny --locked check
+warning[license-exception-not-encountered]: license exception was not encountered
+   ┌─ /home/erikclean/src/secure-voice-lab/deny.toml:10:9
+   │
+10 │ name = "libfuzzer-sys"
+   │         ━━━━━━━━━━━━━ unmatched license exception
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ /home/erikclean/src/secure-voice-lab/deny.toml:7:78
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                              ━━━━━━━ unmatched license allowance
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ /home/erikclean/src/secure-voice-lab/deny.toml:7:70
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                      ━━━━ unmatched license allowance
+
+warning[duplicate]: found 3 duplicate entries for crate 'getrandom'
+   ┌─ /home/erikclean/src/secure-voice-lab/Cargo.lock:32:1
+   │  
+32 │ ╭ getrandom 0.2.17 registry+https://github.com/rust-lang/crates.io-index
+33 │ │ getrandom 0.3.4 registry+https://github.com/rust-lang/crates.io-index
+34 │ │ getrandom 0.4.3 registry+https://github.com/rust-lang/crates.io-index
+   │ ╰─────────────────────────────────────────────────────────────────────┘ lock entries
+   │  
+   ├ getrandom v0.2.17
+     └── ring v0.17.14
+         └── snow v0.10.0
+             └── protocol v0.1.0
+                 ├── device-core v0.1.0
+                 │   └── lab-runner v0.1.0
+                 └── lab-runner v0.1.0 (*)
+   ├ getrandom v0.3.4
+     └── snow v0.10.0
+         └── protocol v0.1.0
+             ├── device-core v0.1.0
+             │   └── lab-runner v0.1.0
+             └── lab-runner v0.1.0 (*)
+   ├ getrandom v0.4.3
+     ├── protocol v0.1.0
+     │   ├── device-core v0.1.0
+     │   │   └── lab-runner v0.1.0
+     │   └── lab-runner v0.1.0 (*)
+     ├── rand v0.10.3
+     │   └── proptest v1.12.0
+     │       └── (dev) protocol v0.1.0 (*)
+     └── tempfile v3.27.0
+         ├── proptest v1.12.0 (*)
+         └── rusty-fork v0.3.1
+             └── proptest v1.12.0 (*)
+
+warning[duplicate]: found 2 duplicate entries for crate 'r-efi'
+   ┌─ /home/erikclean/src/secure-voice-lab/Cargo.lock:53:1
+   │  
+53 │ ╭ r-efi 5.3.0 registry+https://github.com/rust-lang/crates.io-index
+54 │ │ r-efi 6.0.0 registry+https://github.com/rust-lang/crates.io-index
+   │ ╰─────────────────────────────────────────────────────────────────┘ lock entries
+   │  
+   ├ r-efi v5.3.0
+     └── getrandom v0.3.4
+         └── snow v0.10.0
+             └── protocol v0.1.0
+                 ├── device-core v0.1.0
+                 │   └── lab-runner v0.1.0
+                 └── lab-runner v0.1.0 (*)
+   ├ r-efi v6.0.0
+     └── getrandom v0.4.3
+         ├── protocol v0.1.0
+         │   ├── device-core v0.1.0
+         │   │   └── lab-runner v0.1.0
+         │   └── lab-runner v0.1.0 (*)
+         ├── rand v0.10.3
+         │   └── proptest v1.12.0
+         │       └── (dev) protocol v0.1.0 (*)
+         └── tempfile v3.27.0
+             ├── proptest v1.12.0 (*)
+             └── rusty-fork v0.3.1
+                 └── proptest v1.12.0 (*)
+
+advisories ok, bans ok, licenses ok, sources ok

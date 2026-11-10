@@ -5,5 +5,6 @@
   "purpose": "Fixed-profile, in-place heap-free encoder and CELT initialization. No codec algorithm changes.",
   "upstream": "https://github.com/restsend/opus-rs",
   "integrity_manifest": "opus-rs-original-files.json",
-  "patch": "opus-rs-inplace.patch"
+  "patch": "opus-rs-inplace.patch",
+  "crates_io_package_checksum": "3120cb7ce0efa63481ce60e21e96c4726f2053c418cd1582ec1040ecd65d4762"
 }

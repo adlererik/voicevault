@@ -1,0 +1,9 @@
+$ cargo test --locked -p codec --no-default-features in_place_matches_upstream_constructor
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.08s
+     Running unittests src/lib.rs (target/debug/deps/codec-fa9aa647f3a8ac7c)
+
+running 1 test
+test in_place_matches_upstream_constructor ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 2.38s
+

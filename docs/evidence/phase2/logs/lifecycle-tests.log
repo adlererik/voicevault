@@ -1,0 +1,26 @@
+$ cargo test --locked -p protocol --test lifecycle
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.21s
+     Running tests/lifecycle.rs (target/debug/deps/lifecycle-09331d01f70229dc)
+
+running 18 tests
+test controller_has_no_privileged_opcode_and_cannot_bypass_bounds_by_reset ... ok
+test a_closed_session_rejects_even_authentic_future_packets ... ok
+test corrupted_new_firmware_never_falls_back_below_the_protected_floor ... ok
+test invitation_admission_bounds_signature_work_and_never_uses_phone_time ... ok
+test enrollment_requires_both_local_comparisons_and_authenticated_confirmations ... ok
+test invitations_bind_peer_recipient_boot_nonce_time_and_persist_replay_state ... ok
+test accepted_invitation_binds_noise_and_epoch_renewal_needs_fresh_keys ... ok
+test onboard_entropy_fails_closed_without_two_healthy_sources ... ok
+test mitm_creates_different_display_fingerprints ... ok
+test protected_commit_or_flash_read_failure_never_erases_an_unrecognized_active_bank ... ok
+test local_enrollment_and_contact_capacity_are_bounded ... ok
+test malformed_enrollment_poisoned_state_and_confirmation_replay_fail ... ok
+test offline_update_requires_local_action_trusted_signature_target_and_new_version ... ok
+test sealed_contacts_reject_tampering_rollback_wrong_device_and_unavailable_root ... ok
+test storage_failure_never_releases_an_invitation_or_consumes_a_received_counter ... ok
+test arbitrary_firmware_envelopes_do_not_pass_signature ... ok
+test arbitrary_radio_frames_cannot_exceed_capacity ... ok
+test every_update_write_cut_and_torn_write_boots_only_verified_nonrollback_image ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.95s
+

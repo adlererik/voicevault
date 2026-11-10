@@ -1,0 +1,9 @@
+{
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+  "cargo-fuzz": "cargo-fuzz 0.13.2",
+  "cargo-deny": "cargo-deny 0.20.2",
+  "kani": "Kani Rust Verifier 0.68.0 (cargo plugin)\nCBMC 6.11.0",
+  "python": "Python 3.14.10",
+  "zig": "0.17.1"
+}

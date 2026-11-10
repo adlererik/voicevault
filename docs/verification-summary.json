@@ -1,9 +1,13 @@
 {
   "date": "2026-11-10",
   "repository": "adlererik/quietlink-lab",
+  "implementation_commit": "52aa06c",
+  "run_id": "quietlink-phase2-final",
   "statuses": {
     "unit": "pass",
     "protocol": "pass",
+    "lifecycle": "pass",
+    "platform": "pass",
     "codec": "pass",
     "isolation": "pass",
     "fuzz": "pass",
@@ -12,14 +16,16 @@
     "timing": "pass",
     "dashboard": "pass"
   },
-  "checks": {
-    "unit": 5,
+  "check_counts": {
+    "unit": 6,
     "protocol": 2,
-    "codec": 6,
+    "lifecycle": 1,
+    "platform": 1,
+    "codec": 8,
     "isolation": 1,
-    "fuzz": 6,
+    "fuzz": 9,
     "kani": 3,
-    "dependencies": 2,
+    "dependencies": 3,
     "timing": 4,
     "dashboard": 2
   },
@@ -40,110 +46,76 @@
   },
   "fuzz": {
     "handshake": {
-      "runs": 2116,
-      "seconds": 31
+      "executions": 4626,
+      "seconds": 121
     },
     "record": {
-      "runs": 1905,
-      "seconds": 31
+      "executions": 3965,
+      "seconds": 121
     },
     "codec": {
-      "runs": 20012,
-      "seconds": 31
+      "executions": 34630,
+      "seconds": 121
+    },
+    "enrollment": {
+      "executions": 6055,
+      "seconds": 121
+    },
+    "lifecycle": {
+      "executions": 7257,
+      "seconds": 121
+    },
+    "update-radio": {
+      "executions": 55948,
+      "seconds": 121
     }
   },
-  "timing": {
-    "idle": {
-      "passed": true,
-      "directions": {
-        "alice_to_bob_tx": {
-          "p99_absolute_send_error_ms": 0.374048,
-          "missed_slots": 0,
-          "scheduled_slots": 1500,
-          "catch_up_bursts": 0,
-          "jitter_peak": 5,
-          "reassembly_peak": 1,
-          "peak_rss_kib": 5624
-        },
-        "bob_to_alice_tx": {
-          "p99_absolute_send_error_ms": 0.525271,
-          "missed_slots": 0,
-          "scheduled_slots": 1500,
-          "catch_up_bursts": 0,
-          "jitter_peak": 5,
-          "reassembly_peak": 1,
-          "peak_rss_kib": 5668
-        }
-      }
+  "kani_verified_harnesses": 4,
+  "lifecycle_test_functions": 18,
+  "noise_vectors": [
+    "KK",
+    "XX"
+  ],
+  "official_mono_opus_vectors": 12,
+  "platform": {
+    "schema": 1,
+    "status": "pass",
+    "target": "thumbv8m.main-none-eabihf",
+    "cpu_model": "QEMU MPS2 AN505 Cortex-M33",
+    "reference_capacity": "STM32U585-class: main SRAM, ECC off; no SRAM4 or backup RAM credit",
+    "flash_image_bytes": 707168,
+    "flash_slot_budget_bytes": 983040,
+    "static_ram_including_32k_heap_bytes": 552324,
+    "stack_reserved_bytes": 131072,
+    "future_display_dma_driver_reserve_bytes": 65536,
+    "ram_budget_bytes": 786432,
+    "unassigned_ram_bytes": 37500,
+    "diagnostic_elf_sha256": "a5dde3486db3660018cc4425550d78f8042540cbfdbecc78f98f24f271fdac7c",
+    "qemu": "xPack QEMU emulator version 9.2.4",
+    "measured": {
+      "frames": 32,
+      "pcm_checksum": 48479441,
+      "heap_cumulative_bytes": 3328,
+      "stack_high_water_bytes": 85092,
+      "encoder_bytes": 308880,
+      "decoder_bytes": 178572,
+      "contact_book_bytes": 1504,
+      "pipeline": "pass",
+      "policy_paths": "pass"
     },
-    "contention": {
-      "passed": true,
-      "directions": {
-        "alice_to_bob_tx": {
-          "p99_absolute_send_error_ms": 2.009835,
-          "missed_slots": 0,
-          "scheduled_slots": 1500,
-          "catch_up_bursts": 0,
-          "jitter_peak": 5,
-          "reassembly_peak": 1,
-          "peak_rss_kib": 5716
-        },
-        "bob_to_alice_tx": {
-          "p99_absolute_send_error_ms": 1.21714,
-          "missed_slots": 0,
-          "scheduled_slots": 1500,
-          "catch_up_bursts": 0,
-          "jitter_peak": 5,
-          "reassembly_peak": 1,
-          "peak_rss_kib": 5528
-        }
-      }
-    },
-    "overload": {
-      "passed": true,
-      "directions": {
-        "alice_to_bob_tx": {
-          "p99_absolute_send_error_ms": 15.791061,
-          "missed_slots": 50,
-          "scheduled_slots": 150,
-          "catch_up_bursts": 0,
-          "jitter_peak": 4,
-          "reassembly_peak": 1,
-          "peak_rss_kib": 4536
-        },
-        "bob_to_alice_tx": {
-          "p99_absolute_send_error_ms": 15.186549,
-          "missed_slots": 50,
-          "scheduled_slots": 150,
-          "catch_up_bursts": 0,
-          "jitter_peak": 4,
-          "reassembly_peak": 1,
-          "peak_rss_kib": 4652
-        }
-      }
-    },
-    "blocked-phone": {
-      "passed": true,
-      "directions": {
-        "alice_to_bob_tx": {
-          "p99_absolute_send_error_ms": 0.140567,
-          "missed_slots": 145,
-          "scheduled_slots": 150,
-          "catch_up_bursts": 0,
-          "jitter_peak": 5,
-          "reassembly_peak": 1,
-          "peak_rss_kib": 4832
-        },
-        "bob_to_alice_tx": {
-          "p99_absolute_send_error_ms": 0.679206,
-          "missed_slots": 0,
-          "scheduled_slots": 150,
-          "catch_up_bursts": 0,
-          "jitter_peak": 0,
-          "reassembly_peak": 0,
-          "peak_rss_kib": 4748
-        }
-      }
-    }
-  }
+    "limits": [
+      "32 fixture frames and selected policy paths; not a worst-case stack proof",
+      "No real-time throughput, power or hardware latency evidence",
+      "No STM32 peripherals, display, real BLE, secure element, RNG, MPU/TrustZone or flash emulation",
+      "64 KiB future peripheral reserve assumes partial display rendering, not a full RGB565 framebuffer",
+      "Public test keys and deterministic entropy: never flash this diagnostic image"
+    ]
+  },
+  "threat_model": "NSA-capability compromised phones and telecom control; supply-chain attacks excluded",
+  "limits": [
+    "Software-only; no deployed hardware or network",
+    "Finite fuzzing and bounded proofs; no universal attacker-resistance claim",
+    "Complete dependency/stack key erasure and seamless key renewal remain open",
+    "Capacity and CPU-emulation evidence; no hardware real-time or isolation claim"
+  ]
 }

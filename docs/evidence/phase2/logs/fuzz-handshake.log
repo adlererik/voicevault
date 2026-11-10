@@ -1,0 +1,53 @@
+$ cargo +nightly-2026-08-21 fuzz run handshake /home/erikclean/Documents/ChatGPT/SecureCall/outputs/quietlink-phase2-final/fuzz/corpus/handshake -- -max_total_time=120 -timeout=5 -max_len=512 -seed=870321 -artifact_prefix=/home/erikclean/Documents/ChatGPT/SecureCall/outputs/quietlink-phase2-final/fuzz/artifacts/handshake/
+   Compiling protocol v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/protocol)
+   Compiling device-core v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/device-core)
+   Compiling quietlink-fuzz v0.0.0 (/home/erikclean/src/secure-voice-lab/fuzz)
+    Finished `release` profile [optimized + debuginfo] target(s) in 7.83s
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.18s
+     Running `fuzz/target/x86_64-unknown-linux-gnu/release/handshake -artifact_prefix=/home/erikclean/src/secure-voice-lab/fuzz/artifacts/handshake/ -max_total_time=120 -timeout=5 -max_len=512 -seed=870321 -artifact_prefix=/home/erikclean/Documents/ChatGPT/SecureCall/outputs/quietlink-phase2-final/fuzz/artifacts/handshake/ /home/erikclean/Documents/ChatGPT/SecureCall/outputs/quietlink-phase2-final/fuzz/corpus/handshake`
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 870321
+INFO: Loaded 1 modules   (12271 inline 8-bit counters): 12271 [0x55dd32c07a80, 0x55dd32c0aa6f), 
+INFO: Loaded 1 PC tables (12271 PCs): 12271 [0x55dd32c0aa70,0x55dd32c3a960), 
+INFO:        2 files found in /home/erikclean/Documents/ChatGPT/SecureCall/outputs/quietlink-phase2-final/fuzz/corpus/handshake
+INFO: seed corpus: files: 2 min: 5b max: 48b total: 53b rss: 35Mb
+#3	INITED cov: 1914 ft: 2377 corp: 2/53b exec/s: 0 rss: 38Mb
+#7	NEW    cov: 1915 ft: 2446 corp: 3/83b lim: 48 exec/s: 0 rss: 39Mb L: 30/48 MS: 4 ShuffleBytes-CopyPart-CrossOver-EraseBytes-
+#14	NEW    cov: 1915 ft: 2839 corp: 4/131b lim: 48 exec/s: 0 rss: 40Mb L: 48/48 MS: 2 ShuffleBytes-ChangeBinInt-
+#64	NEW    cov: 1918 ft: 2924 corp: 5/158b lim: 48 exec/s: 64 rss: 44Mb L: 27/48 MS: 5 EraseBytes-InsertByte-CopyPart-EraseBytes-ShuffleBytes-
+#80	NEW    cov: 1918 ft: 2930 corp: 6/205b lim: 48 exec/s: 80 rss: 44Mb L: 47/48 MS: 1 CrossOver-
+#82	NEW    cov: 1918 ft: 2931 corp: 7/235b lim: 48 exec/s: 82 rss: 44Mb L: 30/48 MS: 2 CopyPart-EraseBytes-
+#97	NEW    cov: 1918 ft: 2936 corp: 8/244b lim: 48 exec/s: 48 rss: 44Mb L: 9/48 MS: 5 ChangeBit-CrossOver-CrossOver-ChangeByte-CrossOver-
+#100	NEW    cov: 1918 ft: 2939 corp: 9/252b lim: 48 exec/s: 50 rss: 44Mb L: 8/48 MS: 3 ChangeBit-EraseBytes-CMP- DE: "\377c"-
+#103	REDUCE cov: 1918 ft: 2939 corp: 9/248b lim: 48 exec/s: 51 rss: 44Mb L: 26/48 MS: 3 PersAutoDict-ChangeBit-EraseBytes- DE: "\377c"-
+#120	NEW    cov: 1918 ft: 2941 corp: 10/251b lim: 48 exec/s: 40 rss: 44Mb L: 3/48 MS: 2 CopyPart-EraseBytes-
+#128	pulse  cov: 1918 ft: 2941 corp: 10/251b lim: 48 exec/s: 42 rss: 44Mb
+#135	NEW    cov: 1918 ft: 2942 corp: 11/270b lim: 48 exec/s: 45 rss: 44Mb L: 19/48 MS: 5 ChangeBinInt-PersAutoDict-PersAutoDict-ChangeBinInt-CrossOver- DE: "\377c"-"\377c"-
+#196	REDUCE cov: 1918 ft: 2942 corp: 11/260b lim: 48 exec/s: 39 rss: 45Mb L: 16/48 MS: 1 EraseBytes-
+#256	pulse  cov: 1918 ft: 2942 corp: 11/260b lim: 48 exec/s: 42 rss: 45Mb
+#331	REDUCE cov: 1918 ft: 2942 corp: 11/254b lim: 48 exec/s: 41 rss: 45Mb L: 10/48 MS: 5 PersAutoDict-CopyPart-ShuffleBytes-CopyPart-EraseBytes- DE: "\377c"-
+#353	REDUCE cov: 1918 ft: 2942 corp: 11/253b lim: 48 exec/s: 39 rss: 45Mb L: 29/48 MS: 2 ChangeBinInt-EraseBytes-
+#397	REDUCE cov: 1918 ft: 2942 corp: 11/246b lim: 48 exec/s: 39 rss: 45Mb L: 22/48 MS: 4 InsertByte-CrossOver-CrossOver-EraseBytes-
+#467	NEW    cov: 1919 ft: 2943 corp: 12/278b lim: 48 exec/s: 35 rss: 46Mb L: 32/48 MS: 5 CrossOver-ChangeBit-CopyPart-ChangeBinInt-InsertRepeatedBytes-
+#512	pulse  cov: 1919 ft: 2943 corp: 12/278b lim: 48 exec/s: 36 rss: 46Mb
+#537	REDUCE cov: 1919 ft: 2943 corp: 12/275b lim: 48 exec/s: 38 rss: 46Mb L: 7/48 MS: 5 ShuffleBytes-PersAutoDict-ChangeByte-ShuffleBytes-EraseBytes- DE: "\377c"-
+#605	REDUCE cov: 1919 ft: 2943 corp: 12/266b lim: 48 exec/s: 35 rss: 46Mb L: 13/48 MS: 3 CMP-ChangeByte-EraseBytes- DE: "\000@\000\000\000\000\000\000"-
+#741	REDUCE cov: 1919 ft: 2943 corp: 12/258b lim: 48 exec/s: 37 rss: 47Mb L: 24/48 MS: 1 EraseBytes-
+#913	REDUCE cov: 1919 ft: 2943 corp: 12/257b lim: 48 exec/s: 36 rss: 47Mb L: 6/48 MS: 2 ShuffleBytes-EraseBytes-
+#1024	pulse  cov: 1919 ft: 2943 corp: 12/257b lim: 48 exec/s: 37 rss: 48Mb
+#1096	REDUCE cov: 1919 ft: 2943 corp: 12/255b lim: 48 exec/s: 37 rss: 48Mb L: 4/48 MS: 3 ChangeBit-CopyPart-EraseBytes-
+#1337	REDUCE cov: 1919 ft: 2943 corp: 12/254b lim: 48 exec/s: 38 rss: 49Mb L: 3/48 MS: 1 EraseBytes-
+#1828	REDUCE cov: 1919 ft: 2943 corp: 12/253b lim: 48 exec/s: 38 rss: 50Mb L: 2/48 MS: 1 EraseBytes-
+#1834	REDUCE cov: 1919 ft: 2943 corp: 12/247b lim: 48 exec/s: 38 rss: 50Mb L: 18/48 MS: 1 EraseBytes-
+#2048	pulse  cov: 1919 ft: 2943 corp: 12/247b lim: 48 exec/s: 37 rss: 51Mb
+#2220	REDUCE cov: 1919 ft: 2943 corp: 12/246b lim: 48 exec/s: 37 rss: 51Mb L: 1/48 MS: 1 EraseBytes-
+#3326	REDUCE cov: 1919 ft: 2943 corp: 12/244b lim: 58 exec/s: 38 rss: 54Mb L: 17/48 MS: 1 EraseBytes-
+#3984	REDUCE cov: 1919 ft: 2943 corp: 12/242b lim: 63 exec/s: 38 rss: 56Mb L: 16/48 MS: 3 EraseBytes-ShuffleBytes-CrossOver-
+#4096	pulse  cov: 1919 ft: 2943 corp: 12/242b lim: 63 exec/s: 38 rss: 56Mb
+#4236	REDUCE cov: 1919 ft: 2943 corp: 12/236b lim: 63 exec/s: 38 rss: 57Mb L: 7/48 MS: 2 ChangeByte-EraseBytes-
+#4626	DONE   cov: 1919 ft: 2943 corp: 12/236b lim: 63 exec/s: 38 rss: 58Mb
+###### Recommended dictionary. ######
+"\377c" # Uses: 243
+"\000@\000\000\000\000\000\000" # Uses: 142
+###### End of recommended dictionary. ######
+Done 4626 runs in 121 second(s)

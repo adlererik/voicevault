@@ -19,7 +19,7 @@ import tomllib
 
 from dashboard import GROUPS, Trace, check_mapping, page, trace
 from live_output import pump
-from live_server import URL, ensure_service, publish
+from live_server import URL, ensure_service, publish, health
 
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".lab-cache"
@@ -68,13 +68,21 @@ def report_directory(value, kind):
     return directory.resolve()
 
 
-def open_browser(url):
+def open_browser(url, *, once=False):
+    marker = RUNS / "browser-service"
+    service_pid = None
+    if once:
+        service_pid = str(health()["pid"])
+        if marker.is_file() and marker.read_text() == service_pid:
+            return
     browser = shutil.which("xdg-open")
     if browser and (os.environ.get("DISPLAY") or os.environ.get("WAYLAND_DISPLAY")):
         try:
             subprocess.Popen([browser, url], stdin=subprocess.DEVNULL,
                              stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                              start_new_session=True)
+            if service_pid:
+                marker.write_text(service_pid)
         except OSError as error:
             print(f"Browser opener unavailable ({error})", file=sys.stderr)
 
@@ -325,7 +333,7 @@ def suite_run(out, watch):
             publish(out)
             suite.server = True
             print(f"Dashboard {url}", flush=True)
-            open_browser(url)
+            open_browser(url, once=True)
         except (OSError, ValueError) as error:
             watch_error = f"fixed loopback dashboard unavailable ({error})"
     try:
@@ -470,7 +478,7 @@ def main():
         if args.command != "demo":
             return suite_run(out, args.command == "watch")
         suite = Suite(out, kind="demonstration")
-        url=ensure_service();publish(out);print(f"Dashboard {url}",flush=True);open_browser(url)
+        url=ensure_service();publish(out);print(f"Dashboard {url}",flush=True);open_browser(url, once=True)
         try:
             built=suite.run(None,"demo-build",["cargo","build","--locked","--release","-p","lab-runner"],needs=("cargo",),timeout=300)
             outcomes=[]

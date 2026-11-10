@@ -23,6 +23,14 @@ def self_test():
     with patch('live_server.http.client.HTTPConnection',return_value=connection):
         try: health(); assert False, 'unrelated service accepted'
         except ValueError: pass
+    # Repeated watch/demo runs reuse an automatic opening; explicit ui can reopen.
+    from lab import open_browser
+    with tempfile.TemporaryDirectory() as tmp, patch('lab.RUNS',Path(tmp)), patch('lab.health',return_value={'pid':123}), patch('lab.shutil.which',return_value='/bin/xdg-open'), patch.dict(os.environ,{'DISPLAY':':0'}), patch('lab.subprocess.Popen') as spawn:
+        open_browser('http://127.0.0.1:8765/',once=True)
+        open_browser('http://127.0.0.1:8765/',once=True)
+        assert spawn.call_count==1
+        open_browser('http://127.0.0.1:8765/')
+        assert spawn.call_count==2
     model=Trace(); parser=OutputParser('case',model)
     parser.feed('test works ... ')
     assert model.events[0]['action']=='case' and model.events[0]['status']=='info'

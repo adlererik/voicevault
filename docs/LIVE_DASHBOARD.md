@@ -12,7 +12,7 @@ Open **http://127.0.0.1:8765/**. This is a fixed loopback address on the develop
 ./lab demo
 ```
 
-`watch` runs all eleven required verification groups. `ui` opens the persistent dashboard without launching tests. `demo` runs two eight-second calls and clearly identifies itself as a demonstration, not a full verification campaign. Both commands publish to the same address. The service remains available after completion and follows the next published run. It can be started again with `./lab ui` after a restart of the computer.
+`watch` runs all eleven required verification groups. `ui` opens the persistent dashboard without launching tests. `demo` runs two eight-second calls and clearly identifies itself as a demonstration, not a full verification campaign. Both commands publish to the same address. Automatic watch/demo opening happens once per service process so repeated runs do not accumulate browser tabs; `./lab ui` explicitly opens the page again. The service remains available after completion and follows the next published run. It can be started again with `./lab ui` after a restart of the computer.
 
 There is no random-port fallback. If another program owns port 8765, the command reports an address conflict. Health checks distinguish this checkout's service from other applications or incompatible service versions. Existing clones can keep their original folder names; the source checkout is resolved by the launcher.
 
@@ -20,7 +20,7 @@ There is no random-port fallback. If another program owns port 8765, the command
 
 | Display | Source and meaning |
 |---|---|
-| Verification now | Current child process, elapsed run/check time, and incremental reported progress. Starting is not passing. |
+| Verification now | Current child process, elapsed run time, and incremental reported progress. Starting is not passing. |
 | Checks | Every scheduled check, with pending/running/pass/fail/blocked state. Optional setup checks appear if actually needed. |
 | Individual results | Rust test starts and outcomes, official Opus vector outcomes, and individual Kani harness results. A check/group pass never fabricates case passes. |
 | Fuzz progress | Execution totals, execution rate and process memory as libFuzzer reports them; elapsed time continues between reports. These are executions, not separate security proofs. |
@@ -48,6 +48,6 @@ The separate `live` and `live-faults` calls stream while running and are not sub
 4. Read-only server-sent events carry run identifiers and cursors. Reconnect resumes within a run; the next run resets the display. Refresh reconstructs current results. An interrupted runner is labeled interrupted, not completed.
 5. The suite saves the same event set and verdict mapping in its offline HTML artifact. `./lab replay` opens that saved evidence; no server is needed.
 
-The HTTP service binds only 127.0.0.1, checks the Host header, has no HTTP test-launch or write interface, caps simultaneous event clients and applies a restrictive content policy. The local files and development host remain trusted. This is an observation tool, not an adversarially isolated control plane or a production device management API.
+The HTTP service binds only 127.0.0.1, checks the Host header, has no HTTP test-launch or write interface, caps simultaneous event clients at eight and applies a restrictive content policy. The local files and development host remain trusted. This is an observation tool, not an adversarially isolated control plane or a production device management API.
 
 Regression tests cover starts arriving before child exit, split test outcomes, fuzz progress, bounded parsing, journal persistence/partial writes/new runs, completion/reconnect, address ownership, read-only HTTP, escaping and exact group-verdict mapping. Browser captures in the [gallery](screenshots/README.md) show the actual interface and their run context.

@@ -20,7 +20,7 @@ FIELDS = {"test", "tick", "action", "from", "to", "expected", "observed", "statu
 LIMIT = 32768
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 8765
-SERVICE_VERSION = 3
+SERVICE_VERSION = 4
 
 
 def trace(test, action, expected, observed, status="info"):
@@ -198,7 +198,7 @@ class Server(ThreadingHTTPServer):
         self.trace = trace
         self.host = f"127.0.0.1:{self.server_port}"
         self.url = f"http://{self.host}/"
-        self.clients = threading.BoundedSemaphore(4)
+        self.clients = threading.BoundedSemaphore(8)
         self.stopping = threading.Event()
 
     def start(self):
@@ -243,6 +243,9 @@ def self_test():
             if line == b"\n" and kind: return kind, data
     try:
         assert server.server_address[0] == DEFAULT_HOST
+        for _ in range(8): assert server.clients.acquire(blocking=False)
+        assert not server.clients.acquire(blocking=False)
+        for _ in range(8): server.clients.release()
         with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
             client.request("POST", "/events"); assert client.getresponse().status == 405
         with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:

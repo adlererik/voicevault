@@ -1,7 +1,23 @@
+#![no_std]
 #![forbid(unsafe_code)]
 
 pub const FIRST_MEDIA: u64 = 2;
 pub const WINDOW: u64 = 64;
+
+#[derive(Default)]
+pub struct SecurityCounter(u64);
+impl SecurityCounter {
+    pub fn value(&self) -> u64 {
+        self.0
+    }
+    pub fn advance(&mut self, next: u64) -> bool {
+        if next <= self.0 || next == u64::MAX {
+            return false;
+        }
+        self.0 = next;
+        true
+    }
+}
 
 #[derive(Default, Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Replay {
@@ -56,14 +72,23 @@ pub struct CallState {
     peer_confirm: bool,
     sent_ready: bool,
     peer_ready: bool,
+    closed: bool,
 }
 
 impl CallState {
     pub fn consent(&mut self) {
-        self.consent = true;
+        if !self.closed {
+            self.consent = true;
+        }
+    }
+    pub fn close(&mut self) {
+        self.closed = true;
     }
 
     pub fn can_send(&self, control: Control) -> bool {
+        if self.closed {
+            return false;
+        }
         match control {
             Control::Confirm => self.consent && !self.sent_confirm,
             Control::Ready => self.sent_confirm && self.peer_confirm && !self.sent_ready,
@@ -82,6 +107,9 @@ impl CallState {
     }
 
     pub fn receive(&mut self, control: Control) -> bool {
+        if self.closed {
+            return false;
+        }
         match control {
             Control::Confirm if !self.peer_confirm => self.peer_confirm = true,
             Control::Ready if self.sent_confirm && self.peer_confirm && !self.peer_ready => {
@@ -93,13 +121,56 @@ impl CallState {
     }
 
     pub fn active(&self) -> bool {
-        self.sent_ready && self.peer_ready
+        !self.closed && self.sent_ready && self.peer_ready
     }
 }
 
 #[cfg(kani)]
 mod proofs {
     use super::*;
+
+    #[kani::proof]
+    fn protected_security_counter_never_rolls_back() {
+        let a: u64 = kani::any();
+        let b: u64 = kani::any();
+        let mut counter = SecurityCounter::default();
+        counter.advance(a);
+        let before = counter.value();
+        let accepted = counter.advance(b);
+        assert!(counter.value() >= before);
+        if accepted {
+            assert!(b > before && b < u64::MAX);
+        } else {
+            assert_eq!(counter.value(), before);
+        }
+    }
+
+    #[kani::proof]
+    #[kani::unwind(12)]
+    fn closed_call_cannot_be_reactivated() {
+        let mut state = CallState::default();
+        state.close();
+        for _ in 0..10 {
+            match kani::any::<u8>() % 5 {
+                0 => state.consent(),
+                1 => {
+                    state.sent(Control::Confirm);
+                }
+                2 => {
+                    state.sent(Control::Ready);
+                }
+                3 => {
+                    state.receive(Control::Confirm);
+                }
+                _ => {
+                    state.receive(Control::Ready);
+                }
+            }
+            assert!(!state.active());
+            assert!(!state.can_send(Control::Confirm));
+            assert!(!state.can_send(Control::Ready));
+        }
+    }
 
     #[kani::proof]
     fn replay_rejects_duplicate_and_preserves_preflight() {

@@ -1,6 +1,84 @@
+#![cfg_attr(not(feature = "std"), no_std)]
 #![forbid(unsafe_code)]
 
 use opus_rs::{Application, OpusDecoder, OpusEncoder};
+pub use opus_rs::{OpusDecoder as DecoderStorage, OpusEncoder as EncoderStorage};
+
+pub trait Encode {
+    fn encode(&mut self, pcm: &Pcm, out: &mut [u8; MAX_PACKET]) -> Result<usize, &'static str>;
+}
+pub trait Decode {
+    fn audio(&mut self, packet: &[u8]) -> Result<Pcm, &'static str>;
+    fn conceal(&mut self) -> Pcm;
+}
+impl<T: Encode + ?Sized> Encode for &mut T {
+    fn encode(&mut self, p: &Pcm, o: &mut [u8; MAX_PACKET]) -> Result<usize, &'static str> {
+        (**self).encode(p, o)
+    }
+}
+impl<T: Decode + ?Sized> Decode for &mut T {
+    fn audio(&mut self, p: &[u8]) -> Result<Pcm, &'static str> {
+        (**self).audio(p)
+    }
+    fn conceal(&mut self) -> Pcm {
+        (**self).conceal()
+    }
+}
+pub struct EncoderRef<'a>(&'a mut OpusEncoder);
+pub struct DecoderRef<'a>(&'a mut OpusDecoder);
+fn configure(codec: &mut OpusEncoder) {
+    codec.bitrate_bps = BITRATE;
+    codec.use_cbr = true;
+    codec.use_inband_fec = false;
+    codec.complexity = 5;
+}
+fn encode(
+    codec: &mut OpusEncoder,
+    pcm: &Pcm,
+    out: &mut [u8; MAX_PACKET],
+) -> Result<usize, &'static str> {
+    let n = codec.encode_i16(pcm, SAMPLES, out)?;
+    if n != CBR_BYTES || !admissible(&out[..n]) {
+        return Err("unexpected Opus framing or bitrate");
+    }
+    Ok(n)
+}
+fn decode(codec: &mut OpusDecoder, packet: &[u8]) -> Result<Pcm, &'static str> {
+    let mut pcm = [0.0; SAMPLES];
+    if codec.decode(packet, SAMPLES, &mut pcm)? != SAMPLES {
+        return Err("unexpected decoded duration");
+    }
+    Ok(pcm.map(float_to_pcm))
+}
+#[cfg(not(feature = "std"))]
+pub fn encoder_in_place(
+    slot: &mut core::mem::MaybeUninit<EncoderStorage>,
+) -> Result<EncoderRef<'_>, &'static str> {
+    let codec = OpusEncoder::init_voip16k(slot)?;
+    configure(codec);
+    Ok(EncoderRef(codec))
+}
+pub fn decoder_in_place(
+    slot: &mut core::mem::MaybeUninit<DecoderStorage>,
+) -> Result<DecoderRef<'_>, &'static str> {
+    Ok(DecoderRef(OpusDecoder::init(slot, RATE as i32, 1)?))
+}
+impl Encode for EncoderRef<'_> {
+    fn encode(&mut self, p: &Pcm, o: &mut [u8; MAX_PACKET]) -> Result<usize, &'static str> {
+        encode(self.0, p, o)
+    }
+}
+impl Decode for DecoderRef<'_> {
+    fn audio(&mut self, p: &[u8]) -> Result<Pcm, &'static str> {
+        if !admissible(p) {
+            return Err("Opus requires a bounded mono 20 ms packet");
+        }
+        decode(self.0, p)
+    }
+    fn conceal(&mut self) -> Pcm {
+        decode(self.0, &[]).unwrap_or([0; SAMPLES])
+    }
+}
 
 pub const RATE: usize = 16_000;
 pub const SAMPLES: usize = 320;
@@ -15,20 +93,13 @@ pub struct Decoder(OpusDecoder);
 impl Encoder {
     pub fn new() -> Result<Self, &'static str> {
         let mut codec = OpusEncoder::new(RATE as i32, 1, Application::Voip)?;
-        codec.bitrate_bps = BITRATE;
-        codec.use_cbr = true;
-        codec.use_inband_fec = false;
-        codec.complexity = 5;
+        configure(&mut codec);
         // opus-rs has no DTX enable control. Its SILK default leaves DTX off.
         Ok(Self(codec))
     }
 
     pub fn encode(&mut self, pcm: &Pcm, out: &mut [u8; MAX_PACKET]) -> Result<usize, &'static str> {
-        let bytes = self.0.encode_i16(pcm, SAMPLES, out)?;
-        if bytes != CBR_BYTES || !admissible(&out[..bytes]) {
-            return Err("unexpected Opus framing or bitrate");
-        }
-        Ok(bytes)
+        encode(&mut self.0, pcm, out)
     }
 }
 
@@ -74,26 +145,36 @@ impl Decoder {
     }
 
     fn decode(&mut self, packet: &[u8]) -> Result<Pcm, &'static str> {
-        let mut pcm = [0.0; SAMPLES];
-        if self.0.decode(packet, SAMPLES, &mut pcm)? != SAMPLES {
-            return Err("unexpected decoded duration");
-        }
-        Ok(pcm.map(float_to_pcm))
+        decode(&mut self.0, packet)
+    }
+}
+
+impl Encode for Encoder {
+    fn encode(&mut self, p: &Pcm, o: &mut [u8; MAX_PACKET]) -> Result<usize, &'static str> {
+        Encoder::encode(self, p, o)
+    }
+}
+impl Decode for Decoder {
+    fn audio(&mut self, p: &[u8]) -> Result<Pcm, &'static str> {
+        Decoder::audio(self, p)
+    }
+    fn conceal(&mut self) -> Pcm {
+        Decoder::conceal(self)
     }
 }
 
 pub fn float_to_pcm(sample: f32) -> i16 {
-    (sample * 32768.0).round() as i16
+    libm::roundf(sample * 32768.0) as i16
 }
 
 /// Generated tones are deliberately far apart to detect swapped output.
 pub fn synthetic(alice: bool, slot: u64) -> Pcm {
     let frequency = if alice { 400.0 } else { 700.0 };
     let phase = (slot % 50) as f32 * SAMPLES as f32;
-    std::array::from_fn(|index| {
+    core::array::from_fn(|index| {
         let time = (phase + index as f32) / RATE as f32;
-        let carrier = (std::f32::consts::TAU * frequency * time).sin();
-        let envelope = 0.23 + 0.06 * (std::f32::consts::TAU * 3.0 * time).sin();
+        let carrier = libm::sinf(core::f32::consts::TAU * frequency * time);
+        let envelope = 0.23 + 0.06 * libm::sinf(core::f32::consts::TAU * 3.0 * time);
         float_to_pcm(carrier * envelope)
     })
 }
@@ -121,4 +202,43 @@ mod tests {
             assert!(decoder.audio(packet).is_err());
         }
     }
+}
+
+// The no-heap constructor is part of the target port's unsafe boundary. Compare
+// its observable output to the upstream constructor across changing input.
+#[cfg(all(test, not(feature = "std")))]
+extern crate std;
+#[cfg(all(test, not(feature = "std")))]
+#[test]
+fn in_place_matches_upstream_constructor() {
+    std::thread::Builder::new()
+        .stack_size(16 * 1024 * 1024)
+        .spawn(|| {
+            let mut original = Encoder::new().unwrap();
+            let mut slot = std::boxed::Box::new(core::mem::MaybeUninit::<EncoderStorage>::uninit());
+            let mut placed = encoder_in_place(&mut slot).unwrap();
+            let mut ds = std::boxed::Box::new(core::mem::MaybeUninit::<DecoderStorage>::uninit());
+            let mut decoder = decoder_in_place(&mut ds).unwrap();
+            let mut reference = Decoder::new().unwrap();
+            for slot in 0..100 {
+                let pcm = if slot % 7 == 0 {
+                    [0; SAMPLES]
+                } else {
+                    synthetic(slot % 2 == 0, slot)
+                };
+                let mut a = [0; MAX_PACKET];
+                let mut b = [0; MAX_PACKET];
+                let n = original.encode(&pcm, &mut a).unwrap();
+                let m = placed.encode(&pcm, &mut b).unwrap();
+                assert_eq!(n, m);
+                assert_eq!(a, b);
+                assert_eq!(
+                    decoder.audio(&b[..m]).unwrap(),
+                    reference.audio(&a[..n]).unwrap()
+                );
+            }
+        })
+        .unwrap()
+        .join()
+        .unwrap();
 }

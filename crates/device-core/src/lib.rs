@@ -1,6 +1,7 @@
+#![cfg_attr(not(feature = "std"), no_std)]
 #![forbid(unsafe_code)]
 
-use codec::{Decoder, Encoder, MAX_PACKET, Pcm};
+use codec::{Decode, Decoder, Encode, Encoder, MAX_PACKET, Pcm};
 use protocol::{Frame, Media, Received, Session};
 
 pub const JITTER: usize = 4;
@@ -50,7 +51,7 @@ pub struct Jitter {
 }
 
 impl Jitter {
-    pub fn range(&self, local_slot: u64) -> std::ops::Range<u64> {
+    pub fn range(&self, local_slot: u64) -> core::ops::Range<u64> {
         self.next..(self.next.saturating_add(QUEUE as u64)).min(local_slot.saturating_add(2))
     }
 
@@ -92,10 +93,10 @@ impl Jitter {
     }
 }
 
-pub struct Device {
+pub struct Device<E = Encoder, D = Decoder> {
     session: Session,
-    encoder: Encoder,
-    decoder: Decoder,
+    encoder: E,
+    decoder: D,
     pub jitter: Jitter,
 }
 
@@ -109,12 +110,17 @@ pub enum Playout {
 
 impl Device {
     pub fn new(session: Session) -> Result<Self, &'static str> {
-        Ok(Self {
+        Ok(Self::with_codecs(session, Encoder::new()?, Decoder::new()?))
+    }
+}
+impl<E: Encode, D: Decode> Device<E, D> {
+    pub fn with_codecs(session: Session, encoder: E, decoder: D) -> Self {
+        Self {
             session,
-            encoder: Encoder::new()?,
-            decoder: Decoder::new()?,
+            encoder,
+            decoder,
             jitter: Jitter::default(),
-        })
+        }
     }
 
     pub fn encode(&mut self, pcm: Option<&Pcm>) -> Media {

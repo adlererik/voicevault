@@ -1,0 +1,4 @@
+# Preserve upstream bytes; integrity checking depends on the vendored hashes.
+vendor/opus-rs/** whitespace=-blank-at-eol
+# Unified diff context includes intentional single-space blank lines.
+vendor/*.patch whitespace=-blank-at-eol

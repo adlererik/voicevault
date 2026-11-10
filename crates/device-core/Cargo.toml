@@ -11,3 +11,7 @@ workspace = true
 call-state.workspace = true
 protocol.workspace = true
 codec.workspace = true
+
+[features]
+default = ["std"]
+std = ["protocol/std", "codec/std"]

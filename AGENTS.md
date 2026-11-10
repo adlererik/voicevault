@@ -1,0 +1,9 @@
+# Project engineering requirements
+
+Read docs/THREAT_MODEL.md, docs/BUILD_SPEC.md and docs/ASSURANCE.md before security changes. The project is a software-first model of a separate trusted voice endpoint using an already-compromised phone as a modem. Assume NSA-class phone compromise and telecommunications control. Supply-chain attacks are excluded by the owner. Do not construct hardware, deploy Nostr/BLE, use real contacts/audio or expose public listeners without a new request.
+
+Keep trusted parsing/state/protocol code safe Rust and independent of OS APIs. Keep unsafe initialization boundaries small, documented and independently testable. Use established protocol constructions and actual codec algorithms. Never invent a short SAS or silently replace crypto/codec operations with simulated success.
+
+Preserve all required verification groups and timing thresholds. `./lab test` or `./lab watch` must pass all eleven groups before recording a successful full run. Report unavailable checks as blocked and failures as failures. Keep lockfiles for native, fuzz and ARM graphs. Separate observed measurements, modeled assumptions, bounded proof properties and unimplemented hardware requirements. Do not claim “NSA-proof,” complete key erasure, physical security or hardware real-time performance from simulation. Diagnostic keys and entropy are public; never call the ARM probe production firmware.
+
+Do not run the preserved bootstrap to regenerate this repository. Keep caches/build outputs out of Git. Update the documented assurance gaps and measured results when behavior changes.

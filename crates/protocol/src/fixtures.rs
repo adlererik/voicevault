@@ -1,6 +1,28 @@
 //! Deterministic non-secret lab fixtures. Never select these for wall-clock calls.
 use crate::{Error, Handshake, Identity, Pin, Session};
+use blake2::{Blake2s256, Digest};
 use call_state::Control;
+
+/// Public deterministic diagnostic entropy. Never enable fixtures in firmware.
+pub struct Seeded {
+    seed: u64,
+    counter: u64,
+}
+impl Seeded {
+    pub fn new(seed: u64) -> Self {
+        Self { seed, counter: 0 }
+    }
+}
+impl crate::Entropy for Seeded {
+    fn seed(&mut self) -> Result<[u8; 32], Error> {
+        self.counter = self.counter.checked_add(1).ok_or(Error::Entropy)?;
+        let mut h = Blake2s256::new();
+        h.update(b"PUBLIC LAB FIXTURE");
+        h.update(self.seed.to_le_bytes());
+        h.update(self.counter.to_le_bytes());
+        Ok(h.finalize().into())
+    }
+}
 
 struct Seeds(u8);
 
@@ -62,4 +84,9 @@ pub fn peer_record(
         return Err(Error::Size);
     }
     session.seal(sequence, kind, bytes)
+}
+
+/// The actual secret-owning resolver, exposed solely for public-vector checks.
+pub fn resolver() -> alloc::boxed::Box<dyn snow::resolvers::CryptoResolver + Send> {
+    alloc::boxed::Box::new(crate::randomness::SeedResolver::new([7; 32]))
 }

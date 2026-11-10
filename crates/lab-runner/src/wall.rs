@@ -2,7 +2,7 @@ use crate::{Event, PEERS, Result, check, sandbox};
 use call_state::Control;
 use device_core::{Device, JITTER, MIN_SEND_GAP_NS, PERIOD_NS, Playout, Slots};
 use link::{DATAGRAM, Reassembly, fragments};
-use protocol::{CONTACT, Identity, Media, OsEntropy, Pin, RECORD};
+use protocol::{CONTACT, Entropy, Identity, Media, OsEntropy, RECORD};
 use serde::Serialize;
 use std::{
     fs::{self, File},
@@ -145,14 +145,33 @@ fn send(socket: &UnixDatagram, id: u32, wire: &[u8]) -> io::Result<()> {
     Ok(())
 }
 
+fn radio_frame(
+    port: &mut protocol::radio::RadioPort,
+    bytes: &[u8],
+    tick: u64,
+) -> Option<protocol::radio::Frame> {
+    if bytes.len() > protocol::radio::FRAME_BYTES {
+        return None;
+    }
+    let mut command = [0; 40];
+    command[0] = 1;
+    command[1] = bytes.len() as u8;
+    command[2..2 + bytes.len()].copy_from_slice(bytes);
+    port.receive(&command[..2 + bytes.len()], tick).ok()?;
+    port.pop(tick)
+}
+
 fn recv_start(socket: &UnixDatagram) -> Result<([u8; RECORD], usize)> {
     let stop = mono() + 3_000_000_000;
     let mut parts = Reassembly::default();
+    let mut radio = protocol::radio::RadioPort::default();
     let mut scratch = [0; DATAGRAM + 1];
     while mono() < stop {
         match socket.recv(&mut scratch) {
             Ok(len) => {
-                if let Ok(Some(record)) = parts.push(&scratch[..len], 0) {
+                if let Some(frame) = radio_frame(&mut radio, &scratch[..len], mono() / PERIOD_NS)
+                    && let Ok(Some(record)) = parts.push(&frame.bytes[..usize::from(frame.len)], 0)
+                {
                     return Ok(record);
                 }
             }
@@ -165,13 +184,106 @@ fn recv_start(socket: &UnixDatagram) -> Result<([u8; RECORD], usize)> {
     Err("handshake/control timed out (sandbox or transport failed closed)".into())
 }
 
+// The Linux clock and supervisor control socket model trusted device-local
+// peripherals. They are never supplied by either hostile phone process.
+struct LocalClock;
+impl protocol::invitation::TrustedClock for LocalClock {
+    fn seconds(&self) -> u64 {
+        now(libc::CLOCK_REALTIME) / 1_000_000_000
+    }
+}
 fn connect(data: &UnixDatagram, control: &UnixDatagram, alice: bool) -> Result<Device> {
-    let identity = Identity::new(&mut OsEntropy)?;
+    use protocol::{
+        contacts::{ContactBook, StorageRoot},
+        enrollment::EnrolledContact,
+        invitation::{Admission, Invitation, Kind, call_context},
+    };
+    let mut entropy = OsEntropy;
+    let identity = Identity::new(&mut entropy)?;
+    let owner: [u8; 32] = identity.contact()[..32].try_into()?;
+    let challenge: [u8; 16] = entropy.seed()?[..16].try_into()?;
     control.send(&identity.contact())?;
+    control.send(&challenge)?;
     let signer = read_exact::<32>(control)?;
     let peer = read_exact::<CONTACT>(control)?;
-    let pin = Pin::verify(&peer, &signer)?;
-    let mut handshake = identity.handshake(&pin, alice)?;
+    let peer_challenge = read_exact::<16>(control)?;
+    check(
+        read_exact::<1>(control)? == [1],
+        "local user denied consent",
+    )?;
+    let mut book = ContactBook::new(owner);
+    book.install(
+        EnrolledContact::verified_oob(peer, &signer, true)?,
+        if alice { "Bob" } else { "Alice" },
+    )?;
+    let mut root = StorageRoot::new(&mut entropy)?;
+    let snapshot = book.persist(&mut root)?;
+    book = ContactBook::restore(&snapshot, &root, owner)?;
+    let mut admission = Admission::default();
+    let (issued, verified) = if alice {
+        let (offer, _snapshot) = Invitation::issue(
+            &identity,
+            &mut book,
+            &signer,
+            peer_challenge,
+            &LocalClock,
+            Kind::Offer,
+            None,
+            &mut entropy,
+            &mut root,
+        )?;
+        send(data, 10, offer.as_bytes())?;
+        let (wire, n) = recv_start(data)?;
+        let (verified, _snapshot) = Invitation::parse(&wire[..n])?.verify(
+            &identity,
+            &mut book,
+            &signer,
+            &challenge,
+            &LocalClock,
+            &mut admission,
+            &mut root,
+        )?;
+        check(
+            verified.kind() == Kind::Accept,
+            "expected authenticated acceptance",
+        )?;
+        (offer, verified)
+    } else {
+        let (wire, n) = recv_start(data)?;
+        let (verified, _snapshot) = Invitation::parse(&wire[..n])?.verify(
+            &identity,
+            &mut book,
+            &signer,
+            &challenge,
+            &LocalClock,
+            &mut admission,
+            &mut root,
+        )?;
+        check(
+            verified.kind() == Kind::Offer,
+            "expected authenticated offer",
+        )?;
+        let (accept, _snapshot) = Invitation::issue(
+            &identity,
+            &mut book,
+            &signer,
+            peer_challenge,
+            &LocalClock,
+            Kind::Accept,
+            Some(verified.call_nonce()),
+            &mut entropy,
+            &mut root,
+        )?;
+        send(data, 11, accept.as_bytes())?;
+        (accept, verified)
+    };
+    let context = call_context(&identity, &book, &issued, &verified)?;
+    let mut handshake = identity.handshake_with_entropy(
+        &book.pin(&signer)?,
+        alice,
+        &mut entropy,
+        Some(&context),
+    )?;
     if alice {
         send(data, 0, &handshake.send()?)?;
     }
@@ -181,12 +293,6 @@ fn connect(data: &UnixDatagram, control: &UnixDatagram, alice: bool) -> Result<D
         send(data, 0, &handshake.send()?)?;
     }
     let mut session = handshake.split()?;
-    // This is the endpoint's synthetic local UI. Only the trusted control link
-    // can grant consent. The phone links can carry only handshake and records.
-    check(
-        read_exact::<1>(control)? == [1],
-        "local user denied consent",
-    )?;
     session.consent();
     for (index, command) in [Control::Confirm, Control::Ready].into_iter().enumerate() {
         send(data, index as u32 + 1, &session.control(command)?)?;
@@ -303,6 +409,7 @@ fn measure(
     count: u64,
 ) -> Result<Measurements> {
     let mut parts = Reassembly::default();
+    let mut radio = protocol::radio::RadioPort::default();
     let mut schedule = Slots::default();
     let mut m = Measurements {
         stats: Stats {
@@ -403,7 +510,11 @@ fn measure(
                 Err(error) if error.kind() == io::ErrorKind::WouldBlock => break,
                 Err(error) => return Err(error.into()),
             };
-            match parts.push(&scratch[..len], current) {
+            let Some(frame) = radio_frame(&mut radio, &scratch[..len], current) else {
+                m.stats.receive_drops += 1;
+                continue;
+            };
+            match parts.push(&frame.bytes[..usize::from(frame.len)], current) {
                 Ok(Some((wire, len))) => {
                     let at = mono();
                     let accepted = device.ingest(&wire[..len], current).is_ok();
@@ -634,10 +745,14 @@ pub fn run(out: &Path, mode: &str) -> Result<()> {
     }
     let a = read_exact::<CONTACT>(&controls[0])?;
     let b = read_exact::<CONTACT>(&controls[1])?;
+    let ac = read_exact::<16>(&controls[0])?;
+    let bc = read_exact::<16>(&controls[1])?;
     controls[0].send(&b[..32])?;
     controls[1].send(&a[..32])?;
     controls[0].send(&b)?;
     controls[1].send(&a)?;
+    controls[0].send(&bc)?;
+    controls[1].send(&ac)?;
     for control in &controls {
         control.send(&[1])?;
     }

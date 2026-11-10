@@ -33,8 +33,10 @@ EXPECTED = {
     "protocol": "Noise vector, protocol integration, proptest and virtual attacks",
     "codec": "CBR and framing tests, libopus interop and RFC 8251 decoder vectors",
     "isolation": "all hostile roles restricted to inherited IPC",
-    "fuzz": "three instrumented targets, at least 30 seconds each",
-    "kani": "both actual call-state and replay proofs verified",
+    "fuzz": "six instrumented targets, at least 120 seconds each",
+    "kani": "four replay, consent, closed-call and monotonic-version harnesses verified",
+    "lifecycle": "enrollment, invitation, storage, entropy, offline update and radio fault tests",
+    "platform": "linked no_std Cortex-M33 voice and policy diagnostic, memory gates and QEMU execution",
     "dependencies": "locked graphs pass advisory, bans, license and source checks",
     "timing": "30 seconds each idle and contention, plus overload and blocked phone",
     "dashboard": "read-only loopback stream, pause/resume and offline verdict mapping",
@@ -297,7 +299,7 @@ def fuzz(suite):
             env["LIBRARY_PATH"] = os.pathsep.join(filter(None, [str(CACHE / "cxx-runtime"), env.get("LIBRARY_PATH")]))
         else:
             blocked = blocked or "local Zig C++ runtime did not build"
-    for target in ("handshake", "record", "codec"):
+    for target in ("handshake", "record", "codec", "enrollment", "lifecycle", "update-radio"):
         corpus = suite.out / "fuzz" / "corpus" / target
         crashes = suite.out / "fuzz" / "artifacts" / target
         if not blocked:
@@ -305,10 +307,10 @@ def fuzz(suite):
             crashes.mkdir(parents=True)
         suite.run("fuzz", f"fuzz-{target}", [
             "cargo", f"+{FUZZ_NIGHTLY}", "fuzz", "run", target, corpus, "--",
-            "-max_total_time=30", "-timeout=5", "-max_len=512", "-seed=870321",
+            "-max_total_time=120", "-timeout=5", "-max_len=512", "-seed=870321",
             f"-artifact_prefix={crashes}/",
         ], timeout=300, unavailable=blocked, env=env,
-            accept=lambda log: any(int(n) >= 30 for n in re.findall(r"Done \d+ runs in (\d+) second", log)))
+            accept=lambda log: any(int(n) >= 120 for n in re.findall(r"Done \d+ runs in (\d+) second", log)))
     unchanged = sha256(lock) == before
     suite.record("fuzz", "fuzz-lock-integrity", "pass" if unchanged else "fail",
                  "fuzz Cargo.lock unchanged" if unchanged else "fuzz tool changed Cargo.lock")
@@ -342,6 +344,7 @@ def suite_run(out, watch):
     try:
         suite.run("unit", "format", ["cargo", "fmt", "--all", "--", "--check"], needs=("cargo",))
         suite.run("unit", "format-fuzz", ["cargo", "fmt", "--manifest-path", "fuzz/Cargo.toml", "--", "--check"], needs=("cargo",))
+        suite.run("unit", "format-platform", ["cargo", "fmt", "--manifest-path", "platform/Cargo.toml", "--", "--check"], needs=("cargo",))
         suite.run("unit", "clippy", ["cargo", "clippy", "--locked", "--workspace", "--all-targets",
                                     "--", "-D", "warnings"], needs=("cargo",), timeout=240)
         suite.run("unit", "unit", ["cargo", "test", "--locked", "--workspace", "--lib", "--bins"],
@@ -351,10 +354,16 @@ def suite_run(out, watch):
         suite.finish_group("unit")
         unavailable = None if built else "release runner did not build"
 
-        suite.run("protocol", "protocol-tests", ["cargo", "test", "--locked", "-p", "protocol", "--tests"],
+        suite.run("protocol", "protocol-tests", ["cargo", "test", "--locked", "-p", "protocol", "--test", "security", "--test", "vectors"],
                   needs=("cargo",), timeout=240)
         suite.run("protocol", "virtual", [RUNNER, "virtual"], events=True, unavailable=unavailable)
         suite.finish_group("protocol")
+        suite.run("lifecycle", "lifecycle-tests", ["cargo", "test", "--locked", "-p", "protocol", "--test", "lifecycle"],
+                  needs=("cargo",), timeout=240)
+        suite.finish_group("lifecycle")
+        suite.run("platform", "m33-linked-execution", [sys.executable,ROOT/"scripts/platform_check.py",out/"platform"],
+                  needs=("cargo",), timeout=300)
+        suite.finish_group("platform")
 
         isolated = suite.run("isolation", "isolation", [RUNNER, "isolation"], events=True, unavailable=unavailable)
         suite.finish_group("isolation")
@@ -362,6 +371,9 @@ def suite_run(out, watch):
         suite.finish_group("timing")
 
         suite.run("codec", "codec-unit", ["cargo", "test", "--locked", "-p", "codec"], needs=("cargo",))
+        suite.run("codec", "vendor-port-integrity", [sys.executable, ROOT/"scripts/check_vendor.py"])
+        suite.run("codec", "inplace-constructor", ["cargo", "test", "--locked", "-p", "codec", "--no-default-features",
+                                                    "in_place_matches_upstream_constructor"], needs=("cargo",),timeout=180)
         reference = prepare_reference(suite)
         vectors = prepare_vectors(suite)
         codec_blocked = unavailable or (None if reference else "libopus reference unavailable")
@@ -376,6 +388,9 @@ def suite_run(out, watch):
         suite.run("dependencies", "cargo-deny-fuzz", ["cargo", "deny", "--locked", "--manifest-path",
                                                     "fuzz/Cargo.toml", "check"],
                   needs=("cargo", "cargo-deny"), timeout=240)
+        suite.run("dependencies", "cargo-deny-platform", ["cargo", "deny", "--locked", "--manifest-path",
+                                                         "platform/Cargo.toml", "check"],
+                  needs=("cargo", "cargo-deny"), timeout=240)
         suite.finish_group("dependencies")
 
         before = sha256(ROOT / "Cargo.lock")
@@ -383,7 +398,7 @@ def suite_run(out, watch):
                   needs=("cargo",), timeout=120)
         suite.run("kani", "kani", ["cargo", "kani", "-p", "call-state"],
                   needs=("cargo", "cargo-kani"), timeout=240,
-                  accept=lambda log: "2 successfully verified harnesses, 0 failures, 2 total" in log)
+                  accept=lambda log: "4 successfully verified harnesses, 0 failures, 4 total" in log)
         suite.record("kani", "kani-lock-integrity", "pass" if sha256(ROOT / "Cargo.lock") == before else "fail",
                      "Cargo.lock unchanged" if sha256(ROOT / "Cargo.lock") == before else "Kani changed Cargo.lock")
         suite.finish_group("kani")

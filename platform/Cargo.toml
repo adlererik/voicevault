@@ -1,0 +1,25 @@
+[package]
+name = "quietlink-m33-probe"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[dependencies]
+cortex-m-rt = { version = "=0.7.7", features = ["paint-stack", "set-msplim", "set-vtor"] }
+protocol = { path = "../crates/protocol", default-features = false, features = ["fixtures"] }
+codec = { path = "../crates/codec", default-features = false }
+device-core = { path = "../crates/device-core", default-features = false }
+link = { path = "../crates/link" }
+ed25519-dalek = { version = "=2.2.0", default-features = false }
+
+[patch.crates-io]
+opus-rs = { path = "../vendor/opus-rs" }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+debug = 1

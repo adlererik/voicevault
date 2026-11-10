@@ -7,7 +7,7 @@ from pathlib import Path
 import threading
 
 TEMPLATE = Path(__file__).with_name("dashboard.html")
-GROUPS = ("unit", "protocol", "codec", "isolation", "fuzz", "kani",
+GROUPS = ("unit", "protocol", "lifecycle", "platform", "codec", "isolation", "fuzz", "kani",
           "dependencies", "timing", "dashboard")
 STATUSES = {"info", "pass", "fail", "blocked"}
 NODES = {"", "Alice", "Phone A", "Relay", "Phone B", "Bob"}

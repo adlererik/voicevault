@@ -1,6 +1,6 @@
-# Verification results
+# Earlier verification results (before phase two)
 
-The final native run on 2026-11-10 passed all nine required software groups. The CLI exited zero. The original supplied report verifier also accepted every required status and artifact. A [machine-readable summary](verification-summary.json) records the measured results.
+This historical native run on 2026-11-10 passed all nine required software groups. The CLI exited zero. The original supplied report verifier also accepted every required status and artifact. A [machine-readable summary](verification-summary.json) records the measured results.
 
 | Group | Result | Checks |
 | --- | --- | ---: |

@@ -1,0 +1,9 @@
+{
+  "crate": "opus-rs",
+  "version": "0.1.41",
+  "original_lib_sha256": "b5d5e59f504bc9781358e3e58916dc2de50397aad2b9c9008c4dda50d65158f8",
+  "purpose": "Fixed-profile, in-place heap-free encoder and CELT initialization. No codec algorithm changes.",
+  "upstream": "https://github.com/restsend/opus-rs",
+  "integrity_manifest": "opus-rs-original-files.json",
+  "patch": "opus-rs-inplace.patch"
+}

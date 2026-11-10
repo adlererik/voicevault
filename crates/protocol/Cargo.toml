@@ -12,8 +12,15 @@ call-state.workspace = true
 snow.workspace = true
 ed25519-dalek.workspace = true
 curve25519-dalek.workspace = true
-getrandom.workspace = true
+getrandom = { workspace = true, optional = true }
 zeroize.workspace = true
+blake2.workspace = true
+chacha20poly1305.workspace = true
+
+[features]
+default = ["std", "fixtures"]
+std = ["dep:getrandom", "snow/std", "snow/use-getrandom", "ed25519-dalek/std", "blake2/std", "zeroize/std"]
+fixtures = []
 
 [dev-dependencies]
 serde_json.workspace = true

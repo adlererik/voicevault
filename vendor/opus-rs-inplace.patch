@@ -1,0 +1,156 @@
+--- opus-rs-0.1.41/src/lib.rs
++++ opus-rs-0.1.41/src/lib.rs
+@@ -482,6 +482,57 @@
+ }
+ 
+ impl OpusEncoder {
++    /// Quietlink port: initialize the fixed 16 kHz mono VoIP profile in its final
++    /// storage. Avoids returning the entire inline codec through the MCU stack.
++    /// No codec algorithm is changed. Available only with heap allocation off.
++    #[cfg(not(feature = "heap"))]
++    pub fn init_voip16k(slot: &mut MaybeUninit<Self>) -> Result<&mut Self, &'static str> {
++        let this = slot.as_mut_ptr();
++        // SAFETY: every field of the heap-free Self is initialized exactly once
++        // below before a reference is formed; no reference to the aggregate is
++        // made until all fields are valid. Source field coverage is checked by
++        // scripts/check_vendor.py, and constructor equivalence is exercised.
++        unsafe {
++            CeltEncoder::write_new_voip16k(&raw mut (*this).celt_enc);
++            (&raw mut (*this).silk_enc).write(SilkEncoderState::default());
++            (&raw mut (*this).silk_enc_side).write(SilkEncoderState::default());
++            (&raw mut (*this).application).write(Application::Voip);
++            (&raw mut (*this).sampling_rate).write(16000);
++            (&raw mut (*this).channels).write(1);
++            (&raw mut (*this).bandwidth).write(Bandwidth::Wideband);
++            (&raw mut (*this).bitrate_bps).write(64000);
++            (&raw mut (*this).complexity).write(9);
++            (&raw mut (*this).use_cbr).write(false);
++            (&raw mut (*this).use_inband_fec).write(false);
++            (&raw mut (*this).packet_loss_perc).write(0);
++            (&raw mut (*this).silk_initialized).write(false);
++            (&raw mut (*this).mode).write(OpusMode::SilkOnly);
++            (&raw mut (*this).prev_enc_mode).write(None);
++            (&raw mut (*this).forced_mode).write(None);
++            (&raw mut (*this).variable_hp_smth2_q15).write(silk_lin2log(60) << 8);
++            FixedVec::write_from_value(&raw mut (*this).hp_mem, 0, 2);
++            FixedVec::write_from_value(&raw mut (*this).buf_filtered, 0, 0);
++            FixedVec::write_from_value(&raw mut (*this).buf_silk_input, 0, 0);
++            FixedVec::write_from_value(&raw mut (*this).buf_silk_input_right, 0, 0);
++            FixedVec::write_from_value(&raw mut (*this).buf_silk_api_channel, 0, 0);
++            FixedVec::write_from_value(&raw mut (*this).buf_celt_input, 0.0, 0);
++            FixedVec::write_from_value(&raw mut (*this).delay_buffer, 0.0, OPUS_DELAY_BUF);
++            FixedVec::write_from_value(&raw mut (*this).buf_celt_pcm, 0.0, 0);
++            FixedVec::write_from_value(&raw mut (*this).buf_f32_frame, 0.0, 0);
++            (&raw mut (*this).encoder_buffer).write(160);
++            (&raw mut (*this).delay_compensation).write(64);
++            (&raw mut (*this).hp_mem_float).write([0.0; 4]);
++            (&raw mut (*this).silk_resampler_enc).write(silk::resampler::SilkResampler::default());
++            (&raw mut (*this).silk_resampler_enc_right).write(silk::resampler::SilkResampler::default());
++            (&raw mut (*this).rc).write(RangeCoder::new_encoder(1));
++            if silk_init_encoder(&mut *(&raw mut (*this).silk_enc), 0) != 0
++                || silk_init_encoder(&mut *(&raw mut (*this).silk_enc_side), 0) != 0 {
++                return Err("SILK encoder initialization failed");
++            }
++            Ok(&mut *this)
++        }
++    }
++
+     pub fn new(
+         sampling_rate: i32,
+         channels: usize,
+--- opus-rs-0.1.41/src/celt.rs
++++ opus-rs-0.1.41/src/celt.rs
+@@ -2126,6 +2126,93 @@
+     /// is zero-stuffed by `resampling_factor(sampling_rate)` so the mode's
+     /// 48 kHz geometry is used internally, exactly like libopus
+     /// (`celt_encoder.c` `st->upsample`).
++    /// Quietlink port: initialize CELT fields in final heap-free storage.
++    /// # Safety
++    /// `this` must be aligned writable storage for one uninitialized Self.
++    #[cfg(not(feature = "heap"))]
++    pub(crate) unsafe fn write_new_voip16k(this: *mut Self) {
++        let mode=crate::modes::default_mode();
++        let channels=1;
++        let sampling_rate=16000;
++        // All internal buffers are sized for at most 2 channels; a larger
++        // value would panic later inside `FixedVec::from_value` with an
++        // unhelpful message (issue #27 deep scan).
++        assert!(
++            (1..=2).contains(&channels),
++            "CeltEncoder::new: channels must be 1 or 2 (got {channels})"
++        );
++        let upsample = resampling_factor(sampling_rate);
++        let overlap = mode.overlap;
++        let channel_mem_size = 2048 + overlap;
++        let syn_mem_size = channels * channel_mem_size;
++        let nb_ebands = mode.nb_ebands;
++        let nb_x_ch = nb_ebands * channels;
++        let frame_x_ch = MAX_FRAME_SIZE * channels;
++        let bufstride_x_ch = (MAX_FRAME_SIZE + overlap) * channels;
++        // SAFETY: all fields are written exactly once before the aggregate is used.
++        unsafe {
++            (&raw mut (*this).mode).write(mode);
++            (&raw mut (*this).channels).write(channels);
++            (&raw mut (*this).upsample).write(upsample);
++            (&raw mut (*this).end_band).write(mode.nb_ebands);
++            (&raw mut (*this).complexity).write(9);
++            FixedVec::write_from_value(&raw mut (*this).syn_mem, 0.0, syn_mem_size);
++            FixedVec::write_from_value(&raw mut (*this).enc_decode_mem, 0.0, syn_mem_size);
++            FixedVec::write_from_value(&raw mut (*this).old_band_e, 0.0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).preemph_mem, 0.0, channels);
++            (&raw mut (*this).tonal_average).write(256);
++            (&raw mut (*this).hf_average).write(0);
++            (&raw mut (*this).tapset_decision).write(0);
++            (&raw mut (*this).spread_decision).write(SPREAD_NORMAL);
++            (&raw mut (*this).intensity).write(0);
++            (&raw mut (*this).last_coded_bands).write(0);
++            FixedVec::write_from_value(&raw mut (*this).prefilter_mem, 0.0, channels * COMBFILTER_MAXPERIOD);
++            (&raw mut (*this).prefilter_period).write(COMBFILTER_MINPERIOD);
++            (&raw mut (*this).prefilter_gain).write(0.0);
++            (&raw mut (*this).prefilter_tapset).write(0);
++            FixedVec::write_from_value(&raw mut (*this).old_band_e2, 0.0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).old_band_e3, 0.0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).last_band_log_e, 0.0, nb_x_ch);
++            (&raw mut (*this).delayed_intra).write(0.0);
++            (&raw mut (*this).lsb_depth).write(24);
++            (&raw mut (*this).overlap_max).write(0.0);
++            (&raw mut (*this).bitrate).write(OPUS_BITRATE_MAX);
++            (&raw mut (*this).vbr).write(false);
++            (&raw mut (*this).constrained_vbr).write(true);
++            (&raw mut (*this).vbr_reservoir).write(0);
++            (&raw mut (*this).vbr_drift).write(0);
++            (&raw mut (*this).vbr_offset).write(0);
++            (&raw mut (*this).vbr_count).write(0);
++            FixedVec::write_from_value(&raw mut (*this).w_in_buf, 0.0, bufstride_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_freq, 0.0, frame_x_ch + 4);
++            FixedVec::write_from_value(&raw mut (*this).w_band_e, 0.0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_band_e2, 0.0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_x, 0.0, frame_x_ch + STRIDE_ACCESS_PAD);
++            FixedVec::write_from_value(&raw mut (*this).w_band_log_e, 0.0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_band_log_e2, 0.0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_error, 0.0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_tf_res, 0, nb_ebands);
++            FixedVec::write_from_value(&raw mut (*this).w_cap, 0, nb_ebands);
++            FixedVec::write_from_value(&raw mut (*this).w_offsets, 0, nb_ebands);
++            FixedVec::write_from_value(&raw mut (*this).w_pulses, 0, nb_ebands);
++            FixedVec::write_from_value(&raw mut (*this).w_ebits, 0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_fine_priority, 0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_collapse_masks, 0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_band_amp_synth, 0.0, nb_x_ch);
++            FixedVec::write_from_value(&raw mut (*this).w_prefilter_pre, 0.0,
++                channels * (COMBFILTER_MAXPERIOD + MAX_FRAME_SIZE));
++            FixedVec::write_from_value(&raw mut (*this).w_prefilter_pitch_buf, 0.0,
++                (COMBFILTER_MAXPERIOD + MAX_FRAME_SIZE) >> 1);
++            FixedVec::write_from_value(&raw mut (*this).w_prefilter_before, 0.0, channels);
++            FixedVec::write_from_value(&raw mut (*this).w_prefilter_after, 0.0, channels);
++            FixedVec::write_from_value(&raw mut (*this).w_transient_tmp, 0.0, MAX_TRANSIENT_LEN);
++            FixedVec::write_from_value(&raw mut (*this).w_transient_tmp2, 0.0, MAX_TRANSIENT_LEN / 2);
++            (&raw mut (*this).consec_transient).write(0);
++            (&raw mut (*this).analysis).write(AnalysisInfo::default());
++            (&raw mut (*this).loss_rate).write(0);
++        }
++    }
++
+     pub fn with_sampling_rate(
+         mode: &'static CeltMode,
+         channels: usize,

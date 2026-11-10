@@ -12,10 +12,35 @@ libfuzzer-sys = "=0.4.13"
 protocol = { path = "../crates/protocol" }
 device-core = { path = "../crates/device-core" }
 codec = { path = "../crates/codec" }
+ed25519-dalek = "=2.2.0"
+
+[patch.crates-io]
+opus-rs = { path = "../vendor/opus-rs" }
 
 [[bin]]
 name = "handshake"
 path = "fuzz_targets/handshake.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "enrollment"
+path = "fuzz_targets/enrollment.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "lifecycle"
+path = "fuzz_targets/lifecycle.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "update-radio"
+path = "fuzz_targets/update_radio.rs"
 test = false
 doc = false
 bench = false

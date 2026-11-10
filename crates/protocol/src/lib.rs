@@ -1,4 +1,14 @@
+#![cfg_attr(not(feature = "std"), no_std)]
 #![forbid(unsafe_code)]
+
+extern crate alloc;
+pub mod contacts;
+pub mod enrollment;
+pub mod entropy;
+pub mod invitation;
+pub mod radio;
+mod randomness;
+pub mod update;
 
 use call_state::{CallState, Control, FIRST_MEDIA, Replay};
 use curve25519_dalek::montgomery::MontgomeryPoint;
@@ -13,7 +23,36 @@ pub const HANDSHAKE: usize = 48;
 pub const CONTACT: usize = 128;
 pub const RECORD: usize = 128;
 pub const PAYLOAD: usize = 102;
+/// A transport key is never used beyond five minutes of active slots.
+pub const MAX_EPOCH_SLOTS: u64 = 15_000;
 const PLAIN: usize = RECORD - 8 - 16;
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum PolicyError {
+    Invalid,
+    State,
+    Signature,
+    Identity,
+    LocalApproval,
+    Storage,
+    Rollback,
+    Entropy,
+    Expired,
+    Replay,
+    Busy,
+    Unsupported,
+    Counter,
+    Target,
+    Full,
+    Clock,
+}
+impl core::fmt::Display for PolicyError {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "{self:?}")
+    }
+}
+impl core::error::Error for PolicyError {}
+pub type PolicyResult<T> = Result<T, PolicyError>;
 
 #[derive(Debug, PartialEq, Eq)]
 pub enum Error {
@@ -26,20 +65,23 @@ pub enum Error {
     Counter,
     State,
     Command,
+    Expired,
 }
 
-impl std::fmt::Display for Error {
-    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl core::fmt::Display for Error {
+    fn fmt(&self, formatter: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(formatter, "{self:?}")
     }
 }
-impl std::error::Error for Error {}
+impl core::error::Error for Error {}
 
 pub trait Entropy {
     fn seed(&mut self) -> Result<[u8; 32], Error>;
 }
 
+#[cfg(feature = "std")]
 pub struct OsEntropy;
+#[cfg(feature = "std")]
 impl Entropy for OsEntropy {
     fn seed(&mut self) -> Result<[u8; 32], Error> {
         let mut seed = [0; 32];
@@ -79,33 +121,58 @@ impl Identity {
         out
     }
 
+    #[cfg(feature = "std")]
     pub fn handshake(&self, peer: &Pin, initiator: bool) -> Result<Handshake, Error> {
-        self.build(peer, initiator, None)
+        self.handshake_with_entropy(peer, initiator, &mut OsEntropy, None)
+    }
+
+    pub fn handshake_with_entropy(
+        &self,
+        peer: &Pin,
+        initiator: bool,
+        entropy: &mut impl Entropy,
+        context: Option<&[u8; 32]>,
+    ) -> Result<Handshake, Error> {
+        self.build(peer, initiator, entropy.seed()?, context, None)
     }
 
     /// Deterministic lab fixtures only. Wall-clock callers use `handshake`.
+    #[cfg(feature = "fixtures")]
     pub fn fixture_handshake(
         &self,
         peer: &Pin,
         initiator: bool,
         ephemeral: &[u8; 32],
     ) -> Result<Handshake, Error> {
-        self.build(peer, initiator, Some(ephemeral))
+        self.build(peer, initiator, *ephemeral, None, Some(ephemeral))
     }
 
     fn build(
         &self,
         peer: &Pin,
         initiator: bool,
+        seed: [u8; 32],
+        context: Option<&[u8; 32]>,
         fixture: Option<&[u8; 32]>,
     ) -> Result<Handshake, Error> {
-        let mut builder = Builder::new(PATTERN.parse().map_err(|_| Error::Handshake)?)
-            .local_private_key(self.static_secret.as_ref())
-            .map_err(|_| Error::Handshake)?
-            .remote_public_key(&peer.0)
-            .map_err(|_| Error::Handshake)?
-            .prologue(PROLOGUE)
-            .map_err(|_| Error::Handshake)?;
+        let mut prologue = [0u8; 64];
+        prologue[..PROLOGUE.len()].copy_from_slice(PROLOGUE);
+        let prologue_len = if let Some(context) = context {
+            prologue[PROLOGUE.len()..PROLOGUE.len() + 32].copy_from_slice(context);
+            PROLOGUE.len() + 32
+        } else {
+            PROLOGUE.len()
+        };
+        let mut builder = Builder::with_resolver(
+            PATTERN.parse().map_err(|_| Error::Handshake)?,
+            alloc::boxed::Box::new(randomness::SeedResolver::new(seed)),
+        )
+        .local_private_key(self.static_secret.as_ref())
+        .map_err(|_| Error::Handshake)?
+        .remote_public_key(&peer.0)
+        .map_err(|_| Error::Handshake)?
+        .prologue(&prologue[..prologue_len])
+        .map_err(|_| Error::Handshake)?;
         if let Some(ephemeral) = fixture {
             builder = builder.fixed_ephemeral_key_for_testing_only(ephemeral);
         }
@@ -162,14 +229,21 @@ impl Handshake {
     }
 
     pub fn split(self) -> Result<Session, Error> {
+        let binding: [u8; 32] = self
+            .0
+            .get_handshake_hash()
+            .try_into()
+            .map_err(|_| Error::Handshake)?;
         Ok(Session {
-            noise: self
-                .0
-                .into_stateless_transport_mode()
-                .map_err(|_| Error::Handshake)?,
+            noise: Some(
+                self.0
+                    .into_stateless_transport_mode()
+                    .map_err(|_| Error::Handshake)?,
+            ),
             state: CallState::default(),
             replay: Replay::default(),
             last_sent: None,
+            binding,
         })
     }
 }
@@ -211,13 +285,21 @@ pub enum Received {
 }
 
 pub struct Session {
-    noise: StatelessTransportState,
+    noise: Option<StatelessTransportState>,
     state: CallState,
     replay: Replay,
     last_sent: Option<u64>,
+    binding: [u8; 32],
 }
 
 impl Session {
+    pub fn channel_binding(&self) -> [u8; 32] {
+        self.binding
+    }
+    pub fn close(&mut self) {
+        self.state.close();
+        self.noise.take();
+    }
     pub fn consent(&mut self) {
         self.state.consent();
     }
@@ -238,6 +320,8 @@ impl Session {
         wire[..8].copy_from_slice(&sequence.to_le_bytes());
         if self
             .noise
+            .as_ref()
+            .ok_or(Error::State)?
             .write_message(sequence, &plain, &mut wire[8..])
             .map_err(|_| Error::Auth)?
             != RECORD - 8
@@ -259,6 +343,10 @@ impl Session {
     }
 
     pub fn media(&mut self, slot: u64, media: Media) -> Result<[u8; RECORD], Error> {
+        if slot >= MAX_EPOCH_SLOTS {
+            self.close();
+            return Err(Error::Expired);
+        }
         if !self.state.active() {
             return Err(Error::State);
         }
@@ -271,7 +359,11 @@ impl Session {
         Ok(wire)
     }
 
-    pub fn receive(&mut self, wire: &[u8], slots: std::ops::Range<u64>) -> Result<Received, Error> {
+    pub fn receive(
+        &mut self,
+        wire: &[u8],
+        slots: core::ops::Range<u64>,
+    ) -> Result<Received, Error> {
         let wire: &[u8; RECORD] = wire.try_into().map_err(|_| Error::Size)?;
         let sequence = u64::from_le_bytes(wire[..8].try_into().map_err(|_| Error::Size)?);
         if !self.replay.eligible(sequence) {
@@ -280,6 +372,8 @@ impl Session {
         let mut plain = [0; PLAIN];
         if self
             .noise
+            .as_ref()
+            .ok_or(Error::State)?
             .read_message(sequence, &wire[8..], &mut plain)
             .map_err(|_| Error::Auth)?
             != PLAIN
@@ -301,6 +395,10 @@ impl Session {
                 if !slots.contains(&slot) {
                     return Err(Error::Counter);
                 }
+                if slot >= MAX_EPOCH_SLOTS {
+                    self.close();
+                    return Err(Error::Expired);
+                }
                 let media = match (plain[0], len) {
                     (2, 1..) => Media::Audio(Frame::new(&plain[2..2 + len])?),
                     (3, 0) => Media::Filler,
@@ -320,4 +418,5 @@ impl Session {
     }
 }
 
+#[cfg(feature = "fixtures")]
 pub mod fixtures;

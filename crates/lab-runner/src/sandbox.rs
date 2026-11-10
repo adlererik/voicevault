@@ -210,7 +210,6 @@ pub fn forward(mode: &str, pid: u32) -> Result<()> {
     ];
     confine(pid)?;
     let mut scratch = [0; DATAGRAM + 1];
-    let mut media_from_alice = 0u32;
     loop {
         // SAFETY: Both entries refer to the inherited datagram sockets.
         if unsafe { libc::poll(poll.as_mut_ptr(), 2, -1) } <= 0 {
@@ -223,12 +222,16 @@ pub fn forward(mode: &str, pid: u32) -> Result<()> {
             if let Ok(len) = sockets[index].recv(&mut scratch)
                 && (link::HEADER..=DATAGRAM).contains(&len)
             {
-                if index == 0 && scratch[4] == 128 {
-                    media_from_alice += 1;
-                    if mode == "blocked" && media_from_alice == 8 {
-                        // Stop reading Phone A's ingress after confirm/ready.
-                        poll[0].events = 0;
-                    }
+                if index == 0
+                    && mode == "blocked"
+                    && scratch[..4] == 2u32.to_le_bytes()
+                    && scratch[4] == 128
+                    && scratch[5] == 3
+                {
+                    // Stop only after the final fragment of Alice's Ready.
+                    // Invitation records are also 128 bytes and must not count
+                    // toward this deliberately blocked-media scenario.
+                    poll[0].events = 0;
                 }
                 if let Err(error) = forward_datagram(1 - index as RawFd, &scratch[..len])
                     && error.kind() != io::ErrorKind::WouldBlock

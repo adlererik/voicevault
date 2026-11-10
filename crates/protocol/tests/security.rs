@@ -70,7 +70,7 @@ fn auth_and_counters_cannot_poison_window() {
     assert!(b.receive(&first, 0..8).is_ok());
     assert_eq!(b.receive(&first, 0..8), Err(Error::Replay));
     assert_eq!(a.media(0, Media::Filler), Err(Error::Counter));
-    assert_eq!(a.media(u64::MAX, Media::Filler), Err(Error::Counter));
+    assert_eq!(a.media(u64::MAX, Media::Filler), Err(Error::Expired));
 }
 
 #[test]

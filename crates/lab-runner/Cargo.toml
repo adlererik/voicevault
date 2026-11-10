@@ -9,11 +9,11 @@ workspace = true
 
 [dependencies]
 call-state.workspace = true
-protocol.workspace = true
-codec.workspace = true
+protocol = { workspace = true, features = ["std", "fixtures"] }
+codec = { workspace = true, features = ["std"] }
 link.workspace = true
-device-core.workspace = true
+device-core = { workspace = true, features = ["std"] }
 serde.workspace = true
 serde_json.workspace = true
 libc.workspace = true
-opus-rs.workspace = true
+opus-rs = { workspace = true, features = ["std", "heap"] }

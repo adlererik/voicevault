@@ -103,6 +103,7 @@ dependencies = [
 name = "codec"
 version = "0.1.0"
 dependencies = [
+ "libm",
  "opus-rs",
 ]
 
@@ -304,6 +305,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "libm"
+version = "0.2.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b6d2cec3eae94f9f509c767b45932f1ada8350c4bdb85af2fcab4a3c14807981"
+
+[[package]]
 name = "opaque-debug"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -312,8 +319,9 @@ checksum = "c08d65885ee38876c4f86fa503fb49d7b507c2b62552df7c70b2fce627e06381"
 [[package]]
 name = "opus-rs"
 version = "0.1.41"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3120cb7ce0efa63481ce60e21e96c4726f2053c418cd1582ec1040ecd65d4762"
+dependencies = [
+ "libm",
+]
 
 [[package]]
 name = "pkcs8"
@@ -349,7 +357,9 @@ dependencies = [
 name = "protocol"
 version = "0.1.0"
 dependencies = [
+ "blake2",
  "call-state",
+ "chacha20poly1305",
  "curve25519-dalek",
  "ed25519-dalek",
  "getrandom 0.4.3",
@@ -363,6 +373,7 @@ version = "0.0.0"
 dependencies = [
  "codec",
  "device-core",
+ "ed25519-dalek",
  "libfuzzer-sys",
  "protocol",
 ]

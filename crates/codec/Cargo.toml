@@ -9,3 +9,8 @@ workspace = true
 
 [dependencies]
 opus-rs.workspace = true
+libm.workspace = true
+
+[features]
+default = ["std"]
+std = ["opus-rs/std", "opus-rs/heap"]

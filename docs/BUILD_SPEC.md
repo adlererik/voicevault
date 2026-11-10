@@ -1,6 +1,6 @@
 # Quietlink Lab build specification
 
-This is the original requested implementation and validation scope.
+This preserves the initial implementation brief. The authorized second phase below supersedes conflicting details, particularly the earlier 30-second fuzz minimum and nine-group count.
 
 Build the full software-only secure voice lab in this repository. Continue
 existing work and inspect previous failures. Implement, run available tests,
@@ -91,3 +91,9 @@ events.ndjson, dashboard.html, alice-received.wav, bob-received.wav and
 diagnostic logs in the requested directory. Run checks available within
 the Codex sandbox and document blockers. The outer shell will run
 ./lab watch natively and validate a fresh report.
+
+## Authorized second phase: hostile-phone device model
+
+Assume NSA-capability compromise of both phones and control of telecommunications. Supply-chain attacks are excluded. Keep the project software-only. Add confirmed Noise XX enrollment, sealed owner-bound contact state and anti-rollback generation, signed challenge/counter/expiry-bound invitations, invitation-bound Noise KK, irreversible close and bounded media-key lifetime, modeled onboard entropy failure handling, a constrained hostile-radio port, and locally authorized signed offline image verification with protected versions and power-loss recovery.
+
+Deepen critical verification with KK and XX published vectors against the actual crypto adapters, lifecycle/fault/property tests, six fuzz targets at least 120 seconds each, and four Kani harnesses. Keep all original checks and timing gates. Add `lifecycle` and `platform` as required verdict groups. The ARM probe must link and execute actual no_std voice and policy paths, enforce flash/RAM budgets and report its observed heap/stack use. Clearly mark diagnostic keys as public. No hardware feasibility, worst-case timing, erasure or universal adversary-resistance claims may be inferred from finite software tests.

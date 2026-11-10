@@ -1,3 +1,4 @@
+#![no_std]
 #![forbid(unsafe_code)]
 
 //! Fixed-size fragments for the simulated BLE-like link.

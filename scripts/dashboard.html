@@ -139,7 +139,7 @@ $("filter").onchange = () => {
   update();
 };
 for (const event of initial.events) add(event);
-for (const group of ["unit", "protocol", "codec", "isolation", "fuzz", "kani", "dependencies", "timing", "dashboard"]) {
+for (const group of ["unit", "protocol", "lifecycle", "platform", "codec", "isolation", "fuzz", "kani", "dependencies", "timing", "dashboard"]) {
   if (!rows.has(group)) addGroup(group, "pending", "This group has not completed yet.");
 }
 setPhase(initial.live ? "Connecting" : "Offline replay");

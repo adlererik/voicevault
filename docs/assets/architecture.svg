@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">VoxBastion trust boundary</title><desc id="desc">Trusted voice endpoints sit outside two compromised phones and an attacker-controlled telecommunications path. Media is encrypted before the phone. Signaling and transport metadata remain visible. BLE and analog audio are planned hardware, modeled by local IPC and synthetic audio today.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#89b7b0"/></marker></defs>
+<rect width="1200" height="440" rx="18" fill="#101d24"/>
+<g font-family="Segoe UI,Arial,sans-serif"><text x="34" y="43" font-size="23" font-weight="600" fill="#edf5f2">The phone carries the call. The trusted endpoint owns the voice.</text>
+<text x="34" y="71" font-size="14" fill="#a6c0bc">Conceptual architecture · simultaneous communication in both directions</text>
+<rect x="305" y="108" width="590" height="224" rx="18" fill="#342c2a" stroke="#b29172" stroke-dasharray="6 5"/>
+<text x="600" y="136" text-anchor="middle" font-size="13" letter-spacing="1" fill="#f4c996">ASSUME THIS ENTIRE PATH IS HOSTILE</text>
+<g stroke="#89b7b0" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"><path d="M262 226H321"/><path d="M486 226H520"/><path d="M680 226H714"/><path d="M879 226H938"/></g>
+<g fill="#1a3936" stroke="#7dc4a7"><rect x="34" y="157" width="224" height="156" rx="13"/><rect x="942" y="157" width="224" height="156" rx="13"/></g>
+<g fill="#273337" stroke="#758d91"><rect x="325" y="168" width="157" height="128" rx="12"/><rect x="718" y="168" width="157" height="128" rx="12"/></g>
+<rect x="524" y="168" width="152" height="128" rx="12" fill="#3e3430" stroke="#bf9a7c"/>
+<g text-anchor="middle"><g fill="#b5f2d6" font-size="18" font-weight="600"><text x="146" y="191">VoxBastion A</text><text x="1054" y="191">VoxBastion B</text></g>
+<g fill="#e1eae7" font-size="16"><text x="403" y="207">Phone A</text><text x="600" y="204">Network</text><text x="600" y="225">and relays</text><text x="796" y="207">Phone B</text></g>
+<g fill="#b3cbc5" font-size="13"><text x="146" y="222">Wired audio · Opus</text><text x="146" y="245">Keys · contacts · consent</text><text x="146" y="278">Encrypt / authenticate</text><text x="1054" y="222">Wired audio · Opus</text><text x="1054" y="245">Keys · contacts · consent</text><text x="1054" y="278">Authenticate / decrypt</text></g>
+<g fill="#d9ba9c" font-size="13"><text x="403" y="243">Ciphertext carrier</text><text x="403" y="267">Already compromised</text><text x="600" y="260">Observe · alter · block</text><text x="796" y="243">Ciphertext carrier</text><text x="796" y="267">Already compromised</text></g></g>
+<text x="34" y="367" fill="#c8ded7" font-size="15">Encrypted media crosses the phone boundary. Plaintext audio and device decisions stay at the endpoints.</text>
+<text x="34" y="394" fill="#9eb6b3" font-size="13">Public signaling, counters, call timing, location and traffic correlation remain observable. Delivery can be denied.</text>
+<text x="34" y="418" fill="#9eb6b3" font-size="12">Hardware target: analog audio + isolated BLE. Current model: generated audio + bounded local IPC on a trusted Linux host.</text>
+</g></svg>

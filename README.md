@@ -1,138 +1,138 @@
-# Quietlink Lab
+<p align="center"><img src="docs/assets/voxbastion-banner.svg" alt="VoxBastion — a trusted voice endpoint for an untrusted phone" width="1100"></p>
 
-**A local secure-voice research lab that treats the phones and relay as hostile transport.**
+# VoxBastion
 
-Quietlink Lab investigates a separate voice endpoint that owns its audio processing, contact verification, call consent, and encryption keys. The phone's intended job is to carry ciphertext between endpoints. This repository implements the software model and its verification tools: two Rust endpoints, two simulated phones, a relay, adversarial tests, synthetic audio, and a graphical results dashboard.
+**A dedicated encrypted voice device, being developed and tested in software before hardware is built.**
 
-**Current stage:** a software-only prototype with native Linux calls and a linked Cortex-M33 diagnostic executing under QEMU. There is no physical Quietlink device, real microphone integration, BLE implementation, or deployed calling network in this repository. The device architecture is the direction being investigated; the measurements apply to the named native or CPU-emulation experiment. The threat model assumes NSA-capability compromise of both phones and telecommunications control. **Supply-chain attacks are excluded.**
+A phone can be an excellent communications modem and an unsafe place to handle a private conversation. VoxBastion explores a different boundary: put the microphone path, audio codec, encryption keys, verified contacts and call approval inside a separate device. Give the phone encrypted media to forward.
 
-[Security design](docs/SECURITY_DESIGN.md) · [Why a separate device?](docs/DEVICE_RATIONALE.md) · [Threat model](docs/THREAT_MODEL.md) · [Assurance case](docs/ASSURANCE.md) · [Platform fit](docs/PLATFORM.md) · [Verified results](docs/RESULTS.md) · [Screenshots](docs/screenshots/README.md)
+The intended adversary has **NSA-class capabilities**: both phones may already be completely compromised through Pegasus-like spyware, zero-day or zero-click exploits, and telecommunications and relays may be controlled by the attacker. **Supply-chain attacks are excluded from the current threat model.** The project starts after phone compromise; it does not attempt to prevent or reproduce the exploit that compromised the phone.
 
-## Why this project exists
+**Today:** working Rust voice simulations, hostile-phone processes, lifecycle security models, an interactive test dashboard and a linked Cortex-M33 diagnostic. **Destination:** a small independent voice endpoint with its own trusted display, wired headset audio, battery, inductive charging and a carefully isolated BLE connection to a phone. No physical VoxBastion device has been built.
 
-End-to-end encryption protects a conversation between its endpoints. An encrypted calling app normally still needs the phone and its audio stack to process the conversation. If that endpoint is compromised, protecting the network traffic alone does not protect audio already available inside it.
+[Project vision](docs/PROJECT_VISION.md) · [Architecture](docs/ARCHITECTURE.md) · [Threat model](docs/THREAT_MODEL.md) · [Every security control](docs/SECURITY_CONTROLS.md) · [Why these algorithms](docs/CRYPTOGRAPHY.md) · [Test evidence](docs/RESULTS.md) · [Hardware roadmap](docs/ROADMAP.md)
 
-Quietlink explores moving that sensitive work into a smaller, purpose-built endpoint with its own trusted audio path and local controls. In a future hardware implementation, the general-purpose phone would receive encrypted records rather than microphone samples or call keys. The lab tests the protocol and resource boundaries that such a design would need.
+## The idea: move the endpoint
 
-This is a specialized trust-boundary proposal. Modern phones already have significant security protections, and established apps such as Signal already provide end-to-end encrypted calls. The proposed benefit is reducing dependence on the phone for plaintext audio and key handling. The [device comparison](docs/DEVICE_RATIONALE.md) explains when that could matter and which hardware requirements remain unimplemented.
+An ordinary encrypted calling app processes plaintext on the phone. Once an attacker controls that operating system, network encryption alone cannot protect audio the operating system can already access.
 
-## How the lab works
+VoxBastion's intended device owns the sensitive endpoint. Contacts are verified there, calls are approved there, and audio is encoded and encrypted there before reaching the phone. The phone carries encrypted records and necessary signaling; it does not become a trusted authority for identities, consent, keys, time, entropy or firmware.
 
-```mermaid
-flowchart LR
-    A["Alice endpoint<br/>keys + synthetic audio"] <--> PA["Phone A<br/>untrusted transport"]
-    PA <--> R["Relay<br/>untrusted transport"]
-    R <--> PB["Phone B<br/>untrusted transport"]
-    PB <--> B["Bob endpoint<br/>keys + synthetic audio"]
-    classDef trusted fill:#203b35,stroke:#78edbe,color:#edf5f2
-    classDef hostile fill:#34262a,stroke:#ff9b95,color:#edf5f2
-    class A,B trusted
-    class PA,R,PB hostile
-```
+This distinction depends on the physical audio path. The proposed host-phone arrangement includes removing its microphones and speakers, keeping voice on an external wired headset connected to VoxBastion, and validating remaining acoustic pickup paths. An unmodified compromised phone nearby can still record speech through its own microphone. [Why a separate device, and its limits](docs/DEVICE_RATIONALE.md)
 
-Alice and Bob exchange signed challenge/counter/expiry-bound invitations, bind their accepted invitation transcript into an authenticated Noise session, confirm local consent, encode generated audio, encrypt it, and authenticate received records before decoding them. The two phones and relay forward bounded Unix datagrams. They are separate processes in the wall-clock scenarios and are restricted by a Linux seccomp policy.
+![Conceptual trust boundary and media path](docs/assets/architecture.svg)
 
-A trusted supervisor supplies the simulated out-of-band identity pins and local consent over separate control sockets. The hostile transport processes do not inherit those sockets. The supervisor and host OS remain trusted; this is a process-isolation model, not protection from a compromised host kernel.
+*Architecture illustration. Analog audio and BLE are hardware targets; current calls use synthetic audio and bounded local IPC. Public signaling and transport metadata remain observable.*
 
-## Security measures
+## A real software foundation
 
-| Measure | Implementation | Purpose and boundary |
-| --- | --- | --- |
-| Pairing | Noise XX, full 256-bit transcript fingerprint comparison on both trusted displays, mutual encrypted confirmation | Implements enrollment in tests and the ARM diagnostic; native wall calls model prior verified out-of-band enrollment. |
-| Sealed contacts | Eight bounded slots, ChaCha20-Poly1305 snapshots, owner binding, protected generation, revocation and persisted signaling counters | Rejects tampering and rollback under the modeled protected-root assumption. |
-| Invitation authentication | Ed25519 signatures over peers, recipient boot challenge, counters, expiry and call nonce | Authenticates trusted caller names and binds accepted signaling to the Noise handshake; admission work is bounded. |
-| Contact authentication | Ed25519 signature binding an identity public key to a separate static X25519 public key | Prevents key substitution after the expected identity has been independently verified. |
-| Session establishment | Snow with `Noise_KK_25519_ChaChaPoly_BLAKE2s` | Authenticates peers with already-pinned static keys and derives transport secrets. |
-| Encryption and integrity | ChaCha20-Poly1305 authenticated encryption | Conceals record contents and rejects invalid authentication tags. |
-| Handshake hashing and key derivation | BLAKE2s with Noise's HMAC/HKDF construction | Binds handshake state and derives traffic keys. |
-| Call and direction separation | Fresh OS-random ephemeral keys; separate Noise split keys per direction | Separates calls and avoids sharing a key/nonce pair across opposite directions. |
-| Key lifecycle | Zeroizing owned keys, irreversible close, five-minute epoch limit and fresh-handshake restart | Limits media key use. Seamless renewal and complete dependency/stack erasure remain open. |
-| Nonce and replay discipline | Explicit sequence, monotonic sending, a 64-sequence replay bitmap, and media-slot bounds | Rejects duplicate/stale records, counter poisoning, and nonce reuse in the tested session paths. |
-| Local consent | Trusted local approval plus authenticated Confirm/Ready exchange | Audio stays unavailable until the state transition completes. Remote pairing, mic, debug, and update commands are outside the accepted media protocol. |
-| Reduced activity leakage | Fixed 128-byte active-slot records, CBR Opus, DTX off, encrypted filler | Speech, silence, and mute do not change active-slot record length. Timing, duration, direction, and missing traffic remain visible. |
-| Bounded media processing | Authentication before decode; size/channel/duration checks; bounded queues and fragment assembly | Limits work and memory exposed to hostile delivery and malformed audio from a valid peer. |
-| Hostile radio boundary | Single bounded data command, fixed queue, quotas, expiry and reset/update-mode rules | Contains software ingress authority; no real BLE or hardware isolation is claimed. |
-| Offline updates | Local action, signed raw image/target/version/hash, two banks, protected rollback floor, readback and header-last write | Tests interrupted installation and rollback through abstract flash/counter interfaces. |
-| Onboard entropy model | MCU plus two secure-element source interfaces, two passing sources, basic failure checks and monotonic generation | Phone entropy is excluded; actual source quality and independence are unmeasured. |
-| Worker confinement | Linux x86-64 seccomp allowlist and inherited connected IPC only | Blocks file opens, new network connections, endpoint-memory inspection, and descriptor transfer after confinement. |
-| Verification evidence | Locked graphs, Clippy, reference vectors, proptest, cargo-deny, fuzzing, Kani, timing gates | Reports explicit PASS/FAIL/BLOCKED results within each check's scope. |
+The lab makes two endpoints conduct a simultaneous encrypted voice exchange through two hostile phone processes and a relay. It uses actual Opus and actual cryptography, produces recovered WAV files, injects delivery faults, and records results for inspection.
 
-The [security design](docs/SECURITY_DESIGN.md) explains every control, the packet layout, key lifecycle, consent sequence, isolation policy, implementation entry points, and primary specifications.
+| Built and exercised | What it establishes |
+|---|---|
+| Two voice endpoints and three hostile transport processes | A concrete separation between trusted audio/key handling and untrusted delivery, under a trusted Linux host |
+| Confirmed enrollment, pinned contacts and signed invitations | Explicit identity, consent, replay and accepted-call binding rules |
+| Real Opus → Noise encryption → hostile transport → authentication → decode | An executable media pipeline, including loss and malformed-input handling |
+| Stored-contact, entropy, radio and offline-update models | Testable device-local policy before selecting physical chips |
+| The same trusted crates compiled without `std` and linked for Cortex-M33 | Functional CPU execution and measured memory fit under a named capacity budget |
+| An event-backed dashboard with searchable individual results | Visible checks, named test outcomes, attack traces and saved replays |
 
-## Screenshots
+A tested model is not a finished hardware protection. The [assurance case](docs/ASSURANCE.md) states which assumptions each result depends on.
 
-Actual browser captures from the **2026-11-10 phase-two run**. The first and third show the completed eleven-group results; the middle capture shows the real live view while the extended fuzz campaigns were still running. These are software test views, not hardware photos.
+## The threat model and the protections
+
+The attacker may observe, drop, replay, modify, reorder, delay and inject traffic; collude across both phones and relays; impersonate contacts; flood ingress; and try to turn malformed messages into unauthorized device actions. The design also tests a malicious authenticated peer, because having a valid key does not make compressed audio harmless.
+
+| Attack or failure | Protection in the software model | Boundary |
+|---|---|---|
+| Intercept or modify voice | ChaCha20-Poly1305 under authenticated Noise transport keys | Trusted endpoints and sound implementations are assumed |
+| Substitute a peer during enrollment | Noise XX, signed identity/DH records, full transcript comparison and confirmation on both sides | Trusted local comparison is required; hardware UI is future work |
+| Spoof a contact or call invitation | Pinned Ed25519 identity, recipient binding, boot challenge, expiry and persisted counters | Invitation metadata itself is not confidential |
+| Reuse a different invitation for an authenticated call | Signed offer and acceptance are bound into the Noise KK prologue | Local approval remains separate from remote signaling |
+| Replay media or poison the replay window | Monotonic sending, directional keys, authenticated counter/slot checks and a bounded replay bitmap | Invalid input cannot commit incoming replay state |
+| Activate audio through the phone | Local consent plus encrypted Confirm/Ready; no radio mic/consent opcode | Actual headset and physical disconnect still need validation |
+| Infer speech or silence from record length | CBR Opus, DTX off, fixed 128-byte records and encrypted filler | Call boundaries, timing errors, location and correlation remain visible |
+| Exhaust queues or force a burst after a stall | Bounded ingress, assembly and jitter queues; expiry; absolute deadlines; missed slots discarded | A hostile network can still deny service |
+| Roll back stored contacts or signaling counters | Owner-bound AEAD snapshots tied to a protected monotonic generation | Protected storage is modeled, not a chip driver |
+| Push firmware through the phone | No remote updater; locally authorized signed-image policy | Physical boot/update enforcement remains future hardware work |
+| Install an old, corrupt or wrong-device image | Target/version/hash/signature checks, protected floor, two banks and readback | Real flash and counter atomicity are unmeasured |
+| Interrupt an offline update | Preserve the active bank, write header last, verify before boot/version handoff | Tests cover modeled write cuts and selected torn writes |
+| Weaken randomness through the phone | Onboard-only entropy-source interface, failure checks and two-source policy | Hardware entropy quality and independence need measurement |
+| Keep using a closed or expired session | Irreversible close, owned key destruction, bounded media epoch and fresh handshake | Complete erasure and seamless renewal remain open |
+
+The [complete control register](docs/SECURITY_CONTROLS.md) links each protection to its code, evidence, assumptions and remaining hardware work.
+
+## Why these cryptographic choices?
+
+| Choice | Role and reason |
+|---|---|
+| **X25519** | Compact Diffie–Hellman key exchange with fresh per-call ephemeral secrets; separate from signing identities |
+| **Ed25519** | Signed identities, contact bindings, invitations and offline-image authorization |
+| **ChaCha20-Poly1305** | Established authenticated encryption for voice and stored snapshots; suitable for portable software implementations |
+| **BLAKE2s** | A 32-bit-oriented hash for the selected Noise suite, domain-separated bindings and firmware digests |
+| **Noise's HMAC/HKDF-BLAKE2s** | An established transcript-bound key schedule and separate transport keys for each direction |
+| **Noise XX / KK through Snow** | XX for first enrollment; KK for calls between already pinned contacts, avoiding a new homemade handshake |
+| **Opus** | Practical speech compression; hard CBR and no DTX work with the outer fixed-size envelope |
+| **Rust with `no_std` integration** | Safe parsing/state code and bounded interfaces that can migrate toward embedded firmware |
+
+Algorithm choice is only part of the design. Nonce discipline, peer verification, consent, isolation, key lifetime and failure behavior matter just as much. A 256-bit cipher key does not make the complete system 256-bit secure. The current suite is classical, not post-quantum. Avoiding NIST primitives where practical is a preference, not an assurance argument: Ed25519 uses SHA-512 and standard BLE has its own cryptographic requirements. [Detailed rationale, tradeoffs and primary references](docs/CRYPTOGRAPHY.md)
+
+## Evidence you can inspect
+
+The recorded phase-two run on **2026-11-10** passed **all 11 required groups and 40 checks**. Six instrumented fuzz campaigns completed **112,481 executions**, each running for 121 seconds. Four bounded Kani harnesses passed. The native run also checked both libopus interoperability directions, twelve official mono decoder vectors, and eighteen lifecycle test functions, including property tests.
+
+| Recorded result | Observation |
+|---|---|
+| Idle and CPU-contention calls | Zero missed slots out of 1,500 per direction in each scenario; retained p99 send-error gate ≤ 5 ms |
+| Overload and blocked phone | Intentional misses, bounded queues, no catch-up bursts |
+| Cortex-M33 diagnostic | Real codec, encrypted media, link and selected policy paths executed; 32 audio frames recovered |
+| Linked image / static RAM | 707,168 bytes / 552,324 bytes, including a 32 KiB reserved heap |
+| Reference memory budget | 768 KiB main RAM, 128 KiB guarded stack, 64 KiB future-driver/display reserve; 37,500 bytes unassigned |
+
+These are observations from the identified software run and CPU emulator. They do not establish physical security or real-time hardware performance. The dashboard's later presentation update exposes **49 named test/proof/vector results** extracted from the logs; some cases repeat under different build profiles.
+
+[Full results](docs/RESULTS.md) · [Raw verdict and logs](docs/evidence/phase2/verdict.json) · [Machine-readable summary](docs/verification-summary.json) · [Embedded fit](docs/PLATFORM.md)
+
+![Measured native timing and Cortex-M33 memory budget](docs/assets/verification-results.svg)
 
 <table>
-  <tr><th>Visible individual test results</th><th>Live verification progress</th><th>Authenticated malformed audio</th></tr>
-  <tr>
-    <td><a href="docs/screenshots/phase2-tests-visible.jpg"><img src="docs/screenshots/phase2-tests-visible.jpg" width="240" alt="Searchable individual test outcomes with all eleven verification groups passed"></a></td>
-    <td><a href="docs/screenshots/phase2-live.jpg"><img src="docs/screenshots/phase2-live.jpg" width="240" alt="Live lifecycle fuzzing in progress with completed groups shown"></a></td>
-    <td><a href="docs/screenshots/phase2-authenticated-peer.jpg"><img src="docs/screenshots/phase2-authenticated-peer.jpg" width="240" alt="Malformed authenticated Opus concealed after framing checks; all eleven groups pass"></a></td>
-  </tr>
+<tr><th>Individual test outcomes</th><th>Pairing verification</th></tr>
+<tr>
+<td><a href="docs/screenshots/voxbastion-tests.jpg"><img src="docs/screenshots/voxbastion-tests.jpg" width="340" alt="VoxBastion searchable individual test results from the completed run"></a></td>
+<td><a href="docs/screenshots/voxbastion-pairing.jpg"><img src="docs/screenshots/voxbastion-pairing.jpg" width="340" alt="Actual passing pairing confirmation, capacity and malformed/replay test results"></a></td>
+</tr>
 </table>
 
-The dashboard shows searchable **Individual results** and **Checks** lists near the top. This run supplies 49 named test, proof and vector outcomes, and 40 checks. Some cases repeat under different build profiles. A separate **Trace scenario** filter controls packet replay. Pause, Step and Replay control that trace. Its live view identifies the running check and animates actual recorded sends, drops, tampering, replays, and receiver responses. Streaming and animation pause during timing measurements. The saved HTML embeds the events and needs no server. [Gallery and scenario explanations](docs/screenshots/README.md)
+*Actual dashboard captures presenting the recorded outcomes under the VoxBastion name. The plot is calculated from the committed timing and ARM reports; these presentation updates are not a new test campaign. [The gallery](docs/screenshots/README.md) also includes live campaign progress and authenticated malformed-audio handling captured under the former Quietlink Lab name.*
 
-## What has been verified
+## Toward the physical device
 
-The fresh complete phase-two run **passed all 11 required groups**: unit, protocol, lifecycle, platform, codec, isolation, fuzz, Kani, dependencies, timing and dashboard. Its run-specific verdict and measurements are recorded in [complete results](docs/RESULTS.md) and the [machine-readable summary](docs/verification-summary.json).
+The intended device has a trusted color display and controls, analog headset jack, independent battery, inductive charging and a separate BLE controller. Persistent secrets and protected state should use appropriate secure-element capabilities. A small protected first-stage verifier and physically initiated offline updates are part of the intended boot design. The inspiration is the Safe 7 separation of host and sensitive operations; this is an independent voice design with different workloads and requirements.
 
-The suite includes published Noise KK and XX vectors against the actual selected crypto resolver, 18 lifecycle/fault/property tests, six fuzz targets at least 120 seconds each, four bounded Kani harnesses, libopus interoperability, all 12 applicable official mono decoder vectors, and an in-place constructor comparison. Native idle and CPU-contention calls retain the p99 send-error ≤ 5 ms and missed-slot ≤ 0.1% gates.
+The software stage comes first. Hardware work follows explicit review and measurement gates, including real-time audio, radio containment, hardware entropy, durable storage, trusted UI and acoustic leakage. Decentralized signaling, possibly through interchangeable Nostr relay adapters, remains a future investigation. An optional clear glitter enclosure and signed reference-photo manifest remain physical tamper-evidence research; no supply-chain protection is claimed in the present model.
 
-The ARM diagnostic executes real Opus, Noise, link and policy code without Linux. The recorded image occupies 707,168 bytes; static RAM including a 32 KiB reserved heap is 552,324 bytes. With a 128 KiB stack and 64 KiB future-driver/display allowance, 37,500 bytes of the 768 KiB main-RAM budget remain unassigned. The [platform report](docs/PLATFORM.md) explains flash/RAM gates, stack watermark, driver reserves and public fixture keys. Passing CPU emulation demonstrates functional paths and linked capacity. It does not establish real-time performance or hardware isolation.
+[Device vision](docs/PROJECT_VISION.md) · [Hardware comparison](docs/DEVICE_RATIONALE.md) · [Roadmap and decision gates](docs/ROADMAP.md)
 
-## Repository structure
-
-| Component | Responsibility |
-| --- | --- |
-| [`crates/call-state`](crates/call-state) | Consent/close, Confirm/Ready, replay bitmap, monotonic security counter, Kani harnesses |
-| [`crates/protocol`](crates/protocol) | Enrollment, contact storage, invitations, Noise/media, entropy/radio/update policy |
-| [`crates/codec`](crates/codec) | Opus profile, packet admissibility, generated audio, loss concealment |
-| [`crates/device-core`](crates/device-core) | Slot scheduling, jitter buffer, endpoint media pipeline |
-| [`crates/link`](crates/link) | Bounded fragmentation and reassembly |
-| [`crates/lab-runner`](crates/lab-runner) | Virtual attacks, five-process calls, seccomp, codec comparison, WAVs, metrics |
-| [`platform`](platform) | Linked no_std Cortex-M33 diagnostic, guarded stack, fixed capacity limits |
-| [`scripts`](scripts) | Suite orchestration, dashboard, account-local C++ adapters |
-| [`fuzz`](fuzz) | Six handshake, record, codec, enrollment, lifecycle, update/radio fuzz targets |
-| [`vendor`](vendor) | Pinned libopus, initialization-only opus-rs port, provenance and integrity manifest |
-
-## Run the lab
-
-In an initialized checkout with the verification tools installed:
+## Try the software lab
 
 ```sh
+git clone https://github.com/adlererik/voxbastion.git
+cd voxbastion
 ./lab help
 ./lab demo
-./lab test
 ./lab watch --out /absolute/path/to/an/empty/directory
 ./lab status
-./lab replay                 # last completed full run
-./lab replay /path/to/run   # a saved run
+./lab replay
 ```
 
-`test` and `watch` run the same required suite. `watch` starts a read-only loopback dashboard and attempts to open the current graphical browser. The launcher resolves the repository from its own location. `--out` must identify an empty absolute directory. The full suite exits zero only if every required group passes.
+The demo uses synthetic audio and local processes. It requires no microphone, phone, cloud calling service, model API or paid API. `watch` runs the complete suite with a read-only loopback dashboard; timing measurements deliberately pause streaming/animation. The saved HTML works offline. The development host is Linux x86-64; the full suite needs the pinned Rust/tooling and ARM emulator described in the [development guide](docs/DEVELOPMENT.md).
 
-The toolchain requires Linux x86-64, Python 3.11+, rustup, the exact stable pin in [`rust-toolchain.toml`](rust-toolchain.toml) with rustfmt and Clippy, the fuzz nightly selected in [`scripts/lab.py`](scripts/lab.py), cargo-deny, cargo-fuzz, Kani with its setup completed, and a C/C++ toolchain with make and ar. The launcher uses repository-local `.lab-cache/` tooling and existing account-local Rust tools. On the recorded host, Zig supplied C++ without a system package installation. The native, fuzz and platform graphs each have Cargo lockfiles. The platform check also needs the ARM Rust target, `arm-none-eabi-size`, and official QEMU with Cortex-M33 MPS2 AN505 support. See [platform setup](docs/PLATFORM.md).
+## Explore and contribute
 
-The [original bootstrap](scripts/bootstrap-original.sh) is preserved for provenance. It includes source generation and targets `~/src/secure-voice-lab`; it is not a general installer for an arbitrary checkout. The implemented lab itself runs without an AI model, API key, paid calling service, microphone, or physical phone. Reference vectors download from upstream when absent from the cache.
+Start with the [documentation map](docs/README.md). The six Rust crates separate state, cryptography/protocol policy, audio, device behavior, framing and the native lab. `platform/` holds the freestanding ARM diagnostic; `fuzz/` holds the six campaigns; `scripts/` runs the checks and dashboard. These boundaries are intended to support a growing firmware and hardware project.
 
-## Saved evidence
+Useful work includes protocol review, state-machine verification, long-running fuzzing, codec/embedded interoperability, pairing usability, controller isolation, storage transactions and measurable hardware requirements. [Contribution guide](CONTRIBUTING.md) · [Security reporting](SECURITY.md)
 
-| Artifact | Contents |
-| --- | --- |
-| `verdict.json` | Eleven top-level statuses, check-level reasons and log paths |
-| `timing.json` | Host details, gates, send error/misses, queue peaks, CPU/codec/crypto time, memory and digital playout metrics |
-| `events.ndjson` | Bounded descriptions used by the dashboard; no keys or audio payloads |
-| `dashboard.html` | Self-contained offline replay with the CLI's verdicts |
-| `alice-received.wav`, `bob-received.wav` | Received synthetic audio for checking content and direction |
-| `platform/` | Linked capacity report, observed heap/stack, ELF sections, target dependency graph, emulator log and public-key diagnostic ELF |
-| `logs/` | Diagnostic evidence for each check |
+VoxBastion was previously named **Quietlink Lab**. Historical evidence, crate names and authenticated `quietlink` protocol domains retain their original identifiers so a branding change does not silently change the protocol or rewrite test history.
 
-Caches, build outputs, and ordinary run directories are excluded from Git. The committed summary identifies the recorded run; fresh runs produce their own evidence.
-
-## Boundaries and next steps
-
-The implemented lifecycle mechanisms use software models of trusted storage, entropy sources, raw flash and protected counters. They do not implement a particular secure element, a physical immutable boot root, real BLE, analog headset I/O, acoustic protection, a production UI or a deployed call network. Nostr remains an optional future signaling carrier. The intended battery, inductive charging, wired audio, trusted color display and separate radio are described in the [device rationale](docs/DEVICE_RATIONALE.md).
-
-Remaining security work includes independent review, complete secret-erasure analysis, durable transactional storage, long-running fuzz campaigns, seamless call-key renewal and any post-quantum requirement. A compromised phone can still deny service, expose metadata and record nearby speech through an intact microphone. Hardware timing, entropy quality, radio isolation, power and acoustic behavior need separate measurements. The [assurance case](docs/ASSURANCE.md) maps each claim to its evidence and limits.
+**Security posture:** an experimental project with a concrete threat model and inspectable evidence. Complete dependency/stack erasure, seamless key renewal, post-quantum protection and hardware validation remain open. The project does not claim immunity to an intelligence agency or readiness for sensitive production calls. [Assurance case](docs/ASSURANCE.md)

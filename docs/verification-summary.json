@@ -126,5 +126,8 @@
     "event_verdict_mapping": "pass",
     "browser_search_and_views": "pass",
     "scope": "Presentation follow-up after original complete run; core protocol and ARM code unchanged"
-  }
+  },
+  "current_project": "VoxBastion",
+  "current_repository": "adlererik/voxbastion",
+  "historical_identity_note": "Recorded run IDs, implementation identifiers and original repository field are preserved from the Quietlink baseline; documentation/branding is not a new security run."
 }

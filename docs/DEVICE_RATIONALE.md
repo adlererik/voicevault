@@ -1,6 +1,6 @@
 # The intended device
 
-Quietlink's intended product is a small, dedicated voice encryption endpoint inspired by the Trezor Safe 7's separation of sensitive operations from a general-purpose host. It is not a wallet or a modified Trezor firmware image. Exact component selection is still open, and copying a wallet's component list would not demonstrate suitability for continuous audio.
+VoxBastion's intended product is a small, dedicated voice encryption endpoint inspired by the Trezor Safe 7's separation of sensitive operations from a general-purpose host. It is not a wallet or a modified Trezor firmware image. Exact component selection is still open, and copying a wallet's component list would not demonstrate suitability for continuous audio.
 
 The trusted boundary includes the wired headset microphone and headphone path, codec, session keys, identities, contact verification, call controls and display. A separate battery and inductive charging remove the need for a phone cable. A separate BLE controller should have a narrow ciphertext interface and no access to trusted audio, memory, flash or debug. The physical BLE stack remains standards compliant; reducing the application services and authority is preferable to creating an incompatible link protocol.
 

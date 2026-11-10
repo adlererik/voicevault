@@ -1,4 +1,4 @@
-# Quietlink Lab threat model
+# VoxBastion threat model
 
 ## Attacker and exclusions
 
@@ -51,3 +51,5 @@ Three onboard entropy source interfaces model the MCU and two secure elements. A
 ## Embedded evidence boundary
 
 The trusted crates build without `std`. A separately linked Cortex-M33 ELF executes the real codec, encrypted records, fragmentation, jitter/playout and selected enrollment, invitation, storage, entropy and boot/update policy paths on QEMU MPS2 AN505. Its linker and runner enforce STM32U585-class capacity limits. This is not an STM32 peripheral model. The report includes static state, reserved heap/stack, an observed stack watermark and space for future drivers/partial display rendering. It does not establish worst-case stack, real-time 20 ms execution, hardware RNG quality, TrustZone isolation, BLE behavior or acoustic security. See [platform fit](PLATFORM.md) and [assurance case](ASSURANCE.md).
+
+For a complete per-control mapping to source and evidence, see the [security control register](SECURITY_CONTROLS.md). Algorithm selection and its tradeoffs are documented in [cryptographic choices](CRYPTOGRAPHY.md).

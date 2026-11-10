@@ -1,4 +1,4 @@
-# VoxBastion threat model
+# VoiceVault threat model
 
 ## Attacker and exclusions
 

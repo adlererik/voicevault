@@ -8,6 +8,18 @@ The repository has native full-duplex synthetic calls, two hostile phone process
 
 Keep this baseline reproducible: retain raw results and hashes, protocol known answers, codec references, dependency locks, meaningful negative tests and failure verdicts. Preserve original evidence when branding, documentation or presentation changes.
 
+## Recommended next software milestone
+
+**Make a reviewed long-call lifecycle the next feature gate.** Keep the five-minute fail-closed limit until a reviewed design replaces it. First obtain independent review of the existing Noise adapters, invitation/prologue binding, nonce/replay rules and unsafe codec initialization. Then design fresh authenticated key establishment during an ongoing call, old-key retirement, loss/reorder recovery, explicit failure behavior and reset handling. A symmetric rekey alone does not introduce fresh DH entropy or automatically provide recovery after key exposure. The Noise specification describes rekeying and application responsibilities; seamless renewal here still needs a concrete reviewed integration. [Noise advanced features and responsibilities](https://noiseprotocol.org/noise_rev34.html)
+
+Run that work through the existing live UI as an observation tool: display epoch transitions, rejected old-epoch packets, controlled reconnection and any interruption to audio. Test short artificial epochs under faults before testing long calls. Define key and audio-buffer ownership/lifetimes and investigate dependency, stack, allocator and crash remnants alongside renewal.
+
+**Broaden assurance before adding deployment features.** Extend the six fuzz campaigns beyond the current two-minute smoke gates, retain/minimize corpora and track coverage. Add model/property checks for persistence failures around renewal, revocation and update transitions; document each bound. Independent review must include malformed authenticated audio, the local crypto integration and the initialization-only codec patch. [Rust Fuzz Book](https://rust-fuzz.github.io/book/cargo-fuzz.html)
+
+**Write the concrete platform contract while remaining software-only.** Select a candidate MCU capacity/layout and map secure-element operations, protected generations, radio isolation, display buffering and offline-update transactions to required capabilities. Link those proposed memory reservations before committing to a PCB. The next hardware gate, when separately authorized, is a small development-board measurement of real codec deadlines, worst-case stack, interrupt/DMA load and power—not an immediate custom board. A tool such as probe-rs can run/debug real targets and report instrumentation, but choosing it does not establish device isolation or timing. [probe-rs](https://probe.rs/)
+
+Defer public signaling, Nostr and polished production hardware until the endpoint lifecycle and platform contract survive these gates. The current live dashboard is useful for finding and explaining failures; it is not independent security review.
+
 ## 2. Strengthen software assurance — before board commitment
 
 | Work | Exit evidence |

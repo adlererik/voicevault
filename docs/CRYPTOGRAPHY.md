@@ -1,6 +1,6 @@
 # Cryptographic choices
 
-VoxBastion chooses a small, fixed end-to-end suite and gives each primitive a specific job. Cryptography runs at the trusted voice endpoints. The phone is a carrier, and BLE link encryption is not the confidentiality boundary. This document explains the engineering reasons for the present choices, rather than treating algorithm names as a security certificate.
+VoiceVault chooses a small, fixed end-to-end suite and gives each primitive a specific job. Cryptography runs at the trusted voice endpoints. The phone is a carrier, and BLE link encryption is not the confidentiality boundary. This document explains the engineering reasons for the present choices, rather than treating algorithm names as a security certificate.
 
 ## The suite at a glance
 
@@ -51,7 +51,7 @@ The entropy model hashes contributions from onboard sources with a protected gen
 
 ## HMAC/HKDF: derive keys inside the established protocol
 
-The handshake needs more than a raw DH result. Noise specifies the transcript processing, chaining key and HMAC/HKDF operations that turn handshake secrets into the appropriate cipher keys. VoxBastion uses that schedule and Noise's directional transport keys. It does not add a competing application key schedule or directly use an X25519 output as an audio key. [Noise cryptographic functions and processing rules](https://noiseprotocol.org/noise_rev34.html), [HKDF background, RFC 5869](https://www.rfc-editor.org/rfc/rfc5869)
+The handshake needs more than a raw DH result. Noise specifies the transcript processing, chaining key and HMAC/HKDF operations that turn handshake secrets into the appropriate cipher keys. VoiceVault uses that schedule and Noise's directional transport keys. It does not add a competing application key schedule or directly use an X25519 output as an audio key. [Noise cryptographic functions and processing rules](https://noiseprotocol.org/noise_rev34.html), [HKDF background, RFC 5869](https://www.rfc-editor.org/rfc/rfc5869)
 
 A signature, a hash and a DH operation are not a complete authenticated protocol merely because each is sound separately. Their composition, key confirmation, identity binding and state transitions are why Noise is used.
 

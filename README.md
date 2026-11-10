@@ -1,14 +1,14 @@
-<p align="center"><img src="docs/assets/voxbastion-banner.svg" alt="VoxBastion — a trusted voice endpoint for an untrusted phone" width="1100"></p>
+<p align="center"><img src="docs/assets/voicevault-banner.svg" alt="VoiceVault — a trusted voice endpoint for an untrusted phone" width="1100"></p>
 
-# VoxBastion
+# VoiceVault
 
 **A dedicated encrypted voice device, being developed and tested in software before hardware is built.**
 
-A phone can be an excellent communications modem and an unsafe place to handle a private conversation. VoxBastion explores a different boundary: put the microphone path, audio codec, encryption keys, verified contacts and call approval inside a separate device. Give the phone encrypted media to forward.
+A phone can be an excellent communications modem and an unsafe place to handle a private conversation. VoiceVault explores a different boundary: put the microphone path, audio codec, encryption keys, verified contacts and call approval inside a separate device. Give the phone encrypted media to forward.
 
 The intended adversary has **NSA-class capabilities**: both phones may already be completely compromised through Pegasus-like spyware, zero-day or zero-click exploits, and telecommunications and relays may be controlled by the attacker. **Supply-chain attacks are excluded from the current threat model.** The project starts after phone compromise; it does not attempt to prevent or reproduce the exploit that compromised the phone.
 
-**Today:** working Rust voice simulations, hostile-phone processes, lifecycle security models, an interactive test dashboard and a linked Cortex-M33 diagnostic. **Destination:** a small independent voice endpoint with its own trusted display, wired headset audio, battery, inductive charging and a carefully isolated BLE connection to a phone. No physical VoxBastion device has been built.
+**Today:** working Rust voice simulations, hostile-phone processes, lifecycle security models, a live device-and-test dashboard and a linked Cortex-M33 diagnostic. **Destination:** a small independent voice endpoint with its own trusted display, wired headset audio, battery, inductive charging and a carefully isolated BLE connection to a phone. No physical VoiceVault device has been built.
 
 [Project vision](docs/PROJECT_VISION.md) · [Architecture](docs/ARCHITECTURE.md) · [Threat model](docs/THREAT_MODEL.md) · [Every security control](docs/SECURITY_CONTROLS.md) · [Why these algorithms](docs/CRYPTOGRAPHY.md) · [Test evidence](docs/RESULTS.md) · [Hardware roadmap](docs/ROADMAP.md)
 
@@ -16,9 +16,9 @@ The intended adversary has **NSA-class capabilities**: both phones may already b
 
 An ordinary encrypted calling app processes plaintext on the phone. Once an attacker controls that operating system, network encryption alone cannot protect audio the operating system can already access.
 
-VoxBastion's intended device owns the sensitive endpoint. Contacts are verified there, calls are approved there, and audio is encoded and encrypted there before reaching the phone. The phone carries encrypted records and necessary signaling; it does not become a trusted authority for identities, consent, keys, time, entropy or firmware.
+VoiceVault's intended device owns the sensitive endpoint. Contacts are verified there, calls are approved there, and audio is encoded and encrypted there before reaching the phone. The phone carries encrypted records and necessary signaling; it does not become a trusted authority for identities, consent, keys, time, entropy or firmware.
 
-This distinction depends on the physical audio path. The proposed host-phone arrangement includes removing its microphones and speakers, keeping voice on an external wired headset connected to VoxBastion, and validating remaining acoustic pickup paths. An unmodified compromised phone nearby can still record speech through its own microphone. [Why a separate device, and its limits](docs/DEVICE_RATIONALE.md)
+This distinction depends on the physical audio path. The proposed host-phone arrangement includes removing its microphones and speakers, keeping voice on an external wired headset connected to VoiceVault, and validating remaining acoustic pickup paths. An unmodified compromised phone nearby can still record speech through its own microphone. [Why a separate device, and its limits](docs/DEVICE_RATIONALE.md)
 
 ![Conceptual trust boundary and media path](docs/assets/architecture.svg)
 
@@ -89,21 +89,27 @@ The recorded phase-two run on **2026-11-10** passed **all 11 required groups and
 | Linked image / static RAM | 707,168 bytes / 552,324 bytes, including a 32 KiB reserved heap |
 | Reference memory budget | 768 KiB main RAM, 128 KiB guarded stack, 64 KiB future-driver/display reserve; 37,500 bytes unassigned |
 
-These are observations from the identified software run and CPU emulator. They do not establish physical security or real-time hardware performance. The dashboard's later presentation update exposes **49 named test/proof/vector results** extracted from the logs; some cases repeat under different build profiles.
+These are observations from the identified software run and CPU emulator. They do not establish physical security or real-time hardware performance. The historical dashboard presentation exposed **49 named test/proof/vector results** from these logs; the newer live parser also recognizes outcomes split by harness diagnostics. Some cases repeat under different build profiles.
 
 [Full results](docs/RESULTS.md) · [Raw verdict and logs](docs/evidence/phase2/verdict.json) · [Machine-readable summary](docs/verification-summary.json) · [Embedded fit](docs/PLATFORM.md)
 
 ![Measured native timing and Cortex-M33 memory budget](docs/assets/verification-results.svg)
 
 <table>
-<tr><th>Individual test outcomes</th><th>Pairing verification</th></tr>
+<tr><th>Live device activity</th><th>Hostile media rejected</th></tr>
 <tr>
-<td><a href="docs/screenshots/voxbastion-tests.jpg"><img src="docs/screenshots/voxbastion-tests.jpg" width="340" alt="VoxBastion searchable individual test results from the completed run"></a></td>
-<td><a href="docs/screenshots/voxbastion-pairing.jpg"><img src="docs/screenshots/voxbastion-pairing.jpg" width="340" alt="Actual passing pairing confirmation, capacity and malformed/replay test results"></a></td>
+<td><a href="docs/screenshots/voicevault-live-devices.png"><img src="docs/screenshots/voicevault-live-devices.png" width="340" alt="VoiceVault live software device panels and hostile transport path"></a></td>
+<td><a href="docs/screenshots/voicevault-live-faults.png"><img src="docs/screenshots/voicevault-live-faults.png" width="340" alt="Actual running fault scenario with Bob rejecting corrupted records"></a></td>
 </tr>
 </table>
 
-*Actual dashboard captures presenting the recorded outcomes under the VoxBastion name. The plot is calculated from the committed timing and ARM reports; these presentation updates are not a new test campaign. [The gallery](docs/screenshots/README.md) also includes live campaign progress and authenticated malformed-audio handling captured under the former Quietlink Lab name.*
+*Actual browser captures while the live scenarios were still running. The counters and device states come from endpoint events; the middle path has no independent live packet telemetry. These development captures are not a completed-suite verdict. The [gallery](docs/screenshots/README.md) identifies their run context and preserves older VoxBastion/Quietlink screenshots. The timing/memory plot above preserves the earlier phase-two baseline.*
+
+## See what is happening as it happens
+
+The UI opens at **http://127.0.0.1:8765/** for every run. Two device panels show identity/contact verification, invitation authentication, call establishment, encrypted media, receiver rejection and audio playout/concealment. Both hostile phones and the relay are shown between them. The test area reports every scheduled check, individual Rust tests, all twelve Opus vectors, each bounded proof and actual fuzzing counters as their harnesses report them.
+
+`./lab demo` gives a short visible normal/fault call demonstration. `./lab watch` runs the complete verification suite; `./lab ui` reopens the persistent page. Refresh reconstructs the current run, reconnect resumes events, and a new published run resets the display. Compilation, proofs and fuzzing are shown as checks rather than invented device traffic. Scored timing keeps graphics still and labels its buffered packet traces recorded. A running test is never displayed as a pass merely because it started. [How the dashboard works](docs/LIVE_DASHBOARD.md)
 
 ## Toward the physical device
 
@@ -116,16 +122,17 @@ The software stage comes first. Hardware work follows explicit review and measur
 ## Try the software lab
 
 ```sh
-git clone https://github.com/adlererik/voxbastion.git
-cd voxbastion
+git clone https://github.com/adlererik/voicevault.git
+cd voicevault
 ./lab help
 ./lab demo
 ./lab watch --out /absolute/path/to/an/empty/directory
+./lab ui       # reopen the same persistent local dashboard
 ./lab status
 ./lab replay
 ```
 
-The demo uses synthetic audio and local processes. It requires no microphone, phone, cloud calling service, model API or paid API. `watch` runs the complete suite with a read-only loopback dashboard; timing measurements deliberately pause streaming/animation. The saved HTML works offline. The development host is Linux x86-64; the full suite needs the pinned Rust/tooling and ARM emulator described in the [development guide](docs/DEVELOPMENT.md).
+The demo opens **http://127.0.0.1:8765/** and runs two eight-second live calls: normal encrypted delivery, then deliberate media corruption and loss. The display represents Alice and Bob as trusted device panels, with both hostile phones and the relay between them. It uses synthetic audio and local processes. It requires no microphone, phone, cloud calling service, model API or paid API. `watch` runs the complete suite with a read-only loopback dashboard; test starts, reported outcomes, fuzzing counters and proof results stream as they arrive. Timing measurements keep graphics still while progress remains visible; their packet traces are labeled recorded. The saved HTML works offline. The development host is Linux x86-64; the full suite needs the pinned Rust/tooling and ARM emulator described in the [development guide](docs/DEVELOPMENT.md).
 
 ## Explore and contribute
 
@@ -133,6 +140,6 @@ Start with the [documentation map](docs/README.md). The six Rust crates separate
 
 Useful work includes protocol review, state-machine verification, long-running fuzzing, codec/embedded interoperability, pairing usability, controller isolation, storage transactions and measurable hardware requirements. [Contribution guide](CONTRIBUTING.md) · [Security reporting](SECURITY.md)
 
-VoxBastion was previously named **Quietlink Lab**. Historical evidence, crate names and authenticated `quietlink` protocol domains retain their original identifiers so a branding change does not silently change the protocol or rewrite test history.
+VoiceVault was previously named **VoxBastion** and originally **Quietlink Lab**. Historical evidence, crate names and authenticated `quietlink` protocol domains retain their original identifiers so a branding change does not silently change the protocol or rewrite test history.
 
 **Security posture:** an experimental project with a concrete threat model and inspectable evidence. Complete dependency/stack erasure, seamless key renewal, post-quantum protection and hardware validation remain open. The project does not claim immunity to an intelligence agency or readiness for sensitive production calls. [Assurance case](docs/ASSURANCE.md)

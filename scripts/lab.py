@@ -17,7 +17,9 @@ import tempfile
 import time
 import tomllib
 
-from dashboard import GROUPS, Server, Trace, case_events, check_mapping, page, trace
+from dashboard import GROUPS, Trace, check_mapping, page, trace
+from live_output import pump
+from live_server import URL, ensure_service, publish
 
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".lab-cache"
@@ -78,20 +80,20 @@ def open_browser(url):
 
 
 class Suite:
-    def __init__(self, out):
+    def __init__(self, out, kind="verification"):
         self.out = out
         self.logs = out / "logs"
         self.logs.mkdir()
-        self.model = Trace()
+        self.model = Trace(out, metadata={"id": str(time.time_ns()), "started": time.time(), "owner_pid": os.getpid(), "kind": kind})
         self.groups = {group: [] for group in GROUPS}
         self.details = {}
         self.event_errors = []
         self.server = None
         self.env = os.environ.copy()
-        self.env.update(CARGO_TERM_COLOR="never", RUST_BACKTRACE="1", PROPTEST_RNG_SEED="870321")
+        self.env.update(CARGO_TERM_COLOR="never", RUST_BACKTRACE="1", PROPTEST_RNG_SEED="870321", PYTHONUNBUFFERED="1")
 
     def run(self, group, name, command, *, needs=(), timeout=120, events=False,
-            cwd=ROOT, accept=None, unavailable=None, env=None):
+            cwd=ROOT, accept=None, unavailable=None, env=None, recorded=False):
         missing = [tool for tool in needs if not shutil.which(tool)]
         if unavailable or missing:
             reason = unavailable or f"missing {', '.join(missing)}"
@@ -99,35 +101,17 @@ class Suite:
         logfile = self.logs / f"{name}.log"
         print(f"  RUN     {name}", flush=True)
         self.model.add(trace(name, "check", EXPECTED.get(group, "complete check"), "Running"))
-        with logfile.open("wb") as log:
-            log.write((f"$ {shlex.join(map(str, command))}\n").encode())
-            log.flush()
-            try:
-                process = subprocess.Popen(command, cwd=cwd, env=env or self.env,
-                                           stdin=subprocess.DEVNULL, stdout=log,
-                                           stderr=subprocess.STDOUT, start_new_session=True)
-            except OSError as error:
-                log.write(f"{error}\n".encode())
-                return self.record(group, name, "blocked", str(error), logfile)
-            try:
-                result = process.wait(timeout=timeout)
-            except (subprocess.TimeoutExpired, KeyboardInterrupt) as error:
-                os.killpg(process.pid, signal.SIGKILL)
-                process.wait()
-                log.write(f"Command interrupted or exceeded {timeout} seconds\n".encode())
-                if isinstance(error, KeyboardInterrupt):
-                    raise
-                return self.record(group, name, "fail", f"timeout ({timeout}s)", logfile)
+        try:
+            result = pump(command, cwd=cwd, env=env or self.env, logfile=logfile,
+                          name=name, model=self.model, timeout=timeout, events=events, recorded=recorded)
+        except OSError as error:
+            return self.record(group, name, "blocked", str(error), logfile)
+        except subprocess.TimeoutExpired:
+            return self.record(group, name, "fail", f"timeout ({timeout}s)", logfile)
+        except ValueError as error:
+            self.event_errors.append(str(error))
+            return self.record(group, name, "fail", str(error), logfile)
         contents = logfile.read_text(errors="replace")
-        for event in case_events(name, contents):
-            self.model.add(event)
-        if events:
-            for line in contents.splitlines():
-                if line.startswith("{"):
-                    try:
-                        self.model.add(json.loads(line))
-                    except ValueError as error:
-                        self.event_errors.append(f"{name}: {error}")
         if result != 0:
             diagnostic = next((line.strip() for line in reversed(contents.splitlines()[1:])
                                if line.strip() and not line.startswith("{")), "")
@@ -171,7 +155,7 @@ class Suite:
         check_mapping(self.model.events, result)
         (self.out / "events.ndjson").write_text(
             "".join(json.dumps(event, separators=(",", ":")) + "\n" for event in self.model.events))
-        (self.out / "dashboard.html").write_text(page(self.model.events))
+        (self.out / "dashboard.html").write_text(page(self.model.events, metadata=self.model.metadata | {"ended": time.time()}))
         write_json(self.out / "verdict.json", result)
         pointer = RUNS / "latest"
         temporary = RUNS / "latest.tmp"
@@ -254,7 +238,7 @@ def timing(suite, blocked):
         for mode in ("idle", "contention", "overload", "blocked-phone"):
             directory = suite.out / "timing" / mode
             passed = suite.run("timing", f"timing-{mode}", [RUNNER, "wall", directory, mode],
-                               timeout=55, events=True, unavailable=blocked)
+                               timeout=55, events=True, unavailable=blocked, recorded=True)
             metrics = directory / "metrics.json"
             check = suite.groups["timing"][-1]
             if metrics.is_file():
@@ -337,30 +321,34 @@ def suite_run(out, watch):
     watch_error = None
     if watch:
         try:
-            suite.server = Server(suite.model)
-            suite.server.start()
-            print(f"Dashboard {suite.server.url}", flush=True)
-            open_browser(suite.server.url)
-        except OSError as error:
-            watch_error = f"loopback dashboard unavailable ({error})"
+            url = ensure_service()
+            publish(out)
+            suite.server = True
+            print(f"Dashboard {url}", flush=True)
+            open_browser(url)
+        except (OSError, ValueError) as error:
+            watch_error = f"fixed loopback dashboard unavailable ({error})"
     try:
         suite.run("unit", "format", ["cargo", "fmt", "--all", "--", "--check"], needs=("cargo",))
         suite.run("unit", "format-fuzz", ["cargo", "fmt", "--manifest-path", "fuzz/Cargo.toml", "--", "--check"], needs=("cargo",))
         suite.run("unit", "format-platform", ["cargo", "fmt", "--manifest-path", "platform/Cargo.toml", "--", "--check"], needs=("cargo",))
         suite.run("unit", "clippy", ["cargo", "clippy", "--locked", "--workspace", "--all-targets",
                                     "--", "-D", "warnings"], needs=("cargo",), timeout=240)
-        suite.run("unit", "unit", ["cargo", "test", "--locked", "--workspace", "--lib", "--bins"],
+        suite.run("unit", "unit", ["cargo", "test", "--locked", "--workspace", "--lib", "--bins", "--", "--test-threads=1", "--nocapture"],
                   needs=("cargo",), timeout=240)
         built = suite.run("unit", "release-build", ["cargo", "build", "--locked", "--release", "-p", "lab-runner"],
                           needs=("cargo",), timeout=300)
         suite.finish_group("unit")
         unavailable = None if built else "release runner did not build"
 
-        suite.run("protocol", "protocol-tests", ["cargo", "test", "--locked", "-p", "protocol", "--test", "security", "--test", "vectors"],
+        suite.run("protocol", "protocol-tests", ["cargo", "test", "--locked", "-p", "protocol", "--test", "security", "--test", "vectors", "--", "--test-threads=1", "--nocapture"],
                   needs=("cargo",), timeout=240)
         suite.run("protocol", "virtual", [RUNNER, "virtual"], events=True, unavailable=unavailable)
+        for mode in ("live", "live-faults"):
+            suite.run("protocol", mode, [RUNNER,"wall",out/mode,mode],events=True,
+                      timeout=35,unavailable=unavailable)
         suite.finish_group("protocol")
-        suite.run("lifecycle", "lifecycle-tests", ["cargo", "test", "--locked", "-p", "protocol", "--test", "lifecycle"],
+        suite.run("lifecycle", "lifecycle-tests", ["cargo", "test", "--locked", "-p", "protocol", "--test", "lifecycle", "--", "--test-threads=1", "--nocapture"],
                   needs=("cargo",), timeout=240)
         suite.finish_group("lifecycle")
         suite.run("platform", "m33-linked-execution", [sys.executable,ROOT/"scripts/platform_check.py",out/"platform"],
@@ -372,10 +360,10 @@ def suite_run(out, watch):
         timing(suite, unavailable or (None if isolated else "hostile process isolation did not pass"))
         suite.finish_group("timing")
 
-        suite.run("codec", "codec-unit", ["cargo", "test", "--locked", "-p", "codec"], needs=("cargo",))
+        suite.run("codec", "codec-unit", ["cargo", "test", "--locked", "-p", "codec", "--", "--test-threads=1", "--nocapture"], needs=("cargo",))
         suite.run("codec", "vendor-port-integrity", [sys.executable, ROOT/"scripts/check_vendor.py"])
         suite.run("codec", "inplace-constructor", ["cargo", "test", "--locked", "-p", "codec", "--no-default-features",
-                                                    "in_place_matches_upstream_constructor"], needs=("cargo",),timeout=180)
+                                                    "in_place_matches_upstream_constructor", "--", "--test-threads=1", "--nocapture"], needs=("cargo",),timeout=180)
         reference = prepare_reference(suite)
         vectors = prepare_vectors(suite)
         codec_blocked = unavailable or (None if reference else "libopus reference unavailable")
@@ -431,8 +419,8 @@ def suite_run(out, watch):
         table(report, out)
         return 0 if all(report[key] == "pass" for key in GROUPS) else 1
     finally:
-        if suite.server:
-            suite.server.stop()
+        if suite.model.phase != "done":
+            suite.model.set_phase("interrupted")
 
 
 def latest():
@@ -451,6 +439,7 @@ def main():
                           ("demo", "run a short isolated call and save WAVs")]:
         command = commands.add_parser(name, help=message)
         command.add_argument("--out", metavar="ABS_DIR", help="write to an empty absolute directory")
+    commands.add_parser("ui", help="open the persistent dashboard at http://127.0.0.1:8765/")
     commands.add_parser("status", help="show the last full suite verdict and failure reasons")
     replay = commands.add_parser("replay", help="open a saved offline dashboard")
     replay.add_argument("run", nargs="?", help="run directory or dashboard.html, defaults to last run")
@@ -458,6 +447,8 @@ def main():
     if args.command in (None, "help"):
         parser.print_help()
         return 0
+    if args.command == "ui":
+        url=ensure_service();print(url,flush=True);open_browser(url);return 0
     if args.command == "status":
         directory = latest()
         result = json.loads((directory / "verdict.json").read_text())
@@ -478,14 +469,23 @@ def main():
         out = report_directory(args.out, args.command)
         if args.command != "demo":
             return suite_run(out, args.command == "watch")
-        suite = Suite(out)
-        if not suite.run(None, "demo-build", ["cargo", "build", "--locked", "--release", "-p", "lab-runner"],
-                         needs=("cargo",), timeout=300):
-            return 1
-        if not suite.run(None, "demo", [RUNNER, "wall", out, "demo"], timeout=18, events=True):
-            return 1
-        print(f"WAVs saved in {out}")
-        return 0
+        suite = Suite(out, kind="demonstration")
+        url=ensure_service();publish(out);print(f"Dashboard {url}",flush=True);open_browser(url)
+        try:
+            built=suite.run(None,"demo-build",["cargo","build","--locked","--release","-p","lab-runner"],needs=("cargo",),timeout=300)
+            outcomes=[]
+            for mode in ("live","live-faults"):
+                outcomes.append(suite.run(None,mode,[RUNNER,"wall",out/mode,mode],events=True,timeout=35,
+                                          unavailable=None if built else "runner did not build"))
+            suite.model.set_phase("done")
+            (out/"events.ndjson").write_text("".join(json.dumps(event)+"\n" for event in suite.model.events))
+            (out/"dashboard.html").write_text(page(suite.model.events,metadata=suite.model.metadata))
+            write_json(out/"demo-verdict.json",{"scope":"live demonstration; not a full verification run","passed":built and all(outcomes)})
+            print(f"Live demonstration saved in {out}")
+            return 0 if built and all(outcomes) else 1
+        finally:
+            if suite.model.phase!="done":suite.model.set_phase("interrupted")
+
 
 
 if __name__ == "__main__":

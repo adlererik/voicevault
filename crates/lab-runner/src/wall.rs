@@ -121,6 +121,7 @@ fn count(mode: &str) -> Result<u64> {
         "idle" | "contention" => Ok(1500),
         "overload" | "blocked-phone" => Ok(150),
         "demo" => Ok(100),
+        "live" | "live-faults" => Ok(400),
         _ => Err("invalid timing scenario".into()),
     }
 }
@@ -192,12 +193,30 @@ impl protocol::invitation::TrustedClock for LocalClock {
         now(libc::CLOCK_REALTIME) / 1_000_000_000
     }
 }
-fn connect(data: &UnixDatagram, control: &UnixDatagram, alice: bool) -> Result<Device> {
+fn device_status(mode: &str, actor: &str, message: &str) {
+    if mode.starts_with("live") {
+        Event {
+            test: mode,
+            tick: 0,
+            action: "device",
+            from: actor,
+            to: "",
+            expected: "trusted endpoint and separate untrusted transport",
+            observed: message,
+            status: "info",
+        }
+        .emit_live();
+    }
+}
+
+fn connect(data: &UnixDatagram, control: &UnixDatagram, alice: bool, mode: &str) -> Result<Device> {
     use protocol::{
         contacts::{ContactBook, StorageRoot},
         enrollment::EnrolledContact,
         invitation::{Admission, Invitation, Kind, call_context},
     };
+    let actor = if alice { "Alice" } else { "Bob" };
+    device_status(mode, actor, "Creating local identity and boot challenge");
     let mut entropy = OsEntropy;
     let identity = Identity::new(&mut entropy)?;
     let owner: [u8; 32] = identity.contact()[..32].try_into()?;
@@ -219,6 +238,11 @@ fn connect(data: &UnixDatagram, control: &UnixDatagram, alice: bool) -> Result<D
     let mut root = StorageRoot::new(&mut entropy)?;
     let snapshot = book.persist(&mut root)?;
     book = ContactBook::restore(&snapshot, &root, owner)?;
+    device_status(
+        mode,
+        actor,
+        "Pinned contact verified; sealed contact state restored",
+    );
     let mut admission = Admission::default();
     let (issued, verified) = if alice {
         let (offer, _snapshot) = Invitation::issue(
@@ -278,6 +302,11 @@ fn connect(data: &UnixDatagram, control: &UnixDatagram, alice: bool) -> Result<D
         (accept, verified)
     };
     let context = call_context(&identity, &book, &issued, &verified)?;
+    device_status(
+        mode,
+        actor,
+        "Signed invitation authenticated and bound to call",
+    );
     let mut handshake = identity.handshake_with_entropy(
         &book.pin(&signer)?,
         alice,
@@ -293,6 +322,11 @@ fn connect(data: &UnixDatagram, control: &UnixDatagram, alice: bool) -> Result<D
         send(data, 0, &handshake.send()?)?;
     }
     let mut session = handshake.split()?;
+    device_status(
+        mode,
+        actor,
+        "Noise handshake authenticated; local consent confirmed",
+    );
     session.consent();
     for (index, command) in [Control::Confirm, Control::Ready].into_iter().enumerate() {
         send(data, index as u32 + 1, &session.control(command)?)?;
@@ -300,6 +334,11 @@ fn connect(data: &UnixDatagram, control: &UnixDatagram, alice: bool) -> Result<D
         session.receive(&wire[..len], 0..0)?;
     }
     check(session.active(), "mutual confirmation failed")?;
+    device_status(
+        mode,
+        actor,
+        "Call active: confirmation complete; audio gate open",
+    );
     Ok(Device::new(session)?)
 }
 
@@ -360,10 +399,14 @@ struct Measurements {
     playout_latency: Vec<u64>,
     pcm: Vec<i16>,
     traces: Vec<Event<'static>>,
+    live: bool,
 }
 
 impl Measurements {
     fn trace(&mut self, event: Event<'static>) {
+        if self.live {
+            event.emit_live();
+        }
         if self.traces.len() < TRACE_LIMIT {
             self.traces.push(event);
         }
@@ -421,6 +464,7 @@ fn measure(
         playout_latency: Vec::with_capacity(count as usize),
         pcm: vec![0; count as usize * codec::SAMPLES],
         traces: Vec::with_capacity(TRACE_LIMIT),
+        live: mode.starts_with("live"),
     };
     let (local, phone, remote) = if alice {
         ("Alice", "Phone A", "Bob")
@@ -478,7 +522,7 @@ fn measure(
                 } else {
                     m.stats.transmit_drops += 1;
                 }
-                if slot < TRACE_SLOTS {
+                if mode.starts_with("live") || slot < TRACE_SLOTS {
                     let (action, observed) = if result.is_ok() {
                         ("send", "128-byte ciphertext submitted")
                     } else {
@@ -517,12 +561,13 @@ fn measure(
             match parts.push(&frame.bytes[..usize::from(frame.len)], current) {
                 Ok(Some((wire, len))) => {
                     let at = mono();
-                    let accepted = device.ingest(&wire[..len], current).is_ok();
+                    let outcome = device.ingest(&wire[..len], current);
+                    let accepted = outcome.is_ok();
                     m.stats.crypto_ns += mono() - at;
                     if !accepted {
                         m.stats.receive_drops += 1;
                     }
-                    if current < TRACE_SLOTS {
+                    if mode.starts_with("live") || current < TRACE_SLOTS {
                         m.trace(Event {
                             test: mode,
                             tick: current,
@@ -532,6 +577,8 @@ fn measure(
                             expected: "authenticate before playout",
                             observed: if accepted {
                                 "authenticated record buffered"
+                            } else if matches!(outcome, Err(protocol::Error::Auth)) {
+                                "authentication failed; record discarded"
                             } else {
                                 "record rejected"
                             },
@@ -558,7 +605,7 @@ fn measure(
             }
             let offset = slot as usize * codec::SAMPLES;
             m.pcm[offset..offset + codec::SAMPLES].copy_from_slice(&pcm);
-            if current < TRACE_SLOTS {
+            if mode.starts_with("live") || current < TRACE_SLOTS {
                 m.trace(Event {
                     test: mode,
                     tick: current,
@@ -624,14 +671,22 @@ pub fn write_wav(path: &Path, pcm: &[i16]) -> Result<()> {
 }
 
 pub fn endpoint(out: &Path, alice: bool, mode: &str) -> Result<()> {
-    let mode = ["idle", "contention", "overload", "blocked-phone", "demo"]
-        .into_iter()
-        .find(|candidate| *candidate == mode)
-        .ok_or("unknown wall-clock mode")?;
+    let mode = [
+        "idle",
+        "contention",
+        "overload",
+        "blocked-phone",
+        "demo",
+        "live",
+        "live-faults",
+    ]
+    .into_iter()
+    .find(|candidate| *candidate == mode)
+    .ok_or("unknown wall-clock mode")?;
     let data = sandbox::inherited(0);
     let control = sandbox::inherited(1);
     control.set_read_timeout(Some(Duration::from_secs(8)))?;
-    let device = connect(&data, &control, alice)?;
+    let device = connect(&data, &control, alice, mode)?;
     control.send(b"active")?;
     let parameters = read_exact::<16>(&control)?;
     let start = u64::from_le_bytes(parameters[..8].try_into()?);
@@ -650,6 +705,11 @@ pub fn endpoint(out: &Path, alice: bool, mode: &str) -> Result<()> {
         .map(serde_json::to_string)
         .collect::<std::result::Result<Vec<_>, _>>()?;
     fs::write(out.join(format!("{who}.ndjson")), traces.join("\n"))?;
+    device_status(
+        mode,
+        if alice { "Alice" } else { "Bob" },
+        "Call complete; recovered synthetic audio saved",
+    );
     control.send(b"done")?;
     Ok(())
 }
@@ -730,6 +790,8 @@ pub fn run(out: &Path, mode: &str) -> Result<()> {
     for index in 0..3 {
         let variant = if mode == "blocked-phone" && index == 0 {
             "blocked"
+        } else if mode == "live-faults" && index == 0 {
+            "faults"
         } else {
             "pass"
         };
@@ -741,6 +803,17 @@ pub fn run(out: &Path, mode: &str) -> Result<()> {
                 .stdout(sandbox::stdio(chain[index + 1][0].take().unwrap()))
                 .stderr(Stdio::null())
                 .spawn()?,
+        );
+    }
+    for peer in ["Phone A", "Relay", "Phone B"] {
+        device_status(
+            mode,
+            peer,
+            if mode == "live-faults" && peer == "Phone A" {
+                "Hostile process running; injected media corruption and loss enabled"
+            } else {
+                "Untrusted forwarding process running"
+            },
         );
     }
     let a = read_exact::<CONTACT>(&controls[0])?;
@@ -836,8 +909,18 @@ pub fn run(out: &Path, mode: &str) -> Result<()> {
         reasons.push("Phone A blockage did not cause backpressure".into());
         passed = false;
     }
+    if mode == "live-faults"
+        && (b["receive_drops"].as_u64().unwrap_or(0) == 0
+            || b["plc_slots"].as_u64().unwrap_or(0) == 0)
+    {
+        reasons.push("injected live faults did not produce rejection and concealment".into());
+        passed = false;
+    }
     let mut tones = serde_json::Value::Null;
-    if matches!(mode, "idle" | "contention" | "demo") {
+    if matches!(
+        mode,
+        "idle" | "contention" | "demo" | "live" | "live-faults"
+    ) {
         let (a_right, a_wrong) = wav_direction(&out.join("alice-received.wav"), 700.0, 400.0)?;
         let (b_right, b_wrong) = wav_direction(&out.join("bob-received.wav"), 400.0, 700.0)?;
         tones = serde_json::json!({"alice_700hz": a_right, "alice_400hz": a_wrong, "bob_400hz": b_right, "bob_700hz": b_wrong});
@@ -878,8 +961,10 @@ pub fn run(out: &Path, mode: &str) -> Result<()> {
         }
     }
     traces.sort_by_key(|(tick, _)| *tick);
-    for (_, line) in traces {
-        println!("{line}");
+    if !mode.starts_with("live") {
+        for (_, line) in traces {
+            println!("{line}");
+        }
     }
     Event {
         test: mode,

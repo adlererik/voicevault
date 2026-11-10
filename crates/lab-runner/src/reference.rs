@@ -128,6 +128,7 @@ pub fn vectors(reference: &Path, vectors: &Path, out: &Path) -> Result<()> {
     let mut failures = Vec::new();
     for index in 1..=12 {
         let name = format!("testvector{index:02}");
+        println!("{name}: RUNNING");
         let result = (|| -> Result<()> {
             let path = out.join(format!("{name}.pcm"));
             let mut file = BufWriter::new(File::create(&path)?);

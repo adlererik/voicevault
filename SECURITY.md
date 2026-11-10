@@ -1,6 +1,6 @@
 # Security status and reporting
 
-VoxBastion is experimental software for a future dedicated voice device. There is no production hardware release or supported sensitive-calling deployment. The current scope is defined in the [threat model](docs/THREAT_MODEL.md), [control register](docs/SECURITY_CONTROLS.md) and [assurance case](docs/ASSURANCE.md).
+VoiceVault is experimental software for a future dedicated voice device. There is no production hardware release or supported sensitive-calling deployment. The current scope is defined in the [threat model](docs/THREAT_MODEL.md), [control register](docs/SECURITY_CONTROLS.md) and [assurance case](docs/ASSURANCE.md).
 
 For a non-sensitive bug, use a repository issue with a synthetic reproducer, exact source revision, expected/observed behavior and relevant check output. For a potentially exploitable issue, use GitHub's private vulnerability-reporting option if available, or arrange a private channel with the maintainer before sharing exploit-sensitive details. Do not publish private keys, identities, recordings or unnecessary personal/system data.
 

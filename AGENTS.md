@@ -1,4 +1,4 @@
-# VoxBastion engineering requirements
+# VoiceVault engineering requirements
 
 Read docs/THREAT_MODEL.md, docs/BUILD_SPEC.md and docs/ASSURANCE.md before security changes. The project is a software-first model of a separate trusted voice endpoint using an already-compromised phone as a modem. Assume NSA-class phone compromise and telecommunications control. Supply-chain attacks are excluded by the owner. Do not construct hardware, deploy Nostr/BLE, use real contacts/audio or expose public listeners without a new request.
 
@@ -8,4 +8,4 @@ Preserve all required verification groups and timing thresholds. `./lab test` or
 
 Do not run the preserved bootstrap to regenerate this repository. Keep caches/build outputs out of Git. Update the documented assurance gaps and measured results when behavior changes.
 
-Documentation map: docs/README.md. Preserve the distinction between current software, hardware-policy models and the future physical device. Keep cryptographic rationale and the control register aligned with implementation. Repository branding is VoxBastion; historical Quietlink run IDs, crates and authenticated domains remain unchanged unless a separately reviewed protocol migration requires otherwise.
+Documentation map: docs/README.md. Preserve the distinction between current software, hardware-policy models and the future physical device. Keep cryptographic rationale and the control register aligned with implementation. The dashboard uses fixed loopback address 127.0.0.1:8765; keep current test progress visible and label buffered benchmark traces recorded. Repository branding is VoiceVault; historical Quietlink run IDs, crates and authenticated domains remain unchanged unless a separately reviewed protocol migration requires otherwise.

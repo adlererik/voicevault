@@ -7,18 +7,19 @@ The native laboratory currently targets **Linux x86-64**. Calls are synthetic an
 Clone the repository using your normal GitHub access, then run:
 
 ```sh
-git clone https://github.com/adlererik/voxbastion.git
-cd voxbastion
+git clone https://github.com/adlererik/voicevault.git
+cd voicevault
 ./lab help
 ./lab demo
 ```
 
 Install Rust through rustup and make the exact pin in [`rust-toolchain.toml`](../rust-toolchain.toml) available. Python 3.11+ and Linux connected Unix datagrams/seccomp support are needed. A missing or unavailable check is reported instead of being treated as a pass.
 
-`demo` builds the release runner, makes a short isolated call and saves received WAVs. It is smaller than the full verification suite. For a visible complete run:
+`demo` builds the release runner, opens the fixed dashboard and runs two isolated eight-second calls: normal delivery and deliberate media corruption/loss. It saves recovered synthetic WAVs and a demo-only verdict. It is smaller than the full verification suite. For a visible complete run:
 
 ```sh
 ./lab watch --out /absolute/path/to/an/empty/directory
+./lab ui
 ./lab status
 ./lab replay
 ```
@@ -66,7 +67,7 @@ The preserved [`bootstrap-original.sh`](../scripts/bootstrap-original.sh) contai
 | Group | Required work |
 |---|---|
 | unit | Formatting of three workspaces, Clippy, Rust tests and release build |
-| protocol | Actual-resolver KK/XX vectors, negative/property tests and virtual attacks |
+| protocol | Actual-resolver KK/XX vectors, negative/property tests, virtual attacks and two live full-duplex calls |
 | lifecycle | Enrollment, contacts, invitations, storage, entropy, radio and update fault tests |
 | platform | Actual no_std link/execution and explicit capacity gates |
 | codec | CBR/framing, constructor equivalence, patch integrity, libopus interop and official vectors |
@@ -77,7 +78,7 @@ The preserved [`bootstrap-original.sh`](../scripts/bootstrap-original.sh) contai
 | timing | Idle, CPU contention, overload and blocked phone, with retained gates |
 | dashboard | Read-only loopback stream, controls, parsing and verdict mapping |
 
-The dashboard's **Checks** view shows high-level verification progress. **Individual results** shows named outcomes actually printed by supported test/proof/vector harnesses; a group pass does not manufacture case passes. Search filters those lists. **Trace scenario** independently filters event replay. Stream/animation pause during timing measurements so the UI does not become an uncontrolled part of the timing experiment.
+The dashboard's **Checks** view shows high-level verification progress. **Individual results** shows named outcomes actually printed by supported test/proof/vector harnesses; a group pass does not manufacture case passes. Search filters those lists. **Trace scenario** independently filters event replay. During live calls, endpoint states and media events arrive before process exit. Rust tests run with a single test thread so starts and multi-line outcomes can be associated. Fuzz campaigns show reported execution rates/counts and proofs report each harness. Timing graphics stay still while check/elapsed progress continues; benchmark packets emitted after a scenario are labeled recorded. [Dashboard operation and telemetry limits](LIVE_DASHBOARD.md)
 
 ## Evidence and snapshots
 
@@ -89,4 +90,4 @@ The committed phase-two snapshot records a past run, not current CI status. For 
 
 Keep protocol/state logic separate from device drivers and untrusted carriers. Add a hardware or firmware component when its implementation and ownership exist, rather than duplicating protocol logic into a parallel stack. Preserve bounded inputs, explicit local authority and independently testable interfaces. Future production build/release, board, peripheral and relay components belong to the [roadmap](ROADMAP.md), not the current evidence claims.
 
-The repository was renamed from Quietlink Lab to VoxBastion. Historical crates, diagnostics and authenticated wire domains retain `quietlink` identifiers intentionally. Clones should use the new remote; an existing checkout can update it with `git remote set-url origin https://github.com/adlererik/voxbastion.git`.
+The repository is now VoiceVault, previously VoxBastion and originally Quietlink Lab. Historical crates, diagnostics and authenticated wire domains retain `quietlink` identifiers intentionally. Clones should use the new remote; an existing checkout can update it with `git remote set-url origin https://github.com/adlererik/voicevault.git`.

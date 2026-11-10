@@ -1,6 +1,6 @@
-# Contributing to VoxBastion
+# Contributing to VoiceVault
 
-VoxBastion is a software-first device project. Read the [vision](docs/PROJECT_VISION.md), [threat model](docs/THREAT_MODEL.md), [control register](docs/SECURITY_CONTROLS.md) and [assurance case](docs/ASSURANCE.md) before proposing security changes.
+VoiceVault is a software-first device project. Read the [vision](docs/PROJECT_VISION.md), [threat model](docs/THREAT_MODEL.md), [control register](docs/SECURITY_CONTROLS.md) and [assurance case](docs/ASSURANCE.md) before proposing security changes.
 
 Useful contributions connect an implementation to a checkable property: a minimized parser failure, a state-machine invariant, a measured codec/resource constraint, a pairing usability result or a clearly scoped hardware test. State the attack, the intended boundary, the evidence and the remaining assumptions.
 

@@ -1,6 +1,6 @@
-# The VoxBastion device vision
+# The VoiceVault device vision
 
-VoxBastion is intended to become a physical encrypted voice endpoint. The current software lab is its engineering foundation: a place to make the protocol, failure behavior and resource demands inspectable before committing to a board.
+VoiceVault is intended to become a physical encrypted voice endpoint. The current software lab is its engineering foundation: a place to make the protocol, failure behavior and resource demands inspectable before committing to a board.
 
 The distinctive challenge is keeping voice, identities and user decisions on a small endpoint while the carrier is actively hostile. The project combines protocol engineering, embedded Rust, audio processing, trusted interaction and measurable security boundaries.
 
@@ -26,7 +26,7 @@ The future endpoint encrypts outgoing media before passing it to the phone and a
 | Reproducible release artifacts | Users can compare independently built payloads and separately verify signatures | Pinned inputs/provenance exist; a bit-reproducible production release pipeline is future work |
 | Decentralized invitation carriers | Interchangeable untrusted relay/discovery adapters | Future investigation; no Nostr deployment |
 
-The Safe 7 inspiration includes a separate MCU, secure elements, battery/display and host separation. VoxBastion is not a wallet, an endorsed Trezor derivative or a claim that a wallet bill of materials will sustain real-time voice. The exact part, memory layout, supported chip operations and peripheral design need selection and measurement. [Device rationale](DEVICE_RATIONALE.md)
+The Safe 7 inspiration includes a separate MCU, secure elements, battery/display and host separation. VoiceVault is not a wallet, an endorsed Trezor derivative or a claim that a wallet bill of materials will sustain real-time voice. The exact part, memory layout, supported chip operations and peripheral design need selection and measurement. [Device rationale](DEVICE_RATIONALE.md)
 
 ## The acoustic requirement matters
 

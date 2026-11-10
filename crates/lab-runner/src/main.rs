@@ -4,7 +4,7 @@ mod simulation;
 mod wall;
 
 use serde::Serialize;
-use std::io;
+use std::io::{self, Write};
 use std::path::Path;
 
 type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
@@ -28,6 +28,18 @@ impl Event<'_> {
             "{}",
             serde_json::to_string(self).expect("static event strings")
         );
+        io::stdout().flush().expect("event output");
+    }
+    fn emit_live(&self) {
+        // Monitoring only: this path is never called by timing benchmarks.
+        let line = format!(
+            "{}\n",
+            serde_json::to_string(self).expect("static event strings")
+        );
+        io::stderr()
+            .lock()
+            .write_all(line.as_bytes())
+            .expect("live event output");
     }
 }
 

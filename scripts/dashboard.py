@@ -4,6 +4,8 @@ import http.client
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import re
+import os
+import time
 from pathlib import Path
 import threading
 
@@ -13,9 +15,12 @@ GROUPS = ("unit", "protocol", "lifecycle", "platform", "codec", "isolation", "fu
 STATUSES = {"info", "pass", "fail", "blocked"}
 NODES = {"", "Alice", "Phone A", "Relay", "Phone B", "Bob"}
 ACTIONS = {"send", "forward", "drop", "delay", "tamper", "replay", "inject",
-           "duplicate", "receive", "reject", "playout", "verdict", "group", "check", "case"}
+           "duplicate", "receive", "reject", "playout", "verdict", "group", "check", "case", "progress", "device"}
 FIELDS = {"test", "tick", "action", "from", "to", "expected", "observed", "status"}
-LIMIT = 4096
+LIMIT = 32768
+DEFAULT_HOST = "127.0.0.1"
+DEFAULT_PORT = 8765
+SERVICE_VERSION = 3
 
 
 def trace(test, action, expected, observed, status="info"):
@@ -55,17 +60,29 @@ def validate(event):
         raise ValueError("invalid suite verdict event")
 
 
-def page(events, live=False):
-    data = json.dumps({"live": live, "events": events}, separators=(",", ":"))
+def page(events, live=False, metadata=None):
+    data = json.dumps({"live": live, "events": events, "meta": metadata or {}}, separators=(",", ":"))
     data = data.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
     return TEMPLATE.read_text().replace("@@REPORT@@", data)
 
 
 class Trace:
-    def __init__(self):
+    def __init__(self, directory=None, metadata=None):
+        self.directory = Path(directory) if directory else None
+        self.metadata = metadata or {"id": str(time.time_ns()), "started": time.time(), "owner_pid": os.getpid(), "kind": "verification"}
         self.events = []
         self.phase = "live"
         self.changed = threading.Condition()
+        if self.directory:
+            (self.directory / "live-events.ndjson").write_text("")
+            self.save_state()
+
+    def save_state(self):
+        if self.directory:
+            target = self.directory / "live-state.json"
+            temp = target.with_suffix(".tmp")
+            temp.write_text(json.dumps(self.metadata | {"phase": self.phase, "events": len(self.events)}))
+            temp.replace(target)
 
     def add(self, event):
         validate(event)
@@ -73,22 +90,23 @@ class Trace:
             if len(self.events) >= LIMIT:
                 raise ValueError("trace event limit reached")
             self.events.append(event)
+            if self.directory:
+                with (self.directory / "live-events.ndjson").open("a") as file:
+                    file.write(json.dumps(event, separators=(",", ":")) + "\n")
             self.changed.notify_all()
 
     def set_phase(self, phase):
         with self.changed:
             self.phase = phase
+            if phase in ("done", "interrupted", "error"):
+                self.metadata["ended"] = time.time()
+            self.save_state()
             self.changed.notify_all()
 
     def next(self, cursor, last_phase):
         with self.changed:
-            self.changed.wait_for(
-                lambda: last_phase != self.phase or (
-                    self.phase != "timing" and cursor < len(self.events)),
-                timeout=1,
-            )
-            events = [] if self.phase == "timing" else self.events[cursor:]
-            return self.phase, events
+            self.changed.wait_for(lambda: last_phase != self.phase or cursor < len(self.events), timeout=.5)
+            return self.phase, self.events[cursor:]
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -104,7 +122,7 @@ class Handler(BaseHTTPRequestHandler):
             self.send_error(403)
             return
         if self.path == "/":
-            body = page([], live=True).encode()
+            body = page([], live=True, metadata=self.server.trace.metadata).encode()
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
             self.send_header("Content-Length", str(len(body)))
@@ -114,6 +132,15 @@ class Handler(BaseHTTPRequestHandler):
             self.send_header("Cache-Control", "no-store")
             self.end_headers()
             self.wfile.write(body)
+        elif self.path == "/health":
+            import hashlib
+            body = json.dumps({"project": "VoiceVault", "version": SERVICE_VERSION,
+                               "root": hashlib.sha256(str(Path(__file__).resolve().parents[1]).encode()).hexdigest(),
+                               "pid": os.getpid()}).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers(); self.wfile.write(body)
         elif self.path == "/events":
             if not self.server.clients.acquire(blocking=False):
                 self.send_error(503)
@@ -135,30 +162,27 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "text/event-stream")
         self.send_header("Cache-Control", "no-store")
         self.end_headers()
-        cursor, last_phase = 0, None
-        try:
-            cursor = min(LIMIT, max(0, int(self.headers.get("Last-Event-ID", 0))))
-        except ValueError:
-            pass
-        trace = self.server.trace
+        cursor, last_phase, run_id = 0, None, None
+        previous = self.headers.get("Last-Event-ID", "")
+        resume_run, _, resume_cursor = previous.rpartition(":")
+        trace_model = self.server.trace
         while not self.server.stopping.is_set():
-            phase, events = trace.next(cursor, last_phase)
-            if phase == "timing":
-                if last_phase != phase:
-                    self.message("phase", phase)
-                    last_phase = phase
+            current_run = trace_model.metadata.get("id", "idle")
+            if run_id != current_run:
+                run_id, cursor, last_phase = current_run, 0, None
+                if resume_run == run_id:
+                    try: cursor = min(len(trace_model.events), max(0, int(resume_cursor)))
+                    except ValueError: pass
+                self.message("run", trace_model.metadata)
+            phase, events = trace_model.next(cursor, last_phase)
+            if trace_model.metadata.get("id", "idle") != run_id:
                 continue
-            if last_phase != phase and phase != "done":
-                self.message("phase", phase)
-                last_phase = phase
+            if phase != last_phase:
+                self.message("phase", phase); last_phase = phase
             for event in events:
-                if trace.phase == "timing":
-                    break
                 cursor += 1
-                self.message("trace", event, cursor)
-            if phase == "done":
-                self.message("phase", phase)
-                return
+                self.message("trace", event, f"{run_id}:{cursor}")
+            self.message("clock", {"now": time.time(), "phase": phase, "ended": trace_model.metadata.get("ended")})
 
     def message(self, kind, data, event_id=None):
         header = "" if event_id is None else f"id: {event_id}\n"
@@ -169,8 +193,8 @@ class Handler(BaseHTTPRequestHandler):
 class Server(ThreadingHTTPServer):
     daemon_threads = True
 
-    def __init__(self, trace):
-        super().__init__(("127.0.0.1", 0), Handler)
+    def __init__(self, trace, port=DEFAULT_PORT):
+        super().__init__((DEFAULT_HOST, port), Handler)
         self.trace = trace
         self.host = f"127.0.0.1:{self.server_port}"
         self.url = f"http://{self.host}/"
@@ -206,69 +230,68 @@ def self_test():
                         "test skipped ... ignored\ntestvector01: PASS\n"
                         "Checking harness proofs::closed...\nVERIFICATION:- SUCCESSFUL\n"
                         "Checking harness proofs::bad...\nVERIFICATION:- FAILED\n")
-    assert [event["status"] for event in cases] == ["pass", "fail", "blocked", "pass", "pass", "fail"]
+    assert [e["status"] for e in cases] == ["pass", "fail", "blocked", "pass", "pass", "fail"]
     assert not case_events("sample", "Checking harness proofs::unknown...\nno result reported\n")
-    assert not case_events("sample", "40 tests passed\n")
-    for event in cases:
-        validate(event)
-    model = Trace()
-    server = Server(model)
-    server.start()
+    model = Trace(); server = Server(model, port=0); server.start()
+    def event(response):
+        kind, data = None, None
+        while True:
+            line = response.readline()
+            assert line, "stream closed"
+            if line.startswith(b"event:"): kind = line[6:].strip().decode()
+            if line.startswith(b"data:"): data = json.loads(line[5:])
+            if line == b"\n" and kind: return kind, data
     try:
-        assert server.server_address[0] == "127.0.0.1"
-        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=2)) as client:
-            client.request("POST", "/events")
-            assert client.getresponse().status == 405
-        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=2)) as client:
-            client.request("GET", "/", headers={"Host": "outside.invalid"})
-            assert client.getresponse().status == 403
-        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=2)) as client:
-            client.request("GET", "/")
+        assert server.server_address[0] == DEFAULT_HOST
+        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
+            client.request("POST", "/events"); assert client.getresponse().status == 405
+        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
+            client.request("GET", "/", headers={"Host": "outside.invalid"}); assert client.getresponse().status == 403
+        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
+            client.request("GET", "/health"); response = client.getresponse()
+            assert json.loads(response.read())["project"] == "VoiceVault"
+        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
+            client.request("GET", "/events"); response = client.getresponse()
+            assert event(response)[0] == "run"
+            assert event(response) == ("phase", "live")
+            assert event(response)[0] == "clock"
+            model.set_phase("timing")
+            sample = trace("timing-idle", "progress", "measurement running", "Elapsed progress continues")
+            model.add(sample)
+            received = [event(response) for _ in range(3)]
+            assert ("phase", "timing") in received and ("trace", sample) in received
+        # Completion keeps the stream usable for the next run at the same URL.
+        model.set_phase("done")
+        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
+            client.request("GET", "/events", headers={"Last-Event-ID": f'{model.metadata["id"]}:1'})
             response = client.getresponse()
-            assert response.status == 200 and b'"live":true' in response.read()
-        model.set_phase("timing")
-        # Opening the UI mid-measurement must still show the paused dashboard.
-        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=2)) as client:
-            client.request("GET", "/")
-            response = client.getresponse()
-            assert response.status == 200 and b'"live":true' in response.read()
-        model.add(trace("format", "check", "complete formatting check", "Running"))
-        example = trace("protocol", "group", "expected", "observed", "fail")
-        model.add(example)
-        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=2)) as client:
-            client.request("GET", "/events")
-            response = client.getresponse()
-            assert response.status == 200
-            assert response.readline() == b"event: phase\n"
-            assert json.loads(response.readline()[6:]) == "timing"
-            assert response.readline() == b"\n"
-            assert model.next(0, "timing") == ("timing", [])
-            model.set_phase("live")
-            assert response.readline() == b"event: phase\n"
-            assert json.loads(response.readline()[6:]) == "live"
-            assert response.readline() == b"\n"
-            assert response.readline() == b"id: 1\n"
-            assert response.readline() == b"event: trace\n"
-            assert json.loads(response.readline()[6:]) == model.events[0]
-            assert response.readline() == b"\n"
-            assert response.readline() == b"id: 2\n"
-            assert response.readline() == b"event: trace\n"
-            assert json.loads(response.readline()[6:]) == example
-        for group in GROUPS:
-            if group != "protocol":
-                model.add(trace(group, "group", "expected", "observed", "blocked"))
-        verdict = dict.fromkeys(GROUPS, "blocked") | {"protocol": "fail"}
-        check_mapping(model.events, verdict)
+            assert event(response)[0] == "run"
+            assert event(response) == ("phase", "done")
+            assert event(response)[0] == "clock"  # The already delivered trace is not duplicated.
+            with model.changed:
+                model.metadata = {"id": "next-run", "kind": "verification"}
+                model.events = []; model.phase = "live"; model.changed.notify_all()
+            next_event = trace("next", "check", "stream survives completion", "Running")
+            model.add(next_event)
+            messages = [event(response) for _ in range(4)]
+            assert any(kind == "run" and data["id"] == "next-run" for kind, data in messages)
+            assert ("trace", next_event) in messages
+        for group in GROUPS: model.add(trace(group, "group", "expected", "observed", "pass"))
+        verdict = dict.fromkeys(GROUPS, "pass"); check_mapping(model.events, verdict)
         html = page(model.events + [trace("escaping", "verdict", "</script>", "x")])
         assert "\\u003c/script\\u003e" in html
-        initial = html.split('<script id="initial" type="application/json">')[1].split("</script>")[0]
-        assert json.loads(initial)["events"][:-1] == model.events
+        data = html.split('<script id="initial" type="application/json">')[1].split("</script>")[0]
+        assert json.loads(data)["events"][:-1] == model.events
         assert all(f'data-node="{node}"' in html for node in NODES - {""})
-        assert all(f'id="{name}"' in html for name in ("test-search", "case-list", "check-list"))
-    finally:
-        server.stop()
-    print("Loopback bind, read-only HTTP, SSE pause/resume, event schema, verdicts and offline data passed")
+    finally: server.stop()
+    from live_tests import self_test as live_tests
+    live_tests()
+    print("Read-only loopback, fixed-address ownership, live streaming, restart, progress, schema and mapping passed")
 
 
 if __name__ == "__main__":
-    self_test()
+    import sys
+    if sys.argv[1:] == ["--serve"]:
+        from live_server import serve
+        serve()
+    else: self_test()

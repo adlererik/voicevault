@@ -1,6 +1,6 @@
 # Architecture and a complete call
 
-VoxBastion is designed around ownership of the voice endpoint. The trusted side owns audio, contact decisions, consent and secrets. Everything carried through a phone is treated as attacker-controlled input on arrival.
+VoiceVault is designed around ownership of the voice endpoint. The trusted side owns audio, contact decisions, consent and secrets. Everything carried through a phone is treated as attacker-controlled input on arrival.
 
 ![Trust boundary](assets/architecture.svg)
 
@@ -101,3 +101,7 @@ The future microSD path will need its own bounded driver/media handling. A prote
 ## Boundary tests and next steps
 
 [Control register](SECURITY_CONTROLS.md) maps attacks to code and evidence. [Detailed security design](SECURITY_DESIGN.md) provides policy specifics. [Platform fit](PLATFORM.md) records what actually linked/executed. [Roadmap](ROADMAP.md) lists the tests that must precede a physical endpoint.
+
+## Observing the software laboratory
+
+The native runner publishes sanitized lifecycle/media events during separate live scenarios. A bounded incremental subprocess-output parser reports test starts/outcomes, fuzzing statistics and proof results without waiting for process exit. A persistent read-only service follows local run journals at **127.0.0.1:8765**. It has no HTTP test-control or device-consent commands. The UI shows two software device panels, the hostile transport path and exact check/group states. Scored timing endpoints retain buffered traces; those traces are labeled recorded and graphics stay still. [Live dashboard design](LIVE_DASHBOARD.md)

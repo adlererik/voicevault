@@ -1,6 +1,6 @@
 # Security control register
 
-This is the attack-to-mechanism map for VoxBastion. The attacker may have NSA-class control of both phones and telecommunications, including compromise through zero-click/zero-day exploits. Supply-chain attacks are excluded. Endpoints, independent identity verification and device-local authorities are trusted assumptions in the software model.
+This is the attack-to-mechanism map for VoiceVault. The attacker may have NSA-class control of both phones and telecommunications, including compromise through zero-click/zero-day exploits. Supply-chain attacks are excluded. Endpoints, independent identity verification and device-local authorities are trusted assumptions in the software model.
 
 **Runtime** means the mechanism is exercised by executable endpoint code. **Model** means policy is tested with abstract device-local hardware/state. **Planned** means it is not delivered yet. A passing test supports its specified behavior; it is not a claim that no future exploit exists.
 
@@ -52,7 +52,7 @@ This is the attack-to-mechanism map for VoxBastion. The attacker may have NSA-cl
 | V2 | Hide a failing/unavailable check: eleven required groups, explicit PASS/FAIL/BLOCKED, unchanged timing gates and nonzero failed-suite exit | Implemented: [runner](../scripts/lab.py) | [Recorded raw verdict](evidence/phase2/verdict.json); no full pass is inferred from a screenshot |
 | V3 | Drift from the selected protocol/codec or accidentally change unsafe initialization: published vectors, reference codec and exact local-patch checks | Implemented: [vectors](../crates/protocol/tests/vectors.rs), [vendor integrity](../scripts/check_vendor.py) | KK/XX answers, libopus interop, official vectors, 100-frame constructor comparison, upstream-file/field coverage |
 | V4 | Outgrow the intended embedded capacity unnoticed: no_std target graph, actual ELF link and execution, RAM/flash gates and guarded stack | Diagnostic: [ARM probe](../platform), [fit checker](../scripts/platform_check.py) | [Actual capacity report](evidence/phase2/platform/platform.json); no hardware throughput or worst-case stack proof |
-| V5 | Confuse a group verdict with individual test evidence: named outcomes extracted from actual logs, separate check and case views | Implemented: [dashboard](../scripts/dashboard.py) | 49 reported cases/proofs/vectors, 40 checks, parser/mapping self-tests and browser search/view checks |
+| V5 | Confuse a group verdict with individual test evidence: incremental starts/outcomes from actual process output, separate check and case views | Implemented: [dashboard](../scripts/dashboard.py) | required check and individual-result views, parser/mapping tests, split-output and before-exit regressions, persistent fixed-address stream and browser checks; [telemetry contract](LIVE_DASHBOARD.md) |
 
 ## What these controls cannot promise
 

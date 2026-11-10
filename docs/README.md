@@ -1,6 +1,6 @@
-# VoxBastion documentation
+# VoiceVault documentation
 
-VoxBastion is a device project with a working software laboratory. The documentation separates its intended product, implemented behavior, measured evidence and unfinished work.
+VoiceVault is a device project with a working software laboratory. The documentation separates its intended product, implemented behavior, measured evidence and unfinished work.
 
 | Read this | To understand |
 |---|---|
@@ -14,6 +14,7 @@ VoxBastion is a device project with a working software laboratory. The documenta
 | [Assurance case](ASSURANCE.md) | Precisely which claims the evidence supports |
 | [Recorded results](RESULTS.md) | Actual software runs, timing, fuzzing, proofs and raw logs |
 | [Platform fit](PLATFORM.md) | ARM linking/execution, memory budgets and hardware evidence limits |
+| [Live device dashboard](LIVE_DASHBOARD.md) | Fixed local address, live progress, device activity and saved replay |
 | [Development guide](DEVELOPMENT.md) | Setup, commands, repository layout and reproducing results |
 | [Roadmap](ROADMAP.md) | Evidence gates from software through physical hardware |
 | [Screenshots](screenshots/README.md) | Actual dashboard captures and their context |
@@ -24,4 +25,4 @@ For a first visit: vision → architecture → threat model → control register
 
 **Implemented** means code exists and its scope is stated. **Tested model** means policy executes against abstract hardware interfaces; it is not a physical chip protection. **Measured** means a named run produced an observation. **Planned** means an intention or decision gate, not a delivered protection.
 
-The recorded phase-two evidence predates the VoxBastion name. Keep those original run IDs, hashes, logs and protocol domain strings intact. A documentation, branding or presentation update does not create a new successful security run.
+The recorded phase-two evidence predates the VoiceVault name. Keep those original run IDs, hashes, logs and protocol domain strings intact. A documentation, branding or presentation update does not create a new successful security run.

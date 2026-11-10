@@ -1,6 +1,78 @@
+# Verification results: VoiceVault live laboratory
+
+Run **`voicevault-complete`** on **2026-11-10** completed with **11 required groups, 42 checks and 49 reported test/vector/proof results passing**. The runner exited zero. Six instrumented campaigns each met the >=120-second gate, totaling **190,390 executions**. Four bounded Kani harnesses passed. Two new eight-second full-duplex live scenarios were added to the original suite; all previous checks and thresholds remain enabled.
+
+[Raw verdict and logs](evidence/voicevault-live/verdict.json) · [Source provenance](evidence/voicevault-live/tested-source-manifest.json) · [Event journal](evidence/voicevault-live/events.ndjson) · [Timing report](evidence/voicevault-live/timing.json) · [Machine-readable summary](verification-summary.json)
+
+| Group | Result | Checks |
+|---|---|---:|
+| unit | PASS | 6 |
+| protocol | PASS | 4 |
+| lifecycle | PASS | 1 |
+| platform | PASS | 1 |
+| codec | PASS | 8 |
+| isolation | PASS | 1 |
+| fuzz | PASS | 9 |
+| kani | PASS | 3 |
+| dependencies | PASS | 3 |
+| timing | PASS | 4 |
+| dashboard | PASS | 2 |
+
+## Actual live calls
+
+The normal call sends generated Opus audio in both directions through separate hostile phone processes and a relay. The fault call drops selected Alice-to-Bob fragments and changes selected ciphertext fragments. Receiver authentication failures and loss concealment must occur; their absence would fail the check. Device, send, receive, reject and playout events are emitted during those calls, before process exit. The cards show simulated trusted endpoints and local approval, not connected physical products.
+
+| Live scenario | Alice sent | Bob sent | Bob rejected | Bob concealed |
+|---|---:|---:|---:|---:|
+| live | 400 | 400 | 0 | 0 |
+| live-faults | 400 | 400 | 22 | 43 |
+
+## Scored native timing
+
+These packet traces remain buffered until a scenario completes and are labeled recorded. Progress and elapsed run time remain visible with graphics held still. Idle/contention gates are still p99 absolute send error <=5 ms and missed slots <=0.1% per direction. Overload/blocked-phone scenarios retain bounded queues and zero catch-up bursts.
+
+| Scenario | Direction | p99 send error (ms) | Missed / scheduled | Bursts |
+|---|---|---:|---:|---:|
+| idle | Alice → Bob | 1.383 | 0/1500 | 0 |
+| idle | Bob → Alice | 1.244 | 0/1500 | 0 |
+| contention | Alice → Bob | 2.000 | 0/1500 | 0 |
+| contention | Bob → Alice | 0.208 | 0/1500 | 0 |
+| overload | Alice → Bob | 15.671 | 50/150 | 0 |
+| overload | Bob → Alice | 16.749 | 50/150 | 0 |
+| blocked-phone | Alice → Bob | 0.579 | 145/150 | 0 |
+| blocked-phone | Bob → Alice | 2.564 | 0/150 | 0 |
+
+## Fuzzing and bounded proofs
+
+| Target | Seconds | Executions |
+|---|---:|---:|
+| handshake | 121 | 5,694 |
+| record | 121 | 7,068 |
+| codec | 121 | 36,365 |
+| enrollment | 121 | 12,006 |
+| lifecycle | 121 | 15,214 |
+| update-radio | 121 | 114,043 |
+
+All four encoded Kani properties passed. These are bounded state/replay/counter checks, not proofs of the cryptography, kernel, complete updater or arbitrary executions. Runtime checks include all twelve official mono Opus vectors, libopus interoperability in both directions and the unchanged ARM capacity/execution gate. Fuzzing remains a finite smoke campaign, not an audit.
+
+## Cortex-M33 and UI observations
+
+The public-fixture diagnostic linked 707,168 image bytes and 552,324 static RAM bytes including the reserved heap. It recovered 32 audio frames in QEMU. The same reference reservations leave 37,500 bytes unassigned. This is CPU execution/capacity evidence, not hardware timing, physical isolation or a production image. [ARM report](evidence/voicevault-live/platform/platform.json)
+
+Browser checks observed live endpoint activity before call exit, growing rejection counts, property-test outcomes, fuzz execution statistics, search, new-run reset and refresh reconstruction at 127.0.0.1:8765. The dashboard group also checks incremental parsing, multi-line outcomes, fixed-address ownership, read-only requests, client bounds, auto-opening reuse, persistence, completion/reconnect and exact CLI/event-verdict agreement. [Telemetry contract](LIVE_DASHBOARD.md)
+
+## Source and limits
+
+Native implementation: `e2742cc`. UI viewer/opening refinements: `b3bb697`, applied during fuzzing and exercised by the required dashboard group afterward. The provenance file records initial and final UI hashes and does not present this as an immutable single-source snapshot. Trusted/native sources remained unchanged throughout. Earlier interrupted attempts are not counted as passing campaigns.
+
+The [threat model](THREAT_MODEL.md) and [assurance limits](ASSURANCE.md) remain: trusted endpoints, compromised phones/telecom, supply-chain attacks excluded. Complete dependency/stack erasure, seamless key renewal, hardware entropy/storage/radio enforcement, real-time hardware performance and acoustic leakage remain open. No agency-immunity or production-readiness claim follows from these results.
+
+<details>
+<summary>Preserved earlier phase-two campaign and dashboard follow-up</summary>
+
 # Verification results: phase two
 
-The fresh complete native run on **2026-11-10** passed all **11 required groups** and exited zero. Run ID: `quietlink-phase2-final`. Tested implementation commit: `52aa06c`. The [machine-readable summary](verification-summary.json), [raw verdict](evidence/phase2/verdict.json), [timing data](evidence/phase2/timing.json) and [ARM report](evidence/phase2/platform/platform.json) identify the measurements and limits. Earlier interrupted development attempts are not counted as successful runs.
+The fresh complete native run on **2026-11-10** passed all **11 required groups** and exited zero. Run ID: `quietlink-phase2-final`. Tested implementation commit: `52aa06c`. The [machine-readable summary](evidence/phase2/summary.json), [raw verdict](evidence/phase2/verdict.json), [timing data](evidence/phase2/timing.json) and [ARM report](evidence/phase2/platform/platform.json) identify the measurements and limits. Earlier interrupted development attempts are not counted as successful runs.
 
 | Group | Result | Checks |
 |---|---|---:|
@@ -79,3 +151,5 @@ The implemented five-minute media epoch stops and drops its owned transport keys
 After the full run, the dashboard gained visible searchable lists for individual outcomes and verification checks. Its 49 named outcomes are extracted from the original logs: Rust cases (some repeated under different build profiles), twelve official Opus vectors and four Kani proofs. The original 40 check results and eleven group verdicts are retained. No test pass is inferred merely from a group passing.
 
 The follow-up passed the dashboard self-test (including pass/fail/ignored and missing-proof parsing), original event/verdict mapping, and browser checks of the 49-result list, 40-check list and search. The live suite now emits these case outcomes when each check completes. The original full-run snapshot remains unchanged; this is separate presentation verification, not a new full security run.
+
+</details>

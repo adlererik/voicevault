@@ -21,3 +21,7 @@ The older `dashboard-overview.jpg`, `authenticated-peer-rejection.jpg` and `frag
 - `voicevault-live-faults.png`: live induced corruption/loss scenario; Bob’s rejection count grows while synthetic audio is decoded or concealed. Intermediate hops have no independent live packet telemetry.
 
 These two development captures came from `voicevault-verification-final`, which later stopped during the command session and is **not** counted as a complete passing campaign. They show genuine live behavior, not a manufactured final verdict. The latest complete-run capture and its result are identified separately.
+
+- `voicevault-fuzz-progress.png`: actual current campaign counters and elapsed run display.
+- `voicevault-individual-results.png`: the two formerly split property-test results shown as passed during the complete campaign.
+- `voicevault-complete.png`: final 42-check / 49-result view from the completed eleven-group campaign.

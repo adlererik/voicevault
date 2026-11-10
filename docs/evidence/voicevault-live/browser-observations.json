@@ -1,0 +1,19 @@
+{
+  "method": "Manual browser observations through the supported computer-use tools; backend regressions are in logs/dashboard.log",
+  "address": "http://127.0.0.1:8765/",
+  "observations": {
+    "live_call_events_before_exit": true,
+    "fault_rejection_count_grew_during_call": true,
+    "multiline_property_tests_displayed_pass": true,
+    "actual_fuzz_execution_progress": true,
+    "new_published_run_reset": true,
+    "refresh_reconstructed_results": true,
+    "completed_checks": 42,
+    "reported_test_vector_proof_results": 49,
+    "failed_or_blocked_checks": 0,
+    "all_eleven_group_badges": "pass",
+    "completed_elapsed_run_seconds": 998
+  },
+  "screenshots": "../../screenshots/",
+  "limits": "Screen observations supplement, rather than replace, raw test verdicts. Screenshots identify development versus complete-run context in the gallery."
+}

@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-10",
+  "repository": "adlererik/quietlink-lab",
+  "implementation_commit": "52aa06c",
+  "run_id": "quietlink-phase2-final",
+  "statuses": {
+    "unit": "pass",
+    "protocol": "pass",
+    "lifecycle": "pass",
+    "platform": "pass",
+    "codec": "pass",
+    "isolation": "pass",
+    "fuzz": "pass",
+    "kani": "pass",
+    "dependencies": "pass",
+    "timing": "pass",
+    "dashboard": "pass"
+  },
+  "check_counts": {
+    "unit": 6,
+    "protocol": 2,
+    "lifecycle": 1,
+    "platform": 1,
+    "codec": 8,
+    "isolation": 1,
+    "fuzz": 9,
+    "kani": 3,
+    "dependencies": 3,
+    "timing": 4,
+    "dashboard": 2
+  },
+  "host": {
+    "kernel": "7.2.13-200.fc44.x86_64",
+    "architecture": "x86_64",
+    "cpu_model": "Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz",
+    "logical_cpus": 8,
+    "rust_pin": "1.99.1",
+    "cpu_quota": null
+  },
+  "thresholds": {
+    "p99_absolute_send_error_ns": 5000000,
+    "missed_fraction": 0.001,
+    "overload_catch_up_bursts": 0,
+    "jitter_records": 8,
+    "fragment_assemblies": 8
+  },
+  "fuzz": {
+    "handshake": {
+      "executions": 4626,
+      "seconds": 121
+    },
+    "record": {
+      "executions": 3965,
+      "seconds": 121
+    },
+    "codec": {
+      "executions": 34630,
+      "seconds": 121
+    },
+    "enrollment": {
+      "executions": 6055,
+      "seconds": 121
+    },
+    "lifecycle": {
+      "executions": 7257,
+      "seconds": 121
+    },
+    "update-radio": {
+      "executions": 55948,
+      "seconds": 121
+    }
+  },
+  "kani_verified_harnesses": 4,
+  "lifecycle_test_functions": 18,
+  "noise_vectors": [
+    "KK",
+    "XX"
+  ],
+  "official_mono_opus_vectors": 12,
+  "platform": {
+    "schema": 1,
+    "status": "pass",
+    "target": "thumbv8m.main-none-eabihf",
+    "cpu_model": "QEMU MPS2 AN505 Cortex-M33",
+    "reference_capacity": "STM32U585-class: main SRAM, ECC off; no SRAM4 or backup RAM credit",
+    "flash_image_bytes": 707168,
+    "flash_slot_budget_bytes": 983040,
+    "static_ram_including_32k_heap_bytes": 552324,
+    "stack_reserved_bytes": 131072,
+    "future_display_dma_driver_reserve_bytes": 65536,
+    "ram_budget_bytes": 786432,
+    "unassigned_ram_bytes": 37500,
+    "diagnostic_elf_sha256": "a5dde3486db3660018cc4425550d78f8042540cbfdbecc78f98f24f271fdac7c",
+    "qemu": "xPack QEMU emulator version 9.2.4",
+    "measured": {
+      "frames": 32,
+      "pcm_checksum": 48479441,
+      "heap_cumulative_bytes": 3328,
+      "stack_high_water_bytes": 85092,
+      "encoder_bytes": 308880,
+      "decoder_bytes": 178572,
+      "contact_book_bytes": 1504,
+      "pipeline": "pass",
+      "policy_paths": "pass"
+    },
+    "limits": [
+      "32 fixture frames and selected policy paths; not a worst-case stack proof",
+      "No real-time throughput, power or hardware latency evidence",
+      "No STM32 peripherals, display, real BLE, secure element, RNG, MPU/TrustZone or flash emulation",
+      "64 KiB future peripheral reserve assumes partial display rendering, not a full RGB565 framebuffer",
+      "Public test keys and deterministic entropy: never flash this diagnostic image"
+    ]
+  },
+  "threat_model": "NSA-capability compromised phones and telecom control; supply-chain attacks excluded",
+  "limits": [
+    "Software-only; no deployed hardware or network",
+    "Finite fuzzing and bounded proofs; no universal attacker-resistance claim",
+    "Complete dependency/stack key erasure and seamless key renewal remain open",
+    "Capacity and CPU-emulation evidence; no hardware real-time or isolation claim"
+  ],
+  "ui_followup": {
+    "description": "Searchable individual results and checks, using the original logs",
+    "named_results": 49,
+    "checks": 40,
+    "dashboard_self_test": "pass",
+    "event_verdict_mapping": "pass",
+    "browser_search_and_views": "pass",
+    "scope": "Presentation follow-up after original complete run; core protocol and ARM code unchanged"
+  },
+  "current_project": "VoxBastion",
+  "current_repository": "adlererik/voxbastion",
+  "historical_identity_note": "Recorded run IDs, implementation identifiers and original repository field are preserved from the Quietlink baseline; documentation/branding is not a new security run."
+}

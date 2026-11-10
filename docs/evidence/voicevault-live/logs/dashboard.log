@@ -1,0 +1,2 @@
+$ /usr/bin/python3 /home/erikclean/src/secure-voice-lab/scripts/dashboard.py
+Read-only loopback, fixed-address ownership, live streaming, restart, progress, schema and mapping passed

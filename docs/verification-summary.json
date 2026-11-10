@@ -1,8 +1,8 @@
 {
   "date": "2026-11-10",
-  "repository": "adlererik/quietlink-lab",
-  "implementation_commit": "52aa06c",
-  "run_id": "quietlink-phase2-final",
+  "repository": "adlererik/voicevault",
+  "implementation_commit": "e2742cc06f0c138bdc3a9dd08752f2ca0e9be583",
+  "run_id": "voicevault-complete",
   "statuses": {
     "unit": "pass",
     "protocol": "pass",
@@ -18,7 +18,7 @@
   },
   "check_counts": {
     "unit": 6,
-    "protocol": 2,
+    "protocol": 4,
     "lifecycle": 1,
     "platform": 1,
     "codec": 8,
@@ -46,27 +46,27 @@
   },
   "fuzz": {
     "handshake": {
-      "executions": 4626,
+      "executions": 5694,
       "seconds": 121
     },
     "record": {
-      "executions": 3965,
+      "executions": 7068,
       "seconds": 121
     },
     "codec": {
-      "executions": 34630,
+      "executions": 36365,
       "seconds": 121
     },
     "enrollment": {
-      "executions": 6055,
+      "executions": 12006,
       "seconds": 121
     },
     "lifecycle": {
-      "executions": 7257,
+      "executions": 15214,
       "seconds": 121
     },
     "update-radio": {
-      "executions": 55948,
+      "executions": 114043,
       "seconds": 121
     }
   },
@@ -118,16 +118,19 @@
     "Complete dependency/stack key erasure and seamless key renewal remain open",
     "Capacity and CPU-emulation evidence; no hardware real-time or isolation claim"
   ],
-  "ui_followup": {
-    "description": "Searchable individual results and checks, using the original logs",
-    "named_results": 49,
-    "checks": 40,
-    "dashboard_self_test": "pass",
-    "event_verdict_mapping": "pass",
-    "browser_search_and_views": "pass",
-    "scope": "Presentation follow-up after original complete run; core protocol and ARM code unchanged"
-  },
-  "current_project": "VoxBastion",
-  "current_repository": "adlererik/voxbastion",
-  "historical_identity_note": "Recorded run IDs, implementation identifiers and original repository field are preserved from the Quietlink baseline; documentation/branding is not a new security run."
+  "current_project": "VoiceVault",
+  "current_repository": "adlererik/voicevault",
+  "historical_identity_note": "Earlier phase-two evidence and authenticated quietlink domains are preserved; this is a separate fresh complete VoiceVault run.",
+  "dashboard_refinement_commit": "b3bb6974046422a00fb4d1b008f8f34bd74986b4",
+  "run_source_note": "Native/protocol/build/fuzz sources remained unchanged throughout. During fuzzing only UI viewer capacity, auto-opening, displayed elapsed time and their regressions were refined; the required dashboard group executed afterward against those refined files. Initial and final UI hashes are included, rather than presenting the run as an immutable single-source snapshot.",
+  "ui": {
+    "address": "http://127.0.0.1:8765/",
+    "named_reported_results": 49,
+    "checks": 42,
+    "source": "incremental process output and actual live endpoint telemetry",
+    "timing_traces": "buffered and explicitly marked recorded",
+    "persistent_read_only_service": true,
+    "browser_live_faults_search_results": "observed",
+    "scope": "Two additional unscored live scenarios; all existing gates retained"
+  }
 }

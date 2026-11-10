@@ -1,0 +1,51 @@
+$ /home/erikclean/src/secure-voice-lab/target/release/lab-runner vectors /home/erikclean/src/secure-voice-lab/.lab-cache/reference/opus-1.6.1 /home/erikclean/src/secure-voice-lab/.lab-cache/vectors/opus_newvectors /home/erikclean/Documents/ChatGPT/SecureCall/outputs/voicevault-complete/vectors
+testvector01: RUNNING
+Test vector PASSES
+Opus quality metric: 95.2 % (internal weighted error is 0.011697)
+testvector01: PASS
+testvector02: RUNNING
+Test vector PASSES
+Opus quality metric: 92.8 % (internal weighted error is 0.017693)
+testvector02: PASS
+testvector03: RUNNING
+Test vector PASSES
+Opus quality metric: 89.7 % (internal weighted error is 0.025474)
+testvector03: PASS
+testvector04: RUNNING
+Test vector PASSES
+Opus quality metric: 81.5 % (internal weighted error is 0.046257)
+testvector04: PASS
+testvector05: RUNNING
+Test vector PASSES
+Opus quality metric: 81.7 % (internal weighted error is 0.045632)
+testvector05: PASS
+testvector06: RUNNING
+Test vector PASSES
+Opus quality metric: 77.2 % (internal weighted error is 0.057419)
+testvector06: PASS
+testvector07: RUNNING
+Test vector FAILS
+Internal weighted error is 0.533422
+Test vector PASSES
+Opus quality metric: 0.2 % (internal weighted error is 0.276290)
+testvector07: PASS
+testvector08: RUNNING
+Test vector PASSES
+Opus quality metric: 46.1 % (internal weighted error is 0.140810)
+testvector08: PASS
+testvector09: RUNNING
+Test vector PASSES
+Opus quality metric: 12.4 % (internal weighted error is 0.238772)
+testvector09: PASS
+testvector10: RUNNING
+Test vector PASSES
+Opus quality metric: 89.5 % (internal weighted error is 0.025983)
+testvector10: PASS
+testvector11: RUNNING
+Test vector PASSES
+Opus quality metric: 96.3 % (internal weighted error is 0.009128)
+testvector11: PASS
+testvector12: RUNNING
+Test vector PASSES
+Opus quality metric: 56.5 % (internal weighted error is 0.112136)
+testvector12: PASS

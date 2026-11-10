@@ -79,7 +79,7 @@ Algorithm choice is only part of the design. Nonce discipline, peer verification
 
 ## Evidence you can inspect
 
-The recorded phase-two run on **2026-11-10** passed **all 11 required groups and 40 checks**. Six instrumented fuzz campaigns completed **112,481 executions**, each running for 121 seconds. Four bounded Kani harnesses passed. The native run also checked both libopus interoperability directions, twelve official mono decoder vectors, and eighteen lifecycle test functions, including property tests.
+The fresh **VoiceVault `voicevault-complete`** run on **2026-11-10** passed **all 11 required groups and 42 checks**, with **49 individual test/vector/proof outcomes** reported. Six instrumented fuzz campaigns completed **190,390 executions**, each running for at least 120 seconds. Four bounded Kani harnesses passed. Both libopus interoperability directions, twelve official mono decoder vectors, eighteen lifecycle test functions and the Cortex-M33 diagnostic passed.
 
 | Recorded result | Observation |
 |---|---|
@@ -89,11 +89,11 @@ The recorded phase-two run on **2026-11-10** passed **all 11 required groups and
 | Linked image / static RAM | 707,168 bytes / 552,324 bytes, including a 32 KiB reserved heap |
 | Reference memory budget | 768 KiB main RAM, 128 KiB guarded stack, 64 KiB future-driver/display reserve; 37,500 bytes unassigned |
 
-These are observations from the identified software run and CPU emulator. They do not establish physical security or real-time hardware performance. The historical dashboard presentation exposed **49 named test/proof/vector results** from these logs; the newer live parser also recognizes outcomes split by harness diagnostics. Some cases repeat under different build profiles.
+These are observations from the identified software run and CPU emulator. They do not establish physical security or real-time hardware performance. The live parser reports starts and outcomes incrementally, including results split by harness diagnostics. Some cases repeat under different build profiles. Source provenance identifies the native implementation and UI refinement separately.
 
-[Full results](docs/RESULTS.md) · [Raw verdict and logs](docs/evidence/phase2/verdict.json) · [Machine-readable summary](docs/verification-summary.json) · [Embedded fit](docs/PLATFORM.md)
+[Full results](docs/RESULTS.md) · [Raw verdict and logs](docs/evidence/voicevault-live/verdict.json) · [Machine-readable summary](docs/verification-summary.json) · [Embedded fit](docs/PLATFORM.md)
 
-![Measured native timing and Cortex-M33 memory budget](docs/assets/verification-results.svg)
+![Measured native timing and Cortex-M33 memory budget](docs/assets/voicevault-verification.svg)
 
 <table>
 <tr><th>Live device activity</th><th>Hostile media rejected</th></tr>
@@ -103,7 +103,9 @@ These are observations from the identified software run and CPU emulator. They d
 </tr>
 </table>
 
-*Actual browser captures while the live scenarios were still running. The counters and device states come from endpoint events; the middle path has no independent live packet telemetry. These development captures are not a completed-suite verdict. The [gallery](docs/screenshots/README.md) identifies their run context and preserves older VoxBastion/Quietlink screenshots. The timing/memory plot above preserves the earlier phase-two baseline.*
+*Actual browser captures while the live scenarios were still running. The counters and device states come from endpoint events; the middle path has no independent live packet telemetry. These development captures are not a completed-suite verdict. The [gallery](docs/screenshots/README.md) identifies their run context and preserves older VoxBastion/Quietlink screenshots. The timing/memory plot above is calculated from the latest committed reports; earlier evidence remains preserved separately.*
+
+<p align="center"><a href="docs/screenshots/voicevault-complete.png"><img src="docs/screenshots/voicevault-complete.png" width="340" alt="Completed VoiceVault run with all 42 checks, 49 results and no failures"></a></p>
 
 ## See what is happening as it happens
 

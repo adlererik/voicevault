@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "target": "thumbv8m.main-none-eabihf",
+  "cpu_model": "QEMU MPS2 AN505 Cortex-M33",
+  "reference_capacity": "STM32U585-class: main SRAM, ECC off; no SRAM4 or backup RAM credit",
+  "flash_image_bytes": 707168,
+  "flash_slot_budget_bytes": 983040,
+  "static_ram_including_32k_heap_bytes": 552324,
+  "stack_reserved_bytes": 131072,
+  "future_display_dma_driver_reserve_bytes": 65536,
+  "ram_budget_bytes": 786432,
+  "unassigned_ram_bytes": 37500,
+  "diagnostic_elf_sha256": "a5dde3486db3660018cc4425550d78f8042540cbfdbecc78f98f24f271fdac7c",
+  "qemu": "xPack QEMU emulator version 9.2.4",
+  "measured": {
+    "frames": 32,
+    "pcm_checksum": 48479441,
+    "heap_cumulative_bytes": 3328,
+    "stack_high_water_bytes": 85092,
+    "encoder_bytes": 308880,
+    "decoder_bytes": 178572,
+    "contact_book_bytes": 1504,
+    "pipeline": "pass",
+    "policy_paths": "pass"
+  },
+  "limits": [
+    "32 fixture frames and selected policy paths; not a worst-case stack proof",
+    "No real-time throughput, power or hardware latency evidence",
+    "No STM32 peripherals, display, real BLE, secure element, RNG, MPU/TrustZone or flash emulation",
+    "64 KiB future peripheral reserve assumes partial display rendering, not a full RGB565 framebuffer",
+    "Public test keys and deterministic entropy: never flash this diagnostic image"
+  ]
+}

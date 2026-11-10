@@ -1,0 +1,2 @@
+$ cargo build --locked --release -p lab-runner
+    Finished `release` profile [optimized] target(s) in 0.30s

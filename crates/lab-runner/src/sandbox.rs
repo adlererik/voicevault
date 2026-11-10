@@ -223,6 +223,16 @@ pub fn forward(mode: &str, pid: u32) -> Result<()> {
             if let Ok(len) = sockets[index].recv(&mut scratch)
                 && (link::HEADER..=DATAGRAM).contains(&len)
             {
+                if mode == "startup-tamper"
+                    && index == 0
+                    && len == DATAGRAM
+                    && scratch[0] == link::STARTUP_MAGIC
+                    && scratch[1] == 0
+                    && scratch[4] == 1
+                {
+                    // This byte is in the encrypted ML-KEM public-key field.
+                    scratch[link::HEADER] ^= 1;
+                }
                 let record_id = u32::from_le_bytes(scratch[..4].try_into()?);
                 if record_id == 2 && scratch[4] == 128 && scratch[5] == 3 {
                     ready[index] = true;

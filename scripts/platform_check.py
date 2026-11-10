@@ -35,12 +35,19 @@ def run(out):
     metadata = json.loads(command(["cargo", "metadata", "--locked", "--manifest-path", manifest,
                                    "--filter-platform", TARGET, "--format-version", "1"], env, verbose=False))
     (out / "target-dependencies.json").write_text(json.dumps(metadata,indent=2)+"\n")
-    packages = {p["id"]: p["name"] for p in metadata["packages"]}
-    for node in metadata["resolve"]["nodes"]:
-        name = packages[node["id"]]
-        assert name not in ("getrandom", "libc"), "OS dependency in target graph"
-        if name in ("opus-rs", "snow", "protocol", "codec", "device-core"):
-            assert not {"std", "heap"}.intersection(node["features"]), (name, node["features"])
+    # Metadata merges features of host build/proc-macro units with target
+    # units. Audit the actual normal target graph, excluding those host units.
+    tree = command(["cargo", "tree", "--locked", "--manifest-path", manifest,
+                    "--target", TARGET, "--edges", "normal,no-proc-macro", "--prefix", "none",
+                    "--format", "{p}|{f}"], env, verbose=False)
+    (out / "target-runtime-dependencies.txt").write_text(tree)
+    for line in tree.splitlines():
+        package, features = line.split("|", 1)
+        name = package.split()[0]
+        enabled = set(features.removesuffix(" (*)").split(","))
+        assert name not in ("getrandom", "libc"), "OS dependency in target runtime graph"
+        if name in ("opus-rs", "snow", "protocol", "codec", "device-core", "libcrux-ml-kem", "libcrux-sha3", "libcrux-traits", "rand"):
+            assert not {"std", "heap", "sys_rng", "thread_rng"}.intersection(enabled), (name, enabled)
     command(["cargo", "build", "--locked", "--manifest-path", manifest,
              "--release", "--target", TARGET], env)
     elf = ROOT / "platform/target" / TARGET / "release/quietlink-m33-probe"
@@ -63,6 +70,8 @@ def run(out):
     stack_reserve = 128 * 1024
     peripheral_reserve = 64 * 1024
     assert evidence["pipeline"] == evidence["policy_paths"] == "pass" and evidence["frames"] == 32
+    assert evidence["hybrid_handshake"] == "pass"
+    assert evidence["suite"] == "Noise_KKhfs_25519+MLKEM768_ChaChaPoly_BLAKE2s"
     assert evidence["heap_cumulative_bytes"] <= 32*1024
     assert evidence["stack_high_water_bytes"] + 16*1024 <= stack_reserve, "stack margin below 16 KiB"
     assert flash <= 960*1024 and 2*(flash+128)+128*1024 <= 2*1024*1024, "dual bank flash capacity"

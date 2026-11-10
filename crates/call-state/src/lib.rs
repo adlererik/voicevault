@@ -125,9 +125,67 @@ impl CallState {
     }
 }
 
+/// A handshake cannot be retried after failure or finish before both ordered flights.
+pub struct HandshakeGate {
+    initiator: bool,
+    step: u8,
+    failed: bool,
+}
+impl HandshakeGate {
+    pub fn new(initiator: bool) -> Self {
+        Self {
+            initiator,
+            step: 0,
+            failed: false,
+        }
+    }
+    pub fn permits(&self, sending: bool) -> bool {
+        !self.failed && self.step < 2 && sending == (self.initiator == (self.step == 0))
+    }
+    pub fn advance(&mut self, sending: bool, authenticated: bool) -> bool {
+        if !self.permits(sending) || !authenticated {
+            self.failed = true;
+            return false;
+        }
+        self.step += 1;
+        true
+    }
+    pub fn fail(&mut self) {
+        self.failed = true;
+    }
+    pub fn complete(&self) -> bool {
+        !self.failed && self.step == 2
+    }
+}
+
 #[cfg(kani)]
 mod proofs {
     use super::*;
+
+    #[kani::proof]
+    #[kani::unwind(7)]
+    fn handshake_finish_requires_both_ordered_authenticated_flights() {
+        let initiator: bool = kani::any();
+        let mut gate = HandshakeGate::new(initiator);
+        let mut failed = false;
+        let mut successes = 0u8;
+        for _ in 0..5 {
+            let send: bool = kani::any();
+            let auth: bool = kani::any();
+            if gate.advance(send, auth) {
+                successes += 1;
+            } else {
+                failed = true;
+            }
+            if gate.complete() {
+                assert!(!failed);
+                assert_eq!(successes, 2);
+            }
+            if failed {
+                assert!(!gate.complete());
+            }
+        }
+    }
 
     #[kani::proof]
     fn protected_security_counter_never_rolls_back() {

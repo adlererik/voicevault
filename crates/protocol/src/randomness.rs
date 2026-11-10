@@ -1,4 +1,4 @@
-//! A fresh hardware/OS entropy block supplies exactly one Noise ephemeral secret.
+//! Fresh device/OS entropy supplies one classical ephemeral and the KEM seeds.
 //! No application PRNG and no fallback to phone-provided entropy.
 use alloc::boxed::Box;
 use chacha20poly1305::{ChaCha20Poly1305, KeyInit, aead::AeadInPlace};
@@ -9,7 +9,7 @@ use snow::{
     resolvers::{CryptoResolver, DefaultResolver},
     types::{Cipher, Dh, Hash, Random},
 };
-use zeroize::Zeroizing;
+use zeroize::{Zeroize, Zeroizing};
 
 // Snow's default resolver stores these long-lived secrets in plain arrays.
 // These adapters retain its wire suite while zeroizing the owned key buffers.
@@ -85,6 +85,7 @@ impl Cipher for SecretCipher {
         "ChaChaPoly"
     }
     fn set(&mut self, key: &[u8; 32]) {
+        self.key.zeroize();
         self.key.copy_from_slice(key);
     }
     fn encrypt(&self, n: u64, aad: &[u8], plain: &[u8], out: &mut [u8]) -> usize {
@@ -131,24 +132,61 @@ impl Random for OneShot {
             return Err(snow::Error::Rng);
         }
         dest.copy_from_slice(self.seed.as_ref());
-        self.seed.fill(0);
+        self.seed.zeroize();
         self.used = true;
         Ok(())
     }
 }
 pub(crate) struct SeedResolver {
+    kem_seeds: Option<(crate::kem::OnceSeed<64>, crate::kem::OnceSeed<32>)>,
+    #[cfg(feature = "fixtures")]
+    fault: Option<alloc::boxed::Box<crate::fixtures::KemFault>>,
     seed: Zeroizing<[u8; 32]>,
     issued: Cell<bool>,
 }
 impl SeedResolver {
     pub(crate) fn new(seed: [u8; 32]) -> Self {
         Self {
+            kem_seeds: None,
+            #[cfg(feature = "fixtures")]
+            fault: None,
             seed: Zeroizing::new(seed),
             issued: Cell::new(false),
         }
     }
+    pub(crate) fn hybrid(
+        seed: [u8; 32],
+        kem: Zeroizing<[u8; 64]>,
+        enc: Zeroizing<[u8; 32]>,
+    ) -> Self {
+        let mut result = Self::new(seed);
+        result.kem_seeds = Some((
+            crate::kem::OnceSeed::new(kem),
+            crate::kem::OnceSeed::new(enc),
+        ));
+        result
+    }
+    #[cfg(feature = "fixtures")]
+    pub(crate) fn with_fault(
+        mut self,
+        fault: Option<alloc::boxed::Box<crate::fixtures::KemFault>>,
+    ) -> Self {
+        self.fault = fault;
+        self
+    }
 }
 impl CryptoResolver for SeedResolver {
+    fn resolve_kem(&self, choice: &snow::params::KemChoice) -> Option<Box<dyn snow::types::Kem>> {
+        if *choice != snow::params::KemChoice::MlKem768 {
+            return None;
+        }
+        let (kem, enc) = self.kem_seeds.as_ref()?;
+        #[allow(unused_mut)]
+        let mut implementation = crate::kem::MlKem::new(kem.take().ok()?, enc.take().ok()?);
+        #[cfg(feature = "fixtures")]
+        implementation.fault(self.fault.clone());
+        Some(Box::new(implementation))
+    }
     fn resolve_rng(&self) -> Option<Box<dyn Random>> {
         if self.issued.replace(true) {
             return None;

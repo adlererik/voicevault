@@ -35,8 +35,8 @@ EXPECTED = {
     "protocol": "Noise vector, protocol integration, proptest and virtual attacks",
     "codec": "CBR and framing tests, libopus interop and RFC 8251 decoder vectors",
     "isolation": "all hostile roles restricted to inherited IPC",
-    "fuzz": "six instrumented targets, at least 120 seconds each",
-    "kani": "four replay, consent, closed-call and monotonic-version harnesses verified",
+    "fuzz": "eight instrumented targets, at least 120 seconds each",
+    "kani": "five handshake, replay, consent, closed-call and monotonic-version harnesses verified",
     "lifecycle": "enrollment, invitation, storage, entropy, offline update and radio fault tests",
     "platform": "linked no_std Cortex-M33 voice and policy diagnostic, memory gates and QEMU execution",
     "dependencies": "locked graphs pass advisory, bans, license and source checks",
@@ -293,7 +293,7 @@ def fuzz(suite):
             env["LIBRARY_PATH"] = os.pathsep.join(filter(None, [str(CACHE / "cxx-runtime"), env.get("LIBRARY_PATH")]))
         else:
             blocked = blocked or "local Zig C++ runtime did not build"
-    for target in ("handshake", "record", "codec", "enrollment", "lifecycle", "update-radio"):
+    for target in ("handshake", "record", "codec", "enrollment", "lifecycle", "update-radio", "hybrid-kem", "startup"):
         corpus = suite.out / "fuzz" / "corpus" / target
         crashes = suite.out / "fuzz" / "artifacts" / target
         if not blocked:
@@ -301,7 +301,7 @@ def fuzz(suite):
             crashes.mkdir(parents=True)
         suite.run("fuzz", f"fuzz-{target}", [
             "cargo", f"+{FUZZ_NIGHTLY}", "fuzz", "run", target, corpus, "--",
-            "-max_total_time=120", "-timeout=5", "-max_len=512", "-seed=870321",
+            "-max_total_time=120", "-timeout=5", f"-max_len={4096 if target in ('handshake','hybrid-kem','startup') else 512}", "-seed=870321",
             f"-artifact_prefix={crashes}/",
         ], timeout=300, unavailable=blocked, env=env,
             accept=lambda log: any(int(n) >= 120 for n in re.findall(r"Done \d+ runs in (\d+) second", log)))
@@ -351,8 +351,11 @@ def suite_run(out, watch):
 
         suite.run("protocol", "protocol-tests", ["cargo", "test", "--locked", "-p", "protocol", "--test", "security", "--test", "vectors", "--", "--test-threads=1", "--nocapture"],
                   needs=("cargo",), timeout=240)
+        suite.run("protocol", "hybrid-protocol-tests", ["cargo", "test", "--locked", "--release", "-p", "protocol",
+                  "--test", "hybrid", "--test", "hybrid_reference", "--", "--test-threads=1", "--nocapture"], needs=("cargo",), timeout=240)
+        suite.run("protocol", "hybrid-vendor-integrity", [sys.executable, ROOT/"scripts/check_crypto_vendor.py"])
         suite.run("protocol", "virtual", [RUNNER, "virtual"], events=True, unavailable=unavailable)
-        for mode in ("live", "live-faults"):
+        for mode in ("live", "live-faults", "live-startup-tamper"):
             suite.run("protocol", mode, [RUNNER,"wall",out/mode,mode],events=True,
                       timeout=35,unavailable=unavailable)
         suite.finish_group("protocol")
@@ -396,7 +399,7 @@ def suite_run(out, watch):
                   needs=("cargo",), timeout=120)
         suite.run("kani", "kani", ["cargo", "kani", "-p", "call-state"],
                   needs=("cargo", "cargo-kani"), timeout=240,
-                  accept=lambda log: "4 successfully verified harnesses, 0 failures, 4 total" in log)
+                  accept=lambda log: "5 successfully verified harnesses, 0 failures, 5 total" in log)
         suite.record("kani", "kani-lock-integrity", "pass" if sha256(ROOT / "Cargo.lock") == before else "fail",
                      "Cargo.lock unchanged" if sha256(ROOT / "Cargo.lock") == before else "Kani changed Cargo.lock")
         suite.finish_group("kani")

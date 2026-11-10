@@ -121,6 +121,7 @@ fn count(mode: &str) -> Result<u64> {
         "idle" | "contention" => Ok(1500),
         "overload" | "blocked-phone" => Ok(150),
         "demo" => Ok(100),
+        "live-startup-tamper" => Ok(0),
         "live" | "live-faults" => {
             let seconds = std::env::var("VOICE_LAB_LIVE_SECONDS")
                 .unwrap_or_else(|_| "8".into())
@@ -192,6 +193,50 @@ fn recv_start(socket: &UnixDatagram) -> Result<([u8; RECORD], usize)> {
         }
     }
     Err("handshake/control timed out (sandbox or transport failed closed)".into())
+}
+
+// Startup is separate from the fixed-size media reassembler. Pace bounded
+// batches through the existing hostile-radio budget; no larger radio command.
+const _: () = assert!(link::STARTUP_FIRST == protocol::HANDSHAKE_FIRST);
+const _: () = assert!(link::STARTUP_SECOND == protocol::HANDSHAKE_SECOND);
+
+fn send_hybrid(socket: &UnixDatagram, flight: u8, wire: &[u8]) -> Result<()> {
+    for (index, (frame, len)) in link::startup_fragments(flight, wire)
+        .ok_or("invalid hybrid flight")?
+        .enumerate()
+    {
+        if index > 0 && index.is_multiple_of(8) {
+            std::thread::sleep(Duration::from_millis(20));
+        }
+        check(socket.send(&frame[..len])? == len, "short hybrid datagram")?;
+    }
+    Ok(())
+}
+fn recv_hybrid(socket: &UnixDatagram, flight: u8) -> Result<Vec<u8>> {
+    let start = mono();
+    let stop = start + 3_000_000_000;
+    let mut parts = link::Startup::new(flight).ok_or("invalid hybrid role")?;
+    let mut radio = protocol::radio::RadioPort::default();
+    let mut scratch = [0; DATAGRAM + 1];
+    while mono() < stop {
+        match socket.recv(&mut scratch) {
+            Ok(len) => {
+                if let Some(frame) = radio_frame(&mut radio, &scratch[..len], mono() / PERIOD_NS)
+                    && let Ok(Some(record)) = parts.push(
+                        &frame.bytes[..usize::from(frame.len)],
+                        (mono() - start) / 1_000_000,
+                    )
+                {
+                    return Ok(record.to_vec());
+                }
+            }
+            Err(error) if error.kind() == io::ErrorKind::WouldBlock => {
+                std::thread::sleep(Duration::from_millis(1))
+            }
+            Err(error) => return Err(error.into()),
+        }
+    }
+    Err(io::Error::new(io::ErrorKind::TimedOut, "hybrid startup timed out").into())
 }
 
 // The Linux clock and supervisor control socket model trusted device-local
@@ -322,19 +367,24 @@ fn connect(data: &UnixDatagram, control: &UnixDatagram, alice: bool, mode: &str)
         &mut entropy,
         Some(&context),
     )?;
+    device_status(
+        mode,
+        actor,
+        "Exchanging fresh X25519 and ML-KEM-768 material",
+    );
     if alice {
-        send(data, 0, &handshake.send()?)?;
+        send_hybrid(data, u8::from(!alice), &handshake.send()?)?;
     }
-    let (wire, len) = recv_start(data)?;
-    handshake.receive(&wire[..len])?;
+    let wire = recv_hybrid(data, u8::from(alice))?;
+    handshake.receive(&wire)?;
     if !alice {
-        send(data, 0, &handshake.send()?)?;
+        send_hybrid(data, u8::from(!alice), &handshake.send()?)?;
     }
     let mut session = handshake.split()?;
     device_status(
         mode,
         actor,
-        "Noise handshake authenticated; local consent confirmed",
+        "X25519 + ML-KEM-768 authenticated; local consent confirmed",
     );
     session.consent();
     for (index, command) in [Control::Confirm, Control::Ready].into_iter().enumerate() {
@@ -699,6 +749,7 @@ pub fn endpoint(out: &Path, alice: bool, mode: &str) -> Result<()> {
         "demo",
         "live",
         "live-faults",
+        "live-startup-tamper",
     ]
     .into_iter()
     .find(|candidate| *candidate == mode)
@@ -706,7 +757,38 @@ pub fn endpoint(out: &Path, alice: bool, mode: &str) -> Result<()> {
     let data = sandbox::inherited(0);
     let control = sandbox::inherited(1);
     control.set_read_timeout(Some(Duration::from_secs(8)))?;
-    let device = connect(&data, &control, alice, mode)?;
+    let startup = connect(&data, &control, alice, mode);
+    if mode == "live-startup-tamper" {
+        let error = startup
+            .err()
+            .ok_or("tampered startup reached active media")?;
+        let rejected = if alice {
+            error
+                .downcast_ref::<io::Error>()
+                .is_some_and(|e| e.kind() == io::ErrorKind::TimedOut)
+        } else {
+            error.downcast_ref::<protocol::Error>() == Some(&protocol::Error::Handshake)
+        };
+        check(rejected, &format!("unexpected startup error: {error}"))?;
+        Event {
+            test: mode,
+            tick: 0,
+            action: "reject",
+            from: if alice { "Phone A" } else { "Phone B" },
+            to: if alice { "Alice" } else { "Bob" },
+            expected: "call stays closed when a hybrid flight is modified",
+            observed: if alice {
+                "hybrid response timed out; audio stayed closed"
+            } else {
+                "modified hybrid flight failed authentication; audio stayed closed"
+            },
+            status: "pass",
+        }
+        .emit_live();
+        control.send(b"reject")?;
+        return Ok(());
+    }
+    let device = startup?;
     control.send(b"active")?;
     let parameters = read_exact::<16>(&control)?;
     let start = u64::from_le_bytes(parameters[..8].try_into()?);
@@ -846,6 +928,8 @@ pub fn run(out: &Path, mode: &str) -> Result<()> {
             "blocked"
         } else if mode == "live-faults" && index == 0 {
             "faults"
+        } else if mode == "live-startup-tamper" && index == 0 {
+            "startup-tamper"
         } else {
             "pass"
         };
@@ -865,6 +949,8 @@ pub fn run(out: &Path, mode: &str) -> Result<()> {
             peer,
             if mode == "live-faults" && peer == "Phone A" {
                 "Hostile process running; injected media corruption and loss enabled"
+            } else if mode == "live-startup-tamper" && peer == "Phone A" {
+                "Hostile process running; hybrid startup corruption enabled"
             } else {
                 "Untrusted forwarding process running"
             },
@@ -882,6 +968,31 @@ pub fn run(out: &Path, mode: &str) -> Result<()> {
     controls[1].send(&ac)?;
     for control in &controls {
         control.send(&[1])?;
+    }
+    if mode == "live-startup-tamper" {
+        for control in &controls {
+            check(
+                &read_exact::<6>(control)? == b"reject",
+                "expected a hybrid startup refusal",
+            )?;
+        }
+        for child in children.0.iter_mut().take(2) {
+            check(
+                child.wait()?.success(),
+                "endpoint did not report a clean refusal",
+            )?;
+        }
+        for child in children.0.iter_mut().skip(2) {
+            check(
+                child.try_wait()?.is_none(),
+                "hostile forwarder exited during startup test",
+            )?;
+        }
+        check(
+            fs::read_dir(out)?.next().is_none(),
+            "failed startup produced audio or timing artifacts",
+        )?;
+        return Ok(());
     }
     for control in &controls {
         check(

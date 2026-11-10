@@ -90,3 +90,10 @@ pub fn peer_record(
 pub fn resolver() -> alloc::boxed::Box<dyn snow::resolvers::CryptoResolver + Send> {
     alloc::boxed::Box::new(crate::randomness::SeedResolver::new([7; 32]))
 }
+
+/// Public fault injections for malicious authenticated-peer tests only.
+#[derive(Clone, Default)]
+pub struct KemFault {
+    pub public_key: Option<alloc::boxed::Box<[u8; crate::kem::PUBLIC]>>,
+    pub ciphertext: alloc::vec::Vec<(usize, u8)>,
+}

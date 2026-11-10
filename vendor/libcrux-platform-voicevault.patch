@@ -1,0 +1,11 @@
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -30,7 +30,7 @@
+ name = "libcrux_platform"
+ path = "src/lib.rs"
+ 
+-[dependencies.libc]
++[target.'cfg(not(target_os = "none"))'.dependencies.libc]
+ version = "0.2.153"
+ 
+ [lints.rust.unexpected_cfgs]

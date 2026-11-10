@@ -288,6 +288,29 @@ fn stack_used() -> usize {
         top as usize - p as usize
     }
 }
+#[inline(never)]
+fn hybrid_sessions() -> (protocol::Session, protocol::Session) {
+    let (mut initiator, mut responder) = fixtures::handshakes(177).unwrap();
+    let wire = initiator.send().unwrap();
+    receive_hybrid(&mut responder, 0, &wire);
+    let wire = responder.send().unwrap();
+    receive_hybrid(&mut initiator, 1, &wire);
+    let initiator = initiator.split().unwrap();
+    let responder = responder.split().unwrap();
+    assert_eq!(initiator.channel_binding(), responder.channel_binding());
+    (initiator, responder)
+}
+fn receive_hybrid(receiver: &mut protocol::Handshake, flight: u8, wire: &[u8]) {
+    let mut startup = link::Startup::new(flight).unwrap();
+    let mut complete = false;
+    for (packet, len) in link::startup_fragments(flight, wire).unwrap() {
+        if let Some(message) = startup.push(&packet[..len], 0).unwrap() {
+            receiver.receive(message).unwrap();
+            complete = true;
+        }
+    }
+    assert!(complete);
+}
 #[entry]
 fn main() -> ! {
     // SAFETY: no interrupts or concurrent users of the two codec slots exist.
@@ -297,7 +320,7 @@ fn main() -> ! {
     let _ = writeln!(Console, "Quietlink Cortex-M33 diagnostic: PUBLIC TEST KEYS");
     policies();
     boot_and_entropy();
-    let (mut local, mut peer) = fixtures::sessions(177).unwrap();
+    let (mut local, mut peer) = hybrid_sessions();
     fixtures::activate(&mut local, &mut peer).unwrap();
     let encoder = codec::encoder_in_place(unsafe { &mut *(&raw mut ENCODER) }).unwrap();
     let decoder = codec::decoder_in_place(unsafe { &mut *(&raw mut DECODER) }).unwrap();
@@ -331,10 +354,11 @@ fn main() -> ! {
     let heap = ARENA.used.load(Ordering::Relaxed);
     let _ = writeln!(
         Console,
-        "{{\"frames\":32,\"pcm_checksum\":{checksum},\"heap_cumulative_bytes\":{heap},\"stack_high_water_bytes\":{stack},\"encoder_bytes\":{},\"decoder_bytes\":{},\"contact_book_bytes\":{},\"pipeline\":\"pass\",\"policy_paths\":\"pass\"}}",
+        "{{\"frames\":32,\"pcm_checksum\":{checksum},\"heap_cumulative_bytes\":{heap},\"stack_high_water_bytes\":{stack},\"encoder_bytes\":{},\"decoder_bytes\":{},\"contact_book_bytes\":{},\"pipeline\":\"pass\",\"policy_paths\":\"pass\",\"hybrid_handshake\":\"pass\",\"suite\":\"{}\"}}",
         core::mem::size_of::<codec::EncoderStorage>(),
         core::mem::size_of::<codec::DecoderStorage>(),
-        core::mem::size_of::<protocol::contacts::ContactBook>()
+        core::mem::size_of::<protocol::contacts::ContactBook>(),
+        protocol::PATTERN
     );
     exit(true)
 }

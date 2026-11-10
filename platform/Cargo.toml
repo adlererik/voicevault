@@ -15,6 +15,8 @@ link = { path = "../crates/link" }
 ed25519-dalek = { version = "=2.2.0", default-features = false }
 
 [patch.crates-io]
+libcrux-platform = { path = "../vendor/libcrux-platform" }
+snow = { path = "../vendor/snow" }
 opus-rs = { path = "../vendor/opus-rs" }
 
 [profile.release]

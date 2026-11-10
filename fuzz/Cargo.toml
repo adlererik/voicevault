@@ -8,6 +8,7 @@ edition = "2024"
 cargo-fuzz = true
 
 [dependencies]
+link = { path = "../crates/link" }
 libfuzzer-sys = "=0.4.13"
 protocol = { path = "../crates/protocol" }
 device-core = { path = "../crates/device-core" }
@@ -15,6 +16,8 @@ codec = { path = "../crates/codec" }
 ed25519-dalek = "=2.2.0"
 
 [patch.crates-io]
+libcrux-platform = { path = "../vendor/libcrux-platform" }
+snow = { path = "../vendor/snow" }
 opus-rs = { path = "../vendor/opus-rs" }
 
 [[bin]]
@@ -55,6 +58,20 @@ bench = false
 [[bin]]
 name = "codec"
 path = "fuzz_targets/codec.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "hybrid-kem"
+path = "fuzz_targets/hybrid_kem.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "startup"
+path = "fuzz_targets/startup.rs"
 test = false
 doc = false
 bench = false

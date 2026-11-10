@@ -14,10 +14,11 @@ fuzz_target!(|data: &[u8]| {
         for pair in data
             .get(1..)
             .unwrap_or_default()
-            .chunks_exact(2)
+            .chunks_exact(3)
             .take(HANDSHAKE)
         {
-            response[usize::from(pair[0]) % HANDSHAKE] ^= pair[1];
+            response[usize::from(u16::from_le_bytes([pair[0], pair[1]])) % response.len()] ^=
+                pair[2];
         }
         let _ = a.receive(&response);
     }

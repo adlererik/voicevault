@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/usnistgov/ACVP-Server",
+  "commit": "975de31eb83d87039ec88934fdc47d8c312b892d",
+  "source_files": [
+    {
+      "path": "gen-val/json-files/ML-KEM-encapDecap-FIPS203/internalProjection.json",
+      "sha256": "a556952ce869bb89c3a3196a701dad89647c193a34c86eafb61a9d710d5b810f"
+    },
+    {
+      "path": "gen-val/json-files/ML-KEM-keyGen-FIPS203/internalProjection.json",
+      "sha256": "d7a62a2c3476957f56dd8d24f9004ea6776ccfe995ffe71a65bb9506dc9c7b1b"
+    }
+  ],
+  "selection": "Every ML-KEM-768 test from both internalProjection.json files; no local expected answers"
+}

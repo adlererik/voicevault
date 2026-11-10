@@ -6,20 +6,23 @@ pub mod contacts;
 pub mod enrollment;
 pub mod entropy;
 pub mod invitation;
+mod kem;
 pub mod radio;
 mod randomness;
 pub mod update;
 
-use call_state::{CallState, Control, FIRST_MEDIA, Replay};
+use call_state::{CallState, Control, FIRST_MEDIA, HandshakeGate, Replay};
 use curve25519_dalek::montgomery::MontgomeryPoint;
 use ed25519_dalek::{Signature, Signer, SigningKey, VerifyingKey};
 use snow::{Builder, HandshakeState, StatelessTransportState};
 use zeroize::Zeroizing;
 
-pub const PATTERN: &str = "Noise_KK_25519_ChaChaPoly_BLAKE2s";
+pub const PATTERN: &str = "Noise_KKhfs_25519+MLKEM768_ChaChaPoly_BLAKE2s";
 const DOMAIN: &[u8; 24] = b"quietlink contact v1 edx";
-const PROLOGUE: &[u8] = b"quietlink call v1";
-pub const HANDSHAKE: usize = 48;
+const PROLOGUE: &[u8] = b"VoiceVault hybrid call v2";
+pub const HANDSHAKE_FIRST: usize = 1248;
+pub const HANDSHAKE_SECOND: usize = 1152;
+pub const HANDSHAKE: usize = HANDSHAKE_FIRST;
 pub const CONTACT: usize = 128;
 pub const RECORD: usize = 128;
 pub const PAYLOAD: usize = 102;
@@ -133,10 +136,23 @@ impl Identity {
         entropy: &mut impl Entropy,
         context: Option<&[u8; 32]>,
     ) -> Result<Handshake, Error> {
-        self.build(peer, initiator, entropy.seed()?, context, None)
+        // Acquire all entropy fallibly before constructing a Noise state. The
+        // KEM seed is independent of the classical ephemeral and encapsulation.
+        let noise = Zeroizing::new(entropy.seed()?);
+        let mut key = Zeroizing::new([0; 64]);
+        key[..32].copy_from_slice(&Zeroizing::new(entropy.seed()?)[..]);
+        key[32..].copy_from_slice(&Zeroizing::new(entropy.seed()?)[..]);
+        let enc = Zeroizing::new(entropy.seed()?);
+        self.build(
+            peer,
+            initiator,
+            randomness::SeedResolver::hybrid(*noise, key, enc),
+            context,
+            None,
+        )
     }
 
-    /// Deterministic lab fixtures only. Wall-clock callers use `handshake`.
+    /// Public deterministic lab fixtures only. Never use for actual calls.
     #[cfg(feature = "fixtures")]
     pub fn fixture_handshake(
         &self,
@@ -144,34 +160,71 @@ impl Identity {
         initiator: bool,
         ephemeral: &[u8; 32],
     ) -> Result<Handshake, Error> {
-        self.build(peer, initiator, *ephemeral, None, Some(ephemeral))
+        self.fixture_handshake_fault(peer, initiator, ephemeral, None)
+    }
+
+    #[cfg(feature = "fixtures")]
+    pub fn fixture_handshake_fault(
+        &self,
+        peer: &Pin,
+        initiator: bool,
+        ephemeral: &[u8; 32],
+        fault: Option<alloc::boxed::Box<fixtures::KemFault>>,
+    ) -> Result<Handshake, Error> {
+        use blake2::{Blake2s256, Digest};
+        let derive = |index: u8| -> [u8; 32] {
+            let mut h = Blake2s256::new();
+            h.update(b"PUBLIC VoiceVault hybrid fixture v2");
+            h.update(ephemeral);
+            h.update([index]);
+            h.finalize().into()
+        };
+        let mut key = Zeroizing::new([0; 64]);
+        key[..32].copy_from_slice(&derive(0));
+        key[32..].copy_from_slice(&derive(1));
+        self.build(
+            peer,
+            initiator,
+            randomness::SeedResolver::hybrid(*ephemeral, key, Zeroizing::new(derive(2)))
+                .with_fault(fault),
+            None,
+            Some(ephemeral),
+        )
     }
 
     fn build(
         &self,
         peer: &Pin,
         initiator: bool,
-        seed: [u8; 32],
+        resolver: randomness::SeedResolver,
         context: Option<&[u8; 32]>,
         fixture: Option<&[u8; 32]>,
     ) -> Result<Handshake, Error> {
-        let mut prologue = [0u8; 64];
-        prologue[..PROLOGUE.len()].copy_from_slice(PROLOGUE);
-        let prologue_len = if let Some(context) = context {
-            prologue[PROLOGUE.len()..PROLOGUE.len() + 32].copy_from_slice(context);
-            PROLOGUE.len() + 32
+        // Canonical roles bind both verified Ed25519 identities in addition to
+        // Noise's pinned X25519 keys, full transcript and exact suite name.
+        let local = self.signing.verifying_key().to_bytes();
+        let (first, second) = if initiator {
+            (&local, &peer.1)
         } else {
-            PROLOGUE.len()
+            (&peer.1, &local)
         };
+        let mut prologue = alloc::vec::Vec::with_capacity(PROLOGUE.len() + 97);
+        prologue.extend_from_slice(PROLOGUE);
+        prologue.extend_from_slice(first);
+        prologue.extend_from_slice(second);
+        prologue.push(u8::from(context.is_some()));
+        if let Some(context) = context {
+            prologue.extend_from_slice(context);
+        }
         let mut builder = Builder::with_resolver(
             PATTERN.parse().map_err(|_| Error::Handshake)?,
-            alloc::boxed::Box::new(randomness::SeedResolver::new(seed)),
+            alloc::boxed::Box::new(resolver),
         )
         .local_private_key(self.static_secret.as_ref())
         .map_err(|_| Error::Handshake)?
         .remote_public_key(&peer.0)
         .map_err(|_| Error::Handshake)?
-        .prologue(&prologue[..prologue_len])
+        .prologue(&prologue)
         .map_err(|_| Error::Handshake)?;
         if let Some(ephemeral) = fixture {
             builder = builder.fixed_ephemeral_key_for_testing_only(ephemeral);
@@ -181,12 +234,16 @@ impl Identity {
         } else {
             builder.build_responder()
         };
-        inner.map(Handshake).map_err(|_| Error::Handshake)
+        Ok(Handshake {
+            inner: Some(inner.map_err(|_| Error::Handshake)?),
+            gate: HandshakeGate::new(initiator),
+            initiator,
+        })
     }
 }
 
 /// Constructed only from a signature verified against an out-of-band identity.
-pub struct Pin([u8; 32]);
+pub struct Pin([u8; 32], [u8; 32]);
 
 impl Pin {
     pub fn verify(record: &[u8; CONTACT], expected_signer: &[u8; 32]) -> Result<Self, Error> {
@@ -198,45 +255,88 @@ impl Pin {
         signer
             .verify_strict(&signed_message(&record[..64]), &signature)
             .map_err(|_| Error::Contact)?;
-        Ok(Self(record[32..64].try_into().map_err(|_| Error::Size)?))
+        Ok(Self(
+            record[32..64].try_into().map_err(|_| Error::Size)?,
+            *expected_signer,
+        ))
     }
 }
 
-pub struct Handshake(HandshakeState);
+pub struct Handshake {
+    inner: Option<HandshakeState>,
+    gate: HandshakeGate,
+    initiator: bool,
+}
 
 impl Handshake {
-    pub fn send(&mut self) -> Result<[u8; HANDSHAKE], Error> {
-        let mut wire = [0; HANDSHAKE];
-        if self
-            .0
+    fn fail<T>(&mut self, error: Error) -> Result<T, Error> {
+        self.gate.fail();
+        self.inner.take();
+        Err(error)
+    }
+    pub fn send(&mut self) -> Result<alloc::vec::Vec<u8>, Error> {
+        if !self.gate.permits(true) {
+            return self.fail(Error::State);
+        }
+        let len = if self.initiator {
+            HANDSHAKE_FIRST
+        } else {
+            HANDSHAKE_SECOND
+        };
+        let mut wire = alloc::vec![0;len];
+        match self
+            .inner
+            .as_mut()
+            .ok_or(Error::State)?
             .write_message(&[], &mut wire)
-            .map_err(|_| Error::Handshake)?
-            != HANDSHAKE
         {
-            return Err(Error::Size);
+            Ok(n) if n == len => {
+                self.gate.advance(true, true);
+                Ok(wire)
+            }
+            _ => self.fail(Error::Handshake),
         }
-        Ok(wire)
     }
-
     pub fn receive(&mut self, wire: &[u8]) -> Result<(), Error> {
-        if wire.len() != HANDSHAKE {
-            return Err(Error::Size);
+        if !self.gate.permits(false) {
+            return self.fail(Error::State);
         }
-        match self.0.read_message(wire, &mut []) {
-            Ok(0) => Ok(()),
-            _ => Err(Error::Handshake),
+        let len = if self.initiator {
+            HANDSHAKE_SECOND
+        } else {
+            HANDSHAKE_FIRST
+        };
+        if wire.len() != len {
+            return self.fail(Error::Size);
+        }
+        match self
+            .inner
+            .as_mut()
+            .ok_or(Error::State)?
+            .read_message(wire, &mut [])
+        {
+            Ok(0) => {
+                self.gate.advance(false, true);
+                Ok(())
+            }
+            _ => self.fail(Error::Handshake),
         }
     }
-
-    pub fn split(self) -> Result<Session, Error> {
-        let binding: [u8; 32] = self
-            .0
+    pub fn split(mut self) -> Result<Session, Error> {
+        if !self.gate.complete() {
+            return self.fail(Error::State);
+        }
+        let inner = self.inner.take().ok_or(Error::State)?;
+        if !inner.is_handshake_finished() {
+            return Err(Error::State);
+        }
+        let binding: [u8; 32] = inner
             .get_handshake_hash()
             .try_into()
             .map_err(|_| Error::Handshake)?;
         Ok(Session {
             noise: Some(
-                self.0
+                inner
                     .into_stateless_transport_mode()
                     .map_err(|_| Error::Handshake)?,
             ),
@@ -312,7 +412,7 @@ impl Session {
         if self.last_sent.is_some_and(|last| sequence <= last) || sequence == u64::MAX {
             return Err(Error::Counter);
         }
-        let mut plain = [0; PLAIN];
+        let mut plain = Zeroizing::new([0; PLAIN]);
         plain[0] = kind;
         plain[1] = bytes.len() as u8;
         plain[2..2 + bytes.len()].copy_from_slice(bytes);
@@ -322,7 +422,7 @@ impl Session {
             .noise
             .as_ref()
             .ok_or(Error::State)?
-            .write_message(sequence, &plain, &mut wire[8..])
+            .write_message(sequence, &plain[..], &mut wire[8..])
             .map_err(|_| Error::Auth)?
             != RECORD - 8
         {
@@ -369,12 +469,12 @@ impl Session {
         if !self.replay.eligible(sequence) {
             return Err(Error::Replay);
         }
-        let mut plain = [0; PLAIN];
+        let mut plain = Zeroizing::new([0; PLAIN]);
         if self
             .noise
             .as_ref()
             .ok_or(Error::State)?
-            .read_message(sequence, &wire[8..], &mut plain)
+            .read_message(sequence, &wire[8..], &mut plain[..])
             .map_err(|_| Error::Auth)?
             != PLAIN
         {

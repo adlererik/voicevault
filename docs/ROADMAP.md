@@ -32,7 +32,7 @@ Defer public signaling, Nostr and polished production hardware until the endpoin
 | Trusted pairing UX | Chosen out-of-band transport, full comparison or reviewed short-SAS ceremony, attempt/error rules and user tests |
 | Discovery and invitations | Defined untrusted-carrier interface, authenticated names, expiry/time/challenge behavior and metadata analysis |
 | Reproducible release process | Independently rebuilt payload comparison, separated release signatures, documented environment and release-key custody |
-| Cryptographic horizon | An explicit classical/post-quantum requirement; reviewed hybrid design and new resource tests if needed |
+| Recorded-call protection | Owner target: harvest-now-decrypt-later resistance, using reviewed fresh hybrid establishment and new resource/erasure tests; active quantum deployment is outside this extension. [Feasibility](POST_QUANTUM.md) |
 
 ## 3. Choose and validate the platform
 

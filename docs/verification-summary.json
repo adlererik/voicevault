@@ -132,5 +132,11 @@
     "persistent_read_only_service": true,
     "browser_live_faults_search_results": "observed",
     "scope": "Two additional unscored live scenarios; all existing gates retained"
+  },
+  "subsequent_feature_followup": {
+    "name": "Compact command deck and decoded synthetic audio listening",
+    "scope": "Focused feature checks; not a new full-suite run",
+    "report": "docs/evidence/command-deck/feature-verification.json",
+    "post_quantum_goal": "Harvest-now-decrypt-later resistance for calls made today; studied, not implemented"
   }
 }

@@ -25,3 +25,10 @@ These two development captures came from `voicevault-verification-final`, which 
 - `voicevault-fuzz-progress.png`: actual current campaign counters and elapsed run display.
 - `voicevault-individual-results.png`: the two formerly split property-test results shown as passed during the complete campaign.
 - `voicevault-complete.png`: final 42-check / 49-result view from the completed eleven-group campaign.
+
+## Compact command deck and listening
+
+- [Live laptop deck](command-deck-live-laptop.png): actual eight-second call still running, with decoded synthetic audio monitored in the browser; 1280×800 layout inspection.
+- [Narrow deck](command-deck-narrow-deck.png): completed eight-second normal/fault demonstration, compact first-screen layout. This is a demo verdict, not a complete campaign.
+
+[Focused feature verification](../COMMAND_DECK_CHECKS.md) records viewport dimensions, audio observations and the checks actually performed.

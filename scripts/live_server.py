@@ -29,7 +29,7 @@ def publish(directory):
 class FileTrace(Trace):
     def __init__(self, pointer=CURRENT):
         super().__init__(metadata={'id': 'idle', 'kind': 'idle', 'started': None})
-        self.phase = 'idle'; self.pointer = pointer; self.offset = 0
+        self.phase = 'idle'; self.pointer = pointer; self.offset = 0; self.source_directory = None
         self.stop_polling = threading.Event()
         self.worker = threading.Thread(target=self.poll, daemon=True)
 
@@ -42,6 +42,7 @@ class FileTrace(Trace):
             if state['id'] != self.metadata['id']:
                 self.events = []; self.offset = 0
             self.metadata = state
+            self.source_directory = directory
             phase = state['phase']
             if phase not in ('done', 'interrupted', 'error'):
                 try: os.kill(state['owner_pid'], 0)

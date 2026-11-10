@@ -1,5 +1,7 @@
 # Verification results: VoiceVault live laboratory
 
+**Later UI/audio follow-up:** [focused command-deck checks](COMMAND_DECK_CHECKS.md) are recorded separately; the full-suite campaign below retains its original source provenance.
+
 Run **`voicevault-complete`** on **2026-11-10** completed with **11 required groups, 42 checks and 49 reported test/vector/proof results passing**. The runner exited zero. Six instrumented campaigns each met the >=120-second gate, totaling **190,390 executions**. Four bounded Kani harnesses passed. Two new eight-second full-duplex live scenarios were added to the original suite; all previous checks and thresholds remain enabled.
 
 [Raw verdict and logs](evidence/voicevault-live/verdict.json) · [Source provenance](evidence/voicevault-live/tested-source-manifest.json) · [Event journal](evidence/voicevault-live/events.ndjson) · [Timing report](evidence/voicevault-live/timing.json) · [Machine-readable summary](verification-summary.json)

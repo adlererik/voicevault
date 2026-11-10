@@ -1,0 +1,122 @@
+{
+  "alice_to_bob_tx": {
+    "absolute_send_error": {
+      "count": 1500,
+      "max_ns": 2606277,
+      "p50_ns": 96762,
+      "p95_ns": 243733,
+      "p99_ns": 1021905
+    },
+    "catch_up_bursts": 0,
+    "codec_ns": 1801198580,
+    "cpu_ns": 1931721984,
+    "crypto_ns": 34591865,
+    "decoded_slots": 1500,
+    "digital_playout_latency": {
+      "count": 1500,
+      "max_ns": 82789196,
+      "p50_ns": 80246274,
+      "p95_ns": 80409150,
+      "p99_ns": 81273360
+    },
+    "filler_sent_slots": 0,
+    "filler_slots": 0,
+    "ipc_output_buffer_bytes": 16384,
+    "ipc_output_queue_peak_bytes": 3072,
+    "jitter_peak": 5,
+    "missed_slot_indices": [],
+    "missed_slots": 0,
+    "peak_rss_kib": 5568,
+    "plc_slots": 0,
+    "reassembly_peak": 1,
+    "receive_drops": 0,
+    "scheduled_slots": 1500,
+    "sent": 1500,
+    "transmit_drops": 0
+  },
+  "allowed_cpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "bob_to_alice_tx": {
+    "absolute_send_error": {
+      "count": 1500,
+      "max_ns": 2850244,
+      "p50_ns": 98521,
+      "p95_ns": 284665,
+      "p99_ns": 1748907
+    },
+    "catch_up_bursts": 0,
+    "codec_ns": 2122297611,
+    "cpu_ns": 2250137679,
+    "crypto_ns": 35937895,
+    "decoded_slots": 1500,
+    "digital_playout_latency": {
+      "count": 1500,
+      "max_ns": 83007995,
+      "p50_ns": 80249782,
+      "p95_ns": 80536448,
+      "p99_ns": 81922503
+    },
+    "filler_sent_slots": 0,
+    "filler_slots": 0,
+    "ipc_output_buffer_bytes": 16384,
+    "ipc_output_queue_peak_bytes": 3072,
+    "jitter_peak": 5,
+    "missed_slot_indices": [],
+    "missed_slots": 0,
+    "peak_rss_kib": 5388,
+    "plc_slots": 0,
+    "reassembly_peak": 1,
+    "receive_drops": 0,
+    "scheduled_slots": 1500,
+    "sent": 1500,
+    "transmit_drops": 0
+  },
+  "digital_playout_latency_by_direction": {
+    "alice_to_bob": {
+      "count": 1500,
+      "max_ns": 83007995,
+      "p50_ns": 80249782,
+      "p95_ns": 80536448,
+      "p99_ns": 81922503
+    },
+    "bob_to_alice": {
+      "count": 1500,
+      "max_ns": 82789196,
+      "p50_ns": 80246274,
+      "p95_ns": 80409150,
+      "p99_ns": 81273360
+    }
+  },
+  "duration_seconds": 30.0,
+  "endpoint_cpus": [
+    6,
+    7
+  ],
+  "load": "no lab-generated load",
+  "mode": "idle",
+  "passed": true,
+  "period_ns": 20000000,
+  "pids": [
+    592668,
+    592669,
+    592670,
+    592671,
+    592672
+  ],
+  "playout_metrics_are_local_rx": true,
+  "reasons": [],
+  "wav_tone_power": {
+    "alice_400hz": 0.31972723479857507,
+    "alice_700hz": 13683830.588646565,
+    "bob_400hz": 13557410.316618025,
+    "bob_700hz": 0.1668705174655096
+  }
+}

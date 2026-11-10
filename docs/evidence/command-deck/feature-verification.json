@@ -1,0 +1,84 @@
+{
+  "scope": "Focused command-deck/audio feature verification; the earlier 11-group full-suite record is preserved. No new complete-suite or post-quantum protection claim.",
+  "base_commit": "7d53ae916f11aa26591504c585fccbf2d2578994",
+  "date": "2026-11-10",
+  "checks": {
+    "rust_workspace_tests": {
+      "status": "pass",
+      "reported_cases": 30,
+      "log": "rust-tests.log"
+    },
+    "clippy_all_targets": {
+      "status": "pass",
+      "evidence": "Observed successful Clippy run on final Rust changes, warnings denied"
+    },
+    "dashboard_and_monitor_regressions": {
+      "status": "pass",
+      "log": "dashboard.log"
+    },
+    "live_normal_and_faults_8_seconds": {
+      "status": "pass",
+      "evidence": "Native monitor samples matched actual recovered WAVs"
+    },
+    "live_normal_and_faults_30_seconds": {
+      "status": "pass",
+      "evidence": "Native monitor samples matched actual recovered WAVs"
+    },
+    "scored_timing_and_monitor_exclusion": {
+      "idle": {
+        "exit_code": 0,
+        "passed": true,
+        "monitor_files": []
+      },
+      "contention": {
+        "exit_code": 0,
+        "passed": true,
+        "monitor_files": []
+      },
+      "overload": {
+        "exit_code": 0,
+        "passed": true,
+        "monitor_files": []
+      },
+      "blocked-phone": {
+        "exit_code": 0,
+        "passed": true,
+        "monitor_files": []
+      }
+    },
+    "browser": {
+      "status": "observed",
+      "audio_received_and_scheduled_while_call_active": true,
+      "audio_context_state": "running",
+      "observed_scheduled_audio_frames": 2088,
+      "later_visible_fault_rejections": 20,
+      "phone_graphics": 2,
+      "narrow_view": {
+        "width": 381,
+        "height": 648,
+        "deck_bottom": 596.796875,
+        "whole_deck_above_fold": true
+      },
+      "laptop_view": {
+        "width": 1280,
+        "height": 800
+      },
+      "browser_console_errors": []
+    }
+  },
+  "sources": {
+    "crates/lab-runner/src/wall.rs": "242fd0538c09106d1d5cc4586934f9a2dc72bd8f33825871d950d96f807de81f",
+    "scripts/dashboard.html": "30dbcb1b187139bd1238f65a5b5dcfd73238ec156f6284092427d507019cfa83",
+    "scripts/dashboard.py": "0baba47bfcf7e255d7c2d3fbc7f35a0899e09b9e8cdd1d04be58a542ffa498ce",
+    "scripts/lab.py": "fe394afd24db6e02b2ff939fb517522bd9b9183226cbbe8eaaddf967e2263278",
+    "scripts/live_server.py": "1c83fe259b07da4819d3e8457c6865f76ea0b298cc01daa43f4d8a45492af0ea",
+    "scripts/live_tests.py": "103600415f9cbca17f25a23f165fa4879463d8dfb5918968a2afe9693a5fa436",
+    "scripts/audio_monitor.py": "0992174f6516758e55dc429ef9d53ab872e4a5857f77f5b9854f94dbd8879647"
+  },
+  "limits": [
+    "Generated tones only; no microphone or human voice",
+    "Playback includes a browser buffer; not end-to-end latency evidence",
+    "No PQ implementation or hardware/PQ memory benchmark",
+    "Fuzz/Kani/ARM/dependency campaigns not rerun for this focused native/UI feature follow-up"
+  ]
+}

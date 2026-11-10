@@ -1,0 +1,117 @@
+   Compiling protocol v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/protocol)
+   Compiling lab-runner v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/lab-runner)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.11s
+     Running unittests src/lib.rs (target/debug/deps/call_state-e5ad96d1a1a05527)
+
+running 1 test
+test tests::boundaries ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/codec-ac85d516faa11065)
+
+running 2 tests
+test tests::cbr_including_silence ... ok
+test tests::rejects_wrong_geometry ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests src/lib.rs (target/debug/deps/device_core-b4ab617c93b715c8)
+
+running 1 test
+test tests::absolute_slots_skip_and_never_catch_up ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/lab_runner-eb900eafed9d32e6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/link-319211d0f7cc1ae7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/protocol-b10f55b674018f58)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/lifecycle.rs (target/debug/deps/lifecycle-c638c5c42d2246f0)
+
+running 18 tests
+test a_closed_session_rejects_even_authentic_future_packets ... ok
+test accepted_invitation_binds_noise_and_epoch_renewal_needs_fresh_keys ... ok
+test arbitrary_firmware_envelopes_do_not_pass_signature ... ok
+test arbitrary_radio_frames_cannot_exceed_capacity ... ok
+test controller_has_no_privileged_opcode_and_cannot_bypass_bounds_by_reset ... ok
+test corrupted_new_firmware_never_falls_back_below_the_protected_floor ... ok
+test enrollment_requires_both_local_comparisons_and_authenticated_confirmations ... ok
+test every_update_write_cut_and_torn_write_boots_only_verified_nonrollback_image ... ok
+test invitation_admission_bounds_signature_work_and_never_uses_phone_time ... ok
+test invitations_bind_peer_recipient_boot_nonce_time_and_persist_replay_state ... ok
+test local_enrollment_and_contact_capacity_are_bounded ... ok
+test malformed_enrollment_poisoned_state_and_confirmation_replay_fail ... ok
+test mitm_creates_different_display_fingerprints ... ok
+test offline_update_requires_local_action_trusted_signature_target_and_new_version ... ok
+test onboard_entropy_fails_closed_without_two_healthy_sources ... ok
+test protected_commit_or_flash_read_failure_never_erases_an_unrecognized_active_bank ... ok
+test sealed_contacts_reject_tampering_rollback_wrong_device_and_unavailable_root ... ok
+test storage_failure_never_releases_an_invitation_or_consumes_a_received_counter ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.67s
+
+     Running tests/security.rs (target/debug/deps/security-5b644c5e445fdd4e)
+
+running 6 tests
+test auth_and_counters_cannot_poison_window ... ok
+test bad_handshake_tag_and_wrong_pin_fail ... ok
+test bitmap_matches_set ... ok
+test contact_binds_distinct_static_key_to_pinned_signer ... ok
+test reconnect_restarts_counter_with_fresh_split_and_directions ... ok
+test reject_control_and_media_until_local_consent ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.34s
+
+     Running tests/vectors.rs (target/debug/deps/vectors-874c854b97d9fcd0)
+
+running 2 tests
+test cacophony_kk_stateless ... ok
+test cacophony_xx_stateless ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests call_state
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests codec
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests device_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests link
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests protocol
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

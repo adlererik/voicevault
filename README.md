@@ -10,7 +10,7 @@ The intended adversary has **NSA-class capabilities**: both phones may already b
 
 **Today:** working Rust voice simulations, hostile-phone processes, lifecycle security models, a live device-and-test dashboard and a linked Cortex-M33 diagnostic. **Destination:** a small independent voice endpoint with its own trusted display, wired headset audio, battery, inductive charging and a carefully isolated BLE connection to a phone. No physical VoiceVault device has been built.
 
-[Project vision](docs/PROJECT_VISION.md) · [Architecture](docs/ARCHITECTURE.md) · [Threat model](docs/THREAT_MODEL.md) · [Every security control](docs/SECURITY_CONTROLS.md) · [Why these algorithms](docs/CRYPTOGRAPHY.md) · [Test evidence](docs/RESULTS.md) · [Hardware roadmap](docs/ROADMAP.md)
+[Project vision](docs/PROJECT_VISION.md) · [Architecture](docs/ARCHITECTURE.md) · [Threat model](docs/THREAT_MODEL.md) · [Every security control](docs/SECURITY_CONTROLS.md) · [Why these algorithms](docs/CRYPTOGRAPHY.md) · [Test evidence](docs/RESULTS.md) · [Hardware roadmap](docs/ROADMAP.md) · [Post-quantum feasibility](docs/POST_QUANTUM.md)
 
 ## The idea: move the endpoint
 
@@ -79,7 +79,7 @@ Algorithm choice is only part of the design. Nonce discipline, peer verification
 
 ## Evidence you can inspect
 
-The fresh **VoiceVault `voicevault-complete`** run on **2026-11-10** passed **all 11 required groups and 42 checks**, with **49 individual test/vector/proof outcomes** reported. Six instrumented fuzz campaigns completed **190,390 executions**, each running for at least 120 seconds. Four bounded Kani harnesses passed. Both libopus interoperability directions, twelve official mono decoder vectors, eighteen lifecycle test functions and the Cortex-M33 diagnostic passed.
+The recorded full-suite baseline **VoiceVault `voicevault-complete`** run on **2026-11-10** passed **all 11 required groups and 42 checks**, with **49 individual test/vector/proof outcomes** reported. Six instrumented fuzz campaigns completed **190,390 executions**, each running for at least 120 seconds. Four bounded Kani harnesses passed. Both libopus interoperability directions, twelve official mono decoder vectors, eighteen lifecycle test functions and the Cortex-M33 diagnostic passed.
 
 | Recorded result | Observation |
 |---|---|
@@ -95,23 +95,17 @@ These are observations from the identified software run and CPU emulator. They d
 
 ![Measured native timing and Cortex-M33 memory budget](docs/assets/voicevault-verification.svg)
 
-<table>
-<tr><th>Live device activity</th><th>Hostile media rejected</th></tr>
-<tr>
-<td><a href="docs/screenshots/voicevault-live-devices.png"><img src="docs/screenshots/voicevault-live-devices.png" width="340" alt="VoiceVault live software device panels and hostile transport path"></a></td>
-<td><a href="docs/screenshots/voicevault-live-faults.png"><img src="docs/screenshots/voicevault-live-faults.png" width="340" alt="Actual running fault scenario with Bob rejecting corrupted records"></a></td>
-</tr>
-</table>
+<p align="center"><a href="docs/screenshots/command-deck-live-laptop.png"><img src="docs/screenshots/command-deck-live-laptop.png" width="1100" alt="VoiceVault live command deck with graphical phones and actual decoded synthetic audio monitoring"></a></p>
 
-*Actual browser captures while the live scenarios were still running. The counters and device states come from endpoint events; the middle path has no independent live packet telemetry. These development captures are not a completed-suite verdict. The [gallery](docs/screenshots/README.md) identifies their run context and preserves older VoxBastion/Quietlink screenshots. The timing/memory plot above is calculated from the latest committed reports; earlier evidence remains preserved separately.*
+*Actual laptop capture while a synthetic call was running. Receiver audio monitoring, boundary flashes and packet counts come from actual test output. [Focused feature checks](docs/COMMAND_DECK_CHECKS.md) cover the new deck/audio paths. The earlier eleven-group full-suite evidence remains a separately identified baseline.*
 
-<p align="center"><a href="docs/screenshots/voicevault-complete.png"><img src="docs/screenshots/voicevault-complete.png" width="340" alt="Completed VoiceVault run with all 42 checks, 49 results and no failures"></a></p>
+[Narrow-width deck](docs/screenshots/command-deck-narrow-deck.png) · [Historical full-suite completion](docs/screenshots/voicevault-complete.png)
 
 ## See what is happening as it happens
 
 The UI opens at **http://127.0.0.1:8765/** for every run. Two device panels show identity/contact verification, invitation authentication, call establishment, encrypted media, receiver rejection and audio playout/concealment. Both hostile phones and the relay are shown between them. The test area reports every scheduled check, individual Rust tests, all twelve Opus vectors, each bounded proof and actual fuzzing counters as their harnesses report them.
 
-`./lab demo` gives a short visible normal/fault call demonstration. `./lab watch` runs the complete verification suite; `./lab ui` reopens the persistent page. Refresh reconstructs the current run, reconnect resumes events, and a new published run resets the display. Compilation, proofs and fuzzing are shown as checks rather than invented device traffic. Scored timing keeps graphics still and labels its buffered packet traces recorded. A running test is never displayed as a pass merely because it started. [How the dashboard works](docs/LIVE_DASHBOARD.md)
+`./lab demo --seconds 30` gives two visible 30-second normal/fault calls. Click **Listen live** to monitor actual decoded synthetic tones. Choose either receiver or both; sound is off by default. Device cards, graphical phones, packet/rejection flashes, a recent-event ticker and compact check/fuzz displays now occupy the top observation deck. `./lab watch` runs the complete verification suite; `./lab ui` reopens the persistent page. Refresh reconstructs the current run, reconnect resumes events, and a new published run resets the display. Compilation, proofs and fuzzing are shown as checks rather than invented device traffic. Scored timing keeps graphics still and labels its buffered packet traces recorded. A running test is never displayed as a pass merely because it started. [How the dashboard works](docs/LIVE_DASHBOARD.md)
 
 ## Toward the physical device
 
@@ -134,7 +128,7 @@ cd voicevault
 ./lab replay
 ```
 
-The demo opens **http://127.0.0.1:8765/** and runs two eight-second live calls: normal encrypted delivery, then deliberate media corruption and loss. The display represents Alice and Bob as trusted device panels, with both hostile phones and the relay between them. It uses synthetic audio and local processes. It requires no microphone, phone, cloud calling service, model API or paid API. `watch` runs the complete suite with a read-only loopback dashboard; test starts, reported outcomes, fuzzing counters and proof results stream as they arrive. Timing measurements keep graphics still while progress remains visible; their packet traces are labeled recorded. The saved HTML works offline. The development host is Linux x86-64; the full suite needs the pinned Rust/tooling and ARM emulator described in the [development guide](docs/DEVELOPMENT.md).
+The demo opens **http://127.0.0.1:8765/** and defaults to two eight-second live calls (use `--seconds 30` for longer observation): normal encrypted delivery, then deliberate media corruption and loss. The display represents Alice and Bob as trusted device panels, with both hostile phones and the relay between them. It uses synthetic audio and local processes. It requires no microphone, phone, cloud calling service, model API or paid API. `watch` runs the complete suite with a read-only loopback dashboard; test starts, reported outcomes, fuzzing counters and proof results stream as they arrive. Timing measurements keep graphics still while progress remains visible; their packet traces are labeled recorded. The saved HTML works offline. The development host is Linux x86-64; the full suite needs the pinned Rust/tooling and ARM emulator described in the [development guide](docs/DEVELOPMENT.md).
 
 ## Explore and contribute
 

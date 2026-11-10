@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import sys
 import tempfile
+import struct
 import threading
 import time
 from dashboard import Trace, trace
@@ -13,6 +14,7 @@ from unittest.mock import patch, MagicMock
 
 
 def self_test():
+    monitor_test()
     # A fixed address must fail explicitly rather than silently move the UI.
     with patch('live_server.health', side_effect=ValueError('another application')), patch('live_server.subprocess.Popen') as spawn:
         try: ensure_service(); assert False, 'occupied address accepted'
@@ -61,3 +63,29 @@ def self_test():
         assert not finished.is_set() and any(e['action']=='case' and e['status']=='info' for e in observed.events),'start waited for child exit'
         worker.join(5);assert finished.is_set() and not error,error
         assert any(e['action']=='case' and e['status']=='pass' for e in observed.events)
+
+
+def monitor_test():
+    from audio_monitor import batch, FRAME_BYTES
+    with tempfile.TemporaryDirectory() as tmp:
+        directory=Path(tmp);(directory/'live').mkdir()
+        model=Trace(metadata={'id':'test-run'});model.source_directory=directory
+        model.add(trace('live','check','run','Running'))
+        # Deliberately non-sinusoidal fixtures verify exact PCM forwarding.
+        frames=[struct.pack('<I',slot)+struct.pack('<320h',*([slot-100]*320)) for slot in range(30)]
+        (directory/'live/alice-monitor.pcm').write_bytes(b''.join(frames)+b'partial')
+        path='/monitor?run=test-run&scenario=live&alice=-1&bob=-1'
+        status,headers,body=batch(model,path)
+        assert status==200 and headers['X-Alice-Cursor']=='30' and headers['X-Bob-Cursor']=='0'
+        assert body==b''.join(b'\0'+frame for frame in frames[-4:])
+        status,headers,body=batch(model,path.replace('alice=-1','alice=23'))
+        assert body==b''.join(b'\0'+frame for frame in frames[23:])
+        assert len(body)<=8*(FRAME_BYTES+1)
+        assert batch(model,path.replace('test-run','wrong'))[0]==409
+        for invalid in (path.replace('alice=-1','alice=999999'),path+'&file=/etc/passwd',path.replace('alice=-1','alice=x')):
+            try:batch(model,invalid);assert False,'invalid query accepted'
+            except ValueError:pass
+        model.set_phase('timing');assert batch(model,path)[0]==204
+        model.set_phase('done');assert batch(model,path)[0]==204
+        model.set_phase('live');model.add(trace('live','check','run','completed','pass'))
+        assert batch(model,path)[0]==204

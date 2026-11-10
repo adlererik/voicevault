@@ -121,7 +121,16 @@ fn count(mode: &str) -> Result<u64> {
         "idle" | "contention" => Ok(1500),
         "overload" | "blocked-phone" => Ok(150),
         "demo" => Ok(100),
-        "live" | "live-faults" => Ok(400),
+        "live" | "live-faults" => {
+            let seconds = std::env::var("VOICE_LAB_LIVE_SECONDS")
+                .unwrap_or_else(|_| "8".into())
+                .parse::<u64>()?;
+            check(
+                (8..=30).contains(&seconds),
+                "live duration must be 8..30 seconds",
+            )?;
+            Ok(seconds * 50)
+        }
         _ => Err("invalid timing scenario".into()),
     }
 }
@@ -450,6 +459,7 @@ fn measure(
     mode: &'static str,
     start: u64,
     count: u64,
+    mut monitor: Option<File>,
 ) -> Result<Measurements> {
     let mut parts = Reassembly::default();
     let mut radio = protocol::radio::RadioPort::default();
@@ -605,6 +615,16 @@ fn measure(
             }
             let offset = slot as usize * codec::SAMPLES;
             m.pcm[offset..offset + codec::SAMPLES].copy_from_slice(&pcm);
+            if let Some(file) = monitor.as_mut() {
+                // Laboratory-only: actual post-decryption synthetic PCM.
+                // No scored timing mode creates this file or enters this path.
+                let mut frame = [0u8; 4 + codec::SAMPLES * 2];
+                frame[..4].copy_from_slice(&(slot as u32).to_le_bytes());
+                for (bytes, sample) in frame[4..].as_chunks_mut::<2>().0.iter_mut().zip(pcm) {
+                    bytes.copy_from_slice(&sample.to_le_bytes());
+                }
+                file.write_all(&frame)?;
+            }
             if mode.starts_with("live") || current < TRACE_SLOTS {
                 m.trace(Event {
                     test: mode,
@@ -692,8 +712,13 @@ pub fn endpoint(out: &Path, alice: bool, mode: &str) -> Result<()> {
     let start = u64::from_le_bytes(parameters[..8].try_into()?);
     let cpu = usize::try_from(u64::from_le_bytes(parameters[8..].try_into()?))?;
     affinity(Some(cpu))?;
-    let result = measure(&data, device, alice, mode, start, count(mode)?)?;
     let who = if alice { "alice" } else { "bob" };
+    let monitor = if mode.starts_with("live") {
+        Some(File::create(out.join(format!("{who}-monitor.pcm")))?)
+    } else {
+        None
+    };
+    let result = measure(&data, device, alice, mode, start, count(mode)?, monitor)?;
     write_wav(&out.join(format!("{who}-received.wav")), &result.pcm)?;
     fs::write(
         out.join(format!("{who}.json")),
@@ -711,6 +736,35 @@ pub fn endpoint(out: &Path, alice: bool, mode: &str) -> Result<()> {
         "Call complete; recovered synthetic audio saved",
     );
     control.send(b"done")?;
+    Ok(())
+}
+
+fn verify_monitor(out: &Path, who: &str, slots: u64) -> Result<()> {
+    let bytes = fs::read(out.join(format!("{who}-monitor.pcm")))?;
+    let wav = fs::read(out.join(format!("{who}-received.wav")))?;
+    let size = 4 + codec::SAMPLES * 2;
+    check(
+        !bytes.is_empty() && bytes.len().is_multiple_of(size),
+        "incomplete monitor frame",
+    )?;
+    check(
+        bytes.len() / size <= slots as usize,
+        "unbounded monitor frames",
+    )?;
+    let mut previous = None;
+    for frame in bytes.chunks_exact(size) {
+        let slot = u32::from_le_bytes(frame[..4].try_into()?) as usize;
+        check(
+            slot < slots as usize && previous.is_none_or(|last| slot > last),
+            "invalid monitor slot order",
+        )?;
+        let start = 44 + slot * codec::SAMPLES * 2;
+        check(
+            wav.get(start..start + codec::SAMPLES * 2) == Some(&frame[4..]),
+            "live monitor differs from actual received WAV",
+        )?;
+        previous = Some(slot);
+    }
     Ok(())
 }
 
@@ -915,6 +969,16 @@ pub fn run(out: &Path, mode: &str) -> Result<()> {
     {
         reasons.push("injected live faults did not produce rejection and concealment".into());
         passed = false;
+    }
+    for who in ["alice", "bob"] {
+        if mode.starts_with("live") {
+            verify_monitor(out, who, slots)?;
+        } else {
+            check(
+                !out.join(format!("{who}-monitor.pcm")).exists(),
+                "scored mode created a live monitor file",
+            )?;
+        }
     }
     let mut tones = serde_json::Value::Null;
     if matches!(

@@ -98,7 +98,7 @@ class Suite:
         self.event_errors = []
         self.server = None
         self.env = os.environ.copy()
-        self.env.update(CARGO_TERM_COLOR="never", RUST_BACKTRACE="1", PROPTEST_RNG_SEED="870321", PYTHONUNBUFFERED="1")
+        self.env.update(CARGO_TERM_COLOR="never", RUST_BACKTRACE="1", PROPTEST_RNG_SEED="870321", PYTHONUNBUFFERED="1", VOICE_LAB_LIVE_SECONDS="8")
 
     def run(self, group, name, command, *, needs=(), timeout=120, events=False,
             cwd=ROOT, accept=None, unavailable=None, env=None, recorded=False):
@@ -447,6 +447,9 @@ def main():
                           ("demo", "run a short isolated call and save WAVs")]:
         command = commands.add_parser(name, help=message)
         command.add_argument("--out", metavar="ABS_DIR", help="write to an empty absolute directory")
+        if name == "demo":
+            command.add_argument("--seconds", type=int, choices=range(8,31), default=8,
+                                 metavar="8..30", help="seconds per live call (default 8)")
     commands.add_parser("ui", help="open the persistent dashboard at http://127.0.0.1:8765/")
     commands.add_parser("status", help="show the last full suite verdict and failure reasons")
     replay = commands.add_parser("replay", help="open a saved offline dashboard")
@@ -478,6 +481,7 @@ def main():
         if args.command != "demo":
             return suite_run(out, args.command == "watch")
         suite = Suite(out, kind="demonstration")
+        suite.env["VOICE_LAB_LIVE_SECONDS"] = str(args.seconds)
         url=ensure_service();publish(out);print(f"Dashboard {url}",flush=True);open_browser(url, once=True)
         try:
             built=suite.run(None,"demo-build",["cargo","build","--locked","--release","-p","lab-runner"],needs=("cargo",),timeout=300)

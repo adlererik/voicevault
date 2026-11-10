@@ -20,7 +20,7 @@ FIELDS = {"test", "tick", "action", "from", "to", "expected", "observed", "statu
 LIMIT = 32768
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 8765
-SERVICE_VERSION = 4
+SERVICE_VERSION = 5
 
 
 def trace(test, action, expected, observed, status="info"):
@@ -141,6 +141,20 @@ class Handler(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(body)))
             self.end_headers(); self.wfile.write(body)
+        elif self.path.startswith("/monitor?"):
+            from audio_monitor import batch
+            try:
+                status, headers, body = batch(self.server.trace, self.path)
+            except (ValueError, OverflowError):
+                self.send_error(400); return
+            except OSError:
+                self.send_error(503); return
+            self.send_response(status)
+            self.send_header("Content-Type", "application/octet-stream")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(body)))
+            for key, value in headers.items(): self.send_header(key, value)
+            self.end_headers(); self.wfile.write(body)
         elif self.path == "/events":
             if not self.server.clients.acquire(blocking=False):
                 self.send_error(503)
@@ -250,6 +264,12 @@ def self_test():
             client.request("POST", "/events"); assert client.getresponse().status == 405
         with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
             client.request("GET", "/", headers={"Host": "outside.invalid"}); assert client.getresponse().status == 403
+        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
+            client.request("GET", "/monitor?run=none&scenario=live&alice=-1&bob=-1")
+            assert client.getresponse().status == 204
+        with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
+            client.request("GET", "/monitor?file=/etc/passwd")
+            assert client.getresponse().status == 400
         with contextlib.closing(http.client.HTTPConnection(server.host, timeout=3)) as client:
             client.request("GET", "/health"); response = client.getresponse()
             assert json.loads(response.read())["project"] == "VoiceVault"

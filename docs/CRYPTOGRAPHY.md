@@ -94,3 +94,7 @@ The owner prefers avoiding NIST primitives where practical in the end-to-end des
 X25519 and Ed25519 are classical primitives. Future quantum attacks are not addressed by choosing a 256-bit symmetric key. A hybrid post-quantum requirement would need an independently reviewed construction, new protocol/version decisions, interoperability tests and embedded resource measurements. It is an explicit roadmap decision, not an implemented protection.
 
 See [security controls](SECURITY_CONTROLS.md) for implementation/evidence links and [assurance](ASSURANCE.md) for the limits of the current claims.
+
+## Clarified future recorded-call objective
+
+The owner wants recordings of calls made today to resist later quantum decryption. This harvest-now-decrypt-later goal is not delivered by the current classical exchange. A reviewed fresh hybrid establishment and erased session-specific secrets are the proposed direction; active quantum-era authentication and a continuous PQ ratchet are not prerequisites solely for this goal. Earlier classical-only recordings cannot be retroactively protected. The [feasibility study](POST_QUANTUM.md) states resource assumptions and the unresolved NIST-preference choice. No cryptographic algorithm was changed by the command-deck/audio feature.

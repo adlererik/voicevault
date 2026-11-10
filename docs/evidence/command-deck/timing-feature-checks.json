@@ -1,0 +1,25 @@
+{
+  "scope": "focused timing/audio-exclusion regression, not a full-suite run",
+  "checks": {
+    "idle": {
+      "exit_code": 0,
+      "passed": true,
+      "monitor_files": []
+    },
+    "contention": {
+      "exit_code": 0,
+      "passed": true,
+      "monitor_files": []
+    },
+    "overload": {
+      "exit_code": 0,
+      "passed": true,
+      "monitor_files": []
+    },
+    "blocked-phone": {
+      "exit_code": 0,
+      "passed": true,
+      "monitor_files": []
+    }
+  }
+}

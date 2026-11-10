@@ -20,20 +20,33 @@ header,.title-row,.controls{display:flex;align-items:center;justify-content:spac
 .pulse{position:absolute;width:10px;height:10px;top:28px;left:0;border-radius:50%;pointer-events:none;background:var(--mint);box-shadow:0 0 11px currentColor;z-index:2}
 .pulse[data-action=drop],.pulse[data-action=tamper],.pulse[data-action=reject],.pulse[data-action=inject]{background:var(--red);color:var(--red)}
 .pulse[data-action=replay],.pulse[data-action=duplicate],.pulse[data-action=delay]{background:var(--amber);color:var(--amber)}
-.controls{justify-content:flex-start;padding-top:15px;border-top:1px solid var(--line)} button,select{font:inherit;color:var(--text);background:#213034;border:1px solid #465a5d;border-radius:8px;padding:6px 11px} button:enabled{cursor:pointer} button:disabled{opacity:.55}
-button:focus-visible,select:focus-visible{outline:2px solid var(--mint);outline-offset:2px} .progress{margin-left:auto;color:var(--muted)}
+.controls{justify-content:flex-start;padding-top:15px;border-top:1px solid var(--line)} button,select,input{font:inherit;color:var(--text);background:#213034;border:1px solid #465a5d;border-radius:8px;padding:6px 11px} button:enabled{cursor:pointer} button:disabled{opacity:.55}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--mint);outline-offset:2px} .progress{margin-left:auto;color:var(--muted)}
 .grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(235px,1fr);gap:16px} .badge{display:inline-block;font-size:.73rem;border:1px solid currentColor;border-radius:5px;padding:2px 6px;color:var(--muted);text-transform:uppercase;white-space:nowrap}
 [data-status=pass]{color:var(--mint)} [data-status=fail]{color:var(--red)} [data-status=blocked]{color:var(--amber)}
 dl{display:grid;grid-template-columns:max-content 1fr;gap:7px 13px;margin:13px 0 0} dt,.muted{color:var(--muted)} dd{margin:0;overflow-wrap:anywhere}
 table{border-collapse:collapse;width:100%;margin-top:10px;font-size:.85rem} th{text-align:left;color:var(--muted);font-size:.73rem}
 th,td{padding:7px 4px;border-bottom:1px solid var(--line);vertical-align:top} tr:last-child td{border-bottom:0} footer{color:var(--muted);font-size:.82rem}
+.check-list{max-height:390px;overflow:auto;margin-top:14px;overscroll-behavior:contain}
+.check-item{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:12px 2px}
+.check-item strong{display:block;font-weight:500;overflow-wrap:anywhere}.check-item small{display:block;color:var(--muted);margin-top:3px}
+.check-item[hidden],.check-list[hidden]{display:none}.test-controls{border:0;padding-top:12px}.test-controls input{min-width:100px;width:100%}
+button[aria-pressed=true]{border-color:var(--mint);color:var(--mint)}
 @media(max-width:670px){main{padding:26px 12px}.grid{grid-template-columns:1fr;gap:0}.panel{padding:14px}.node span:not(.icon){display:none}.topology{gap:2px}}
 </style>
 </head>
 <body>
 <main>
 <header><div><p class="eyebrow">Software voice research · loopback only</p><h1>Quietlink Lab</h1><p class="summary">Authenticated call traces, simulated hostile links and verification results.</p></div><span id="phase" class="badge" role="status">Loading</span></header>
-<section class="panel"><h2>Running now</h2><p id="current-check" class="summary" role="status">Waiting for the next check.</p></section>
+<section class="panel"><h2>Run status</h2><p id="current-check" class="summary" role="status">Waiting for the next check.</p></section>
+<section class="panel" aria-labelledby="tests-title">
+<div class="title-row"><h2 id="tests-title">Test results</h2><span id="test-total" class="muted"></span></div>
+<p class="summary" id="test-help">Actual reported results. Use Checks to follow a running verification.</p>
+<div class="controls test-controls"><button id="view-cases" type="button" aria-pressed="false">Individual results</button><button id="view-checks" type="button" aria-pressed="true">Checks</button><input id="test-search" type="search" aria-label="Find a test" placeholder="Find a test, such as pairing or update"></div>
+<p id="test-count" class="summary" role="status"></p>
+<div id="check-list" class="check-list" role="list" aria-label="Verification checks"></div>
+<div id="case-list" class="check-list" role="list" aria-label="Individual test results" hidden></div>
+</section>
 <section class="panel" aria-labelledby="topology-title">
 <div class="title-row"><h2 id="topology-title">Call path</h2><span class="muted mono">20 ms slots · 128-byte records</span></div>
 <div id="path" class="topology">
@@ -45,7 +58,7 @@ th,td{padding:7px 4px;border-bottom:1px solid var(--line);vertical-align:top} tr
 </div>
 <div class="controls">
 <button id="play" type="button">Play</button><button id="step" type="button">Step</button><button id="replay" type="button">Replay</button>
-<label for="filter">Test</label><select id="filter"><option value="">All tests</option></select>
+<label for="filter">Trace scenario</label><select id="filter"><option value="">All tests</option></select>
 <span class="progress mono" id="progress">0 / 0</span>
 </div>
 </section>
@@ -63,7 +76,56 @@ const $ = id => document.getElementById(id);
 const initial = JSON.parse($("initial").textContent);
 const events = [], visible = [], tests = new Set();
 const nodes = new Map([...document.querySelectorAll("[data-node]")].map(n => [n.dataset.node, n]));
-const rows = new Map();
+const rows = new Map(), checkRows = new Map(), caseRows = new Map();
+let testView = "checks";
+const names = {
+  "format":"Source formatting", "format-fuzz":"Fuzz test formatting", "format-platform":"Embedded code formatting",
+  "clippy":"Rust code analysis", "unit":"Rust unit tests", "release-build":"Build the call simulator",
+  "protocol-tests":"Peer authentication, replay and Noise reference vectors", "virtual":"Calls through a hostile network",
+  "lifecycle-tests":"Pairing, contacts, invitations, entropy and offline updates", "m33-linked-execution":"Cortex-M33 execution and memory fit",
+  "isolation":"Contain both hostile phones and the relay", "timing-idle":"Call timing without added load",
+  "timing-contention":"Call timing under CPU load", "timing-overload":"Overload: bounded queues and no bursts",
+  "timing-blocked-phone":"Blocked phone: bounded queues and no bursts", "codec-unit":"Audio framing and constant bitrate",
+  "vendor-port-integrity":"Verify the in-place codec patch", "inplace-constructor":"Compare embedded codec initialization",
+  "opus-interop":"Audio compatibility with libopus", "opus-vectors":"Twelve official Opus decoder vectors",
+  "reference-source":"Verify reference codec source", "reference-build":"Build reference codec", "vector-source":"Verify official audio vectors",
+  "cargo-deny":"Native dependency checks", "cargo-deny-fuzz":"Fuzz dependency checks", "cargo-deny-platform":"Embedded dependency checks",
+  "kani":"Four bounded formal proofs", "kani-locked-graph":"Verify formal-check dependency lock",
+  "kani-lock-integrity":"Formal checks preserve dependency lock", "fuzz-locked-graph":"Verify fuzz dependency lock",
+  "fuzz-cxx-runtime":"Prepare the instrumented fuzz runtime", "fuzz-lock-integrity":"Fuzzing preserves dependency lock",
+  "fuzz-handshake":"Fuzz call handshakes", "fuzz-record":"Fuzz encrypted records", "fuzz-codec":"Fuzz audio decoding",
+  "fuzz-enrollment":"Fuzz pairing and confirmation", "fuzz-lifecycle":"Fuzz invitations and stored contacts",
+  "fuzz-update-radio":"Fuzz firmware envelopes and radio input", "dashboard":"Dashboard stream and controls",
+  "dashboard-mapping":"Dashboard results match the test runner"
+};
+function friendly(name) { const text=name.replaceAll("_"," ").replace(/^tests::|^proofs::/,"").replaceAll("enrollment","pairing"); return text.charAt(0).toUpperCase()+text.slice(1); }
+function addResult(event, individual) {
+  const map=individual?caseRows:checkRows;
+  if (!map.has(event.test)) {
+    const row=document.createElement("div"); row.className="check-item"; row.setAttribute("role","listitem");
+    const content=document.createElement("div"), title=document.createElement("strong"), detail=document.createElement("small"), pill=document.createElement("span");
+    const parts=event.test.split(" / ");
+    title.textContent=individual?friendly(parts.slice(1).join(" / ")):(names[event.test]||friendly(event.test));
+    detail.textContent=individual?(names[parts[0]]||parts[0]):event.expected;
+    content.append(title,detail);pill.className="badge";row.append(content,pill);
+    row.dataset.search=(event.test+" "+title.textContent+(individual?"":" "+detail.textContent)).toLowerCase();
+    (individual?$("case-list"):$("check-list")).append(row); map.set(event.test,{row,pill});
+  }
+  const item=map.get(event.test);item.pill.textContent=event.status==="info"?"running":event.status;
+  item.pill.dataset.status=event.status;item.pill.title=event.observed;refreshResults();
+}
+function refreshResults() {
+  const completed=[...checkRows.values()].filter(item=>item.pill.dataset.status==="pass").length;
+  $("test-total").textContent=completed+" / "+checkRows.size+" checks passed";
+  const map=testView==="cases"?caseRows:checkRows, query=$("test-search").value.toLowerCase();let shown=0;
+  for (const {row} of map.values()){row.hidden=!row.dataset.search.includes(query);if(!row.hidden)shown++;}
+  $("test-count").textContent=map.size?shown+" of "+map.size+(testView==="cases"?" named results":" checks")+(query?" match your search":""):"Individual results appear when a check finishes. Checks show live progress.";
+  $("check-list").hidden=testView!=="checks";$("case-list").hidden=testView!=="cases";
+  $("view-cases").setAttribute("aria-pressed",String(testView==="cases"));$("view-checks").setAttribute("aria-pressed",String(testView==="checks"));
+}
+$("view-cases").onclick=()=>{testView="cases";refreshResults();};
+$("view-checks").onclick=()=>{testView="checks";refreshResults();};
+$("test-search").oninput=refreshResults;
 let position = 0, playing = initial.live, suspended = initial.live, stream = null;
 function setPhase(label) { $("phase").textContent = label; }
 function update() {
@@ -86,6 +148,8 @@ function addGroup(group, status, reason) {
   pill.title = reason;
 }
 function add(event) {
+  if (event.action === "case") { addResult(event,true); return; }
+  if (event.action === "check") addResult(event,false);
   if (event.action === "group") addGroup(event.test, event.status, event.observed);
   if (event.action === "check") $("current-check").textContent = event.test + " · " + (event.status === "info" ? event.observed : event.status.toUpperCase() + " · " + event.observed);
   events.push(event);
@@ -143,7 +207,11 @@ for (const group of ["unit", "protocol", "lifecycle", "platform", "codec", "isol
   if (!rows.has(group)) addGroup(group, "pending", "This group has not completed yet.");
 }
 setPhase(initial.live ? "Connecting" : "Offline replay");
-if (!initial.live) $("current-check").textContent = "Saved run · review the results and replay its events below.";
+if (!initial.live) {
+  $("current-check").textContent="Completed run · "+[...checkRows.values()].filter(item=>item.pill.dataset.status==="pass").length+" of "+checkRows.size+" checks passed. Individual results are listed below.";
+  if(caseRows.size)testView="cases";
+}
+refreshResults();
 if (initial.live) {
   stream = new EventSource("/events");
   stream.addEventListener("trace", message => { add(JSON.parse(message.data)); update(); });
@@ -153,7 +221,7 @@ if (initial.live) {
     if (suspended) $("current-check").textContent = "Measuring call timing · live updates and animation resume afterward.";
     if (suspended) for (const pulse of document.querySelectorAll(".pulse")) pulse.remove();
     setPhase(suspended ? "Timing · trace paused" : phase === "done" ? "Run complete" : "Live");
-    if (phase === "done") { stream.close(); stream = null; $("current-check").textContent = "All checks finished · review the suite verdicts below."; }
+    if (phase === "done") { stream.close(); stream = null; $("current-check").textContent = "Run complete · review individual results and checks below."; }
     update();
   });
   stream.onerror = () => setPhase("Stream reconnecting");

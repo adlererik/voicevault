@@ -3,6 +3,7 @@ import contextlib
 import http.client
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
+import re
 from pathlib import Path
 import threading
 
@@ -12,7 +13,7 @@ GROUPS = ("unit", "protocol", "lifecycle", "platform", "codec", "isolation", "fu
 STATUSES = {"info", "pass", "fail", "blocked"}
 NODES = {"", "Alice", "Phone A", "Relay", "Phone B", "Bob"}
 ACTIONS = {"send", "forward", "drop", "delay", "tamper", "replay", "inject",
-           "duplicate", "receive", "reject", "playout", "verdict", "group", "check"}
+           "duplicate", "receive", "reject", "playout", "verdict", "group", "check", "case"}
 FIELDS = {"test", "tick", "action", "from", "to", "expected", "observed", "status"}
 LIMIT = 4096
 
@@ -20,6 +21,23 @@ LIMIT = 4096
 def trace(test, action, expected, observed, status="info"):
     return {"test": test, "tick": 0, "action": action, "from": "", "to": "",
             "expected": expected, "observed": observed, "status": status}
+
+
+def case_events(check, log):
+    """Extract reported outcomes, never infer a case pass from a group verdict."""
+    result = []
+    for name, outcome in re.findall(r"^test (\S+) \.\.\. (ok|FAILED|ignored)\s*$", log, re.M):
+        status = {"ok": "pass", "FAILED": "fail", "ignored": "blocked"}[outcome]
+        result.append(trace(f"{check} / {name}", "case", "reported Rust test result", outcome, status))
+    for name, outcome in re.findall(r"^(testvector\d+): (PASS|FAIL)\s*$", log, re.M):
+        result.append(trace(f"{check} / {name}", "case", "official Opus decoder vector", outcome,
+                            "pass" if outcome == "PASS" else "fail"))
+    for name, section in re.findall(r"Checking harness ([\w:]+)\.\.\.(.*?)(?=Checking harness |Manual Harness Summary:|\Z)", log, re.S):
+        if "VERIFICATION:- SUCCESSFUL" in section:
+            result.append(trace(f"{check} / {name}", "case", "bounded Kani proof", "Verified", "pass"))
+        elif "VERIFICATION:- FAILED" in section:
+            result.append(trace(f"{check} / {name}", "case", "bounded Kani proof", "Failed", "fail"))
+    return result
 
 
 def validate(event):
@@ -184,6 +202,15 @@ def check_mapping(events, verdict):
 
 
 def self_test():
+    cases = case_events("sample", "test accepts ... ok\ntest rejects ... FAILED\n"
+                        "test skipped ... ignored\ntestvector01: PASS\n"
+                        "Checking harness proofs::closed...\nVERIFICATION:- SUCCESSFUL\n"
+                        "Checking harness proofs::bad...\nVERIFICATION:- FAILED\n")
+    assert [event["status"] for event in cases] == ["pass", "fail", "blocked", "pass", "pass", "fail"]
+    assert not case_events("sample", "Checking harness proofs::unknown...\nno result reported\n")
+    assert not case_events("sample", "40 tests passed\n")
+    for event in cases:
+        validate(event)
     model = Trace()
     server = Server(model)
     server.start()
@@ -237,6 +264,7 @@ def self_test():
         initial = html.split('<script id="initial" type="application/json">')[1].split("</script>")[0]
         assert json.loads(initial)["events"][:-1] == model.events
         assert all(f'data-node="{node}"' in html for node in NODES - {""})
+        assert all(f'id="{name}"' in html for name in ("test-search", "case-list", "check-list"))
     finally:
         server.stop()
     print("Loopback bind, read-only HTTP, SSE pause/resume, event schema, verdicts and offline data passed")

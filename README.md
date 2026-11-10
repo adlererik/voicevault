@@ -64,15 +64,15 @@ The [security design](docs/SECURITY_DESIGN.md) explains every control, the packe
 Actual browser captures from the **2026-11-10 phase-two run**. The first and third show the completed eleven-group results; the middle capture shows the real live view while the extended fuzz campaigns were still running. These are software test views, not hardware photos.
 
 <table>
-  <tr><th>Completed eleven-group suite</th><th>Live verification progress</th><th>Authenticated malformed audio</th></tr>
+  <tr><th>Visible individual test results</th><th>Live verification progress</th><th>Authenticated malformed audio</th></tr>
   <tr>
-    <td><a href="docs/screenshots/phase2-overview.jpg"><img src="docs/screenshots/phase2-overview.jpg" width="240" alt="All eleven required verification groups passed"></a></td>
+    <td><a href="docs/screenshots/phase2-tests-visible.jpg"><img src="docs/screenshots/phase2-tests-visible.jpg" width="240" alt="Searchable individual test outcomes with all eleven verification groups passed"></a></td>
     <td><a href="docs/screenshots/phase2-live.jpg"><img src="docs/screenshots/phase2-live.jpg" width="240" alt="Live lifecycle fuzzing in progress with completed groups shown"></a></td>
     <td><a href="docs/screenshots/phase2-authenticated-peer.jpg"><img src="docs/screenshots/phase2-authenticated-peer.jpg" width="240" alt="Malformed authenticated Opus concealed after framing checks; all eleven groups pass"></a></td>
   </tr>
 </table>
 
-The dashboard supports Pause, Step, Replay, and test filtering. Its live view identifies the running check and animates actual recorded sends, drops, tampering, replays, and receiver responses. Streaming and animation pause during timing measurements. The saved HTML embeds the events and needs no server. [Gallery and scenario explanations](docs/screenshots/README.md)
+The dashboard shows searchable **Individual results** and **Checks** lists near the top. This run supplies 49 named test, proof and vector outcomes, and 40 checks. Some cases repeat under different build profiles. A separate **Trace scenario** filter controls packet replay. Pause, Step and Replay control that trace. Its live view identifies the running check and animates actual recorded sends, drops, tampering, replays, and receiver responses. Streaming and animation pause during timing measurements. The saved HTML embeds the events and needs no server. [Gallery and scenario explanations](docs/screenshots/README.md)
 
 ## What has been verified
 

@@ -4,7 +4,8 @@ Actual browser captures from the phase-two run, 2026-11-10:
 
 | Capture | Meaning |
 |---|---|
-| [Completed suite](phase2-overview.jpg) | All eleven required groups passed. |
+| [Individual test results](phase2-tests-visible.jpg) | Searchable reported cases and 40 verification checks, added after the completed run. |
+| [Original completed suite](phase2-overview.jpg) | All eleven required groups passed in the original results view. |
 | [Live progress](phase2-live.jpg) | Captured during lifecycle fuzzing, before the final groups completed. |
 | [Authenticated malformed audio](phase2-authenticated-peer.jpg) | A valid peer's malformed Opus is rejected after authentication, with loss concealment. All eleven groups have passed. |
 

@@ -117,5 +117,14 @@
     "Finite fuzzing and bounded proofs; no universal attacker-resistance claim",
     "Complete dependency/stack key erasure and seamless key renewal remain open",
     "Capacity and CPU-emulation evidence; no hardware real-time or isolation claim"
-  ]
+  ],
+  "ui_followup": {
+    "description": "Searchable individual results and checks, using the original logs",
+    "named_results": 49,
+    "checks": 40,
+    "dashboard_self_test": "pass",
+    "event_verdict_mapping": "pass",
+    "browser_search_and_views": "pass",
+    "scope": "Presentation follow-up after original complete run; core protocol and ARM code unchanged"
+  }
 }

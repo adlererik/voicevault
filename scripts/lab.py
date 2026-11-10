@@ -17,7 +17,7 @@ import tempfile
 import time
 import tomllib
 
-from dashboard import GROUPS, Server, Trace, check_mapping, page, trace
+from dashboard import GROUPS, Server, Trace, case_events, check_mapping, page, trace
 
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".lab-cache"
@@ -119,6 +119,8 @@ class Suite:
                     raise
                 return self.record(group, name, "fail", f"timeout ({timeout}s)", logfile)
         contents = logfile.read_text(errors="replace")
+        for event in case_events(name, contents):
+            self.model.add(event)
         if events:
             for line in contents.splitlines():
                 if line.startswith("{"):

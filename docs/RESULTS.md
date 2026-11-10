@@ -1,6 +1,6 @@
 # Verification results: phase two
 
-The fresh complete native run on **2026-11-10** passed all **11 required groups** and exited zero. Run ID: `quietlink-phase2-final`. Tested implementation commit: `52aa06c`; subsequent commits add documentation, provenance and evidence only. The [machine-readable summary](verification-summary.json), [raw verdict](evidence/phase2/verdict.json), [timing data](evidence/phase2/timing.json) and [ARM report](evidence/phase2/platform/platform.json) identify the measurements and limits. Earlier interrupted development attempts are not counted as successful runs.
+The fresh complete native run on **2026-11-10** passed all **11 required groups** and exited zero. Run ID: `quietlink-phase2-final`. Tested implementation commit: `52aa06c`. The [machine-readable summary](verification-summary.json), [raw verdict](evidence/phase2/verdict.json), [timing data](evidence/phase2/timing.json) and [ARM report](evidence/phase2/platform/platform.json) identify the measurements and limits. Earlier interrupted development attempts are not counted as successful runs.
 
 | Group | Result | Checks |
 |---|---|---:|
@@ -73,3 +73,9 @@ The ELF hash and section listing are in the [ARM report](evidence/phase2/platfor
 The assumed attacker controls both phones and telecommunications, including phone compromise by zero-day or zero-click exploits. Supply-chain attacks are excluded. This lab starts with already-compromised phones and trusted endpoint software. It does not emulate an NSA exploit chain or establish protection from all future endpoint vulnerabilities.
 
 The implemented five-minute media epoch stops and drops its owned transport keys, then requires a fresh authenticated handshake. Seamless renewal is unfinished. Long-lived key owners are zeroizing, but complete Snow KDF/stack and audio-buffer erasure has not been established. Secure-element storage, flash and protected counters are software abstractions. Independent review and hardware validation remain decision gates. [Assurance case](ASSURANCE.md)
+
+## Dashboard follow-up
+
+After the full run, the dashboard gained visible searchable lists for individual outcomes and verification checks. Its 49 named outcomes are extracted from the original logs: Rust cases (some repeated under different build profiles), twelve official Opus vectors and four Kani proofs. The original 40 check results and eleven group verdicts are retained. No test pass is inferred merely from a group passing.
+
+The follow-up passed the dashboard self-test (including pass/fail/ignored and missing-proof parsing), original event/verdict mapping, and browser checks of the 49-result list, 40-check list and search. The live suite now emits these case outcomes when each check completes. The original full-run snapshot remains unchanged; this is separate presentation verification, not a new full security run.

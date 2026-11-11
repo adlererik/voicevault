@@ -13,12 +13,14 @@ VoiceVault is a device project with a working software laboratory. The documenta
 | [Detailed security design](SECURITY_DESIGN.md) | Message formats, keys, scheduling, storage, radio and update policy |
 | [Assurance case](ASSURANCE.md) | Precisely which claims the evidence supports |
 | [Recorded results](RESULTS.md) | Actual software runs, timing, fuzzing, proofs and raw logs |
+| [Fuzzing](FUZZING.md) | What each campaign feeds into the code, asserts and leaves untested |
 | [Hybrid call establishment](POST_QUANTUM.md) | Recorded-call goal, exact handshake, erasure and embedded evidence |
 | [Platform fit](PLATFORM.md) | ARM linking/execution, memory budgets and hardware evidence limits |
 | [Command-deck feature checks](COMMAND_DECK_CHECKS.md) | Latest UI/audio behavior and explicitly scoped validation |
 | [Live device dashboard](LIVE_DASHBOARD.md) | Fixed local address, live progress, device activity and saved replay |
 | [Development guide](DEVELOPMENT.md) | Setup, commands, repository layout and reproducing results |
 | [Roadmap](ROADMAP.md) | Evidence gates from software through physical hardware |
+| [Hardware plan](HARDWARE_PLAN.md) | Safe 7 reference, KiCad and emulation scope, microSD updates and first board measurements |
 | [Screenshots](screenshots/README.md) | Actual dashboard captures and their context |
 
 For a first visit: vision → architecture → threat model → control register → results. For security review: threat model → cryptography → detailed design → assurance → raw evidence. For implementation: development guide → source crates → tests → roadmap.

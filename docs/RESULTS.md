@@ -2,6 +2,8 @@
 
 ## Hybrid v2 verification
 
+See [what each fuzz target exercises](FUZZING.md) for input formats, assertions and the limits of the execution totals.
+
 On 2026-11-11, the hybrid suite completed all 11 required groups and 48 checks. The run included 80 official ML-KEM-768 cases, separate hybrid transcript and downgrade tests, the five-process startup attack, five bounded Kani checks and 3,519,377 executions across eight fuzz campaigns. The emulator executed the linked hybrid startup and 32-frame voice path with the existing memory budgets. [Measurements and test logs](evidence/hybrid-v2/) · [Raw verdict](evidence/hybrid-v2/verdict.json) · [Source manifest](evidence/hybrid-v2/tested-source-manifest.json)
 
 **Later UI/audio follow-up:** [focused command-deck checks](COMMAND_DECK_CHECKS.md) are recorded separately; the full-suite campaign below retains its original source provenance.

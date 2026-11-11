@@ -19,7 +19,7 @@ The run began at 2026-11-11T01:39:23.179664+01:00. The source manifest identifie
 | [hybrid-kem](logs/fuzz-hybrid-kem.log) | 6,442 | 121 |
 | [startup](logs/fuzz-startup.log) | 3,360,300 | 121 |
 
-All eight campaigns used the 120-second minimum and recorded 3,519,377 executions in total. [Five bounded Kani harnesses](logs/kani.log) passed. These runs cover the tested inputs and encoded proof bounds.
+All eight campaigns used the 120-second minimum and recorded 3,519,377 executions in total. The startup fragment parser accounts for most of those executions. [What each fuzz target does and how to interpret the counts](../../FUZZING.md) · [Five bounded Kani harnesses](logs/kani.log)
 
 ## Native calls and embedded execution
 

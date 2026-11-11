@@ -72,7 +72,7 @@ The preserved [`bootstrap-original.sh`](../scripts/bootstrap-original.sh) contai
 | platform | Actual no_std link/execution and explicit capacity gates |
 | codec | CBR/framing, constructor equivalence, patch integrity, libopus interop and official vectors |
 | isolation | Hostile-role syscall/IPC containment probes |
-| fuzz | Eight instrumented campaigns with recorded durations and unchanged lockfile |
+| fuzz | Eight instrumented campaigns with recorded durations and unchanged lockfile. [Target inputs and checks](FUZZING.md) |
 | kani | Five bounded harnesses with unchanged lockfile |
 | dependencies | Native, fuzz and ARM dependency graphs |
 | timing | Idle, CPU contention, overload and blocked phone, with retained gates |

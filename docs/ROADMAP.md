@@ -14,7 +14,7 @@ Keep this baseline reproducible: retain raw results and hashes, protocol known a
 
 Run that work through the existing live UI as an observation tool: display epoch transitions, rejected old-epoch packets, controlled reconnection and any interruption to audio. Test short artificial epochs under faults before testing long calls. Define key and audio-buffer ownership/lifetimes and investigate dependency, stack, allocator and crash remnants alongside renewal.
 
-**Broaden assurance before adding deployment features.** Extend the eight fuzz campaigns beyond the current two-minute smoke gates, retain/minimize corpora and track coverage. Add model/property checks for persistence failures around renewal, revocation and update transitions; document each bound. Independent review must include malformed authenticated audio, the local crypto integration and the initialization-only codec patch. [Rust Fuzz Book](https://rust-fuzz.github.io/book/cargo-fuzz.html)
+**Broaden assurance before adding deployment features.** Seed full-size hybrid messages and structured fragment sequences, extend the campaigns beyond the current two-minute checks, retain minimized corpora and track coverage. Add model/property checks for persistence failures around renewal, revocation and update transitions. Independent review must include malformed authenticated audio, the local crypto integration and the initialization-only codec patch. [Current fuzz targets and gaps](FUZZING.md)
 
 **Write the concrete platform contract while remaining software-only.** Select a candidate MCU capacity/layout and map secure-element operations, protected generations, radio isolation, display buffering and offline-update transactions to required capabilities. Link those proposed memory reservations before committing to a PCB. The next hardware gate, when separately authorized, is a small development-board measurement of real codec deadlines, worst-case stack, interrupt/DMA load and power—not an immediate custom board. A tool such as probe-rs can run/debug real targets and report instrumentation, but choosing it does not establish device isolation or timing. [probe-rs](https://probe.rs/)
 
@@ -42,7 +42,7 @@ The current 768 KiB main-RAM / 960 KiB image-slot gate is a reference capacity t
 
 ## 4. Controlled hardware prototype
 
-Introduce board/CAD work, embedded drivers and development hardware only after the preceding decisions. Initial hardware success requires:
+Conceptual schematic work can proceed alongside the software checks. Use the [hardware plan](HARDWARE_PLAN.md) to define interfaces and simulation scope. The physical prototype starts with a development board and measurement of the relevant workloads before custom PCB layout. Initial hardware success requires:
 
 - Capture and playback meeting real 20 ms deadlines under worst relevant interrupt/codec load, with measured latency and power.
 - BLE MTU, retries, fragmentation, backpressure, reconnect and flooding tests at the actual phone-visible boundary.

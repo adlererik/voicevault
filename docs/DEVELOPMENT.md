@@ -32,9 +32,9 @@ Install Rust through rustup and make the exact pin in [`rust-toolchain.toml`](..
 |---|---|
 | Pinned Rust `1.99.1`, rustfmt and Clippy | Native code, checks and release runner |
 | `nightly-2026-08-21` | Instrumented fuzzing and the recorded proof tooling environment |
-| cargo-fuzz `0.13.2` | Six fuzz targets, at least 120 seconds each |
+| cargo-fuzz `0.13.2` | Eight fuzz targets, at least 120 seconds each |
 | cargo-deny `0.20.2` | Advisories, dependency bans, licenses and allowed sources |
-| kani-verifier `0.68.0` with setup completed | Four bounded state/counter harnesses; recorded CBMC is 6.11.0 |
+| kani-verifier `0.68.0` with setup completed | Five bounded state/counter harnesses; recorded CBMC is 6.11.0 |
 | C/C++ toolchain, make and ar | Upstream libopus reference build and fuzz runtime |
 | ARM Rust target `thumbv8m.main-none-eabihf` | Freestanding trusted-core build/link |
 | Official QEMU with `mps2-an505`, plus `arm-none-eabi-size` | Cortex-M33 execution and section/memory gates |
@@ -72,8 +72,8 @@ The preserved [`bootstrap-original.sh`](../scripts/bootstrap-original.sh) contai
 | platform | Actual no_std link/execution and explicit capacity gates |
 | codec | CBR/framing, constructor equivalence, patch integrity, libopus interop and official vectors |
 | isolation | Hostile-role syscall/IPC containment probes |
-| fuzz | Six instrumented campaigns with recorded durations and unchanged lockfile |
-| kani | Four bounded harnesses with unchanged lockfile |
+| fuzz | Eight instrumented campaigns with recorded durations and unchanged lockfile |
+| kani | Five bounded harnesses with unchanged lockfile |
 | dependencies | Native, fuzz and ARM dependency graphs |
 | timing | Idle, CPU contention, overload and blocked phone, with retained gates |
 | dashboard | Read-only loopback stream, controls, parsing and verdict mapping |
@@ -91,3 +91,6 @@ The committed phase-two snapshot records a past run, not current CI status. For 
 Keep protocol/state logic separate from device drivers and untrusted carriers. Add a hardware or firmware component when its implementation and ownership exist, rather than duplicating protocol logic into a parallel stack. Preserve bounded inputs, explicit local authority and independently testable interfaces. Future production build/release, board, peripheral and relay components belong to the [roadmap](ROADMAP.md), not the current evidence claims.
 
 The repository is now VoiceVault, previously VoxBastion and originally Quietlink Lab. Historical crates, diagnostics and authenticated wire domains retain `quietlink` identifiers intentionally. Clones should use the new remote; an existing checkout can update it with `git remote set-url origin https://github.com/adlererik/voicevault.git`.
+
+
+Dependency checks use the locked graphs for the supported Linux host, fuzzing host and Cortex-M33 target, with host build units included in the ARM scan. Cargo's unfiltered metadata also resolves libcrux's optional `cfg(hax)` proof-extraction tooling. That dormant graph triggers a RustSec unmaintained notice for `proc-macro-error2`. Cargo does not include that tool in either supported build graph. The scans retain the same advisory, ban, license and source policy. [RustSec advisory](https://rustsec.org/advisories/RUSTSEC-2026-0173.html)

@@ -10,7 +10,7 @@ The intended adversary has **NSA-class capabilities**: both phones may already b
 
 **Today:** working Rust voice simulations, hostile-phone processes, lifecycle security models, a live device-and-test dashboard and a linked Cortex-M33 diagnostic. **Destination:** a small independent voice endpoint with its own trusted display, wired headset audio, battery, inductive charging and a carefully isolated BLE connection to a phone. No physical VoiceVault device has been built.
 
-[Project vision](docs/PROJECT_VISION.md) · [Architecture](docs/ARCHITECTURE.md) · [Threat model](docs/THREAT_MODEL.md) · [Every security control](docs/SECURITY_CONTROLS.md) · [Why these algorithms](docs/CRYPTOGRAPHY.md) · [Test evidence](docs/RESULTS.md) · [Hardware roadmap](docs/ROADMAP.md) · [Post-quantum feasibility](docs/POST_QUANTUM.md)
+[Project vision](docs/PROJECT_VISION.md) · [Architecture](docs/ARCHITECTURE.md) · [Threat model](docs/THREAT_MODEL.md) · [Every security control](docs/SECURITY_CONTROLS.md) · [Why these algorithms](docs/CRYPTOGRAPHY.md) · [Test evidence](docs/RESULTS.md) · [Hardware roadmap](docs/ROADMAP.md) · [Hybrid call security](docs/POST_QUANTUM.md)
 
 ## The idea: move the endpoint
 
@@ -48,7 +48,8 @@ The attacker may observe, drop, replay, modify, reorder, delay and inject traffi
 | Intercept or modify voice | ChaCha20-Poly1305 under authenticated Noise transport keys | Trusted endpoints and sound implementations are assumed |
 | Substitute a peer during enrollment | Noise XX, signed identity/DH records, full transcript comparison and confirmation on both sides | Trusted local comparison is required; hardware UI is future work |
 | Spoof a contact or call invitation | Pinned Ed25519 identity, recipient binding, boot challenge, expiry and persisted counters | Invitation metadata itself is not confidential |
-| Reuse a different invitation for an authenticated call | Signed offer and acceptance are bound into the Noise KK prologue | Local approval remains separate from remote signaling |
+| Reuse a different invitation for an authenticated call | The hybrid Noise prologue binds the signed offer and acceptance and both verified identities | Local approval remains separate from remote signaling |
+| Save encrypted calls for future quantum decryption | Fresh X25519 and ML-KEM-768 establish each call, with the hybrid suite required | Depends on the hybrid construction, trusted endpoints and erasure |
 | Replay media or poison the replay window | Monotonic sending, directional keys, authenticated counter/slot checks and a bounded replay bitmap | Invalid input cannot commit incoming replay state |
 | Activate audio through the phone | Local consent plus encrypted Confirm/Ready; no radio mic/consent opcode | Actual headset and physical disconnect still need validation |
 | Infer speech or silence from record length | CBR Opus, DTX off, fixed 128-byte records and encrypted filler | Call boundaries, timing errors, location and correlation remain visible |
@@ -67,15 +68,16 @@ The [complete control register](docs/SECURITY_CONTROLS.md) links each protection
 | Choice | Role and reason |
 |---|---|
 | **X25519** | Compact Diffie–Hellman key exchange with fresh per-call ephemeral secrets; separate from signing identities |
+| **ML-KEM-768** | Adds a fresh post-quantum secret for each call using the portable `libcrux-ml-kem` implementation |
 | **Ed25519** | Signed identities, contact bindings, invitations and offline-image authorization |
 | **ChaCha20-Poly1305** | Established authenticated encryption for voice and stored snapshots; suitable for portable software implementations |
 | **BLAKE2s** | A 32-bit-oriented hash for the selected Noise suite, domain-separated bindings and firmware digests |
 | **Noise's HMAC/HKDF-BLAKE2s** | An established transcript-bound key schedule and separate transport keys for each direction |
-| **Noise XX / KK through Snow** | XX for first enrollment; KK for calls between already pinned contacts, avoiding a new homemade handshake |
+| **Noise XX / KKhfs through Snow** | XX for first enrollment and the experimental hybrid KK modifier for calls between pinned contacts |
 | **Opus** | Practical speech compression; hard CBR and no DTX work with the outer fixed-size envelope |
 | **Rust with `no_std` integration** | Safe parsing/state code and bounded interfaces that can migrate toward embedded firmware |
 
-Algorithm choice is only part of the design. Nonce discipline, peer verification, consent, isolation, key lifetime and failure behavior matter just as much. A 256-bit cipher key does not make the complete system 256-bit secure. The current suite is classical, not post-quantum. Avoiding NIST primitives where practical is a preference, not an assurance argument: Ed25519 uses SHA-512 and standard BLE has its own cryptographic requirements. [Detailed rationale, tradeoffs and primary references](docs/CRYPTOGRAPHY.md)
+The hybrid suite is required for new calls. Both peers authenticate the full exchange and its algorithm suite before local consent and encrypted confirmation open audio. ML-KEM-768 is an explicit exception to the owner’s preference to avoid NIST algorithms where practical. [Protocol and wire format](docs/POST_QUANTUM.md) · [Cryptographic rationale](docs/CRYPTOGRAPHY.md)
 
 ## Evidence you can inspect
 
@@ -132,10 +134,10 @@ The demo opens **http://127.0.0.1:8765/** and defaults to two eight-second live 
 
 ## Explore and contribute
 
-Start with the [documentation map](docs/README.md). The six Rust crates separate state, cryptography/protocol policy, audio, device behavior, framing and the native lab. `platform/` holds the freestanding ARM diagnostic; `fuzz/` holds the six campaigns; `scripts/` runs the checks and dashboard. These boundaries are intended to support a growing firmware and hardware project.
+Start with the [documentation map](docs/README.md). The six Rust crates separate state, cryptography/protocol policy, audio, device behavior, framing and the native lab. `platform/` holds the freestanding ARM diagnostic; `fuzz/` holds the eight campaigns; `scripts/` runs the checks and dashboard. These boundaries are intended to support a growing firmware and hardware project.
 
 Useful work includes protocol review, state-machine verification, long-running fuzzing, codec/embedded interoperability, pairing usability, controller isolation, storage transactions and measurable hardware requirements. [Contribution guide](CONTRIBUTING.md) · [Security reporting](SECURITY.md)
 
-VoiceVault was previously named **VoxBastion** and originally **Quietlink Lab**. Historical evidence, crate names and authenticated `quietlink` protocol domains retain their original identifiers so a branding change does not silently change the protocol or rewrite test history.
+VoiceVault was previously named **VoxBastion** and originally **Quietlink Lab**. Historical evidence, crate names and unchanged authenticated domains retain their original identifiers. Hybrid calls use a versioned VoiceVault domain and deliberately reject the classical call format.
 
-**Security posture:** an experimental project with a concrete threat model and inspectable evidence. Complete dependency/stack erasure, seamless key renewal, post-quantum protection and hardware validation remain open. The project does not claim immunity to an intelligence agency or readiness for sensitive production calls. [Assurance case](docs/ASSURANCE.md)
+**Security posture:** an experimental project with a concrete threat model and inspectable evidence. Independent review of the hybrid handshake, complete memory erasure, seamless key renewal and hardware validation remain open. The project does not claim immunity to an intelligence agency or readiness for sensitive production calls. [Assurance case](docs/ASSURANCE.md)

@@ -384,13 +384,21 @@ def suite_run(out, watch):
                   unavailable=codec_blocked or (None if vectors else "RFC 8251 archive unavailable"), timeout=240)
         suite.finish_group("codec")
 
-        suite.run("dependencies", "cargo-deny", ["cargo", "deny", "--locked", "check"],
+        # Audit the supported build graphs. An unfiltered metadata graph also
+        # contains dormant cfg(hax) proof-extraction tooling that Cargo never
+        # compiles for these targets. Keep advisory policy and dev/build deps.
+        native = "x86_64-unknown-linux-gnu"
+        embedded = "thumbv8m.main-none-eabihf"
+        suite.run("dependencies", "cargo-deny", ["cargo", "deny", "--locked", "--target", native, "check"],
                   needs=("cargo", "cargo-deny"), timeout=240)
-        suite.run("dependencies", "cargo-deny-fuzz", ["cargo", "deny", "--locked", "--manifest-path",
-                                                    "fuzz/Cargo.toml", "check"],
+        suite.run("dependencies", "cargo-deny-fuzz", ["cargo", "deny", "--locked", "--target", native,
+                                                    "--manifest-path", "fuzz/Cargo.toml", "check"],
                   needs=("cargo", "cargo-deny"), timeout=240)
-        suite.run("dependencies", "cargo-deny-platform", ["cargo", "deny", "--locked", "--manifest-path",
-                                                         "platform/Cargo.toml", "check"],
+        suite.run("dependencies", "cargo-deny-platform", ["cargo", "deny", "--locked", "--target", embedded,
+                                                         "--manifest-path", "platform/Cargo.toml", "check"],
+                  needs=("cargo", "cargo-deny"), timeout=240)
+        suite.run("dependencies", "cargo-deny-platform-host", ["cargo", "deny", "--locked", "--target", native,
+                                                              "--manifest-path", "platform/Cargo.toml", "check"],
                   needs=("cargo", "cargo-deny"), timeout=240)
         suite.finish_group("dependencies")
 

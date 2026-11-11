@@ -14,7 +14,7 @@ Keep this baseline reproducible: retain raw results and hashes, protocol known a
 
 Run that work through the existing live UI as an observation tool: display epoch transitions, rejected old-epoch packets, controlled reconnection and any interruption to audio. Test short artificial epochs under faults before testing long calls. Define key and audio-buffer ownership/lifetimes and investigate dependency, stack, allocator and crash remnants alongside renewal.
 
-**Broaden assurance before adding deployment features.** Extend the six fuzz campaigns beyond the current two-minute smoke gates, retain/minimize corpora and track coverage. Add model/property checks for persistence failures around renewal, revocation and update transitions; document each bound. Independent review must include malformed authenticated audio, the local crypto integration and the initialization-only codec patch. [Rust Fuzz Book](https://rust-fuzz.github.io/book/cargo-fuzz.html)
+**Broaden assurance before adding deployment features.** Extend the eight fuzz campaigns beyond the current two-minute smoke gates, retain/minimize corpora and track coverage. Add model/property checks for persistence failures around renewal, revocation and update transitions; document each bound. Independent review must include malformed authenticated audio, the local crypto integration and the initialization-only codec patch. [Rust Fuzz Book](https://rust-fuzz.github.io/book/cargo-fuzz.html)
 
 **Write the concrete platform contract while remaining software-only.** Select a candidate MCU capacity/layout and map secure-element operations, protected generations, radio isolation, display buffering and offline-update transactions to required capabilities. Link those proposed memory reservations before committing to a PCB. The next hardware gate, when separately authorized, is a small development-board measurement of real codec deadlines, worst-case stack, interrupt/DMA load and power—not an immediate custom board. A tool such as probe-rs can run/debug real targets and report instrumentation, but choosing it does not establish device isolation or timing. [probe-rs](https://probe.rs/)
 
@@ -32,7 +32,7 @@ Defer public signaling, Nostr and polished production hardware until the endpoin
 | Trusted pairing UX | Chosen out-of-band transport, full comparison or reviewed short-SAS ceremony, attempt/error rules and user tests |
 | Discovery and invitations | Defined untrusted-carrier interface, authenticated names, expiry/time/challenge behavior and metadata analysis |
 | Reproducible release process | Independently rebuilt payload comparison, separated release signatures, documented environment and release-key custody |
-| Recorded-call protection | Owner target: harvest-now-decrypt-later resistance, using reviewed fresh hybrid establishment and new resource/erasure tests; active quantum deployment is outside this extension. [Feasibility](POST_QUANTUM.md) |
+| Recorded-call protection | Implemented v2 hybrid call establishment for the recorded-call goal. Independently review HFS, erasure and actual MCU behavior before reliance. [Protocol](POST_QUANTUM.md) |
 
 ## 3. Choose and validate the platform
 
@@ -59,4 +59,4 @@ Independent review must cover the actual assembled endpoint, firmware configurat
 
 ## Decisions intentionally still open
 
-The exact bill of materials, secure-element key residency, physical pairing transport, display/PCB/enclosure details, seamless renewal construction, post-quantum requirement, Nostr/other relay adapters, production release licensing and distribution model remain open. Repository organization can grow into firmware, drivers, hardware and release tooling when those components exist; empty directories or dates are not evidence of progress.
+The exact bill of materials, secure-element key residency, physical pairing transport, display/PCB/enclosure details, seamless renewal construction, hardware side-channel assessment, Nostr/other relay adapters, production release licensing and distribution model remain open. Repository organization can grow into firmware, drivers, hardware and release tooling when those components exist; empty directories or dates are not evidence of progress.

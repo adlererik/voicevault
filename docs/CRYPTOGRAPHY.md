@@ -7,8 +7,9 @@ VoiceVault chooses a small, fixed end-to-end suite and gives each primitive a sp
 | Operation | Selected construction | Where it is used |
 |---|---|---|
 | New-contact enrollment | `Noise_XX_25519_ChaChaPoly_BLAKE2s` | Encrypted signed contact exchange and transcript comparison |
-| Call establishment | `Noise_KK_25519_ChaChaPoly_BLAKE2s` | Calls between already pinned contacts, bound to accepted invitations |
+| Call establishment | `Noise_KKhfs_25519+MLKEM768_ChaChaPoly_BLAKE2s` | Calls between already pinned contacts, bound to accepted invitations |
 | Key agreement | X25519 | Independent static DH keys and fresh call/enrollment ephemerals |
+| Post-quantum key establishment | ML-KEM-768 | Fresh initiator keypair and responder encapsulation for every call |
 | Signatures | Ed25519 | Identity/DH binding, invitations and offline firmware envelopes |
 | Record protection | ChaCha20-Poly1305 | Audio, consent/ready controls and contact snapshots |
 | Hashing | BLAKE2s-256 | Noise suite, domain-separated application bindings, firmware payload digests and modeled entropy conditioning |
@@ -55,11 +56,11 @@ The handshake needs more than a raw DH result. Noise specifies the transcript pr
 
 A signature, a hash and a DH operation are not a complete authenticated protocol merely because each is sound separately. Their composition, key confirmation, identity binding and state transitions are why Noise is used.
 
-## Why XX for enrollment and KK for calls?
+## Why XX for enrollment and hybrid KK for calls?
 
 **XX** supports exchanging static public keys during first enrollment. The model carries signed identity records inside encrypted handshake messages, verifies that the record's DH key equals Noise's authenticated remote static key, then compares the full 256-bit transcript fingerprint through the trusted local ceremony. Each side also sends an encrypted fingerprint confirmation. Both local approvals and both confirmations are required.
 
-**KK** fits calls after both devices already know the other's static DH key. Signed offer and acceptance are hashed into its prologue, tying the session to the invitation both endpoints accepted. Local consent and encrypted Confirm/Ready controls still gate audio after the handshake. [Noise patterns and prologue](https://noiseprotocol.org/noise_rev34.html#handshake-patterns)
+**KKhfs** extends the known-peer KK pattern with a fresh ML-KEM-768 contribution. The pinned static DH keys authenticate the exchange. The prologue binds both verified Ed25519 identities and the signed offer and acceptance. The experimental HFS modifier mixes the KEM secret into Noise’s existing key schedule. Local consent and encrypted Confirm/Ready still gate audio. [Protocol and wire format](POST_QUANTUM.md)
 
 The full fingerprint is deliberate. A six-digit truncation is not an equivalent replacement; a shorter human comparison needs a reviewed ceremony, appropriate commitment/attempt controls and usability tests. Physical key-transfer pads, QR exchange or other enrollment transport are future decisions. Physical proximity alone does not authenticate arbitrary bytes supplied by a compromised phone.
 
@@ -71,7 +72,7 @@ Fresh ephemerals and correct erasure are intended to protect completed calls if 
 
 A media epoch is limited to 15,000 local 20 ms slots. At expiry this version closes, drops its owned transport-key objects and requires a fresh authenticated handshake. It does not yet renew seamlessly during a long call. Session close cannot be reversed by a remote message or a later consent call.
 
-Identity, storage, resolver and DH/cipher secret buffers use zeroizing owners. Complete Snow KDF/hash temporaries, stack remnants and audio-buffer erasure have not been established. The correct claim is bounded key use with explicit erasure work remaining, not extraction-resistant key destruction proved by tests.
+Identity, storage, entropy, owned DH/KEM secrets and cipher keys use zeroizing owners. The local Snow patch clears chaining state and selected DH, KEM, HMAC and HKDF buffers. Primitive internals, compiler-generated copies and memory remnants require further review. [Erasure boundaries](POST_QUANTUM.md#what-is-erased)
 
 ## Opus, CBR and padding: encryption does not hide every pattern
 
@@ -87,14 +88,6 @@ Secure elements are intended for persistent secrets/protected state where the se
 
 BLE is a future transport on a separate, untrusted controller. Its own standard cryptography does not replace the endpoint suite. The plan is a standards-compliant stack with minimal services and authority, not deleting arbitrary protocol requirements. [Bluetooth LE primer](https://www.bluetooth.com/bluetooth-le-primer/)
 
-## NIST preference and future cryptography
+## ML-KEM and the recorded-call requirement
 
-The owner prefers avoiding NIST primitives where practical in the end-to-end design. That preference is not evidence that a primitive is secure or insecure. Ed25519 contains SHA-512; standard BLE uses AES-based link security and P-256 for LE Secure Connections. The design therefore makes no “NIST-free device” claim.
-
-X25519 and Ed25519 are classical primitives. Future quantum attacks are not addressed by choosing a 256-bit symmetric key. A hybrid post-quantum requirement would need an independently reviewed construction, new protocol/version decisions, interoperability tests and embedded resource measurements. It is an explicit roadmap decision, not an implemented protection.
-
-See [security controls](SECURITY_CONTROLS.md) for implementation/evidence links and [assurance](ASSURANCE.md) for the limits of the current claims.
-
-## Clarified future recorded-call objective
-
-The owner wants recordings of calls made today to resist later quantum decryption. This harvest-now-decrypt-later goal is not delivered by the current classical exchange. A reviewed fresh hybrid establishment and erased session-specific secrets are the proposed direction; active quantum-era authentication and a continuous PQ ratchet are not prerequisites solely for this goal. Earlier classical-only recordings cannot be retroactively protected. The [feasibility study](POST_QUANTUM.md) states resource assumptions and the unresolved NIST-preference choice. No cryptographic algorithm was changed by the command-deck/audio feature.
+The owner selected ML-KEM-768 to protect recordings made today if a future attacker can break X25519. The portable implementation lets the lab exercise the same KEM on the desktop and Cortex-M33. VoiceVault requires the hybrid suite for each new call and uses classical Ed25519 identity authentication at call time. Captured traffic remains protected only under the assumptions of the hybrid construction and session-secret erasure. The owner made an explicit exception for the NIST-standardized KEM. [FIPS 203](https://csrc.nist.gov/pubs/fips/203/final) · [Protocol, tests and scope](POST_QUANTUM.md)

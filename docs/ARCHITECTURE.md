@@ -50,7 +50,7 @@ An acceptance repeats the call nonce and is independently signed and verified. T
 
 ## 4. Establish a new session
 
-Noise KK uses the pinned static DH keys, fresh ephemerals and accepted-call context in its prologue. It derives different outgoing/incoming transport keys. A different accepted invitation or a different pinned peer cannot simply be substituted while retaining the same authenticated context.
+Noise KKhfs uses the pinned static DH keys and fresh X25519 and ML-KEM-768 contributions. The suite name, both verified Ed25519 identities and the accepted invitation bind the exchange. Noise derives separate outgoing and incoming transport keys. The startup parser accepts only the expected 1,248-byte or 1,152-byte flight in bounded 32-byte chunks. The call refuses classical-only startup. [Protocol and wire format](POST_QUANTUM.md)
 
 The device must also have local consent. Encrypted Confirm and Ready controls use reserved sequences 0 and 1. Only the required state transition permits media. An authenticated remote message is not local approval.
 

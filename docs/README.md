@@ -13,7 +13,7 @@ VoiceVault is a device project with a working software laboratory. The documenta
 | [Detailed security design](SECURITY_DESIGN.md) | Message formats, keys, scheduling, storage, radio and update policy |
 | [Assurance case](ASSURANCE.md) | Precisely which claims the evidence supports |
 | [Recorded results](RESULTS.md) | Actual software runs, timing, fuzzing, proofs and raw logs |
-| [Post-quantum feasibility](POST_QUANTUM.md) | Hardware plausibility, distinct security goals and the software-only decision gate |
+| [Hybrid call establishment](POST_QUANTUM.md) | Recorded-call goal, exact handshake, erasure and embedded evidence |
 | [Platform fit](PLATFORM.md) | ARM linking/execution, memory budgets and hardware evidence limits |
 | [Command-deck feature checks](COMMAND_DECK_CHECKS.md) | Latest UI/audio behavior and explicitly scoped validation |
 | [Live device dashboard](LIVE_DASHBOARD.md) | Fixed local address, live progress, device activity and saved replay |

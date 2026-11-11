@@ -1,0 +1,247 @@
+$ /home/erikclean/src/secure-voice-lab/target/release/lab-runner virtual
+{"test":"virtual-link","tick":0,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":0,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":0,"action":"duplicate","from":"Relay","to":"Phone B","expected":"duplicate rejected","observed":"relay queued second copy with another link identifier","status":"info"}
+{"test":"virtual-link","tick":0,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":0,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"reject","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"rejected","status":"info"}
+{"test":"virtual-link","tick":0,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":1,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":1,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":1,"action":"drop","from":"Relay","to":"Phone B","expected":"loss uses PLC","observed":"relay dropped record","status":"info"}
+{"test":"virtual-link","tick":1,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":1,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":1,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":1,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":2,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":2,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":2,"action":"delay","from":"Relay","to":"Phone B","expected":"delayed record arrives after next slot","observed":"held for two ticks","status":"info"}
+{"test":"virtual-link","tick":2,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":2,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":2,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":2,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":3,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":3,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":3,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":3,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":3,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":3,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":3,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":3,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":3,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":3,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":4,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":4,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":4,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":4,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":4,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":4,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":4,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":4,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":4,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":4,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":4,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":4,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":4,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":4,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":4,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":5,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":5,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":5,"action":"tamper","from":"Relay","to":"Phone B","expected":"invalid tag","observed":"relay changed ciphertext","status":"info"}
+{"test":"virtual-link","tick":5,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":5,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":5,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":5,"action":"reject","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"rejected","status":"info"}
+{"test":"virtual-link","tick":5,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":5,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":5,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":5,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":5,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"concealed","status":"info"}
+{"test":"virtual-link","tick":6,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":6,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":6,"action":"replay","from":"Phone A","to":"Phone B","expected":"duplicate across colluding phones","observed":"Phone B reinjected Phone A capture","status":"info"}
+{"test":"virtual-link","tick":6,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":6,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":6,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":6,"action":"reject","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"rejected","status":"info"}
+{"test":"virtual-link","tick":6,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":6,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":6,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":6,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":6,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":6,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":6,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":6,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":6,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":7,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":7,"action":"inject","from":"Phone B","to":"Bob","expected":"forged counter and ciphertext rejected","observed":"Phone B fabricated record","status":"info"}
+{"test":"virtual-link","tick":7,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"reject","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"rejected","status":"info"}
+{"test":"virtual-link","tick":7,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":7,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":7,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":7,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":8,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":8,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":8,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":8,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":8,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":8,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":8,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":8,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":8,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":8,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":8,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":9,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":9,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":9,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":9,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":9,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":9,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":9,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":9,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":9,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":9,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":9,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"concealed","status":"info"}
+{"test":"virtual-link","tick":10,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":10,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":10,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":10,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":10,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":10,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":10,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":10,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":10,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":10,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":10,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":11,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":11,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":11,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":11,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":11,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":11,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":11,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":11,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":11,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":11,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":11,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":12,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":12,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":12,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":12,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":12,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":12,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":12,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":12,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":12,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":12,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":12,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"muted","status":"info"}
+{"test":"virtual-link","tick":13,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":13,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":13,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":13,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":13,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":13,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":13,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":13,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":13,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":13,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":13,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":14,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":14,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":14,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":14,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":14,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":14,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":14,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":14,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":14,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":14,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":14,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":15,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":15,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":15,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":15,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":15,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":15,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":15,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":15,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":15,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":15,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":15,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":16,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":16,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":16,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":16,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":16,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":16,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":16,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":16,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":16,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":16,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":16,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":17,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":17,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":17,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":17,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":17,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":17,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":17,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":17,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":17,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":17,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":17,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":18,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":18,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":18,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":18,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":18,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":18,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":18,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":18,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":18,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":18,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":18,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":19,"action":"send","from":"Alice","to":"Phone A","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":19,"action":"send","from":"Bob","to":"Phone B","expected":"one 128-byte record","observed":"scheduled","status":"info"}
+{"test":"virtual-link","tick":19,"action":"forward","from":"Phone A","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":19,"action":"forward","from":"Relay","to":"Phone B","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":19,"action":"forward","from":"Phone B","to":"Bob","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":19,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":19,"action":"forward","from":"Phone B","to":"Relay","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":19,"action":"forward","from":"Relay","to":"Phone A","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":19,"action":"forward","from":"Phone A","to":"Alice","expected":"opaque fragments traverse simulated link","observed":"forwarded","status":"info"}
+{"test":"virtual-link","tick":19,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate complete record","observed":"buffered","status":"info"}
+{"test":"virtual-link","tick":19,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":20,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":21,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":22,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":23,"action":"playout","from":"Alice","to":"Bob","expected":"audio, silence or bounded concealment","observed":"decoded","status":"info"}
+{"test":"virtual-link","tick":0,"action":"verdict","from":"","to":"","expected":"loss, delay, reorder, duplication, replay, tampering, injection and collusion handled","observed":"compared all playout outcomes and four rejects","status":"pass"}
+{"test":"fragment-flood","tick":0,"action":"inject","from":"Phone B","to":"Bob","expected":"limit incomplete assemblies","observed":"1,024 incomplete records injected","status":"info"}
+{"test":"fragment-flood","tick":0,"action":"drop","from":"Phone B","to":"Bob","expected":"limit link queue","observed":"backpressure on ninth record","status":"info"}
+{"test":"fragment-flood","tick":0,"action":"verdict","from":"","to":"","expected":"bounded flood, expiration, fragment duplication and backpressure","observed":"checked limits, expired entries and reassembled out of order","status":"pass"}
+{"test":"authenticated-peer","tick":0,"action":"reject","from":"Alice","to":"Bob","expected":"pair","observed":"rejected","status":"info"}
+{"test":"authenticated-peer","tick":0,"action":"reject","from":"Alice","to":"Bob","expected":"mic","observed":"rejected","status":"info"}
+{"test":"authenticated-peer","tick":0,"action":"reject","from":"Alice","to":"Bob","expected":"debug","observed":"rejected","status":"info"}
+{"test":"authenticated-peer","tick":0,"action":"reject","from":"Alice","to":"Bob","expected":"update","observed":"rejected","status":"info"}
+{"test":"authenticated-peer","tick":0,"action":"reject","from":"Alice","to":"Bob","expected":"validate Opus geometry and framing after authentication","observed":"concealed malformed authenticated Opus","status":"info"}
+{"test":"authenticated-peer","tick":1,"action":"reject","from":"Alice","to":"Bob","expected":"validate Opus geometry and framing after authentication","observed":"concealed malformed authenticated Opus","status":"info"}
+{"test":"authenticated-peer","tick":2,"action":"reject","from":"Alice","to":"Bob","expected":"validate Opus geometry and framing after authentication","observed":"concealed malformed authenticated Opus","status":"info"}
+{"test":"authenticated-peer","tick":0,"action":"verdict","from":"","to":"","expected":"early media, remote commands, counter poisoning and old-session replay denied","observed":"rejected adversarial cases and accepted fresh ciphertext after reset","status":"pass"}

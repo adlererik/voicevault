@@ -1,0 +1,74 @@
+quietlink-m33-probe v0.1.0 (/home/erikclean/src/secure-voice-lab/platform)|
+codec v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/codec)|
+libm v0.2.16|arch,default
+opus-rs v0.1.41 (/home/erikclean/src/secure-voice-lab/vendor/opus-rs)|libm
+libm v0.2.16|arch,default
+cortex-m-rt v0.7.7|paint-stack,set-msplim,set-vtor
+device-core v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/device-core)|
+call-state v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/call-state)|
+codec v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/codec)| (*)
+protocol v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/protocol)|fixtures
+blake2 v0.10.6|
+digest v0.10.7|block-buffer,core-api,default,mac,subtle
+block-buffer v0.10.4|
+generic-array v0.14.7|more_lengths
+typenum v1.20.1|
+crypto-common v0.1.7|
+generic-array v0.14.7|more_lengths (*)
+typenum v1.20.1|
+subtle v2.6.1|
+call-state v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/call-state)|
+chacha20poly1305 v0.10.1|
+aead v0.5.2|
+crypto-common v0.1.7| (*)
+generic-array v0.14.7|more_lengths (*)
+chacha20 v0.9.1|zeroize
+cfg-if v1.0.5|
+cipher v0.4.4|zeroize
+crypto-common v0.1.7| (*)
+inout v0.1.4|
+generic-array v0.14.7|more_lengths (*)
+zeroize v1.9.1|alloc
+cipher v0.4.4|zeroize (*)
+poly1305 v0.8.0|
+opaque-debug v0.3.1|
+universal-hash v0.5.1|
+crypto-common v0.1.7| (*)
+subtle v2.6.1|
+zeroize v1.9.1|alloc
+curve25519-dalek v4.1.3|alloc,digest,precomputed-tables,zeroize
+cfg-if v1.0.5|
+digest v0.10.7|block-buffer,core-api,default,mac,subtle (*)
+subtle v2.6.1|
+zeroize v1.9.1|alloc
+ed25519-dalek v2.2.0|alloc,zeroize
+curve25519-dalek v4.1.3|alloc,digest,precomputed-tables,zeroize (*)
+ed25519 v2.2.3|alloc
+signature v2.2.0|
+sha2 v0.10.9|
+cfg-if v1.0.5|
+digest v0.10.7|block-buffer,core-api,default,mac,subtle (*)
+subtle v2.6.1|
+zeroize v1.9.1|alloc
+libcrux-ml-kem v0.0.11|mlkem768
+libcrux-intrinsics v0.0.9|
+libcrux-platform v0.0.4 (/home/erikclean/src/secure-voice-lab/vendor/libcrux-platform)|
+libcrux-secrets v0.0.7|
+libcrux-sha3 v0.0.11|
+libcrux-intrinsics v0.0.9|
+libcrux-platform v0.0.4 (/home/erikclean/src/secure-voice-lab/vendor/libcrux-platform)|
+libcrux-traits v0.0.9|
+libcrux-secrets v0.0.7|
+rand v0.10.3|
+rand_core v0.10.1|
+libcrux-traits v0.0.9| (*)
+snow v0.10.0 (/home/erikclean/src/secure-voice-lab/vendor/snow)|blake2,chacha20poly1305,curve25519-dalek,default-resolver,hfs,use-blake2,use-chacha20poly1305,use-curve25519
+blake2 v0.10.6| (*)
+chacha20poly1305 v0.10.1| (*)
+curve25519-dalek v4.1.3|alloc,digest,precomputed-tables,zeroize (*)
+subtle v2.6.1|
+zeroize v1.9.1|alloc
+zeroize v1.9.1|alloc
+ed25519-dalek v2.2.0|alloc,zeroize (*)
+link v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/link)|
+protocol v0.1.0 (/home/erikclean/src/secure-voice-lab/crates/protocol)|fixtures (*)

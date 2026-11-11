@@ -81,27 +81,20 @@ The hybrid suite is required for new calls. Both peers authenticate the full exc
 
 ## Evidence you can inspect
 
-The recorded full-suite baseline **VoiceVault `voicevault-complete`** run on **2026-11-10** passed **all 11 required groups and 42 checks**, with **49 individual test/vector/proof outcomes** reported. Six instrumented fuzz campaigns completed **190,390 executions**, each running for at least 120 seconds. Four bounded Kani harnesses passed. Both libopus interoperability directions, twelve official mono decoder vectors, eighteen lifecycle test functions and the Cortex-M33 diagnostic passed.
+The hybrid v2 run on **2026-11-11** passed **all 11 required groups and 48 checks**. The suite recorded 68 named outcomes, including five bounded Kani checks, and ran eight fuzz campaigns for at least 120 seconds each. It also checked 80 ML-KEM-768 vectors. The altered-startup scenario verifies that a compromised phone cannot open either audio path by modifying the key exchange.
 
 | Recorded result | Observation |
 |---|---|
-| Idle and CPU-contention calls | Zero missed slots out of 1,500 per direction in each scenario; retained p99 send-error gate ≤ 5 ms |
-| Overload and blocked phone | Intentional misses, bounded queues, no catch-up bursts |
-| Cortex-M33 diagnostic | Real codec, encrypted media, link and selected policy paths executed; 32 audio frames recovered |
-| Linked image / static RAM | 707,168 bytes / 552,324 bytes, including a 32 KiB reserved heap |
-| Reference memory budget | 768 KiB main RAM, 128 KiB guarded stack, 64 KiB future-driver/display reserve; 37,500 bytes unassigned |
+| Real encrypted audio | Both directions recovered generated audio through two hostile phone processes and a relay |
+| Cortex-M33 execution | Hybrid startup, fragmentation and 32 Opus frames executed in QEMU |
+| Linked image and observed stack | 863,104 bytes of a 983,040-byte slot and 84,876 bytes of a 131,072-byte stack reserve |
+| Reference memory budget | 37,500 bytes unassigned after static state and stack/display/driver reservations |
 
-These are observations from the identified software run and CPU emulator. They do not establish physical security or real-time hardware performance. The live parser reports starts and outcomes incrementally, including results split by harness diagnostics. Some cases repeat under different build profiles. Source provenance identifies the native implementation and UI refinement separately.
+[Latest raw results](docs/evidence/hybrid-v2/) · [All recorded runs](docs/RESULTS.md) · [Embedded fit](docs/PLATFORM.md)
 
-[Full results](docs/RESULTS.md) · [Raw verdict and logs](docs/evidence/voicevault-live/verdict.json) · [Machine-readable summary](docs/verification-summary.json) · [Embedded fit](docs/PLATFORM.md)
+<p align="center"><img src="docs/screenshots/voicevault-hybrid-live.jpg" width="445" alt="VoiceVault dashboard reporting live hybrid handshake fuzzing and the earlier hostile call results"></p>
 
-![Measured native timing and Cortex-M33 memory budget](docs/assets/voicevault-verification.svg)
-
-<p align="center"><a href="docs/screenshots/command-deck-live-laptop.png"><img src="docs/screenshots/command-deck-live-laptop.png" width="1100" alt="VoiceVault live command deck with graphical phones and actual decoded synthetic audio monitoring"></a></p>
-
-*Actual laptop capture while a synthetic call was running. Receiver audio monitoring, boundary flashes and packet counts come from actual test output. [Focused feature checks](docs/COMMAND_DECK_CHECKS.md) cover the new deck/audio paths. The earlier eleven-group full-suite evidence remains a separately identified baseline.*
-
-[Narrow-width deck](docs/screenshots/command-deck-narrow-deck.png) · [Historical full-suite completion](docs/screenshots/voicevault-complete.png)
+*Actual dashboard capture during hybrid handshake fuzzing. The device panels show the earlier live call in the same run. [Live call capture](docs/screenshots/command-deck-live-laptop.png) · [Historical full-suite completion](docs/screenshots/voicevault-complete.png)*
 
 ## See what is happening as it happens
 

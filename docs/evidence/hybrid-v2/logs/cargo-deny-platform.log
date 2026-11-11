@@ -1,0 +1,26 @@
+$ cargo deny --locked --target thumbv8m.main-none-eabihf --manifest-path platform/Cargo.toml check
+warning[license-exception-not-encountered]: license exception was not encountered
+   ┌─ deny.toml:10:9
+   │
+10 │ name = "libfuzzer-sys"
+   │         ━━━━━━━━━━━━━ unmatched license exception
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ deny.toml:7:78
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                              ━━━━━━━ unmatched license allowance
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ deny.toml:7:48
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                ━━━ unmatched license allowance
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ deny.toml:7:70
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                      ━━━━ unmatched license allowance
+
+advisories ok, bans ok, licenses ok, sources ok

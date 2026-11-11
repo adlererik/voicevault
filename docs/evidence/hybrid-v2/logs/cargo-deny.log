@@ -1,0 +1,59 @@
+$ cargo deny --locked --target x86_64-unknown-linux-gnu check
+warning[license-exception-not-encountered]: license exception was not encountered
+   ┌─ /home/erikclean/src/secure-voice-lab/deny.toml:10:9
+   │
+10 │ name = "libfuzzer-sys"
+   │         ━━━━━━━━━━━━━ unmatched license exception
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ /home/erikclean/src/secure-voice-lab/deny.toml:7:78
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                              ━━━━━━━ unmatched license allowance
+
+warning[license-not-encountered]: license was not encountered
+  ┌─ /home/erikclean/src/secure-voice-lab/deny.toml:7:70
+  │
+7 │ allow = ["Apache-2.0", "MIT", "BSD-3-Clause", "ISC", "Unicode-3.0", "Zlib", "CC0-1.0"]
+  │                                                                      ━━━━ unmatched license allowance
+
+warning[duplicate]: found 3 duplicate entries for crate 'getrandom'
+   ┌─ /home/erikclean/src/secure-voice-lab/Cargo.lock:30:1
+   │  
+30 │ ╭ getrandom 0.2.17 registry+https://github.com/rust-lang/crates.io-index
+31 │ │ getrandom 0.3.4 registry+https://github.com/rust-lang/crates.io-index
+32 │ │ getrandom 0.4.3 registry+https://github.com/rust-lang/crates.io-index
+   │ ╰─────────────────────────────────────────────────────────────────────┘ lock entries
+   │  
+   ├ getrandom v0.2.17
+     └── ring v0.17.14
+         └── snow v0.10.0
+             └── protocol v0.1.0
+                 ├── device-core v0.1.0
+                 │   └── lab-runner v0.1.0
+                 └── lab-runner v0.1.0 (*)
+   ├ getrandom v0.3.4
+     └── snow v0.10.0
+         └── protocol v0.1.0
+             ├── device-core v0.1.0
+             │   └── lab-runner v0.1.0
+             └── lab-runner v0.1.0 (*)
+   ├ getrandom v0.4.3
+     ├── protocol v0.1.0
+     │   ├── device-core v0.1.0
+     │   │   └── lab-runner v0.1.0
+     │   └── lab-runner v0.1.0 (*)
+     ├── rand v0.10.3
+     │   ├── libcrux-traits v0.0.9
+     │   │   ├── libcrux-ml-kem v0.0.11
+     │   │   │   └── protocol v0.1.0 (*)
+     │   │   └── libcrux-sha3 v0.0.11
+     │   │       └── libcrux-ml-kem v0.0.11 (*)
+     │   └── proptest v1.12.0
+     │       └── (dev) protocol v0.1.0 (*)
+     └── tempfile v3.27.0
+         ├── proptest v1.12.0 (*)
+         └── rusty-fork v0.3.1
+             └── proptest v1.12.0 (*)
+
+advisories ok, bans ok, licenses ok, sources ok

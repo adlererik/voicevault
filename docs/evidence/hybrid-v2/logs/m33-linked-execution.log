@@ -1,0 +1,28 @@
+$ /usr/bin/python3 /home/erikclean/src/secure-voice-lab/scripts/platform_check.py /home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/platform
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.13s
+/home/erikclean/src/secure-voice-lab/platform/target/thumbv8m.main-none-eabihf/release/quietlink-m33-probe  :
+section              size        addr
+.vector_table        1984   268435456
+.text              764536   268437440
+.rodata             96556   269201976
+.data                   0   939524096
+.gnu.sgstubs            0   269298560
+.bss               552324   939524096
+.uninit                 0   940076420
+.debug_abbrev        7439           0
+.debug_info        642537           0
+.debug_aranges       4568           0
+.debug_ranges      657944           0
+.debug_str         652287           0
+.comment              139           0
+.ARM.attributes        58           0
+.debug_frame        17180           0
+.debug_line        792242           0
+Total             4189794
+
+
+Quietlink Cortex-M33 diagnostic: PUBLIC TEST KEYS
+{"frames":32,"pcm_checksum":48479441,"heap_cumulative_bytes":13816,"stack_high_water_bytes":84876,"encoder_bytes":308880,"decoder_bytes":178572,"contact_book_bytes":1504,"pipeline":"pass","policy_paths":"pass","hybrid_handshake":"pass","suite":"Noise_KKhfs_25519+MLKEM768_ChaChaPoly_BLAKE2s"}
+xPack QEMU emulator version 9.2.4
+Copyright (c) 2003-2024 Fabrice Bellard and the QEMU Project developers
+{"schema": 1, "status": "pass", "target": "thumbv8m.main-none-eabihf", "cpu_model": "QEMU MPS2 AN505 Cortex-M33", "reference_capacity": "STM32U585-class: main SRAM, ECC off; no SRAM4 or backup RAM credit", "flash_image_bytes": 863104, "flash_slot_budget_bytes": 983040, "static_ram_including_32k_heap_bytes": 552324, "stack_reserved_bytes": 131072, "future_display_dma_driver_reserve_bytes": 65536, "ram_budget_bytes": 786432, "unassigned_ram_bytes": 37500, "diagnostic_elf_sha256": "ae4fd26ee09b068da7ef22c15d697da63eeac4f1a45c110e4c442f8062be0a8c", "qemu": "xPack QEMU emulator version 9.2.4", "measured": {"frames": 32, "pcm_checksum": 48479441, "heap_cumulative_bytes": 13816, "stack_high_water_bytes": 84876, "encoder_bytes": 308880, "decoder_bytes": 178572, "contact_book_bytes": 1504, "pipeline": "pass", "policy_paths": "pass", "hybrid_handshake": "pass", "suite": "Noise_KKhfs_25519+MLKEM768_ChaChaPoly_BLAKE2s"}, "limits": ["32 fixture frames and selected policy paths; not a worst-case stack proof", "No real-time throughput, power or hardware latency evidence", "No STM32 peripherals, display, real BLE, secure element, RNG, MPU/TrustZone or flash emulation", "64 KiB future peripheral reserve assumes partial display rendering, not a full RGB565 framebuffer", "Public test keys and deterministic entropy: never flash this diagnostic image"]}

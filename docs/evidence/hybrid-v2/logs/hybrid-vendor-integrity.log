@@ -1,0 +1,3 @@
+$ /usr/bin/python3 /home/erikclean/src/secure-voice-lab/scripts/check_crypto_vendor.py
+PASS: snow, 40 upstream file hashes and exact local patch
+PASS: libcrux-platform, 11 upstream file hashes and exact local patch

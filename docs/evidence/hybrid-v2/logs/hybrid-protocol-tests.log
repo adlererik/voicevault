@@ -1,0 +1,26 @@
+$ cargo test --locked --release -p protocol --test hybrid --test hybrid_reference -- --test-threads=1 --nocapture
+    Finished `release` profile [optimized] target(s) in 0.21s
+     Running tests/hybrid.rs (target/release/deps/hybrid-cc0404b9e87ad9e1)
+
+running 10 tests
+test a_valid_legacy_noise_kk_exchange_is_rejected_as_a_downgrade ... ok
+test authenticated_corrupt_kem_ciphertext_fails_key_confirmation ... ok
+test authenticated_invalid_kem_public_key_cannot_trigger_encapsulation ... ok
+test both_verified_identities_roles_and_invitation_context_are_bound ... ok
+test classical_only_truncated_oversized_and_wrong_order_never_create_a_session ... ok
+test duplicate_reflected_and_cross_call_responses_fail_closed ... ok
+test every_entropy_acquisition_failure_is_fatal_without_fallback ... ok
+test hybrid_freshness_and_pq_contribution_with_classical_randomness_held_fixed ... ok
+test tampering_at_every_hybrid_message_byte_is_rejected_and_poisoned ... ok
+test two_contacts_sharing_a_dh_key_cannot_be_substituted_for_each_other ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.81s
+
+     Running tests/hybrid_reference.rs (target/release/deps/hybrid_reference-07afa68a701b4d5a)
+
+running 2 tests
+test hybrid_transcript_and_both_transport_keys_match_independent_reference ... ok
+test independent_noise_reference_first_flight_matches_published_classical_vector ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

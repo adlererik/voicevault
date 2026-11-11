@@ -1,0 +1,48 @@
+$ cargo test --locked --workspace --lib --bins -- --test-threads=1 --nocapture
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.40s
+     Running unittests src/lib.rs (target/debug/deps/call_state-e5ad96d1a1a05527)
+
+running 1 test
+test tests::boundaries ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/codec-ac85d516faa11065)
+
+running 2 tests
+test tests::cbr_including_silence ... ok
+test tests::rejects_wrong_geometry ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src/lib.rs (target/debug/deps/device_core-6e4f8e1f250ab9f5)
+
+running 1 test
+test tests::absolute_slots_skip_and_never_catch_up ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/lab_runner-35f8c5b664288cf9)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/link-319211d0f7cc1ae7)
+
+running 2 tests
+test startup_tests::hybrid_flights_reassemble_in_reverse_order_without_changing_media_bounds ... ok
+test startup_tests::startup_rejects_wrong_flight_shapes_duplicates_and_bounded_floods ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/protocol-52bb2305547f0e6f)
+
+running 4 tests
+test kem::acvp::nist_acvp_mlkem768_all_keygen_vectors ... ok
+test kem::acvp::nist_acvp_mlkem768_encapsulation_decapsulation_and_key_validation_vectors ... ok
+test kem::tests::consumed_entropy_is_erased_and_cannot_be_reused ... ok
+test kem::tests::private_key_explicit_zeroization_clears_owned_bytes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.47s
+

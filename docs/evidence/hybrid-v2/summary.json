@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "started": "2026-11-11T01:39:23.179664+01:00",
+  "run": "voicevault-hybrid-verified",
+  "tested_commit": "5938e9e19e5ef8b563b854e3af9a5c01d5355700",
+  "required_groups": 11,
+  "checks_passed": 48,
+  "named_case_results": 68,
+  "mlkem768_acvp_vectors": 80,
+  "fuzz": {
+    "handshake": {
+      "executions": 6606,
+      "seconds": 121
+    },
+    "record": {
+      "executions": 5677,
+      "seconds": 121
+    },
+    "codec": {
+      "executions": 59501,
+      "seconds": 121
+    },
+    "enrollment": {
+      "executions": 10413,
+      "seconds": 121
+    },
+    "lifecycle": {
+      "executions": 6514,
+      "seconds": 121
+    },
+    "update-radio": {
+      "executions": 63924,
+      "seconds": 121
+    },
+    "hybrid-kem": {
+      "executions": 6442,
+      "seconds": 121
+    },
+    "startup": {
+      "executions": 3360300,
+      "seconds": 121
+    }
+  },
+  "fuzz_executions": 3519377,
+  "kani_harnesses_passed": 5,
+  "platform": {
+    "schema": 1,
+    "status": "pass",
+    "target": "thumbv8m.main-none-eabihf",
+    "cpu_model": "QEMU MPS2 AN505 Cortex-M33",
+    "reference_capacity": "STM32U585-class: main SRAM, ECC off; no SRAM4 or backup RAM credit",
+    "flash_image_bytes": 863104,
+    "flash_slot_budget_bytes": 983040,
+    "static_ram_including_32k_heap_bytes": 552324,
+    "stack_reserved_bytes": 131072,
+    "future_display_dma_driver_reserve_bytes": 65536,
+    "ram_budget_bytes": 786432,
+    "unassigned_ram_bytes": 37500,
+    "diagnostic_elf_sha256": "ae4fd26ee09b068da7ef22c15d697da63eeac4f1a45c110e4c442f8062be0a8c",
+    "qemu": "xPack QEMU emulator version 9.2.4",
+    "measured": {
+      "frames": 32,
+      "pcm_checksum": 48479441,
+      "heap_cumulative_bytes": 13816,
+      "stack_high_water_bytes": 84876,
+      "encoder_bytes": 308880,
+      "decoder_bytes": 178572,
+      "contact_book_bytes": 1504,
+      "pipeline": "pass",
+      "policy_paths": "pass",
+      "hybrid_handshake": "pass",
+      "suite": "Noise_KKhfs_25519+MLKEM768_ChaChaPoly_BLAKE2s"
+    },
+    "limits": [
+      "32 fixture frames and selected policy paths; not a worst-case stack proof",
+      "No real-time throughput, power or hardware latency evidence",
+      "No STM32 peripherals, display, real BLE, secure element, RNG, MPU/TrustZone or flash emulation",
+      "64 KiB future peripheral reserve assumes partial display rendering, not a full RGB565 framebuffer",
+      "Public test keys and deterministic entropy: never flash this diagnostic image"
+    ]
+  },
+  "timing": {
+    "idle": {
+      "alice_to_bob_tx": {
+        "p99_ns": 1192900,
+        "missed_slots": 0,
+        "scheduled_slots": 1500,
+        "catch_up_bursts": 0
+      },
+      "bob_to_alice_tx": {
+        "p99_ns": 904581,
+        "missed_slots": 0,
+        "scheduled_slots": 1500,
+        "catch_up_bursts": 0
+      }
+    },
+    "contention": {
+      "alice_to_bob_tx": {
+        "p99_ns": 1699670,
+        "missed_slots": 0,
+        "scheduled_slots": 1500,
+        "catch_up_bursts": 0
+      },
+      "bob_to_alice_tx": {
+        "p99_ns": 723951,
+        "missed_slots": 0,
+        "scheduled_slots": 1500,
+        "catch_up_bursts": 0
+      }
+    },
+    "overload": {
+      "alice_to_bob_tx": {
+        "p99_ns": 15193519,
+        "missed_slots": 50,
+        "scheduled_slots": 150,
+        "catch_up_bursts": 0
+      },
+      "bob_to_alice_tx": {
+        "p99_ns": 15935817,
+        "missed_slots": 50,
+        "scheduled_slots": 150,
+        "catch_up_bursts": 0
+      }
+    },
+    "blocked-phone": {
+      "alice_to_bob_tx": {
+        "p99_ns": 195909,
+        "missed_slots": 145,
+        "scheduled_slots": 150,
+        "catch_up_bursts": 0
+      },
+      "bob_to_alice_tx": {
+        "p99_ns": 267707,
+        "missed_slots": 0,
+        "scheduled_slots": 150,
+        "catch_up_bursts": 0
+      }
+    }
+  }
+}

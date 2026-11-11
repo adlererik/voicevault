@@ -1,0 +1,137 @@
+$ /home/erikclean/src/secure-voice-lab/target/release/lab-runner wall /home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/timing/contention contention
+{"test":"contention","tick":0,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":0,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":1,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":1,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":1,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":1,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":2,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":2,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":2,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":2,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":2,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":3,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":3,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":3,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":3,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":4,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":4,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":4,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":4,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":4,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":4,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":5,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":5,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":5,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":5,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":5,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":5,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":6,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":6,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":6,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":6,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":6,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":7,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":7,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":7,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":7,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":7,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":7,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":8,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":8,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":8,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":8,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":8,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":8,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":8,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":9,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":9,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":9,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":9,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":9,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":9,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":10,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":10,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":10,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":10,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":10,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":10,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":11,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":11,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":11,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":11,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":11,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":11,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":12,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":12,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":12,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":12,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":12,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":12,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":13,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":13,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":13,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":13,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":13,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":13,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":14,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":14,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":14,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":14,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":14,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":15,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":15,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":15,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":15,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":15,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":15,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":15,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":16,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":16,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":16,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":16,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":16,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":16,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":17,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":17,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":17,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":17,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":17,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":18,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":18,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":18,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":18,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":18,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":18,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":19,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":19,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":19,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":19,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":19,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":19,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":20,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":20,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":20,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":20,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":20,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":20,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":21,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":21,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":21,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":21,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":21,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":21,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":21,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":22,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":22,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":22,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":22,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":22,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":23,"action":"send","from":"Alice","to":"Phone A","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":23,"action":"receive","from":"Phone A","to":"Alice","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":23,"action":"playout","from":"Bob","to":"Alice","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":23,"action":"send","from":"Bob","to":"Phone B","expected":"one record or a counted miss","observed":"128-byte ciphertext submitted","status":"info"}
+{"test":"contention","tick":23,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":23,"action":"receive","from":"Phone B","to":"Bob","expected":"authenticate before playout","observed":"authenticated record buffered","status":"info"}
+{"test":"contention","tick":23,"action":"playout","from":"Alice","to":"Bob","expected":"bounded jitter and one frame of audio or concealment","observed":"decoded","status":"info"}
+{"test":"contention","tick":1500,"action":"verdict","from":"","to":"","expected":"scenario timing, queue, burst and applicable WAV gates","observed":"gates met","status":"pass"}

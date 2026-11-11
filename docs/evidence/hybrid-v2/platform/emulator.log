@@ -1,0 +1,2 @@
+Quietlink Cortex-M33 diagnostic: PUBLIC TEST KEYS
+{"frames":32,"pcm_checksum":48479441,"heap_cumulative_bytes":13816,"stack_high_water_bytes":84876,"encoder_bytes":308880,"decoder_bytes":178572,"contact_book_bytes":1504,"pipeline":"pass","policy_paths":"pass","hybrid_handshake":"pass","suite":"Noise_KKhfs_25519+MLKEM768_ChaChaPoly_BLAKE2s"}

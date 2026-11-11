@@ -1,0 +1,54 @@
+$ cargo +nightly-2026-08-21 fuzz run handshake /home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/corpus/handshake -- -max_total_time=120 -timeout=5 -max_len=4096 -seed=870321 -artifact_prefix=/home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/artifacts/handshake/
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.13s
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.11s
+     Running `fuzz/target/x86_64-unknown-linux-gnu/release/handshake -artifact_prefix=/home/erikclean/src/secure-voice-lab/fuzz/artifacts/handshake/ -max_total_time=120 -timeout=5 -max_len=4096 -seed=870321 -artifact_prefix=/home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/artifacts/handshake/ /home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/corpus/handshake`
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 870321
+INFO: Loaded 1 modules   (23633 inline 8-bit counters): 23633 [0x556bf2c72200, 0x556bf2c77e51), 
+INFO: Loaded 1 PC tables (23633 PCs): 23633 [0x556bf2c77e58,0x556bf2cd4368), 
+INFO:        2 files found in /home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/corpus/handshake
+INFO: seed corpus: files: 2 min: 5b max: 48b total: 53b rss: 38Mb
+#3	INITED cov: 4039 ft: 5271 corp: 2/53b exec/s: 0 rss: 41Mb
+#7	REDUCE cov: 4039 ft: 5271 corp: 2/35b lim: 48 exec/s: 0 rss: 42Mb L: 30/30 MS: 4 ShuffleBytes-CopyPart-CrossOver-EraseBytes-
+#13	NEW    cov: 4042 ft: 5279 corp: 3/58b lim: 48 exec/s: 0 rss: 44Mb L: 23/30 MS: 1 InsertRepeatedBytes-
+#18	NEW    cov: 4042 ft: 5284 corp: 4/89b lim: 48 exec/s: 0 rss: 46Mb L: 31/31 MS: 5 ShuffleBytes-ShuffleBytes-ShuffleBytes-InsertByte-InsertRepeatedBytes-
+#19	REDUCE cov: 4042 ft: 5284 corp: 4/79b lim: 48 exec/s: 0 rss: 46Mb L: 20/31 MS: 1 EraseBytes-
+	NEW_FUNC[1/13]: 0x556bf2a39800  (/home/erikclean/src/secure-voice-lab/fuzz/target/x86_64-unknown-linux-gnu/release/handshake+0x246800) (BuildId: 125d86c549e5c7fc7df67e28480eb636bb849f7b)
+	NEW_FUNC[2/13]: 0x556bf2a4ab30  (/home/erikclean/src/secure-voice-lab/fuzz/target/x86_64-unknown-linux-gnu/release/handshake+0x257b30) (BuildId: 125d86c549e5c7fc7df67e28480eb636bb849f7b)
+#22	NEW    cov: 4562 ft: 6513 corp: 5/87b lim: 48 exec/s: 0 rss: 47Mb L: 8/31 MS: 3 CrossOver-ChangeBit-CrossOver-
+#23	NEW    cov: 4562 ft: 6514 corp: 6/119b lim: 48 exec/s: 0 rss: 47Mb L: 32/32 MS: 1 InsertByte-
+#27	NEW    cov: 4562 ft: 6515 corp: 7/132b lim: 48 exec/s: 27 rss: 48Mb L: 13/32 MS: 4 EraseBytes-InsertByte-ShuffleBytes-EraseBytes-
+#64	pulse  cov: 4562 ft: 6515 corp: 7/132b lim: 48 exec/s: 32 rss: 49Mb
+#128	pulse  cov: 4562 ft: 6515 corp: 7/132b lim: 48 exec/s: 42 rss: 51Mb
+#143	REDUCE cov: 4562 ft: 6515 corp: 7/127b lim: 48 exec/s: 47 rss: 51Mb L: 15/32 MS: 4 CrossOver-CMP-InsertByte-EraseBytes- DE: "KKhf"-
+#214	NEW    cov: 4562 ft: 6517 corp: 8/139b lim: 48 exec/s: 53 rss: 53Mb L: 12/32 MS: 5 ChangeByte-InsertByte-InsertRepeatedBytes-ChangeByte-EraseBytes-
+#256	pulse  cov: 4562 ft: 6517 corp: 8/139b lim: 48 exec/s: 51 rss: 53Mb
+#292	REDUCE cov: 4562 ft: 6517 corp: 8/137b lim: 48 exec/s: 48 rss: 54Mb L: 10/32 MS: 3 ShuffleBytes-EraseBytes-InsertByte-
+#300	REDUCE cov: 4562 ft: 6517 corp: 8/136b lim: 48 exec/s: 50 rss: 54Mb L: 12/32 MS: 3 InsertRepeatedBytes-InsertByte-EraseBytes-
+#331	REDUCE cov: 4562 ft: 6517 corp: 8/129b lim: 48 exec/s: 55 rss: 55Mb L: 8/32 MS: 1 EraseBytes-
+#407	REDUCE cov: 4562 ft: 6517 corp: 8/128b lim: 48 exec/s: 50 rss: 56Mb L: 4/32 MS: 1 EraseBytes-
+#512	pulse  cov: 4562 ft: 6517 corp: 8/128b lim: 48 exec/s: 56 rss: 57Mb
+#687	REDUCE cov: 4562 ft: 6517 corp: 8/127b lim: 48 exec/s: 52 rss: 60Mb L: 22/32 MS: 5 ShuffleBytes-EraseBytes-ChangeBit-ShuffleBytes-CMP- DE: "\360'\277\362"-
+#1024	pulse  cov: 4562 ft: 6517 corp: 8/127b lim: 48 exec/s: 48 rss: 65Mb
+#1262	REDUCE cov: 4562 ft: 6521 corp: 9/178b lim: 53 exec/s: 48 rss: 69Mb L: 51/51 MS: 5 ChangeBit-CrossOver-ShuffleBytes-CMP-InsertRepeatedBytes- DE: "\001D\306\347A\312c\361"-
+#1341	REDUCE cov: 4562 ft: 6521 corp: 9/177b lim: 53 exec/s: 49 rss: 70Mb L: 11/51 MS: 4 InsertByte-PersAutoDict-InsertByte-EraseBytes- DE: "KKhf"-
+#1445	REDUCE cov: 4562 ft: 6521 corp: 9/176b lim: 53 exec/s: 49 rss: 72Mb L: 10/51 MS: 4 ChangeBit-EraseBytes-CopyPart-EraseBytes-
+#1939	REDUCE cov: 4562 ft: 6521 corp: 9/174b lim: 53 exec/s: 52 rss: 79Mb L: 49/49 MS: 4 CrossOver-ChangeBit-CrossOver-EraseBytes-
+#2048	pulse  cov: 4562 ft: 6521 corp: 9/174b lim: 53 exec/s: 52 rss: 81Mb
+#2335	REDUCE cov: 4565 ft: 6529 corp: 10/184b lim: 53 exec/s: 53 rss: 85Mb L: 10/49 MS: 1 ChangeBinInt-
+#2864	REDUCE cov: 4565 ft: 6530 corp: 11/242b lim: 58 exec/s: 54 rss: 94Mb L: 58/58 MS: 4 PersAutoDict-CopyPart-ChangeByte-CrossOver- DE: "KKhf"-
+#2988	REDUCE cov: 4565 ft: 6530 corp: 11/241b lim: 58 exec/s: 54 rss: 95Mb L: 57/57 MS: 4 EraseBytes-CopyPart-ChangeBinInt-InsertRepeatedBytes-
+#3756	NEW    cov: 4566 ft: 6531 corp: 12/278b lim: 63 exec/s: 55 rss: 107Mb L: 37/57 MS: 3 InsertRepeatedBytes-ChangeByte-CrossOver-
+#4096	pulse  cov: 4566 ft: 6531 corp: 12/278b lim: 63 exec/s: 55 rss: 113Mb
+#4305	REDUCE cov: 4566 ft: 6531 corp: 12/277b lim: 68 exec/s: 55 rss: 116Mb L: 56/56 MS: 4 InsertByte-EraseBytes-CopyPart-InsertRepeatedBytes-
+#4338	REDUCE cov: 4566 ft: 6531 corp: 12/273b lim: 68 exec/s: 55 rss: 116Mb L: 6/56 MS: 3 CopyPart-ChangeByte-EraseBytes-
+#4999	REDUCE cov: 4566 ft: 6531 corp: 12/264b lim: 74 exec/s: 53 rss: 127Mb L: 28/56 MS: 1 EraseBytes-
+#5310	REDUCE cov: 4566 ft: 6531 corp: 12/262b lim: 74 exec/s: 53 rss: 131Mb L: 4/56 MS: 1 EraseBytes-
+#5896	REDUCE cov: 4566 ft: 6531 corp: 12/259b lim: 74 exec/s: 54 rss: 140Mb L: 25/56 MS: 1 EraseBytes-
+#6606	DONE   cov: 4566 ft: 6531 corp: 12/259b lim: 80 exec/s: 54 rss: 151Mb
+###### Recommended dictionary. ######
+"KKhf" # Uses: 245
+"\360'\277\362" # Uses: 210
+"\001D\306\347A\312c\361" # Uses: 155
+###### End of recommended dictionary. ######
+Done 6606 runs in 121 second(s)

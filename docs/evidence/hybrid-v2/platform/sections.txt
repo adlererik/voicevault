@@ -1,0 +1,21 @@
+/home/erikclean/src/secure-voice-lab/platform/target/thumbv8m.main-none-eabihf/release/quietlink-m33-probe  :
+section              size        addr
+.vector_table        1984   268435456
+.text              764536   268437440
+.rodata             96556   269201976
+.data                   0   939524096
+.gnu.sgstubs            0   269298560
+.bss               552324   939524096
+.uninit                 0   940076420
+.debug_abbrev        7439           0
+.debug_info        642537           0
+.debug_aranges       4568           0
+.debug_ranges      657944           0
+.debug_str         652287           0
+.comment              139           0
+.ARM.attributes        58           0
+.debug_frame        17180           0
+.debug_line        792242           0
+Total             4189794
+
+

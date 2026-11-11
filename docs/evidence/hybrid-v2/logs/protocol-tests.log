@@ -1,0 +1,23 @@
+$ cargo test --locked -p protocol --test security --test vectors -- --test-threads=1 --nocapture
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.17s
+     Running tests/security.rs (target/debug/deps/security-2abaa8adb7400b26)
+
+running 6 tests
+test auth_and_counters_cannot_poison_window ... ok
+test bad_handshake_tag_and_wrong_pin_fail ... ok
+test bitmap_matches_set ... proptest: FileFailurePersistence::SourceParallel set, but failed to find lib.rs or main.rs
+ok
+test contact_binds_distinct_static_key_to_pinned_signer ... ok
+test reconnect_restarts_counter_with_fresh_split_and_directions ... ok
+test reject_control_and_media_until_local_consent ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.78s
+
+     Running tests/vectors.rs (target/debug/deps/vectors-0cd5d246e40d61b7)
+
+running 2 tests
+test cacophony_kk_stateless ... ok
+test cacophony_xx_stateless ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+

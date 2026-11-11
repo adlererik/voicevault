@@ -1,0 +1,84 @@
+$ cargo +nightly-2026-08-21 fuzz run record /home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/corpus/record -- -max_total_time=120 -timeout=5 -max_len=512 -seed=870321 -artifact_prefix=/home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/artifacts/record/
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.10s
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.10s
+     Running `fuzz/target/x86_64-unknown-linux-gnu/release/record -artifact_prefix=/home/erikclean/src/secure-voice-lab/fuzz/artifacts/record/ -max_total_time=120 -timeout=5 -max_len=512 -seed=870321 -artifact_prefix=/home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/artifacts/record/ /home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/corpus/record`
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 870321
+INFO: Loaded 1 modules   (24324 inline 8-bit counters): 24324 [0x5603307b7180, 0x5603307bd084), 
+INFO: Loaded 1 PC tables (24324 PCs): 24324 [0x5603307bd088,0x56033081c0c8), 
+INFO:        1 files found in /home/erikclean/Documents/ChatGPT/SecureCall/work/voicevault-hybrid-verified/fuzz/corpus/record
+INFO: seed corpus: files: 1 min: 16b max: 16b total: 16b rss: 38Mb
+#2	INITED cov: 4650 ft: 4651 corp: 1/16b exec/s: 0 rss: 40Mb
+#3	NEW    cov: 4653 ft: 4654 corp: 2/32b lim: 16 exec/s: 0 rss: 42Mb L: 16/16 MS: 1 ShuffleBytes-
+#6	NEW    cov: 4654 ft: 4655 corp: 3/48b lim: 16 exec/s: 0 rss: 44Mb L: 16/16 MS: 3 CopyPart-CopyPart-CrossOver-
+#7	NEW    cov: 4655 ft: 4656 corp: 4/60b lim: 16 exec/s: 0 rss: 44Mb L: 12/16 MS: 1 EraseBytes-
+#8	REDUCE cov: 4655 ft: 4656 corp: 4/58b lim: 16 exec/s: 0 rss: 45Mb L: 14/16 MS: 1 EraseBytes-
+#13	NEW    cov: 4657 ft: 4998 corp: 5/74b lim: 16 exec/s: 0 rss: 47Mb L: 16/16 MS: 5 ShuffleBytes-CrossOver-CopyPart-ChangeBinInt-CMP- DE: "I1N"-
+#20	NEW    cov: 4658 ft: 5023 corp: 6/82b lim: 16 exec/s: 0 rss: 48Mb L: 8/16 MS: 2 ChangeBit-CrossOver-
+#28	REDUCE cov: 4658 ft: 5023 corp: 6/81b lim: 16 exec/s: 0 rss: 49Mb L: 15/16 MS: 3 CopyPart-CrossOver-EraseBytes-
+#29	REDUCE cov: 4660 ft: 5025 corp: 7/96b lim: 16 exec/s: 0 rss: 49Mb L: 15/16 MS: 1 InsertByte-
+#30	NEW    cov: 4664 ft: 5029 corp: 8/112b lim: 16 exec/s: 0 rss: 49Mb L: 16/16 MS: 1 CMP- DE: "\000\000\000\000\000\000\000\020"-
+#31	REDUCE cov: 4664 ft: 5029 corp: 8/107b lim: 16 exec/s: 0 rss: 49Mb L: 10/16 MS: 1 EraseBytes-
+#35	NEW    cov: 4665 ft: 5030 corp: 9/123b lim: 16 exec/s: 0 rss: 49Mb L: 16/16 MS: 4 InsertByte-InsertRepeatedBytes-CMP-CMP- DE: "XX1"-"KK"-
+#38	REDUCE cov: 4665 ft: 5030 corp: 9/121b lim: 16 exec/s: 38 rss: 49Mb L: 14/16 MS: 3 ChangeByte-ShuffleBytes-EraseBytes-
+#42	NEW    cov: 4666 ft: 5031 corp: 10/128b lim: 16 exec/s: 42 rss: 50Mb L: 7/16 MS: 4 ChangeBit-InsertByte-ShuffleBytes-EraseBytes-
+#48	NEW    cov: 4669 ft: 5034 corp: 11/140b lim: 16 exec/s: 48 rss: 50Mb L: 12/16 MS: 1 EraseBytes-
+#62	REDUCE cov: 4669 ft: 5091 corp: 12/149b lim: 16 exec/s: 62 rss: 50Mb L: 9/16 MS: 4 ShuffleBytes-ChangeBinInt-CrossOver-EraseBytes-
+#66	REDUCE cov: 4669 ft: 5091 corp: 12/148b lim: 16 exec/s: 66 rss: 51Mb L: 13/16 MS: 4 ChangeBinInt-InsertByte-CMP-EraseBytes- DE: "\000\000\000\000\000\000\000\002"-
+#67	REDUCE cov: 4669 ft: 5091 corp: 12/147b lim: 16 exec/s: 67 rss: 51Mb L: 8/16 MS: 1 EraseBytes-
+#73	REDUCE cov: 4669 ft: 5091 corp: 12/145b lim: 16 exec/s: 73 rss: 51Mb L: 11/16 MS: 1 EraseBytes-
+#108	REDUCE cov: 4670 ft: 5092 corp: 13/161b lim: 16 exec/s: 54 rss: 52Mb L: 16/16 MS: 5 CopyPart-ShuffleBytes-ChangeBit-CrossOver-InsertByte-
+#115	NEW    cov: 4673 ft: 5095 corp: 14/177b lim: 16 exec/s: 57 rss: 52Mb L: 16/16 MS: 2 ShuffleBytes-ChangeBit-
+#128	pulse  cov: 4673 ft: 5095 corp: 14/177b lim: 16 exec/s: 64 rss: 52Mb
+#190	REDUCE cov: 4673 ft: 5095 corp: 14/174b lim: 16 exec/s: 47 rss: 53Mb L: 11/16 MS: 5 CopyPart-CrossOver-CrossOver-ShuffleBytes-InsertRepeatedBytes-
+#217	REDUCE cov: 4673 ft: 5095 corp: 14/169b lim: 16 exec/s: 54 rss: 54Mb L: 10/16 MS: 2 EraseBytes-InsertByte-
+#229	REDUCE cov: 4673 ft: 5095 corp: 14/163b lim: 16 exec/s: 57 rss: 54Mb L: 1/16 MS: 2 ChangeBit-CrossOver-
+#239	REDUCE cov: 4674 ft: 5096 corp: 15/174b lim: 16 exec/s: 47 rss: 54Mb L: 11/16 MS: 5 CopyPart-ChangeBit-InsertRepeatedBytes-CrossOver-InsertByte-
+#256	pulse  cov: 4674 ft: 5096 corp: 15/174b lim: 16 exec/s: 51 rss: 54Mb
+#379	REDUCE cov: 4674 ft: 5096 corp: 15/173b lim: 16 exec/s: 47 rss: 56Mb L: 11/16 MS: 5 InsertByte-CopyPart-CrossOver-CrossOver-CrossOver-
+#430	REDUCE cov: 4674 ft: 5096 corp: 15/171b lim: 16 exec/s: 47 rss: 57Mb L: 10/16 MS: 1 EraseBytes-
+#436	REDUCE cov: 4674 ft: 5096 corp: 15/165b lim: 16 exec/s: 48 rss: 57Mb L: 2/16 MS: 1 CrossOver-
+#457	REDUCE cov: 4674 ft: 5096 corp: 15/163b lim: 16 exec/s: 50 rss: 58Mb L: 6/16 MS: 1 CrossOver-
+#468	REDUCE cov: 4674 ft: 5096 corp: 15/159b lim: 16 exec/s: 46 rss: 58Mb L: 12/16 MS: 1 CrossOver-
+#512	pulse  cov: 4674 ft: 5096 corp: 15/159b lim: 16 exec/s: 46 rss: 59Mb
+#524	REDUCE cov: 4674 ft: 5096 corp: 15/158b lim: 16 exec/s: 47 rss: 59Mb L: 1/16 MS: 1 EraseBytes-
+#535	REDUCE cov: 4674 ft: 5096 corp: 15/157b lim: 16 exec/s: 48 rss: 59Mb L: 5/16 MS: 1 EraseBytes-
+#579	REDUCE cov: 4677 ft: 5132 corp: 16/167b lim: 16 exec/s: 44 rss: 60Mb L: 10/16 MS: 4 CrossOver-ChangeBinInt-ChangeBinInt-CrossOver-
+	NEW_FUNC[1/1]: 0x560330570bf0  (/home/erikclean/src/secure-voice-lab/fuzz/target/x86_64-unknown-linux-gnu/release/record+0x244bf0) (BuildId: d9eaf0ea15d186c9d11806258915dec0602764df)
+#679	REDUCE cov: 4683 ft: 5158 corp: 17/182b lim: 16 exec/s: 45 rss: 62Mb L: 15/16 MS: 5 ShuffleBytes-ChangeByte-EraseBytes-CopyPart-CrossOver-
+#680	REDUCE cov: 4683 ft: 5158 corp: 17/180b lim: 16 exec/s: 45 rss: 62Mb L: 3/16 MS: 1 EraseBytes-
+#731	REDUCE cov: 4683 ft: 5158 corp: 17/177b lim: 16 exec/s: 45 rss: 63Mb L: 12/16 MS: 1 EraseBytes-
+#759	REDUCE cov: 4683 ft: 5158 corp: 17/176b lim: 16 exec/s: 44 rss: 63Mb L: 11/16 MS: 3 CopyPart-InsertByte-CrossOver-
+#775	REDUCE cov: 4684 ft: 5159 corp: 18/187b lim: 16 exec/s: 45 rss: 63Mb L: 11/16 MS: 1 InsertRepeatedBytes-
+#812	REDUCE cov: 4684 ft: 5159 corp: 18/185b lim: 16 exec/s: 45 rss: 64Mb L: 14/16 MS: 2 ChangeByte-EraseBytes-
+#860	REDUCE cov: 4684 ft: 5159 corp: 18/184b lim: 16 exec/s: 45 rss: 65Mb L: 10/16 MS: 3 CopyPart-CopyPart-EraseBytes-
+#1024	pulse  cov: 4684 ft: 5159 corp: 18/184b lim: 16 exec/s: 44 rss: 67Mb
+#1093	REDUCE cov: 4684 ft: 5159 corp: 18/183b lim: 16 exec/s: 45 rss: 68Mb L: 13/16 MS: 3 ChangeBit-ChangeBit-CrossOver-
+#1143	REDUCE cov: 4684 ft: 5159 corp: 18/180b lim: 16 exec/s: 43 rss: 69Mb L: 13/16 MS: 5 CrossOver-PersAutoDict-CrossOver-CMP-EraseBytes- DE: "XX1"-"KKh"-
+#1257	REDUCE cov: 4685 ft: 5160 corp: 19/192b lim: 16 exec/s: 44 rss: 71Mb L: 12/16 MS: 4 CMP-EraseBytes-ChangeASCIIInt-CopyPart- DE: "1y7\012\271\035\007\000"-
+#1514	REDUCE cov: 4685 ft: 5160 corp: 19/190b lim: 16 exec/s: 44 rss: 75Mb L: 11/16 MS: 2 EraseBytes-CMP- DE: "\377\377\377\377"-
+#1923	REDUCE cov: 4685 ft: 5160 corp: 19/189b lim: 20 exec/s: 43 rss: 81Mb L: 10/16 MS: 4 ChangeBinInt-ChangeByte-CrossOver-EraseBytes-
+#1974	REDUCE cov: 4685 ft: 5160 corp: 19/188b lim: 20 exec/s: 43 rss: 82Mb L: 10/16 MS: 1 EraseBytes-
+#2035	REDUCE cov: 4686 ft: 5161 corp: 20/198b lim: 20 exec/s: 44 rss: 83Mb L: 10/16 MS: 1 ShuffleBytes-
+#2048	pulse  cov: 4686 ft: 5161 corp: 20/198b lim: 20 exec/s: 43 rss: 83Mb
+#2121	REDUCE cov: 4686 ft: 5161 corp: 20/197b lim: 20 exec/s: 44 rss: 85Mb L: 2/16 MS: 1 EraseBytes-
+#2493	REDUCE cov: 4689 ft: 5164 corp: 21/207b lim: 20 exec/s: 43 rss: 90Mb L: 10/16 MS: 2 EraseBytes-CopyPart-
+#2677	REDUCE cov: 4689 ft: 5164 corp: 21/206b lim: 20 exec/s: 44 rss: 93Mb L: 1/16 MS: 4 ShuffleBytes-ShuffleBytes-ChangeByte-EraseBytes-
+#2679	REDUCE cov: 4689 ft: 5164 corp: 21/205b lim: 20 exec/s: 44 rss: 93Mb L: 10/16 MS: 2 PersAutoDict-EraseBytes- DE: "\377\377\377\377"-
+#2845	NEW    cov: 4690 ft: 5165 corp: 22/215b lim: 20 exec/s: 45 rss: 96Mb L: 10/16 MS: 1 CrossOver-
+#3843	REDUCE cov: 4690 ft: 5165 corp: 22/214b lim: 28 exec/s: 46 rss: 111Mb L: 11/16 MS: 3 CMP-EraseBytes-PersAutoDict- DE: "KKh"-"I1N"-
+#4096	pulse  cov: 4690 ft: 5165 corp: 22/214b lim: 28 exec/s: 46 rss: 115Mb
+#4977	REDUCE cov: 4690 ft: 5165 corp: 22/213b lim: 37 exec/s: 46 rss: 129Mb L: 10/16 MS: 4 InsertByte-CMP-PersAutoDict-CrossOver- DE: "\001\000\000\000"-"I1N"-
+#5677	DONE   cov: 4690 ft: 5165 corp: 22/213b lim: 42 exec/s: 46 rss: 140Mb
+###### Recommended dictionary. ######
+"I1N" # Uses: 69
+"\000\000\000\000\000\000\000\020" # Uses: 55
+"XX1" # Uses: 68
+"KK" # Uses: 78
+"\000\000\000\000\000\000\000\002" # Uses: 46
+"KKh" # Uses: 47
+"1y7\012\271\035\007\000" # Uses: 43
+"\377\377\377\377" # Uses: 47
+"\001\000\000\000" # Uses: 7
+###### End of recommended dictionary. ######
+Done 5677 runs in 121 second(s)

@@ -1,5 +1,9 @@
 # Verification results: VoiceVault live laboratory
 
+## Hybrid v2 verification
+
+On 2026-11-11, the hybrid suite completed all 11 required groups and 48 checks. The run included 80 official ML-KEM-768 cases, separate hybrid transcript and downgrade tests, the five-process startup attack, five bounded Kani checks and 3,519,377 executions across eight fuzz campaigns. The emulator executed the linked hybrid startup and 32-frame voice path with the existing memory budgets. [Measurements and test logs](evidence/hybrid-v2/) · [Raw verdict](evidence/hybrid-v2/verdict.json) · [Source manifest](evidence/hybrid-v2/tested-source-manifest.json)
+
 **Later UI/audio follow-up:** [focused command-deck checks](COMMAND_DECK_CHECKS.md) are recorded separately; the full-suite campaign below retains its original source provenance.
 
 Run **`voicevault-complete`** on **2026-11-10** completed with **11 required groups, 42 checks and 49 reported test/vector/proof results passing**. The runner exited zero. Six instrumented campaigns each met the >=120-second gate, totaling **190,390 executions**. Four bounded Kani harnesses passed. Two new eight-second full-duplex live scenarios were added to the original suite; all previous checks and thresholds remain enabled.

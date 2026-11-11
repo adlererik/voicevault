@@ -1,0 +1,35 @@
+{
+  "scheduled_slots": 400,
+  "sent": 400,
+  "missed_slots": 0,
+  "missed_slot_indices": [],
+  "catch_up_bursts": 0,
+  "transmit_drops": 0,
+  "receive_drops": 22,
+  "reassembly_peak": 2,
+  "jitter_peak": 5,
+  "ipc_output_queue_peak_bytes": 3072,
+  "ipc_output_buffer_bytes": 16384,
+  "plc_slots": 43,
+  "decoded_slots": 357,
+  "filler_slots": 0,
+  "filler_sent_slots": 0,
+  "cpu_ns": 716767105,
+  "codec_ns": 673217017,
+  "crypto_ns": 10079679,
+  "peak_rss_kib": 5120,
+  "absolute_send_error": {
+    "count": 400,
+    "p50_ns": 108946,
+    "p95_ns": 1387922,
+    "p99_ns": 2305995,
+    "max_ns": 3885327
+  },
+  "digital_playout_latency": {
+    "count": 357,
+    "p50_ns": 80313734,
+    "p95_ns": 81741406,
+    "p99_ns": 82709099,
+    "max_ns": 84089503
+  }
+}

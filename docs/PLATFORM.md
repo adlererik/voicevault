@@ -18,6 +18,8 @@ Each run saves exact values and ELF hash in `platform/platform.json`, plus secti
 
 The 64 KiB peripheral allowance assumes partial display rendering. A Safe 7-sized 520×380 RGB565 framebuffer would need 395,200 bytes, far beyond that allowance; even 240×240 needs 115,200 bytes. Partial/tiled rendering is therefore an explicit assumption. [Safe 7 display specification](https://trezor.io/learn/security-privacy/how-trezor-keeps-you-safe/trezor-hardware-built-in-security) A full framebuffer, different codec mode, larger contact store, ECC or an RTOS can invalidate this budget. The final board needs a new whole-firmware link and worst-case measurement.
 
+The hybrid v2 run linked 863,104 bytes of flash and used 13,816 bytes of cumulative diagnostic heap and 84,876 bytes of observed stack. Static RAM including the 32 KiB heap reserve was 552,324 bytes. Both hybrid startup flights and all 32 voice frames executed within the existing gates. [Raw report](evidence/hybrid-v2/platform/platform.json)
+
 ## Repeating the check
 
 `./lab test` and `./lab watch` require the platform group. The exact Rust pin needs the `thumbv8m.main-none-eabihf` target. Provide `arm-none-eabi-size` and an official QEMU build with `mps2-an505`; `QEMU_SYSTEM_ARM` can specify its path. The recorded host uses account-local xPack QEMU 9.2.4-1 in `.lab-cache/qemu/`, with no system installation. [Official xPack installation documentation](https://xpack-dev-tools.github.io/qemu-arm-xpack/docs/install/)

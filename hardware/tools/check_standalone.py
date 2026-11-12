@@ -211,6 +211,13 @@ def main():
                        laser_vias=laser_data['laser_vias'],negative_control='pass',
                        live_design_unchanged=True,scope=laser_data['scope'],
                        unresolved=laser_data['unresolved']))
+    mcu_escape=run(['flatpak','run','--user','--command=python3','org.kicad.KiCad',
+                   ROOT/'hardware/tools/check_mcu_escape_reservations.py'],'mcu-escape-reservations.log')
+    if mcu_escape.returncode:
+        raise RuntimeError('Remaining MCU escape reservation/negative control failed')
+    mcu_data=json.loads((OUT/'mcu-escape-reservations.json').read_text())
+    checks.append(dict(check='Remaining MCU escape sites',result='pass',reserved_pads=mcu_data['reserved_mcu_pads'],
+                       collisions=0,negative_control='pass',scope=mcu_data['scope']))
     data = json.loads((OUT / 'drc.json').read_text())
     available_failed = erc.returncode != 0 or bool(data.get('violations'))
     checks.append(dict(check='Draft electrical/layout state', result='fail' if available_failed else 'incomplete',

@@ -69,11 +69,14 @@ def obstacles(data, net, layer):
         g = (Point(t['x'], t['y']) if t['kind'] == 'via'
              else LineString([t['start'], t['end']]))
         result.append(g.buffer(t['w']/2 + CLEARANCE + WIDTH/2))
+    for p in data.get('reservations',[]):
+        if p['net']!=net and layer in p['layers']:
+            result.append(Point(p['x'],p['y']).buffer(p['w']/2+CLEARANCE+WIDTH/2+.0001))
     result += [box(25, 25, 38.9, 31.9)]  # all-layer radio reservation
     return result
 
 
-def search(start, end, shapes, margin=3.0):
+def search(start, end, shapes, margin=3.0, budget_seconds=4):
     lo = np.floor((np.minimum(start, end)-margin)/STEP)*STEP
     hi = np.ceil((np.maximum(start, end)+margin)/STEP)*STEP
     lo = np.maximum(lo, [25.4, 25.4]); hi = np.minimum(hi, [94.6, 69.6])
@@ -99,7 +102,7 @@ def search(start, end, shapes, margin=3.0):
     # smallest travelled distance explores an enormous open rectangle first.
     dist={a:0.}; parent={}; queue=[(h(*a),0.,0.,a)]
     directions=[(1,0),(-1,0),(0,1),(0,-1),(1,1),(1,-1),(-1,1),(-1,-1)]
-    deadline=time.monotonic()+4
+    deadline=time.monotonic()+budget_seconds
     expanded=0
     while queue:
         _,_,g,u=heapq.heappop(queue)

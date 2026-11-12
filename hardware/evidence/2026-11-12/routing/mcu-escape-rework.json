@@ -1,0 +1,27 @@
+{
+  "source_sha256": "83980bb1b31570523b3f397b9a5202cca34a726523a2911e4365ab782179562f",
+  "candidate_sha256": "40b4ab8ab8936caeb09e776a75e81ecd19168797a168c04d9e7f8948dfe78d69",
+  "reworked_nets": [
+    "AUD_SDA",
+    "LINK_CTS",
+    "MCU_NRST",
+    "MCU_SWO",
+    "MCU_UART_TX",
+    "RAD_IO_DISABLE",
+    "SD_POWER_EN"
+  ],
+  "removed_inner_segments": 24,
+  "new_inner_segments": 50,
+  "unchanged_other_pads_and_copper_verified": true,
+  "total_copper_items": 448,
+  "unrouted_connections": 495,
+  "native_layout_violations": 0,
+  "laser_geometry_violations": 0,
+  "escape_reservations": {
+    "result": "pass",
+    "reserved_mcu_pads": 68,
+    "collisions": [],
+    "scope": "Remaining MCU In1 escape sites only; other packages, final escape and manufacturing remain unqualified"
+  },
+  "manufacturing_ready": false
+}

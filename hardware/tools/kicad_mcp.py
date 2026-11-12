@@ -110,9 +110,11 @@ def accept_qualified_copper(qualification_path: str) -> dict:
     digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
     assert record['native_layout_violations']==0 and record['added_copper_items']>0
     assert record['laser_geometry_violations']==0,'Supplemental laser-via check required'
+    assert record['mcu_escape_collisions']==0,'Remaining MCU escape check required'
     assert record['accepted_net_groups'],'No accepted copper'
     assert not json.loads((path.parent/'drc.json').read_text())['violations']
     assert not json.loads((path.parent/'laser-geometry.json').read_text())['violations']
+    assert not json.loads((path.parent/'mcu-escape-reservations.json').read_text())['collisions']
     assert digest(candidate)==record['candidate_sha256'],'Candidate changed'
     with write_lock:
         client,board=connected_board()

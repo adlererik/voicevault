@@ -50,7 +50,7 @@ def candidates(data,pad,gateway=False):
                     if actual<.255:blocked=True;break
                 continue
             # Copper plus the default 0.25mm drill-edge to foreign-pad clearance.
-            via_clear=.355 if 'ref' in other else .33
+            via_clear=.355 if 'ref' in other or other.get('kind')=='via' else .33
             if other['net']=='GND' and other.get('ref') in ['U8','U601','U602','U401','U1001']:
                 via_clear=max(via_clear,.55) # preserve room for outer-plane thermals
             if point.distance(g)<via_clear:blocked=True;break
@@ -65,7 +65,29 @@ def candidates(data,pad,gateway=False):
         if not blocked:
             possible.append(dict(kind='via',microvia=False,net=net,x=xy[0],y=xy[1],w=.45,drill=.2,layers=LAYERS,
                                  face=face,pad=[pad['x'],pad['y']]))
-    return sorted(possible,key=lambda p:math.dist(p['pad'],[p['x'],p['y']]))[:12 if gateway else 6]
+    inner_shapes=[obstacles(data,net,layer) for layer in ['In2.Cu','In3.Cu']]
+    def preference(v):
+        a=[v['x'],v['y']]
+        # A safe via can still be trapped inside a ring of existing copper.
+        # Prefer an endpoint with at least one clear inner-layer exit.
+        clear=any(not any(LineString([a,[a[0]+dx,a[1]+dy]]).intersects(g) for g in shapes)
+                  for shapes in inner_shapes for dx,dy in [(1,0),(-1,0),(0,1),(0,-1)])
+        return not clear,math.dist(v['pad'],a)
+    return sorted(possible,key=preference)[:12 if gateway else 6]
+
+
+def surface_escape(data,pad):
+    """Try a bent surface path to an ordinary via before adding a laser hole."""
+    face=next(l for l in ['F.Cu','B.Cu'] if l in pad['layers'])
+    shapes=obstacles(data,pad['net'],face)
+    for gateway in candidates(data,pad,gateway=True)[:6]:
+        path,_=search([pad['x'],pad['y']],[gateway['x'],gateway['y']],shapes,
+                      margin=1.5,budget_seconds=.75)
+        if path:
+            gateway['escape_routes']=[dict(net=pad['net'],layer=face,width_mm=WIDTH,points=path)]
+            gateway['extra_vias']=[]
+            return gateway
+    return None
 
 
 def hybrid_escape(data,pad):
@@ -85,7 +107,8 @@ def hybrid_escape(data,pad):
         if t['kind']=='via':
             actual=point.distance(Point(t['x'],t['y']))-(.1+t['drill'])/2
             if actual<(.13 if t['net']==pad['net'] else .24)+.005:return None
-        if t['net']!=pad['net'] and point.distance(shape(t))<.23:return None
+        required=.305 if t['kind']=='via' else .23
+        if t['net']!=pad['net'] and point.distance(shape(t))<required:return None
     proposed=deepcopy(data);proposed['tracks'].append(micro)
     gateways=candidates(proposed,pad,gateway=True)
     for gateway in gateways[:8]:
@@ -111,6 +134,9 @@ def main():
         local=deepcopy(data);choices=[];why='no ordinary escape'
         for pad in pads:
             options=candidates(local,pad)
+            if not options:
+                surface=surface_escape(local,pad)
+                if surface:options=[surface]
             if not options and args.allow_laser_escapes:
                 hybrid=hybrid_escape(local,pad)
                 if hybrid:options=[hybrid]

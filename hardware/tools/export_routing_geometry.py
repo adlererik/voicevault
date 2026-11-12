@@ -4,6 +4,7 @@ import pcbnew,json,hashlib,argparse
 from pathlib import Path
 r=Path(__file__).resolve().parents[2]
 parser=argparse.ArgumentParser();parser.add_argument('--board',type=Path,default=r/'hardware/rev-b/voicevault-standalone-b0.kicad_pcb')
+parser.add_argument('--output',type=Path,default=r/'.lab-cache/hardware/routing-b0/obstacles.json')
 args=parser.parse_args();src=args.board.resolve();assert src.is_file(),src
 b=pcbnew.LoadBoard(str(src));assert b is not None,"Native board load failed"
 layers=['F.Cu','In1.Cu','In2.Cu','In3.Cu','In4.Cu','B.Cu'];pads=[];tracks=[]
@@ -16,7 +17,13 @@ for f in b.GetFootprints():
 for t in b.GetTracks():
  if isinstance(t,pcbnew.PCB_VIA):tracks.append(dict(kind='via',microvia=t.GetViaType()==pcbnew.VIATYPE_MICROVIA,net=t.GetNetname(),x=t.GetPosition().x/1e6,y=t.GetPosition().y/1e6,w=t.GetWidth(t.TopLayer())/1e6,drill=t.GetDrillValue()/1e6,layers=layers[min(layers.index(b.GetLayerName(t.TopLayer())),layers.index(b.GetLayerName(t.BottomLayer()))):max(layers.index(b.GetLayerName(t.TopLayer())),layers.index(b.GetLayerName(t.BottomLayer())))+1]))
  else:tracks.append(dict(kind='track',net=t.GetNetname(),start=[t.GetStart().x/1e6,t.GetStart().y/1e6],end=[t.GetEnd().x/1e6,t.GetEnd().y/1e6],w=t.GetWidth()/1e6,layers=[b.GetLayerName(t.GetLayer())]))
-output=r/'.lab-cache/hardware/routing-b0/obstacles.json'
+output=args.output
 output.parent.mkdir(parents=True,exist_ok=True)
-output.write_text(json.dumps(dict(source_sha256=hashlib.sha256(src.read_bytes()).hexdigest(),pads=pads,tracks=tracks),indent=2)+'\n')
+payload=dict(source_sha256=hashlib.sha256(src.read_bytes()).hexdigest(),pads=pads,tracks=tracks)
+policy=r/'.lab-runs/hardware/standalone-b0/mcu-escape-reservations.json'
+if policy.exists():
+ profile=json.loads(policy.read_text())
+ if profile.get('result')=='pass' and profile.get('source_sha256')==payload['source_sha256']:
+  payload['reservations']=profile['reserved_sites']
+output.write_text(json.dumps(payload,indent=2)+'\n')
 print('Exported',len(pads),'copper/mechanical pads and',len(tracks),'fixed tracks/vias.')

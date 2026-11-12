@@ -15,6 +15,7 @@ import subprocess
 
 import pcbnew
 from check_hdi_geometry import audit as audit_laser_geometry
+from check_mcu_escape_reservations import audit as audit_mcu_reservations
 
 ROOT = Path(__file__).resolve().parents[2]
 DESIGN = ROOT / 'hardware/rev-b'
@@ -122,11 +123,13 @@ def main():
         drc = json.loads(report_path.read_text())
         shutil.copy2(report_path, args.output_dir / f'drc-attempt-{attempt:02}.json')
         violations = drc.get('violations', [])
-        if not violations:
+        reservations=audit_mcu_reservations(board,drc)
+        if not violations and not reservations['collisions']:
             break
         by_id = {item.m_Uuid.AsString(): item.GetNetname() for item in new}
         rejected = {by_id[i['uuid']] for v in violations for i in v['items']
                     if i.get('uuid') in by_id}
+        rejected |= {c['blocker'] for c in reservations['collisions']} & set(by_id.values())
         # A new route can starve an old ground thermal without being named in
         # the two-item violation. Reject nearby new routes conservatively.
         for violation in violations:
@@ -143,7 +146,8 @@ def main():
                     if box.Contains(point):
                         rejected.add(item.GetNetname())
         assert rejected, 'DRC failure cannot be attributed safely; candidate rejected.'
-        rounds.append(dict(attempt=attempt, violations=len(violations), rejected_nets=sorted(rejected)))
+        rounds.append(dict(attempt=attempt, violations=len(violations),
+                           blocked_mcu_escape_sites=len(reservations['collisions']),rejected_nets=sorted(rejected)))
         for item in list(new):
             if item.GetNetname() in rejected:
                 new.remove(item)
@@ -155,6 +159,8 @@ def main():
     laser=laser_geometry(board)
     (args.output_dir/'laser-geometry.json').write_text(json.dumps(laser,indent=2)+'\n')
     assert not laser['violations'],'Supplemental laser-hole geometry failed; candidate rejected'
+    assert not reservations['collisions'],'Future MCU escape sites blocked'
+    (args.output_dir/'mcu-escape-reservations.json').write_text(json.dumps(reservations,indent=2)+'\n')
     summary = dict(source_sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
         study_sha256=hashlib.sha256(args.candidate.read_bytes()).hexdigest(),
         candidate_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),
@@ -162,7 +168,8 @@ def main():
         accepted_net_groups=sorted({item.GetNetname() for item in new}),
         added_copper_items=len(new), total_copper_items=len(list(board.GetTracks())),
         unrouted_connections=board.GetConnectivity().GetUnconnectedCount(False),
-        native_layout_violations=0, laser_geometry_violations=0, laser_vias=laser['laser_vias'], manufacturing_ready=False,
+        native_layout_violations=0, laser_geometry_violations=0, laser_vias=laser['laser_vias'],
+        mcu_escape_collisions=0,reserved_mcu_pads=reservations['reserved_mcu_pads'],manufacturing_ready=False,
         scope='Native copper/connectivity only; signal integrity, power, RF and manufacturing remain unqualified')
     (args.output_dir / 'qualification.json').write_text(json.dumps(summary, indent=2)+'\n')
     print(json.dumps(summary, indent=2))

@@ -1,0 +1,51 @@
+{
+  "source_sha256": "f843771c1cda381fc7658babdd7cbde0388de070aaaba50a2bddb1e8173a889a",
+  "study_sha256": "1e8d2ab3b6c0a8aefa83f3acc8f5fd61524f91fc8081376aae8f68425b4e9b62",
+  "candidate_sha256": "83980bb1b31570523b3f397b9a5202cca34a726523a2911e4365ab782179562f",
+  "offered_net_groups": [
+    "AUD_POWER_EN",
+    "AUD_RESET_N",
+    "BTN_UPDATE_N",
+    "LCD_TE",
+    "LINK_CTS",
+    "MCU_NRST",
+    "MCU_SWO",
+    "MCU_UART_TX",
+    "RAD_IO_DISABLE",
+    "SD_POWER_EN",
+    "TOUCH_RESET_N",
+    "TOUCH_SCL",
+    "TOUCH_SDA"
+  ],
+  "rejected_rounds": [
+    {
+      "attempt": 0,
+      "violations": 6,
+      "rejected_nets": [
+        "TOUCH_SDA"
+      ]
+    }
+  ],
+  "accepted_net_groups": [
+    "AUD_POWER_EN",
+    "AUD_RESET_N",
+    "BTN_UPDATE_N",
+    "LCD_TE",
+    "LINK_CTS",
+    "MCU_NRST",
+    "MCU_SWO",
+    "MCU_UART_TX",
+    "RAD_IO_DISABLE",
+    "SD_POWER_EN",
+    "TOUCH_RESET_N",
+    "TOUCH_SCL"
+  ],
+  "added_copper_items": 205,
+  "total_copper_items": 422,
+  "unrouted_connections": 495,
+  "native_layout_violations": 0,
+  "laser_geometry_violations": 0,
+  "laser_vias": 31,
+  "manufacturing_ready": false,
+  "scope": "Native copper/connectivity only; signal integrity, power, RF and manufacturing remain unqualified"
+}

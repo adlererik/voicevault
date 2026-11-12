@@ -1,6 +1,6 @@
 # VoiceVault hardware laboratory
 
-The active design is the **[standalone Rev B prototype](rev-b/README.md)**: a rectangular 70 × 45 mm SMD board using Safe 7 core ICs, with audio, microSD, independent debug interfaces and sourceable display/battery candidates. It contains **296 electrical components, 14 probe pads and four mounting holes**. Routing includes the RF feed, MCU ground escapes, a PMIC capacitor connection and sixteen control nets; 520 connections remain open. **Manufacturing remains blocked.** [Status](rev-b/STATUS.json) · [Actual B0 images and results](evidence/2026-11-12/README.md)
+The active design is the **[standalone Rev B prototype](rev-b/README.md)**: a rectangular 70 × 45 mm SMD board using Safe 7 core ICs, with audio, microSD, independent debug interfaces and sourceable display/battery candidates. It contains **296 electrical components, 14 probe pads and four mounting holes**. Routing includes the RF feed, MCU ground escapes, a PMIC capacitor connection and twenty-eight control nets; 495 connections remain open. **Manufacturing remains blocked.** [Status](rev-b/STATUS.json) · [Actual B0 images and results](evidence/2026-11-12/README.md)
 
 ## Open the active PCB
 

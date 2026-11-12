@@ -1,5 +1,7 @@
 # Routing method and provisional process
 
+The owner-directed workflow now exports the saved placement as Specctra DSN, runs the official FreeRouting CLI headlessly, imports its SES copper into the live editor through kipy, then refills zones and runs native DRC. The local coordinate-proposal methods below are retained as historical/review tools, rather than the default workflow.
+
 This is unfinished engineering CAD. [STATUS.json](STATUS.json) records the latest
 checked board state; [evidence](../evidence/2026-11-12/README.md) records accepted
 stages. No gerbers or assembly data are released for ordering.

@@ -1,0 +1,758 @@
+{
+  "result": "pass",
+  "reserved_mcu_pads": 68,
+  "reserved_sites": [
+    {
+      "ref": "U1",
+      "pin": "A6",
+      "net": "PMIC_SCL",
+      "x": 57.6,
+      "y": 42.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "A9",
+      "net": "TR_IRQ",
+      "x": 60.0,
+      "y": 42.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "A10",
+      "net": "QI_SCL",
+      "x": 60.8,
+      "y": 42.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "B1",
+      "net": "AUD_MCLK",
+      "x": 53.6,
+      "y": 43.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "B2",
+      "net": "AUD_ADC_DATA",
+      "x": 54.4,
+      "y": 43.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "B6",
+      "net": "QI_IRQ_N",
+      "x": 57.6,
+      "y": 43.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "B7",
+      "net": "NFC_HOST_IRQ",
+      "x": 58.4,
+      "y": 43.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "B12",
+      "net": "PMIC_IRQ",
+      "x": 62.4,
+      "y": 43.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "C1",
+      "net": "MCU_LSE_IN",
+      "x": 53.6,
+      "y": 44.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "C2",
+      "net": "MCU_VBAT_3V3",
+      "x": 54.4,
+      "y": 44.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "C3",
+      "net": "AUD_WCLK",
+      "x": 55.2,
+      "y": 44.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "C4",
+      "net": "AUD_BCLK",
+      "x": 56.0,
+      "y": 44.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "C5",
+      "net": "LCD_RESET_N",
+      "x": 56.8,
+      "y": 44.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "C6",
+      "net": "PMIC_SDA",
+      "x": 57.6,
+      "y": 44.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "C7",
+      "net": "QI_SDA",
+      "x": 58.4,
+      "y": 44.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "C10",
+      "net": "MCU_SWDIO",
+      "x": 60.8,
+      "y": 44.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "D2",
+      "net": "MCU_LSE_OUT",
+      "x": 54.4,
+      "y": 45.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "D3",
+      "net": "AUD_DAC_DATA",
+      "x": 55.2,
+      "y": 45.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "D4",
+      "net": "MCU_VDD11",
+      "x": 56.0,
+      "y": 45.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "D8",
+      "net": "TOUCH_SDA",
+      "x": 59.2,
+      "y": 45.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "D10",
+      "net": "VDD_3V3",
+      "x": 60.8,
+      "y": 45.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "E3",
+      "net": "VDD_3V3",
+      "x": 55.2,
+      "y": 45.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "E4",
+      "net": "SD_DETECT_N",
+      "x": 56.0,
+      "y": 45.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "E6",
+      "net": "VDD_3V3",
+      "x": 57.6,
+      "y": 45.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "E8",
+      "net": "VDD_3V3",
+      "x": 59.2,
+      "y": 45.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "E10",
+      "net": "VDD_3V3",
+      "x": 60.8,
+      "y": 45.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "F4",
+      "net": "AUD_SCL",
+      "x": 56.0,
+      "y": 46.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "F5",
+      "net": "VDD_3V3",
+      "x": 56.8,
+      "y": 46.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "F9",
+      "net": "SD_CS_MCU",
+      "x": 60.0,
+      "y": 46.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "F11",
+      "net": "TR_CS",
+      "x": 61.6,
+      "y": 46.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "G3",
+      "net": "MCU_VDD11",
+      "x": 55.2,
+      "y": 47.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "G5",
+      "net": "SD_MISO_MCU",
+      "x": 56.8,
+      "y": 47.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "G8",
+      "net": "VDD_3V3",
+      "x": 59.2,
+      "y": 47.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "G10",
+      "net": "VDD_3V3",
+      "x": 60.8,
+      "y": 47.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "H3",
+      "net": "VDD_3V3",
+      "x": 55.2,
+      "y": 48.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "H5",
+      "net": "VDD_3V3",
+      "x": 56.8,
+      "y": 48.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "H6",
+      "net": "NFC_IO_DISABLE",
+      "x": 57.6,
+      "y": 48.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "H7",
+      "net": "VDD_3V3",
+      "x": 58.4,
+      "y": 48.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "H11",
+      "net": "PMIC_GPIO3",
+      "x": 61.6,
+      "y": 48.2,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "J4",
+      "net": "VDD_3V3",
+      "x": 56.0,
+      "y": 49.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "J5",
+      "net": "NFC_POWER_EN",
+      "x": 56.8,
+      "y": 49.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "J6",
+      "net": "QI_DISABLE",
+      "x": 57.6,
+      "y": 49.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "J7",
+      "net": "BTN_RESET_N",
+      "x": 58.4,
+      "y": 49.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "J8",
+      "net": "HAPTIC_IRQ_N",
+      "x": 59.2,
+      "y": 49.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "J9",
+      "net": "MCU_VDD11",
+      "x": 60.0,
+      "y": 49.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "J10",
+      "net": "VDD_3V3",
+      "x": 60.8,
+      "y": 49.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "J12",
+      "net": "PMIC_GPIO2",
+      "x": 62.4,
+      "y": 49.0,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "K3",
+      "net": "LINK_RTS",
+      "x": 55.2,
+      "y": 49.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "K4",
+      "net": "NFC_HOST_SCK",
+      "x": 56.0,
+      "y": 49.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "K6",
+      "net": "SD_IO_DISABLE",
+      "x": 57.6,
+      "y": 49.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "K9",
+      "net": "OP_SDA",
+      "x": 60.0,
+      "y": 49.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "K10",
+      "net": "LINK_PENDING",
+      "x": 60.8,
+      "y": 49.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "K11",
+      "net": "OP_SCL",
+      "x": 61.6,
+      "y": 49.8,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "L1",
+      "net": "TOUCH_IRQ_N",
+      "x": 53.6,
+      "y": 50.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "L2",
+      "net": "LINK_TX",
+      "x": 54.4,
+      "y": 50.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "L3",
+      "net": "NFC_HOST_CS_N",
+      "x": 55.2,
+      "y": 50.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "L4",
+      "net": "NFC_HOST_MOSI",
+      "x": 56.0,
+      "y": 50.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "L7",
+      "net": "TR_PWR_OFF",
+      "x": 58.4,
+      "y": 50.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "L10",
+      "net": "TR_MISO",
+      "x": 60.8,
+      "y": 50.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "L11",
+      "net": "OP_RESET_N",
+      "x": 61.6,
+      "y": 50.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "L12",
+      "net": "OP_PWR_OFF",
+      "x": 62.4,
+      "y": 50.6,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "M2",
+      "net": "LINK_RX",
+      "x": 54.4,
+      "y": 51.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "M3",
+      "net": "NFC_HOST_MISO",
+      "x": 55.2,
+      "y": 51.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "M5",
+      "net": "HAPTIC_RESET_N",
+      "x": 56.8,
+      "y": 51.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "M8",
+      "net": "VDD_3V3",
+      "x": 59.2,
+      "y": 51.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "M9",
+      "net": "TR_MOSI",
+      "x": 60.0,
+      "y": 51.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "M10",
+      "net": "TR_SCK",
+      "x": 60.8,
+      "y": 51.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "M11",
+      "net": "LINK_CREDIT",
+      "x": 61.6,
+      "y": 51.4,
+      "w": 0.25,
+      "layers": [
+        "In1.Cu"
+      ]
+    }
+  ],
+  "collisions": [],
+  "scope": "Remaining MCU In1 escape sites only; other packages, final escape and manufacturing remain unqualified",
+  "negative_control": "Foreign inner-layer branch through a reserved MCU site rejected in a memory-only copy",
+  "source_sha256": "40b4ab8ab8936caeb09e776a75e81ecd19168797a168c04d9e7f8948dfe78d69"
+}

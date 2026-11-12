@@ -1,7 +1,7 @@
 {
-  "source_sha256": "af6458fa74cd15a6e426358d042b2268443f6d9413658f60e70112ce9b02fc8f",
-  "study_sha256": "396264a08c4bd2e8e3d6bd1ac38dabc1af28719ef3f1375652acc898ec2c68c6",
-  "candidate_sha256": "da163110c9691c150fae2113d96fdd8bfa115723cc834f45aa49eded00a9353b",
+  "source_sha256": "7e500114a2268d8016c175099da4ee0b0c64ba79b872806f525313fd024c255a",
+  "study_sha256": "3dc10ca0ccde7570c5c0b62767da90d2617cde09c51183943213861674bc3518",
+  "candidate_sha256": "0d6219ed71dc6e442c388ec1b6bc2b18683912eaec72679f84027c6cc3b6e022",
   "offered_net_groups": [
     "RAD_ANT",
     "SD_CS_MCU"
@@ -19,9 +19,11 @@
     "RAD_ANT"
   ],
   "added_copper_items": 1,
-  "total_copper_items": 22,
-  "unrouted_connections": 545,
+  "total_copper_items": 200,
+  "unrouted_connections": 524,
   "native_layout_violations": 0,
+  "laser_geometry_violations": 0,
+  "laser_vias": 7,
   "manufacturing_ready": false,
   "scope": "Native copper/connectivity only; signal integrity, power, RF and manufacturing remain unqualified",
   "live_design_unchanged": true,

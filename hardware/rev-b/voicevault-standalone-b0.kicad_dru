@@ -17,3 +17,6 @@
 (rule "Provisional HDI: different-net mechanical via holes"
   (condition "A.Type == 'Via' && B.Type == 'Via' && A.Net != B.Net")
   (constraint hole_to_hole (min 0.24mm)))
+
+# JLC HDI laser-via annulus; mechanical-via minimum is unchanged.
+(rule "HDI laser-via annulus" (condition "A.isMicroVia()") (constraint annular_width (min 0.075mm)))

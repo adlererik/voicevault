@@ -1,0 +1,43 @@
+{
+  "source_sha256": "66670c17a982b2b0b226b829825bba1870b171ace67910e3b3cfac0416c96361",
+  "study_sha256": "32e034681ade13e9b0d3c405afd16334de1b5c5df665a305c454c957a4575edb",
+  "candidate_sha256": "1c473f586c39a51d2d04520c427ba506d51b0ddc0a45b2badde8effea1a01819",
+  "offered_net_groups": [
+    "AUD_RESET_N",
+    "AUD_SDA",
+    "BACKLIGHT_PWM",
+    "LCD_SCK",
+    "LCD_SDI",
+    "LCD_SDO",
+    "MCU_BOOT0",
+    "NFC_IRQ",
+    "PMIC_VSET1",
+    "PMIC_VSET2"
+  ],
+  "rejected_rounds": [
+    {
+      "attempt": 0,
+      "violations": 3,
+      "rejected_nets": [
+        "AUD_RESET_N",
+        "AUD_SDA"
+      ]
+    }
+  ],
+  "accepted_net_groups": [
+    "BACKLIGHT_PWM",
+    "LCD_SCK",
+    "LCD_SDI",
+    "LCD_SDO",
+    "MCU_BOOT0",
+    "NFC_IRQ",
+    "PMIC_VSET1",
+    "PMIC_VSET2"
+  ],
+  "added_copper_items": 72,
+  "total_copper_items": 126,
+  "unrouted_connections": 535,
+  "native_layout_violations": 0,
+  "manufacturing_ready": false,
+  "scope": "Native copper/connectivity only; signal integrity, power, RF and manufacturing remain unqualified"
+}

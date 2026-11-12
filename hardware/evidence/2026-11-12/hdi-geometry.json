@@ -1,0 +1,17 @@
+{
+  "laser_vias": 7,
+  "overlapping_hole_pairs_checked": 256,
+  "foreign_track_pairs_checked": 569,
+  "violations": [],
+  "source_sha256": "7e500114a2268d8016c175099da4ee0b0c64ba79b872806f525313fd024c255a",
+  "result": "pass",
+  "negative_control": "Foreign laser hole at 0.20mm center spacing rejected in memory-only copy",
+  "live_design_unchanged": true,
+  "source": "https://jlcpcb.com/help/article/hdi-pcb-capabilities-faq",
+  "scope": "Nominal hole/capture/span/trace geometry; native DRC covers component holes and copper.",
+  "unresolved": [
+    "Exact factory dielectric construction and laser aspect ratio",
+    "Filled/planarized via-in-pad, mask/paste and assembly acceptance"
+  ],
+  "manufacturing_ready": false
+}

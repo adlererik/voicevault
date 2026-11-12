@@ -196,6 +196,14 @@ def main():
                        rejected=['unrelated antenna-area route'],
                        original_pads_and_copper_preserved=True, live_design_unchanged=True,
                        scope='Copy-only CAD acceptance guard; not signal-integrity or manufacturing qualification'))
+    laser_audit=run([sys.executable,ROOT/'hardware/tools/check_hdi_geometry.py'],'hdi-geometry.log')
+    if laser_audit.returncode:
+        raise RuntimeError('Laser-via geometry/negative control failed')
+    laser_data=json.loads((OUT/'hdi-geometry.json').read_text())
+    checks.append(dict(check='Supplemental laser-via geometry',result='pass',
+                       laser_vias=laser_data['laser_vias'],negative_control='pass',
+                       live_design_unchanged=True,scope=laser_data['scope'],
+                       unresolved=laser_data['unresolved']))
     data = json.loads((OUT / 'drc.json').read_text())
     available_failed = erc.returncode != 0 or bool(data.get('violations'))
     checks.append(dict(check='Draft electrical/layout state', result='fail' if available_failed else 'incomplete',

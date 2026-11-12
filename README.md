@@ -18,9 +18,9 @@ The active **[standalone B0 design](hardware/rev-b/README.md)** is a custom **70
 
 ![Actual native KiCad B0 routing progress](hardware/evidence/2026-11-12/routing-progress.png)
 
-*Routing has started with the radio feed and ground reference pours. Available checks cover all 144 MCU balls, 29 selected peripheral functions, schematic-to-pad correspondence, electrical rules and an antenna-rule negative control. The actual circuit models include 799 passive/static cases. [Images, raw reports and model limits](hardware/evidence/2026-11-12/README.md)*
+*Routing includes the radio feed, MCU ground escapes, a shortened PMIC capacitor connection and sixteen control nets. Available checks cover all 144 MCU balls, 29 selected peripheral functions, schematic-to-pad correspondence, electrical rules and an antenna-rule negative control. The actual circuit models include 799 passive/static cases. [Images, raw reports and model limits](hardware/evidence/2026-11-12/README.md)*
 
-**Manufacturing remains blocked:** 545 connections remain unrouted, exact sourcing and the HDI stackup need acceptance, and power/RF/audio/charging/isolation need physical qualification. The [circuit inventory](hardware/rev-b/circuit-inventory.csv) is not an approved JLCPCB BOM. [Cost comparison for four assemblies delivered to Sweden](hardware/rev-b/MANUFACTURING_COST.md). No board has been ordered or built. The earlier DK2 carrier and Nucleo assessment remain historical reference work in the [hardware laboratory](hardware/README.md).
+**Manufacturing remains blocked:** 524 connections remain unrouted, exact sourcing and the HDI stackup need acceptance, and power/RF/audio/charging/isolation need physical qualification. The [circuit inventory](hardware/rev-b/circuit-inventory.csv) is not an approved JLCPCB BOM. [Cost comparison for four assemblies delivered to Sweden](hardware/rev-b/MANUFACTURING_COST.md). No board has been ordered or built. The earlier DK2 carrier and Nucleo assessment remain historical reference work in the [hardware laboratory](hardware/README.md).
 
 ## The idea: move the endpoint
 
@@ -116,7 +116,7 @@ The UI opens at **http://127.0.0.1:8765/** for every run. Two device panels show
 
 The intended device has a trusted color display and controls, analog headset jack, independent battery, inductive charging and a separate BLE controller. Persistent secrets and protected state should use appropriate secure-element capabilities. A small protected first-stage verifier and physically initiated offline updates are part of the intended boot design. The inspiration is the Safe 7 separation of host and sensitive operations; this is an independent voice design with different workloads and requirements.
 
-The proposed next hardware-design step is a KiCad block schematic. Define the trusted audio path, isolated radio, and locally authorized microSD update path. Use focused simulations to prepare a development-board measurement plan before routing a custom PCB. Real-time audio, radio containment, hardware entropy, durable storage, trusted UI and acoustic leakage need physical evidence. Decentralized signaling, possibly through interchangeable Nostr relay adapters, remains a future investigation. The proposed clear glitter enclosure and signed reference photos are separate physical tamper-evidence research.
+The next hardware work is to finish the standalone B0 placement and routing, review power/clock/RF/return paths, finalize exact sourcing and prepare a controlled bring-up plan. Focused simulations guide the measurements needed on physical prototypes. Real-time audio, radio containment, hardware entropy, durable storage, trusted UI and acoustic leakage need physical evidence. Decentralized signaling, possibly through interchangeable Nostr relay adapters, remains a future investigation. The proposed clear glitter enclosure and signed reference photos are separate physical tamper-evidence research.
 
 [Device vision](docs/PROJECT_VISION.md) · [Hardware comparison](docs/DEVICE_RATIONALE.md) · [Safe 7 reference and prototype plan](docs/HARDWARE_PLAN.md) · [Roadmap and decision gates](docs/ROADMAP.md)
 

@@ -14,6 +14,7 @@ import shutil
 import subprocess
 
 import pcbnew
+from check_hdi_geometry import audit as audit_laser_geometry
 
 ROOT = Path(__file__).resolve().parents[2]
 DESIGN = ROOT / 'hardware/rev-b'
@@ -36,6 +37,22 @@ def geometry(board, item):
                    (item.GetEnd().x, item.GetEnd().y)])
     return ('track', item.GetNetname(), board.GetLayerName(item.GetLayer()),
             item.GetWidth(), *ends)
+
+
+def laser_geometry(board):
+    layers=['F.Cu','In1.Cu','In2.Cu','In3.Cu','In4.Cu','B.Cu']
+    tracks=[]
+    for item in board.GetTracks():
+        if isinstance(item,pcbnew.PCB_VIA):
+            start,end=sorted([layers.index(board.GetLayerName(item.TopLayer())),layers.index(board.GetLayerName(item.BottomLayer()))])
+            tracks.append(dict(kind='via',microvia=item.GetViaType()==pcbnew.VIATYPE_MICROVIA,
+                net=item.GetNetname(),x=item.GetPosition().x/1e6,y=item.GetPosition().y/1e6,
+                w=item.GetWidth(item.TopLayer())/1e6,drill=item.GetDrillValue()/1e6,layers=layers[start:end+1]))
+        else:
+            tracks.append(dict(kind='track',net=item.GetNetname(),w=item.GetWidth()/1e6,
+                start=[item.GetStart().x/1e6,item.GetStart().y/1e6],end=[item.GetEnd().x/1e6,item.GetEnd().y/1e6],
+                layers=[board.GetLayerName(item.GetLayer())]))
+    return audit_laser_geometry(dict(tracks=tracks))
 
 
 def main():
@@ -72,6 +89,7 @@ def main():
             added.SetViaType(item.GetViaType())
             added.SetLayerPair(board.GetLayerID(candidate.GetLayerName(item.TopLayer())),
                                board.GetLayerID(candidate.GetLayerName(item.BottomLayer())))
+            added.SetRemoveUnconnected(item.GetRemoveUnconnected())
         else:
             assert type(item) == pcbnew.PCB_TRACK, 'Unsupported proposed copper type'
             added = pcbnew.PCB_TRACK(board)
@@ -90,6 +108,7 @@ def main():
         (DESIGN / 'fp-lib-table').read_text().replace('${KIPRJMOD}', str(DESIGN)))
     rounds = []
     for attempt in range(len(initial_nets) + 1):
+        board.BuildConnectivity()
         pcbnew.ZONE_FILLER(board).Fill(board.Zones())
         board.BuildConnectivity()
         board.GetConnectivity().RecalculateRatsnest()
@@ -101,6 +120,7 @@ def main():
             str(report_path), str(target)], capture_output=True, text=True, timeout=90)
         assert result.returncode == 0, result.stdout + result.stderr
         drc = json.loads(report_path.read_text())
+        shutil.copy2(report_path, args.output_dir / f'drc-attempt-{attempt:02}.json')
         violations = drc.get('violations', [])
         if not violations:
             break
@@ -132,6 +152,9 @@ def main():
         raise RuntimeError('Candidate did not converge to clean layout DRC')
     assert signature(board) == original_pads, 'Pad positions or net assignments changed'
     assert fixed <= {geometry(board, item) for item in board.GetTracks()}, 'Fixed copper changed'
+    laser=laser_geometry(board)
+    (args.output_dir/'laser-geometry.json').write_text(json.dumps(laser,indent=2)+'\n')
+    assert not laser['violations'],'Supplemental laser-hole geometry failed; candidate rejected'
     summary = dict(source_sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
         study_sha256=hashlib.sha256(args.candidate.read_bytes()).hexdigest(),
         candidate_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),
@@ -139,7 +162,7 @@ def main():
         accepted_net_groups=sorted({item.GetNetname() for item in new}),
         added_copper_items=len(new), total_copper_items=len(list(board.GetTracks())),
         unrouted_connections=board.GetConnectivity().GetUnconnectedCount(False),
-        native_layout_violations=0, manufacturing_ready=False,
+        native_layout_violations=0, laser_geometry_violations=0, laser_vias=laser['laser_vias'], manufacturing_ready=False,
         scope='Native copper/connectivity only; signal integrity, power, RF and manufacturing remain unqualified')
     (args.output_dir / 'qualification.json').write_text(json.dumps(summary, indent=2)+'\n')
     print(json.dumps(summary, indent=2))

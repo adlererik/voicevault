@@ -1,17 +1,17 @@
 {
-  "stage": "Partial RF/ground and MCU switching-node routing; HDI escapes and remaining routing incomplete",
+  "stage": "Partial MCU ground, PMIC capacitor and control routing; power/clock/RF routing and HDI review incomplete",
   "manufacturing_ready": false,
-  "last_checked_utc": "2026-11-12T09:29:11.023355+00:00",
+  "last_checked_utc": "2026-11-12T14:52:43.400060+00:00",
   "native_component_count": 296,
   "physical_footprints": 314,
   "board_only_probe_pads": 14,
   "mounting_holes": 4,
   "named_copper_nets": 199,
-  "unrouted_connections": 545,
+  "unrouted_connections": 524,
   "listed_unconnected_drc_items": 499,
   "layout_violations": 0,
   "erc_issues": 0,
-  "routed_tracks_or_vias": 21,
+  "routed_tracks_or_vias": 199,
   "antenna_rule_areas": 1,
   "spice_model_cases": 799,
   "latest_evidence": "../evidence/2026-11-12/README.md",
@@ -28,7 +28,11 @@
     "Verified live MCP status through the actual stdio-to-IPC connection",
     "Started native RF/ground routing and four reference pours; preserved pad nets and passed native checks",
     "Added and checked the MCU switching-node connection and refined RF ground-via separation",
-    "Added a copy-only copper import positive/negative control to the default hardware checks"
+    "Added a copy-only copper import positive/negative control to the default hardware checks",
+    "Added 14 ordinary MCU ground escapes and shortened the PMIC VBUSOUT capacitor connection",
+    "Accepted two batches of eight control nets through hash-bound local KiCad MCP",
+    "Added supplemental laser-hole geometry checks with an injected-fault negative control",
+    "Verified MCP rejection of changed candidates and stale source hashes"
   ],
   "next_design_work": [
     "Manual fine-pitch escape and clock/decoupling placement review before another whole-board autorouter trial",
@@ -39,6 +43,9 @@
     "No JLCPCB accepted exact BOM / CPL / DFM or functional-test release",
     "No assembled-board measurements or hardware qualification"
   ],
-  "note": "Snapshot only. Nineteen track segments, two ground vias and four ground pours are accepted as draft CAD work; most progress from 853 to 545 open connections comes from pours. No fabrication release, procurement acceptance or assembled-board evidence.",
-  "ground_pours": 4
+  "note": "Snapshot only. 157 track segments, 42 vias (7 laser) and four ground pours are accepted as draft CAD. Most reduction from 853 to 524 open connections still comes from pours. No fabrication release, procurement acceptance or assembled-board evidence.",
+  "ground_pours": 4,
+  "track_segments": 157,
+  "vias": 42,
+  "laser_vias": 7
 }

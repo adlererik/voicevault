@@ -1,7 +1,7 @@
 {
   "project": "VoiceVault standalone B0",
   "manufacturing": "BLOCKED",
-  "created_utc": "2026-11-12T09:29:11.023355+00:00",
+  "created_utc": "2026-11-12T14:52:43.400060+00:00",
   "native_components": 296,
   "native_nets": 323,
   "named_copper_nets": 199,
@@ -25,8 +25,8 @@
     "circuit-radio.kicad_sch": "5b50bbb81f4c96fb9c5f7a41fd594d5234d9fb62c92bec0f7ffe9cbd80ea50ac",
     "circuit-secure.kicad_sch": "ad3b40d47b43be1cfa263d9e394eeb3789b669b862aae1b95c27380cc5937c28",
     "circuits.json": "9afff39a406d8511701294a1fb952621c96b29a5a52362383821031a18c5bd2a",
-    "voicevault-standalone-b0.kicad_dru": "81d0793afbb854a0687f1210da5b52e50bd165b6e795c35592d3e03016892303",
-    "voicevault-standalone-b0.kicad_pcb": "af6458fa74cd15a6e426358d042b2268443f6d9413658f60e70112ce9b02fc8f",
+    "voicevault-standalone-b0.kicad_dru": "94725abf8938710e16a198f88953e127bdee9b963592a788dd275d1eea022c3e",
+    "voicevault-standalone-b0.kicad_pcb": "7e500114a2268d8016c175099da4ee0b0c64ba79b872806f525313fd024c255a",
     "voicevault-standalone-b0.kicad_pro": "5256a09f5a354630f503ebf68de644493e788705bf393ec1bf32cbc44f5bdcf8",
     "voicevault-standalone-b0.kicad_sch": "4aff8a30f97d8e211587a9f093470309eeb43777150e19b134ae700bb44b2869"
   },
@@ -92,13 +92,25 @@
       "scope": "Copy-only CAD acceptance guard; not signal-integrity or manufacturing qualification"
     },
     {
+      "check": "Supplemental laser-via geometry",
+      "result": "pass",
+      "laser_vias": 7,
+      "negative_control": "pass",
+      "live_design_unchanged": true,
+      "scope": "Nominal hole/capture/span/trace geometry; native DRC covers component holes and copper.",
+      "unresolved": [
+        "Exact factory dielectric construction and laser aspect ratio",
+        "Filled/planarized via-in-pad, mask/paste and assembly acceptance"
+      ]
+    },
+    {
       "check": "Draft electrical/layout state",
       "result": "incomplete",
       "erc_exit_code": 0,
       "drc_exit_code": 5,
-      "unrouted": 545,
+      "unrouted": 524,
       "unconnected_violations_listed": 499,
-      "tracks_and_vias": 21,
+      "tracks_and_vias": 199,
       "zones": 5,
       "layout_violations": 0,
       "detail": "Unrouted circuit connections remain visible; a clean clearance check is not a routed-board release."

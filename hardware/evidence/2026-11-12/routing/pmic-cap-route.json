@@ -1,0 +1,35 @@
+{
+  "root_source_sha256": "dcaacd9b5a0b1b81518f404a9ecc457c594a6252249fa01afd5861b4bf183a7e",
+  "candidate_sha256": "66670c17a982b2b0b226b829825bba1870b171ace67910e3b3cfac0416c96361",
+  "moves": {
+    "R103": [
+      67,
+      47.5,
+      0
+    ],
+    "R105": [
+      67,
+      49.0,
+      0
+    ],
+    "C118": [
+      48.3,
+      58.7,
+      270
+    ]
+  },
+  "original_copper_items": 49,
+  "new_copper_items": 5,
+  "total_copper_items": 54,
+  "logical_pad_net_and_sizes_preserved": true,
+  "native_layout_violations": 0,
+  "unrouted_connections": 544,
+  "pmic_mask_aperture_mm": 0.315,
+  "microvia": {
+    "diameter_mm": 0.25,
+    "drill_mm": 0.1,
+    "span": "F.Cu-In1.Cu",
+    "copper_filled_planarized_required": true
+  },
+  "manufacturing_ready": false
+}

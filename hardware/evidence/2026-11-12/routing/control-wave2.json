@@ -1,0 +1,34 @@
+{
+  "source_sha256": "1c473f586c39a51d2d04520c427ba506d51b0ddc0a45b2badde8effea1a01819",
+  "study_sha256": "8cc8251e6239f48f06a705d0c56e35c22a3f79506747c121dc671e51bc65f37f",
+  "candidate_sha256": "7e500114a2268d8016c175099da4ee0b0c64ba79b872806f525313fd024c255a",
+  "offered_net_groups": [
+    "AUD_SDA",
+    "LCD_CS_N",
+    "MCU_SWCLK",
+    "MCU_UART_RX",
+    "RAD_RESET_ASSERT",
+    "RAD_RTS",
+    "SD_MOSI_MCU",
+    "SD_SCK_MCU"
+  ],
+  "rejected_rounds": [],
+  "accepted_net_groups": [
+    "AUD_SDA",
+    "LCD_CS_N",
+    "MCU_SWCLK",
+    "MCU_UART_RX",
+    "RAD_RESET_ASSERT",
+    "RAD_RTS",
+    "SD_MOSI_MCU",
+    "SD_SCK_MCU"
+  ],
+  "added_copper_items": 73,
+  "total_copper_items": 199,
+  "unrouted_connections": 524,
+  "native_layout_violations": 0,
+  "laser_geometry_violations": 0,
+  "laser_vias": 7,
+  "manufacturing_ready": false,
+  "scope": "Native copper/connectivity only; signal integrity, power, RF and manufacturing remain unqualified"
+}

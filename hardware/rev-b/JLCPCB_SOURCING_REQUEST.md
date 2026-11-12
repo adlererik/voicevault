@@ -22,7 +22,7 @@ Please confirm:
 Please keep any procurement or assembly proposal separate from an order commitment. We have not supplied manufacturing-ready files or authorized purchasing parts.
 
 
-Current native project: 296 electrical components plus 14 probe pads/four mounting holes, 19 routed track segments, two ground vias, four GND pours and 545 open connections. The circuit inventory is a requirements/selection record, not an approved BOM. The Hirose DM3AT microSD connector has discontinued variants; confirm exact available stock or review a sourceable replacement. No quote response, stackup acceptance or procurement allocation has been received. The sourcing request is ready to discuss these constraints but is not an order-ready fabrication package.
+Current native project: 296 electrical components plus 14 probe pads/four mounting holes, 19 routed track segments, two ground vias, four GND pours and 524 open connections. The circuit inventory is a requirements/selection record, not an approved BOM. The Hirose DM3AT microSD connector has discontinued variants; confirm exact available stock or review a sourceable replacement. No quote response, stackup acceptance or procurement allocation has been received. The sourcing request is ready to discuss these constraints but is not an order-ready fabrication package.
 
 ## Prepare a review bundle
 

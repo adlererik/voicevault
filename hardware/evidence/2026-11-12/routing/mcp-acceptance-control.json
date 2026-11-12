@@ -1,0 +1,16 @@
+{
+  "source_sha256": "1c473f586c39a51d2d04520c427ba506d51b0ddc0a45b2badde8effea1a01819",
+  "checks": [
+    {
+      "case": "changed candidate",
+      "rejected": true,
+      "live_design_unchanged": true
+    },
+    {
+      "case": "stale source",
+      "rejected": true,
+      "live_design_unchanged": true
+    }
+  ],
+  "scope": "Actual local MCP rejection checks; no candidate accepted by these fault tests"
+}

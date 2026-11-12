@@ -1,0 +1,18 @@
+{
+  "source_sha256": "af6458fa74cd15a6e426358d042b2268443f6d9413658f60e70112ce9b02fc8f",
+  "study_sha256": "5fe73f497ed6e94c8854e967fedcb5d46fb9073a07c8366a22f002853673ea90",
+  "candidate_sha256": "dcaacd9b5a0b1b81518f404a9ecc457c594a6252249fa01afd5861b4bf183a7e",
+  "offered_net_groups": [
+    "GND"
+  ],
+  "rejected_rounds": [],
+  "accepted_net_groups": [
+    "GND"
+  ],
+  "added_copper_items": 28,
+  "total_copper_items": 49,
+  "unrouted_connections": 545,
+  "native_layout_violations": 0,
+  "manufacturing_ready": false,
+  "scope": "Native copper/connectivity only; signal integrity, power, RF and manufacturing remain unqualified"
+}

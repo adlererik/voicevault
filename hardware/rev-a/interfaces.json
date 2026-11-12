@@ -1,0 +1,360 @@
+{
+  "format": 1,
+  "description": "Cabled carrier ports. Port numbers are carrier pin numbers. Cable by signal label to vendor modules. These are not drop-in module footprints.",
+  "ports": [
+    {
+      "ref": "J1",
+      "name": "DK2 CN1 extension",
+      "pins": [
+        "GND",
+        "3V3",
+        "GND",
+        "3V3",
+        "GND",
+        "3V3",
+        "GND",
+        "SE_IRQ",
+        "GND",
+        "MIC_SENSE",
+        "GND",
+        "UPDATE_BUTTON",
+        "GND",
+        "AUDIO_FS",
+        "GND",
+        "SPARE_PC10",
+        "GND",
+        "SPARE_PC11",
+        "GND",
+        "AUDIO_ADC",
+        "GND",
+        "SPARE_PD5",
+        "GND",
+        "SPARE_PD7",
+        "GND",
+        "SPARE_PE2",
+        "GND",
+        "SPARE_PE3",
+        "GND",
+        "SPARE_PF2",
+        "GND",
+        "SPARE_PG9",
+        "GND",
+        "SPARE_PG10",
+        "GND",
+        "SPARE_PG12",
+        "GND",
+        "SPARE_PG15",
+        "GND",
+        "3V3"
+      ],
+      "columns": 2,
+      "at": [
+        35,
+        35
+      ],
+      "sch": [
+        40,
+        45
+      ]
+    },
+    {
+      "ref": "J2",
+      "name": "DK2 CN4 digital",
+      "pins": [
+        "AUDIO_DAC",
+        "SE_CS",
+        "SD_CS",
+        "SE_MOSI",
+        "SE_MISO",
+        "SE_SCK",
+        "GND",
+        null,
+        "CTRL_SDA",
+        "CTRL_SCL"
+      ],
+      "at": [
+        60,
+        35
+      ],
+      "sch": [
+        100,
+        45
+      ]
+    },
+    {
+      "ref": "J3",
+      "name": "DK2 CN6 digital",
+      "pins": [
+        "RADIO_TX_TO_MCU",
+        "MCU_TX_TO_RADIO",
+        "SPARE_PB11",
+        "SPARE_PA8",
+        "AUDIO_BCLK",
+        "SPARE_PB10",
+        "SPARE_PA0",
+        "AUDIO_MCLK"
+      ],
+      "at": [
+        80,
+        35
+      ],
+      "sch": [
+        100,
+        85
+      ]
+    },
+    {
+      "ref": "J4",
+      "name": "DK2 CN7 analog",
+      "pins": [
+        "SD_MISO",
+        "SPARE_PC3",
+        "RADIO_CREDIT",
+        "RADIO_PENDING",
+        "SD_SCK",
+        "SD_MOSI"
+      ],
+      "at": [
+        100,
+        35
+      ],
+      "sch": [
+        100,
+        120
+      ]
+    },
+    {
+      "ref": "J5",
+      "name": "DK2 CN5 power",
+      "pins": [
+        null,
+        null,
+        null,
+        "3V3",
+        "5V_SYS",
+        "GND",
+        "GND",
+        null
+      ],
+      "at": [
+        120,
+        35
+      ],
+      "sch": [
+        100,
+        155
+      ]
+    },
+    {
+      "ref": "J6",
+      "name": "WM8960 digital harness",
+      "pins": [
+        "3V3",
+        "GND",
+        "5V_SYS",
+        "CTRL_SDA",
+        "CTRL_SCL",
+        "AUDIO_MCLK",
+        "AUDIO_BCLK",
+        "AUDIO_FS",
+        "AUDIO_FS",
+        "AUDIO_DAC",
+        "AUDIO_ADC",
+        "GND"
+      ],
+      "at": [
+        155,
+        35
+      ],
+      "sch": [
+        175,
+        45
+      ]
+    },
+    {
+      "ref": "J7",
+      "name": "nRF52840 radio harness",
+      "pins": [
+        "5V_SYS",
+        "GND",
+        "MCU_TX_TO_RADIO",
+        "RADIO_TX_TO_MCU",
+        "RADIO_CREDIT",
+        "RADIO_PENDING"
+      ],
+      "at": [
+        155,
+        75
+      ],
+      "sch": [
+        175,
+        90
+      ]
+    },
+    {
+      "ref": "J8",
+      "name": "TROPIC Click harness",
+      "pins": [
+        "3V3",
+        "GND",
+        "SE_CS",
+        "SE_SCK",
+        "SE_MOSI",
+        "SE_MISO",
+        "SE_IRQ"
+      ],
+      "at": [
+        60,
+        80
+      ],
+      "sch": [
+        175,
+        120
+      ]
+    },
+    {
+      "ref": "J9",
+      "name": "OPTIGA Trust M harness",
+      "pins": [
+        "3V3",
+        "GND",
+        "CTRL_SDA",
+        "CTRL_SCL"
+      ],
+      "at": [
+        85,
+        80
+      ],
+      "sch": [
+        175,
+        155
+      ]
+    },
+    {
+      "ref": "J10",
+      "name": "microSD SPI harness",
+      "pins": [
+        "3V3",
+        "GND",
+        "SD_CS",
+        "SD_SCK",
+        "SD_MOSI",
+        "SD_MISO"
+      ],
+      "at": [
+        110,
+        80
+      ],
+      "sch": [
+        250,
+        45
+      ]
+    },
+    {
+      "ref": "J11",
+      "name": "Codec analog harness",
+      "pins": [
+        "HP_L_RAW",
+        "HP_R_RAW",
+        "GND",
+        "MICBIAS",
+        "CODEC_MIC",
+        "GND"
+      ],
+      "at": [
+        150,
+        110
+      ],
+      "sch": [
+        250,
+        80
+      ]
+    },
+    {
+      "ref": "J12",
+      "name": "CTIA headset harness",
+      "pins": [
+        "HP_L",
+        "HP_R",
+        "GND",
+        "HEADSET_MIC"
+      ],
+      "at": [
+        125,
+        120
+      ],
+      "sch": [
+        250,
+        110
+      ]
+    },
+    {
+      "ref": "J13",
+      "name": "Qi receiver output",
+      "pins": [
+        "QI_5V",
+        "GND"
+      ],
+      "at": [
+        35,
+        125
+      ],
+      "sch": [
+        40,
+        165
+      ]
+    },
+    {
+      "ref": "J14",
+      "name": "BQ24074 charger harness",
+      "pins": [
+        "QI_5V",
+        "GND",
+        "CHARGER_OUT",
+        "GND"
+      ],
+      "at": [
+        55,
+        125
+      ],
+      "sch": [
+        40,
+        185
+      ]
+    },
+    {
+      "ref": "J15",
+      "name": "5V regulator harness",
+      "pins": [
+        "CHARGER_OUT",
+        "GND",
+        "5V_SYS",
+        "GND"
+      ],
+      "at": [
+        80,
+        125
+      ],
+      "sch": [
+        100,
+        190
+      ]
+    },
+    {
+      "ref": "J16",
+      "name": "Local update button",
+      "pins": [
+        "UPDATE_BUTTON",
+        "GND"
+      ],
+      "at": [
+        110,
+        120
+      ],
+      "sch": [
+        250,
+        135
+      ]
+    }
+  ]
+}

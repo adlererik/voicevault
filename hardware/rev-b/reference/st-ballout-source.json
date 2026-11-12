@@ -1,0 +1,6 @@
+{
+  "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32U5G9ZJJxQ.xml",
+  "commit": "7d1f1514ed5583ec5007ad91236b4e1d377295b1",
+  "sha256": "0e1f9cc90b2de934061711ce525709518007fb00caa73cf5ea61f0aa1213b6fe",
+  "document": "Official STMicroelectronics CubeMX pin data for exact UFBGA144 device"
+}

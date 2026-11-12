@@ -1,0 +1,1 @@
+(fp_lib_table (lib (name "VoiceVault_B0") (type "KiCad") (uri "${KIPRJMOD}/VoiceVault_B0.pretty") (options "") (descr "Stock footprint starting points - connector MPN pending")))

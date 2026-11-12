@@ -6,6 +6,8 @@ The reference capacity is an STM32U585-class Cortex-M33: 2 MiB flash and 768 KiB
 
 The diagnostic runs on QEMU MPS2 AN505, which emulates Cortex-M33 CPU execution. Its secure memory addresses differ from STM32 addresses, and it does not emulate STM32 peripherals. It is not proof of TrustZone isolation. [QEMU board documentation](https://www.qemu.org/docs/master/system/arm/mps2.html)
 
+For the planned STM32U5G board, see the [validation plan and checked register map](STM32U5G_VALIDATION.md).
+
 ## What executes
 
 The program completes a full Noise XX enrollment and fingerprint confirmation, seals/restores contact state, verifies signed invitations, compares accepted-call bindings, rejects privileged radio commands, exercises a modeled signed offline install/boot/rollback, and injects onboard entropy sources. It then completes the hybrid X25519 and ML-KEM-768 exchange through both bounded startup flights and processes 32 real 20 ms audio frames through Opus encoding, Noise media encryption, bounded fragmentation/reassembly, authentication and decoding. A diagnostic peer echoes the encoded audio; only one encoder and one decoder are allocated, as required per physical endpoint. The extra peer's crypto state is included in the memory measurement. This is not a two-device acoustic call.
@@ -33,3 +35,8 @@ python3 scripts/platform_check.py /absolute/path/to/platform-report
 ```
 
 The code deliberately uses public fixture identities, release signing keys and deterministic randomness. The resulting ELF is named `PUBLIC-TEST-KEYS-DO-NOT-FLASH.elf`. It is not production firmware. The run demonstrates linked capacity and functional CPU execution for specified paths. It does not measure real-time throughput, power, radio behavior, real interrupts, peripheral memory, complete erasure, worst-case stack, fault resistance or acoustic security.
+
+
+## Active custom-board target
+
+The current [standalone B0 design](../hardware/rev-b/README.md) uses STM32U5G9ZJJ6Q in UFBGA144, the Safe 7 source package, with SAI1 audio and additional power/interface circuits. The DK2 LQFP part and older carrier are distinct. The CPU probe evidence above does not include B0 peripheral drivers, display buffers, board-specific startup, secure-element firmware, radio DMA/isolation or a complete board memory map. Its capacity result is not proof that the finished device fits, meets deadlines or behaves securely. Record a fresh linked board-firmware memory report and actual sample/interrupt/denial traces before expanding that claim.

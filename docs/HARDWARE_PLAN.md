@@ -1,3 +1,5 @@
+> **Current active design, 2026-11-12:** [VoiceVault standalone B0](../hardware/rev-b/README.md), STM32U5G9ZJJ6Q UFBGA144, replaces the development-board approach for the new prototype. It has a native hierarchical circuit and two-sided placement, with routing, sourcing/HDI acceptance and physical qualification incomplete. The DK2/Nucleo discussion below is historical bench planning. No hardware was fabricated.
+
 # From the Safe 7 reference to a VoiceVault prototype
 
 Start with a KiCad block schematic and a table that maps each interface to its trust boundary. That work can proceed in software while the protocol receives independent review. Use the schematic to decide what to model and what to measure on a development board before routing a compact custom PCB.
@@ -36,6 +38,8 @@ The existing QEMU run demonstrated functional Cortex-M33 execution and fit again
 
 There is no single simulation that validates the entire device. Use each model for a specific question and carry its untested assumptions into the bench plan. [KiCad SPICE](https://www.kicad.org/discover/spice/) · [QEMU MPS2 board model](https://www.qemu.org/docs/master/system/arm/mps2.html) · [Renode peripheral modeling](https://renode.readthedocs.io/en/latest/advanced/writing-peripherals.html)
 
+The [STM32U5G validation plan](STM32U5G_VALIDATION.md) records the candidate device map, a tested example of an incomplete model and the model-to-board comparisons to make.
+
 ## Offline microSD update design
 
 Treat the microSD card as untrusted storage. The user enters update mode through local physical controls. Suspend calls and disable the radio in that mode. Prefer a fixed location and a small bounded signed image format so the immutable verifier can stay small. The protected boot chain verifies the target, image length, release signature, digest and version. Stream bytes into the inactive internal flash bank using bounded buffers. Verify the programmed image from flash before marking it bootable and advancing the protected version. The processor boots only from verified internal flash. Preserve recovery from an interrupted update with an authenticated image that still meets the protected version floor. [Software update policy](../crates/protocol/src/update.rs)
@@ -50,3 +54,7 @@ The current model accepts an in-memory byte slice. The board needs a bounded str
 4. Use those results to choose the final parts and route the custom board. Validate RF, power, acoustic leakage, debug lockdown, real key erasure and the independent review findings on assembled hardware. The nearby compromised phone and its possible acoustic pickup remain part of the operating setup.
 
 The first useful deliverable is a reviewable schematic and test plan that tells us which design assumptions to retire. The prototype should earn its own evidence even when it shares parts or design ideas with a wallet.
+
+## Review-stage implementation
+
+The [hardware laboratory](../hardware/README.md) now contains the native carrier project, candidate BOM, wiring plan, circuit models and strict observable-result gates. The [recorded run](../hardware/evidence/2026-11-11/README.md) preserves their results and open hardware requirements. The owner proposed a removable NUCLEO-U5A5ZJ-Q after the initial DK2 draft. Its [assessment](../hardware/reference/NUCLEO_U5A5_ASSESSMENT.md) records the MCU, footprint and target-verification changes to evaluate.

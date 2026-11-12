@@ -1,0 +1,75 @@
+{
+  "repository": "https://github.com/trezor/trezor-hardware",
+  "commit": "d99ad42320a19875c124445195fa56f0dbaff6db",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/README.md",
+      "sha256": "68c9ba5b412856e0b131163e6d28f949728327626c1dce29d0f13c9e4c8d53b1",
+      "bytes": 627
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/LICENSE",
+      "sha256": "253ad3f89603e728abfa60c36fbcaf8225cf55c1eab12725f19fb3d74d647f3a",
+      "bytes": 13419,
+      "local_copy": "reference/UPSTREAM_LICENSE"
+    },
+    {
+      "path": "COPYING",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/COPYING",
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "bytes": 34523,
+      "local_copy": "reference/UPSTREAM_COPYING"
+    },
+    {
+      "path": "electronics/trezor_safe_7/README.md",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/electronics/trezor_safe_7/README.md",
+      "sha256": "b0901bc73547a31b0ba80156aad635c9bd4c3f516fb291d035f4bb7d8b894d13",
+      "bytes": 387,
+      "local_copy": "reference/UPSTREAM_SAFE7_README.md"
+    },
+    {
+      "path": "electronics/trezor_safe_7/TS7 rev_D/ts7_fpc_ant_rev_d_sch.pdf",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/electronics/trezor_safe_7/TS7%20rev_D/ts7_fpc_ant_rev_d_sch.pdf",
+      "sha256": "9354b3670417034873514045a440c807cb13962e0a454e39c3f8329accf377ef",
+      "bytes": 53340,
+      "local_copy": "reference/ts7_fpc_ant_rev_d_sch.pdf"
+    },
+    {
+      "path": "electronics/trezor_safe_7/TS7 rev_D/ts7_fpc_ant_rev_d_views.pdf",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/electronics/trezor_safe_7/TS7%20rev_D/ts7_fpc_ant_rev_d_views.pdf",
+      "sha256": "16b7e83042942d07517532252b182c03ebd3df1be2847beeda89afe782062cdf",
+      "bytes": 280975,
+      "local_copy": "reference/ts7_fpc_ant_rev_d_views.pdf"
+    },
+    {
+      "path": "electronics/trezor_safe_7/TS7 rev_D/ts7_fpc_ui_rev_d_sch.pdf",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/electronics/trezor_safe_7/TS7%20rev_D/ts7_fpc_ui_rev_d_sch.pdf",
+      "sha256": "e3444c018b5fc030971782e551c5f20e9152dbe0d3b58e0dda1e19105fcc678f",
+      "bytes": 58977,
+      "local_copy": "reference/ts7_fpc_ui_rev_d_sch.pdf"
+    },
+    {
+      "path": "electronics/trezor_safe_7/TS7 rev_D/ts7_fpc_ui_rev_d_views.pdf",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/electronics/trezor_safe_7/TS7%20rev_D/ts7_fpc_ui_rev_d_views.pdf",
+      "sha256": "7913c5c984744130410ff4a183594069077195202d4e010ffa7432aeadc7d060",
+      "bytes": 204821,
+      "local_copy": "reference/ts7_fpc_ui_rev_d_views.pdf"
+    },
+    {
+      "path": "electronics/trezor_safe_7/TS7 rev_D/ts7_main_rev_d_sch.pdf",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/electronics/trezor_safe_7/TS7%20rev_D/ts7_main_rev_d_sch.pdf",
+      "sha256": "f772fe1f33a294683abfd9a8f64dc728598a6d12d9f02b043afe2a0b7e8bda61",
+      "bytes": 3115068,
+      "local_copy": "reference/ts7_main_rev_d_sch.pdf"
+    },
+    {
+      "path": "electronics/trezor_safe_7/TS7 rev_D/ts7_main_rev_d_views.pdf",
+      "url": "https://raw.githubusercontent.com/trezor/trezor-hardware/d99ad42320a19875c124445195fa56f0dbaff6db/electronics/trezor_safe_7/TS7%20rev_D/ts7_main_rev_d_views.pdf",
+      "sha256": "23cec9c1f635053ff12c90fe06c686e447d22f1e3714f77d1552be85b9d83a02",
+      "bytes": 468143,
+      "local_copy": "reference/ts7_main_rev_d_views.pdf"
+    }
+  ]
+}

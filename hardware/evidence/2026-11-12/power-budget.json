@@ -1,0 +1,173 @@
+{
+  "status": "ALLOCATION STUDY; NOT HARDWARE QUALIFICATION",
+  "rail_allocations_ma": {
+    "VDD_3V3": 175,
+    "AUX_3V3": 70,
+    "AUD_LDOIN_3V3": 200,
+    "SD_3V3": 250,
+    "NFC_3V3": 150
+  },
+  "backlight_worst_modeled_output_w": 0.3575739069865319,
+  "battery_candidate": "Adafruit 258 / 1200mAh protected pack; exact delivered pack must be checked",
+  "battery_rating_ma": 1200,
+  "battery_design_allocation_ma": 960,
+  "full_operation_minimum_vsys_v": 3.6,
+  "modes": [
+    {
+      "vsys_v": 3.6,
+      "mode": "call",
+      "modeled_input_ma": 623.1639470320488,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 3.6,
+      "mode": "call+haptic-burst",
+      "modeled_input_ma": 773.1639470320488,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 3.6,
+      "mode": "offline-update",
+      "modeled_input_ma": 673.1639470320488,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 3.6,
+      "mode": "NFC-enrollment",
+      "modeled_input_ma": 573.1639470320488,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 3.6,
+      "mode": "all-features-at-allocation",
+      "modeled_input_ma": 1173.1639470320488,
+      "fits_960ma_design_allocation": false
+    },
+    {
+      "vsys_v": 3.7,
+      "mode": "call",
+      "modeled_input_ma": 611.9973538690205,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 3.7,
+      "mode": "call+haptic-burst",
+      "modeled_input_ma": 761.9973538690205,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 3.7,
+      "mode": "offline-update",
+      "modeled_input_ma": 661.9973538690205,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 3.7,
+      "mode": "NFC-enrollment",
+      "modeled_input_ma": 561.9973538690205,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 3.7,
+      "mode": "all-features-at-allocation",
+      "modeled_input_ma": 1161.9973538690206,
+      "fits_960ma_design_allocation": false
+    },
+    {
+      "vsys_v": 4.2,
+      "mode": "call",
+      "modeled_input_ma": 564.1405260274704,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 4.2,
+      "mode": "call+haptic-burst",
+      "modeled_input_ma": 714.1405260274704,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 4.2,
+      "mode": "offline-update",
+      "modeled_input_ma": 614.1405260274704,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 4.2,
+      "mode": "NFC-enrollment",
+      "modeled_input_ma": 514.1405260274704,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 4.2,
+      "mode": "all-features-at-allocation",
+      "modeled_input_ma": 1114.1405260274705,
+      "fits_960ma_design_allocation": false
+    },
+    {
+      "vsys_v": 4.7,
+      "mode": "call",
+      "modeled_input_ma": 526.4660019819949,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 4.7,
+      "mode": "call+haptic-burst",
+      "modeled_input_ma": 676.4660019819949,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 4.7,
+      "mode": "offline-update",
+      "modeled_input_ma": 576.4660019819949,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 4.7,
+      "mode": "NFC-enrollment",
+      "modeled_input_ma": 476.46600198199485,
+      "fits_960ma_design_allocation": true
+    },
+    {
+      "vsys_v": 4.7,
+      "mode": "all-features-at-allocation",
+      "modeled_input_ma": 1076.4660019819949,
+      "fits_960ma_design_allocation": false
+    }
+  ],
+  "thermal_reference_estimates": [
+    {
+      "load": "audio",
+      "current_a": 0.2,
+      "assumed_input_v": 5.2,
+      "dissipation_w": 0.3800000000000001,
+      "reference_theta_ja_c_per_w": 100.2,
+      "estimated_junction_at_50c": 88.07600000000002
+    },
+    {
+      "load": "microSD",
+      "current_a": 0.25,
+      "assumed_input_v": 5.2,
+      "dissipation_w": 0.4750000000000001,
+      "reference_theta_ja_c_per_w": 100.2,
+      "estimated_junction_at_50c": 97.59500000000001
+    },
+    {
+      "load": "NFC",
+      "current_a": 0.15,
+      "assumed_input_v": 5.2,
+      "dissipation_w": 0.28500000000000003,
+      "reference_theta_ja_c_per_w": 100.2,
+      "estimated_junction_at_50c": 78.557
+    }
+  ],
+  "limitations": [
+    "MCU/codec/radio/secure-element current allocations are not measurements or proven maxima",
+    "Efficiencies, load steps and wiring losses require bench correlation",
+    "Reject all-features concurrency; offline updates and NFC enrollment exclude active audio",
+    "500mAh candidate lacks worst-case call headroom; 100mA USB cannot independently sustain a full call",
+    "The 500mA USB resettable fuse and source/CC limit remain binding; battery supplementation is required at modeled peak call load",
+    "Charge current must yield to system budget; NTC/current/temperature configuration is not implemented device firmware",
+    "JEDEC thermal resistance is a reference, not a measured temperature in this enclosure",
+    "Below 3.6V, suspend full operation until dropout behavior and supply margins are measured; battery PCM cutoff is not the operational threshold"
+  ]
+}

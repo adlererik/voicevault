@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+voicevault_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+if [[ "${1:-}" == "--rev-a" ]]; then
+    shift
+    exec python3 "$voicevault_root/hardware/tools/check.py" "$@"
+fi
+exec python3 "$voicevault_root/hardware/tools/check_standalone.py" "$@"

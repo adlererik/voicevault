@@ -1,0 +1,8 @@
+{
+  "url": "https://www.ti.com/lit/ds/symlink/tlv755p.pdf",
+  "sha256": "43ff53fb1eca7df105c4b3c26017052aef20bf5eae154c45b175dbd9e71dca0c",
+  "revision": "SBVS320D September 2024; appended DRV drawing 4222173/C November 2025",
+  "thermal_assumption": "100.2 degC/W DRV JEDEC reference; actual six-layer thermal design unmeasured",
+  "land_status": "Manufacturer copper/paste example transcribed; assembly review pending",
+  "sequencing_reference": "SLAA492A internal DLDO/ALDO, IOVDD before or simultaneous with LDOIN"
+}

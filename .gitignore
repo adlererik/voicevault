@@ -8,3 +8,13 @@
 __pycache__/
 
 /platform/target/
+
+/hardware/rev-a/*.kicad_prl
+/hardware/rev-a/*-backups/
+/hardware/rev-a/~*.lck
+/hardware/rev-a/fp-info-cache
+/hardware/**/.history/
+/hardware/rev-b/*.kicad_prl
+/hardware/rev-b/*-backups/
+/hardware/rev-b/~*.lck
+/hardware/rev-b/fp-info-cache

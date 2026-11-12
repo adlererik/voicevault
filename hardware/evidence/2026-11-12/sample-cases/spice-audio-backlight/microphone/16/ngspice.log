@@ -1,0 +1,15 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: voicevault b0 microphone disconnect and ac input
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 265
+gain_100            =  -2.25213e+02
+gain_1000           =  -2.04869e+02
+gain_16000          =  -1.80784e+02
+ngspice-47 done

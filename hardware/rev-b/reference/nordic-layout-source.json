@@ -1,0 +1,13 @@
+{
+  "url": "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/reference-layouts/npm1300/wlcsp/npm1300-caaa-reference-layout-1_1.zip",
+  "archive_sha256": "eea987a3f0722f58547adba1f79adc5f5bcd64f973c2819049c21041a4b88730",
+  "footprint": "nPM1300_CAAA_Nordic",
+  "method": "KiCad Altium importer, normalize rotation/position, remove nets and project links; footprint geometry retained",
+  "pin_count": 35,
+  "pitch_mm": [
+    0.419,
+    0.44
+  ],
+  "pad_diameter_mm": 0.21,
+  "source_configuration": 3
+}

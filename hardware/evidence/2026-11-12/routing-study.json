@@ -1,0 +1,10 @@
+{
+  "result": "INCOMPLETE: 480-second timeout; no accepted route",
+  "tool": "Freerouting 2.5.0 JAR",
+  "input_sha256": "7ec21bd2517152a0a2cb9416e7625a751629060929b8f89ca46799955979b3fd",
+  "dsn_sha256": "529195be3b83f14269b9d29e98ad8dc2613ab85bc51755da907bba9285a4710d",
+  "memory_limit_mib": 850,
+  "java_heap_mib": 512,
+  "applied_to_live_board": false,
+  "scope": "Earlier circuit/placement copy; predates final VSYS/backlight and antenna rule changes; fanout progress is not routing completion"
+}

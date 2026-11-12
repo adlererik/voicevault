@@ -1,0 +1,18 @@
+{
+  "checked": "2026-11-12",
+  "sources": [
+    {
+      "name": "Samtec FTSH footprint H",
+      "url": "https://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-footprint.pdf",
+      "sha256": "caa205b92560423f3b0aea9c69d6c38340d1b7f01b0655092994450e935edcb3"
+    },
+    {
+      "name": "TDK manufacturer-authored catalogue mirror",
+      "url": "https://resources.anglia.com/pdf/product/tdk/datasheets/VLS252012HBX-2R2M-1.pdf",
+      "sha256": "1305610f866e3c41f1ef40fe907506039dbe6207c799d0a1075735dbe37c1314"
+    }
+  ],
+  "tdk_primary_page": "https://product.tdk.com/en/search/inductor/inductor/smd/info?part_no=VLS252012HBX-2R2M-1",
+  "tdk_land_pattern_status": "Stock 2520 pad is a candidate, exact manufacturer land/assembly review pending",
+  "header_status": "Manufacturer copper geometry transcribed; mating orientation/fixture and assembly acceptance pending"
+}

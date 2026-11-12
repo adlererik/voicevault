@@ -5,3 +5,13 @@ vendor/*.patch whitespace=-blank-at-eol
 
 # Keep captured diagnostic logs byte-for-byte, including upstream whitespace.
 docs/evidence/** whitespace=-blank-at-eol,-blank-at-eof
+
+# Preserve raw hardware evidence and upstream notices exactly as recorded.
+hardware/evidence/** whitespace=-blank-at-eol,-blank-at-eof
+hardware/rev-b/reference/UPSTREAM_* whitespace=-blank-at-eol,-blank-at-eof
+hardware/**/*.csv text eol=lf
+# Manufacturer-derived library bytes and vendor license notices.
+hardware/rev-b/VoiceVault_B0.pretty/TROPIC01_QFN32_vendor.kicad_mod whitespace=-blank-at-eol
+hardware/rev-b/VoiceVault_B0.pretty/nPM1300_CAAA_Nordic.kicad_mod whitespace=-blank-at-eol
+hardware/rev-b/VoiceVault_B0.pretty/nRF52832_CIAA_Nordic.kicad_mod whitespace=-blank-at-eol
+hardware/rev-b/reference/*LICENSE* whitespace=-blank-at-eol,-blank-at-eof

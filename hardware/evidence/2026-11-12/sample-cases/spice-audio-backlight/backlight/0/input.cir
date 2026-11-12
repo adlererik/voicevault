@@ -1,0 +1,21 @@
+VoiceVault B0 static backlight sharing / open-load sensitivity
+* Ideal total-current regulator and fixed-Vf LED branches. NO converter silicon model.
+Ireg 0 anode 0.040016501650165015
+Rsense fb 0 12.12
+Rleak anode 0 1e9
+Vmon1 anode p1 0
+Bled1 p1 fb I=max((v(p1,fb)-2.7)/198,0)
+Vmon2 anode p2 0
+Bled2 p2 fb I=max((v(p2,fb)-2.7)/202,0)
+Vmon3 anode p3 0
+Bled3 p3 fb I=max((v(p3,fb)-2.7)/202,0)
+Vmon4 anode p4 0
+Bled4 p4 fb I=max((v(p4,fb)-2.7)/202,0)
+Bclamp anode fb I=max((v(anode,fb)-5.9)/10,0)
+.nodeset v(anode)=6 v(fb)=.5
+.control
+op
+print v(anode) v(fb) i(vmon1) i(vmon2) i(vmon3) i(vmon4)
+quit
+.endc
+.end

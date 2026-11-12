@@ -1,0 +1,43 @@
+{
+  "project": "VoiceVault standalone B0",
+  "manufacturing": "BLOCKED",
+  "checks": [
+    {
+      "check": "Unmodified reference copies",
+      "result": "pass",
+      "files": 9
+    },
+    {
+      "check": "Exported MCU / STDC14 connections",
+      "result": "pass",
+      "exact_signal_nets": 6,
+      "grounds_and_vref": true
+    },
+    {
+      "check": "Exported MCU power network",
+      "result": "pass",
+      "mcu_symbol_balls": 144,
+      "decoupling_capacitors": 28,
+      "note": "Connectivity only; exact passive MPNs, power source and routing remain incomplete."
+    },
+    {
+      "check": "Draft electrical/layout state",
+      "result": "incomplete",
+      "erc_exit_code": 5,
+      "drc_exit_code": 5,
+      "unrouted": 101,
+      "layout_violations": 0,
+      "detail": "Unconnected pins and unrouted debug/power nets remain visible."
+    }
+  ],
+  "blockers": [
+    "MCU, debug and internal SMPS/decoupling draft only; other circuits absent",
+    "PMIC, charging, clocks, reset and protection incomplete; power network requires review",
+    "Authorized display/battery equivalents, coil and assembly sourcing not yet selected",
+    "Audio, microSD and separate radio debug design incomplete",
+    "Stackup, routing, footprint and independent electrical review incomplete",
+    "No JLCPCB accepted exact BOM / CPL / DFM or functional-test release",
+    "No assembled-board measurements or hardware qualification"
+  ],
+  "hardware_security_or_functionality_proven": false
+}

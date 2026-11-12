@@ -1,0 +1,40 @@
+{
+  "tools": [
+    "get_status",
+    "list_footprints",
+    "list_nets",
+    "move_footprint",
+    "save_board"
+  ],
+  "status": {
+    "connected": true,
+    "backend": "KiCad IPC",
+    "version": "10.0.8 (10.0.8)",
+    "board": "/home/erikclean/src/secure-voice-lab/hardware/rev-a/voicevault-reva.kicad_pcb",
+    "footprints": 30,
+    "nets": 34
+  },
+  "net_count": 34,
+  "move_round_trip": {
+    "reference": "J16",
+    "original": {
+      "reference": "J16",
+      "value": "Local update button",
+      "x_mm": 110.0,
+      "y_mm": 120.0,
+      "rotation_degrees": 0.0
+    },
+    "restored": {
+      "reference": "J16",
+      "value": "Local update button",
+      "x_mm": 110.0,
+      "y_mm": 120.0,
+      "rotation_degrees": 0.0
+    }
+  },
+  "saved": {
+    "saved": true,
+    "board": "/home/erikclean/src/secure-voice-lab/hardware/rev-a/voicevault-reva.kicad_pcb"
+  },
+  "result": "pass"
+}

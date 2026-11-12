@@ -1,0 +1,13 @@
+{
+  "result": "pass",
+  "simulator": "KiCad 10.0.8 native DRC",
+  "rejected": [
+    "non-RF track",
+    "ground through-via"
+  ],
+  "allowed": [
+    "RF-feed track"
+  ],
+  "live_board_unchanged": true,
+  "scope": "Geometric rule enforcement only; not RF performance or hardware isolation"
+}

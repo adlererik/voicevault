@@ -1,0 +1,18 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: voicevault b0 static backlight sharing / open-load sensitivity
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+v(anode) = 8.006506e+00
+v(fb) = 5.149999e-01
+i(vmon1) = 2.419953e-02
+i(vmon2) = 4.791506e-12
+i(vmon3) = 4.791506e-12
+i(vmon4) = 4.791612e-12
+ngspice-47 done

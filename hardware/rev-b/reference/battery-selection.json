@@ -1,0 +1,15 @@
+{
+  "checked": "2026-11-12",
+  "prototype_candidate": "Adafruit 258 / PKCELL LP-503562 1200mAh with PCM",
+  "previous_candidate": "Adafruit 1578 / 500mAh (not selected for unrestricted prototype loads)",
+  "dimensions_mm": [
+    34,
+    62,
+    5
+  ],
+  "datasheet_url": "https://cdn-shop.adafruit.com/product-files/258/C101-_Li-Polymer_503562_1200mAh_3.7V_with_PCM_APPROVED_8.18.pdf",
+  "sha256": "8f46a37424ec87eababab5aae50de398348fd7dc42447740d4fbc32780a8b3de",
+  "charge_limit_ma": 250,
+  "continuous_discharge_datasheet_ma": 1200,
+  "qualification": "Connector polarity, pack revision, attached external NTC, current/thermal behavior and fit not verified"
+}

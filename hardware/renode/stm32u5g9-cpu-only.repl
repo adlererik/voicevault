@@ -1,0 +1,14 @@
+// VoiceVault target-address CPU harness. No STM32 peripheral or TrustZone model.
+// No secure aliases are mapped. No memory-controller/flash side effects modeled.
+// Use only for negative controls until silicon-correlated models exist.
+nvic: IRQControllers.NVIC @ sysbus 0xE000E000
+    priorityMask: 0xF0
+    systickFrequency: 160000000
+    IRQ -> cpu@0
+cpu: CPU.CortexM @ sysbus
+    cpuType: "cortex-m33"
+    nvic: nvic
+flash: Memory.MappedMemory @ sysbus 0x08000000
+    size: 0x400000
+sram1: Memory.MappedMemory @ sysbus 0x20000000
+    size: 0xC0000

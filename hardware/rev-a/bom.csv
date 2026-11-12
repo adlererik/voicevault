@@ -1,0 +1,41 @@
+Reference,Quantity,Manufacturer,Candidate part number,Purpose,Manufacturer source,Review status
+MOD1,1,STMicroelectronics,STM32U5G9J-DK2,MCU and trusted LCD reference assembly,https://www.st.com/en/evaluation-tools/stm32u5g9j-dk2.html,Reference Z silicon requires actual ID check
+MOD2,1,SparkFun,BOB-21772,WM8960 codec breakout with headers,https://github.com/sparkfun/SparkFun_Audio_Codec_Breakout_WM8960,Bench module only; codec discontinued; active TI TLV320AIC3204 candidate for later design
+MOD3,1,Adafruit,4062,nRF52840 Feather untrusted radio module,https://www.adafruit.com/product/4062,Custom bounded ciphertext-only UART firmware pending
+MOD4,1,MikroElektronika,MIKROE-6559,Secure Tropic Click,https://www.mikroe.com/secure-tropic-click,Confirm exact TROPIC01 silicon and driver operations
+MOD5,1,Infineon,S2GO-SECURITY-OPTIGA-M,OPTIGA Trust M evaluation board,https://www.infineon.com/evaluation-board/S2GO-SECURITY-OPTIGA-M,I2C harness; hardware key mapping pending
+MOD6,1,Adafruit,4682,3V microSD breakout,https://www.adafruit.com/product/4682,Dedicated software SPI update interface
+MOD7,1,Adafruit,1901,5V 500mA Qi receiver,https://www.adafruit.com/product/1901,Vendor has changed chip revisions; verify received module
+MOD8,1,Adafruit,4755,BQ24074 charger and load sharing,https://www.adafruit.com/product/4755,Configure input and charging limits to 500mA and fit NTC
+MOD9,1,Pololu,4082 / S13V30F5,5V buck-boost regulator module,https://www.pololu.com/product/4082,Review efficiency and standby current for final device
+BAT1,1,Adafruit,353,Protected 3.7V 6600mAh battery pack,https://www.adafruit.com/product/353,Bench pack; under 1.3A sustained vendor recommendation
+NTC1,1,Semitec,103AT-2,10k NTC battery temperature sensor,https://www.semitec-global.com/product/at-thermistor/,Check charger temperature thresholds; attach to pack
+JACK1,1,Adafruit,2915,TRRS jack terminal adapter,https://www.adafruit.com/product/2915,Use CTIA wiring by contact continuity
+SW1,1,C&K,JS202011CQN,Mechanical DPDT microphone disconnect,https://www.ckswitches.com/products/switches/product-details/Slide/JS/,Verify pin and throw numbering against received part
+SW2,1,E-Switch,TL1105AF160Q,Offboard local update pushbutton,https://www.e-switch.com/product-catalog/tl1105-series-tact-switch/,Connect J16 to ground when pressed
+R1,1,Yageo,RC0603FR-072K2L,2.2k 1% 0603 mic bias,https://www.yageo.com/en/Product/Index/rchip,Candidate procurement MPN requires datasheet review
+R2 R4,2,Yageo,RC0603FR-0710KL,10k 1% 0603 sense and CS pullup,https://www.yageo.com/en/Product/Index/rchip,Candidate procurement MPN requires datasheet review
+R3,1,Yageo,RC0603FR-0747KL,47k 1% 0603 SD CS pullup,https://www.yageo.com/en/Product/Index/rchip,Candidate procurement MPN requires datasheet review
+C1,1,Murata,GRM188R71C104KA01D,100n 16V X7R 0603,https://www.murata.com/en-global/products/capacitor/ceramiccapacitor,Verify exact dimensions and bias derating
+C2,1,Murata,GRM21BR61C106KE15L,10u 16V X5R 0805,https://www.murata.com/en-global/products/capacitor/ceramiccapacitor,Verify effective capacitance at operating bias
+C3,1,KEMET,C1210C226K4PACTU,22u 16V 1210 bulk capacitor,https://www.kemet.com/en/us/capacitors/ceramic.html,Candidate MPN; confirm voltage package and effective capacitance
+C4 C5,2,Nichicon,UKL1A221KDD,220u 10V low leakage polarized headphone coupling,https://www.nichicon.co.jp/english/products/aluminum/,Candidate MPN; verify 6.3mm body and 2.5mm lead spacing
+H1 H2 H3 H4,4,Generic,M3 nylon standoff kit,M3 3.2mm mounting hardware,,Choose length after module and cable clearance measurement
+CABLES,1,Generic,2.54mm female-female jumper harness set,Short keyed and labeled harnesses,,Length and connector retention need assembly review
+SD1,1,Generic,3.3V microSD card 4-32GB,Offline signed firmware transport,,Untrusted storage; bounded driver and format pending
+J1,1,Samtec,TSW-120-07-G-D,DK2 CN1 extension carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J2,1,Samtec,TSW-110-07-G-S,DK2 CN4 digital carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J3,1,Samtec,TSW-108-07-G-S,DK2 CN6 digital carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J4,1,Samtec,TSW-106-07-G-S,DK2 CN7 analog carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J5,1,Samtec,TSW-108-07-G-S,DK2 CN5 power carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J6,1,Samtec,TSW-112-07-G-S,WM8960 digital harness carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J7,1,Samtec,TSW-106-07-G-S,nRF52840 radio harness carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J8,1,Samtec,TSW-107-07-G-S,TROPIC Click harness carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J9,1,Samtec,TSW-104-07-G-S,OPTIGA Trust M harness carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J10,1,Samtec,TSW-106-07-G-S,microSD SPI harness carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J11,1,Samtec,TSW-106-07-G-S,Codec analog harness carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J12,1,Samtec,TSW-104-07-G-S,CTIA headset harness carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J13,1,Samtec,TSW-102-07-G-S,Qi receiver output carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J14,1,Samtec,TSW-104-07-G-S,BQ24074 charger harness carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J15,1,Samtec,TSW-104-07-G-S,5V regulator harness carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release
+J16,1,Samtec,TSW-102-07-G-S,Local update button carrier pin header,https://www.samtec.com/products/tsw,Verify mating height and pin numbering before release

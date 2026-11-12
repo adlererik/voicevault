@@ -1,0 +1,8 @@
+{
+  "codec": "https://www.ti.com/lit/gpn/tlv320aic3204",
+  "sequence": "https://www.ti.com/lit/pdf/slaa492",
+  "jack": "https://www.sameskydevices.com/product/resource/sj-4351x-smt.pdf",
+  "jack_sha256": "4c99b95e7eb17444e0254e2abc8783a49ef9273bb6c0564fec5b2559f43720a7",
+  "jack_geometry_review": "top-view page 2; four contact pads, two locating holes; release requires independent check",
+  "physical_mute": "https://www.ckswitches.com/media/1422/js.pdf"
+}

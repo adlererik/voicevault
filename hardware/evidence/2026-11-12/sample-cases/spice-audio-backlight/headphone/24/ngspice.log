@@ -1,0 +1,15 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: voicevault b0 passive headphone path
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 331
+gain_100            =  -2.91722e-01
+gain_1000           =  -2.88067e-01
+gain_16000          =  -2.88031e-01
+ngspice-47 done

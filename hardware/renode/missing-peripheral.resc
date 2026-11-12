@@ -1,0 +1,7 @@
+# Negative control. These required peripherals are deliberately absent.
+mach create "voicevault-u5g9-negative-control"
+machine LoadPlatformDescription @hardware/renode/stm32u5g9-cpu-only.repl
+sysbus ReadDoubleWord 0x40015800
+sysbus ReadDoubleWord 0x40020000
+sysbus ReadDoubleWord 0x40032400
+quit

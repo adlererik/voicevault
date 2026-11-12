@@ -20,6 +20,8 @@ VoiceVault is a device project with a working software laboratory. The documenta
 | [Live device dashboard](LIVE_DASHBOARD.md) | Fixed local address, live progress, device activity and saved replay |
 | [Development guide](DEVELOPMENT.md) | Setup, commands, repository layout and reproducing results |
 | [Roadmap](ROADMAP.md) | Evidence gates from software through physical hardware |
+| [Hardware laboratory](../hardware/README.md) | Active standalone B0 PCB, exact core choices, KiCad/MCP, circuit models and manufacturing/qualification gates |
+| [Nucleo module assessment](../hardware/reference/NUCLEO_U5A5_ASSESSMENT.md) | Removable NUCLEO-U5A5ZJ-Q proposal and verified KiCad footprint differences |
 | [Hardware plan](HARDWARE_PLAN.md) | Safe 7 reference, KiCad and emulation scope, microSD updates and first board measurements |
 | [Screenshots](screenshots/README.md) | Actual dashboard captures and their context |
 

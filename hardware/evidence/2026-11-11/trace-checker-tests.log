@@ -1,0 +1,14 @@
+test_all_required_fields_fail_when_missing (test_trace_contract.TraceContractTests.test_all_required_fields_fail_when_missing) ... ok
+test_allowed_access_must_also_work (test_trace_contract.TraceContractTests.test_allowed_access_must_also_work) ... ok
+test_corrupted_sample_rejected (test_trace_contract.TraceContractTests.test_corrupted_sample_rejected) ... ok
+test_fixture_observations_are_well_formed (test_trace_contract.TraceContractTests.test_fixture_observations_are_well_formed) ... ok
+test_malformed_json_shapes_rejected (test_trace_contract.TraceContractTests.test_malformed_json_shapes_rejected) ... ok
+test_missing_dma_irq_rejected (test_trace_contract.TraceContractTests.test_missing_dma_irq_rejected) ... ok
+test_synthetic_success_cannot_qualify_a_model (test_trace_contract.TraceContractTests.test_synthetic_success_cannot_qualify_a_model) ... ok
+test_timeout_rejected (test_trace_contract.TraceContractTests.test_timeout_rejected) ... ok
+test_unmapped_access_rejected (test_trace_contract.TraceContractTests.test_unmapped_access_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+OK

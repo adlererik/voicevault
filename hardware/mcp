@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+voicevault_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+exec "$voicevault_root/.lab-cache/hardware/mcp-venv/bin/python" "$voicevault_root/hardware/tools/kicad_mcp.py"

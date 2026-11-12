@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-11T02:23:29.251024+00:00",
+  "status": "blocked",
+  "target": {
+    "board": "STM32U5G9J-DK2",
+    "board_assembly": "MB1918-U5G9ZJQ-C01",
+    "mcu": "STM32U5G9ZJT6Q",
+    "package": "LQFP144",
+    "silicon_revision": "Z",
+    "expected_rev_id": "0x1001",
+    "actual_unit_verified": false,
+    "cmsis_commit": "624374fa1e21ca195d6f2102ac0caaa50d0ea4c8",
+    "header_sha256": "e24191c59550ad428e246fbe92069c7737e50575945770d9c157d9384c5cbae3",
+    "documents": {
+      "UM3223": {
+        "revision": "2",
+        "url": "https://www.st.com/resource/en/user_manual/um3223-discovery-kit-with-stm32u5g9zj-mcu-stmicroelectronics.pdf"
+      },
+      "DS14102": {
+        "revision": "5",
+        "url": "https://www.st.com/resource/en/datasheet/stm32u5g9zj.pdf"
+      },
+      "RM0456": {
+        "revision": "7",
+        "url": "https://www.st.com/resource/en/reference_manual/rm0456-stm32u5-series-armbased-32bit-mcus-stmicroelectronics.pdf"
+      },
+      "ES0595": {
+        "revision": "4",
+        "url": "https://www.st.com/resource/en/errata_sheet/es0595-stm32u5fxxx-and-stm32u5gxxx-device-errata-stmicroelectronics.pdf"
+      }
+    },
+    "resources": {
+      "SAI2": {
+        "nonsecure": "0x40015800",
+        "secure": "0x50015800",
+        "irq": 91
+      },
+      "GPDMA1": {
+        "nonsecure": "0x40020000",
+        "secure": "0x50020000",
+        "channel0_irq": 29,
+        "channel1_irq": 30
+      },
+      "GTZC1_TZSC": {
+        "nonsecure": "0x40032400",
+        "secure": "0x50032400",
+        "irq": 8
+      }
+    },
+    "qualified_peripheral_models": [],
+    "hardware_measurements": []
+  },
+  "checks": [
+    {
+      "name": "Evidence checker negative cases",
+      "status": "pass",
+      "detail": "9 tests including missing fields, samples, DMA IRQs, timeout and unqualified model"
+    },
+    {
+      "name": "KiCad schematic connectivity",
+      "status": "pass",
+      "detail": "Native schematic ERC has zero violations. Passive ports do not check module circuitry."
+    },
+    {
+      "name": "Radio interface netlist",
+      "status": "pass",
+      "detail": "Exactly the six declared carrier connections, including shared supply and ground"
+    },
+    {
+      "name": "PCB manufacturing gate",
+      "status": "blocked",
+      "detail": "Placement draft has 97 unrouted connections and 0 layout violations. Routing and review required."
+    },
+    {
+      "name": "Analog circuit sensitivity",
+      "status": "pass",
+      "detail": "22 actual ngspice cases. Linear microphone, headphone coupling and supply impedance models only."
+    },
+    {
+      "name": "Cortex-M33 software execution",
+      "status": "pass",
+      "detail": "Actual hybrid handshake and 32 codec/media frames on QEMU MPS2 AN505. Target peripherals are outside this check."
+    },
+    {
+      "name": "Incomplete emulator negative control",
+      "status": "pass",
+      "detail": "Actual SAI2, GPDMA1 and GTZC1 accesses were detected as unsupported even when Renode exits successfully"
+    },
+    {
+      "name": "STM32 audio and DMA qualification",
+      "status": "blocked",
+      "detail": "No qualified peripheral model or matching board trace. Expected samples and completion IRQs remain unobserved."
+    },
+    {
+      "name": "STM32 TrustZone and DMA isolation",
+      "status": "blocked",
+      "detail": "CPU and DMA denial must be observed on revision-Z silicon and compared with a qualified model."
+    }
+  ],
+  "scope": "Review-stage carrier and explicit partial circuit models. Hardware qualification remains blocked."
+}

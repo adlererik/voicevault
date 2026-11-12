@@ -1,0 +1,25 @@
+VoiceVault B0 microphone disconnect and AC input
+* Ideal microphone, bias and ADC impedances; no codec silicon/noise model.
+* Off capacitance and switch contact resistance are sensitivity assumptions.
+.param ron=0.1 coff=1e-13 cin=5e-07 rin=10000 muting=0
+Vmic raw 0 DC .8 AC 1
+Vbias bias 0 DC 2
+Vcommon common 0 DC .9
+Rtalk raw node {ron+(muting*1e12)}
+Coff raw node {coff}
+Rmute node 0 {ron+((1-muting)*1e12)}
+Rbias bias node 2200
+Rlimit node coupled 1000
+Cinput coupled adc {cin}
+Crf adc 0 33p
+Radc adc common {rin}
+.control
+ac dec 80 10 20000
+let response = db(v(adc))
+meas ac gain_100 FIND response AT=100
+meas ac gain_1000 FIND response AT=1000
+meas ac gain_16000 FIND response AT=16000
+wrdata microphone-ac.txt response
+quit
+.endc
+.end

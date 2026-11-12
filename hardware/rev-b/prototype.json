@@ -1,0 +1,51 @@
+{
+  "project": "VoiceVault standalone SMD prototype",
+  "revision": "B0 architecture draft",
+  "source_reference": "Trezor Safe 7 TS7 rev_D",
+  "board": {
+    "shape": "rectangle",
+    "provisional_width_mm": 70,
+    "provisional_height_mm": 45,
+    "size_confirmed": false,
+    "copper_layers_proposed": 6,
+    "thickness_mm_proposed": 1.0,
+    "stackup_and_impedance_approved": false,
+    "surface_mount": true,
+    "development_board_required": false
+  },
+  "mcu": {
+    "mpn": "STM32U5G9ZJJ6Q",
+    "package": "UFBGA144 10x10 mm 0.8 mm pitch",
+    "source_pdf_page": 2,
+    "silicon_revision": "must be confirmed with sourcing and actual DBGMCU ID",
+    "actual_unit_verified": false,
+    "previous_DK2_results_apply_to_this_board": false
+  },
+  "computer_access": {
+    "main": "STDC14 SWD + SWO + UART through external STLINK-V3MINIE",
+    "radio": "separate SWD interface; external probe supporting nRF52832 required",
+    "target_power": "separate current-limited supply during bring-up; probe VTref is an input",
+    "development_only": true,
+    "production_lockdown_verified": false
+  },
+  "required_additions": [
+    "full-duplex SMD audio codec and analog headset interface",
+    "SMD CTIA TRRS jack",
+    "physical microphone disconnect with local state sense",
+    "SMD microSD socket, card power switch and ESD protection",
+    "offline signed update entry through local controls",
+    "main MCU and radio debug pads/connectors kept separate",
+    "current-measurement access and rail test pads"
+  ],
+  "forbidden_paths": [
+    "radio to audio plaintext",
+    "radio to MCU or secure element debug/programming/reset/boot signals",
+    "phone-controlled consent or firmware update"
+  ],
+  "status": "NOT FOR FABRICATION - circuit reconstruction, sourcing and routing incomplete",
+  "display_and_battery": {
+    "exact_trezor_assemblies_required": false,
+    "owner_selected": "sourceable equivalents on 2026-11-11",
+    "selection_status": "pending electrical, mechanical and sourcing review"
+  }
+}

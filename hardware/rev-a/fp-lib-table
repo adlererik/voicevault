@@ -1,0 +1,1 @@
+(fp_lib_table (lib (name "VoiceVault") (type "KiCad") (uri "${KIPRJMOD}/VoiceVault.pretty") (options "") (descr "Used KiCad stock footprints")))

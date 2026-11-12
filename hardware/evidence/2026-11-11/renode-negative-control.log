@@ -1,0 +1,21 @@
+[03:23:24.0910] [INFO] Loaded monitor commands from: /home/erikclean/src/secure-voice-lab/.lab-cache/hardware/renode-1.17.0/scripts/monitor.py
+Renode, version 1.17.0 (1.17.0+20260907gitf1dd1b4af)
+
+
+(monitor) i @/home/erikclean/src/secure-voice-lab/hardware/renode/missing-periph 
+eral.resc
+
+[03:23:24.9038] [INFO] Including script(s): /home/erikclean/src/secure-voice-lab/hardware/renode/missing-peripheral.resc
+[03:23:24.9969] [INFO] System bus created.
+[03:23:28.9908] [WARNING] sysbus: ReadDoubleWord from non existing peripheral at 0x40015800.
+0x00000000
+
+0x00000000
+
+[03:23:29.0172] [WARNING] sysbus: ReadDoubleWord from non existing peripheral at 0x40020000.
+0x00000000
+
+[03:23:29.0190] [WARNING] sysbus: ReadDoubleWord from non existing peripheral at 0x40032400.
+Renode is quitting
+
+[03:23:29.1388] [INFO] voicevault-u5g9-negative-control: Disposed.

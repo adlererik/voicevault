@@ -1,0 +1,9 @@
+{
+  "result": "pass",
+  "backend": "KiCad IPC",
+  "active_board": "/home/erikclean/src/secure-voice-lab/hardware/rev-b/voicevault-standalone-b0.kicad_pcb",
+  "footprints": 32,
+  "named_nets": 11,
+  "operation": "Live read after reload of MCU power-network addition",
+  "new_work": "28 capacitors, L1 and R101; inductor moved through MCP; local schematic symbol corrected to 144 balls"
+}

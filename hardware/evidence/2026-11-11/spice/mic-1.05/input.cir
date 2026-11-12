@@ -1,0 +1,23 @@
+VoiceVault Rev A microphone input loading - linear small-signal model
+* Carrier R1, mechanical switch. SparkFun module R6/C20/C21 from vendor schematic.
+* Electret source impedance and ADC input impedance are explicit assumptions.
+.param tol=1.05 switch_r=0.05 mute_r=1e12
+Vbias bias 0 DC 2.5
+Vvoice source 0 DC 0 AC 1
+Rsource source headset 2.2k
+Rswitch headset codec_mic {switch_r}
+Rmute codec_mic 0 {mute_r}
+Cswitch headset codec_mic 2p
+Rbias bias codec_mic {2200*tol}
+Rmodule codec_mic filtered 100
+Cmodule_rf filtered 0 47n
+Cmodule_ac filtered adc 1u
+Radc adc 0 22k
+.control
+ac dec 100 10 100000
+wrdata microphone-ac.txt vm(adc)
+meas ac gain_300 FIND vm(adc) AT=300
+meas ac gain_3400 FIND vm(adc) AT=3400
+quit
+.endc
+.end

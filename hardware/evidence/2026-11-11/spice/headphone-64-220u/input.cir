@@ -1,0 +1,17 @@
+VoiceVault Rev A AC-coupled headphone output - linear model
+* Carrier C4/C5 220u. Codec output model assumes 2 ohms and 0.9V common mode.
+.param load=64 cap=220u
+Vcodec driver 0 DC 0.9 AC 1
+Rdriver driver coupled 2
+Ccouple coupled headphone {cap}
+Rheadset headphone 0 {load}
+.control
+op
+print v(headphone)
+ac dec 100 10 100000
+wrdata headphone-ac.txt vm(headphone)
+meas ac gain_300 FIND vm(headphone) AT=300
+meas ac gain_3400 FIND vm(headphone) AT=3400
+quit
+.endc
+.end

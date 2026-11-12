@@ -1,0 +1,9 @@
+(version 1)
+# Provisional manufacturer-inspired antenna reservation, not RF tuning evidence.
+# Explicit rules are tested by negative control, independent of implicit keepouts.
+(rule "BLE antenna: only RF feed tracks"
+  (condition "A.intersectsArea('BLE_ANTENNA_CLEARANCE') && A.NetName != 'BLE_ANT_FEED'")
+  (constraint disallow track via micro_via buried_via zone))
+(rule "BLE antenna: no vias or copper fills"
+  (condition "A.intersectsArea('BLE_ANTENNA_CLEARANCE') && A.NetName == 'BLE_ANT_FEED'")
+  (constraint disallow via micro_via buried_via zone))

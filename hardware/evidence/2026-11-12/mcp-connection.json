@@ -1,0 +1,1 @@
+{"content":[{"type":"text","text":"{\n  \"connected\": true,\n  \"backend\": \"KiCad IPC\",\n  \"version\": \"10.0.8 (10.0.8)\",\n  \"board\": \"/home/erikclean/src/secure-voice-lab/hardware/rev-b/voicevault-standalone-b0.kicad_pcb\",\n  \"footprints\": 314,\n  \"nets\": 199\n}"}],"isError":false}

@@ -1,0 +1,23 @@
+VoiceVault B0 MCU core-output passive sensitivity
+* L1 / C27 / C107 from the circuit; NO STM32 regulator control-loop model.
+* Ideal averaged switch voltage and assumed parasitics. Not a stability proof.
+.param lval=2.2e-06 cap=1.76e-06 dcr=0.12 esr=0.02
+Vaverage average 0 DC 1.1
+Rdcr average lx {dcr}
+Lcore lx core {lval}
+Resr1 core c1 {esr}
+Cout1 c1 0 {cap}
+Resr2 core c2 {esr}
+Cout2 c2 0 {cap}
+Cpin1 core 0 100n
+Cpin2 core 0 100n
+Cdsi core 0 100n
+Iload core 0 PULSE(0.01 0.10 100u 5u 5u 150u 400u)
+.control
+tran .1u 800u
+meas tran core_min MIN v(core) FROM=90u TO=700u
+meas tran core_max MAX v(core) FROM=90u TO=700u
+wrdata core-transient.txt v(core)
+quit
+.endc
+.end

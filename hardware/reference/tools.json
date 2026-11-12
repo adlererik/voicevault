@@ -1,0 +1,59 @@
+{
+  "kicad": {
+    "version": "10.0.8",
+    "distribution": "user Flatpak org.kicad.KiCad",
+    "commit": "d59131f226fe88b11529c1ac55e8cbae33525e0b2e72b78d85b7c4ad3fe8b7d5",
+    "mcp": {
+      "name": "voicevault-kicad",
+      "sdk": "mcp==1.26.0",
+      "bindings": "kicad-python==0.8.0",
+      "transport": "stdio to local KiCad IPC",
+      "live_check": "hardware/evidence/2026-11-12/mcp-connection.json",
+      "runtime": "managed CPython 3.12.14 (independent of system Python upgrades)"
+    }
+  },
+  "ngspice": {
+    "version": "47",
+    "distribution": "Fedora 44 signed RPM extracted into project cache",
+    "rpms": [
+      {
+        "file": "libXaw-1.0.16-5.fc44.x86_64.rpm",
+        "sha256": "77438bb38529694f3ef110c380e4f4b531e95bb48705846d436add6b27a21a49"
+      },
+      {
+        "file": "libXmu-1.2.1-5.fc44.x86_64.rpm",
+        "sha256": "2810116564da08ab75c8ff275ee2ffba2d20a200ac674a5e90bfdb85c39d0510"
+      },
+      {
+        "file": "libXpm-3.5.17-7.fc44.x86_64.rpm",
+        "sha256": "8d9b335d277623f3ea2718cd02f37660331d8f392cb87898da2750a9549e5a12"
+      },
+      {
+        "file": "ngspice-47-1.fc44.x86_64.rpm",
+        "sha256": "476de73ab3de6cf104bbdfbe327b57e083cd6f5f4822eb4df5bc44fb980e4ef7"
+      },
+      {
+        "file": "ngspice-codemodel-47-1.fc44.x86_64.rpm",
+        "sha256": "c7a852fcac68f55e439ecc9321061d5fef67a3453f6c8c8b33aa71baef00c22b"
+      }
+    ]
+  },
+  "renode": {
+    "version": "1.17.0",
+    "source": "https://github.com/renode/renode/releases/download/v1.17.0/renode-1.17.0.linux-portable.tar.gz",
+    "sha256": "4ba7c68b59e2447f188ef4b4b112fcccd2802582c460beedceb63b84e5605a5f"
+  },
+  "qemu": {
+    "version": "xPack 9.2.4",
+    "model": "MPS2 AN505 Cortex-M33"
+  },
+  "freerouting": {
+    "version": "2.5.0",
+    "java": "OpenJDK 25.0.4.1",
+    "runtime": "JAR with -Xmx512m inside an 850MiB cgroup for routing trials",
+    "source": "https://github.com/freerouting/freerouting/releases/download/v2.5.0/freerouting-2.5.0.jar",
+    "sha256": "f6f51bb02245e8e717f9359bd260cc9c5c0b1bc0acc8b7cb2cd5b8ffeb5de3c7",
+    "scope": "routing study on a copy; no manufacturing routing qualification",
+    "native_cli_limitation": "2.5.0 native Linux CLI hit a Graal serialization error on this board; use the JAR"
+  }
+}

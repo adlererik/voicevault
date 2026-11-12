@@ -1,0 +1,9 @@
+{
+  "manufacturer": "STMicroelectronics",
+  "document": "DS14078 Rev1",
+  "official_product": "https://www.st.com/en/power-management/stwlc38jrm.html",
+  "manufacturer_document_mirror": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/7179/PdfFile174789.pdf",
+  "sha256": "3a7af8250a855694e8fc2092f132c081a54c6c30aaf368d15f036d10514a1961",
+  "coil": "760308101219",
+  "reference": "Table37 wearable circuit; custom PCB requires tuning and thermal validation"
+}

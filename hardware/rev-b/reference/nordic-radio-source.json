@@ -1,0 +1,7 @@
+{
+  "url": "https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/reference-layouts/nrf52832ciaareflayoutv10.zip",
+  "archive_sha256": "8c01b1704acff27d8a1a546c91ed04df9059caf4ce600988352c03564e477661",
+  "method": "Official Nordic Altium PCB converted by KiCad; footprint normalized; full pad geometry retained",
+  "component": "nRF52832-CIAA",
+  "pin_count": 50
+}

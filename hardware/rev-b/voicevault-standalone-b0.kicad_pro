@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "filename": "voicevault-standalone-b0.kicad_pro",
+    "version": 1
+  },
+  "net_settings": {
+    "meta": {
+      "version": 3
+    },
+    "classes": [
+      {
+        "name": "Default",
+        "clearance": 0.1,
+        "track_width": 0.15,
+        "via_diameter": 0.45,
+        "via_drill": 0.2,
+        "description": "Review candidate within published HDI line/space capability; stackup/via process not released"
+      }
+    ]
+  },
+  "board": {
+    "design_settings": {
+      "rules": {
+        "min_clearance": 0.1,
+        "min_track_width": 0.1,
+        "min_via_diameter": 0.45,
+        "min_through_hole_diameter": 0.2,
+        "min_via_annular_width": 0.1
+      }
+    }
+  }
+}

@@ -1,0 +1,253 @@
+[
+  {
+    "case": "mic-0.95",
+    "parameters": {
+      "tol": 0.95
+    },
+    "measurements": {
+      "gain_300": 0.460131,
+      "gain_3400": 0.308495
+    }
+  },
+  {
+    "case": "mic-1",
+    "parameters": {
+      "tol": 1
+    },
+    "measurements": {
+      "gain_300": 0.471559,
+      "gain_3400": 0.312252
+    }
+  },
+  {
+    "case": "mic-1.05",
+    "parameters": {
+      "tol": 1.05
+    },
+    "measurements": {
+      "gain_300": 0.482396,
+      "gain_3400": 0.315695
+    }
+  },
+  {
+    "case": "mic-disconnected",
+    "parameters": {
+      "switch_r": "1e12",
+      "mute_r": ".05"
+    },
+    "measurements": {
+      "gain_300": 1.87576e-10,
+      "gain_3400": 2.116e-09
+    }
+  },
+  {
+    "case": "headphone-16-176u",
+    "parameters": {
+      "load": 16,
+      "cap": "176u"
+    },
+    "measurements": {
+      "gain_300": 0.876678,
+      "gain_3400": 0.888792,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-16-220u",
+    "parameters": {
+      "load": 16,
+      "cap": "220u"
+    },
+    "measurements": {
+      "gain_300": 0.881015,
+      "gain_3400": 0.888827,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-16-264u",
+    "parameters": {
+      "load": 16,
+      "cap": "264u"
+    },
+    "measurements": {
+      "gain_300": 0.883399,
+      "gain_3400": 0.888846,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-32-176u",
+    "parameters": {
+      "load": 32,
+      "cap": "176u"
+    },
+    "measurements": {
+      "gain_300": 0.937498,
+      "gain_3400": 0.941148,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-32-220u",
+    "parameters": {
+      "load": 32,
+      "cap": "220u"
+    },
+    "measurements": {
+      "gain_300": 0.938817,
+      "gain_3400": 0.941158,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-32-264u",
+    "parameters": {
+      "load": 32,
+      "cap": "264u"
+    },
+    "measurements": {
+      "gain_300": 0.939536,
+      "gain_3400": 0.941164,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-64-176u",
+    "parameters": {
+      "load": 64,
+      "cap": "176u"
+    },
+    "measurements": {
+      "gain_300": 0.968687,
+      "gain_3400": 0.969689,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-64-220u",
+    "parameters": {
+      "load": 64,
+      "cap": "220u"
+    },
+    "measurements": {
+      "gain_300": 0.96905,
+      "gain_3400": 0.969692,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-64-264u",
+    "parameters": {
+      "load": 64,
+      "cap": "264u"
+    },
+    "measurements": {
+      "gain_300": 0.969248,
+      "gain_3400": 0.969693,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-300-176u",
+    "parameters": {
+      "load": 300,
+      "cap": "176u"
+    },
+    "measurements": {
+      "gain_300": 0.993328,
+      "gain_3400": 0.993377,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-300-220u",
+    "parameters": {
+      "load": 300,
+      "cap": "220u"
+    },
+    "measurements": {
+      "gain_300": 0.993346,
+      "gain_3400": 0.993377,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "headphone-300-264u",
+    "parameters": {
+      "load": 300,
+      "cap": "264u"
+    },
+    "measurements": {
+      "gain_300": 0.993355,
+      "gain_3400": 0.993377,
+      "v(headphone)": 0.0
+    }
+  },
+  {
+    "case": "supply-0.1-11u",
+    "parameters": {
+      "series_r": 0.1,
+      "bulk_c": "11u"
+    },
+    "measurements": {
+      "rail_min": 4.95,
+      "rail_max": 4.99
+    }
+  },
+  {
+    "case": "supply-0.1-22u",
+    "parameters": {
+      "series_r": 0.1,
+      "bulk_c": "22u"
+    },
+    "measurements": {
+      "rail_min": 4.95,
+      "rail_max": 4.99
+    }
+  },
+  {
+    "case": "supply-0.25-11u",
+    "parameters": {
+      "series_r": 0.25,
+      "bulk_c": "11u"
+    },
+    "measurements": {
+      "rail_min": 4.875,
+      "rail_max": 4.975
+    }
+  },
+  {
+    "case": "supply-0.25-22u",
+    "parameters": {
+      "series_r": 0.25,
+      "bulk_c": "22u"
+    },
+    "measurements": {
+      "rail_min": 4.875,
+      "rail_max": 4.975
+    }
+  },
+  {
+    "case": "supply-0.5-11u",
+    "parameters": {
+      "series_r": 0.5,
+      "bulk_c": "11u"
+    },
+    "measurements": {
+      "rail_min": 4.75,
+      "rail_max": 4.95
+    }
+  },
+  {
+    "case": "supply-0.5-22u",
+    "parameters": {
+      "series_r": 0.5,
+      "bulk_c": "22u"
+    },
+    "measurements": {
+      "rail_min": 4.75,
+      "rail_max": 4.95
+    }
+  }
+]

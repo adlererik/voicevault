@@ -1,0 +1,1648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/home/erikclean/src/secure-voice-lab/hardware/rev-b/voicevault-standalone-b0.kicad_sch</source>
+    <date>2026-11-11T22:20:13</date>
+    <tool>Eeschema 10.0.8</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>VoiceVault standalone B0 - incomplete MCU/debug/power sheet</title>
+        <company>VoiceVault</company>
+        <rev>B0-INCOMPLETE</rev>
+        <date/>
+        <source>voicevault-standalone-b0.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C6">
+      <value>4.7u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b8493e8d-1a9a-5658-9a95-a0c95a79eb8c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C7">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>52469965-d21f-51c1-8186-ed8af5aa5a07</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C8">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>64460e8a-e42a-5178-babf-1b03d9138c7f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C9">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>345975be-a9b2-5f8e-a28f-94eac76c0992</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C10">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>53b05366-7a5a-5636-96cc-8756cacdaed2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C11">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>92a6a34b-e124-59ce-ac1b-f6bfd9511402</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C12">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bd67933a-d06f-5cea-b814-89b93a778b44</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C13">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f3e87713-e92e-54b4-9d32-c684521d44f1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C14">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7b3df923-2daa-5d7b-a263-917cceffe2ea</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C15">
+      <value>4.7u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fda08d3b-8cd1-5da1-ba1f-593e9acfce8e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C16">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ebbced07-2ac6-5cc5-9a72-33566814464a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C17">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7b326085-bba2-5603-b7bd-0976c3b20891</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C18">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a4dfac79-eac5-5626-9bbc-baf30a3641eb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C19">
+      <value>4.7u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c8872b15-fd6e-5b79-8411-f0f2f6bcd4b4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C20">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ed225831-19a9-5630-ba21-3f1d4d4a929f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C21">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>58a46998-5efc-5250-a039-64fbe831deca</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C22">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e0e687d5-697b-53bb-940f-d7104db80445</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C23">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e94f48c3-37f6-54c9-85f8-3322e7492a26</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C24">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>60b0e142-f78b-5492-8882-b2aafacb32fb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C25">
+      <value>10u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0b782ccf-45f4-5c1e-9768-e0ae15c98018</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C26">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2da82373-12b2-51d8-aa27-2746ee790dc9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C27">
+      <value>2.2u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1c33adc0-dca1-5aa5-bf5a-94fa9e29d403</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C107">
+      <value>2.2u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b88c38ad-03fc-528c-bfd4-eb0651137119</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C108">
+      <value>10u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>47a8170b-3936-5af9-b11f-17e02ad340c0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C109">
+      <value>4.7u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3461271b-af7d-5d06-85a7-3d3489966405</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C110">
+      <value>1u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2e0c2cab-3f87-59b6-bb48-0cf8d3f66075</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C111">
+      <value>1u 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3023ac61-fc70-55df-af0c-fd1be2abb7db</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C112">
+      <value>100n 10V</value>
+      <footprint>VoiceVault_B0:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>49d96049-ff24-50f9-9b71-ef8b86172dd7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J101">
+      <value>STDC14 SWD + UART - connector MPN pending</value>
+      <footprint>VoiceVault_B0:PinHeader_2x07_P1.27mm_Vertical_SMD</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:PinHeader_2x07_P1.27mm_Vertical_SMD</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="STDC14" description=""/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>939ae16d-5b4a-5736-bb81-0e3dc5807223</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L1">
+      <value>2.2uH ISAT&gt;0.5A DCR&lt;0.2R</value>
+      <footprint>VoiceVault_B0:L_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:L_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="L" description="Inductor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6b094f89-eaad-5a3b-809a-d650c5ddf5ee</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R101">
+      <value>0R - VBAT from regulated rail</value>
+      <footprint>VoiceVault_B0:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="R" description="Resistor"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>007a1acf-cd87-5180-8aa4-bb631b683725</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>STM32U5G9ZJJ6Q</value>
+      <footprint>VoiceVault_B0:UFBGA-144_10x10mm_Layout12x12_P0.8mm</footprint>
+      <fields>
+        <field name="Footprint">VoiceVault_B0:UFBGA-144_10x10mm_Layout12x12_P0.8mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="VoiceVault_B0" part="STM32U5G9ZJJxQ" description="STMicroelectronics Arm Cortex-M33 MCU, 4096KB flash, 3026KB RAM, 101 GPIO, UFBGA144"/>
+      <property name="Sheetname" value="voicevault-standalone-b0"/>
+      <property name="Sheetfile" value="voicevault-standalone-b0.kicad_sch"/>
+      <property name="ki_keywords" value="Arm Cortex-M33 STM32U5 STM32U5F9/5G9"/>
+      <property name="ki_fp_filters" value="UFBGA*10x10mm*Layout12x12*P0.8mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>952e51b9-f67b-5e67-b46f-9ace87a1a672</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="J2"/>
+            <pin num="M7"/>
+            <pin num="H3"/>
+            <pin num="F1"/>
+            <pin num="F2"/>
+            <pin num="E1"/>
+            <pin num="E2"/>
+            <pin num="G1"/>
+            <pin num="G2"/>
+            <pin num="F11"/>
+            <pin num="F12"/>
+            <pin num="E11"/>
+            <pin num="E12"/>
+            <pin num="H2"/>
+            <pin num="J1"/>
+            <pin num="A3"/>
+            <pin num="K12"/>
+            <pin num="J12"/>
+            <pin num="J11"/>
+            <pin num="H11"/>
+            <pin num="H12"/>
+            <pin num="G11"/>
+            <pin num="G12"/>
+            <pin num="K5"/>
+            <pin num="J6"/>
+            <pin num="B7"/>
+            <pin num="A8"/>
+            <pin num="A7"/>
+            <pin num="C6"/>
+            <pin num="A6"/>
+            <pin num="B6"/>
+            <pin num="E5"/>
+            <pin num="F4"/>
+            <pin num="G4"/>
+            <pin num="B3"/>
+            <pin num="B1"/>
+            <pin num="B2"/>
+            <pin num="C3"/>
+            <pin num="C4"/>
+            <pin num="D3"/>
+            <pin num="L5"/>
+            <pin num="H8"/>
+            <pin num="K6"/>
+            <pin num="J7"/>
+            <pin num="M5"/>
+            <pin num="J8"/>
+            <pin num="L6"/>
+            <pin num="K7"/>
+            <pin num="M6"/>
+            <pin num="J9"/>
+            <pin num="D4"/>
+            <pin num="C2"/>
+            <pin num="E8"/>
+            <pin num="E10"/>
+            <pin num="F5"/>
+            <pin num="G8"/>
+            <pin num="G10"/>
+            <pin num="H5"/>
+            <pin num="F7"/>
+            <pin num="F10"/>
+            <pin num="M12"/>
+            <pin num="G6"/>
+            <pin num="G7"/>
+            <pin num="H10"/>
+            <pin num="M1"/>
+            <pin num="A1"/>
+            <pin num="F6"/>
+            <pin num="A12"/>
+            <pin num="D9"/>
+            <pin num="D5"/>
+            <pin num="H7"/>
+            <pin num="J3"/>
+            <pin num="J10"/>
+            <pin num="D1"/>
+            <pin num="F3"/>
+            <pin num="H1"/>
+            <pin num="G3"/>
+            <pin num="L8"/>
+            <pin num="J4"/>
+            <pin num="E3"/>
+            <pin num="E6"/>
+            <pin num="M8"/>
+            <pin num="D10"/>
+            <pin num="H4"/>
+            <pin num="K3"/>
+            <pin num="L2"/>
+            <pin num="M2"/>
+            <pin num="L3"/>
+            <pin num="K4"/>
+            <pin num="M3"/>
+            <pin num="L4"/>
+            <pin num="D11"/>
+            <pin num="E9"/>
+            <pin num="B12"/>
+            <pin num="C12"/>
+            <pin num="C11"/>
+            <pin num="C10"/>
+            <pin num="B11"/>
+            <pin num="C9"/>
+            <pin num="J5"/>
+            <pin num="M4"/>
+            <pin num="H6"/>
+            <pin num="D6"/>
+            <pin num="A5"/>
+            <pin num="B5"/>
+            <pin num="A4"/>
+            <pin num="C5"/>
+            <pin num="B4"/>
+            <pin num="A2"/>
+            <pin num="K8"/>
+            <pin num="L7"/>
+            <pin num="M10"/>
+            <pin num="L10"/>
+            <pin num="M9"/>
+            <pin num="K2"/>
+            <pin num="K1"/>
+            <pin num="G5"/>
+            <pin num="L1"/>
+            <pin num="G9"/>
+            <pin num="F9"/>
+            <pin num="D12"/>
+            <pin num="F8"/>
+            <pin num="B10"/>
+            <pin num="C8"/>
+            <pin num="A11"/>
+            <pin num="E4"/>
+            <pin num="C1"/>
+            <pin num="D2"/>
+            <pin num="D8"/>
+            <pin num="E7"/>
+            <pin num="B9"/>
+            <pin num="A10"/>
+            <pin num="C7"/>
+            <pin num="B8"/>
+            <pin num="D7"/>
+            <pin num="A9"/>
+            <pin num="M11"/>
+            <pin num="K10"/>
+            <pin num="L11"/>
+            <pin num="L9"/>
+            <pin num="K11"/>
+            <pin num="K9"/>
+            <pin num="L12"/>
+            <pin num="H9"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="VoiceVault_B0" part="C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="VoiceVault_B0" part="L">
+      <description>Inductor</description>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Inductor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="VoiceVault_B0" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="VoiceVault_B0" part="STDC14">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">STDC14 SWD + UART</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="passive"/>
+        <pin num="2" name="NC" type="passive"/>
+        <pin num="3" name="VDD_3V3" type="passive"/>
+        <pin num="4" name="MCU_SWDIO" type="passive"/>
+        <pin num="5" name="GND" type="passive"/>
+        <pin num="6" name="MCU_SWCLK" type="passive"/>
+        <pin num="7" name="GND" type="passive"/>
+        <pin num="8" name="MCU_SWO" type="passive"/>
+        <pin num="9" name="NC" type="passive"/>
+        <pin num="10" name="NC" type="passive"/>
+        <pin num="11" name="GND" type="passive"/>
+        <pin num="12" name="MCU_NRST" type="passive"/>
+        <pin num="13" name="MCU_UART_RX" type="passive"/>
+        <pin num="14" name="MCU_UART_TX" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="VoiceVault_B0" part="STM32U5G9ZJJxQ">
+      <description>STMicroelectronics Arm Cortex-M33 MCU, 4096KB flash, 3026KB RAM, 101 GPIO, UFBGA144</description>
+      <docs>https://www.st.com/resource/en/datasheet/stm32u5g9zj.pdf</docs>
+      <footprints>
+        <fp>UFBGA*10x10mm*Layout12x12*P0.8mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">STM32U5G9ZJJxQ</field>
+        <field name="Footprint">VoiceVault_B0:UFBGA-144_10x10mm_Layout12x12_P0.8mm</field>
+        <field name="Datasheet">https://www.st.com/resource/en/datasheet/stm32u5g9zj.pdf</field>
+        <field name="Description">STMicroelectronics Arm Cortex-M33 MCU, 4096KB flash, 3026KB RAM, 101 GPIO, UFBGA144</field>
+      </fields>
+      <pins>
+        <pin num="A1" name="VSS" type="power_in"/>
+        <pin num="A2" name="PB9" type="bidirectional"/>
+        <pin num="A3" name="PH3" type="bidirectional"/>
+        <pin num="A4" name="PB6" type="bidirectional"/>
+        <pin num="A5" name="PB4" type="bidirectional"/>
+        <pin num="A6" name="PG14" type="bidirectional"/>
+        <pin num="A7" name="PG12" type="bidirectional"/>
+        <pin num="A8" name="PG10" type="bidirectional"/>
+        <pin num="A9" name="PD7" type="bidirectional"/>
+        <pin num="A10" name="PD3" type="bidirectional"/>
+        <pin num="A11" name="PC12" type="bidirectional"/>
+        <pin num="A12" name="VSS" type="passive"/>
+        <pin num="B1" name="PE2" type="bidirectional"/>
+        <pin num="B2" name="PE3" type="bidirectional"/>
+        <pin num="B3" name="PE0" type="bidirectional"/>
+        <pin num="B4" name="PB8" type="bidirectional"/>
+        <pin num="B5" name="PB5" type="bidirectional"/>
+        <pin num="B6" name="PG15" type="bidirectional"/>
+        <pin num="B7" name="PG9" type="bidirectional"/>
+        <pin num="B8" name="PD5" type="bidirectional"/>
+        <pin num="B9" name="PD2" type="bidirectional"/>
+        <pin num="B10" name="PC10" type="bidirectional"/>
+        <pin num="B11" name="PA14" type="bidirectional"/>
+        <pin num="B12" name="PA10" type="bidirectional"/>
+        <pin num="C1" name="PC14" type="bidirectional"/>
+        <pin num="C2" name="VBAT" type="power_in"/>
+        <pin num="C3" name="PE4" type="bidirectional"/>
+        <pin num="C4" name="PE5" type="bidirectional"/>
+        <pin num="C5" name="PB7" type="bidirectional"/>
+        <pin num="C6" name="PG13" type="bidirectional"/>
+        <pin num="C7" name="PD4" type="bidirectional"/>
+        <pin num="C8" name="PC11" type="bidirectional"/>
+        <pin num="C9" name="PA15" type="bidirectional"/>
+        <pin num="C10" name="PA13" type="bidirectional"/>
+        <pin num="C11" name="PA12" type="bidirectional"/>
+        <pin num="C12" name="PA11" type="bidirectional"/>
+        <pin num="D1" name="VSSDSI" type="power_in"/>
+        <pin num="D2" name="PC15" type="bidirectional"/>
+        <pin num="D3" name="PE6" type="bidirectional"/>
+        <pin num="D4" name="VDD11" type="power_in"/>
+        <pin num="D5" name="VSS" type="passive"/>
+        <pin num="D6" name="PB3" type="bidirectional"/>
+        <pin num="D7" name="PD6" type="bidirectional"/>
+        <pin num="D8" name="PD0" type="bidirectional"/>
+        <pin num="D9" name="VSS" type="passive"/>
+        <pin num="D10" name="VDDUSB" type="power_in"/>
+        <pin num="D11" name="PA8" type="bidirectional"/>
+        <pin num="D12" name="PC8" type="bidirectional"/>
+        <pin num="E1" name="DSI_D0N" type="bidirectional"/>
+        <pin num="E2" name="DSI_D0P" type="bidirectional"/>
+        <pin num="E3" name="VDDDSI" type="power_in"/>
+        <pin num="E4" name="PC13" type="bidirectional"/>
+        <pin num="E5" name="PF0" type="bidirectional"/>
+        <pin num="E6" name="VDDIO2" type="power_in"/>
+        <pin num="E7" name="PD1" type="bidirectional"/>
+        <pin num="E8" name="VDD" type="power_in"/>
+        <pin num="E9" name="PA9" type="bidirectional"/>
+        <pin num="E10" name="VDD" type="power_in"/>
+        <pin num="E11" name="PI2" type="bidirectional"/>
+        <pin num="E12" name="PI3" type="bidirectional"/>
+        <pin num="F1" name="DSI_CKN" type="bidirectional"/>
+        <pin num="F2" name="DSI_CKP" type="bidirectional"/>
+        <pin num="F3" name="VSSDSI" type="passive"/>
+        <pin num="F4" name="PF1" type="bidirectional"/>
+        <pin num="F5" name="VDD" type="power_in"/>
+        <pin num="F6" name="VSS" type="passive"/>
+        <pin num="F7" name="VSS" type="passive"/>
+        <pin num="F8" name="PC9" type="bidirectional"/>
+        <pin num="F9" name="PC7" type="bidirectional"/>
+        <pin num="F10" name="VSS" type="passive"/>
+        <pin num="F11" name="PI0" type="bidirectional"/>
+        <pin num="F12" name="PI1" type="bidirectional"/>
+        <pin num="G1" name="DSI_D1N" type="bidirectional"/>
+        <pin num="G2" name="DSI_D1P" type="bidirectional"/>
+        <pin num="G3" name="VDD11DSI" type="power_in"/>
+        <pin num="G4" name="PF2" type="bidirectional"/>
+        <pin num="G5" name="PC2" type="bidirectional"/>
+        <pin num="G6" name="VSS" type="passive"/>
+        <pin num="G7" name="VSS" type="passive"/>
+        <pin num="G8" name="VDD" type="power_in"/>
+        <pin num="G9" name="PC6" type="bidirectional"/>
+        <pin num="G10" name="VDD" type="power_in"/>
+        <pin num="G11" name="PH14" type="bidirectional"/>
+        <pin num="G12" name="PH15" type="bidirectional"/>
+        <pin num="H1" name="VSSDSI" type="passive"/>
+        <pin num="H2" name="PH0" type="bidirectional"/>
+        <pin num="H3" name="VREF+" type="input"/>
+        <pin num="H4" name="PA0" type="bidirectional"/>
+        <pin num="H5" name="VDD" type="power_in"/>
+        <pin num="H6" name="PB2" type="bidirectional"/>
+        <pin num="H7" name="VDD" type="power_in"/>
+        <pin num="H8" name="PE8" type="bidirectional"/>
+        <pin num="H9" name="PD15" type="bidirectional"/>
+        <pin num="H10" name="VSS" type="passive"/>
+        <pin num="H11" name="PH12" type="bidirectional"/>
+        <pin num="H12" name="PH13" type="bidirectional"/>
+        <pin num="J1" name="PH1" type="bidirectional"/>
+        <pin num="J2" name="NRST" type="input"/>
+        <pin num="J3" name="VSSA" type="power_in"/>
+        <pin num="J4" name="VDDA" type="power_in"/>
+        <pin num="J5" name="PB0" type="bidirectional"/>
+        <pin num="J6" name="PG1" type="bidirectional"/>
+        <pin num="J7" name="PE10" type="bidirectional"/>
+        <pin num="J8" name="PE12" type="bidirectional"/>
+        <pin num="J9" name="VDD11" type="power_in"/>
+        <pin num="J10" name="VDD" type="power_in"/>
+        <pin num="J11" name="PH11" type="bidirectional"/>
+        <pin num="J12" name="PH10" type="bidirectional"/>
+        <pin num="K1" name="PC1" type="bidirectional"/>
+        <pin num="K2" name="PC0" type="bidirectional"/>
+        <pin num="K3" name="PA1" type="bidirectional"/>
+        <pin num="K4" name="PA5" type="bidirectional"/>
+        <pin num="K5" name="PG0" type="bidirectional"/>
+        <pin num="K6" name="PE9" type="bidirectional"/>
+        <pin num="K7" name="PE14" type="bidirectional"/>
+        <pin num="K8" name="PB10" type="bidirectional"/>
+        <pin num="K9" name="PD13" type="bidirectional"/>
+        <pin num="K10" name="PD9" type="bidirectional"/>
+        <pin num="K11" name="PD12" type="bidirectional"/>
+        <pin num="K12" name="PH9" type="bidirectional"/>
+        <pin num="L1" name="PC3" type="bidirectional"/>
+        <pin num="L2" name="PA2" type="bidirectional"/>
+        <pin num="L3" name="PA4" type="bidirectional"/>
+        <pin num="L4" name="PA7" type="bidirectional"/>
+        <pin num="L5" name="PE7" type="bidirectional"/>
+        <pin num="L6" name="PE13" type="bidirectional"/>
+        <pin num="L7" name="PB11" type="bidirectional"/>
+        <pin num="L8" name="VSSSMPS" type="power_in"/>
+        <pin num="L9" name="PD11" type="bidirectional"/>
+        <pin num="L10" name="PB14" type="bidirectional"/>
+        <pin num="L11" name="PD10" type="bidirectional"/>
+        <pin num="L12" name="PD14" type="bidirectional"/>
+        <pin num="M1" name="VSS" type="passive"/>
+        <pin num="M2" name="PA3" type="bidirectional"/>
+        <pin num="M3" name="PA6" type="bidirectional"/>
+        <pin num="M4" name="PB1" type="bidirectional"/>
+        <pin num="M5" name="PE11" type="bidirectional"/>
+        <pin num="M6" name="PE15" type="bidirectional"/>
+        <pin num="M7" name="VLXSMPS" type="power_in"/>
+        <pin num="M8" name="VDDSMPS" type="power_in"/>
+        <pin num="M9" name="PB15" type="bidirectional"/>
+        <pin num="M10" name="PB13" type="bidirectional"/>
+        <pin num="M11" name="PD8" type="bidirectional"/>
+        <pin num="M12" name="VSS" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="VoiceVault_B0">
+      <uri>${KIPRJMOD}/VoiceVault_B0.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/GND" class="Default">
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C107" pin="2" pintype="passive"/>
+      <node ref="C108" pin="2" pintype="passive"/>
+      <node ref="C109" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C110" pin="2" pintype="passive"/>
+      <node ref="C111" pin="2" pintype="passive"/>
+      <node ref="C112" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="C19" pin="2" pintype="passive"/>
+      <node ref="C20" pin="2" pintype="passive"/>
+      <node ref="C21" pin="2" pintype="passive"/>
+      <node ref="C22" pin="2" pintype="passive"/>
+      <node ref="C23" pin="2" pintype="passive"/>
+      <node ref="C24" pin="2" pintype="passive"/>
+      <node ref="C25" pin="2" pintype="passive"/>
+      <node ref="C26" pin="2" pintype="passive"/>
+      <node ref="C27" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="J101" pin="11" pinfunction="GND_11" pintype="passive"/>
+      <node ref="J101" pin="5" pinfunction="GND_5" pintype="passive"/>
+      <node ref="J101" pin="7" pinfunction="GND_7" pintype="passive"/>
+      <node ref="U1" pin="A1" pinfunction="VSS_A1" pintype="power_in"/>
+      <node ref="U1" pin="A12" pinfunction="VSS_A12" pintype="passive"/>
+      <node ref="U1" pin="D1" pinfunction="VSSDSI_D1" pintype="power_in"/>
+      <node ref="U1" pin="D5" pinfunction="VSS_D5" pintype="passive"/>
+      <node ref="U1" pin="D9" pinfunction="VSS_D9" pintype="passive"/>
+      <node ref="U1" pin="F10" pinfunction="VSS_F10" pintype="passive"/>
+      <node ref="U1" pin="F3" pinfunction="VSSDSI_F3" pintype="passive"/>
+      <node ref="U1" pin="F6" pinfunction="VSS_F6" pintype="passive"/>
+      <node ref="U1" pin="F7" pinfunction="VSS_F7" pintype="passive"/>
+      <node ref="U1" pin="G6" pinfunction="VSS_G6" pintype="passive"/>
+      <node ref="U1" pin="G7" pinfunction="VSS_G7" pintype="passive"/>
+      <node ref="U1" pin="H1" pinfunction="VSSDSI_H1" pintype="passive"/>
+      <node ref="U1" pin="H10" pinfunction="VSS_H10" pintype="passive"/>
+      <node ref="U1" pin="J3" pinfunction="VSSA_J3" pintype="power_in"/>
+      <node ref="U1" pin="L8" pinfunction="VSSSMPS_L8" pintype="power_in"/>
+      <node ref="U1" pin="M1" pinfunction="VSS_M1" pintype="passive"/>
+      <node ref="U1" pin="M12" pinfunction="VSS_M12" pintype="passive"/>
+    </net>
+    <net code="2" name="/MCU_LX" class="Default">
+      <node ref="L1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="M7" pinfunction="VLXSMPS_M7" pintype="power_in"/>
+    </net>
+    <net code="3" name="/MCU_NRST" class="Default">
+      <node ref="J101" pin="12" pinfunction="MCU_NRST_12" pintype="passive"/>
+      <node ref="U1" pin="J2" pinfunction="NRST_J2" pintype="input"/>
+    </net>
+    <net code="4" name="/MCU_SWCLK" class="Default">
+      <node ref="J101" pin="6" pinfunction="MCU_SWCLK_6" pintype="passive"/>
+      <node ref="U1" pin="B11" pinfunction="PA14_B11" pintype="bidirectional"/>
+    </net>
+    <net code="5" name="/MCU_SWDIO" class="Default">
+      <node ref="J101" pin="4" pinfunction="MCU_SWDIO_4" pintype="passive"/>
+      <node ref="U1" pin="C10" pinfunction="PA13_C10" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="/MCU_SWO" class="Default">
+      <node ref="J101" pin="8" pinfunction="MCU_SWO_8" pintype="passive"/>
+      <node ref="U1" pin="D6" pinfunction="PB3_D6" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="/MCU_UART_RX" class="Default">
+      <node ref="J101" pin="13" pinfunction="MCU_UART_RX_13" pintype="passive"/>
+      <node ref="U1" pin="D12" pinfunction="PC8_D12" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="/MCU_UART_TX" class="Default">
+      <node ref="J101" pin="14" pinfunction="MCU_UART_TX_14" pintype="passive"/>
+      <node ref="U1" pin="F8" pinfunction="PC9_F8" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="/MCU_VBAT_3V3" class="Default">
+      <node ref="C112" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="R101" pin="2" pintype="passive"/>
+      <node ref="U1" pin="C2" pinfunction="VBAT_C2" pintype="power_in"/>
+    </net>
+    <net code="10" name="/MCU_VDD11" class="Default">
+      <node ref="C107" pin="1" pintype="passive"/>
+      <node ref="C22" pin="1" pintype="passive"/>
+      <node ref="C23" pin="1" pintype="passive"/>
+      <node ref="C24" pin="1" pintype="passive"/>
+      <node ref="C27" pin="1" pintype="passive"/>
+      <node ref="L1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="D4" pinfunction="VDD11_D4" pintype="power_in"/>
+      <node ref="U1" pin="G3" pinfunction="VDD11DSI_G3" pintype="power_in"/>
+      <node ref="U1" pin="J9" pinfunction="VDD11_J9" pintype="power_in"/>
+    </net>
+    <net code="11" name="/VDD_3V3" class="Default">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C108" pin="1" pintype="passive"/>
+      <node ref="C109" pin="1" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C110" pin="1" pintype="passive"/>
+      <node ref="C111" pin="1" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="C19" pin="1" pintype="passive"/>
+      <node ref="C20" pin="1" pintype="passive"/>
+      <node ref="C21" pin="1" pintype="passive"/>
+      <node ref="C25" pin="1" pintype="passive"/>
+      <node ref="C26" pin="1" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="J101" pin="3" pinfunction="VDD_3V3_3" pintype="passive"/>
+      <node ref="R101" pin="1" pintype="passive"/>
+      <node ref="U1" pin="D10" pinfunction="VDDUSB_D10" pintype="power_in"/>
+      <node ref="U1" pin="E10" pinfunction="VDD_E10" pintype="power_in"/>
+      <node ref="U1" pin="E3" pinfunction="VDDDSI_E3" pintype="power_in"/>
+      <node ref="U1" pin="E6" pinfunction="VDDIO2_E6" pintype="power_in"/>
+      <node ref="U1" pin="E8" pinfunction="VDD_E8" pintype="power_in"/>
+      <node ref="U1" pin="F5" pinfunction="VDD_F5" pintype="power_in"/>
+      <node ref="U1" pin="G10" pinfunction="VDD_G10" pintype="power_in"/>
+      <node ref="U1" pin="G8" pinfunction="VDD_G8" pintype="power_in"/>
+      <node ref="U1" pin="H3" pinfunction="VREF+_H3" pintype="input"/>
+      <node ref="U1" pin="H5" pinfunction="VDD_H5" pintype="power_in"/>
+      <node ref="U1" pin="H7" pinfunction="VDD_H7" pintype="power_in"/>
+      <node ref="U1" pin="J10" pinfunction="VDD_J10" pintype="power_in"/>
+      <node ref="U1" pin="J4" pinfunction="VDDA_J4" pintype="power_in"/>
+      <node ref="U1" pin="M8" pinfunction="VDDSMPS_M8" pintype="power_in"/>
+    </net>
+    <net code="12" name="unconnected-(J101-NC-Pad1)" class="Default">
+      <node ref="J101" pin="1" pinfunction="NC_1" pintype="passive+no_connect"/>
+    </net>
+    <net code="13" name="unconnected-(J101-NC-Pad2)" class="Default">
+      <node ref="J101" pin="2" pinfunction="NC_2" pintype="passive+no_connect"/>
+    </net>
+    <net code="14" name="unconnected-(J101-NC-Pad9)" class="Default">
+      <node ref="J101" pin="9" pinfunction="NC_9" pintype="passive+no_connect"/>
+    </net>
+    <net code="15" name="unconnected-(J101-NC-Pad10)" class="Default">
+      <node ref="J101" pin="10" pinfunction="NC_10" pintype="passive+no_connect"/>
+    </net>
+    <net code="16" name="unconnected-(U1-DSI_CKN-PadF1)" class="Default">
+      <node ref="U1" pin="F1" pinfunction="DSI_CKN_F1" pintype="bidirectional"/>
+    </net>
+    <net code="17" name="unconnected-(U1-DSI_CKP-PadF2)" class="Default">
+      <node ref="U1" pin="F2" pinfunction="DSI_CKP_F2" pintype="bidirectional"/>
+    </net>
+    <net code="18" name="unconnected-(U1-DSI_D0N-PadE1)" class="Default">
+      <node ref="U1" pin="E1" pinfunction="DSI_D0N_E1" pintype="bidirectional"/>
+    </net>
+    <net code="19" name="unconnected-(U1-DSI_D0P-PadE2)" class="Default">
+      <node ref="U1" pin="E2" pinfunction="DSI_D0P_E2" pintype="bidirectional"/>
+    </net>
+    <net code="20" name="unconnected-(U1-DSI_D1N-PadG1)" class="Default">
+      <node ref="U1" pin="G1" pinfunction="DSI_D1N_G1" pintype="bidirectional"/>
+    </net>
+    <net code="21" name="unconnected-(U1-DSI_D1P-PadG2)" class="Default">
+      <node ref="U1" pin="G2" pinfunction="DSI_D1P_G2" pintype="bidirectional"/>
+    </net>
+    <net code="22" name="unconnected-(U1-PA0-PadH4)" class="Default">
+      <node ref="U1" pin="H4" pinfunction="PA0_H4" pintype="bidirectional"/>
+    </net>
+    <net code="23" name="unconnected-(U1-PA1-PadK3)" class="Default">
+      <node ref="U1" pin="K3" pinfunction="PA1_K3" pintype="bidirectional"/>
+    </net>
+    <net code="24" name="unconnected-(U1-PA2-PadL2)" class="Default">
+      <node ref="U1" pin="L2" pinfunction="PA2_L2" pintype="bidirectional"/>
+    </net>
+    <net code="25" name="unconnected-(U1-PA3-PadM2)" class="Default">
+      <node ref="U1" pin="M2" pinfunction="PA3_M2" pintype="bidirectional"/>
+    </net>
+    <net code="26" name="unconnected-(U1-PA4-PadL3)" class="Default">
+      <node ref="U1" pin="L3" pinfunction="PA4_L3" pintype="bidirectional"/>
+    </net>
+    <net code="27" name="unconnected-(U1-PA5-PadK4)" class="Default">
+      <node ref="U1" pin="K4" pinfunction="PA5_K4" pintype="bidirectional"/>
+    </net>
+    <net code="28" name="unconnected-(U1-PA6-PadM3)" class="Default">
+      <node ref="U1" pin="M3" pinfunction="PA6_M3" pintype="bidirectional"/>
+    </net>
+    <net code="29" name="unconnected-(U1-PA7-PadL4)" class="Default">
+      <node ref="U1" pin="L4" pinfunction="PA7_L4" pintype="bidirectional"/>
+    </net>
+    <net code="30" name="unconnected-(U1-PA8-PadD11)" class="Default">
+      <node ref="U1" pin="D11" pinfunction="PA8_D11" pintype="bidirectional"/>
+    </net>
+    <net code="31" name="unconnected-(U1-PA9-PadE9)" class="Default">
+      <node ref="U1" pin="E9" pinfunction="PA9_E9" pintype="bidirectional"/>
+    </net>
+    <net code="32" name="unconnected-(U1-PA10-PadB12)" class="Default">
+      <node ref="U1" pin="B12" pinfunction="PA10_B12" pintype="bidirectional"/>
+    </net>
+    <net code="33" name="unconnected-(U1-PA11-PadC12)" class="Default">
+      <node ref="U1" pin="C12" pinfunction="PA11_C12" pintype="bidirectional"/>
+    </net>
+    <net code="34" name="unconnected-(U1-PA12-PadC11)" class="Default">
+      <node ref="U1" pin="C11" pinfunction="PA12_C11" pintype="bidirectional"/>
+    </net>
+    <net code="35" name="unconnected-(U1-PA15-PadC9)" class="Default">
+      <node ref="U1" pin="C9" pinfunction="PA15_C9" pintype="bidirectional"/>
+    </net>
+    <net code="36" name="unconnected-(U1-PB0-PadJ5)" class="Default">
+      <node ref="U1" pin="J5" pinfunction="PB0_J5" pintype="bidirectional"/>
+    </net>
+    <net code="37" name="unconnected-(U1-PB1-PadM4)" class="Default">
+      <node ref="U1" pin="M4" pinfunction="PB1_M4" pintype="bidirectional"/>
+    </net>
+    <net code="38" name="unconnected-(U1-PB2-PadH6)" class="Default">
+      <node ref="U1" pin="H6" pinfunction="PB2_H6" pintype="bidirectional"/>
+    </net>
+    <net code="39" name="unconnected-(U1-PB4-PadA5)" class="Default">
+      <node ref="U1" pin="A5" pinfunction="PB4_A5" pintype="bidirectional"/>
+    </net>
+    <net code="40" name="unconnected-(U1-PB5-PadB5)" class="Default">
+      <node ref="U1" pin="B5" pinfunction="PB5_B5" pintype="bidirectional"/>
+    </net>
+    <net code="41" name="unconnected-(U1-PB6-PadA4)" class="Default">
+      <node ref="U1" pin="A4" pinfunction="PB6_A4" pintype="bidirectional"/>
+    </net>
+    <net code="42" name="unconnected-(U1-PB7-PadC5)" class="Default">
+      <node ref="U1" pin="C5" pinfunction="PB7_C5" pintype="bidirectional"/>
+    </net>
+    <net code="43" name="unconnected-(U1-PB8-PadB4)" class="Default">
+      <node ref="U1" pin="B4" pinfunction="PB8_B4" pintype="bidirectional"/>
+    </net>
+    <net code="44" name="unconnected-(U1-PB9-PadA2)" class="Default">
+      <node ref="U1" pin="A2" pinfunction="PB9_A2" pintype="bidirectional"/>
+    </net>
+    <net code="45" name="unconnected-(U1-PB10-PadK8)" class="Default">
+      <node ref="U1" pin="K8" pinfunction="PB10_K8" pintype="bidirectional"/>
+    </net>
+    <net code="46" name="unconnected-(U1-PB11-PadL7)" class="Default">
+      <node ref="U1" pin="L7" pinfunction="PB11_L7" pintype="bidirectional"/>
+    </net>
+    <net code="47" name="unconnected-(U1-PB13-PadM10)" class="Default">
+      <node ref="U1" pin="M10" pinfunction="PB13_M10" pintype="bidirectional"/>
+    </net>
+    <net code="48" name="unconnected-(U1-PB14-PadL10)" class="Default">
+      <node ref="U1" pin="L10" pinfunction="PB14_L10" pintype="bidirectional"/>
+    </net>
+    <net code="49" name="unconnected-(U1-PB15-PadM9)" class="Default">
+      <node ref="U1" pin="M9" pinfunction="PB15_M9" pintype="bidirectional"/>
+    </net>
+    <net code="50" name="unconnected-(U1-PC0-PadK2)" class="Default">
+      <node ref="U1" pin="K2" pinfunction="PC0_K2" pintype="bidirectional"/>
+    </net>
+    <net code="51" name="unconnected-(U1-PC1-PadK1)" class="Default">
+      <node ref="U1" pin="K1" pinfunction="PC1_K1" pintype="bidirectional"/>
+    </net>
+    <net code="52" name="unconnected-(U1-PC2-PadG5)" class="Default">
+      <node ref="U1" pin="G5" pinfunction="PC2_G5" pintype="bidirectional"/>
+    </net>
+    <net code="53" name="unconnected-(U1-PC3-PadL1)" class="Default">
+      <node ref="U1" pin="L1" pinfunction="PC3_L1" pintype="bidirectional"/>
+    </net>
+    <net code="54" name="unconnected-(U1-PC6-PadG9)" class="Default">
+      <node ref="U1" pin="G9" pinfunction="PC6_G9" pintype="bidirectional"/>
+    </net>
+    <net code="55" name="unconnected-(U1-PC7-PadF9)" class="Default">
+      <node ref="U1" pin="F9" pinfunction="PC7_F9" pintype="bidirectional"/>
+    </net>
+    <net code="56" name="unconnected-(U1-PC10-PadB10)" class="Default">
+      <node ref="U1" pin="B10" pinfunction="PC10_B10" pintype="bidirectional"/>
+    </net>
+    <net code="57" name="unconnected-(U1-PC11-PadC8)" class="Default">
+      <node ref="U1" pin="C8" pinfunction="PC11_C8" pintype="bidirectional"/>
+    </net>
+    <net code="58" name="unconnected-(U1-PC12-PadA11)" class="Default">
+      <node ref="U1" pin="A11" pinfunction="PC12_A11" pintype="bidirectional"/>
+    </net>
+    <net code="59" name="unconnected-(U1-PC13-PadE4)" class="Default">
+      <node ref="U1" pin="E4" pinfunction="PC13_E4" pintype="bidirectional"/>
+    </net>
+    <net code="60" name="unconnected-(U1-PC14-PadC1)" class="Default">
+      <node ref="U1" pin="C1" pinfunction="PC14_C1" pintype="bidirectional"/>
+    </net>
+    <net code="61" name="unconnected-(U1-PC15-PadD2)" class="Default">
+      <node ref="U1" pin="D2" pinfunction="PC15_D2" pintype="bidirectional"/>
+    </net>
+    <net code="62" name="unconnected-(U1-PD0-PadD8)" class="Default">
+      <node ref="U1" pin="D8" pinfunction="PD0_D8" pintype="bidirectional"/>
+    </net>
+    <net code="63" name="unconnected-(U1-PD1-PadE7)" class="Default">
+      <node ref="U1" pin="E7" pinfunction="PD1_E7" pintype="bidirectional"/>
+    </net>
+    <net code="64" name="unconnected-(U1-PD2-PadB9)" class="Default">
+      <node ref="U1" pin="B9" pinfunction="PD2_B9" pintype="bidirectional"/>
+    </net>
+    <net code="65" name="unconnected-(U1-PD3-PadA10)" class="Default">
+      <node ref="U1" pin="A10" pinfunction="PD3_A10" pintype="bidirectional"/>
+    </net>
+    <net code="66" name="unconnected-(U1-PD4-PadC7)" class="Default">
+      <node ref="U1" pin="C7" pinfunction="PD4_C7" pintype="bidirectional"/>
+    </net>
+    <net code="67" name="unconnected-(U1-PD5-PadB8)" class="Default">
+      <node ref="U1" pin="B8" pinfunction="PD5_B8" pintype="bidirectional"/>
+    </net>
+    <net code="68" name="unconnected-(U1-PD6-PadD7)" class="Default">
+      <node ref="U1" pin="D7" pinfunction="PD6_D7" pintype="bidirectional"/>
+    </net>
+    <net code="69" name="unconnected-(U1-PD7-PadA9)" class="Default">
+      <node ref="U1" pin="A9" pinfunction="PD7_A9" pintype="bidirectional"/>
+    </net>
+    <net code="70" name="unconnected-(U1-PD8-PadM11)" class="Default">
+      <node ref="U1" pin="M11" pinfunction="PD8_M11" pintype="bidirectional"/>
+    </net>
+    <net code="71" name="unconnected-(U1-PD9-PadK10)" class="Default">
+      <node ref="U1" pin="K10" pinfunction="PD9_K10" pintype="bidirectional"/>
+    </net>
+    <net code="72" name="unconnected-(U1-PD10-PadL11)" class="Default">
+      <node ref="U1" pin="L11" pinfunction="PD10_L11" pintype="bidirectional"/>
+    </net>
+    <net code="73" name="unconnected-(U1-PD11-PadL9)" class="Default">
+      <node ref="U1" pin="L9" pinfunction="PD11_L9" pintype="bidirectional"/>
+    </net>
+    <net code="74" name="unconnected-(U1-PD12-PadK11)" class="Default">
+      <node ref="U1" pin="K11" pinfunction="PD12_K11" pintype="bidirectional"/>
+    </net>
+    <net code="75" name="unconnected-(U1-PD13-PadK9)" class="Default">
+      <node ref="U1" pin="K9" pinfunction="PD13_K9" pintype="bidirectional"/>
+    </net>
+    <net code="76" name="unconnected-(U1-PD14-PadL12)" class="Default">
+      <node ref="U1" pin="L12" pinfunction="PD14_L12" pintype="bidirectional"/>
+    </net>
+    <net code="77" name="unconnected-(U1-PD15-PadH9)" class="Default">
+      <node ref="U1" pin="H9" pinfunction="PD15_H9" pintype="bidirectional"/>
+    </net>
+    <net code="78" name="unconnected-(U1-PE0-PadB3)" class="Default">
+      <node ref="U1" pin="B3" pinfunction="PE0_B3" pintype="bidirectional"/>
+    </net>
+    <net code="79" name="unconnected-(U1-PE2-PadB1)" class="Default">
+      <node ref="U1" pin="B1" pinfunction="PE2_B1" pintype="bidirectional"/>
+    </net>
+    <net code="80" name="unconnected-(U1-PE3-PadB2)" class="Default">
+      <node ref="U1" pin="B2" pinfunction="PE3_B2" pintype="bidirectional"/>
+    </net>
+    <net code="81" name="unconnected-(U1-PE4-PadC3)" class="Default">
+      <node ref="U1" pin="C3" pinfunction="PE4_C3" pintype="bidirectional"/>
+    </net>
+    <net code="82" name="unconnected-(U1-PE5-PadC4)" class="Default">
+      <node ref="U1" pin="C4" pinfunction="PE5_C4" pintype="bidirectional"/>
+    </net>
+    <net code="83" name="unconnected-(U1-PE6-PadD3)" class="Default">
+      <node ref="U1" pin="D3" pinfunction="PE6_D3" pintype="bidirectional"/>
+    </net>
+    <net code="84" name="unconnected-(U1-PE7-PadL5)" class="Default">
+      <node ref="U1" pin="L5" pinfunction="PE7_L5" pintype="bidirectional"/>
+    </net>
+    <net code="85" name="unconnected-(U1-PE8-PadH8)" class="Default">
+      <node ref="U1" pin="H8" pinfunction="PE8_H8" pintype="bidirectional"/>
+    </net>
+    <net code="86" name="unconnected-(U1-PE9-PadK6)" class="Default">
+      <node ref="U1" pin="K6" pinfunction="PE9_K6" pintype="bidirectional"/>
+    </net>
+    <net code="87" name="unconnected-(U1-PE10-PadJ7)" class="Default">
+      <node ref="U1" pin="J7" pinfunction="PE10_J7" pintype="bidirectional"/>
+    </net>
+    <net code="88" name="unconnected-(U1-PE11-PadM5)" class="Default">
+      <node ref="U1" pin="M5" pinfunction="PE11_M5" pintype="bidirectional"/>
+    </net>
+    <net code="89" name="unconnected-(U1-PE12-PadJ8)" class="Default">
+      <node ref="U1" pin="J8" pinfunction="PE12_J8" pintype="bidirectional"/>
+    </net>
+    <net code="90" name="unconnected-(U1-PE13-PadL6)" class="Default">
+      <node ref="U1" pin="L6" pinfunction="PE13_L6" pintype="bidirectional"/>
+    </net>
+    <net code="91" name="unconnected-(U1-PE14-PadK7)" class="Default">
+      <node ref="U1" pin="K7" pinfunction="PE14_K7" pintype="bidirectional"/>
+    </net>
+    <net code="92" name="unconnected-(U1-PE15-PadM6)" class="Default">
+      <node ref="U1" pin="M6" pinfunction="PE15_M6" pintype="bidirectional"/>
+    </net>
+    <net code="93" name="unconnected-(U1-PF0-PadE5)" class="Default">
+      <node ref="U1" pin="E5" pinfunction="PF0_E5" pintype="bidirectional"/>
+    </net>
+    <net code="94" name="unconnected-(U1-PF1-PadF4)" class="Default">
+      <node ref="U1" pin="F4" pinfunction="PF1_F4" pintype="bidirectional"/>
+    </net>
+    <net code="95" name="unconnected-(U1-PF2-PadG4)" class="Default">
+      <node ref="U1" pin="G4" pinfunction="PF2_G4" pintype="bidirectional"/>
+    </net>
+    <net code="96" name="unconnected-(U1-PG0-PadK5)" class="Default">
+      <node ref="U1" pin="K5" pinfunction="PG0_K5" pintype="bidirectional"/>
+    </net>
+    <net code="97" name="unconnected-(U1-PG1-PadJ6)" class="Default">
+      <node ref="U1" pin="J6" pinfunction="PG1_J6" pintype="bidirectional"/>
+    </net>
+    <net code="98" name="unconnected-(U1-PG9-PadB7)" class="Default">
+      <node ref="U1" pin="B7" pinfunction="PG9_B7" pintype="bidirectional"/>
+    </net>
+    <net code="99" name="unconnected-(U1-PG10-PadA8)" class="Default">
+      <node ref="U1" pin="A8" pinfunction="PG10_A8" pintype="bidirectional"/>
+    </net>
+    <net code="100" name="unconnected-(U1-PG12-PadA7)" class="Default">
+      <node ref="U1" pin="A7" pinfunction="PG12_A7" pintype="bidirectional"/>
+    </net>
+    <net code="101" name="unconnected-(U1-PG13-PadC6)" class="Default">
+      <node ref="U1" pin="C6" pinfunction="PG13_C6" pintype="bidirectional"/>
+    </net>
+    <net code="102" name="unconnected-(U1-PG14-PadA6)" class="Default">
+      <node ref="U1" pin="A6" pinfunction="PG14_A6" pintype="bidirectional"/>
+    </net>
+    <net code="103" name="unconnected-(U1-PG15-PadB6)" class="Default">
+      <node ref="U1" pin="B6" pinfunction="PG15_B6" pintype="bidirectional"/>
+    </net>
+    <net code="104" name="unconnected-(U1-PH0-PadH2)" class="Default">
+      <node ref="U1" pin="H2" pinfunction="PH0_H2" pintype="bidirectional"/>
+    </net>
+    <net code="105" name="unconnected-(U1-PH1-PadJ1)" class="Default">
+      <node ref="U1" pin="J1" pinfunction="PH1_J1" pintype="bidirectional"/>
+    </net>
+    <net code="106" name="unconnected-(U1-PH3-PadA3)" class="Default">
+      <node ref="U1" pin="A3" pinfunction="PH3_A3" pintype="bidirectional"/>
+    </net>
+    <net code="107" name="unconnected-(U1-PH9-PadK12)" class="Default">
+      <node ref="U1" pin="K12" pinfunction="PH9_K12" pintype="bidirectional"/>
+    </net>
+    <net code="108" name="unconnected-(U1-PH10-PadJ12)" class="Default">
+      <node ref="U1" pin="J12" pinfunction="PH10_J12" pintype="bidirectional"/>
+    </net>
+    <net code="109" name="unconnected-(U1-PH11-PadJ11)" class="Default">
+      <node ref="U1" pin="J11" pinfunction="PH11_J11" pintype="bidirectional"/>
+    </net>
+    <net code="110" name="unconnected-(U1-PH12-PadH11)" class="Default">
+      <node ref="U1" pin="H11" pinfunction="PH12_H11" pintype="bidirectional"/>
+    </net>
+    <net code="111" name="unconnected-(U1-PH13-PadH12)" class="Default">
+      <node ref="U1" pin="H12" pinfunction="PH13_H12" pintype="bidirectional"/>
+    </net>
+    <net code="112" name="unconnected-(U1-PH14-PadG11)" class="Default">
+      <node ref="U1" pin="G11" pinfunction="PH14_G11" pintype="bidirectional"/>
+    </net>
+    <net code="113" name="unconnected-(U1-PH15-PadG12)" class="Default">
+      <node ref="U1" pin="G12" pinfunction="PH15_G12" pintype="bidirectional"/>
+    </net>
+    <net code="114" name="unconnected-(U1-PI0-PadF11)" class="Default">
+      <node ref="U1" pin="F11" pinfunction="PI0_F11" pintype="bidirectional"/>
+    </net>
+    <net code="115" name="unconnected-(U1-PI1-PadF12)" class="Default">
+      <node ref="U1" pin="F12" pinfunction="PI1_F12" pintype="bidirectional"/>
+    </net>
+    <net code="116" name="unconnected-(U1-PI2-PadE11)" class="Default">
+      <node ref="U1" pin="E11" pinfunction="PI2_E11" pintype="bidirectional"/>
+    </net>
+    <net code="117" name="unconnected-(U1-PI3-PadE12)" class="Default">
+      <node ref="U1" pin="E12" pinfunction="PI3_E12" pintype="bidirectional"/>
+    </net>
+  </nets>
+</export>

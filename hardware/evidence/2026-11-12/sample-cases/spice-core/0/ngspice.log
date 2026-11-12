@@ -1,0 +1,28 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: voicevault b0 mcu core-output passive sensitivity
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+average                                    1.1
+lx                                      1.0995
+core                                    1.0995
+c1                                      1.0995
+c2                                      1.0995
+lcore#branch                              0.01
+vaverage#branch                          -0.01
+
+
+No. of Data Rows : 8032
+core_min            =  1.03842e+00 at=  5.05850e-04
+core_max            =  1.15548e+00 at=  2.60750e-04
+ngspice-47 done

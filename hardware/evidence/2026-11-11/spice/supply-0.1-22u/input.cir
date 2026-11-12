@@ -1,0 +1,15 @@
+VoiceVault Rev A 5V distribution droop - source impedance sensitivity
+* Ideal regulator plus assumed source/cable resistance. This is not a switch-mode IC model.
+.param series_r=0.1 bulk_c=22u
+Vsupply source 0 5
+Rpath source rail {series_r}
+Cbulk rail 0 {bulk_c}
+Iload rail 0 PULSE(0.1 0.5 1m 10u 10u 2m 4m)
+.control
+tran 1u 10m
+wrdata supply-transient.txt v(rail)
+meas tran rail_min MIN v(rail) FROM=1m TO=4m
+meas tran rail_max MAX v(rail) FROM=1m TO=4m
+quit
+.endc
+.end

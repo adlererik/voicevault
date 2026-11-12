@@ -1,0 +1,19 @@
+{
+  "project": "VoiceVault standalone B0",
+  "mcu": "STM32U5G9ZJJ6Q",
+  "package": "UFBGA144, 10x10mm, 0.8mm pitch",
+  "desired_silicon_revision": "Z, subject to exact sourcing and errata review",
+  "actual_silicon_revision_verified": false,
+  "source_reference": "TS7 rev_D at d99ad42320a19875c124445195fa56f0dbaff6db",
+  "pin_data_commit": "7d1f1514ed5583ec5007ad91236b4e1d377295b1",
+  "audio_peripheral": "SAI1 full duplex",
+  "debug": "STDC14 SWD/SWO/USART6 plus independent Nordic SWD",
+  "outline_mm": [70, 45],
+  "candidate_copper_layers": 6,
+  "candidate_thickness_mm": 1.0,
+  "stackup_accepted": false,
+  "manufacturing_ready": false,
+  "qualified_peripheral_models": [],
+  "hardware_measurements": [],
+  "legacy_bench_reference": "../reference/target.json (DK2 LQFP144; not this PCB)"
+}

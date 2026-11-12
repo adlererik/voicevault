@@ -1,0 +1,25 @@
+{
+  "part": "Molex 1040310811",
+  "date": "2026-11-12",
+  "drawing": "SD-104031-001 rev B2, sheet 1 of 2",
+  "manufacturer_url": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/104/104031/1040310811_sd.pdf",
+  "retrieved_copy": "https://cdn.hackaday.io/files/1649347056536256/molex-memory-connectors-pc-card-sockets-1040310811-sd.pdf",
+  "drawing_copy_sha256": "24f810cd9557ded279dfa165cb4f7dde2ffd8311f1f25d056d5d443ec29f2b61",
+  "kicad_library_sha256": "5d449a7fafc6b32f23f9de0f1e577ed8f56546280766979ad69f291932e57a8a",
+  "manufacturer_product": "https://www.molex.com/en-us/products/part-detail/1040310811",
+  "jlc_part": "C585350",
+  "jlc_url": "https://jlcpcb.com/partdetail/Molex-1040310811/C585350",
+  "selection": "Replacement candidate; not procured or factory accepted",
+  "review": [
+    "Eight standard microSD contacts, separate two-terminal normally-open insertion switch, four shell lands",
+    "Signal pitch 1.10mm; contacts 1-7 lands 0.85 x 1.10mm; contact 8 land 0.75 x 1.10mm",
+    "Card switch lands 1.20 x 1.00mm, separated by 3.70mm",
+    "Four shell lands: 1.55 x 1.35, 1.90 x 1.35 (twice), 1.17 x 1.80mm",
+    "Stock library is rotated 180 degrees relative to the recommended-layout drawing; contact and switch positions agree after origin transformation"
+  ],
+  "limitations": [
+    "Reviewed retrieved drawing is rev B2; final exact delivered revision/stock remains a sourcing gate",
+    "Manufacturer direct download failed; retained a separately identified copy, not a hash-verified replacement for the primary-host file",
+    "No complete delivered price or assembler allocation; listing alone does not prove availability"
+  ]
+}

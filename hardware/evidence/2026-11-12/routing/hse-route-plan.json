@@ -1,0 +1,106 @@
+{
+  "source_sha256": "1d283a49d99de1bbe9db4baf797cd711c8520ab6b42c3540fa3a967b3a2be693",
+  "routes": [
+    {
+      "net": "MCU_HSE_IN",
+      "layer": "F.Cu",
+      "width_mm": 0.1,
+      "points": [
+        [
+          54.4,
+          48.2
+        ],
+        [
+          53.975,
+          48.625
+        ],
+        [
+          53.425,
+          48.625
+        ],
+        [
+          52.12,
+          49.93
+        ],
+        [
+          51.45,
+          49.93
+        ]
+      ]
+    },
+    {
+      "net": "MCU_HSE_IN",
+      "layer": "F.Cu",
+      "width_mm": 0.1,
+      "points": [
+        [
+          51.45,
+          49.93
+        ],
+        [
+          50.92,
+          49.93
+        ],
+        [
+          49.45,
+          51.4
+        ]
+      ]
+    },
+    {
+      "net": "MCU_HSE_OUT",
+      "layer": "F.Cu",
+      "width_mm": 0.1,
+      "points": [
+        [
+          53.6,
+          49.0
+        ],
+        [
+          51.275,
+          51.325
+        ],
+        [
+          51.275,
+          52.075
+        ],
+        [
+          50.550000000000004,
+          52.8
+        ]
+      ]
+    },
+    {
+      "net": "MCU_HSE_OUT",
+      "layer": "F.Cu",
+      "width_mm": 0.1,
+      "points": [
+        [
+          50.55,
+          52.8
+        ],
+        [
+          49.78,
+          52.03
+        ],
+        [
+          47.9,
+          52.03
+        ]
+      ]
+    }
+  ],
+  "results": [
+    {
+      "net": "MCU_HSE_IN",
+      "result": "proposed",
+      "connections": 2
+    },
+    {
+      "net": "MCU_HSE_OUT",
+      "result": "proposed",
+      "connections": 2
+    }
+  ],
+  "scope": "Proposal only. Native DRC, electrical review and separate hash-bound acceptance required."
+}

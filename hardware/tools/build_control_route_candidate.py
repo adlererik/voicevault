@@ -11,10 +11,12 @@ SOURCE=ROOT/'hardware/rev-b/voicevault-standalone-b0.kicad_pcb'
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('plan',type=Path);p.add_argument('output',type=Path)
+    p.add_argument('--source-board',type=Path,default=SOURCE,help='Reviewed disposable placement copy, otherwise live source')
     args=p.parse_args();plan=json.loads(args.plan.read_text())
-    assert hashlib.sha256(SOURCE.read_bytes()).hexdigest()==plan['source_sha256'],'Stale proposal'
+    assert hashlib.sha256(args.source_board.read_bytes()).hexdigest()==plan['source_sha256'],'Stale proposal'
     assert args.output.resolve()!=SOURCE.resolve(),'Live board is never a proposal target'
-    b=pcbnew.LoadBoard(str(SOURCE))
+    assert args.output.resolve()!=args.source_board.resolve(),'Preserve the proposal source too'
+    b=pcbnew.LoadBoard(str(args.source_board))
     for via in plan.get('vias',[]):
         net=b.FindNet(via['net']);assert net and net.GetNetname()
         v=pcbnew.PCB_VIA(b);v.SetPosition(pcbnew.VECTOR2I(*[pcbnew.FromMM(via[k]) for k in ['x','y']]))
@@ -35,6 +37,9 @@ def main():
             t.SetStart(pcbnew.VECTOR2I(*[pcbnew.FromMM(v) for v in a]))
             t.SetEnd(pcbnew.VECTOR2I(*[pcbnew.FromMM(v) for v in z]));b.Add(t)
     args.output.parent.mkdir(parents=True,exist_ok=True)
+    b.BuildConnectivity()
+    pcbnew.ZONE_FILLER(b).Fill(b.Zones())
+    b.BuildConnectivity()
     pcbnew.SaveBoard(str(args.output),b)
     print(f'Wrote {len(plan["routes"])} proposed connections to disposable native copy')
 

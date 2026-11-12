@@ -36,8 +36,8 @@ Do not blindly copy reference traces: the reference configuration and VoiceVault
 assign different functions to some configurable pins.
 
 C118 was moved next to U3 and connected on In1 with two first-order laser vias.
-R103/R105 moved away from this escape area. MCU ground escapes use ordinary
-dogbones where rear-side copper permits them. Unreviewed tiny WLCSP captures are
+R103/R105 moved away from this escape area. MCU ground escapes use fourteen ordinary
+dogbones and three F–In1 microvias where rear-side copper blocks ordinary vias. Unreviewed tiny WLCSP captures are
 not automatically expanded by the control-route planner.
 
 ## Checks before copper reaches the live editor
@@ -94,3 +94,9 @@ flatpak run --user --command=python3 org.kicad.KiCad hardware/tools/qualify_rout
 Review the actual paths and rejected groups before accepting a study. A successful
 CAD check does not demonstrate signal integrity, charging safety, manufacturability,
 real-time audio, isolation or security on physical hardware.
+
+## Main crystal stage
+
+The selected main-crystal layout keeps both HSE nets on F.Cu and moves the two load capacitors onto the crystal side. Their routed branches are approximately 2.61 mm and 2.97 mm; MCU-to-branch paths are approximately 3.67 mm and 5.06 mm. Four local ground microvias accompany the crystal/capacitors. R601 moved to the rear to free space. The three previously blocked MCU ground balls also received adjacent-layer ground microvias.
+
+This explicit placement stage uses `propose_hse_layout.py` and `validate_hse_layout.py`, with four whitelisted footprint moves, an expected world-pad comparison, preservation of all earlier copper, native DRC and the laser audit. Its accepted record is [hse-layout.json](../evidence/2026-11-12/routing/hse-layout.json). Acceptance used a hash-bound native IPC reload; it did not use the copper-only MCP import path, which intentionally preserves footprint positions. The low-frequency crystal area still needs placement review. Startup, actual load capacitance, switcher coupling and EMC remain physical-test requirements.

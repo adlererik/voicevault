@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Export actual native copper geometry for copy-only local routing studies."""
-import pcbnew,json,hashlib
+import pcbnew,json,hashlib,argparse
 from pathlib import Path
-r=Path(__file__).resolve().parents[2];src=r/'hardware/rev-b/voicevault-standalone-b0.kicad_pcb';b=pcbnew.LoadBoard(str(src));layers=['F.Cu','In1.Cu','In2.Cu','In3.Cu','In4.Cu','B.Cu'];pads=[];tracks=[]
+r=Path(__file__).resolve().parents[2]
+parser=argparse.ArgumentParser();parser.add_argument('--board',type=Path,default=r/'hardware/rev-b/voicevault-standalone-b0.kicad_pcb')
+args=parser.parse_args();src=args.board.resolve();assert src.is_file(),src
+b=pcbnew.LoadBoard(str(src));assert b is not None,"Native board load failed"
+layers=['F.Cu','In1.Cu','In2.Cu','In3.Cu','In4.Cu','B.Cu'];pads=[];tracks=[]
 for f in b.GetFootprints():
  for p in f.Pads():
   cu=[n for n in layers if p.GetLayerSet().Contains(b.GetLayerID(n))]

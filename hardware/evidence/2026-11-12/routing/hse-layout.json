@@ -1,0 +1,53 @@
+{
+  "source_sha256": "7e500114a2268d8016c175099da4ee0b0c64ba79b872806f525313fd024c255a",
+  "candidate_sha256": "70c984114ca9befdaa2bcb0e06bf7ebecaa423d476408142c52be01633ebe266",
+  "moves": {
+    "X301": [
+      50,
+      52.1,
+      270,
+      "F.Cu"
+    ],
+    "C301": [
+      51.45,
+      49.45,
+      90,
+      "F.Cu"
+    ],
+    "C302": [
+      47.9,
+      51.55,
+      90,
+      "F.Cu"
+    ],
+    "R601": [
+      48.94,
+      42.82,
+      0,
+      "B.Cu"
+    ]
+  },
+  "original_copper_items": 199,
+  "new_copper_items": 18,
+  "total_copper_items": 217,
+  "unrouted_connections": 520,
+  "native_layout_violations": 0,
+  "laser_geometry_violations": 0,
+  "laser_vias": 14,
+  "all_expected_world_pads_verified": true,
+  "original_copper_preserved": true,
+  "capacitor_to_crystal_direct_mm_before": {
+    "C301": 9.73593957766794,
+    "C302": 9.056798551364604
+  },
+  "capacitor_to_crystal_direct_mm_after": {
+    "C301": 2.48211603274303,
+    "C302": 2.7596014204953585
+  },
+  "routed_net_total_length_mm": {
+    "MCU_HSE_IN": 6.275483399593904,
+    "MCU_HSE_OUT": 8.032295808265223
+  },
+  "manufacturing_ready": false,
+  "scope": "Explicit HSE CAD stage; oscillator startup, parasitic load, noise and physical function remain unqualified"
+}

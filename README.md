@@ -20,7 +20,7 @@ The active **[standalone B0 design](hardware/rev-b/README.md)** is a custom **70
 
 *Routing includes the radio feed, MCU ground escapes, a shortened PMIC capacitor connection and sixteen control nets. Available checks cover all 144 MCU balls, 29 selected peripheral functions, schematic-to-pad correspondence, electrical rules and an antenna-rule negative control. The actual circuit models include 799 passive/static cases. [Images, raw reports and model limits](hardware/evidence/2026-11-12/README.md)*
 
-**Manufacturing remains blocked:** 524 connections remain unrouted, exact sourcing and the HDI stackup need acceptance, and power/RF/audio/charging/isolation need physical qualification. The [circuit inventory](hardware/rev-b/circuit-inventory.csv) is not an approved JLCPCB BOM. [Cost comparison for four assemblies delivered to Sweden](hardware/rev-b/MANUFACTURING_COST.md). No board has been ordered or built. The earlier DK2 carrier and Nucleo assessment remain historical reference work in the [hardware laboratory](hardware/README.md).
+**Manufacturing remains blocked:** 520 connections remain unrouted, exact sourcing and the HDI stackup need acceptance, and power/RF/audio/charging/isolation need physical qualification. The [circuit inventory](hardware/rev-b/circuit-inventory.csv) is not an approved JLCPCB BOM. [Cost comparison for four assemblies delivered to Sweden](hardware/rev-b/MANUFACTURING_COST.md). No board has been ordered or built. The earlier DK2 carrier and Nucleo assessment remain historical reference work in the [hardware laboratory](hardware/README.md).
 
 ## The idea: move the endpoint
 

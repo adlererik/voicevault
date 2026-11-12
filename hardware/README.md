@@ -1,12 +1,12 @@
 # VoiceVault hardware laboratory
 
-The active design is the **[standalone Rev B prototype](rev-b/README.md)**: a rectangular 70 × 45 mm SMD board using Safe 7 core ICs, with audio, microSD, independent debug interfaces and sourceable display/battery candidates. It contains **296 electrical components, 14 probe pads and four mounting holes**. Routing has started with the RF feed and ground reference pours; 546 connections remain open. **Manufacturing remains blocked.** [Status](rev-b/STATUS.json) · [Actual B0 images and results](evidence/2026-11-12/README.md)
+The active design is the **[standalone Rev B prototype](rev-b/README.md)**: a rectangular 70 × 45 mm SMD board using Safe 7 core ICs, with audio, microSD, independent debug interfaces and sourceable display/battery candidates. It contains **296 electrical components, 14 probe pads and four mounting holes**. Routing has started with the RF feed and ground reference pours; 545 connections remain open. **Manufacturing remains blocked.** [Status](rev-b/STATUS.json) · [Actual B0 images and results](evidence/2026-11-12/README.md)
 
 ## Open the active PCB
 
 Run `./hardware/open` from the repository. It opens only the PCB editor required for MCP and reuses an existing copy. This computer previously ran out of memory when several CAD/emulator windows were opened together. Keep the schematic/3D/emulators closed during heavier jobs. The older `--all` launcher targets the historical Rev A demonstration and is not the active B0 workflow.
 
-Installed tools: **KiCad 10.0.8, ngspice 47, Renode 1.17.0, QEMU 9.2.4**, and **Freerouting 2.5.0** for bounded routing studies. [Exact tool records](reference/tools.json)
+Installed tools: **KiCad 10.0.8, ngspice 47, Renode 1.17.0, QEMU 9.2.4**, **Freerouting 2.5.0** and **kicad-tools 0.29.0** for bounded routing studies. [Exact tool records](reference/tools.json)
 
 KiCad editor interaction uses MCP through official IPC. Native KiCad generation/exports/ERC/DRC and ngspice runs use direct command-line tools. This keeps inputs, outputs and failures reproducible and inspectable without requiring a separate MCP server for every executable. Renode currently lacks the required STM32U5G peripherals; QEMU runs CPU-only diagnostics. Neither is a qualified full-device emulator.
 
@@ -33,7 +33,7 @@ Current 2D rendering uses **software/Cairo** to avoid the recurring OpenGL loade
 ./hardware/check --design-only --spice
 ```
 
-Results and raw logs go to `.lab-runs/hardware/standalone-b0/`. The checks compare the actual native schematic and copper-pad net assignments, verify independent ST ball/function data, run ERC/DRC, test the antenna keepout with deliberately forbidden copper on a copy, execute **799 ngspice passive/static cases**, and compute a clearly labeled power-allocation study.
+Results and raw logs go to `.lab-runs/hardware/standalone-b0/`. The checks compare the actual native schematic and copper-pad net assignments, verify independent ST ball/function data, run ERC/DRC, test the antenna keepout with deliberately forbidden copper on a copy, exercise the copper-import guard on deliberately valid/invalid proposals, execute **799 ngspice passive/static cases** when `--spice` is selected, and compute a clearly labeled power-allocation study.
 
 `--design-only` exits 0 when those available checks pass, **while keeping the manufacturing verdict blocked**. Without it, exit 2 means manufacturing is blocked. Exit 1 means an available check failed. DRC's list is capped, so remaining routing work is counted from KiCad's full ratsnest rather than the first 499 listed items.
 

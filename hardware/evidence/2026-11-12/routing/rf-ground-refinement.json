@@ -1,0 +1,42 @@
+{
+  "source_sha256": "de26c752aebdd24f314e6659b254a979fd2498526ad164830d7efbc8494f4af1",
+  "candidate_sha256": "af6458fa74cd15a6e426358d042b2268443f6d9413658f60e70112ce9b02fc8f",
+  "moved_ground_vias_mm": [
+    [
+      [
+        39.2,
+        32.73
+      ],
+      [
+        39.6,
+        32.7
+      ],
+      [
+        39.2,
+        32.3
+      ]
+    ],
+    [
+      [
+        34.1,
+        35.4
+      ],
+      [
+        34.52,
+        34.98
+      ],
+      [
+        34.0,
+        35.5
+      ]
+    ]
+  ],
+  "added_ground_segments": 2,
+  "ground_reference_layers": [
+    "In1.Cu",
+    "In4.Cu"
+  ],
+  "unrouted_connections": 545,
+  "manufacturing_ready": false,
+  "reason": "Separate through-via lands from shunt SMD pads; assembly and RF tuning remain unqualified"
+}

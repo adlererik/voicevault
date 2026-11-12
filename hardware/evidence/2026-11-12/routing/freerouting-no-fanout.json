@@ -1,0 +1,12 @@
+{
+  "result": "timeout",
+  "exit_code": 124,
+  "seconds": 240,
+  "fanout_disabled_observed": true,
+  "output_session_saved": false,
+  "applied_to_live_board": false,
+  "heap_limit_mib": 512,
+  "cgroup_limit_mib": 850,
+  "settings_source": "Local user configuration file; initial log confirms direct autorouting",
+  "note": "No output session was produced; route completion is not established. No trial copper was applied."
+}

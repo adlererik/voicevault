@@ -1,0 +1,11 @@
+{
+  "upstream_sha256": "f6f51bb02245e8e717f9359bd260cc9c5c0b1bc0acc8b7cb2cd5b8ffeb5de3c7",
+  "modified_sha256": "eab19b5a41098c3fe9ce54d94e599e8416276e92821447992b49f62bba022516",
+  "modified_class": "app/freerouting/autoroute/pipeline/AutorouteConnectionRouter.class",
+  "single_double_constant_change": {
+    "from_ms": 100000,
+    "to_ms": 250
+  },
+  "purpose": "Bound connection search in local exploratory routing; not an upstream release or a physical qualification",
+  "source": "https://github.com/freerouting/freerouting/blob/v2.5.0/src/main/java/app/freerouting/autoroute/pipeline/AutorouteConnectionRouter.java"
+}

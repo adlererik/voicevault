@@ -18,6 +18,10 @@ def main():
         raise SystemExit('This preflight workflow is for an unreleased design; use the reviewed release workflow instead.')
     report_path=ROOT/'hardware/evidence/2026-11-12/report.json'
     report=json.loads(report_path.read_text())
+    layout=next(c for c in report['checks'] if c['check']=='Draft electrical/layout state')
+    if (status['unrouted_connections']!=layout['unrouted'] or
+            status['routed_tracks_or_vias']!=layout['tracks_and_vias']):
+        raise SystemExit('Status and checked native routing counts disagree.')
     for name,expected in report['source_hashes'].items():
         if hashlib.sha256((DESIGN/name).read_bytes()).hexdigest()!=expected:
             raise SystemExit('Checked snapshot is stale: '+name)
@@ -31,7 +35,7 @@ def main():
     stamp=int(subprocess.check_output(['git','show','-s','--format=%ct','HEAD'],cwd=ROOT,text=True))
     root_name='VoiceVault-B0-FEASIBILITY-ONLY'
     checksums={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in names}
-    readme='''VOICEVAULT B0 — FEASIBILITY / SOURCING REVIEW ONLY
+    readme=f'''VOICEVAULT B0 — FEASIBILITY / SOURCING REVIEW ONLY
 
 NOT A MANUFACTURING ORDER. DO NOT FABRICATE OR ASSEMBLE FROM THIS BUNDLE.
 
@@ -40,7 +44,8 @@ requirements, source notices and scoped model/check evidence. There is no
 manufacturing Gerber/drill/CPL release and no authorization to order parts.
 
 Current design: 296 electrical components, 14 probe pads, four mounting holes,
-provisional 70 x 45mm / six layers / 1.0mm. 853 connections remain unrouted.
+provisional 70 x 45mm / six layers / 1.0mm. {status['unrouted_connections']} connections remain unrouted.
+Draft copper contains {status['routed_tracks_or_vias']} track/via items; routing is incomplete.
 Exact component variants, HDI stackup/pad process and procurement acceptance
 are incomplete. Nothing here proves physical function or device security.
 
@@ -57,6 +62,8 @@ in BUNDLE.json. Upstream and component-library licenses remain applicable.
     metadata=dict(purpose='FEASIBILITY REVIEW ONLY - NOT FOR ORDER',source_checkout_commit=commit,
                   source_file_count=len(names),manufacturing_ready=False,
                   reported_unrouted_connections=status['unrouted_connections'],
+                  requested_completed_prototypes=4,destination_country='Sweden',
+                  purchases_authorized=False,order_submission_authorized=False,
                   limitations=report['blockers'])
     date=datetime.fromtimestamp(stamp,timezone.utc).timetuple()[:6]
     OUT.parent.mkdir(parents=True,exist_ok=True)

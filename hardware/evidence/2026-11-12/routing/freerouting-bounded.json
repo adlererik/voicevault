@@ -1,0 +1,10 @@
+{
+  "result": "timeout",
+  "exit_code": 124,
+  "seconds": 360,
+  "output_session_saved": false,
+  "applied_to_live_board": false,
+  "heap_limit_mib": 512,
+  "cgroup_limit_mib": 850,
+  "note": "Fresh copy, ground reference layers reserved; connection-budget patch recorded separately. Fanout statistics are not accepted copper. Intended CLI fanout limits were not observed; do not rely on those flags without checking effective configuration."
+}

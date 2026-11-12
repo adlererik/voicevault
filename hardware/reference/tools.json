@@ -55,5 +55,22 @@
     "sha256": "f6f51bb02245e8e717f9359bd260cc9c5c0b1bc0acc8b7cb2cd5b8ffeb5de3c7",
     "scope": "routing study on a copy; no manufacturing routing qualification",
     "native_cli_limitation": "2.5.0 native Linux CLI hit a Graal serialization error on this board; use the JAR"
+  },
+  "kicad_tools": {
+    "version": "0.29.0",
+    "source": "https://github.com/rjwalters/kicad-tools",
+    "runtime": "managed CPython 3.12.14; local C++ router extension built with GCC 16.2.1",
+    "requirements": "hardware/tools/routing-requirements.txt",
+    "scope": "Copy-only bounded routing experiments; no accepted output from the timed-out lattice trial",
+    "compiler_rpms": [
+      {
+        "file": "gcc-c++-16.2.1-3.fc45.x86_64.rpm",
+        "sha256": "0292692244413b8242fc62ccd21bcc8b9857a7ff0b5fe2873f8f9ef3187dfa9b"
+      },
+      {
+        "file": "libstdc++-devel-16.2.1-3.fc45.x86_64.rpm",
+        "sha256": "828b507f240cc46b11226d7edcbd5de63d5b8007337169a138fa4ac34cf05593"
+      }
+    ]
   }
 }

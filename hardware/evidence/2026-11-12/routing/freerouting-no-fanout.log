@@ -1,0 +1,17 @@
+2026-11-12 10:23:24.177 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-11-12 10:23:24.786 WARN   [startup] freerouting.json contains a stale 'logging.file.location' value: '/home/erikclean/src/secure-voice-lab/.lab-cache/hardware/routing-b0/freerouting/bounded-user/freerouting.log'. The actual log file is being written to '/home/erikclean/src/secure-voice-lab/.lab-cache/hardware/routing-b0/freerouting/config-user/freerouting.log' (as resolved at startup). The stale value will be corrected in freerouting.json on next save. If you see this in Docker, the old JSON was written by an earlier version that stored the host path; the fix is to delete freerouting.json so it is regenerated with the correct path.
+2026-11-12 10:23:25.053 INFO   Hardware: 2 CPU cores, 76 CPU score, 494 MB RAM
+2026-11-12 10:23:25.056 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-12 10:23:25.072 WARN   GUI is disabled and you don't have a console available, so the only feedback from Freerouting is in the log.
+2026-11-12 10:23:26.351 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-12 10:23:28.255 INFO   [2815DD\9ED32E] Loading board file 'fresh.dsn'...
+2026-11-12 10:23:32.073 INFO   [2815DD\9ED32E] Job '2815DD\9ED32E' started at 2026-11-12T09:23:32.073087239Z.
+2026-11-12 10:23:35.002 WARN   Design Warning: Board has 1 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 1 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 1 fixed trace/via clearance violations:
+          - C203.2 [net GND] <-> FixedVia#2902 [net GND]
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 1 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-11-12 10:23:35.656 INFO   [2815DD\9ED32E] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=1.
+2026-11-12 10:23:38.054 INFO   [2815DD\9ED32E] Auto-routing stage started on board '90c72224a549bbbea4fd152ed83c564d' with baseline score 10.12 for 842 unrouted items.

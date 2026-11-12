@@ -1,0 +1,17 @@
+2026-11-12 10:14:16.743 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-11-12 10:14:17.627 INFO   Hardware: 2 CPU cores, 84 CPU score, 494 MB RAM
+2026-11-12 10:14:17.648 WARN   GUI is disabled and you don't have a console available, so the only feedback from Freerouting is in the log.
+2026-11-12 10:14:20.459 INFO   [64A4E2\71D004] Loading board file 'fresh.dsn'...
+2026-11-12 10:14:23.313 INFO   [64A4E2\71D004] Job '64A4E2\71D004' started at 2026-11-12T09:14:23.312407215Z.
+2026-11-12 10:14:25.022 WARN   Design Warning: Board has 1 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 1 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 1 fixed trace/via clearance violations:
+          - C203.2 [net GND] <-> FixedVia#2902 [net GND]
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 1 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-11-12 10:14:25.345 INFO   [64A4E2\71D004] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=1.
+2026-11-12 10:14:26.434 INFO   [64A4E2\71D004] Fanout stage started on board '90c72224a549bbbea4fd152ed83c564d' with 1044 of 1188 SMD pins needing fanout (4 already connected, 140 netless).
+2026-11-12 10:19:40.827 INFO   [64A4E2\71D004] Fanout pass #1 on board '30ebb4697d60f35eb7561efb43503056' completed in 312.71 seconds with 510 SMD pins fanouted, 524 not routed, 0 insert errors, +64 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-11-12 10:19:42.331 INFO   [64A4E2\71D004] Fanout stage completed: started with 1048 total SMD pins, completed in 314.67 seconds, escaped pins: 621/1048 (59.3%), using 267.50 total CPU seconds, 22.61 GB total allocated, and 116.2 MB peak heap usage.
+2026-11-12 10:19:46.785 INFO   [64A4E2\71D004] Auto-routing stage started on board '30ebb4697d60f35eb7561efb43503056' with baseline score 377.77 for 399 unrouted items.

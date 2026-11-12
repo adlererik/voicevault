@@ -1,0 +1,33 @@
+{
+  "source_sha256": "0ab5ce408e393a1983ffe50990fbfcf7a32c38504e5fb24638bd0cba630bf5aa",
+  "study_sha256": "649c74ccfd906e65ede25beb64f134ecdfab5aa292d98eca13868731baa09b52",
+  "candidate_sha256": "de26c752aebdd24f314e6659b254a979fd2498526ad164830d7efbc8494f4af1",
+  "offered_net_groups": [
+    "HAPTIC_MINUS",
+    "HAPTIC_PLUS",
+    "HAPTIC_REG",
+    "MCU_LX",
+    "PMIC_VSET2"
+  ],
+  "rejected_rounds": [
+    {
+      "attempt": 0,
+      "violations": 5,
+      "rejected_nets": [
+        "HAPTIC_MINUS",
+        "HAPTIC_PLUS",
+        "HAPTIC_REG",
+        "PMIC_VSET2"
+      ]
+    }
+  ],
+  "accepted_net_groups": [
+    "MCU_LX"
+  ],
+  "added_copper_items": 3,
+  "total_copper_items": 19,
+  "unrouted_connections": 545,
+  "native_layout_violations": 0,
+  "manufacturing_ready": false,
+  "scope": "Native copper/connectivity only; signal integrity, power, RF and manufacturing remain unqualified"
+}

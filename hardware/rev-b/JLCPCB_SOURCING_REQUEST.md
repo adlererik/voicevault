@@ -4,6 +4,8 @@
 
 We are developing a rectangular, approximately 70 x 45 mm SMD prototype using the core ICs in the published Trezor Safe 7 TS7 rev_D schematic, plus a full-duplex headset audio interface and microSD. The board outline and proposed six-layer stack are provisional. We want PCB fabrication and assembly with no development board fitted to the design. We will provide final reviewed Gerber/drill data, exact-part BOM and CPL after engineering is complete.
 
+Target quantity: **four fully assembled prototypes delivered to Sweden**. Please itemize PCB/SMT work and all off-board assemblies separately, including shipping, inspection, fixtures and any unperformed integration. A five-unit price break may be shown separately. This draft has not been sent; the owner has deferred quotations while routing proceeds against provisional public rules. [Cost research](MANUFACTURING_COST.md) keeps the vendor choice open.
+
 Please assess the exact order codes in the accompanying `core-parts.csv`. These are reference selections; their source designators are not a final new-board assembly BOM. We have not authorized substitutions.
 
 Please confirm:
@@ -20,8 +22,8 @@ Please confirm:
 Please keep any procurement or assembly proposal separate from an order commitment. We have not supplied manufacturing-ready files or authorized purchasing parts.
 
 
-Current native project: 296 electrical components plus 14 probe pads/four mounting holes, no routed tracks, 853 open connections. The circuit inventory is a requirements/selection record, not an approved BOM. The Hirose DM3AT microSD connector has discontinued variants; confirm exact available stock or review a sourceable replacement. No quote response, stackup acceptance or procurement allocation has been received. The sourcing request is ready to discuss these constraints but is not an order-ready fabrication package.
+Current native project: 296 electrical components plus 14 probe pads/four mounting holes, 19 routed track segments, two ground vias, four GND pours and 545 open connections. The circuit inventory is a requirements/selection record, not an approved BOM. The Hirose DM3AT microSD connector has discontinued variants; confirm exact available stock or review a sourceable replacement. No quote response, stackup acceptance or procurement allocation has been received. The sourcing request is ready to discuss these constraints but is not an order-ready fabrication package.
 
 ## Prepare a review bundle
 
-Run `python3 hardware/tools/create_preflight_bundle.py` from the repository root. It checks that the recorded CAD hashes still match, packages tracked B0 sources and evidence, and verifies the archive. The result is `.lab-runs/hardware/exports/VoiceVault-B0-JLCPCB-feasibility-NOT-FOR-ORDER.zip`. Its opening notice states that it is for feasibility/sourcing discussion, contains an unrouted design, and gives no authorization to fabricate, assemble or purchase. It intentionally contains no manufacturing export package. Nothing is sent automatically.
+Run `python3 hardware/tools/create_preflight_bundle.py` from the repository root. It checks that the recorded CAD hashes still match, packages tracked B0 sources and evidence, and verifies the archive. The result is `.lab-runs/hardware/exports/VoiceVault-B0-JLCPCB-feasibility-NOT-FOR-ORDER.zip`. Its opening notice states that it is for feasibility/sourcing discussion, contains an incompletely routed design, and gives no authorization to fabricate, assemble or purchase. It intentionally contains no manufacturing export package. Nothing is sent automatically.

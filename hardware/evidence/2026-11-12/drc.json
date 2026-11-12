@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-11-12T10:13:01",
+    "date": "2026-11-12T10:28:11",
     "ignored_checks": [
         {
             "description": "Footprint has no courtyard defined",
@@ -427,20 +427,20 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Pad B5 [GND] of U3 on F.Cu",
-                    "pos": {
-                        "x": 51.419,
-                        "y": 58.26
-                    },
-                    "uuid": "6cebdfa4-a130-41d5-a803-7f10194095ad"
-                },
-                {
                     "description": "Zone 'GND_REFERENCE_F.Cu' [GND] on F.Cu, priority 0",
                     "pos": {
                         "x": 25.3,
                         "y": 32.2
                     },
                     "uuid": "5af092ad-d908-460f-a115-f6f63d31eec0"
+                },
+                {
+                    "description": "Pad B5 [GND] of U3 on F.Cu",
+                    "pos": {
+                        "x": 51.419,
+                        "y": 58.26
+                    },
+                    "uuid": "6cebdfa4-a130-41d5-a803-7f10194095ad"
                 }
             ],
             "severity": "error",
@@ -8500,29 +8500,6 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "Pad 1 [MCU_LX] of L1 on F.Cu",
-                    "pos": {
-                        "x": 57.925,
-                        "y": 54.8
-                    },
-                    "uuid": "a8a7cb5f-abd2-4e67-8bbd-c7eff10ed646"
-                },
-                {
-                    "description": "Pad M7 [MCU_LX] of U1 on F.Cu",
-                    "pos": {
-                        "x": 58.4,
-                        "y": 51.4
-                    },
-                    "uuid": "98e7d304-4f77-4ca5-818b-de9db4cc4702"
-                }
-            ],
-            "severity": "error",
-            "type": "unconnected_items"
-        },
-        {
-            "description": "Missing connection between items",
-            "items": [
-                {
                     "description": "Pad M9 [TR_MOSI] of U1 on F.Cu",
                     "pos": {
                         "x": 60.0,
@@ -11504,6 +11481,29 @@
                         "y": 55.58
                     },
                     "uuid": "fb843c54-aaff-4fef-bbf5-f927893a56d7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [QI_COIL_A] of D901 on B.Cu",
+                    "pos": {
+                        "x": 38.76,
+                        "y": 55.58
+                    },
+                    "uuid": "fb843c54-aaff-4fef-bbf5-f927893a56d7"
+                },
+                {
+                    "description": "Pad 1 [QI_COIL_A] of C901 on B.Cu",
+                    "pos": {
+                        "x": 40.9,
+                        "y": 57.68
+                    },
+                    "uuid": "3c16781d-53fd-47ad-afbf-f5e2345571a9"
                 }
             ],
             "severity": "error",

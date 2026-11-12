@@ -16,9 +16,9 @@ CAD = ['flatpak', 'run', '--user', '--command=kicad-cli', 'org.kicad.KiCad']
 NAME = 'voicevault-standalone-b0'
 
 
-def run(arguments, log):
+def run(arguments, log, timeout=60):
     result = subprocess.run(list(map(str, arguments)), cwd=ROOT, text=True,
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=60)
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=timeout)
     (OUT / log).write_text(result.stdout)
     return result
 
@@ -187,6 +187,15 @@ def main():
     checks.append(dict(check='Antenna keepout negative control', result='pass',
                        rejected=['unrelated track','ground via'], allowed=['RF-feed track'],
                        live_design_unchanged=True, scope='Native DRC rule enforcement, not RF qualification'))
+    import_control = run([sys.executable, ROOT/'hardware/tools/check_routing_import.py'],
+                         'import-control.log', timeout=240)
+    if import_control.returncode:
+        raise RuntimeError('Copper import positive/negative control failed')
+    checks.append(dict(check='Copper import positive/negative control', result='pass',
+                       retained=['allowed existing-net RF connection'],
+                       rejected=['unrelated antenna-area route'],
+                       original_pads_and_copper_preserved=True, live_design_unchanged=True,
+                       scope='Copy-only CAD acceptance guard; not signal-integrity or manufacturing qualification'))
     data = json.loads((OUT / 'drc.json').read_text())
     available_failed = erc.returncode != 0 or bool(data.get('violations'))
     checks.append(dict(check='Draft electrical/layout state', result='fail' if available_failed else 'incomplete',

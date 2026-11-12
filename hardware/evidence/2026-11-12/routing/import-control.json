@@ -1,0 +1,29 @@
+{
+  "source_sha256": "af6458fa74cd15a6e426358d042b2268443f6d9413658f60e70112ce9b02fc8f",
+  "study_sha256": "396264a08c4bd2e8e3d6bd1ac38dabc1af28719ef3f1375652acc898ec2c68c6",
+  "candidate_sha256": "da163110c9691c150fae2113d96fdd8bfa115723cc834f45aa49eded00a9353b",
+  "offered_net_groups": [
+    "RAD_ANT",
+    "SD_CS_MCU"
+  ],
+  "rejected_rounds": [
+    {
+      "attempt": 0,
+      "violations": 2,
+      "rejected_nets": [
+        "SD_CS_MCU"
+      ]
+    }
+  ],
+  "accepted_net_groups": [
+    "RAD_ANT"
+  ],
+  "added_copper_items": 1,
+  "total_copper_items": 22,
+  "unrouted_connections": 545,
+  "native_layout_violations": 0,
+  "manufacturing_ready": false,
+  "scope": "Native copper/connectivity only; signal integrity, power, RF and manufacturing remain unqualified",
+  "live_design_unchanged": true,
+  "control_scope": "Copy-only import: retain an allowed RF connection, reject an antenna-area intrusion, preserve original pads and copper. No physical or manufacturing qualification."
+}

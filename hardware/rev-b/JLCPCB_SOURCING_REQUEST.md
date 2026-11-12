@@ -21,3 +21,7 @@ Please keep any procurement or assembly proposal separate from an order commitme
 
 
 Current native project: 296 electrical components plus 14 probe pads/four mounting holes, no routed tracks, 853 open connections. The circuit inventory is a requirements/selection record, not an approved BOM. The Hirose DM3AT microSD connector has discontinued variants; confirm exact available stock or review a sourceable replacement. No quote response, stackup acceptance or procurement allocation has been received. The sourcing request is ready to discuss these constraints but is not an order-ready fabrication package.
+
+## Prepare a review bundle
+
+Run `python3 hardware/tools/create_preflight_bundle.py` from the repository root. It checks that the recorded CAD hashes still match, packages tracked B0 sources and evidence, and verifies the archive. The result is `.lab-runs/hardware/exports/VoiceVault-B0-JLCPCB-feasibility-NOT-FOR-ORDER.zip`. Its opening notice states that it is for feasibility/sourcing discussion, contains an unrouted design, and gives no authorization to fabricate, assemble or purchase. It intentionally contains no manufacturing export package. Nothing is sent automatically.

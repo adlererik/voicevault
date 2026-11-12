@@ -3,7 +3,7 @@
   "overlapping_hole_pairs_checked": 557,
   "foreign_track_pairs_checked": 1331,
   "violations": [],
-  "source_sha256": "70c984114ca9befdaa2bcb0e06bf7ebecaa423d476408142c52be01633ebe266",
+  "source_sha256": "f843771c1cda381fc7658babdd7cbde0388de070aaaba50a2bddb1e8173a889a",
   "result": "pass",
   "negative_control": "Foreign laser hole at 0.20mm center spacing rejected in memory-only copy",
   "live_design_unchanged": true,

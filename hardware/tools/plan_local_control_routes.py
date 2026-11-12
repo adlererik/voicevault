@@ -95,12 +95,14 @@ def search(start, end, shapes, margin=3.0):
     def h(x,y):
         dx,dy=abs(z[0]-x),abs(z[1]-y)
         return max(dx,dy)+(math.sqrt(2)-1)*min(dx,dy)
-    dist={a:0.}; parent={}; queue=[(h(*a),0.,a)]
+    # Prefer progress toward the goal among equal-cost paths. Preferring the
+    # smallest travelled distance explores an enormous open rectangle first.
+    dist={a:0.}; parent={}; queue=[(h(*a),0.,0.,a)]
     directions=[(1,0),(-1,0),(0,1),(0,-1),(1,1),(1,-1),(-1,1),(-1,-1)]
     deadline=time.monotonic()+4
     expanded=0
     while queue:
-        _,g,u=heapq.heappop(queue)
+        _,_,g,u=heapq.heappop(queue)
         if g>dist[u]+1e-9: continue
         if u==z:
             route=[u]
@@ -127,7 +129,7 @@ def search(start, end, shapes, margin=3.0):
             if dx and dy and not (free[y,xx] and free[yy,x]): continue
             v=(xx,yy); ng=g+(math.sqrt(2) if dx and dy else 1)
             if ng+1e-9>=dist.get(v,float('inf')): continue
-            dist[v]=ng;parent[v]=u;heapq.heappush(queue,(ng+h(xx,yy),ng,v))
+            dist[v]=ng;parent[v]=u;heapq.heappush(queue,(round(ng+h(xx,yy),8),-ng,ng,v))
     return None,'no path'
 
 

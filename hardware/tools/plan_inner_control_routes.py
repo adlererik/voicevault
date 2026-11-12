@@ -29,6 +29,10 @@ def candidates(data,pad,gateway=False):
     own=shape(pad);face=next(l for l in ['F.Cu','B.Cu'] if l in pad['layers'])
     possible=[]
     offsets=[(x,y) for x in [-.4,0,.4] for y in [-.4,0,.4] if x or y]
+    if gateway:
+        offsets += [(x,y) for x in [-3.6,-2.8,-2.,-1.2,-.4,.4,1.2,2.,2.8,3.6]
+                    for y in [-3.6,-2.8,-2.,-1.2,-.4,.4,1.2,2.,2.8,3.6]
+                    if math.hypot(x,y)<=4.2]
     for radius in ([.8,1.2,1.6,2.,2.4,3.2,4.] if gateway else [.6,.8,1.,1.2]):
         offsets += [(radius*math.cos(a*math.pi/4),radius*math.sin(a*math.pi/4)) for a in range(8)]
     for dx,dy in offsets:
@@ -47,7 +51,7 @@ def candidates(data,pad,gateway=False):
                 continue
             # Copper plus the default 0.25mm drill-edge to foreign-pad clearance.
             via_clear=.355 if 'ref' in other else .33
-            if other['net']=='GND' and 'ref' in other:
+            if other['net']=='GND' and other.get('ref') in ['U8','U601','U602','U401','U1001']:
                 via_clear=max(via_clear,.55) # preserve room for outer-plane thermals
             if point.distance(g)<via_clear:blocked=True;break
             if not gateway and face in other['layers']:
@@ -141,7 +145,7 @@ def main():
                 for path in net_routes:
                     for a,b in zip(path['points'],path['points'][1:]):data['tracks'].append(dict(kind='track',net=net,start=a,end=b,w=WIDTH,layers=[path['layer']]))
                 why='proposed'
-        results.append(dict(net=net,result=why,ordinary_escapes=len(choices)));print(results[-1],flush=True)
+        results.append(dict(net=net,result=why,endpoint_escapes=len(choices)));print(results[-1],flush=True)
         args.output.parent.mkdir(parents=True,exist_ok=True)
         args.output.write_text(json.dumps(dict(source_sha256=data['source_sha256'],routes=routes,vias=vias,results=results,
             scope='Proposal only. Native DRC, electrical review and separate acceptance required.'),indent=2)+'\n')

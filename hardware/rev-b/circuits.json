@@ -3103,8 +3103,8 @@
         },
         {
           "ref": "J401",
-          "value": "DM3AT-SF-PEJM5",
-          "footprint": "Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5",
+          "value": "1040310811",
+          "footprint": "Connector_Card:microSD_HC_Molex_104031-0811",
           "pins": [
             {
               "number": "1",
@@ -3178,8 +3178,8 @@
             120
           ],
           "pcb": [
-            82,
-            59
+            87.9,
+            58
           ]
         },
         {

@@ -5,7 +5,7 @@ import pcbnew,json,shutil,hashlib,sys,argparse
 r=Path(__file__).resolve().parents[2];sys.path.insert(0,str(r/'hardware/tools'));from qualify_routing_candidate import geometry,laser_geometry
 parser=argparse.ArgumentParser();parser.add_argument('--rotation',type=int,choices=[0,90,180,270],default=270)
 parser.add_argument('--output-dir',type=Path,default=r/'.lab-cache/hardware/routing-b0/hse-placement');args=parser.parse_args()
-src=r/'hardware/rev-b/voicevault-standalone-b0.kicad_pcb';d=args.output_dir;d.mkdir(exist_ok=True);b=pcbnew.LoadBoard(str(src));by={f.GetReference():f for f in b.GetFootprints()}
+src=r/'hardware/rev-b/voicevault-standalone-b0.kicad_pcb';d=args.output_dir;d.mkdir(parents=True,exist_ok=True);b=pcbnew.LoadBoard(str(src));by={f.GetReference():f for f in b.GetFootprints()}
 moves={'X301':(50,52.1,180,'F.Cu'),'C301':(51.45,49.45,90,'F.Cu'),'C302':(47.9,51.55,90,'F.Cu'),'R601':(48.94,42.82,0,'B.Cu')}
 moves['X301']=(50,52.1,args.rotation,'F.Cu')
 expected={'X301':(49.5,52.,'F.Cu'),'C301':(48.94,42.82,'B.Cu'),'C302':(47.36,42.37,'B.Cu'),'R601':(50.67,48.52,'F.Cu')}

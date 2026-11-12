@@ -1,7 +1,7 @@
 {
   "project": "VoiceVault standalone B0",
   "manufacturing": "BLOCKED",
-  "created_utc": "2026-11-12T15:10:44.694203+00:00",
+  "created_utc": "2026-11-12T15:23:08.256005+00:00",
   "native_components": 296,
   "native_nets": 323,
   "named_copper_nets": 199,
@@ -13,7 +13,7 @@
     "circuit-display.kicad_sch": "e8cc24bd9224f824694ebb4f1a993d7a2417f0577dee820b7039eb873a0ac757",
     "circuit-haptic.kicad_sch": "f3f4d3197f5da6724b6ee3c19b4f6ad28fabc9a3cb15cfe002eb1461e19f9013",
     "circuit-headset.kicad_sch": "eea8f986c8c86c3b28ec646cfdda1384ec4c8b1182dda48b9973cd4e74e9b751",
-    "circuit-microsd.kicad_sch": "8857f7e475a28a03e5c8ef084e76acd6ace20a683f7de11051ed86d936db4ad7",
+    "circuit-microsd.kicad_sch": "914e1b3faaf20fc8936e138e55429ca8ef725448a8fde3db97d96bb73086cebe",
     "circuit-nfc-interface.kicad_sch": "1dcd1a6bf658daee41e251934f5b36694a3a7a6edb4af0e1e1a608777743c8cb",
     "circuit-nfc-matching.kicad_sch": "9dfcac9b3ace6f3692ae435f08a27c8b9b64c15e3e52021ecd00dee0b5485151",
     "circuit-nfc.kicad_sch": "3caef07ec5bcdc54addec08e1045d49e8978ebe80b3d905a5ec4f5463c969692",
@@ -24,9 +24,9 @@
     "circuit-radio-interface.kicad_sch": "d958cc84ed1040a546490d5b13a2a5ebbf808aff0129032bf3d2c6ddc8c18adc",
     "circuit-radio.kicad_sch": "5b50bbb81f4c96fb9c5f7a41fd594d5234d9fb62c92bec0f7ffe9cbd80ea50ac",
     "circuit-secure.kicad_sch": "ad3b40d47b43be1cfa263d9e394eeb3789b669b862aae1b95c27380cc5937c28",
-    "circuits.json": "9afff39a406d8511701294a1fb952621c96b29a5a52362383821031a18c5bd2a",
+    "circuits.json": "6f7fb2835a1a42d492b4fbd1c5d8a37cc5cf78ff9690184cf33ad256e4240b83",
     "voicevault-standalone-b0.kicad_dru": "94725abf8938710e16a198f88953e127bdee9b963592a788dd275d1eea022c3e",
-    "voicevault-standalone-b0.kicad_pcb": "70c984114ca9befdaa2bcb0e06bf7ebecaa423d476408142c52be01633ebe266",
+    "voicevault-standalone-b0.kicad_pcb": "f843771c1cda381fc7658babdd7cbde0388de070aaaba50a2bddb1e8173a889a",
     "voicevault-standalone-b0.kicad_pro": "5256a09f5a354630f503ebf68de644493e788705bf393ec1bf32cbc44f5bdcf8",
     "voicevault-standalone-b0.kicad_sch": "4aff8a30f97d8e211587a9f093470309eeb43777150e19b134ae700bb44b2869"
   },
@@ -64,6 +64,14 @@
       "connected_pad_nodes": 1026,
       "intentional_nc_pads": 124,
       "exact_critical_nets": 9
+    },
+    {
+      "check": "Independent microSD socket land/pin comparison",
+      "result": "pass",
+      "part": "Molex 1040310811",
+      "logical_pins": 11,
+      "physical_pads": 14,
+      "scope": "Reviewed SD-104031-001 B2 geometry and actual board pin mapping; sourcing/revision acceptance remains open"
     },
     {
       "check": "Antenna keepout negative control",

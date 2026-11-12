@@ -1,0 +1,11 @@
+{
+  "result": "pass",
+  "part": "Molex 1040310811",
+  "drawing": "SD-104031-001 rev B2 sheet 1",
+  "logical_pins": 11,
+  "physical_pads": 14,
+  "actual_board_pin_nets_verified": true,
+  "actual_board_land_geometry_verified": true,
+  "normally_open_card_detect_closes_to_ground": true,
+  "scope": "Nominal reviewed land geometry and pin mapping; not latest-revision, sourcing or physical qualification"
+}

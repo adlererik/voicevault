@@ -22,7 +22,7 @@ Please confirm:
 Please keep any procurement or assembly proposal separate from an order commitment. We have not supplied manufacturing-ready files or authorized purchasing parts.
 
 
-Current native project: 296 electrical components plus 14 probe pads/four mounting holes, 168 routed track segments, 49 vias (14 laser), four GND pours and 520 open connections. The circuit inventory is a requirements/selection record, not an approved BOM. The Hirose DM3AT microSD connector has discontinued variants; confirm exact available stock or review a sourceable replacement. No quote response, stackup acceptance or procurement allocation has been received. The sourcing request is ready to discuss these constraints but is not an order-ready fabrication package.
+Current native project: 296 electrical components plus 14 probe pads/four mounting holes, 168 routed track segments, 49 vias (14 laser), four GND pours and 520 open connections. The circuit inventory is a requirements/selection record, not an approved BOM. J401 now selects the reviewed Molex 1040310811 microSD socket (JLC listing C585350) in place of the discontinued Hirose candidate. Confirm exact stock/revision and assembly acceptance; a catalogue listing is not allocation. No quote response, stackup acceptance or procurement allocation has been received. The sourcing request is ready to discuss these constraints but is not an order-ready fabrication package.
 
 ## Prepare a review bundle
 

@@ -11,6 +11,7 @@ The native board contains **296 electrical components, 14 probe pads and four mo
 | Source copies | Nine preserved references match their hashes | [Report](report.json) |
 | MCU identity/pin mapping | 144 balls and 29 selected functions agree with pinned ST data | Actual native schematic export and [independent ST data](../../rev-b/reference/st-ufbga144-ballout.json) |
 | Circuit-to-pad correspondence | 1,026 schematic-connected nodes, 124 intentional NC pins; 314 footprints | Actual PCB pad/net inspection, not just the circuit manifest |
+| microSD replacement | Molex 1040310811, eleven logical pins / fourteen lands agree with reviewed drawing and actual board | [Geometry check](microsd-footprint.json), [replacement stage](routing/microsd-replacement.json), [revision/provenance limits](../../rev-b/reference/microsd-selection.json) |
 | ERC | Zero issues | [Native ERC report](erc.rpt) |
 | DRC | Zero non-routing violations; **520 unrouted connections** | [Native DRC report](drc.json). Its detailed unconnected list stops at 499; the full native ratsnest count is used for progress. |
 | Antenna rule negative control | Unrelated track and ground via rejected; RF-feed track allowed | [Result](antenna-negative/result.json). A board copy was deliberately modified; the live PCB was unchanged. |

@@ -1177,53 +1177,54 @@
     {
       "net": "LCD_CS_N",
       "result": "proposed",
-      "ordinary_escapes": 3
+      "endpoint_escapes": 3
     },
     {
       "net": "RAD_RTS",
       "result": "proposed",
-      "ordinary_escapes": 2
+      "endpoint_escapes": 2
     },
     {
       "net": "RAD_RESET_ASSERT",
       "result": "proposed",
-      "ordinary_escapes": 3
+      "endpoint_escapes": 3
     },
     {
       "net": "SD_MOSI_MCU",
       "result": "proposed",
-      "ordinary_escapes": 2
+      "endpoint_escapes": 2
     },
     {
       "net": "SD_SCK_MCU",
       "result": "proposed",
-      "ordinary_escapes": 2
+      "endpoint_escapes": 2
     },
     {
       "net": "AUD_SDA",
       "result": "proposed",
-      "ordinary_escapes": 3
+      "endpoint_escapes": 3
     },
     {
       "net": "MCU_SWCLK",
       "result": "proposed",
-      "ordinary_escapes": 2
+      "endpoint_escapes": 2
     },
     {
       "net": "MCU_SWO",
       "result": "bounded search timeout",
-      "ordinary_escapes": 2
+      "endpoint_escapes": 2
     },
     {
       "net": "MCU_UART_RX",
       "result": "proposed",
-      "ordinary_escapes": 2
+      "endpoint_escapes": 2
     },
     {
       "net": "SD_CS_MCU",
       "result": "no ordinary escape",
-      "ordinary_escapes": 0
+      "endpoint_escapes": 0
     }
   ],
-  "scope": "Proposal only. Native DRC, electrical review and separate acceptance required."
+  "scope": "Proposal only. Native DRC, electrical review and separate acceptance required.",
+  "reporting_note": "Corrected the endpoint-count label: this counts prepared endpoints, including laser-to-through-via gateways. Via types and route geometry are unchanged."
 }

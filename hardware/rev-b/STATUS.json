@@ -1,7 +1,7 @@
 {
   "stage": "Partial ground, PMIC, control and main-crystal routing; power/LSE/RF routing and process review incomplete",
   "manufacturing_ready": false,
-  "last_checked_utc": "2026-11-12T15:10:44.694203+00:00",
+  "last_checked_utc": "2026-11-12T15:23:08.256005+00:00",
   "native_component_count": 296,
   "physical_footprints": 314,
   "board_only_probe_pads": 14,
@@ -34,7 +34,9 @@
     "Added supplemental laser-hole geometry checks with an injected-fault negative control",
     "Verified MCP rejection of changed candidates and stale source hashes",
     "Moved main-crystal capacitors onto the crystal side and routed both HSE nets on the front layer",
-    "Added short ground microvias for the crystal/capacitors and the three remaining MCU ground balls"
+    "Added short ground microvias for the crystal/capacitors and the three remaining MCU ground balls",
+    "Replaced discontinued microSD candidate with reviewed Molex 1040310811; preserved every logical pin net and earlier copper",
+    "Added an independent check of the actual microSD lands and pin mapping against reviewed drawing dimensions"
   ],
   "next_design_work": [
     "Manual fine-pitch escape and clock/decoupling placement review before another whole-board autorouter trial",

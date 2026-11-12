@@ -73,7 +73,7 @@ antenna restrictions and import hashes on copies; the live design must not chang
 
 Use the pinned packages in `hardware/tools/routing-requirements.txt`. The outer
 planner uses a 0.025 mm grid, continuous geometry checks and 45-degree shortcuts;
-searches have explicit time/expansion limits. The inner planner tries ordinary
+searches have explicit time/expansion limits. Equal-cost search paths prefer progress toward the destination to avoid exploring every point in a large open rectangle first. The inner planner tries ordinary
 outside-pad vias, then optionally reviewed first-order laser escapes. Both retain
 failed/unsupported nets as unfinished work. Only explicitly supplied control nets
 are eligible; rails, RF, crystal and analog routes need circuit-specific review.

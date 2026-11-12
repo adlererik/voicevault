@@ -72,3 +72,5 @@ The software threat model assumes NSA-class compromised phones/telecom and exclu
 ## Sources and licensing
 
 [Source manifest](reference/source-manifest.json), pinned ST ball data, manufacturer-source hashes and [library notices](LIBRARY_NOTICE.md) accompany the design. The new hardware adaptation uses [CERN-OHL-S-2.0](LICENSE); upstream and component-library notices retain their own terms. VoiceVault is independent and has no Trezor endorsement.
+
+The microSD socket is now **Molex 1040310811**, with a normally-open insertion switch and separate grounded shell lands. It replaces the discontinued Hirose candidate, faces the right edge, and preserves all eleven logical pin assignments. [Reviewed geometry, source records and remaining revision/sourcing gates](reference/microsd-selection.json).

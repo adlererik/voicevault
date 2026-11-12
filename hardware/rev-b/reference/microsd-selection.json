@@ -21,5 +21,19 @@
     "Reviewed retrieved drawing is rev B2; final exact delivered revision/stock remains a sourcing gate",
     "Manufacturer direct download failed; retained a separately identified copy, not a hash-verified replacement for the primary-host file",
     "No complete delivered price or assembler allocation; listing alone does not prove availability"
-  ]
+  ],
+  "nominal_body_mm": [
+    11.95,
+    11.4,
+    1.42
+  ],
+  "draft_placement": {
+    "x_mm": 87.9,
+    "y_mm": 58.0,
+    "rotation_degrees": 270,
+    "entry": "right/east edge",
+    "opening_x_mm": 93.6,
+    "card_projection_from_pcb_edge_mm": 2.6,
+    "scope": "Nominal drawing envelope, enclosure/card access not physically validated"
+  }
 }

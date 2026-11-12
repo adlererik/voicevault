@@ -1,0 +1,40 @@
+{
+  "source_sha256": "70c984114ca9befdaa2bcb0e06bf7ebecaa423d476408142c52be01633ebe266",
+  "candidate_sha256": "f843771c1cda381fc7658babdd7cbde0388de070aaaba50a2bddb1e8173a889a",
+  "replacement": "Molex1040310811 / JLC C585350 candidate",
+  "reference": "J401",
+  "position_mm": [
+    87.9,
+    58
+  ],
+  "rotation_degrees": 270,
+  "opens_towards": "right/east PCB edge",
+  "card_opening_x_mm": 93.6,
+  "closest_nominal_copper_to_right_edge_mm": 1.1,
+  "all_other_pads_and_copper_preserved": true,
+  "logical_pin_nets": {
+    "1": "SD_DAT2",
+    "2": "SD_CS_N",
+    "3": "SD_MOSI",
+    "4": "SD_3V3",
+    "5": "SD_SCK",
+    "6": "GND",
+    "7": "SD_MISO",
+    "8": "SD_DAT1",
+    "9": "SD_DETECT_N",
+    "10": "GND",
+    "SH": "GND"
+  },
+  "unrouted_connections": 520,
+  "copper_items": 217,
+  "laser_geometry": {
+    "laser_vias": 14,
+    "overlapping_hole_pairs_checked": 557,
+    "foreign_track_pairs_checked": 1331,
+    "violations": []
+  },
+  "manufacturing_ready": false,
+  "native_layout_violations": 0,
+  "schematic_value_footprint_and_inventory_updated": true,
+  "scope": "Reviewed sourceable replacement candidate and nominal CAD; no procurement or assembly qualification"
+}

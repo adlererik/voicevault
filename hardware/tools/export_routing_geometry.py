@@ -16,5 +16,7 @@ for f in b.GetFootprints():
 for t in b.GetTracks():
  if isinstance(t,pcbnew.PCB_VIA):tracks.append(dict(kind='via',microvia=t.GetViaType()==pcbnew.VIATYPE_MICROVIA,net=t.GetNetname(),x=t.GetPosition().x/1e6,y=t.GetPosition().y/1e6,w=t.GetWidth(t.TopLayer())/1e6,drill=t.GetDrillValue()/1e6,layers=layers[min(layers.index(b.GetLayerName(t.TopLayer())),layers.index(b.GetLayerName(t.BottomLayer()))):max(layers.index(b.GetLayerName(t.TopLayer())),layers.index(b.GetLayerName(t.BottomLayer())))+1]))
  else:tracks.append(dict(kind='track',net=t.GetNetname(),start=[t.GetStart().x/1e6,t.GetStart().y/1e6],end=[t.GetEnd().x/1e6,t.GetEnd().y/1e6],w=t.GetWidth()/1e6,layers=[b.GetLayerName(t.GetLayer())]))
-(r/'.lab-cache/hardware/routing-b0/obstacles.json').write_text(json.dumps(dict(source_sha256=hashlib.sha256(src.read_bytes()).hexdigest(),pads=pads,tracks=tracks),indent=2)+'\n')
+output=r/'.lab-cache/hardware/routing-b0/obstacles.json'
+output.parent.mkdir(parents=True,exist_ok=True)
+output.write_text(json.dumps(dict(source_sha256=hashlib.sha256(src.read_bytes()).hexdigest(),pads=pads,tracks=tracks),indent=2)+'\n')
 print('Exported',len(pads),'copper/mechanical pads and',len(tracks),'fixed tracks/vias.')

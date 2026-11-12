@@ -162,6 +162,13 @@ def main():
     checks.append(dict(check='Actual copper-pad / schematic and boundary correspondence', result='pass',
                        components=len(components), footprints=len(physical), connected_pad_nodes=count, intentional_nc_pads=intentional_nc,
                        exact_critical_nets=len(critical)))
+    socket=run(['flatpak','run','--user','--command=python3','org.kicad.KiCad',
+                ROOT/'hardware/tools/check_microsd_footprint.py'],'microsd-footprint.log')
+    if socket.returncode:
+        raise RuntimeError('Independent microSD land/pin check failed')
+    checks.append(dict(check='Independent microSD socket land/pin comparison',result='pass',
+                       part='Molex 1040310811',logical_pins=11,physical_pads=14,
+                       scope='Reviewed SD-104031-001 B2 geometry and actual board pin mapping; sourcing/revision acceptance remains open'))
     if args.spice:
         for script in ['spice_core_sensitivity.py', 'spice_audio_backlight.py', 'power_budget.py']:
             result = subprocess.run([sys.executable, str(ROOT / 'hardware/tools' / script)],

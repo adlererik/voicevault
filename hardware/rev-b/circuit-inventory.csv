@@ -165,7 +165,7 @@ D904,SMF13A,VoiceVault_B0:D_SOD-123F,,NOT ACCEPTED FOR ASSEMBLY,"Exact MPN, tole
 F501,MF-PSMF050X-2,VoiceVault_B0:Fuse_0805_2012Metric,MF-PSMF050X-2,NOT ACCEPTED FOR ASSEMBLY,"Exact package/revision, lifecycle, sourcing and assembly acceptance required"
 J101,FTSH-107-01-L-DV / STDC14,VoiceVault_B0:Samtec_FTSH-107-01-L-DV,FTSH-107-01-L-DV,NOT ACCEPTED FOR ASSEMBLY,"Exact package/revision, lifecycle, sourcing and assembly acceptance required"
 J102,FTSH-105-01-L-DV / radio SWD,VoiceVault_B0:Samtec_FTSH-105-01-L-DV,FTSH-105-01-L-DV,NOT ACCEPTED FOR ASSEMBLY,"Exact package/revision, lifecycle, sourcing and assembly acceptance required"
-J401,DM3AT-SF-PEJM5,VoiceVault_B0:microSD_HC_Hirose_DM3AT-SF-PEJM5,DM3AT-SF-PEJM5,NOT ACCEPTED FOR ASSEMBLY,"Exact package/revision, lifecycle, sourcing and assembly acceptance required"
+J401,1040310811,VoiceVault_B0:microSD_HC_Molex_104031-0811,1040310811,NOT ACCEPTED FOR ASSEMBLY,"Exact package/revision, lifecycle, sourcing and assembly acceptance required"
 J501,USB4125-GF-A,VoiceVault_B0:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal,,NOT ACCEPTED FOR ASSEMBLY,"Exact MPN, tolerance/derating, package/polarity and current/thermal review required"
 J502,S2B-PH-SM4-TB(LF)(SN); BATTERY,VoiceVault_B0:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal,S2B-PH-SM4-TB(LF)(SN),NOT ACCEPTED FOR ASSEMBLY,"Exact package/revision, lifecycle, sourcing and assembly acceptance required"
 J503,BM02B-SRSS-TB(LF)(SN); EXTERNAL NTC,VoiceVault_B0:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical,BM02B-SRSS-TB(LF)(SN),NOT ACCEPTED FOR ASSEMBLY,"Exact package/revision, lifecycle, sourcing and assembly acceptance required"

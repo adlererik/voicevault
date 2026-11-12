@@ -1,6 +1,6 @@
 # VoiceVault hardware laboratory
 
-The active design is the **[standalone Rev B prototype](rev-b/README.md)**: a rectangular 70 × 45 mm SMD board using Safe 7 core ICs, with audio, microSD, independent debug interfaces and sourceable display/battery candidates. It contains **296 electrical components, 14 probe pads and four mounting holes**. The placed draft has no routed tracks. **Manufacturing remains blocked.** [Status](rev-b/STATUS.json) · [Actual B0 images and results](evidence/2026-11-12/README.md)
+The active design is the **[standalone Rev B prototype](rev-b/README.md)**: a rectangular 70 × 45 mm SMD board using Safe 7 core ICs, with audio, microSD, independent debug interfaces and sourceable display/battery candidates. It contains **296 electrical components, 14 probe pads and four mounting holes**. Routing has started with the RF feed and ground reference pours; 546 connections remain open. **Manufacturing remains blocked.** [Status](rev-b/STATUS.json) · [Actual B0 images and results](evidence/2026-11-12/README.md)
 
 ## Open the active PCB
 
@@ -52,5 +52,7 @@ The software's hardware-evidence contract rejects absent models, warning-produci
 `hardware/rev-a/` preserves the earlier 150 × 120 mm cabled DK2 carrier, module BOM and wiring plan. It is not the custom B0 device and is also unrouted. Run `./hardware/check --rev-a --design-only` for its 22 older circuit cases and actual Renode missing-peripheral negative control. [2026-11-11 evidence](evidence/2026-11-11/README.md) preserves those results. The [NUCLEO-U5A5 assessment](reference/NUCLEO_U5A5_ASSESSMENT.md) remains a reference comparison, not the active compute module.
 
 ## Assembly
+
+[Manufacturing cost research](rev-b/MANUFACTURING_COST.md) compares public capabilities/fees for four assemblies delivered to Sweden. A cheapest delivered supplier is not established. Routing proceeds against provisional published constraints while quotations are deferred.
 
 The [B0 circuit inventory](rev-b/circuit-inventory.csv) is not an approved assembly BOM. Exact part/variant acceptance, HDI stackup, land patterns, routing, power/thermal review, DFM/CPL, fixtures and physical qualification remain open. Batteries and other external assemblies need explicitly agreed handling; a populated PCB is not automatically a complete enclosed device. Nothing has been ordered or submitted for manufacture.

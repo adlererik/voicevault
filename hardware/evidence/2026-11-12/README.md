@@ -2,9 +2,9 @@
 
 **Available design/model checks passed. Manufacturing and physical qualification remain blocked.** No board was manufactured or measured. The Rust laboratory's eleven verification groups were not rerun for this CAD-only change.
 
-![Actual native KiCad placement proposal](placement.png)
+![Actual native KiCad partial routing](routing-progress.png)
 
-The native board contains **296 electrical components, 14 probe pads and four mounting holes**, on a provisional two-sided 70 × 45 mm outline. The image labels actual footprint positions. It contains **no routed copper**. The six-layer/1.0mm stackup is a proposal, not an accepted manufacturing specification.
+The native board contains **296 electrical components, 14 probe pads and four mounting holes**, on a provisional two-sided 70 × 45 mm outline. The image labels actual footprint positions. It shows the accepted first RF/ground route and ground reference pours; most signal and power routing is incomplete. The six-layer/1.0mm stackup is a proposal, not an accepted manufacturing specification.
 
 | Check | Recorded result | Evidence / scope |
 |---|---|---|
@@ -12,12 +12,16 @@ The native board contains **296 electrical components, 14 probe pads and four mo
 | MCU identity/pin mapping | 144 balls and 29 selected functions agree with pinned ST data | Actual native schematic export and [independent ST data](../../rev-b/reference/st-ufbga144-ballout.json) |
 | Circuit-to-pad correspondence | 1,026 schematic-connected nodes, 124 intentional NC pins; 314 footprints | Actual PCB pad/net inspection, not just the circuit manifest |
 | ERC | Zero issues | [Native ERC report](erc.rpt) |
-| DRC | Zero non-routing violations; **853 unrouted connections** | [Native DRC report](drc.json). Its detailed unconnected list stops at 499; the full native ratsnest count is used for progress. |
+| DRC | Zero non-routing violations; **546 unrouted connections** | [Native DRC report](drc.json). Its detailed unconnected list stops at 499; the full native ratsnest count is used for progress. |
 | Antenna rule negative control | Unrelated track and ground via rejected; RF-feed track allowed | [Result](antenna-negative/result.json). A board copy was deliberately modified; the live PCB was unchanged. |
 | Local KiCad MCP | KiCad 10.0.8, 314 footprints, 199 named nets | [Actual stdio-to-IPC call result](mcp-connection.json) |
 | ngspice 47 models | **799 cases completed** | Passive/static model assumptions below. |
 | Power allocation | Named engineering modes fit the proposed 1200mAh-pack allocation under explicit assumptions | [Budget inputs/results and limitations](power-budget.json). Not measured power or battery life. |
-| Routing trial | Incomplete, 480-second timeout; no accepted route | [Record](routing-study.json), [log](routing-study.log). Earlier copy, no output applied. Fanout progress is not routing completion. |
+| Historical routing trial | Incomplete, 480-second timeout; no accepted route | [Record](routing-study.json), [log](routing-study.log). Earlier copy, no output applied. Fanout progress is not routing completion. |
+
+The accepted first route contains **14 track segments, two ground vias and four ground pours**, alongside the tested antenna rule area. The full native count fell from 853 to 546; most of that reduction comes from ground pours. [RF-stage record](routing/rf-stage.json). A later bounded lattice-router study timed out with no saved route and was not applied: [record](routing/lattice-timeout.json), [log](routing/lattice.log).
+
+[Manufacturing cost comparison](../../rev-b/MANUFACTURING_COST.md) targets four assemblies delivered to Sweden. Public fees establish cost drivers, not a cheapest complete delivered quotation.
 
 The [report](report.json) records SHA-256 hashes of the exact CAD, project/rule files and circuit manifest that were checked. All manufacturing blockers remain visible. Its `native_nets` count includes virtual singleton NC records; **199** is the count of named copper nets.
 

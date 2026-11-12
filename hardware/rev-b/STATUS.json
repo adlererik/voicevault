@@ -1,17 +1,17 @@
 {
-  "stage": "Circuit and two-sided placement review; routing and qualification incomplete",
+  "stage": "RF routing and ground reference pours accepted; signal/power routing incomplete",
   "manufacturing_ready": false,
-  "last_checked_utc": "2026-11-12T03:36:48.095840+00:00",
+  "last_checked_utc": "2026-11-12T09:13:33.997809+00:00",
   "native_component_count": 296,
   "physical_footprints": 314,
   "board_only_probe_pads": 14,
   "mounting_holes": 4,
   "named_copper_nets": 199,
-  "unrouted_connections": 853,
+  "unrouted_connections": 546,
   "listed_unconnected_drc_items": 499,
   "layout_violations": 0,
   "erc_issues": 0,
-  "routed_tracks_or_vias": 0,
+  "routed_tracks_or_vias": 16,
   "antenna_rule_areas": 1,
   "spice_model_cases": 799,
   "latest_evidence": "../evidence/2026-11-12/README.md",
@@ -25,7 +25,8 @@
     "Added 14 probe pads, separate debug headers and four mounting holes",
     "Enforced antenna reservation and verified rejection/allowance with native DRC negative controls",
     "Completed 799 passive/static ngspice cases and explicit unqualified power allocations",
-    "Verified live MCP status through the actual stdio-to-IPC connection"
+    "Verified live MCP status through the actual stdio-to-IPC connection",
+    "Started native RF/ground routing and four reference pours; preserved pad nets and passed native checks"
   ],
   "next_design_work": [
     "Final passive/connector/assembly order codes and procurement acceptance incomplete",
@@ -35,5 +36,6 @@
     "No JLCPCB accepted exact BOM / CPL / DFM or functional-test release",
     "No assembled-board measurements or hardware qualification"
   ],
-  "note": "Snapshot only. Full ratsnest count is authoritative; DRC list is truncated. No accepted route, fabrication files, procurement acceptance or assembled-board evidence."
+  "note": "Snapshot only. Routing is incomplete; most progress from initial 853 connections comes from ground pours. No fabrication release, procurement acceptance or assembled-board evidence.",
+  "ground_pours": 4
 }

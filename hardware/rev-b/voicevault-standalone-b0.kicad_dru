@@ -7,3 +7,13 @@
 (rule "BLE antenna: no vias or copper fills"
   (condition "A.intersectsArea('BLE_ANTENNA_CLEARANCE') && A.NetName == 'BLE_ANT_FEED'")
   (constraint disallow via micro_via buried_via zone))
+
+# Provisional published JLC HDI constraints, not factory acceptance.
+# KiCad hole_to_hole excludes laser microvias; any future laser-hole spacing
+# needs a separate geometric audit as well as native DRC.
+(rule "Provisional HDI: hole edge to foreign track"
+  (condition "A.Type == 'Via' && B.Type == 'Track'")
+  (constraint hole_clearance (min 0.15mm)))
+(rule "Provisional HDI: different-net mechanical via holes"
+  (condition "A.Type == 'Via' && B.Type == 'Via' && A.Net != B.Net")
+  (constraint hole_to_hole (min 0.24mm)))

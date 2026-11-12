@@ -1,14 +1,14 @@
 # VoiceVault standalone prototype B0
 
-**Circuit and placement review — not a working or fabrication-ready PCB.**
+**Routing in progress — not a working or fabrication-ready PCB.**
 
 VoiceVault moves plaintext voice, keys, contacts and call approval into a dedicated device. An already compromised phone carries encrypted records over BLE. This custom rectangular SMD board uses the identified **Trezor Safe 7 TS7 rev_D core ICs**, with added wired headset audio, physical microphone disconnect, offline microSD and separate computer-debug connections. It replaces the earlier development-board carrier as the active hardware design.
 
-The current native KiCad project contains **296 electrical components, 14 board-only probe pads and four mounting holes** on a provisional **70 × 45 mm**, six-layer, 1.0 mm board. Components are placed on both sides. Available electrical and geometric checks pass, but **853 connections remain unrouted**, exact sourcing and HDI stackup are unresolved, and no physical board has been tested. [Machine-readable status](STATUS.json) · [Recorded evidence and images](../evidence/2026-11-12/README.md)
+The current native KiCad project contains **296 electrical components, 14 board-only probe pads and four mounting holes** on a provisional **70 × 45 mm**, six-layer, 1.0 mm board. Components are placed on both sides. Available electrical and geometric checks pass, but **546 connections remain unrouted**, exact sourcing and HDI stackup are unresolved, and no physical board has been tested. [Machine-readable status](STATUS.json) · [Recorded evidence and images](../evidence/2026-11-12/README.md)
 
-![Actual native KiCad component placement, without routed copper](../evidence/2026-11-12/placement.png)
+![Actual native KiCad partial routing](../evidence/2026-11-12/routing-progress.png)
 
-*Native KiCad exports, front and rear. These show a placement proposal, not completed copper routing or a finished product.*
+*Native KiCad exports, front and rear. RF copper and ground pours are present; most signal and power routing remains incomplete.*
 
 ## Open and inspect
 
@@ -49,13 +49,15 @@ The published Safe 7 release contains PDFs and board views; it does not supply a
 
 ## What the evidence establishes
 
-The native export and actual PCB pads agree for 1,026 schematic-connected nodes and 124 intentional NC pins. The schematic's 323 exported net records include those virtual NC records; the PCB has **199 named copper nets**. The latest available-check run has zero ERC issues and zero non-routing DRC violations. KiCad's detailed DRC list stops at 499 unconnected entries, so progress uses the independent full ratsnest count of 853 instead.
+The native export and actual PCB pads agree for 1,026 schematic-connected nodes and 124 intentional NC pins. The schematic's 323 exported net records include those virtual NC records; the PCB has **199 named copper nets**. The latest available-check run has zero ERC issues and zero non-routing DRC violations. KiCad's detailed DRC list stops at 499 unconnected entries, so progress uses the independent full ratsnest count of 546 instead.
 
 The antenna restriction is tested on a copy: headless KiCad rejects an unrelated track and a ground via inside the reserved area, and permits the RF-feed track. The live design is checked to remain unchanged. This verifies a CAD rule, not antenna performance or isolation from a physical attacker.
 
 The 799 SPICE cases cover 27 passive MCU-supply sensitivities, 36 headphone cases, 32 microphone/contact cases and 704 static backlight load/fault cases. **They use explicit ideal sources and assumed impedances; no MCU, codec, converter control-loop, battery, RF or charging silicon model is supplied.** [Models, measurements and limits](SPICE_RESULTS.md)
 
-The memory-limited Freerouting 2.5.0 trial on a copy reached fanout and then timed out without an accepted route. Nothing from it was applied to this board. It predates the final power/antenna-rule changes. Fine-pitch escape routing, RF/power routing, return paths and an accepted stackup still require engineering work.
+The memory-limited Freerouting 2.5.0 trial on a copy reached fanout and then timed out without an accepted route. Nothing from it was applied to this board. It predates the final power/antenna-rule changes. The accepted first stage adds 14 RF/ground tracks, two ground vias and four GND pours while preserving all pad/net assignments and the antenna reservation. Most of the initial reduction from 853 to 546 connections comes from ground pours, not completed signal routing. Fine-pitch escapes, clock placement, power loops, signal routing, return paths and a factory-accepted stackup still require engineering work.
+
+[Manufacturing-cost research](MANUFACTURING_COST.md) covers four assemblies delivered to Sweden. The routing target is a provisional six-layer first-order HDI construction, with purchasing left open. No supplier is proven cheapest by a complete delivered quotation.
 
 ## Manufacturing release is blocked
 

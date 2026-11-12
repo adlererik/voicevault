@@ -1,0 +1,12 @@
+# Local routing studies: managed CPython 3.12.14. No cloud/paid router.
+kicad-tools==0.29.0
+numpy==2.5.4
+pydantic==2.14.3
+pyyaml==6.0.3
+rich==15.0.0
+rtree==1.4.1
+shapely==2.2.0
+nanobind==3.1.0
+cmake==4.4.4
+ninja==1.13.2
+scikit-build-core==1.1.2

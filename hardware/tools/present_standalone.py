@@ -47,7 +47,8 @@ fig.suptitle('VoiceVault B0 · actual ngspice 47 outputs from 799 model cases',f
 fig.supxlabel('Ideal sources, assumed impedances and static LED/clamp envelopes. No silicon, charging, RF or physical-device qualification.',fontsize=10)
 fig.savefig(OUT/'circuit-results.png',dpi=160);plt.close(fig)
 fig,axes=plt.subplots(1,2,figsize=(14,6.6),layout='constrained')
-parts={p['reference']:p for p in json.loads((RUN/'board-pads.json').read_text())['parts']}
+board_data=json.loads((RUN/'board-pads.json').read_text())
+parts={p['reference']:p for p in board_data['parts']}
 labels={'front':[('U6','BLE radio',.25,1.05),('U1','Trusted MCU',.57,1.05),
                  ('J701','Display / touch',.86,1.05),('U601','Audio codec',.15,-.08),
                  ('U3','Power / charger',.48,-.08),('J401','Offline microSD',.84,-.08)],
@@ -63,8 +64,11 @@ for ax,side,title in zip(axes,['front','back'],['Front','Rear · mirrored viewin
             xytext=(tx,ty),textcoords='axes fraction',ha='center',fontsize=9,
             bbox=dict(boxstyle='round,pad=.3',fc='white',ec='#9baeb8'),
             arrowprops=dict(arrowstyle='-',color='#607d8b',lw=.8),annotation_clip=False)
-fig.suptitle('VoiceVault B0 · 70 × 45 mm component placement proposal',fontsize=18)
-fig.supxlabel('Native KiCad exports · 296 electrical components + 14 probe pads + 4 holes · NO ROUTED COPPER · NOT FOR FABRICATION',fontsize=10)
-fig.savefig(OUT/'placement.png',dpi=180);plt.close(fig)
+started=board_data['tracks_and_vias'] > 0
+fig.suptitle('VoiceVault B0 · 70 × 45 mm · '+('routing in progress' if started else 'placement proposal'),fontsize=18)
+state=(f"{board_data['tracks_and_vias']} tracks/vias · {board_data['unrouted_connections']} connections still open"
+       if started else 'NO ROUTED COPPER')
+fig.supxlabel('Native KiCad exports · '+state+' · NOT FOR FABRICATION',fontsize=10)
+fig.savefig(OUT/('routing-progress.png' if started else 'placement.png'),dpi=180);plt.close(fig)
 (OUT/'plot-tools.json').write_text(json.dumps(dict(matplotlib=matplotlib.__version__,numpy=np.__version__,source='Saved ngspice case outputs and native KiCad exports'),indent=2)+'\n')
 print('Saved actual circuit-model plots and native placement image:',OUT)

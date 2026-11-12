@@ -16,11 +16,11 @@ The intended adversary has **NSA-class capabilities**: both phones may already b
 
 The active **[standalone B0 design](hardware/rev-b/README.md)** is a custom **70 × 45 mm SMD PCB** using the identified Safe 7 core ICs, plus wired audio, physical microphone disconnect, offline microSD, trusted display/touch, battery/Qi circuits and separate MCU/radio debug interfaces. Native KiCad now contains **296 electrical components, 14 probe pads and four mounting holes**. KiCad is connected locally through MCP; **ngspice 47** runs the circuit experiments directly.
 
-![Actual native KiCad B0 placement proposal](hardware/evidence/2026-11-12/placement.png)
+![Actual native KiCad B0 routing progress](hardware/evidence/2026-11-12/routing-progress.png)
 
-*Placement review, with no routed copper. Available checks cover all 144 MCU balls, 29 selected peripheral functions, schematic-to-pad correspondence, electrical rules and an antenna-rule negative control. The actual circuit models include 799 passive/static cases. [Images, raw reports and model limits](hardware/evidence/2026-11-12/README.md)*
+*Routing has started with the radio feed and ground reference pours. Available checks cover all 144 MCU balls, 29 selected peripheral functions, schematic-to-pad correspondence, electrical rules and an antenna-rule negative control. The actual circuit models include 799 passive/static cases. [Images, raw reports and model limits](hardware/evidence/2026-11-12/README.md)*
 
-**Manufacturing remains blocked:** 853 connections are unrouted, exact sourcing and the HDI stackup need acceptance, and power/RF/audio/charging/isolation need physical qualification. The [circuit inventory](hardware/rev-b/circuit-inventory.csv) is not an approved JLCPCB BOM. No board has been ordered or built. The earlier DK2 carrier and Nucleo assessment remain historical reference work in the [hardware laboratory](hardware/README.md).
+**Manufacturing remains blocked:** 546 connections remain unrouted, exact sourcing and the HDI stackup need acceptance, and power/RF/audio/charging/isolation need physical qualification. The [circuit inventory](hardware/rev-b/circuit-inventory.csv) is not an approved JLCPCB BOM. [Cost comparison for four assemblies delivered to Sweden](hardware/rev-b/MANUFACTURING_COST.md). No board has been ordered or built. The earlier DK2 carrier and Nucleo assessment remain historical reference work in the [hardware laboratory](hardware/README.md).
 
 ## The idea: move the endpoint
 

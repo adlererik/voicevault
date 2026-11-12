@@ -1,0 +1,61 @@
+Clearance: 0.1mm (rules: explicit --clearance flag)
+Via clearance: 0.1mm (from project board minimum clearance)
+Edge clearance: 0.3mm (from jlcpcb manufacturer limits)
+/home/erikclean/src/secure-voice-lab/.lab-cache/hardware/routing-venv/lib/python3.12/site-packages/kicad_tools/router/primitives.py:417: OffAngleSegmentWarning: off-angle segment [net GND on F.Cu]: (34.7000, 34.9800) -> (34.1000, 35.4000) is 10.0080 deg off the 0/45/90/135 set (tol 0.01 deg).  Serializing as-is for the legacy quantize_pcb_file fallback to repair; migrate this emitter to a by-construction dogleg (issue #3907).  Set KICAD_TOOLS_SEGMENT_45_STRICT=1 to make this a hard error.
+  verify_segment_45(
+============================================================
+KiCad PCB Autorouter
+============================================================
+Input:    /home/erikclean/src/secure-voice-lab/.lab-cache/hardware/routing-b0/input/voicevault-standalone-b0.kicad_pcb
+Output:   /home/erikclean/src/secure-voice-lab/.lab-cache/hardware/routing-b0/signals.kicad_pcb
+Strategy: basic
+Layers:   6-Layer SIG-GND-SIG-SIG-PWR-SIG (6 layers)
+Skip:     AUD_3V3_REG, AUD_AVDD_1V8, AUD_DVDD_1V72, AUD_HPL_DC, AUD_HPR_DC, AUD_LDOIN_3V3, AUD_MICBIAS, AUD_REF, AUX_3V3, BAT_NTC, BAT_PACK, BLE_ANT_FEED, BL_ANODE, BL_FB, BL_K1, BL_K2, BL_K3, BL_K4, BL_SW, GND, HAPTIC_MINUS, HAPTIC_PLUS, HAPTIC_REG, HEADSET_L, HEADSET_MIC, HEADSET_R, HP_L_AC, HP_R_AC, MCU_HSE_IN, MCU_HSE_OUT, MCU_LSE_IN, MCU_LSE_OUT, MCU_LX, MCU_VBAT_3V3, MCU_VDD11, MIC_ADC, MIC_BIASED, MIC_COUPLE, NFC_3V3, NFC_AGDC, NFC_ANT1, NFC_ANT2, NFC_CS_N, NFC_EMC1, NFC_EMC2, NFC_IRQ, NFC_MATCH1, NFC_MATCH2, NFC_MISO, NFC_MOSI, NFC_RFI1, NFC_RFI2, NFC_RFO1, NFC_RFO2, NFC_RF_DR, NFC_SCK, NFC_VDD_A, NFC_VDD_AM, NFC_VDD_D, NFC_XTI, NFC_XTO, OP_3V3, OP_GATE, OP_PWR_OFF, PMIC_GPIO2, PMIC_GPIO3, PMIC_SW1, PMIC_SW2, PMIC_VBUS, PMIC_VBUSOUT, PMIC_VSET1, PMIC_VSET2, QI_5V, QI_AC1, QI_AC2, QI_BOOT1, QI_BOOT2, QI_COIL_A, QI_COMA1, QI_COMA2, QI_COMB1, QI_COMB2, QI_DEMOD_COUPLE, QI_DEMOD_FILTER, QI_DEMOD_RAW, QI_ENB, QI_EN_GATE, QI_IEXT, QI_NTC, QI_VAA_2V5, QI_VDD_1V1, QI_VRECT, QI_VS, RADIO_3V3, RAD_ANT, RAD_DEC1, RAD_DEC2, RAD_DEC3, RAD_DEC4, RAD_MATCH, RAD_RESET_ASSERT, RAD_RESET_N, RAD_RF_50, RAD_XC1, RAD_XC2, RAD_XL1, RAD_XL2, SD_3V3, TR_3V3, TR_GATE, TR_PWR_OFF, USB_5V_FUSED, USB_5V_RAW, USB_CC1, USB_CC2, VDD_3V3, VSYS
+Edge:     0.3mm clearance
+
+--- Loading PCB ---
+Pad U11.1 (net 'TR_3V3') has routing geometry this router cannot represent; kept as fixed copper instead of refusing the board (net excluded from routing)
+Pad U11.8 (net 'TR_CS') has routing geometry this router cannot represent; kept as fixed copper instead of refusing the board (net excluded from routing)
+Pad U11.9 (net 'GND') has routing geometry this router cannot represent; kept as fixed copper instead of refusing the board (net excluded from routing)
+Pad U11.16 (net '<none>') has routing geometry this router cannot represent; kept as fixed copper instead of refusing the board
+Pad U11.17 (net '<none>') has routing geometry this router cannot represent; kept as fixed copper instead of refusing the board
+Pad U11.24 (net 'TR_3V3') has routing geometry this router cannot represent; kept as fixed copper instead of refusing the board (net excluded from routing)
+Pad U11.25 (net '<none>') has routing geometry this router cannot represent; kept as fixed copper instead of refusing the board
+Pad U11.32 (net '<none>') has routing geometry this router cannot represent; kept as fixed copper instead of refusing the board
+  Unsupported pad geometry: 8 pad(s) degraded, 3 net(s) excluded from routing: GND, TR_3V3, TR_CS
+  Edge clearance: 0.3mm, 192192 cells blocked
+  Fine-pitch escape regions detected: 35 (J401, C205, U10, C202, L201, U601, U602, U4, U6, U1, X301, C203, C201, C204, U3, J701, C207, C210, J501, U9, C206, X201, C211, U7, U1003, U401, U202, U8, U1002, U5, U201, X1001, U11, U1001, U402); escape clearance 0.140mm
+  WARNING: no manufacturer configured (rules.manufacturer unset); fine-pitch escape regions detected but escape clearance defaulted to rules.trace_clearance (no shrink). Set --manufacturer to enable the tier-aware escape clearance.
+  Board size: 70.0mm x 45.0mm
+  Backend:    cpp v1.0.0 (native, 10-100x faster)
+  Grid:       0.05mm pitch (explicit), 1401x901x6 = 7,573,806 cells
+  Total nets: 199
+  Nets to route: 81 (multi-pad signal nets)
+
+  Fine-pitch grid analysis: skipped for --route-engine lattice (pads are reached by exact geometry, not by grid alignment)
+
+--- Routing (basic) ---
+  Timeout: 240.0s (can only lower the negotiation deadline; see 'Negotiation deadline' for the effective bound)
+  Per-net timeout: 3.0s (lattice: per-LINK budget; netset deadline = 3.0s x link count)
+Net SD_CS_N: width 0.3mm set by impedance sizing (class width 0.15mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net SD_DETECT_N: width 0.3mm set by impedance sizing (class width 0.15mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net TOUCH_IRQ_N: width 0.3mm set by impedance sizing (class width 0.15mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net HAPTIC_IRQ_N: width 0.3mm set by impedance sizing (class width 0.15mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net HAPTIC_RESET_N: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net LCD_RESET_N: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net AUD_RESET_N: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net TOUCH_RESET_N: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net AUD_MCLK: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 50Ω single-ended, synthesized from validator default pattern '.*CLK$')
+Net AUD_BCLK: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 50Ω single-ended, synthesized from validator default pattern '.*CLK$')
+Net AUD_WCLK: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 50Ω single-ended, synthesized from validator default pattern '.*CLK$')
+Net BTN_RESET_N: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net RAD_SWDCLK: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 50Ω single-ended, synthesized from validator default pattern '.*CLK$')
+Net BTN_UPDATE_N: width 0.3mm set by impedance sizing (class width 0.15mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net QI_IRQ_N: width 0.3mm set by impedance sizing (class width 0.15mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net MCU_SWCLK: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 50Ω single-ended, synthesized from validator default pattern '.*CLK$')
+Net NFC_HOST_CS_N: width 0.3mm set by impedance sizing (class width 0.15mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net LCD_CS_N: width 0.3mm set by impedance sizing (class width 0.15mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+Net OP_RESET_N: width 0.3mm set by impedance sizing (class width 0.2mm overridden; target 100Ω differential, synthesized from validator default pattern '.*_[PN]$')
+  Matrix conflict: assigned layer preferences for 70 net(s): ['SD_MISO', 'SD_MOSI', 'SD_SCK', 'SD_CS_N', 'AUD_MCLK', 'AUD_BCLK', 'AUD_WCLK', 'AUD_ADC_DATA', 'AUD_DAC_DATA', 'AUD_RESET_N', 'AUD_SDA', 'AUD_SCL', 'NFC_HOST_CS_N', 'NFC_HOST_MISO', 'NFC_HOST_SCK', 'NFC_HOST_MOSI', 'NFC_HOST_IRQ', 'NFC_IO_DISABLE', 'QI_IRQ_N', 'QI_SDA', 'QI_SCL', 'PMIC_IRQ', 'PMIC_SDA', 'PMIC_SCL', 'HAPTIC_RESET_N', 'HAPTIC_IRQ_N', 'LCD_SDO', 'LCD_CS_N', 'LCD_SDI', 'LCD_SCK', 'LCD_RESET_N', 'LCD_TE', 'TOUCH_SCL', 'TOUCH_IRQ_N', 'TOUCH_RESET_N', 'TOUCH_SDA', 'TR_IRQ', 'TR_SCK', 'TR_MISO', 'TR_MOSI', 'RAD_IO_DISABLE', 'LINK_CTS', 'LINK_PENDING', 'LINK_RX', 'LINK_RTS', 'LINK_TX', 'LINK_CREDIT', 'RAD_RTS', 'RAD_CTS', 'RAD_TX', 'RAD_RX', 'RAD_PENDING', 'RAD_CREDIT', 'SD_MOSI_MCU', 'SD_SCK_MCU', 'SD_MISO_MCU', 'SD_CS_MCU', 'SD_IO_DISABLE', 'MCU_SWO', 'MCU_UART_RX', 'MCU_UART_TX', 'MCU_NRST', 'MCU_SWDIO', 'MCU_SWCLK', 'BTN_RESET_N', 'OP_SDA', 'OP_RESET_N', 'OP_SCL', 'RAD_SWDCLK', 'RAD_SWDIO']
+  Negotiation deadline: 137s (binding: --timeout)
+PARTIAL: routing deadline exceeded during routing; report: /home/erikclean/src/secure-voice-lab/.lab-cache/hardware/routing-b0/signals.timeout.json

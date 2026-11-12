@@ -1,7 +1,7 @@
 {
   "project": "VoiceVault standalone B0",
   "manufacturing": "BLOCKED",
-  "created_utc": "2026-11-12T03:36:48.095840+00:00",
+  "created_utc": "2026-11-12T09:13:33.997809+00:00",
   "native_components": 296,
   "native_nets": 323,
   "named_copper_nets": 199,
@@ -25,8 +25,8 @@
     "circuit-radio.kicad_sch": "5b50bbb81f4c96fb9c5f7a41fd594d5234d9fb62c92bec0f7ffe9cbd80ea50ac",
     "circuit-secure.kicad_sch": "ad3b40d47b43be1cfa263d9e394eeb3789b669b862aae1b95c27380cc5937c28",
     "circuits.json": "9afff39a406d8511701294a1fb952621c96b29a5a52362383821031a18c5bd2a",
-    "voicevault-standalone-b0.kicad_dru": "c1605a55a8ae2311df53f19d43fc3ad82998fc2a23d98c06c8521290a4a356a0",
-    "voicevault-standalone-b0.kicad_pcb": "d85b3f352ff69eac97cedcc715cad1df36d1000fda45eb0bb1ab31df57d37c53",
+    "voicevault-standalone-b0.kicad_dru": "81d0793afbb854a0687f1210da5b52e50bd165b6e795c35592d3e03016892303",
+    "voicevault-standalone-b0.kicad_pcb": "0ab5ce408e393a1983ffe50990fbfcf7a32c38504e5fb24638bd0cba630bf5aa",
     "voicevault-standalone-b0.kicad_pro": "5256a09f5a354630f503ebf68de644493e788705bf393ec1bf32cbc44f5bdcf8",
     "voicevault-standalone-b0.kicad_sch": "4aff8a30f97d8e211587a9f093470309eeb43777150e19b134ae700bb44b2869"
   },
@@ -90,10 +90,10 @@
       "result": "incomplete",
       "erc_exit_code": 0,
       "drc_exit_code": 5,
-      "unrouted": 853,
+      "unrouted": 546,
       "unconnected_violations_listed": 499,
-      "tracks_and_vias": 0,
-      "zones": 1,
+      "tracks_and_vias": 16,
+      "zones": 5,
       "layout_violations": 0,
       "detail": "Unrouted circuit connections remain visible; a clean clearance check is not a routed-board release."
     }

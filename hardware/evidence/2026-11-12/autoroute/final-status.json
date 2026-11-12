@@ -1,0 +1,29 @@
+{
+  "project": "VoiceVault",
+  "router": "FreeRouting 2.5.0 official unmodified JAR",
+  "source_before_sha256": "40b4ab8ab8936caeb09e776a75e81ecd19168797a168c04d9e7f8948dfe78d69",
+  "source_after_sha256": "7e82425a6895dc75763a0df97c2fb472d34389b821d46791485e6d5a137d53c1",
+  "placement_verified_unchanged": true,
+  "footprints": 314,
+  "tracks_and_vias": 2137,
+  "vias": 274,
+  "laser_vias": 53,
+  "zones": 5,
+  "native_unrouted_connections": 280,
+  "listed_unconnected_drc_items": 280,
+  "native_layout_violations": 133,
+  "severity_counts": {
+    "error": 33,
+    "warning": 100
+  },
+  "violation_types": {
+    "items_not_allowed": 2,
+    "track_width": 12,
+    "starved_thermal": 19,
+    "via_dangling": 95,
+    "track_dangling": 5
+  },
+  "zones_refilled": true,
+  "manufacturing_ready": false,
+  "scope": "Complete-board autorouter SES imported through kipy; final native CAD status, not electrical or physical qualification"
+}

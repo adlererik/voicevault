@@ -18,9 +18,9 @@ The active **[standalone B0 design](hardware/rev-b/README.md)** is a custom **70
 
 ![Actual native KiCad B0 routing progress](hardware/evidence/2026-11-12/routing-progress.png)
 
-*Routing includes the radio feed, MCU ground escapes, a shortened PMIC capacitor connection and twenty-eight control nets. Available checks cover all 144 MCU balls, 29 selected peripheral functions, schematic-to-pad correspondence, electrical rules and an antenna-rule negative control. The actual circuit models include 799 passive/static cases. [Images, raw reports and model limits](hardware/evidence/2026-11-12/README.md)*
+*Official FreeRouting 2.5.0 produced a complete-board SES checkpoint, imported into the live KiCad editor through kipy without changing any of the 314 placements. After copper refill, native KiCad reports 280 open connections, 33 layout errors and 100 warnings. [Actual routing result and DRC](hardware/evidence/2026-11-12/autoroute/README.md). Earlier checks cover MCU ball/function mapping and circuit correspondence; the circuit models include 799 passive/static cases. [Evidence and limits](hardware/evidence/2026-11-12/README.md)*
 
-**Manufacturing remains blocked:** 495 connections remain unrouted, exact sourcing and the HDI stackup need acceptance, and power/RF/audio/charging/isolation need physical qualification. The [circuit inventory](hardware/rev-b/circuit-inventory.csv) is not an approved JLCPCB BOM. [Cost comparison for four assemblies delivered to Sweden](hardware/rev-b/MANUFACTURING_COST.md). No board has been ordered or built. The earlier DK2 carrier and Nucleo assessment remain historical reference work in the [hardware laboratory](hardware/README.md).
+**Manufacturing remains blocked:** 280 connections remain unrouted and the latest native DRC failed. Exact sourcing and the HDI stackup need acceptance, and power/RF/audio/charging/isolation need physical qualification. The [circuit inventory](hardware/rev-b/circuit-inventory.csv) is not an approved JLCPCB BOM. [Cost comparison for four assemblies delivered to Sweden](hardware/rev-b/MANUFACTURING_COST.md). No board has been ordered or built. The earlier DK2 carrier and Nucleo assessment remain historical reference work in the [hardware laboratory](hardware/README.md).
 
 ## The idea: move the endpoint
 

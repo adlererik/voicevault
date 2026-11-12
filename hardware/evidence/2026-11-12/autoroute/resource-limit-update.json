@@ -1,0 +1,7 @@
+{
+  "memory_limit_mib": 1200,
+  "swap_limit_mib": 256,
+  "java_max_heap_mib": 640,
+  "cpu_quota_percent": 150,
+  "reason": "Allow JVM/code/cache overhead inside a bounded process; protect the workstation from an unbounded router"
+}

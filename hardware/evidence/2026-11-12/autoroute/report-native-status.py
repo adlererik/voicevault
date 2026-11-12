@@ -1,0 +1,8 @@
+"""Summarize the actual final KiCad DRC and native connectivity, without pruning."""
+from pathlib import Path
+import pcbnew,json,hashlib,collections
+r=Path.cwd();d=r/'.lab-cache/hardware/freerouting-live';s=r/'hardware/rev-b/voicevault-standalone-b0.kicad_pcb';drc=json.load(open(d/'final-drc.json'));b=pcbnew.LoadBoard(str(s));b.BuildConnectivity();b.GetConnectivity().RecalculateRatsnest()
+rows=drc.get('violations',[]);severity=collections.Counter(v.get('severity','unknown') for v in rows);types=collections.Counter(v.get('type','unknown') for v in rows)
+tracks=list(b.GetTracks());vias=[t for t in tracks if isinstance(t,pcbnew.PCB_VIA)]
+result=dict(project='VoiceVault',router='FreeRouting 2.5.0 official unmodified JAR',source_before_sha256=(d/'source-before.sha256').read_text().strip(),source_after_sha256=hashlib.sha256(s.read_bytes()).hexdigest(),placement_verified_unchanged=json.load(open(d/'ipc-import-result.json'))['footprints_unchanged'],footprints=len(list(b.GetFootprints())),tracks_and_vias=len(tracks),vias=len(vias),laser_vias=sum(v.GetViaType()==pcbnew.VIATYPE_MICROVIA for v in vias),zones=len(list(b.Zones())),native_unrouted_connections=b.GetConnectivity().GetUnconnectedCount(False),listed_unconnected_drc_items=len(drc.get('unconnected_items',[])),native_layout_violations=len(rows),severity_counts=dict(severity),violation_types=dict(types),zones_refilled=True,manufacturing_ready=False,scope='Complete-board autorouter SES imported through kipy; final native CAD status, not electrical or physical qualification')
+(d/'final-status.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

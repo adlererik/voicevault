@@ -1,0 +1,65 @@
+2026-11-12 19:49:27.614 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-11-12 19:49:27.791 WARN   [startup] freerouting.json contains a stale 'logging.file.location' value: '/home/erikclean/src/secure-voice-lab/.lab-cache/hardware/freerouting-live/router-details.log'. The actual log file is being written to '/home/erikclean/src/secure-voice-lab/.lab-cache/hardware/freerouting-live/user/freerouting.log' (as resolved at startup). The stale value will be corrected in freerouting.json on next save. If you see this in Docker, the old JSON was written by an earlier version that stored the host path; the fix is to delete freerouting.json so it is regenerated with the correct path.
+2026-11-12 19:49:28.016 INFO   Hardware: 2 CPU cores, 334 CPU score, 618 MB RAM
+2026-11-12 19:49:28.036 WARN   GUI is disabled and you don't have a console available, so the only feedback from Freerouting is in the log.
+2026-11-12 19:49:29.597 INFO   [F5B5DE\FFD0F6] Loading board file 'voicevault.dsn'...
+2026-11-12 19:49:31.791 INFO   Layer 'F.Cu' contains a power plane / large copper pour covering >=30% of the board; associated net(s) configured for plane routing.
+2026-11-12 19:49:31.791 INFO   Layer 'In1.Cu' contains a power plane / large copper pour covering >=30% of the board; associated net(s) configured for plane routing.
+2026-11-12 19:49:31.791 INFO   Layer 'In4.Cu' contains a power plane / large copper pour covering >=30% of the board; associated net(s) configured for plane routing.
+2026-11-12 19:49:31.791 INFO   Layer 'B.Cu' contains a power plane / large copper pour covering >=30% of the board; associated net(s) configured for plane routing.
+2026-11-12 19:49:31.792 WARN   DSN file 'voicevault.dsn' was loaded with 1 warning(s).
+2026-11-12 19:49:31.912 INFO   Applied drill-hole clearance override: 250.0 um (2500 board units), 48 hole keepouts reclassified.
+2026-11-12 19:49:32.038 INFO   [F5B5DE\FFD0F6] Job 'F5B5DE\FFD0F6' started at 2026-11-12T18:49:32.038266062Z.
+2026-11-12 19:49:40.262 WARN   Design Warning: Board has 449 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 449 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 198 pin-to-pin clearance violations (first 5 shown):
+          - U11.32 <-> U11.31 [net GND]
+          - U11.32 <-> U11.1 [net TR_3V3]
+          - U11.30 [net GND] <-> U11.29
+          - U11.29 <-> U11.28
+          - U11.28 <-> U11.27
+          ... and 193 more
+      * 251 fixed trace/via clearance violations (first 5 shown):
+          - FixedVia#3280 [net LCD_CS_N] <-> BoardOutline
+          - FixedVia#3280 [net LCD_CS_N] <-> BoardOutline
+          - FixedVia#3280 [net LCD_CS_N] <-> BoardOutline
+          - FixedVia#3280 [net LCD_CS_N] <-> BoardOutline
+          - FixedVia#3280 [net LCD_CS_N] <-> BoardOutline
+          ... and 246 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 449 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-11-12 19:49:40.619 INFO   [F5B5DE\FFD0F6] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=1.
+2026-11-12 19:49:51.924 INFO   [F5B5DE\FFD0F6] Fanout stage started on board '1199ad9c621d586e3ecd6bcea242757c' with 668 of 1188 SMD pins needing fanout (380 already connected, 140 netless).
+2026-11-12 19:51:04.550 INFO   [F5B5DE\FFD0F6] Fanout pass #1 on board '9ffcd61ce56ccea80b72437fbff20794' completed in 69.11 seconds with 441 SMD pins fanouted, 216 not routed, 0 insert errors, +190 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-11-12 19:51:48.479 INFO   [F5B5DE\FFD0F6] Fanout pass #2 on board 'cd304b648dd365e357c384e03815cccc' completed in 43.78 seconds with 138 SMD pins fanouted, 177 not routed, 0 insert errors, +32 extra vias (0 SMD pins still to check in pass, ripup costs=200).
+2026-11-12 19:52:23.635 INFO   [F5B5DE\FFD0F6] Fanout pass #3 on board '2dea21fb4fea0f19f3a61f23b29d9001' completed in 35.00 seconds with 96 SMD pins fanouted, 154 not routed, 0 insert errors, +10 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-11-12 19:52:57.638 INFO   [F5B5DE\FFD0F6] Fanout pass #4 on board '8aca47ae903714edac7a8c349b2889c4' completed in 33.86 seconds with 93 SMD pins fanouted, 130 not routed, 0 insert errors, +5 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-11-12 19:53:30.627 INFO   [F5B5DE\FFD0F6] Fanout pass #5 on board '64cf1d05d659fd4b66866f5cf75e16a9' completed in 32.85 seconds with 81 SMD pins fanouted, 131 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=500).
+2026-11-12 19:54:00.775 INFO   [F5B5DE\FFD0F6] Fanout pass #6 on board 'f3de06b30f7f35cbb5faebadfad3275d' completed in 30.01 seconds with 61 SMD pins fanouted, 125 not routed, 0 insert errors, +4 extra vias (0 SMD pins still to check in pass, ripup costs=600).
+2026-11-12 19:54:41.255 INFO   [F5B5DE\FFD0F6] Fanout pass #7 on board 'a2c09c7f9b6b0ee01a94e67252968ffa' completed in 40.22 seconds with 54 SMD pins fanouted, 123 not routed, 0 insert errors, +4 extra vias (0 SMD pins still to check in pass, ripup costs=700).
+2026-11-12 19:55:42.584 INFO   [F5B5DE\FFD0F6] Fanout pass #8 on board '04ead3467b2b3718880178f53cb0598d' completed in 61.06 seconds with 50 SMD pins fanouted, 122 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=800).
+2026-11-12 19:56:36.717 INFO   [F5B5DE\FFD0F6] Fanout pass #9 on board 'e9a23ecad75f3ce17b7e5b3266661d99' completed in 53.89 seconds with 47 SMD pins fanouted, 110 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=900).
+2026-11-12 19:57:39.036 INFO   [F5B5DE\FFD0F6] Fanout pass #10 on board 'b85ac9375e8b4ee2f8766e3048261e40' completed in 62.08 seconds with 47 SMD pins fanouted, 106 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=1000).
+2026-11-12 19:57:48.271 INFO   [F5B5DE\FFD0F6] Fanout stage completed: started with 1048 total SMD pins, completed in 473.01 seconds, escaped pins: 839/1048 (80.1%), using 450.62 total CPU seconds, 75.35 GB total allocated, and 145.4 MB peak heap usage.
+2026-11-12 19:58:19.885 INFO   [F5B5DE\FFD0F6] Auto-routing stage started on board 'b85ac9375e8b4ee2f8766e3048261e40' with baseline score 517.18 for 309 unrouted items.
+2026-11-12 19:58:56.205 INFO   Necked retry routed net 'TR_CS' at 100.0 um trace width.
+2026-11-12 20:01:28.153 INFO   Necked retry routed net 'QI_SCL' at 100.0 um trace width.
+2026-11-12 20:06:52.917 INFO   Necked retry routed net 'QI_COMA1' at 100.0 um trace width.
+2026-11-12 20:10:42.047 INFO   Necked retry routed net 'QI_VRECT' at 100.0 um trace width.
+2026-11-12 20:10:42.504 INFO   Necked retry routed net 'QI_AC1' at 100.0 um trace width.
+2026-11-12 20:13:49.192 INFO   Necked retry routed net 'OP_3V3' at 100.0 um trace width.
+2026-11-12 20:13:50.500 INFO   Necked retry routed net 'OP_RESET_N' at 100.0 um trace width.
+2026-11-12 20:14:37.461 INFO   Necked retry routed net 'OP_SCL' at 100.0 um trace width.
+2026-11-12 20:14:39.895 INFO   Necked retry routed net 'VSYS' at 100.0 um trace width.
+2026-11-12 20:14:43.655 INFO   Necked retry routed net 'NFC_3V3' at 100.0 um trace width.
+2026-11-12 20:15:01.710 INFO   Necked retry routed net 'QI_VRECT' at 100.0 um trace width.
+2026-11-12 20:15:28.326 INFO   Necked retry routed net 'SD_CS_MCU' at 100.0 um trace width.
+2026-11-12 20:15:55.388 INFO   Necked retry routed net 'NFC_HOST_CS_N' at 100.0 um trace width.
+2026-11-12 20:16:14.359 INFO   Necked retry routed net 'NFC_HOST_SCK' at 100.0 um trace width.
+2026-11-12 20:16:31.211 INFO   Necked retry routed net 'NFC_RF_DR' at 100.0 um trace width.
+2026-11-12 20:19:45.795 INFO   [F5B5DE\FFD0F6] Auto-routing pass #1 on board 'b85ac9375e8b4ee2f8766e3048261e40' was completed in 1275.90 seconds with score 594.97 (259 unrouted and 449 violations), using 1655.20 CPU seconds and the job allocated 421.59 GB of memory so far.
+2026-11-12 20:20:00.314 INFO   [F5B5DE\FFD0F6] Auto-routing stage completed with timeout: started with 496 unrouted nets, completed in 1814.80 seconds, final score: 594.97 (259 unrouted and 449 violations), using 1655.20 total CPU seconds, 421.59 GB total allocated, and 606.0 MB peak heap usage.
+2026-11-12 20:20:00.637 INFO   [F5B5DE\FFD0F6] Job 'F5B5DE\FFD0F6' finished with state: TIMED_OUT (elapsed: 30 minutes 28.60 seconds, finished at UTC: 2026-11-12T19:20:00.636405857Z).
+2026-11-12 20:20:00.670 INFO   Saving output file '/home/erikclean/src/secure-voice-lab/.lab-cache/hardware/freerouting-live/voicevault.ses' (SES)...
+2026-11-12 20:20:00.712 INFO   Successfully saved output file '/home/erikclean/src/secure-voice-lab/.lab-cache/hardware/freerouting-live/voicevault.ses' (185381 bytes).

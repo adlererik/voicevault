@@ -6,6 +6,18 @@ This is unfinished engineering CAD. [STATUS.json](STATUS.json) records the lates
 checked board state; [evidence](../evidence/2026-11-12/README.md) records accepted
 stages. No gerbers or assembly data are released for ordering.
 
+## Latest complete-board run
+
+Official **FreeRouting 2.5.0**, unmodified release JAR, running headlessly on **OpenJDK 25.0.4.1**. [Exact job settings, command, hash, DSN/SES and native result](../evidence/2026-11-12/autoroute/README.md). All six copper layers were exposed as signal-capable in the export copy; original live layer types and refillable ground zones were retained. Only existing through and first-order laser via spans were enabled. Telemetry was disabled.
+
+KiCad 10 exposes no DSN-export or SES-import IPC handler. The bridge therefore uses KiCad’s native reader on a saved copy, verifies pad nets/placement, restores only sub-0.1 µm placement rounding, then imports the complete copper geometry through official kipy IPC in one undoable transaction. Existing identical copper objects remain intact; router changes replace the corresponding copper. Original component placement and zones do not change. The original zones are then refilled and `kicad-cli pcb drc` runs on the saved live board.
+
+The job reached its 30-minute limit and emitted an SES. The native result is **280 open connections, 33 layout errors and 100 warnings**. No manual coordinate routing or hand-selection of successful nets followed the run. The entire result is retained as an unfinished checkpoint; native errors were not waived or hidden. Fixing the export’s antenna-rule representation, width constraints, thermal/fanout behavior and unfinished connections is necessary before another qualified result. Power widths and return paths require circuit-specific review.
+
+## Historical local-routing method
+
+The remaining sections describe the saved input checkpoint and earlier tools. Their acceptance guards do not certify the latest whole-board import.
+
 ## Cost-directed construction
 
 Retain six copper layers and a provisional 1.0 mm finished thickness. Use ordinary

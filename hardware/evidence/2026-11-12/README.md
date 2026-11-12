@@ -1,10 +1,20 @@
 # VoiceVault B0 hardware evidence — 2026-11-12
 
-**Available design/model checks passed. Manufacturing and physical qualification remain blocked.** No board was manufactured or measured. The Rust laboratory's eleven verification groups were not rerun for this CAD-only change.
+**Latest complete-board routing checkpoint fails native DRC. Manufacturing and physical qualification remain blocked.** No board was manufactured or measured. The Rust laboratory's eleven verification groups were not rerun for this CAD-only change.
 
 ![Actual native KiCad partial routing](routing-progress.png)
 
-The native board contains **296 electrical components, 14 probe pads and four mounting holes**, on a provisional two-sided 70 × 45 mm outline. The image labels actual footprint positions. It shows accepted RF/ground work, MCU ground escapes, a local PMIC connection and twenty-eight control nets; most signal and power routing is incomplete. The six-layer/1.0mm stackup is a proposal, not an accepted manufacturing specification.
+The native board contains **296 electrical components, 14 probe pads and four mounting holes**, on a provisional two-sided 70 × 45 mm outline. The image labels actual, unchanged footprint positions and shows the latest complete-board autorouter result. Routing is incomplete and has native DRC errors. The six-layer/1.0mm stackup is a proposal, not an accepted manufacturing specification.
+
+## Latest global autorouting result
+
+Official **FreeRouting 2.5.0**, unmodified JAR, OpenJDK 25.0.4.1. The 30-minute job limit was reached, and the router saved an SES. The entire copper result was imported into the live editor through kipy; all 314 placements and original zones were preserved. Copper zones were refilled before native DRC.
+
+**Native KiCad: 280 open connections; 33 layout errors and 100 warnings; 2,137 tracks/vias (274 vias, including 53 laser).** Two tracks violate the antenna rule, twelve tracks are undersized, nineteen thermal connections are starved, and one hundred copper items are dangling. This is not accepted manufacturing copper. [Complete result, logs, DSN, SES and native DRC](autoroute/README.md).
+
+## Historical input checkpoint and circuit-model checks
+
+The table, `report.json` and `drc.json` below describe the saved **pre-autoroute source hash `40b4ab8a…`**, not the current board. Earlier passing guards do not establish that the new global result passes. The input checkpoint remains available in Git commit `53378f2`. The Rust laboratory and circuit models were not rerun for the global copper import.
 
 | Check | Recorded result | Evidence / scope |
 |---|---|---|
@@ -23,7 +33,7 @@ The native board contains **296 electrical components, 14 probe pads and four mo
 | Power allocation | Named engineering modes fit the proposed 1200mAh-pack allocation under explicit assumptions | [Budget inputs/results and limitations](power-budget.json). Not measured power or battery life. |
 | Historical routing trial | Incomplete, 480-second timeout; no accepted route | [Record](routing-study.json), [log](routing-study.log). Earlier copy, no output applied. Fanout progress is not routing completion. |
 
-The accepted board contains **345 track segments, 103 vias (31 laser) and four ground pours**, alongside the tested antenna rule area. The full native count fell from 853 to 495; most of that reduction comes from ground pours. [Initial RF-stage record](routing/rf-stage.json), [accepted MCU connection](routing/core-route.json), [RF ground refinement](routing/rf-ground-refinement.json). A later bounded lattice-router study timed out with no saved route and was not applied: [record](routing/lattice-timeout.json), [log](routing/lattice.log).
+The pre-autoroute board contained **345 track segments, 103 vias (31 laser) and four ground pours**, alongside the tested antenna rule area. The full native count fell from 853 to 495; most of that reduction comes from ground pours. [Initial RF-stage record](routing/rf-stage.json), [accepted MCU connection](routing/core-route.json), [RF ground refinement](routing/rf-ground-refinement.json). A later bounded lattice-router study timed out with no saved route and was not applied: [record](routing/lattice-timeout.json), [log](routing/lattice.log).
 
 Accepted routing stages: [14 MCU ground escapes](routing/mcu-ground-escape.json), [PMIC capacitor/placement adaptation](routing/pmic-cap-route.json), [first control batch](routing/control-wave1.json), [second control batch](routing/control-wave2.json). The batches each contain eight control nets; the associated `*-plan.json` and `*-mcp.json` records retain the proposed paths and actual local acceptance calls. [Main crystal placement, routes and seven ground microvias](routing/hse-layout.json) were accepted after a separate explicit placement/pad comparison and native checks; the chip and capacitor branches stay on F.Cu. [Method, reproducibility and process assumptions](../../rev-b/ROUTING.md).
 

@@ -1,0 +1,40 @@
+{
+  "source_sha256": "40b4ab8ab8936caeb09e776a75e81ecd19168797a168c04d9e7f8948dfe78d69",
+  "dsn_sha256": "2b065d84e416ace29fe70cbe6a9335f85d3311c62709c7c5c6893b18772507df",
+  "placement_preserved": true,
+  "all_199_nets_in_job": true,
+  "routing_copy_changes": [
+    "All six layers exposed as signal-capable for local escape routing; live layer types retained",
+    "Refillable GND plane contours retained, plane_as_obstacle=false",
+    "Enable only existing first-order laser via types plus 0.45/0.20mm through vias",
+    "Laser captures may attach to SMD pads; no additional layer spans"
+  ],
+  "router": {
+    "autorouter": {
+      "enabled": true,
+      "max_passes": 20,
+      "max_threads": 1,
+      "save_intermediate_stages": true
+    },
+    "fanout": {
+      "enabled": true,
+      "max_passes": 10
+    },
+    "optimizer": {
+      "enabled": false
+    },
+    "plane_as_obstacle": false,
+    "plane_nets": [
+      "GND"
+    ],
+    "neck_width_um": 100.0,
+    "strict_drc": true,
+    "copper_to_edge_clearance_um": 500.0,
+    "hole_clearance_um": 250.0,
+    "max_threads": 1,
+    "job_timeout": "00:30:00",
+    "result_json": "/home/erikclean/src/secure-voice-lab/.lab-cache/hardware/freerouting-live/router-result.json"
+  },
+  "telemetry_disabled": true,
+  "manufacturing_ready": false
+}

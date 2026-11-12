@@ -1,0 +1,12 @@
+{
+  "imported_via": "kipy native IPC transaction",
+  "ses_sha256": "32b88af807126398fff21a0f301588b74a63f44951ca60a28178864dfc50c679",
+  "footprints_unchanged": true,
+  "retained_items": 324,
+  "removed_items": 124,
+  "created_items": 1813,
+  "final_copper_items": 2137,
+  "zones_refilled": true,
+  "source_after_sha256": "7e82425a6895dc75763a0df97c2fb472d34389b821d46791485e6d5a137d53c1",
+  "manufacturing_ready": false
+}

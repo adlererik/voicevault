@@ -1,6 +1,6 @@
 # VoiceVault hardware laboratory
 
-The active design is the **[standalone Rev B prototype](rev-b/README.md)**: a rectangular 70 × 45 mm SMD board using Safe 7 core ICs, with audio, microSD, independent debug interfaces and sourceable display/battery candidates. It contains **296 electrical components, 14 probe pads and four mounting holes**. Routing includes the RF feed, MCU ground escapes, a PMIC capacitor connection and twenty-eight control nets; 495 connections remain open. **Manufacturing remains blocked.** [Status](rev-b/STATUS.json) · [Actual B0 images and results](evidence/2026-11-12/README.md)
+The active design is the **[standalone Rev B prototype](rev-b/README.md)**: a rectangular 70 × 45 mm SMD board using Safe 7 core ICs, with audio, microSD, independent debug interfaces and sourceable display/battery candidates. It contains **296 electrical components, 14 probe pads and four mounting holes**. The complete-board FreeRouting result has been imported through kipy and its copper zones refilled. Native KiCad reports **280 open connections, 33 layout errors and 100 warnings**. [Actual run and final DRC](evidence/2026-11-12/autoroute/README.md). **Manufacturing remains blocked.** [Status](rev-b/STATUS.json) · [Actual B0 images and results](evidence/2026-11-12/README.md)
 
 ## Open the active PCB
 
@@ -39,7 +39,7 @@ Results and raw logs go to `.lab-runs/hardware/standalone-b0/`. The checks compa
 
 Install ngspice 47 on another host, or point `VOICEVAULT_NGSPICE` to its executable. The scripts prefer this computer's verified cached installation when present. [SPICE models and limits](rev-b/SPICE_RESULTS.md) · [Power/circuit review](rev-b/CIRCUIT_REVIEW.md)
 
-A Freerouting trial runs on a copy with memory/CPU/time limits. Its JAR is used because the native 2.5.0 CLI encountered an upstream serialization error on this board. The trial did not produce an accepted route and was not applied. Autorouting cannot approve BGA escape geometry, RF matching, return planes, power loops or a manufacturing stackup.
+The latest whole-board run used the official, unmodified **FreeRouting 2.5.0 JAR on OpenJDK 25.0.4.1**, with bounded memory/CPU use and a 30-minute application deadline. It saved an SES at the deadline. KiCad’s native SES reader decoded it on a copy; a copper-only kipy transaction applied the complete result to the live board. The earlier timed-out studies were not applied. The current global result fails native DRC and is an unfinished checkpoint. Autorouting does not qualify BGA escape geometry, RF matching, return planes, power loops or a manufacturing stackup.
 
 ## Target and qualification
 

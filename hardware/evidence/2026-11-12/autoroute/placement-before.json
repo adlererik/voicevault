@@ -1,0 +1,2200 @@
+[
+  {
+    "reference": "J401",
+    "x_nm": 87900000,
+    "y_nm": 58000000,
+    "angle_degrees": -90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C205",
+    "x_nm": 42595000,
+    "y_nm": 29745080,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C118",
+    "x_nm": 48300000,
+    "y_nm": 58700000,
+    "angle_degrees": -90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C24",
+    "x_nm": 63290000,
+    "y_nm": 55260000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R706",
+    "x_nm": 70215000,
+    "y_nm": 34180000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C107",
+    "x_nm": 58640000,
+    "y_nm": 57090000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C705",
+    "x_nm": 53700000,
+    "y_nm": 39810000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "U10",
+    "x_nm": 86000000,
+    "y_nm": 44500000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R703",
+    "x_nm": 67045000,
+    "y_nm": 35850000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R103",
+    "x_nm": 67000000,
+    "y_nm": 47500000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R712",
+    "x_nm": 46610000,
+    "y_nm": 39055000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R607",
+    "x_nm": 40800000,
+    "y_nm": 51809999,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "L2",
+    "x_nm": 55000000,
+    "y_nm": 58700000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C34",
+    "x_nm": 53890000,
+    "y_nm": 55660000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R603",
+    "x_nm": 42870000,
+    "y_nm": 51809999,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C202",
+    "x_nm": 35600000,
+    "y_nm": 36400000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R605",
+    "x_nm": 44940000,
+    "y_nm": 51809999,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "L201",
+    "x_nm": 38200000,
+    "y_nm": 33800000,
+    "angle_degrees": 180.0,
+    "layer": 3
+  },
+  {
+    "reference": "C212",
+    "x_nm": 34700000,
+    "y_nm": 34500000,
+    "angle_degrees": -90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R105",
+    "x_nm": 67000000,
+    "y_nm": 49000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C603",
+    "x_nm": 42310000,
+    "y_nm": 43680000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "J801",
+    "x_nm": 85400000,
+    "y_nm": 40000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "L701",
+    "x_nm": 49260000,
+    "y_nm": 42834999,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "H2",
+    "x_nm": 92000000,
+    "y_nm": 44000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R704",
+    "x_nm": 70215000,
+    "y_nm": 35330000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C33",
+    "x_nm": 55560000,
+    "y_nm": 55660000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R102",
+    "x_nm": 48280000,
+    "y_nm": 61279000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "D701",
+    "x_nm": 45370000,
+    "y_nm": 42415000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R701",
+    "x_nm": 64975000,
+    "y_nm": 35850000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C612",
+    "x_nm": 43000000,
+    "y_nm": 61000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R201",
+    "x_nm": 44550000,
+    "y_nm": 35239999,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "U601",
+    "x_nm": 43000000,
+    "y_nm": 48000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C802",
+    "x_nm": 83745000,
+    "y_nm": 45340000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C22",
+    "x_nm": 63740000,
+    "y_nm": 53680000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R7",
+    "x_nm": 48370000,
+    "y_nm": 55069000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "U602",
+    "x_nm": 47590000,
+    "y_nm": 49040000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "U4",
+    "x_nm": 65155000,
+    "y_nm": 45690000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "U6",
+    "x_nm": 42000000,
+    "y_nm": 34000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C209",
+    "x_nm": 44500000,
+    "y_nm": 31120000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "J1001",
+    "x_nm": 91500000,
+    "y_nm": 38000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R12",
+    "x_nm": 48280000,
+    "y_nm": 63349000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C303",
+    "x_nm": 50590000,
+    "y_nm": 35120000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "H3",
+    "x_nm": 46000000,
+    "y_nm": 67000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C606",
+    "x_nm": 33000000,
+    "y_nm": 40480000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R202",
+    "x_nm": 30300000,
+    "y_nm": 37500000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "D602",
+    "x_nm": 36540000,
+    "y_nm": 46330000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C304",
+    "x_nm": 48560000,
+    "y_nm": 35120000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R302",
+    "x_nm": 64680000,
+    "y_nm": 47810000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R801",
+    "x_nm": 85950500,
+    "y_nm": 46129000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C32",
+    "x_nm": 49690000,
+    "y_nm": 64999000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "U1",
+    "x_nm": 58000000,
+    "y_nm": 47000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C305",
+    "x_nm": 64670000,
+    "y_nm": 49860000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R602",
+    "x_nm": 49519999,
+    "y_nm": 48519999,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C301",
+    "x_nm": 51450000,
+    "y_nm": 49450000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "X301",
+    "x_nm": 50000000,
+    "y_nm": 52100000,
+    "angle_degrees": -90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C801",
+    "x_nm": 83045000,
+    "y_nm": 43760000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C203",
+    "x_nm": 39600000,
+    "y_nm": 33049999,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "X202",
+    "x_nm": 46000000,
+    "y_nm": 33000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "J702",
+    "x_nm": 87200000,
+    "y_nm": 28600000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C302",
+    "x_nm": 47900000,
+    "y_nm": 51550000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C27",
+    "x_nm": 61890000,
+    "y_nm": 54690000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "X302",
+    "x_nm": 50000000,
+    "y_nm": 39000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C614",
+    "x_nm": 47820000,
+    "y_nm": 46650000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C602",
+    "x_nm": 38680000,
+    "y_nm": 50040000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R5",
+    "x_nm": 58090000,
+    "y_nm": 60169999,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C609",
+    "x_nm": 38320000,
+    "y_nm": 39510000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R608",
+    "x_nm": 35699999,
+    "y_nm": 38925000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C201",
+    "x_nm": 34600000,
+    "y_nm": 36400000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "J601",
+    "x_nm": 32000000,
+    "y_nm": 67700000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C204",
+    "x_nm": 46275000,
+    "y_nm": 31340000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "U3",
+    "x_nm": 51000000,
+    "y_nm": 58700000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R802",
+    "x_nm": 84185000,
+    "y_nm": 43739999,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R609",
+    "x_nm": 35150000,
+    "y_nm": 40335000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C608",
+    "x_nm": 33650000,
+    "y_nm": 38900000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C208",
+    "x_nm": 41815000,
+    "y_nm": 31035079,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "H4",
+    "x_nm": 74000000,
+    "y_nm": 67000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "D601",
+    "x_nm": 36540000,
+    "y_nm": 49785000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C23",
+    "x_nm": 64420000,
+    "y_nm": 55260000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "SW601",
+    "x_nm": 30100000,
+    "y_nm": 46600000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "J701",
+    "x_nm": 67000000,
+    "y_nm": 28600000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C117",
+    "x_nm": 58640000,
+    "y_nm": 58760000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C601",
+    "x_nm": 38680000,
+    "y_nm": 46430000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C207",
+    "x_nm": 40074999,
+    "y_nm": 29039999,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C35",
+    "x_nm": 61060000,
+    "y_nm": 59360000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "H1",
+    "x_nm": 46000000,
+    "y_nm": 28000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C703",
+    "x_nm": 67595000,
+    "y_nm": 34440000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C115",
+    "x_nm": 42565000,
+    "y_nm": 65090000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C611",
+    "x_nm": 43000000,
+    "y_nm": 55000000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "AE201",
+    "x_nm": 28000000,
+    "y_nm": 27500000,
+    "angle_degrees": 180.0,
+    "layer": 3
+  },
+  {
+    "reference": "D603",
+    "x_nm": 38840000,
+    "y_nm": 41400000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R304",
+    "x_nm": 56540000,
+    "y_nm": 40320000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C210",
+    "x_nm": 48060000,
+    "y_nm": 33750000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C701",
+    "x_nm": 64425000,
+    "y_nm": 34440000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C114",
+    "x_nm": 62730000,
+    "y_nm": 57860000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C113",
+    "x_nm": 62310000,
+    "y_nm": 62530000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C704",
+    "x_nm": 46450000,
+    "y_nm": 37165000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C116",
+    "x_nm": 40894999,
+    "y_nm": 65090000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R708",
+    "x_nm": 56080000,
+    "y_nm": 38710000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R707",
+    "x_nm": 52640000,
+    "y_nm": 36040000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R104",
+    "x_nm": 49950000,
+    "y_nm": 67619000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C306",
+    "x_nm": 64670000,
+    "y_nm": 43425000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "R303",
+    "x_nm": 58610000,
+    "y_nm": 40320000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R301",
+    "x_nm": 60680000,
+    "y_nm": 40320000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "L1",
+    "x_nm": 59000000,
+    "y_nm": 54800000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R705",
+    "x_nm": 61805000,
+    "y_nm": 34180000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "J501",
+    "x_nm": 56000000,
+    "y_nm": 65400000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R702",
+    "x_nm": 72285000,
+    "y_nm": 34180000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C607",
+    "x_nm": 35720000,
+    "y_nm": 37785000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "U9",
+    "x_nm": 50840000,
+    "y_nm": 46429999,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R710",
+    "x_nm": 42330000,
+    "y_nm": 41540000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "L203",
+    "x_nm": 32700000,
+    "y_nm": 33800000,
+    "angle_degrees": 180.0,
+    "layer": 3
+  },
+  {
+    "reference": "C206",
+    "x_nm": 42245000,
+    "y_nm": 28485080,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "L202",
+    "x_nm": 36300000,
+    "y_nm": 33800000,
+    "angle_degrees": 180.0,
+    "layer": 3
+  },
+  {
+    "reference": "R711",
+    "x_nm": 53390000,
+    "y_nm": 37670000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "D604",
+    "x_nm": 35840000,
+    "y_nm": 42875000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "Q201",
+    "x_nm": 41940000,
+    "y_nm": 37785000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C36",
+    "x_nm": 41815000,
+    "y_nm": 67510000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C615",
+    "x_nm": 38320000,
+    "y_nm": 37840000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "R709",
+    "x_nm": 49820000,
+    "y_nm": 36740000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "X201",
+    "x_nm": 38400000,
+    "y_nm": 35700000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "L8",
+    "x_nm": 51000000,
+    "y_nm": 55600000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C702",
+    "x_nm": 69095000,
+    "y_nm": 36470000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C211",
+    "x_nm": 48060000,
+    "y_nm": 32140000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C803",
+    "x_nm": 88070500,
+    "y_nm": 44510000,
+    "angle_degrees": 90.0,
+    "layer": 3
+  },
+  {
+    "reference": "C605",
+    "x_nm": 38700000,
+    "y_nm": 43540000,
+    "angle_degrees": 0.0,
+    "layer": 3
+  },
+  {
+    "reference": "C120",
+    "x_nm": 65754999,
+    "y_nm": 40280000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C402",
+    "x_nm": 73585000,
+    "y_nm": 50040000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "Q4",
+    "x_nm": 77510000,
+    "y_nm": 45290000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R22",
+    "x_nm": 65580000,
+    "y_nm": 42570000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "F501",
+    "x_nm": 55795000,
+    "y_nm": 59290000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C909",
+    "x_nm": 43210000,
+    "y_nm": 49435000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R914",
+    "x_nm": 56129999,
+    "y_nm": 54930000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP6",
+    "x_nm": 61900000,
+    "y_nm": 48695000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "Q902",
+    "x_nm": 43790000,
+    "y_nm": 56960000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C908",
+    "x_nm": 48370000,
+    "y_nm": 47560000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R405",
+    "x_nm": 72435000,
+    "y_nm": 57449999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1019",
+    "x_nm": 88190000,
+    "y_nm": 59200000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "D904",
+    "x_nm": 42379999,
+    "y_nm": 52575000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1003",
+    "x_nm": 85680000,
+    "y_nm": 53210000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP10",
+    "x_nm": 58060000,
+    "y_nm": 42644999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "U7",
+    "x_nm": 84000000,
+    "y_nm": 56000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C26",
+    "x_nm": 63570000,
+    "y_nm": 49940000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "J902",
+    "x_nm": 28200000,
+    "y_nm": 55300000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C10",
+    "x_nm": 57970000,
+    "y_nm": 38765000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C16",
+    "x_nm": 65349999,
+    "y_nm": 51480000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "U1003",
+    "x_nm": 79600000,
+    "y_nm": 38000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "J901",
+    "x_nm": 28200000,
+    "y_nm": 61500000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C916",
+    "x_nm": 50210000,
+    "y_nm": 51650000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1023",
+    "x_nm": 81770000,
+    "y_nm": 60990000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP8",
+    "x_nm": 61230000,
+    "y_nm": 43315000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "Q2",
+    "x_nm": 66634999,
+    "y_nm": 48660000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "D501",
+    "x_nm": 48675000,
+    "y_nm": 62320000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C9",
+    "x_nm": 55940000,
+    "y_nm": 38569999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R901",
+    "x_nm": 56369999,
+    "y_nm": 52860000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1029",
+    "x_nm": 66204999,
+    "y_nm": 37710000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C13",
+    "x_nm": 57970000,
+    "y_nm": 37635000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1014",
+    "x_nm": 78220000,
+    "y_nm": 56680000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R604",
+    "x_nm": 38640000,
+    "y_nm": 45495000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C17",
+    "x_nm": 64150000,
+    "y_nm": 39830000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R1006",
+    "x_nm": 69259999,
+    "y_nm": 41449999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C913",
+    "x_nm": 46600000,
+    "y_nm": 49940000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C906",
+    "x_nm": 44690000,
+    "y_nm": 63440000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1017",
+    "x_nm": 88979999,
+    "y_nm": 53030000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1005",
+    "x_nm": 86790000,
+    "y_nm": 55630000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C922",
+    "x_nm": 34319999,
+    "y_nm": 55940000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R403",
+    "x_nm": 74505000,
+    "y_nm": 57449999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1007",
+    "x_nm": 81210000,
+    "y_nm": 58840000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R913",
+    "x_nm": 55160000,
+    "y_nm": 50150000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1024",
+    "x_nm": 89340000,
+    "y_nm": 55060000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C904",
+    "x_nm": 54960000,
+    "y_nm": 52310000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C914",
+    "x_nm": 44510000,
+    "y_nm": 60800000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C920",
+    "x_nm": 38120000,
+    "y_nm": 53340000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "J101",
+    "x_nm": 61000000,
+    "y_nm": 56000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R904",
+    "x_nm": 49634999,
+    "y_nm": 65769999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1008",
+    "x_nm": 89340000,
+    "y_nm": 57090000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP7",
+    "x_nm": 55850000,
+    "y_nm": 42449999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R101",
+    "x_nm": 62810000,
+    "y_nm": 46555000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C19",
+    "x_nm": 56120000,
+    "y_nm": 46810000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C405",
+    "x_nm": 68104999,
+    "y_nm": 53510000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R902",
+    "x_nm": 35459999,
+    "y_nm": 55960000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C919",
+    "x_nm": 51540000,
+    "y_nm": 47560000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1018",
+    "x_nm": 86970000,
+    "y_nm": 60950000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C501",
+    "x_nm": 55755000,
+    "y_nm": 64810000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R21",
+    "x_nm": 63095000,
+    "y_nm": 44485000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "D902",
+    "x_nm": 53070000,
+    "y_nm": 51100000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1016",
+    "x_nm": 83630000,
+    "y_nm": 58790000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C912",
+    "x_nm": 40040000,
+    "y_nm": 49435000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1030",
+    "x_nm": 66204999,
+    "y_nm": 35680000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1002",
+    "x_nm": 83800000,
+    "y_nm": 61860000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R206",
+    "x_nm": 42364999,
+    "y_nm": 31550000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "D503",
+    "x_nm": 52015000,
+    "y_nm": 58760000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C112",
+    "x_nm": 51520000,
+    "y_nm": 40069999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R20",
+    "x_nm": 67190000,
+    "y_nm": 42110000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C12",
+    "x_nm": 66480000,
+    "y_nm": 51480000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "U401",
+    "x_nm": 70225000,
+    "y_nm": 49769999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C403",
+    "x_nm": 76105000,
+    "y_nm": 57890000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1011",
+    "x_nm": 85110000,
+    "y_nm": 50140000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R33",
+    "x_nm": 72815000,
+    "y_nm": 48279999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R601",
+    "x_nm": 48940000,
+    "y_nm": 42820000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "U202",
+    "x_nm": 53000000,
+    "y_nm": 35000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C6",
+    "x_nm": 58540000,
+    "y_nm": 44585000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C213",
+    "x_nm": 45770000,
+    "y_nm": 38440000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1028",
+    "x_nm": 67785000,
+    "y_nm": 34560000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C14",
+    "x_nm": 65349999,
+    "y_nm": 53510000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "SW301",
+    "x_nm": 88000000,
+    "y_nm": 31000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R906",
+    "x_nm": 49634999,
+    "y_nm": 66920000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "U8",
+    "x_nm": 65800000,
+    "y_nm": 45000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "U1002",
+    "x_nm": 71100000,
+    "y_nm": 38000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C20",
+    "x_nm": 62390000,
+    "y_nm": 38160000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C610",
+    "x_nm": 37500000,
+    "y_nm": 44280000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R402",
+    "x_nm": 77530000,
+    "y_nm": 53010000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R909",
+    "x_nm": 53364999,
+    "y_nm": 65345000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "L1002",
+    "x_nm": 86790000,
+    "y_nm": 58800000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R407",
+    "x_nm": 77530000,
+    "y_nm": 55080000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C92",
+    "x_nm": 68690000,
+    "y_nm": 45270000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "D903",
+    "x_nm": 52129999,
+    "y_nm": 55155000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1012",
+    "x_nm": 84369999,
+    "y_nm": 60460000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C103",
+    "x_nm": 76485000,
+    "y_nm": 48340000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R106",
+    "x_nm": 64025000,
+    "y_nm": 47890000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R32",
+    "x_nm": 71330000,
+    "y_nm": 41720000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R203",
+    "x_nm": 44434999,
+    "y_nm": 31550000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R905",
+    "x_nm": 56985000,
+    "y_nm": 62110000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C214",
+    "x_nm": 43740000,
+    "y_nm": 38440000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "J102",
+    "x_nm": 43000000,
+    "y_nm": 45000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1026",
+    "x_nm": 78750000,
+    "y_nm": 53030000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C917",
+    "x_nm": 50184999,
+    "y_nm": 64360000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R205",
+    "x_nm": 46504999,
+    "y_nm": 31550000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1013",
+    "x_nm": 89340000,
+    "y_nm": 59120000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R907",
+    "x_nm": 49640000,
+    "y_nm": 55120000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "U5",
+    "x_nm": 47000000,
+    "y_nm": 55500000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C15",
+    "x_nm": 59960000,
+    "y_nm": 49175000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "J502",
+    "x_nm": 38000000,
+    "y_nm": 64200000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1022",
+    "x_nm": 88280000,
+    "y_nm": 51410000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1006",
+    "x_nm": 78139999,
+    "y_nm": 58260000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C215",
+    "x_nm": 41710000,
+    "y_nm": 38440000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1001",
+    "x_nm": 85680000,
+    "y_nm": 51540000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1015",
+    "x_nm": 85830000,
+    "y_nm": 62080000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R910",
+    "x_nm": 50530000,
+    "y_nm": 44019999,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP3",
+    "x_nm": 52680000,
+    "y_nm": 43949999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R1002",
+    "x_nm": 87840000,
+    "y_nm": 53010000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1010",
+    "x_nm": 81010000,
+    "y_nm": 50310000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "U201",
+    "x_nm": 44500000,
+    "y_nm": 35000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "X1001",
+    "x_nm": 80640000,
+    "y_nm": 55650000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R1003",
+    "x_nm": 88200000,
+    "y_nm": 55080000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R404",
+    "x_nm": 72435000,
+    "y_nm": 58599999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1009",
+    "x_nm": 80149999,
+    "y_nm": 52460000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C102",
+    "x_nm": 77615000,
+    "y_nm": 48340000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP12",
+    "x_nm": 60270000,
+    "y_nm": 41105000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C91",
+    "x_nm": 67610000,
+    "y_nm": 51480000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C18",
+    "x_nm": 60000000,
+    "y_nm": 37224999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1025",
+    "x_nm": 83080000,
+    "y_nm": 49620000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1004",
+    "x_nm": 81770000,
+    "y_nm": 62120000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "D901",
+    "x_nm": 38760000,
+    "y_nm": 56630000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP9",
+    "x_nm": 58060000,
+    "y_nm": 40434999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP13",
+    "x_nm": 53640000,
+    "y_nm": 41739999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C110",
+    "x_nm": 61400000,
+    "y_nm": 46005000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C101",
+    "x_nm": 78745000,
+    "y_nm": 48340000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "Q901",
+    "x_nm": 47629999,
+    "y_nm": 59310000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R912",
+    "x_nm": 35039999,
+    "y_nm": 53890000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP1",
+    "x_nm": 55850000,
+    "y_nm": 40239999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C901",
+    "x_nm": 40900000,
+    "y_nm": 56730000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R401",
+    "x_nm": 74505000,
+    "y_nm": 58599999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1027",
+    "x_nm": 69815000,
+    "y_nm": 34560000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1020",
+    "x_nm": 79740000,
+    "y_nm": 60990000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "U11",
+    "x_nm": 73000000,
+    "y_nm": 45000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C502",
+    "x_nm": 58125000,
+    "y_nm": 61815000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP11",
+    "x_nm": 63440000,
+    "y_nm": 42040000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C404",
+    "x_nm": 68104999,
+    "y_nm": 55540000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R903",
+    "x_nm": 35000000,
+    "y_nm": 57570000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "J503",
+    "x_nm": 35000000,
+    "y_nm": 48000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C111",
+    "x_nm": 54450000,
+    "y_nm": 47810000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C8",
+    "x_nm": 49760000,
+    "y_nm": 41239999,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C109",
+    "x_nm": 55370000,
+    "y_nm": 44390000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C21",
+    "x_nm": 51520000,
+    "y_nm": 38940000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C911",
+    "x_nm": 48370000,
+    "y_nm": 45890000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R1001",
+    "x_nm": 88200000,
+    "y_nm": 57150000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C1021",
+    "x_nm": 87140000,
+    "y_nm": 50140000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R908",
+    "x_nm": 46019999,
+    "y_nm": 52260000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C104",
+    "x_nm": 77290000,
+    "y_nm": 42420000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C7",
+    "x_nm": 57970000,
+    "y_nm": 36504999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C907",
+    "x_nm": 36870000,
+    "y_nm": 56510000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C401",
+    "x_nm": 69815000,
+    "y_nm": 57710000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R34",
+    "x_nm": 73400000,
+    "y_nm": 41720000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R1005",
+    "x_nm": 69259999,
+    "y_nm": 42599999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "U1001",
+    "x_nm": 82539999,
+    "y_nm": 52690000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "D502",
+    "x_nm": 53535000,
+    "y_nm": 62370000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C918",
+    "x_nm": 51540000,
+    "y_nm": 45890000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R1004",
+    "x_nm": 83060000,
+    "y_nm": 50760000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C902",
+    "x_nm": 50210000,
+    "y_nm": 49480000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C903",
+    "x_nm": 40040000,
+    "y_nm": 53120000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C216",
+    "x_nm": 45770000,
+    "y_nm": 39569999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C119",
+    "x_nm": 79880000,
+    "y_nm": 44270000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP4",
+    "x_nm": 51430000,
+    "y_nm": 41739999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C905",
+    "x_nm": 36449999,
+    "y_nm": 53340000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R19",
+    "x_nm": 65580000,
+    "y_nm": 41420000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "SW302",
+    "x_nm": 86700000,
+    "y_nm": 38500000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP2",
+    "x_nm": 60270000,
+    "y_nm": 38894999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "U402",
+    "x_nm": 73000000,
+    "y_nm": 54000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R31",
+    "x_nm": 74884999,
+    "y_nm": 48279999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R204",
+    "x_nm": 47820000,
+    "y_nm": 38449999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP5",
+    "x_nm": 62480000,
+    "y_nm": 39830000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C25",
+    "x_nm": 58040000,
+    "y_nm": 49395000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "SW503",
+    "x_nm": 63000000,
+    "y_nm": 29000000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R406",
+    "x_nm": 76425000,
+    "y_nm": 50550000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C915",
+    "x_nm": 54470000,
+    "y_nm": 55700000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C910",
+    "x_nm": 55575000,
+    "y_nm": 62660000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "R911",
+    "x_nm": 35039999,
+    "y_nm": 51820000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C108",
+    "x_nm": 58760000,
+    "y_nm": 46505000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "R606",
+    "x_nm": 38640000,
+    "y_nm": 47565000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C921",
+    "x_nm": 48370000,
+    "y_nm": 44220000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "L1001",
+    "x_nm": 79539999,
+    "y_nm": 58840000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "TP14",
+    "x_nm": 53640000,
+    "y_nm": 39529999,
+    "angle_degrees": 0.0,
+    "layer": 34
+  },
+  {
+    "reference": "C604",
+    "x_nm": 38650000,
+    "y_nm": 43445000,
+    "angle_degrees": 90.0,
+    "layer": 34
+  },
+  {
+    "reference": "C11",
+    "x_nm": 61810000,
+    "y_nm": 50365000,
+    "angle_degrees": 0.0,
+    "layer": 34
+  }
+]

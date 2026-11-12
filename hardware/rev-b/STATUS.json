@@ -1,17 +1,17 @@
 {
-  "stage": "Saved pre-autoroute placement; whole-board FreeRouting DSN/SES run in progress",
+  "stage": "Whole-board FreeRouting SES imported through kipy; zone refill complete; native DRC failed",
   "manufacturing_ready": false,
-  "last_checked_utc": "2026-11-12T15:51:25.019100+00:00",
+  "last_checked_utc": "2026-11-12T19:23:44.912042+00:00",
   "native_component_count": 296,
   "physical_footprints": 314,
   "board_only_probe_pads": 14,
   "mounting_holes": 4,
   "named_copper_nets": 199,
-  "unrouted_connections": 495,
-  "listed_unconnected_drc_items": 495,
-  "layout_violations": 0,
+  "unrouted_connections": 280,
+  "listed_unconnected_drc_items": 280,
+  "layout_violations": 133,
   "erc_issues": 0,
-  "routed_tracks_or_vias": 448,
+  "routed_tracks_or_vias": 2137,
   "antenna_rule_areas": 1,
   "spice_model_cases": 799,
   "latest_evidence": "../evidence/2026-11-12/README.md",
@@ -39,10 +39,11 @@
     "Added an independent check of the actual microSD lands and pin mapping against reviewed drawing dimensions",
     "Accepted twelve further control nets using native clearance and laser checks",
     "Reworked seven inner escape paths to clear 68 remaining MCU capture sites; all other pads and copper retained",
-    "Added native MCU-reservation checking and a memory-only injected-fault negative control"
+    "Added native MCU-reservation checking and a memory-only injected-fault negative control",
+    "Ran official FreeRouting 2.5.0 headlessly; imported complete SES copper through kipy with all 314 placements unchanged; refilled original zones and recorded failing native DRC"
   ],
   "next_design_work": [
-    "Complete whole-board FreeRouting run, import SES via kipy, refill zones and report native DRC",
+    "Resolve 280 open connections, 33 native layout errors and 100 warnings using reviewed routing constraints; no fabrication release",
     "Final passive/connector/assembly order codes and procurement acceptance incomplete",
     "Rail current, startup, thermal and fault design review incomplete",
     "Package land-pattern reviews and replacement-antenna tuning incomplete",
@@ -50,9 +51,12 @@
     "No JLCPCB accepted exact BOM / CPL / DFM or functional-test release",
     "No assembled-board measurements or hardware qualification"
   ],
-  "note": "Pre-autoroute snapshot: 345 track segments, 103 vias (31 laser) and four ground pours. Whole-board FreeRouting now runs from this saved placement. No manufacturing or physical qualification.",
+  "note": "Official unmodified FreeRouting 2.5.0 reached its 30-minute job limit and saved an SES. The full result is in the live editor: 1863 track segments, 274 vias (53 laser), four ground pours plus antenna rule area. Native DRC has 33 layout errors and 100 warnings plus 280 unconnected items. This is an unfinished checkpoint, not accepted manufacturing copper.",
   "ground_pours": 4,
-  "track_segments": 345,
-  "vias": 103,
-  "laser_vias": 31
+  "track_segments": 1863,
+  "vias": 274,
+  "laser_vias": 53,
+  "layout_errors": 33,
+  "layout_warnings": 100,
+  "latest_native_routing_evidence": "../evidence/2026-11-12/autoroute/final-status.json"
 }

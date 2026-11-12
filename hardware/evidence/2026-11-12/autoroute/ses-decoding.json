@@ -1,0 +1,10 @@
+{
+  "ses_sha256": "32b88af807126398fff21a0f301588b74a63f44951ca60a28178864dfc50c679",
+  "source_sha256": "40b4ab8ab8936caeb09e776a75e81ecd19168797a168c04d9e7f8948dfe78d69",
+  "footprints_unchanged": true,
+  "zones_preserved": 5,
+  "laser_type_normalizations": 53,
+  "max_native_placement_rounding_restored_nm": 21,
+  "unrouted_before_refill": 258,
+  "manufacturing_ready": false
+}

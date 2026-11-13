@@ -1,0 +1,22 @@
+(version 1)
+# Provisional manufacturer-inspired antenna reservation, not RF tuning evidence.
+# Explicit rules are tested by negative control, independent of implicit keepouts.
+(rule "BLE antenna: only RF feed tracks"
+  (condition "A.intersectsArea('BLE_ANTENNA_CLEARANCE') && A.NetName != 'BLE_ANT_FEED'")
+  (constraint disallow track via micro_via buried_via zone))
+(rule "BLE antenna: no vias or copper fills"
+  (condition "A.intersectsArea('BLE_ANTENNA_CLEARANCE') && A.NetName == 'BLE_ANT_FEED'")
+  (constraint disallow via micro_via buried_via zone))
+
+# Provisional published JLC HDI constraints, not factory acceptance.
+# KiCad hole_to_hole excludes laser microvias; any future laser-hole spacing
+# needs a separate geometric audit as well as native DRC.
+(rule "Provisional HDI: hole edge to foreign track"
+  (condition "A.Type == 'Via' && B.Type == 'Track'")
+  (constraint hole_clearance (min 0.15mm)))
+(rule "Provisional HDI: different-net mechanical via holes"
+  (condition "A.Type == 'Via' && B.Type == 'Via' && A.Net != B.Net")
+  (constraint hole_to_hole (min 0.24mm)))
+
+# JLC HDI laser-via annulus; mechanical-via minimum is unchanged.
+(rule "HDI laser-via annulus" (condition "A.isMicroVia()") (constraint annular_width (min 0.075mm)))

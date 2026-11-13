@@ -1,0 +1,27 @@
+[
+  {
+    "table": "high_current_nets",
+    "rows": 30,
+    "exact_match": true
+  },
+  {
+    "table": "switching_converters",
+    "rows": 4,
+    "exact_match": true
+  },
+  {
+    "table": "bypass_capacitors",
+    "rows": 115,
+    "exact_match": true
+  },
+  {
+    "table": "crystal_oscillators",
+    "rows": 5,
+    "exact_match": true
+  },
+  {
+    "table": "bga_components",
+    "rows": 7,
+    "exact_match": true
+  }
+]

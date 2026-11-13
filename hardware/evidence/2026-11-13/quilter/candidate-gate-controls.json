@@ -4,9 +4,16 @@
   "components": 314,
   "pads": 1243,
   "tolerance_nm": 100,
-  "scope": "Footprint/pad/net/placement/antenna identity only; not copper acceptance or manufacturing qualification",
+  "original_copper_items": 473,
+  "candidate_copper_items": 473,
+  "scope": "Footprint/pad/net/placement/antenna/outline and protected-copper identity; not full copper/electrical/manufacturing qualification",
   "manufacturing_ready": false,
-  "negative_control": "In-memory pad-net substitution detected; restored without saving",
+  "negative_controls": [
+    "In-memory pad-net substitution detected",
+    "Antenna restriction mutation detected",
+    "Removed protected copper detected"
+  ],
+  "controls_restore_without_saving": true,
   "source_sha256": "84589c40b710f4f67f1fff1fec7f6b9f34842dff4d3319df5cf646307f33b495",
   "candidate_sha256": "84589c40b710f4f67f1fff1fec7f6b9f34842dff4d3319df5cf646307f33b495"
 }

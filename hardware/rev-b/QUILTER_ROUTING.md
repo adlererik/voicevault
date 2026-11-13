@@ -46,7 +46,7 @@ Outstanding gates include complete fine-pitch escapes and signal routing, power-
 
 ## Returned-board identity gate
 
-[check_quilter_candidate.py](../tools/check_quilter_candidate.py) compares component references, values, library identifiers, poses, pad numbers/nets/geometry, copper-layer count and exact antenna rule areas. Its source/candidate hashes bind the output to actual files. The saved [positive and pad-substitution negative controls](../evidence/2026-11-13/quilter/candidate-gate-controls.json) pass. This gate does not approve copper: native rules, laser-hole geometry, fixed-copper preservation and electrical review remain separate acceptance requirements.
+[check_quilter_candidate.py](../tools/check_quilter_candidate.py) compares component references, values, library identifiers, poses, pad numbers/nets/geometry, copper-layer count, board outline, protected input copper and exact antenna rule areas. It flags unknown copper nets and unexpected new non-through via processes. Its source/candidate hashes bind the output to actual files. The saved [positive and net/antenna/protected-copper mutation controls](../evidence/2026-11-13/quilter/candidate-gate-controls.json) pass. This gate does not approve the completed routing: native clearance rules, laser-hole geometry and electrical review remain separate requirements. Split or merged original segments require explicit review; the guard does not silently waive them.
 
 ## Proposed core-power placement repair
 

@@ -1,0 +1,1795 @@
+{
+  "scope": "Native physical connectivity of prototype routing input; zones excluded from graph traversal. No path simulation or manufacturing claim.",
+  "native_full_open_connections": 505,
+  "pins": [
+    {
+      "component": "U10",
+      "pin": "A1",
+      "net": "HAPTIC_IRQ_N",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U10",
+      "pin": "A2",
+      "net": "HAPTIC_REG",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U10",
+      "pin": "A3",
+      "net": "HAPTIC_PLUS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U10",
+      "pin": "B1",
+      "net": "PMIC_SDA",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U10",
+      "pin": "B2",
+      "net": "HAPTIC_RESET_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U10",
+      "pin": "B3",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U10",
+      "pin": "C1",
+      "net": "PMIC_SCL",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U10",
+      "pin": "C2",
+      "net": "VSYS",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U10",
+      "pin": "C3",
+      "net": "HAPTIC_MINUS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    },
+    {
+      "component": "U6",
+      "pin": "A1",
+      "net": "RAD_XC2",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "A2",
+      "net": "RAD_DEC2",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "A6",
+      "net": "RAD_DEC4",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "A7",
+      "net": "RADIO_3V3",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "B2",
+      "net": "RAD_XC1",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "B7",
+      "net": "RAD_DEC1",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "C2",
+      "net": "RAD_DEC3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "C4",
+      "net": "GND",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "C5",
+      "net": "GND",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "C7",
+      "net": "RAD_XL2",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "D1",
+      "net": "RAD_ANT",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "D2",
+      "net": "GND",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "D7",
+      "net": "RAD_XL1",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "E3",
+      "net": "GND",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "E7",
+      "net": "RAD_RTS",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "F1",
+      "net": "RAD_SWDCLK",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "F4",
+      "net": "RAD_PENDING",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "F5",
+      "net": "GND",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "F6",
+      "net": "RAD_CTS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "F7",
+      "net": "RAD_TX",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    },
+    {
+      "component": "U6",
+      "pin": "G1",
+      "net": "RAD_SWDIO",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "G7",
+      "net": "RAD_RX",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "H1",
+      "net": "RAD_RESET_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    },
+    {
+      "component": "U6",
+      "pin": "H6",
+      "net": "RAD_CREDIT",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U6",
+      "pin": "H7",
+      "net": "RADIO_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "A1",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "A2",
+      "net": "BACKLIGHT_PWM",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "A3",
+      "net": "MCU_BOOT0",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "A4",
+      "net": "AUD_RESET_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    },
+    {
+      "component": "U1",
+      "pin": "A6",
+      "net": "PMIC_SCL",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "A9",
+      "net": "TR_IRQ",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "A10",
+      "net": "QI_SCL",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    },
+    {
+      "component": "U1",
+      "pin": "A11",
+      "net": "LCD_SDI",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "A12",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "B1",
+      "net": "AUD_MCLK",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "B2",
+      "net": "AUD_ADC_DATA",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "B3",
+      "net": "TOUCH_RESET_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "B4",
+      "net": "BTN_UPDATE_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "B6",
+      "net": "QI_IRQ_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "B7",
+      "net": "NFC_HOST_IRQ",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "B9",
+      "net": "RAD_IO_DISABLE",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "B10",
+      "net": "LCD_SCK",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "B11",
+      "net": "MCU_SWCLK",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "B12",
+      "net": "PMIC_IRQ",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "C1",
+      "net": "MCU_LSE_IN",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "C2",
+      "net": "MCU_VBAT_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "C3",
+      "net": "AUD_WCLK",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "C4",
+      "net": "AUD_BCLK",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "C5",
+      "net": "LCD_RESET_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "C6",
+      "net": "PMIC_SDA",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "C7",
+      "net": "QI_SDA",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "C8",
+      "net": "LCD_SDO",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "C10",
+      "net": "MCU_SWDIO",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "D1",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "D2",
+      "net": "MCU_LSE_OUT",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "D3",
+      "net": "AUD_DAC_DATA",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "D4",
+      "net": "MCU_VDD11",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "D5",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "D6",
+      "net": "MCU_SWO",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "D8",
+      "net": "TOUCH_SDA",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "D9",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "D10",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "D12",
+      "net": "MCU_UART_RX",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "E3",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "E4",
+      "net": "SD_DETECT_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "E5",
+      "net": "AUD_SDA",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "E6",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "E7",
+      "net": "TOUCH_SCL",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "E8",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "E10",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "F3",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "F4",
+      "net": "AUD_SCL",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "F5",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "F6",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "F7",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "F8",
+      "net": "MCU_UART_TX",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "F9",
+      "net": "SD_CS_MCU",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "F10",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "F11",
+      "net": "TR_CS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "G3",
+      "net": "MCU_VDD11",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "G5",
+      "net": "SD_MISO_MCU",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "G6",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "G7",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "G8",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "G10",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "H1",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "H2",
+      "net": "MCU_HSE_IN",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "H3",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "H4",
+      "net": "LINK_CTS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "H5",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "H6",
+      "net": "NFC_IO_DISABLE",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "H7",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "H8",
+      "net": "SD_POWER_EN",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "H10",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "H11",
+      "net": "PMIC_GPIO3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J1",
+      "net": "MCU_HSE_OUT",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J2",
+      "net": "MCU_NRST",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J3",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "J4",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J5",
+      "net": "NFC_POWER_EN",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J6",
+      "net": "QI_DISABLE",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J7",
+      "net": "BTN_RESET_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J8",
+      "net": "HAPTIC_IRQ_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J9",
+      "net": "MCU_VDD11",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J10",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "J12",
+      "net": "PMIC_GPIO2",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K1",
+      "net": "SD_MOSI_MCU",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K2",
+      "net": "SD_SCK_MCU",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K3",
+      "net": "LINK_RTS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K4",
+      "net": "NFC_HOST_SCK",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K5",
+      "net": "RAD_RESET_ASSERT",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K6",
+      "net": "SD_IO_DISABLE",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K8",
+      "net": "AUD_POWER_EN",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K9",
+      "net": "OP_SDA",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K10",
+      "net": "LINK_PENDING",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K11",
+      "net": "OP_SCL",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "K12",
+      "net": "LCD_TE",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "L1",
+      "net": "TOUCH_IRQ_N",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "L2",
+      "net": "LINK_TX",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "L3",
+      "net": "NFC_HOST_CS_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "L4",
+      "net": "NFC_HOST_MOSI",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "L5",
+      "net": "LCD_CS_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "L7",
+      "net": "TR_PWR_OFF",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "L8",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "L10",
+      "net": "TR_MISO",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "L11",
+      "net": "OP_RESET_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "L12",
+      "net": "OP_PWR_OFF",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "M1",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U1",
+      "pin": "M2",
+      "net": "LINK_RX",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "M3",
+      "net": "NFC_HOST_MISO",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "M5",
+      "net": "HAPTIC_RESET_N",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "M7",
+      "net": "MCU_LX",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "M8",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "M9",
+      "net": "TR_MOSI",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "M10",
+      "net": "TR_SCK",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "M11",
+      "net": "LINK_CREDIT",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U1",
+      "pin": "M12",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "A2",
+      "net": "NFC_AGDC",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "A3",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "A4",
+      "net": "NFC_IRQ",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "A5",
+      "net": "NFC_CS_N",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "A6",
+      "net": "NFC_3V3",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "B1",
+      "net": "NFC_RFI1",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "B2",
+      "net": "NFC_RFI2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "B3",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "B4",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "B5",
+      "net": "NFC_MISO",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "C1",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "C2",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "C3",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "C5",
+      "net": "NFC_VDD_D",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "C6",
+      "net": "NFC_XTO",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "D2",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "D3",
+      "net": "NFC_SCK",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "D4",
+      "net": "NFC_MOSI",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "D5",
+      "net": "GND",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "D6",
+      "net": "NFC_XTI",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "E3",
+      "net": "NFC_RF_DR",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "E4",
+      "net": "NFC_VDD_A",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "E5",
+      "net": "NFC_3V3",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "E6",
+      "net": "NFC_3V3",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "F1",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "F2",
+      "net": "NFC_RFO2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "F3",
+      "net": "NFC_RFO1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "F4",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U7",
+      "pin": "F5",
+      "net": "NFC_VDD_AM",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U7",
+      "pin": "F6",
+      "net": "NFC_RF_DR",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "A4",
+      "net": "RADIO_3V3",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "A6",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U3",
+      "pin": "A7",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U3",
+      "pin": "B1",
+      "net": "PMIC_VBUS",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "B2",
+      "net": "PMIC_VBUS",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "B3",
+      "net": "USB_CC2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "B4",
+      "net": "AUX_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "B5",
+      "net": "GND",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "B6",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "B7",
+      "net": "PMIC_SW1",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "C1",
+      "net": "VSYS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "C2",
+      "net": "VSYS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "C3",
+      "net": "PMIC_VBUSOUT",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "C4",
+      "net": "PMIC_GPIO3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "C5",
+      "net": "PMIC_GPIO2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "C6",
+      "net": "AUX_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "C7",
+      "net": "VSYS",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "D1",
+      "net": "BAT_PACK",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "D2",
+      "net": "BAT_PACK",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "D3",
+      "net": "BAT_NTC",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "D4",
+      "net": "BTN_POWER",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "D5",
+      "net": "USB_CC1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "D6",
+      "net": "PMIC_IRQ",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "D7",
+      "net": "PMIC_SW2",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "E1",
+      "net": "PMIC_VSET2",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "E2",
+      "net": "PMIC_VSET1",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "E3",
+      "net": "PMIC_SCL",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "E4",
+      "net": "VDD_3V3",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "E5",
+      "net": "PMIC_SDA",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U3",
+      "pin": "E7",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U5",
+      "pin": "A1",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U5",
+      "pin": "A2",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U5",
+      "pin": "A3",
+      "net": "QI_IEXT",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "A4",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U5",
+      "pin": "A5",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U5",
+      "pin": "B1",
+      "net": "QI_AC2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "B2",
+      "net": "QI_AC2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "B3",
+      "net": "QI_BOOT1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "B4",
+      "net": "QI_AC1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "B5",
+      "net": "QI_AC1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "C1",
+      "net": "QI_AC2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "C2",
+      "net": "QI_AC2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "C3",
+      "net": "QI_BOOT2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "C4",
+      "net": "QI_AC1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "C5",
+      "net": "QI_AC1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "D1",
+      "net": "QI_VRECT",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "D2",
+      "net": "QI_VRECT",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "D3",
+      "net": "QI_VRECT",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "D4",
+      "net": "QI_VRECT",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "D5",
+      "net": "QI_VRECT",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "E1",
+      "net": "QI_5V",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "E2",
+      "net": "QI_5V",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "E4",
+      "net": "QI_VAA_2V5",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "E5",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U5",
+      "pin": "F1",
+      "net": "QI_NTC",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "F2",
+      "net": "QI_VS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "F4",
+      "net": "QI_VDD_1V1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "F5",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U5",
+      "pin": "G1",
+      "net": "QI_COMA1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "G2",
+      "net": "QI_COMA2",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "G4",
+      "net": "QI_ENB",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "G5",
+      "net": "QI_SDA",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "H1",
+      "net": "QI_COMB1",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "H2",
+      "net": "QI_COMB2",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "H4",
+      "net": "QI_IRQ_N",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U5",
+      "pin": "H5",
+      "net": "QI_SCL",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U9",
+      "pin": "A1",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U9",
+      "pin": "A2",
+      "net": "BACKLIGHT_PWM",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U9",
+      "pin": "A3",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    },
+    {
+      "component": "U9",
+      "pin": "B1",
+      "net": "VSYS",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U9",
+      "pin": "B3",
+      "net": "BL_FB",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U9",
+      "pin": "C1",
+      "net": "BL_ANODE",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U9",
+      "pin": "C2",
+      "net": "BL_SW",
+      "reachable_through_vias": 1,
+      "reachable_laser_vias": 0
+    },
+    {
+      "component": "U9",
+      "pin": "C3",
+      "net": "GND",
+      "reachable_through_vias": 17,
+      "reachable_laser_vias": 7
+    }
+  ],
+  "micro_only_pins": [
+    {
+      "component": "U10",
+      "pin": "C3",
+      "net": "HAPTIC_MINUS",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    },
+    {
+      "component": "U6",
+      "pin": "F7",
+      "net": "RAD_TX",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    },
+    {
+      "component": "U6",
+      "pin": "H1",
+      "net": "RAD_RESET_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    },
+    {
+      "component": "U1",
+      "pin": "A4",
+      "net": "AUD_RESET_N",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    },
+    {
+      "component": "U1",
+      "pin": "A10",
+      "net": "QI_SCL",
+      "reachable_through_vias": 0,
+      "reachable_laser_vias": 1
+    }
+  ],
+  "manufacturing_ready": false,
+  "negative_control": "Removing all copper tracks/vias/pours on an in-memory copy leaves MCU M8 without connected items"
+}

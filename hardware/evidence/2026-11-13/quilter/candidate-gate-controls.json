@@ -1,0 +1,12 @@
+{
+  "result": "pass",
+  "failures": [],
+  "components": 314,
+  "pads": 1243,
+  "tolerance_nm": 100,
+  "scope": "Footprint/pad/net/placement/antenna identity only; not copper acceptance or manufacturing qualification",
+  "manufacturing_ready": false,
+  "negative_control": "In-memory pad-net substitution detected; restored without saving",
+  "source_sha256": "84589c40b710f4f67f1fff1fec7f6b9f34842dff4d3319df5cf646307f33b495",
+  "candidate_sha256": "84589c40b710f4f67f1fff1fec7f6b9f34842dff4d3319df5cf646307f33b495"
+}

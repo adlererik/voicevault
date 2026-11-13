@@ -1,6 +1,6 @@
 # B0 circuit and power review
 
-This records design intent and remaining work as of 2026-11-12. It is not an independent electrical sign-off. Use the native schematic and `STATUS.json` together with the source records under `reference/`.
+This records design intent and remaining work as of 2026-11-13. It is not an independent electrical sign-off. Use the native schematic and `STATUS.json` together with the source records under `reference/`. The [Quilter record](QUILTER_ROUTING.md) distinguishes current cloud studies from the live PCB; the [parts-selection review](PARTS_SELECTION.md) records catalogue candidates and an isolated battery-decoupling correction.
 
 ## Power topology and startup
 
@@ -49,11 +49,11 @@ The nPM1300 and nRF52832 copper geometries come from Nordic reference layouts. T
 
 JLCPCB publishes HDI blind-via drills of 0.075–0.15 mm and requires at least 0.075 mm annular ring; dielectric/drill aspect ratio must not exceed 1:1. Its published artwork baseline is 3/3 mil. This supports investigating HDI; it does **not** approve this stackup or pad construction. A 0.1935 mm Nordic copper land cannot simply accept a 0.225 mm minimum via land without reviewing its copper/mask/paste construction. Do not enlarge vendor pads or relax checks silently. [HDI capabilities](https://jlcpcb.com/help/article/hdi-pcb-capabilities-faq)
 
-The selected Hirose DM3AT card-connector family has discontinued variants; procurement/lifecycle acceptance is open. A Molex 1040310811 alternative has an installed KiCad footprint but has not been substituted or independently qualified. Generic capacitor values do not establish DC-bias capacitance, ESR or stability. RF parts, surge parts, antenna, coil, actuator, harnesses and temperature-sensor assemblies all need exact acceptance before release.
+The discontinued Hirose card-connector candidate has been replaced in the CAD by Molex 1040310811; see the socket review below. Procurement and delivered-revision acceptance remain open. Generic capacitor values do not establish DC-bias capacitance, ESR or stability. RF parts, surge parts, antenna, coil, actuator, harnesses and temperature-sensor assemblies all need exact acceptance before release.
 
 ## Local routing and fine-pitch escape review
 
-The current accepted stage is recorded in STATUS.json. Fourteen MCU ground balls have ordinary 0.45/0.20 mm through-via dogbones; three remaining balls now have F–In1 ground microvias because rear components block ordinary escapes. The power-manager VBUSOUT capacitor C118 is closer to U3 and connected through F–In1 laser vias and a short inner-layer trace. Local U3 mask apertures were explicitly adapted for 0.25/0.10 mm captures. See [routing method and unresolved process assumptions](ROUTING.md).
+The current live checkpoint is recorded in STATUS.json and still fails complete-board routing checks. The following details describe the earlier native-checked pre-autoroute work, not qualification of the later failed whole-board result: fourteen MCU ground balls received ordinary 0.45/0.20 mm through-via dogbones; three used F–In1 ground microvias because rear components blocked ordinary escapes. The power-manager VBUSOUT capacitor C118 moved closer to U3 and was connected through F–In1 laser vias and a short inner-layer trace. Local U3 mask apertures were explicitly adapted for 0.25/0.10 mm captures. See [routing method and unresolved process assumptions](ROUTING.md).
 
 Control proposals use actual native geometry and are accepted only after native checks and a supplemental laser-hole audit. Connectivity must be rebuilt before zone refill so via pad connectivity is current. Routes which starve a ground thermal or cross another net are rejected as entire new net groups. No DRC exclusions or relaxed clearance rules were introduced to accept those routes. Clock, supply-loop, decoupling, return-path and analog placement review is still incomplete; these checks do not constitute an electrical sign-off.
 

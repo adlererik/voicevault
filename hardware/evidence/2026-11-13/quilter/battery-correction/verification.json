@@ -1,0 +1,71 @@
+{
+  "status": "Isolated post-routing circuit/placement correction proposal; not applied to live CAD or cloud job",
+  "source_sha256": "43c01afe0d1de67649a91c4bddb9a083876b411402fba177429fcea19ff5125b",
+  "candidate_sha256": "abc25bb9d26e2300662dfdd62a6749e35468dfa56bbd194f0346a6ed494d6121",
+  "changes": [
+    {
+      "check": "value",
+      "component": "C502"
+    },
+    {
+      "check": "library",
+      "component": "C502"
+    },
+    {
+      "check": "placement",
+      "component": "C502"
+    },
+    {
+      "check": "pad identity/net/geometry",
+      "component": "C502",
+      "pin": "1"
+    },
+    {
+      "check": "pad identity/net/geometry",
+      "component": "C502",
+      "pin": "2"
+    }
+  ],
+  "schematic_change": {
+    "C502": {
+      "before": [
+        "100n 10V",
+        "VoiceVault_B0:C_0402_1005Metric"
+      ],
+      "after": [
+        "2.2u 16V X7R",
+        "VoiceVault_B0:C_0603_1608Metric"
+      ]
+    }
+  },
+  "reason": "Follow Nordic nPM1300 reference C6 battery decoupling: 2.2uF,16V,X7R,0603 instead of draft C502 100nF,10V,0402",
+  "suggested_mpn": "MSASE168BB7225KTNA01",
+  "mpn_status": "Manufacturer lists preferred mass production; supplier allocation not established",
+  "previous_reference_mpn": "EMK107BB7225KA-T",
+  "source_url": "https://docs.nordicsemi.com/r/bundle/ps_npm1300/page/chapters/hw_layout/ref_circuitry/frontpage.html-qfn32?contentId=n4BHJZNbrgZiW0RgLaSMGw",
+  "mpn_source": "https://ds.yuden.co.jp/TYCOMPAS/ap/sm/detail?pn=MSASE168BB7225KTNA01&u=M",
+  "placement": {
+    "ref": "C502",
+    "x": 42.339991,
+    "y": 49.281051,
+    "angle": 180,
+    "side": "B",
+    "target_pin": "D1",
+    "supply_distance_mm": 2.039607805437114
+  },
+  "footprints": 314,
+  "pcb_pad_nets_unchanged": true,
+  "protected_copper_unchanged": true,
+  "protected_copper_items": 473,
+  "native_net_records_unchanged": 323,
+  "erc_errors": 0,
+  "erc_warnings": 0,
+  "native_drc_errors": 0,
+  "native_drc_warnings": 67,
+  "full_native_open_connections": 505,
+  "remaining": [
+    "Fresh routing and return-path review on the actual returned cloud PCB",
+    "Effective capacitance/ripple/assembly checks and battery/charger bench qualification"
+  ],
+  "manufacturing_ready": false
+}

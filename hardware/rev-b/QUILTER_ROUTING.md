@@ -61,3 +61,7 @@ The active job's **Download Input Files** archive was downloaded back from Quilt
 The local fanout driver now has an optional minimum escape-length argument; the default remains 0.6 mm, reproducing the submitted trial. A separate zero-minimum experiment permits the search to consider immediate via locations for fine-pitch pads. It runs on the isolated three-component repair proposal, not on the live board or the running cloud input. It produced 387 track segments and 93 vias, passed native refill/DRC with zero errors and 69 dangling-copper warnings, and passed the independent 14-laser-via audit. It still has 505 open connections. This is preparation for possible repair, not finished routing. [Measured trial result](../evidence/2026-11-13/quilter/direct-escape-trial.json).
 
 No clearance limits were relaxed for this trial. Filled/planarized blind vias, exact stackup and assembly acceptance remain required; see [JLCPCB's published HDI process](https://jlcpcb.com/help/article/hdi-pcb-capabilities-faq).
+
+## Parallel circuit and parts review
+
+While full routing runs, the [parts-selection review](PARTS_SELECTION.md) records 129 additional nominal component candidates and a separately checked C502 battery-decoupling correction. The corrected copy preserves all source copper and electrical net assignments and passes native ERC/layout-error checks, but retains 505 open connections. It is not uploaded to the running job and is not accepted into the live editor. It must be integrated with fresh routing and electrical review after a routed result is available.

@@ -1,0 +1,18 @@
+{
+  "result": "pass",
+  "native_net_records": 323,
+  "all_electrical_nodes_unchanged": true,
+  "changed_components": {
+    "C502": {
+      "before": [
+        "100n 10V",
+        "VoiceVault_B0:C_0402_1005Metric"
+      ],
+      "after": [
+        "2.2u 16V X7R",
+        "VoiceVault_B0:C_0603_1608Metric"
+      ]
+    }
+  },
+  "manufacturing_ready": false
+}

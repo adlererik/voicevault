@@ -46,7 +46,7 @@ Outstanding gates include complete fine-pitch escapes and signal routing, power-
 
 ## Returned-board identity gate
 
-[check_quilter_candidate.py](../tools/check_quilter_candidate.py) compares component references, values, library identifiers, poses, pad numbers/nets/geometry, copper-layer count, board outline, protected input copper and exact antenna rule areas. It flags unknown copper nets and unexpected new non-through via processes. Its source/candidate hashes bind the output to actual files. The saved [positive and net/antenna/protected-copper mutation controls](../evidence/2026-11-13/quilter/candidate-gate-controls.json) pass. This gate does not approve the completed routing: native clearance rules, laser-hole geometry and electrical review remain separate requirements. Split or merged original segments require explicit review; the guard does not silently waive them.
+[check_quilter_candidate.py](../tools/check_quilter_candidate.py) compares component references, values, library identifiers, poses, pad numbers/nets/geometry, pad orientation/offset/corner treatment, local clearance/mask/paste overrides, copper-layer count, board outline, protected input copper and exact antenna rule areas. It rejects duplicate component references and flags unknown copper nets and unexpected new non-through via processes. Its source/candidate hashes bind the output to actual files. The saved [positive and six deliberate mutation controls](../evidence/2026-11-13/quilter/candidate-gate-controls.json) pass: net substitution, changed antenna restriction, missing protected copper, pad rotation, mask change and duplicate footprint. The controls restore the in-memory candidate and verify it against a fresh file load without saving. This gate does not approve the completed routing: native clearance rules, laser-hole geometry and electrical review remain separate requirements. Split or merged original segments require explicit review; the guard does not silently waive them.
 
 ## Proposed core-power placement repair
 
@@ -65,3 +65,13 @@ No clearance limits were relaxed for this trial. Filled/planarized blind vias, e
 ## Parallel circuit and parts review
 
 While full routing runs, the [parts-selection review](PARTS_SELECTION.md) records 129 additional nominal component candidates and a separately checked C502 battery-decoupling correction. The corrected copy preserves all source copper and electrical net assignments and passes native ERC/layout-error checks, but retains 505 open connections. It is not uploaded to the running job and is not accepted into the live editor. It must be integrated with fresh routing and electrical review after a routed result is available.
+
+## Fine-pitch package review
+
+Manufacturer drawing review identified two more geometry corrections to evaluate after the cloud result. ST's STWLC38 Figure 17 recommends 0.240 mm footprint lands; U5's draft uses 0.210 mm. ST's ST25R3916B Figure 43 shows a 0.330 mm footprint example; U7's draft uses 0.250 mm. The nominal grid/pad centers are retained in the isolated correction probe. [STWLC38 DS14078 p56](https://www.st.com/resource/en/datasheet/stwlc38.pdf) · [ST25R3916B DS13541 Rev11 p163](https://www.st.com/resource/en/datasheet/st25r3916b.pdf).
+
+An isolated copy applies only those two diameter changes after the battery/core-capacitor proposals. Its 76 changed pads retain exact numbers, net assignments and centers; all 473 source copper items, antenna restrictions and outline are preserved. Native initialized refill/DRC reports zero layout errors and 67 dangling-copper warnings, with 505 full open connections. The isolated footprint-library copies match the changed board instances. [Hash-bound geometry probe](../evidence/2026-11-13/quilter/package-land-probe/verification.json).
+
+TI's exact [YZF eight-ball package drawing](https://www.ti.com/lit/pdf/MXBG053J), linked from the TPS61062YZFR product page, confirms the draft's 0.5 mm grid and missing B2 position. It is a package drawing, not approval of PCB mask, paste or land construction; U9 remains unchanged.
+
+These are **review copies**, not changes to the live board or current cloud input. Final copper/mask/paste construction, filled/planarized via integration, electrical return paths, routing and assembler acceptance remain open. Manufacturer nominal examples do not establish that the complete board can be assembled or will work.

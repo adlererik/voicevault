@@ -11,7 +11,10 @@
   "negative_controls": [
     "In-memory pad-net substitution detected",
     "Antenna restriction mutation detected",
-    "Removed protected copper detected"
+    "Removed protected copper detected",
+    "Pad rotation mutation detected",
+    "Pad solder-mask mutation detected",
+    "Duplicate component reference detected"
   ],
   "controls_restore_without_saving": true,
   "source_sha256": "84589c40b710f4f67f1fff1fec7f6b9f34842dff4d3319df5cf646307f33b495",

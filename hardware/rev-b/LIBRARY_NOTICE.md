@@ -12,6 +12,8 @@ The exact STM32U5G9ZJJxQ ball/function data is derived from STMicroelectronics/S
 
 The headset jack, WSON regulator and debug-header footprints transcribe manufacturer copper/mechanical examples. The STWLC38, ST25R3916B and TPS61062 review footprints remain explicitly provisional for assembly/DFM. Manufacturer application information does not constitute endorsement or qualification of VoiceVault. Original manufacturer PDFs downloaded for review remain in the local cache unless redistribution is separately permitted.
 
+The [13 November package review](QUILTER_ROUTING.md#fine-pitch-package-review) records isolated STWLC38/ST25R3916B land-diameter corrections and checks the exact TI YZF eight-ball drawing. Those corrections are absent from the live library/board and running cloud input; passing the copy's native layout-error check does not close assembly/DFM acceptance.
+
 The new B0 hardware adaptation is licensed under CERN-OHL-S-2.0 in LICENSE. Upstream reference/UPSTREAM_LICENSE and reference/UPSTREAM_COPYING retain the original hardware/software notices; the project-wide Rust software license is not replaced by this hardware notice.
 
 The nPM1300 local footprint now has explicit 0.0525 mm per-pad solder-mask expansion. Original 0.21 mm copper lands and the pin grid are unchanged. This adapts the pinned Nordic reference layout to a proposed 0.25/0.10 mm first-order via process; it is not a vendor-qualified package change. Source archive, mask dimensions, intended via fill and unresolved assembly gates are documented in [ROUTING.md](ROUTING.md).

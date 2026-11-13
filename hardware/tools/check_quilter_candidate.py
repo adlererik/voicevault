@@ -12,9 +12,15 @@ import pcbnew
 def fingerprint(f):
     return dict(value=f.GetValue(),library=str(f.GetFPID().GetLibNickname())+':'+str(f.GetFPID().GetLibItemName()),
         pose=[f.GetPosition().x,f.GetPosition().y,f.GetOrientationDegrees()%360,f.GetLayer()],
+        manufacturing=(f.GetLocalClearance(),f.GetLocalSolderMaskMargin(),
+            f.GetLocalSolderPasteMargin(),f.GetLocalSolderPasteMarginRatio(),f.AllowSolderMaskBridges()),
         pads=sorted((p.GetNumber(),p.GetNetname(),p.GetPosition().x,p.GetPosition().y,
             p.GetSize().x,p.GetSize().y,p.GetDrillSize().x,p.GetDrillSize().y,
-            int(p.GetShape()),int(p.GetAttribute()),tuple(p.GetLayerSet().Seq())) for p in f.Pads()))
+            int(p.GetShape()),int(p.GetAttribute()),tuple(p.GetLayerSet().Seq()),
+            round(p.GetOrientationDegrees()%360,6),p.GetOffset().x,p.GetOffset().y,
+            p.GetRoundRectRadiusRatio(),p.GetChamferRectRatio(),int(p.GetChamferPositions()),
+            p.GetLocalClearance(),p.GetLocalSolderMaskMargin(),p.GetLocalSolderPasteMargin(),
+            p.GetLocalSolderPasteMarginRatio()) for p in f.Pads()))
 
 
 def copper_key(t):
@@ -38,10 +44,14 @@ def inspect(source,candidate):
     before={f.GetReference():fingerprint(f) for f in source.GetFootprints()}
     after={f.GetReference():fingerprint(f) for f in candidate.GetFootprints()}
     failures=[]
+    for label,board in [('source',source),('candidate',candidate)]:
+        counts=collections.Counter(f.GetReference() for f in board.GetFootprints())
+        duplicates=sorted(ref for ref,count in counts.items() if count!=1)
+        if duplicates:failures.append(dict(check='duplicate component references',board=label,references=duplicates))
     if before.keys()!=after.keys():failures.append(dict(check='component references',missing=sorted(before.keys()-after.keys()),extra=sorted(after.keys()-before.keys())))
     for ref in sorted(before.keys()&after.keys()):
         a,z=before[ref],after[ref]
-        for field in ['value','library']:
+        for field in ['value','library','manufacturing']:
             if a[field]!=z[field]:failures.append(dict(check=field,component=ref))
         if a['pose'][2:]!=z['pose'][2:] or any(abs(x-y)>100 for x,y in zip(a['pose'][:2],z['pose'][:2])):failures.append(dict(check='placement',component=ref))
         if len(a['pads'])!=len(z['pads']):failures.append(dict(check='pad count',component=ref));continue
@@ -90,7 +100,18 @@ def main():
         track=next(iter(cb.GetTracks()));cb.Remove(track)
         assert any(x['check']=='protected input copper' for x in inspect(sb,cb)['failures']),'Missing fixed copper missed'
         cb.Add(track);cb.BuildConnectivity()
-        result['negative_controls']=['In-memory pad-net substitution detected','Antenna restriction mutation detected','Removed protected copper detected'];result['controls_restore_without_saving']=True
+        angle=pad.GetOrientation();pad.SetOrientationDegrees(pad.GetOrientationDegrees()+90)
+        assert any(x['check']=='pad identity/net/geometry' for x in inspect(sb,cb)['failures']),'Pad rotation mutation missed'
+        pad.SetOrientation(angle)
+        masked=next(p for f in cb.GetFootprints() for p in f.Pads() if p.GetLocalSolderMaskMargin() is not None)
+        margin=masked.GetLocalSolderMaskMargin();masked.SetLocalSolderMaskMargin(margin+20000)
+        assert any(x['check']=='pad identity/net/geometry' for x in inspect(sb,cb)['failures']),'Pad mask mutation missed'
+        masked.SetLocalSolderMaskMargin(margin)
+        duplicate=next(iter(cb.GetFootprints())).Duplicate(False);cb.Add(duplicate)
+        assert any(x['check']=='duplicate component references' for x in inspect(sb,cb)['failures']),'Duplicate footprint missed'
+        cb.Remove(duplicate);cb.BuildConnectivity()
+        assert inspect(sb,cb)==inspect(sb,pcbnew.LoadBoard(str(a.candidate.resolve()))),'Controls did not restore candidate identity'
+        result['negative_controls']=['In-memory pad-net substitution detected','Antenna restriction mutation detected','Removed protected copper detected','Pad rotation mutation detected','Pad solder-mask mutation detected','Duplicate component reference detected'];result['controls_restore_without_saving']=True
     result.update(source_sha256=hashlib.sha256(a.source.read_bytes()).hexdigest(),candidate_sha256=hashlib.sha256(a.candidate.read_bytes()).hexdigest())
     a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2));return bool(result['failures'])
 

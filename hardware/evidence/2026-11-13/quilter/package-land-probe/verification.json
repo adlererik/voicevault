@@ -1,0 +1,60 @@
+{
+  "source_sha256": "abc25bb9d26e2300662dfdd62a6749e35468dfa56bbd194f0346a6ed494d6121",
+  "changes": [
+    {
+      "reference": "U5",
+      "old_diameters_mm": [
+        0.21
+      ],
+      "new_diameter_mm": 0.24,
+      "pads": 40
+    },
+    {
+      "reference": "U7",
+      "old_diameters_mm": [
+        0.25
+      ],
+      "new_diameter_mm": 0.33,
+      "pads": 36
+    }
+  ],
+  "probe_only": true,
+  "live_changed": false,
+  "cloud_input_changed": false,
+  "manufacturing_ready": false,
+  "candidate_sha256": "7ae8893d94bcd100b29676514af06ff0ac78ccb52fd4b77f493dd366bbe2b554",
+  "native_drc_errors": 0,
+  "native_drc_warnings": 67,
+  "full_native_open_connections": 505,
+  "pad_nets_centers_and_protected_copper_unchanged": true,
+  "source_copper_items": 473,
+  "manufacturer_review": [
+    {
+      "reference": "U5",
+      "source": "https://www.st.com/resource/en/datasheet/stwlc38.pdf",
+      "manufacturer_document": "DS14078 Rev1 p56 Figure17",
+      "local_document_sha256": "3a7af8250a855694e8fc2092f132c081a54c6c30aaf368d15f036d10514a1961",
+      "retrieval": "Manufacturer-authored document from distributor mirror; provenance in qi-source.json",
+      "recommended_footprint_diameter_mm": 0.24
+    },
+    {
+      "reference": "U7",
+      "source": "https://www.st.com/resource/en/datasheet/st25r3916b.pdf",
+      "manufacturer_document": "DS13541 Rev11 p163 Figure43 B078_WLCSP36_FP_V1",
+      "recommended_footprint_diameter_mm": 0.33
+    },
+    {
+      "reference": "U9",
+      "source": "https://www.ti.com/lit/pdf/MXBG053J",
+      "manufacturer_document": "YZF(S-XBGA-N8) 4205058-3/P 07/13, page1",
+      "local_document_sha256": "7d022406e310ce62bf1316c1a74bb4423f4caab34ba55c0d0f976e436b9c37c3",
+      "review": "Eight-ball pattern, missing B2 and 0.5mm pitch agree with draft. Drawing specifies package, not PCB land/mask/paste acceptance. No U9 geometry changed."
+    }
+  ],
+  "remaining": [
+    "Integrate and reroute on returned cloud board with exact pad-net/geometry comparison",
+    "Assembly-specific copper, mask, paste and filled/planarized via acceptance",
+    "Power, NFC/RF and return-path review plus physical tests"
+  ],
+  "status": "Isolated manufacturer-land geometry probe; not applied to live CAD or running cloud job"
+}

@@ -1,0 +1,54 @@
+{
+  "status": "Fresh-process verified cleanup checkpoint for whole-board automated rerouting; not accepted live",
+  "source_sha256": "7ae8893d94bcd100b29676514af06ff0ac78ccb52fd4b77f493dd366bbe2b554",
+  "returned_sha256": "8064215f3cb0edac0c10af9cc0ea3613f3161fe56476af696dd99b7337289634",
+  "candidate_sha256": "60eba62d46408d8b00acc05ee76533932cad36cba1eb6bc3fa00531c11c5e500",
+  "protected_source_copper": 473,
+  "removed_new_cloud_items": 193,
+  "remaining_copper_items": 7165,
+  "native_full_unconnected": 207,
+  "native_drc_errors": 0,
+  "native_drc_warnings": 214,
+  "identity": {
+    "result": "pass",
+    "failures": [],
+    "components": 314,
+    "pads": 1243,
+    "tolerance_nm": 100,
+    "original_copper_items": 473,
+    "candidate_copper_items": 7165,
+    "scope": "Footprint/pad/net/placement/antenna/outline and protected-copper identity; not full copper/electrical/manufacturing qualification",
+    "manufacturing_ready": false
+  },
+  "laser_audit": {
+    "laser_vias": 12,
+    "overlapping_hole_pairs_checked": 6306,
+    "foreign_track_pairs_checked": 28289,
+    "violations": []
+  },
+  "verification_read_only": true,
+  "known_driver_failure": "Multi-pass native Python process crashed after native CLI saved error-free pass 2; this fresh independent process verifies saved state",
+  "native_rules_unchanged": true,
+  "live_changed": false,
+  "manufacturing_ready": false,
+  "rounds": [
+    {
+      "file": "drc-00.json",
+      "errors": 342,
+      "warnings": 118,
+      "listed_unconnected": 106
+    },
+    {
+      "file": "drc-01.json",
+      "errors": 3,
+      "warnings": 214,
+      "listed_unconnected": 207
+    },
+    {
+      "file": "drc-02.json",
+      "errors": 0,
+      "warnings": 214,
+      "listed_unconnected": 207
+    }
+  ]
+}

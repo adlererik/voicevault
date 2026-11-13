@@ -1,0 +1,198 @@
+- banner:
+  - link:
+    - /url: /
+  - text: Free Plan - For Noncommercial Use Only
+  - link "Terms":
+    - /url: https://www.quilter.ai/terms
+    - text: Terms
+  - link "Request a demo":
+    - /url: https://www.quilter.ai/request-demo
+  - button "Erik Adler":
+    - img "Erik Adler"
+- generic: Upload Files
+- generic: Stackup
+- generic: Fabricator Constraints
+- generic: Floorplan
+- generic: Circuit Comprehension
+- generic: Constraints
+- generic: Review and Submit
+- paragraph: Name and submit the job — Quilter evaluates millions of designs, and computing candidates typically takes 1 to 10 hours.
+- generic: Job Name
+- textbox "Job Name": VoiceVault B0 — Corrected routing, fanout disabled
+- button "Add note":
+  - text: Add note
+- button "Notification sounds":
+- paragraph: Job mode
+- group "Job mode":
+  - button "Full layout" [pressed]
+  - button "Placement only"
+- separator
+- heading "Job Details" [level=5]
+- paragraph: Board Dimensions
+- paragraph: 70mm x 45mm
+- paragraph: Components
+- paragraph: "314"
+- paragraph: Components to Place
+- paragraph: "0"
+- paragraph: Component Density
+- paragraph: 56.04%
+- paragraph: Pins
+- paragraph: "1243"
+- paragraph: Pins to Route
+- paragraph: "492"
+- paragraph: Pin Density
+- paragraph: 12.81%
+- link "Download Input Files":
+  - /url: /jobs/6af70fde5e1a5ebf38278f80/download?type=input&filename=Quilter_voicevault-standalone-b0.kicad_pcb_Input.zip&returnTo=%2Fjobs%2F6af70fde5e1a5ebf38278f80%2Fcreate%2Fconfirmation
+  - text: Download Input Files
+- paragraph: Issues found
+- paragraph: 1 Warning
+- paragraph: 4 Info
+- generic: PARSING
+- generic: "There are component mismatches between schematics and board: Pin count mismatch detected. Quilter will continue, but placement quality may be affected."
+- generic: PARSING
+- generic: "Components already placed: Quilter will attempt to route your design without moving placed components. If you'd like Quilter to redesign this board, please un-place the components."
+- generic: PARSING
+- generic: "Existing pours will be deleted: Quilter will generate new pours as a part of the layout job."
+- generic: PARSING
+- generic: "Components missing from schematic: 18 of 314 components in the board file cannot be found in the schematic. Quilter cannot guarantee they will be placed near related components. (H1–H4, TP1–TP14)"
+- generic: STACKUP
+- generic: This stackup has no power layer. Consider changing an inner copper layer's class to Power to support power pours.
+- button "mm" [pressed]
+- button "µm"
+- button "mil"
+- heading "Input Files 21 files specified" [level=3]:
+  - button "Input Files 21 files specified":
+    - paragraph: Input Files
+    - paragraph: 21 files specified
+- heading "Stackup JLCPCB 6-Layer" [level=3]:
+  - button "Stackup JLCPCB 6-Layer":
+    - paragraph: Stackup
+    - paragraph: JLCPCB 6-Layer
+- heading "Fabricator Constraints 3.5 mil / 3.5 mil" [level=3]:
+  - button "Fabricator Constraints 3.5 mil / 3.5 mil" [expanded] [active]:
+    - paragraph: Fabricator Constraints
+    - paragraph: 3.5 mil / 3.5 mil
+- region:
+  - 'heading "Source: JLCPCB 6-Layer | 3.5 mil / 3.5 mil" [level=6]'
+  - button "mm" [pressed]
+  - button "µm"
+  - button "mil"
+  - generic: No Rows To Show
+  - text:  
+  - grid:
+    - rowgroup:
+      - row "Name Value (mm)":
+        - columnheader "Name":
+          - generic: 
+          - generic: Name
+          - text: 
+          - generic:      
+        - columnheader "Value (mm)":
+          - generic: 
+          - generic: Value (mm)
+          - text: 
+          - generic:      
+    - rowgroup:
+      - row "Trace width (min) 0.1mm":
+        - gridcell "Trace width (min)"
+        - gridcell "0.1mm"
+      - row "Trace clearance (min) 0.15mm":
+        - gridcell "Trace clearance (min)"
+        - gridcell "0.15mm"
+      - row "Via diameter (min) 0.5mm":
+        - gridcell "Via diameter (min)"
+        - gridcell "0.5mm"
+      - row "Via hole diameter (min) 0.2mm":
+        - gridcell "Via hole diameter (min)"
+        - gridcell "0.2mm"
+      - row "Board margin 0.5mm":
+        - gridcell "Board margin"
+        - gridcell "0.5mm"
+    - rowgroup
+    - rowgroup
+    - rowgroup
+  - text:    
+- heading "Floorplan" [level=3]:
+  - button "Floorplan":
+    - paragraph: Floorplan
+    - paragraph
+- heading "Differential Pairs No records specified" [level=3]:
+  - button "Differential Pairs No records specified":
+    - paragraph: Differential Pairs
+    - paragraph: No records specified
+- heading "Single-ended Impedance Signals No records specified" [level=3]:
+  - button "Single-ended Impedance Signals No records specified":
+    - paragraph: Single-ended Impedance Signals
+    - paragraph: No records specified
+- heading "Power Nets 30 records specified | 30 constraints computed" [level=3]:
+  - button "Power Nets 30 records specified | 30 constraints computed":
+    - paragraph: Power Nets
+    - paragraph: 30 records specified | 30 constraints computed
+- heading "Ground Nets 1 record specified" [level=3]:
+  - button "Ground Nets 1 record specified":
+    - paragraph: Ground Nets
+    - paragraph: 1 record specified
+- heading "Switching Converters 4 records specified" [level=3]:
+  - button "Switching Converters 4 records specified":
+    - paragraph: Switching Converters
+    - paragraph: 4 records specified
+- heading "Bypass Capacitors 115 records specified" [level=3]:
+  - button "Bypass Capacitors 115 records specified":
+    - paragraph: Bypass Capacitors
+    - paragraph: 115 records specified
+- heading "Crystal Oscillators 5 records specified" [level=3]:
+  - button "Crystal Oscillators 5 records specified":
+    - paragraph: Crystal Oscillators
+    - paragraph: 5 records specified
+- heading "BGA Components 7 records specified" [level=3]:
+  - button "BGA Components 7 records specified":
+    - paragraph: BGA Components
+    - paragraph: 7 records specified
+- heading "Preserved Pours No records specified" [level=3]:
+  - button "Preserved Pours No records specified":
+    - paragraph: Preserved Pours
+    - paragraph: No records specified
+- heading "Net Widths by Layer No records specified" [level=3]:
+  - button "Net Widths by Layer No records specified":
+    - paragraph: Net Widths by Layer
+    - paragraph: No records specified
+- heading "Custom Component Proximity No records specified" [level=3]:
+  - button "Custom Component Proximity No records specified":
+    - paragraph: Custom Component Proximity
+    - paragraph: No records specified
+- heading "ECAD Parsed Constraints No records specified" [level=3]:
+  - button "ECAD Parsed Constraints No records specified":
+    - paragraph: ECAD Parsed Constraints
+    - paragraph: No records specified
+- heading "Board Preview" [level=3]:
+  - button "Board Preview" [expanded]:
+    - paragraph: Board Preview
+    - paragraph
+- region:
+  - generic "Flip Camera":
+    - button "Flip Camera":
+  - button "Detail View":
+    - text: Detail View
+  - button:
+- paragraph: built on api:1.51.0
+- link "Back":
+  - /url: /jobs/6af70fde5e1a5ebf38278f80/create/constraints
+  - text: Back
+- button "Start Job":
+  - text: Start Job
+- button "Expand console":
+  - paragraph: CONSOLE
+- generic: 6 info
+- generic: "UI: 1.51.0 | API: 1.51.0"
+- generic: "|"
+- text: Copyright ©
+- link "Quilter":
+  - /url: https://quilter.ai
+- text: "2026."
+- iframe [id="intercom-frame"]
+- iframe [name="intercom-launcher-frame"]:
+  - generic "Intercom":
+    - region "Intercom Messenger":
+      - button "Open Intercom Messenger, 1 new message":
+- generic: "1"

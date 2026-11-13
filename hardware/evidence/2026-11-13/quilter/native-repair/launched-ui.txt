@@ -1,0 +1,47 @@
+- banner:
+  - link:
+    - /url: /
+  - text: Free Plan - For Noncommercial Use Only
+  - link "Terms":
+    - /url: https://www.quilter.ai/terms
+    - text: Terms
+  - link "Request a demo":
+    - /url: https://www.quilter.ai/request-demo
+  - button "Erik Adler":
+    - img "Erik Adler"
+- heading "VoiceVault B0 — Corrected routing, fanout disabled" [level=5]
+- button "Add job note":
+- button "Duplicate":
+  - text: Duplicate
+- button "Details":
+  - text: Details
+- link "Project":
+  - /url: /projects/6af617fb05fb406688265ff7
+  - text: Project
+- button "Job actions":
+- progressbar
+- generic: no results yet
+- text: Started
+- generic: 0h 0m 28s
+- text: ago
+- generic: Launched Nov 13, 2026, 2:35 PM
+- generic: 1243 Pins (492 to route)
+- progressbar
+- heading "We're working on layout candidates for your design" [level=6]
+- paragraph: Kick back, relax, and we'll email you as soon as your designs are ready. Feel free to close this window and we'll keep working.
+- paragraph: 0/1 steps completed
+- progressbar
+- button "Expand console":
+  - paragraph: CONSOLE
+- generic: 6 info
+- paragraph: 0/1 steps completed
+- text: Copyright ©
+- link "Quilter":
+  - /url: https://quilter.ai
+- text: "2026."
+- iframe [id="intercom-frame"]
+- iframe [name="intercom-launcher-frame"]:
+  - generic "Intercom":
+    - region "Intercom Messenger":
+      - button "Open Intercom Messenger, 1 new message":
+- generic: "1"

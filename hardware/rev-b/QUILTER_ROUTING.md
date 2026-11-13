@@ -2,6 +2,14 @@
 
 **Full cloud trial finished at 89% routed and failed native qualification.** The live KiCad board still contains the earlier unfinished FreeRouting checkpoint. Cloud results and repair candidates are isolated copies, not an accepted replacement. [Actual returned board, failures and native evidence](../evidence/2026-11-13/quilter/routed-return/README.md).
 
+**A corrected full-layout retry launched at 14:35 Europe/Stockholm on 13 November:** [VoiceVault B0 — Corrected routing, fanout disabled](https://app.quilter.ai/jobs/6af70fde5e1a5ebf38278f80). It runs on Quilter's servers and can continue with Codex/the computer off. This is a submitted job, not a completed or qualified PCB. [Saved settings and launch evidence](../evidence/2026-11-13/quilter/native-repair/cloud-retry.json).
+
+The retry uses a fresh-process-verified copy with zero native layout errors, 214 dangling-copper warnings and 207 unfinished connections. Native-DRC-driven cleanup removed 193 offending cloud copper items while preserving all 473 protected source items; the reviewed core/battery-capacitor and package-land corrections are included. [Native cleanup verification](../evidence/2026-11-13/quilter/native-repair/verification.json).
+
+The new submission explicitly disables forced fanout for all seven BGAs and increases new-routing clearance to 0.15 mm and ordinary via diameter to 0.50 mm with 0.20 mm drill. The reviewed current/decoupling/clock/converter tables were re-imported, rather than trusting automatic guesses. All 314 components remain placed; Quilter reports 492 pins to route. The account remains Free Plan; no purchase, upgrade or manufacturing order was made. Returned copper still requires original-rule native refill/DRC, geometry and electrical review before live acceptance. Input ENIG metadata does not change the cloud preset's displayed Lead-Free finish; final finish/stackup acceptance remains open.
+
+![Corrected cloud retry launched](../evidence/2026-11-13/quilter/native-repair/retry-started.jpg)
+
 ## Separate new project
 
 The owner requested an independently configured [new VoiceVault project](https://app.quilter.ai/projects/6af617fb05fb406688265ff7). The cancelled project and its guessed settings were not reused or modified. The free account was used; no purchase, upgrade, manufacturing order or supplier message was made.

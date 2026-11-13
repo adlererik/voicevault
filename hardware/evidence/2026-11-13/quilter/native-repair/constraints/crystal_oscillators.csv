@@ -1,0 +1,6 @@
+crystal,crystal_parent,parent_signal_pin_1,parent_signal_pin_2
+X1001,U7,D6,C6
+X201,U6,B2,A1
+X202,U6,D7,C7
+X301,U1,H2,J1
+X302,U1,C1,D2

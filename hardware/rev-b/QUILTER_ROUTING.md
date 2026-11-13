@@ -47,3 +47,9 @@ Outstanding gates include complete fine-pitch escapes and signal routing, power-
 ## Returned-board identity gate
 
 [check_quilter_candidate.py](../tools/check_quilter_candidate.py) compares component references, values, library identifiers, poses, pad numbers/nets/geometry, copper-layer count and exact antenna rule areas. Its source/candidate hashes bind the output to actual files. The saved [positive and pad-substitution negative controls](../evidence/2026-11-13/quilter/candidate-gate-controls.json) pass. This gate does not approve copper: native rules, laser-hole geometry, fixed-copper preservation and electrical review remain separate acceptance requirements.
+
+## Proposed core-power placement repair
+
+While the full routing job runs, an isolated three-component proposal moves C27/C107 to the rear beneath VDD11 balls D4/J9 and moves supervisor bypass C305 near U4 supply pin 4. The automatic search includes actual existing copper and drilled-hole obstacles. Native refill/DRC reports zero errors and the same 67 dangling-copper warnings; pad nets are preserved. [Hash-bound proposal and exact positions](../evidence/2026-11-13/quilter/core-power-placement-proposal.json).
+
+These changes are absent from both the live board and the running cloud input. Zero XY projection across two PCB faces is a placement measurement, not proof of a short electrical loop. The proposal needs fresh routing, return-path inspection and qualification on the returned cloud candidate before acceptance.

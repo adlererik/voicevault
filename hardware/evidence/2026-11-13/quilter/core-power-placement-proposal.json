@@ -1,0 +1,45 @@
+{
+  "source_sha256": "84589c40b710f4f67f1fff1fec7f6b9f34842dff4d3319df5cf646307f33b495",
+  "changes": [
+    {
+      "ref": "C27",
+      "x": 56.0,
+      "y": 45.775,
+      "angle": 270,
+      "side": "B",
+      "target_pin": "D4",
+      "supply_distance_mm": 0.0
+    },
+    {
+      "ref": "C107",
+      "x": 60.0,
+      "y": 48.225,
+      "angle": 90,
+      "side": "B",
+      "target_pin": "J9",
+      "supply_distance_mm": 0.0
+    },
+    {
+      "ref": "C305",
+      "x": 60.76995,
+      "y": 45.704709,
+      "angle": 90,
+      "side": "B",
+      "target_pin": "4",
+      "supply_distance_mm": 1.019803902718557
+    }
+  ],
+  "method": "Automatic placement only, actual courtyard/copper/drill obstacles; no traces generated",
+  "manufacturing_ready": false,
+  "native_errors": 0,
+  "native_warnings": 67,
+  "native_warning_types": {
+    "via_dangling": 65,
+    "track_dangling": 2
+  },
+  "candidate_sha256": "43c01afe0d1de67649a91c4bddb9a083876b411402fba177429fcea19ff5125b",
+  "live_board_modified": false,
+  "current_cloud_routing_input_modified": false,
+  "status": "Proposed post-routing placement repair; requires routing and qualification against the actual returned board",
+  "limitation": "Zero projected XY distance across PCB faces does not establish low-inductance electrical connections or adequate return paths"
+}

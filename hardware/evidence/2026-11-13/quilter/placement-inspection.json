@@ -1,0 +1,188 @@
+[
+  {
+    "placement": 1,
+    "sha256": "3c3951ef3c24620de79c2187ad254e5d3274bd0801b4251438c412f957252ae2",
+    "footprints": 314,
+    "physical_pads": 1243,
+    "missing": [],
+    "extra": [],
+    "pad_net_or_size_mismatches": [],
+    "value_mismatches": [],
+    "library_name_mismatches": [],
+    "fixed_anchor_changes": {},
+    "moved_flexible_components": 249,
+    "copper_items": 66,
+    "vias": 22,
+    "laser_vias": 7,
+    "zone_names": [
+      "QUILTER_BLE_TRACK_EXCLUSION_FRONT_1",
+      "BLE_ANTENNA_CLEARANCE",
+      "QUILTER_BLE_TRACK_EXCLUSION_INNER_BACK"
+    ],
+    "rule_areas": 3,
+    "outline_mm": [
+      24.975,
+      24.975,
+      70.05,
+      45.05
+    ],
+    "general_thickness_mm": 1.0,
+    "native_unrouted": 840,
+    "manufacturing_ready": false
+  },
+  {
+    "placement": 2,
+    "sha256": "7f33b1f0b4fd41c9d4f8b578154a1c23afe8c03c3a63d107bee8c8d76e4adf05",
+    "footprints": 314,
+    "physical_pads": 1243,
+    "missing": [],
+    "extra": [],
+    "pad_net_or_size_mismatches": [],
+    "value_mismatches": [],
+    "library_name_mismatches": [],
+    "fixed_anchor_changes": {},
+    "moved_flexible_components": 249,
+    "copper_items": 66,
+    "vias": 22,
+    "laser_vias": 7,
+    "zone_names": [
+      "QUILTER_BLE_TRACK_EXCLUSION_FRONT_1",
+      "BLE_ANTENNA_CLEARANCE",
+      "QUILTER_BLE_TRACK_EXCLUSION_INNER_BACK"
+    ],
+    "rule_areas": 3,
+    "outline_mm": [
+      24.975,
+      24.975,
+      70.05,
+      45.05
+    ],
+    "general_thickness_mm": 1.0,
+    "native_unrouted": 840,
+    "manufacturing_ready": false
+  },
+  {
+    "placement": 3,
+    "sha256": "ebb502eb7b9ff66401ea09b4c20298ca02da15325db4347b9236986b3f7aafde",
+    "footprints": 314,
+    "physical_pads": 1243,
+    "missing": [],
+    "extra": [],
+    "pad_net_or_size_mismatches": [],
+    "value_mismatches": [],
+    "library_name_mismatches": [],
+    "fixed_anchor_changes": {},
+    "moved_flexible_components": 249,
+    "copper_items": 66,
+    "vias": 22,
+    "laser_vias": 7,
+    "zone_names": [
+      "QUILTER_BLE_TRACK_EXCLUSION_FRONT_1",
+      "BLE_ANTENNA_CLEARANCE",
+      "QUILTER_BLE_TRACK_EXCLUSION_INNER_BACK"
+    ],
+    "rule_areas": 3,
+    "outline_mm": [
+      24.975,
+      24.975,
+      70.05,
+      45.05
+    ],
+    "general_thickness_mm": 1.0,
+    "native_unrouted": 840,
+    "manufacturing_ready": false
+  },
+  {
+    "placement": 4,
+    "sha256": "ebb502eb7b9ff66401ea09b4c20298ca02da15325db4347b9236986b3f7aafde",
+    "footprints": 314,
+    "physical_pads": 1243,
+    "missing": [],
+    "extra": [],
+    "pad_net_or_size_mismatches": [],
+    "value_mismatches": [],
+    "library_name_mismatches": [],
+    "fixed_anchor_changes": {},
+    "moved_flexible_components": 249,
+    "copper_items": 66,
+    "vias": 22,
+    "laser_vias": 7,
+    "zone_names": [
+      "QUILTER_BLE_TRACK_EXCLUSION_FRONT_1",
+      "BLE_ANTENNA_CLEARANCE",
+      "QUILTER_BLE_TRACK_EXCLUSION_INNER_BACK"
+    ],
+    "rule_areas": 3,
+    "outline_mm": [
+      24.975,
+      24.975,
+      70.05,
+      45.05
+    ],
+    "general_thickness_mm": 1.0,
+    "native_unrouted": 840,
+    "manufacturing_ready": false
+  },
+  {
+    "placement": 5,
+    "sha256": "3c3951ef3c24620de79c2187ad254e5d3274bd0801b4251438c412f957252ae2",
+    "footprints": 314,
+    "physical_pads": 1243,
+    "missing": [],
+    "extra": [],
+    "pad_net_or_size_mismatches": [],
+    "value_mismatches": [],
+    "library_name_mismatches": [],
+    "fixed_anchor_changes": {},
+    "moved_flexible_components": 249,
+    "copper_items": 66,
+    "vias": 22,
+    "laser_vias": 7,
+    "zone_names": [
+      "QUILTER_BLE_TRACK_EXCLUSION_FRONT_1",
+      "BLE_ANTENNA_CLEARANCE",
+      "QUILTER_BLE_TRACK_EXCLUSION_INNER_BACK"
+    ],
+    "rule_areas": 3,
+    "outline_mm": [
+      24.975,
+      24.975,
+      70.05,
+      45.05
+    ],
+    "general_thickness_mm": 1.0,
+    "native_unrouted": 840,
+    "manufacturing_ready": false
+  },
+  {
+    "placement": 6,
+    "sha256": "7f33b1f0b4fd41c9d4f8b578154a1c23afe8c03c3a63d107bee8c8d76e4adf05",
+    "footprints": 314,
+    "physical_pads": 1243,
+    "missing": [],
+    "extra": [],
+    "pad_net_or_size_mismatches": [],
+    "value_mismatches": [],
+    "library_name_mismatches": [],
+    "fixed_anchor_changes": {},
+    "moved_flexible_components": 249,
+    "copper_items": 66,
+    "vias": 22,
+    "laser_vias": 7,
+    "zone_names": [
+      "QUILTER_BLE_TRACK_EXCLUSION_FRONT_1",
+      "BLE_ANTENNA_CLEARANCE",
+      "QUILTER_BLE_TRACK_EXCLUSION_INNER_BACK"
+    ],
+    "rule_areas": 3,
+    "outline_mm": [
+      24.975,
+      24.975,
+      70.05,
+      45.05
+    ],
+    "general_thickness_mm": 1.0,
+    "native_unrouted": 840,
+    "manufacturing_ready": false
+  }
+]

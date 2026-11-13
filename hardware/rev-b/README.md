@@ -2,6 +2,8 @@
 
 **Routing in progress — not a working or fabrication-ready PCB.**
 
+[New Quilter placement and routing-preparation record (13 November)](QUILTER_ROUTING.md): six placements downloaded; native candidate checks and rejected experiments are recorded separately from the live PCB.
+
 VoiceVault moves plaintext voice, keys, contacts and call approval into a dedicated device. An already compromised phone carries encrypted records over BLE. This custom rectangular SMD board uses the identified **Trezor Safe 7 TS7 rev_D core ICs**, with added wired headset audio, physical microphone disconnect, offline microSD and separate computer-debug connections. It replaces the earlier development-board carrier as the active hardware design.
 
 The current native KiCad project contains **296 electrical components, 14 board-only probe pads and four mounting holes** on a provisional **70 × 45 mm**, six-layer, 1.0 mm board. Components are placed on both sides. The latest complete-board autorouter checkpoint **fails native DRC: 280 connections remain unrouted, with 33 layout errors and 100 warnings**; exact sourcing and HDI stackup are unresolved, and no physical board has been tested. [Machine-readable status](STATUS.json) · [Recorded evidence and images](../evidence/2026-11-12/README.md)

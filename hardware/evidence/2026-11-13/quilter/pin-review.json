@@ -1,0 +1,62 @@
+{
+  "reason": "Pin-function review against ST exact package pin map and DS14102/AN5373; original submitted evidence frozen",
+  "bypass_pin_changes": [
+    {
+      "capacitor": "C10",
+      "old_pin": "E6",
+      "new_pin": "F5"
+    },
+    {
+      "capacitor": "C12",
+      "old_pin": "H5",
+      "new_pin": "H7"
+    },
+    {
+      "capacitor": "C13",
+      "old_pin": "G8",
+      "new_pin": "D10"
+    },
+    {
+      "capacitor": "C15",
+      "old_pin": "M8",
+      "new_pin": "H7"
+    },
+    {
+      "capacitor": "C25",
+      "old_pin": "H7",
+      "new_pin": "M8"
+    },
+    {
+      "capacitor": "C26",
+      "old_pin": "E3",
+      "new_pin": "E6"
+    },
+    {
+      "capacitor": "C108",
+      "old_pin": "J4",
+      "new_pin": "H7"
+    },
+    {
+      "capacitor": "C109",
+      "old_pin": "G10",
+      "new_pin": "E6"
+    },
+    {
+      "capacitor": "C110",
+      "old_pin": "E6",
+      "new_pin": "J4"
+    },
+    {
+      "capacitor": "C111",
+      "old_pin": "F5",
+      "new_pin": "H3"
+    },
+    {
+      "capacitor": "C107",
+      "old_pin": "G3",
+      "new_pin": "J9"
+    }
+  ],
+  "converter_input": "U1 input representative C25 at VDDSMPS M8; output C107 at VDD11 J9",
+  "no_schematic_nets_changed": true
+}

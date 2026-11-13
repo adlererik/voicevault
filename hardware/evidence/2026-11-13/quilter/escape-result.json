@@ -1,0 +1,15 @@
+{
+  "ses_sha256": "57b6d3d3febb11ba2dca67adc351e75563161a10ce9f61a3766c07b80a555d67",
+  "footprints_unchanged": true,
+  "native_errors": 0,
+  "native_warnings": 67,
+  "copper_items": 473,
+  "vias": 90,
+  "laser_hole_audit": {
+    "laser_vias": 12,
+    "overlapping_hole_pairs_checked": 1002,
+    "foreign_track_pairs_checked": 1878,
+    "violations": []
+  },
+  "manufacturing_ready": false
+}

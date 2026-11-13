@@ -53,3 +53,11 @@ Outstanding gates include complete fine-pitch escapes and signal routing, power-
 While the full routing job runs, an isolated three-component proposal moves C27/C107 to the rear beneath VDD11 balls D4/J9 and moves supervisor bypass C305 near U4 supply pin 4. The automatic search includes actual existing copper and drilled-hole obstacles. Native refill/DRC reports zero errors and the same 67 dangling-copper warnings; pad nets are preserved. [Hash-bound proposal and exact positions](../evidence/2026-11-13/quilter/core-power-placement-proposal.json).
 
 These changes are absent from both the live board and the running cloud input. Zero XY projection across two PCB faces is a placement measurement, not proof of a short electrical loop. The proposal needs fresh routing, return-path inspection and qualification on the returned cloud candidate before acceptance.
+
+## Server input verification and supplementary escape trial
+
+The active job's **Download Input Files** archive was downloaded back from Quilter. All 21 file hashes match the upload manifest exactly. The PCB hash differs from the archived failed whole-board FreeRouting result. [Server verification](../evidence/2026-11-13/quilter/server-input-verification.json).
+
+The local fanout driver now has an optional minimum escape-length argument; the default remains 0.6 mm, reproducing the submitted trial. A separate zero-minimum experiment permits the search to consider immediate via locations for fine-pitch pads. It runs on the isolated three-component repair proposal, not on the live board or the running cloud input. It produced 387 track segments and 93 vias, passed native refill/DRC with zero errors and 69 dangling-copper warnings, and passed the independent 14-laser-via audit. It still has 505 open connections. This is preparation for possible repair, not finished routing. [Measured trial result](../evidence/2026-11-13/quilter/direct-escape-trial.json).
+
+No clearance limits were relaxed for this trial. Filled/planarized blind vias, exact stackup and assembly acceptance remain required; see [JLCPCB's published HDI process](https://jlcpcb.com/help/article/hdi-pcb-capabilities-faq).

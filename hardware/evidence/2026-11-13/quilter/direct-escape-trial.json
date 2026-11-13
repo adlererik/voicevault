@@ -1,0 +1,19 @@
+{
+  "status": "Local supplementary trial; not the active cloud input or live PCB",
+  "driver_min_escape_mm": 0.0,
+  "prior_default_min_escape_mm": 0.6,
+  "candidate_sha256": "78b3c7eff34e772dc15615897cf3d3ee8ef2e0a4104af67a55e53d56f7f921f9",
+  "source_sha256": "43c01afe0d1de67649a91c4bddb9a083876b411402fba177429fcea19ff5125b",
+  "track_segments": 387,
+  "vias": 93,
+  "native_errors": 0,
+  "native_warnings": 69,
+  "full_native_open_connections": 505,
+  "laser_audit": {
+    "laser_vias": 14,
+    "overlapping_hole_pairs_checked": 1197,
+    "foreign_track_pairs_checked": 2282,
+    "violations": []
+  },
+  "manufacturing_ready": false
+}

@@ -1,0 +1,116 @@
+{
+  "job": "6af65cc705fb406688266032",
+  "source": "Quilter job Details > Download Input Files",
+  "archive_sha256": "6a9db903a9bc3d6a44ed15dd80537cbf2e03f0b971aaef8e42df058f31059b5a",
+  "all_21_uploaded_files_match": true,
+  "files": [
+    {
+      "file": "circuit-audio-codec.kicad_sch",
+      "sha256": "d6cf418f46488af784c840f75c5cc883e277d7ac435f293c66663b355bbb6ad2",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-audio-power.kicad_sch",
+      "sha256": "c8c4e22ef0ec36684dd7c13e56f86ee7b11176f0cade0b95191bdaf8a570d29a",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-backlight.kicad_sch",
+      "sha256": "13f23712b56387136b55f9fe5ac5ed3d004fac934b6bcc5d95d19084e9237cd6",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-control.kicad_sch",
+      "sha256": "1b493aeaadc2def563ec37fd62a7935e28ba8248d4f0e243da8e82f19cf0c619",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-display.kicad_sch",
+      "sha256": "e8cc24bd9224f824694ebb4f1a993d7a2417f0577dee820b7039eb873a0ac757",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-haptic.kicad_sch",
+      "sha256": "f3f4d3197f5da6724b6ee3c19b4f6ad28fabc9a3cb15cfe002eb1461e19f9013",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-headset.kicad_sch",
+      "sha256": "eea8f986c8c86c3b28ec646cfdda1384ec4c8b1182dda48b9973cd4e74e9b751",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-microsd.kicad_sch",
+      "sha256": "914e1b3faaf20fc8936e138e55429ca8ef725448a8fde3db97d96bb73086cebe",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-nfc-interface.kicad_sch",
+      "sha256": "1dcd1a6bf658daee41e251934f5b36694a3a7a6edb4af0e1e1a608777743c8cb",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-nfc-matching.kicad_sch",
+      "sha256": "9dfcac9b3ace6f3692ae435f08a27c8b9b64c15e3e52021ecd00dee0b5485151",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-nfc.kicad_sch",
+      "sha256": "3caef07ec5bcdc54addec08e1045d49e8978ebe80b3d905a5ec4f5463c969692",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-power-entry.kicad_sch",
+      "sha256": "f62a72eea52a511f9994e7fc0d902ffa403dd302200b4f55a263c11d89969dd0",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-power.kicad_sch",
+      "sha256": "0ffb6abe4fc96fe4ffee8efd3075e7cfc8a2ec4bc047d6bbd810280658b6b8c7",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-qi-control.kicad_sch",
+      "sha256": "6c5eda68294bb223ced9d7b952b3766fd9a4f1d8dc76220419535900e5a33b48",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-qi.kicad_sch",
+      "sha256": "a85a865aadae4c813b8288489ea30a387ba650298e045f7dc8d390903ad03877",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-radio-interface.kicad_sch",
+      "sha256": "d958cc84ed1040a546490d5b13a2a5ebbf808aff0129032bf3d2c6ddc8c18adc",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-radio.kicad_sch",
+      "sha256": "5b50bbb81f4c96fb9c5f7a41fd594d5234d9fb62c92bec0f7ffe9cbd80ea50ac",
+      "exact_match": true
+    },
+    {
+      "file": "circuit-secure.kicad_sch",
+      "sha256": "ad3b40d47b43be1cfa263d9e394eeb3789b669b862aae1b95c27380cc5937c28",
+      "exact_match": true
+    },
+    {
+      "file": "voicevault-standalone-b0.kicad_pcb",
+      "sha256": "84589c40b710f4f67f1fff1fec7f6b9f34842dff4d3319df5cf646307f33b495",
+      "exact_match": true
+    },
+    {
+      "file": "voicevault-standalone-b0.kicad_pro",
+      "sha256": "537f4d034c3dc0f2805724e2e3ae69db9720c8eb46206f33ff583e81ad373dfb",
+      "exact_match": true
+    },
+    {
+      "file": "voicevault-standalone-b0.kicad_sch",
+      "sha256": "4aff8a30f97d8e211587a9f093470309eeb43777150e19b134ae700bb44b2869",
+      "exact_match": true
+    }
+  ],
+  "failed_whole_board_freerouting_pcb_sha256": "7e82425a6895dc75763a0df97c2fb472d34389b821d46791485e6d5a137d53c1",
+  "uploaded_pcb_sha256": "84589c40b710f4f67f1fff1fec7f6b9f34842dff4d3319df5cf646307f33b495",
+  "manufacturing_ready": false
+}

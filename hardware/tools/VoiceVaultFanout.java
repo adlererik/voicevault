@@ -19,7 +19,7 @@ import java.util.*;
  */
 public class VoiceVaultFanout {
   public static void main(String[] args) throws Exception {
-    if (args.length != 4) throw new IllegalArgumentException("DSN OUTPUT_SES COMPONENTS_CSV PASSES (zero = read-only capability check)");
+    if (args.length != 4 && args.length != 5) throw new IllegalArgumentException("DSN OUTPUT_SES COMPONENTS_CSV PASSES [MIN_ESCAPE_MM] (zero passes = read-only check)");
     var input=Path.of(args[0]); var output=Path.of(args[1]);
     var allowed=new LinkedHashSet<>(Arrays.asList(args[2].split(",")));
     int passes=Integer.parseInt(args[3]); if(passes<0||passes>100)throw new IllegalArgumentException("Pass count out of range");
@@ -37,7 +37,8 @@ public class VoiceVaultFanout {
       250.0*Math.max(1,board.communication.resolution),app.freerouting.board.model.structure.Unit.UM,board.communication.unit));
     board.rules.setHoleClearance(holeUnits);
     board.searchTreeManager.reinsertTreeItems();
-    settings.fanout.enabled=true;settings.fanout.minEscapeLengthMm=0.6;
+    settings.fanout.enabled=true;settings.fanout.minEscapeLengthMm=args.length==5?Double.parseDouble(args[4]):0.6;
+    if(!Double.isFinite(settings.fanout.minEscapeLengthMm)||settings.fanout.minEscapeLengthMm<0||settings.fanout.minEscapeLengthMm>4.5)throw new IllegalArgumentException("Escape minimum out of range");
     settings.fanout.maxEscapeLengthMm=4.5;settings.fanout.startViaDiameterMm=0.25;
     settings.fanout.endViaDiameterMm=0.45;settings.fanout.fallbackToBoardVias=true;
     settings.fanout.ripupAllowed=false;settings.fanout.pinSortingOrder="inner_first";

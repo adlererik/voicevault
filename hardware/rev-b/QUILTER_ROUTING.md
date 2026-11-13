@@ -64,7 +64,7 @@ No clearance limits were relaxed for this trial. Filled/planarized blind vias, e
 
 ## Parallel circuit and parts review
 
-While full routing runs, the [parts-selection review](PARTS_SELECTION.md) records 129 additional nominal component candidates and a separately checked C502 battery-decoupling correction. The corrected copy preserves all source copper and electrical net assignments and passes native ERC/layout-error checks, but retains 505 open connections. It is not uploaded to the running job and is not accepted into the live editor. It must be integrated with fresh routing and electrical review after a routed result is available.
+While full routing runs, the [parts-selection review](PARTS_SELECTION.md) records 182 additional nominal component candidates and a separately checked C502 battery-decoupling correction. It records rejected/held tolerance mismatches and preserves effective-capacitance, regulator-loop and assembly gates. The corrected copy preserves all source copper and electrical net assignments and passes native ERC/layout-error checks, but retains 505 open connections. It is not uploaded to the running job and is not accepted into the live editor. It must be integrated with fresh routing and electrical review after a routed result is available.
 
 ## Fine-pitch package review
 

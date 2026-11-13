@@ -3,9 +3,9 @@
   "inventory_sha256": "662b78314f045a69b08a2b4d6c5799ddba4cd84206847d00189f0fe43e953e8c",
   "components_in_inventory": 296,
   "previously_identified_order_codes": 58,
-  "additional_candidate_components": 129,
-  "candidate_mpn_groups": 20,
-  "remaining_without_candidate": 109,
+  "additional_candidate_components": 182,
+  "candidate_mpn_groups": 29,
+  "remaining_without_candidate": 56,
   "selection_by_reference": {
     "C7": "CC0402KRX7R7BB104",
     "C8": "CC0402KRX7R7BB104",
@@ -135,7 +135,60 @@
     "R1001": "RC0402FR-07100KL",
     "R1002": "RC0402FR-0747KL",
     "R1005": "RC0402FR-07100KL",
-    "R1006": "RC0402FR-07100KL"
+    "R1006": "RC0402FR-07100KL",
+    "C201": "CC0201GRNPO9BN160",
+    "C202": "CC0201GRNPO9BN160",
+    "C210": "CC0201GRNPO9BN120",
+    "C211": "CC0201GRNPO9BN120",
+    "C206": "CC0201JRNPO9BN101",
+    "C207": "CC0201JRNPO9BN101",
+    "C204": "CC0201KRX7R6BB104",
+    "C205": "CC0201KRX7R6BB104",
+    "C6": "CC0603KRX5R6BB475",
+    "C15": "CC0603KRX5R6BB475",
+    "C19": "CC0603KRX5R6BB475",
+    "C92": "CC0603KRX5R6BB475",
+    "C104": "CC0603KRX5R6BB475",
+    "C109": "CC0603KRX5R6BB475",
+    "C701": "CC0603KRX5R6BB475",
+    "C911": "CC0603KRX5R6BB475",
+    "C1005": "CC0603KRX5R6BB475",
+    "C208": "CC0603KRX5R6BB475",
+    "C32": "CC0603KRX7R7BB105",
+    "C110": "CC0603KRX7R7BB105",
+    "C111": "CC0603KRX7R7BB105",
+    "C116": "CC0603KRX7R7BB105",
+    "C117": "CC0603KRX7R7BB105",
+    "C118": "CC0603KRX7R7BB105",
+    "C609": "CC0603KRX7R7BB105",
+    "C703": "CC0603KRX7R7BB105",
+    "C912": "CC0603KRX7R7BB105",
+    "C1012": "CC0603KRX7R7BB105",
+    "C119": "CC0402KRX5R6BB105",
+    "C120": "CC0402KRX5R6BB105",
+    "C25": "CC0805KFX5R8BB106",
+    "C108": "CC0805KFX5R8BB106",
+    "C402": "CC0805KFX5R8BB106",
+    "C601": "CC0805KFX5R8BB106",
+    "C602": "CC0805KFX5R8BB106",
+    "C603": "CC0805KFX5R8BB106",
+    "C605": "CC0805KFX5R8BB106",
+    "C803": "CC0805KFX5R8BB106",
+    "C913": "CC0805KFX5R8BB106",
+    "C914": "CC0805KFX5R8BB106",
+    "C915": "CC0805KFX5R8BB106",
+    "C916": "CC0805KFX5R8BB106",
+    "C611": "T520D227M006ATE025",
+    "C612": "T520D227M006ATE025",
+    "C401": "CC0603KRX7R6BB225",
+    "C614": "CC0603KRX7R6BB225",
+    "C615": "CC0603KRX7R6BB225",
+    "C704": "CC0603KRX7R6BB225",
+    "C1001": "CC0603KRX7R6BB225",
+    "C1003": "CC0603KRX7R6BB225",
+    "C1007": "CC0603KRX7R6BB225",
+    "C1009": "CC0603KRX7R6BB225",
+    "C1016": "CC0603KRX7R6BB225"
   },
   "parts": {
     "CC0402KRX7R7BB104": {
@@ -158,7 +211,7 @@
       "tolerance_percent": 10,
       "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0603KRX7R6BB225",
       "source_sha256": "49462ef0a2bc286c438987c8239bc54b4c4166267bde72b49404a1739829cd86",
-      "review": "MCU C27/C107 candidate only: nominal model plots inspected, not a guaranteed maximum ESR/PVT specification. Regulator stability/return-path/bench checks remain open."
+      "review": "Nominal X7R bulk/bypass candidate. MCU C27/C107 additionally require guaranteed ESR/effective-capacitance and regulator stability: nominal model plots are not maximum ESR/PVT specifications; all return paths and bench checks remain open."
     },
     "CC0603KRX7R9BB104": {
       "manufacturer": "YAGEO",
@@ -353,10 +406,142 @@
       "source": "https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-07150KL",
       "source_sha256": "3a7c5eb5c2bd274085f61a582cd8040f1bf44c921a21967f759d78a8c3d78633",
       "review": "Nominal catalogue checks only; actual power/temperature and assembler allocation remain open"
+    },
+    "CC0201GRNPO9BN160": {
+      "manufacturer": "YAGEO",
+      "package": "0201",
+      "value": "16p",
+      "voltage_v": 50,
+      "dielectric": "C0G",
+      "tolerance_percent": 2,
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0201GRNPO9BN160",
+      "source_sha256": "f8a565d5486ffd38fdd3c179b83f2e1d87c63f5d733906c1058004618474ab55",
+      "review": "Radio/crystal nominal value and tolerance only; load/stray capacitance, oscillator startup and RF behavior require measurement"
+    },
+    "CC0201GRNPO9BN120": {
+      "manufacturer": "YAGEO",
+      "package": "0201",
+      "value": "12p",
+      "voltage_v": 50,
+      "dielectric": "C0G",
+      "tolerance_percent": 2,
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0201GRNPO9BN120",
+      "source_sha256": "d9af934262273dd7e0a74dff40f7baf19d7286e20a7e85137109a700e96873f9",
+      "review": "Radio/crystal nominal value and tolerance only; load/stray capacitance, oscillator startup and RF behavior require measurement"
+    },
+    "CC0201JRNPO9BN101": {
+      "manufacturer": "YAGEO",
+      "package": "0201",
+      "value": "100p",
+      "voltage_v": 50,
+      "dielectric": "C0G",
+      "tolerance_percent": 5,
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0201JRNPO9BN101",
+      "source_sha256": "81f11881eb37a0f0b234b57120727c67155b1ff90aad6c3677e3a0624b8f8fc3",
+      "review": "Radio/crystal nominal value and tolerance only; load/stray capacitance, oscillator startup and RF behavior require measurement"
+    },
+    "CC0201KRX7R6BB104": {
+      "manufacturer": "YAGEO",
+      "package": "0201",
+      "value": "100n",
+      "voltage_v": 10,
+      "dielectric": "X7R",
+      "tolerance_percent": 10,
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0201KRX7R6BB104",
+      "source_sha256": "c80f63d0cc92976f24d34c3875be375700a3f5348f56511c02c310cc1b786e89",
+      "review": "Nominal catalogue screening only; effective capacitance, DC bias, temperature, parasitics, layout and circuit qualification remain open"
+    },
+    "CC0603KRX5R6BB475": {
+      "manufacturer": "YAGEO",
+      "package": "0603",
+      "value": "4.7u",
+      "voltage_v": 10,
+      "dielectric": "X5R",
+      "tolerance_percent": 10,
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0603KRX5R6BB475",
+      "source_sha256": "1ac0052d232d51cc349656b5f2551b4fdb41e64e1f96d7fb2df893253cd0bea4",
+      "review": "Nominal catalogue screening only; effective capacitance, DC bias, temperature, parasitics, layout and circuit qualification remain open; X5R maximum +85 C is an explicit device-temperature constraint",
+      "temperature_rating_c": [
+        -55,
+        85
+      ]
+    },
+    "CC0603KRX7R7BB105": {
+      "manufacturer": "YAGEO",
+      "package": "0603",
+      "value": "1u",
+      "voltage_v": 16,
+      "dielectric": "X7R",
+      "tolerance_percent": 10,
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0603KRX7R7BB105",
+      "source_sha256": "89156dece5d61ef4e2849892fd7eea20416f52d829cb8a1b30f617bfa6775e98",
+      "review": "Nominal catalogue screening only; effective capacitance, DC bias, temperature, parasitics, layout and circuit qualification remain open"
+    },
+    "CC0402KRX5R6BB105": {
+      "manufacturer": "YAGEO",
+      "package": "0402",
+      "value": "1u",
+      "voltage_v": 10,
+      "dielectric": "X5R",
+      "tolerance_percent": 10,
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0402KRX5R6BB105",
+      "source_sha256": "f0293c465371d3f3a6bee035859b8fbcaac8132accecf105304b4ca0fa8f4ade",
+      "review": "Nominal catalogue screening only; effective capacitance, DC bias, temperature, parasitics, layout and circuit qualification remain open; X5R maximum +85 C is an explicit device-temperature constraint",
+      "temperature_rating_c": [
+        -55,
+        85
+      ]
+    },
+    "CC0805KFX5R8BB106": {
+      "manufacturer": "YAGEO",
+      "package": "0805",
+      "value": "10u",
+      "voltage_v": 25,
+      "dielectric": "X5R",
+      "tolerance_percent": 10,
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0805KFX5R8BB106",
+      "source_sha256": "bd1b53e358fc5fdd5f27031cd283aace6336430cb1f5e8624f089fcf41b66ea6",
+      "review": "Nominal catalogue screening only; effective capacitance, DC bias, temperature, parasitics, layout and circuit qualification remain open; X5R maximum +85 C is an explicit device-temperature constraint; C25 MCU SMPS input and Qi rectifier effective-capacitance/ripple requirements are not qualified",
+      "temperature_rating_c": [
+        -55,
+        85
+      ]
+    },
+    "T520D227M006ATE025": {
+      "manufacturer": "KEMET",
+      "package": "EIA-7343-31",
+      "value": "220u",
+      "voltage_v": 6.3,
+      "dielectric": "Polymer tantalum",
+      "tolerance_percent": 20,
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/T520D227M006ATE025",
+      "source_sha256": "a760bf3c60c15461b134bd1c544d71bc444067ffe2f461b50aa9cc73df41ec9d",
+      "review": "C611/C612 headphone DC-block candidates only; verify polarized land pattern, DC operating point, transient/reverse stress, leakage, pop and dummy-load behavior before wearing headphones",
+      "esr_ohm_catalog": 0.025,
+      "esr_test": "100kHz 25C",
+      "leakage_current_ua_catalog": 138.6,
+      "leakage_test": "5min 25C",
+      "height_max_mm": 3.1
     }
   },
   "quantity_scope": "Four boards, fitted quantities only; no attrition, MOQ, reel/setup allowance or off-board assemblies",
   "cad_changed": false,
   "supplier_allocation_confirmed": false,
-  "manufacturing_ready": false
+  "manufacturing_ready": false,
+  "rejected_candidates": [
+    {
+      "mpn": "CC0201ARNPO9BN1R0",
+      "reference": "C203",
+      "reason": "Manufacturer spec sheet states +/-0.5 pF at 1 pF; circuit 5% means +/-0.05 pF. Rejected, no tolerance relaxation.",
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/CC0201ARNPO9BN1R0",
+      "source_sha256": "deed26ae442b267a55a36ef073f30744d294e5c687a87de6afb758cbe1cbad50"
+    }
+  ],
+  "held_candidates": [
+    {
+      "reference": "C209",
+      "mpn": "CC0402KRX5R6BB105",
+      "reason": "10% catalogue tolerance does not preserve Nordic reference C9 +/-5%; exact regulator requirement must be reviewed or tighter candidate sourced"
+    }
+  ]
 }

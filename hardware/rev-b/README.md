@@ -2,7 +2,7 @@
 
 **Routing in progress — not a working or fabrication-ready PCB.**
 
-[New Quilter placement and routing-preparation record (13 November)](QUILTER_ROUTING.md): six placements downloaded; native candidate checks and rejected experiments are recorded separately from the live PCB.
+[Quilter routing and native review (13 November)](QUILTER_ROUTING.md): the full cloud trial finished at 89% routed. Native review found 103 unfinished connections, 294 layout errors and 117 warnings, so the result is isolated for repair and has not replaced the live PCB. Six placement candidates, input hashes and rejected experiments are also preserved.
 
 VoiceVault moves plaintext voice, keys, contacts and call approval into a dedicated device. An already compromised phone carries encrypted records over BLE. This custom rectangular SMD board uses the identified **Trezor Safe 7 TS7 rev_D core ICs**, with added wired headset audio, physical microphone disconnect, offline microSD and separate computer-debug connections. It replaces the earlier development-board carrier as the active hardware design.
 

@@ -20,6 +20,8 @@ The active **[standalone B0 design](hardware/rev-b/README.md)** is a custom **70
 
 *Official FreeRouting 2.5.0 produced a complete-board SES checkpoint, imported into the live KiCad editor through kipy without changing any of the 314 placements. After copper refill, native KiCad reports 280 open connections, 33 layout errors and 100 warnings. [Actual routing result and DRC](hardware/evidence/2026-11-12/autoroute/README.md). Earlier checks cover MCU ball/function mapping and circuit correspondence; the circuit models include 799 passive/static cases. [Evidence and limits](hardware/evidence/2026-11-12/README.md)*
 
+The subsequent [Quilter cloud trial](hardware/evidence/2026-11-13/quilter/routed-return/README.md) finished at **89% routed**, but native review with the original rules found **103 unfinished connections, 294 layout errors and 117 warnings**. It remains isolated for automatic repair and rerouting; it has not replaced the live board. Returned files, hashes, the screenshot and the complete native findings are preserved for review.
+
 **Manufacturing remains blocked:** 280 connections remain unrouted and the latest native DRC failed. Exact sourcing and the HDI stackup need acceptance, and power/RF/audio/charging/isolation need physical qualification. The [circuit inventory](hardware/rev-b/circuit-inventory.csv) is not an approved JLCPCB BOM. [Cost comparison for four assemblies delivered to Sweden](hardware/rev-b/MANUFACTURING_COST.md). No board has been ordered or built. The earlier DK2 carrier and Nucleo assessment remain historical reference work in the [hardware laboratory](hardware/README.md).
 
 ## The idea: move the endpoint

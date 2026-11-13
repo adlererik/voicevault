@@ -1,6 +1,6 @@
 # Quilter routing preparation — 13 November 2026
 
-**Placement completed; full routing and manufacturing qualification remain incomplete.** The live KiCad board still contains the earlier unfinished FreeRouting checkpoint. The new cloud candidates are isolated copies, not an accepted replacement.
+**Full cloud trial finished at 89% routed and failed native qualification.** The live KiCad board still contains the earlier unfinished FreeRouting checkpoint. Cloud results and repair candidates are isolated copies, not an accepted replacement. [Actual returned board, failures and native evidence](../evidence/2026-11-13/quilter/routed-return/README.md).
 
 ## Separate new project
 
@@ -32,7 +32,7 @@ A local automatic capacitor-placement experiment was rejected in full: its court
 
 An additional native physical-connectivity audit examines 250 connected BGA pins with zones excluded from traversal. Its positive control detects existing through vias; its negative control removes conductive links on an in-memory copy and confirms MCU M8 becomes disconnected. Five pins currently have laser-only paths: U10 C3, U6 F7/H1 and U1 A4/A10. Of these 250 pins, 110 currently reach a through via, five have laser-only paths and 135 have no via path. Surface escape routes may still be possible; these counts are not completed-route percentages. Their onward escapes must be checked in the routed output; the input still has 505 full native open connections. [Connectivity evidence](../evidence/2026-11-13/quilter/escape-connectivity.json).
 
-No routed result was available at launch. The [native routing input](../evidence/2026-11-13/quilter/routing-input/voicevault-standalone-b0.kicad_pcb) is preserved separately for review. It is an unfinished study and must not be used for fabrication. The live board remains unchanged until a returned result is qualified.
+The trial finished on **13 November at 11:22 Europe/Stockholm**, producing candidate 1.1 at 89% routed. Native reconstruction/refill with the original rules found **103 unfinished connections, 294 layout errors and 117 warnings**. The candidate is rejected for live acceptance. The [returned files and diagnosis](../evidence/2026-11-13/quilter/routed-return/README.md) are preserved separately from the [actual native routing input](../evidence/2026-11-13/quilter/routing-input/voicevault-standalone-b0.kicad_pcb). Neither is a fabrication release. A separate DRC-driven repair and whole-board reroute is in progress; the live board remains unchanged until a replacement is qualified.
 
 ![Full routing trial launched](../evidence/2026-11-13/quilter/routing-started.jpg)
 

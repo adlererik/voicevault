@@ -1,0 +1,27 @@
+{
+  "archive_path": "/home/erikclean/Downloads/Quilter_VoiceVault_B0_\u2014_Native-checked_routing_trial_Candidate_1_1.zip",
+  "archive_sha256": "114ee1ec7a1f079f2c42913283c8ebd4df371a84d95d3824faea9380d6131229",
+  "job": "https://app.quilter.ai/jobs/6af65cc705fb406688266032?candidate=1",
+  "candidate": "6af6e4b9a48820cee519687e",
+  "cloud_report": {
+    "routed_percent": 89,
+    "prc_successes": 73,
+    "prc_warnings": 53,
+    "prc_errors": 28,
+    "drc_failures": 121,
+    "incomplete_net_routing_checks": 77,
+    "dimension_checks_failed": 44
+  },
+  "files": [
+    {
+      "path": "voicevault-standalone-b0.kicad_pcb",
+      "sha256": "8064215f3cb0edac0c10af9cc0ea3613f3161fe56476af696dd99b7337289634"
+    },
+    {
+      "path": "voicevault-standalone-b0.kicad_pro",
+      "sha256": "fe9a61d2911dfd4be03dd69370a35f396961a9b9f5b987e8d8b99d49366f06fb"
+    }
+  ],
+  "accepted_into_live": false,
+  "manufacturing_ready": false
+}

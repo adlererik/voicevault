@@ -58,5 +58,16 @@
   "laser_vias": 53,
   "layout_errors": 33,
   "layout_warnings": 100,
-  "latest_native_routing_evidence": "../evidence/2026-11-12/autoroute/final-status.json"
+  "latest_native_routing_evidence": "../evidence/2026-11-12/autoroute/final-status.json",
+  "active_cloud_job": {
+    "url": "https://app.quilter.ai/jobs/6af8c1091a10ff2500b2ad4e",
+    "name": "VoiceVault B0 \u2014 Clean start, Quilter placement + routing",
+    "launched_local": "2026-11-14 21:28 Europe/Stockholm",
+    "status_at_launch": "Running, no results yet",
+    "tracks_vias_pours_in_input": 0,
+    "components_to_place": 292,
+    "fixed_mechanical_access_antenna_anchors": 22,
+    "live_cad_replaced": false,
+    "evidence": "../evidence/2026-11-14/quilter-clean-start/README.md"
+  }
 }

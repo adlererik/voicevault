@@ -1,0 +1,11 @@
+{
+  "result": "pass",
+  "file_count": 21,
+  "server_file_hashes_equal_verified_upload": true,
+  "pcb_sha256": "3372cc596b282619456668ee08a30ff6c7be4caa1010b5b7568fab7537a4731c",
+  "existing_tracks": 0,
+  "existing_vias": 0,
+  "existing_copper_pours": 0,
+  "live_board_modified": false,
+  "manufacturing_ready": false
+}

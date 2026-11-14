@@ -1,0 +1,78 @@
+{
+  "job": "https://app.quilter.ai/jobs/6af8c1091a10ff2500b2ad4e",
+  "name": "VoiceVault B0 \u2014 Clean start, Quilter placement + routing",
+  "launched_local": "2026-11-14 21:28 Europe/Stockholm",
+  "cloud_submission_confirmed": true,
+  "mode": "Full layout",
+  "state_at_handoff": "Started; no results yet; 1/2 setup steps completed",
+  "files": 21,
+  "preplaced_components": 22,
+  "components_to_place": 292,
+  "physical_pins": 1243,
+  "cloud_pins_to_route": 1052,
+  "input_tracks": 0,
+  "input_vias": 0,
+  "input_copper_pours": 0,
+  "ground_layers": [
+    2,
+    5
+  ],
+  "minimum_width_mm": 0.1,
+  "minimum_clearance_mm": 0.1,
+  "ordinary_via_diameter_mm": 0.45,
+  "ordinary_via_drill_mm": 0.2,
+  "board_margin_mm": 0.5,
+  "component_clearance_mm": 0.3,
+  "sides": "double-sided",
+  "bga_fanout_enabled": true,
+  "bga_rows": 7,
+  "power_rows": 30,
+  "bypass_rows": 115,
+  "crystal_rows": 5,
+  "converter_rows": 4,
+  "ground_primary": "GND",
+  "impedance_50_ohm_net": "RAD_RF_50",
+  "impedance_solver_frequency_GHz": 1,
+  "account": "Free Plan \u2014 noncommercial",
+  "purchases_or_orders": false,
+  "live_imported": false,
+  "manufacturing_ready": false,
+  "previous_job": {
+    "url": "https://app.quilter.ai/jobs/6af70fde5e1a5ebf38278f80",
+    "observed_result": "Failed after 29h 27m 29s; no routed candidates",
+    "cancelled_by_us": false,
+    "cause": "Unknown; human technical support requested"
+  },
+  "backup": {
+    "archive": "hardware-and-all-routing-studies.tar",
+    "git_bundle": "voicevault-all-refs.bundle",
+    "saved_editor_board": "live-editor-saved.kicad_pcb",
+    "archive_bytes": 1780971520,
+    "checksums": {
+      "hardware-and-all-routing-studies.tar": {
+        "bytes": 1780971520,
+        "sha256": "4578a5e3078c4d08697cffc109160d5df0d3a5bbf499ef92f0d43e4f7c243dce"
+      },
+      "voicevault-all-refs.bundle": {
+        "bytes": 27819472,
+        "sha256": "81dcc8ad72886f600a36c885e05181066e3aee130bdcc786344c903359c4e46b"
+      },
+      "backup-info.json": {
+        "bytes": 333,
+        "sha256": "f3aa624270faca841a9d014a805a6f7c37e9dc7fbd574d4630ed957985f3b4c1"
+      },
+      "live-editor-saved.kicad_pcb": {
+        "bytes": 3406820,
+        "sha256": "7e82425a6895dc75763a0df97c2fb472d34389b821d46791485e6d5a137d53c1"
+      }
+    }
+  },
+  "limitations": [
+    "Through-via-only cloud routing may be insufficient for fine-pitch footprints; no local escape copper supplied.",
+    "No automatic placement regions were generated; Quilter said floorplanning optional and allowed continuation. All movable electronics are left unconstrained for placement.",
+    "RF matching and antenna feed need independent reference-layout and RF review; impedance solver fixed at 1 GHz.",
+    "Native custom text rules are not parsed by Quilter; original native rules must be restored on returned-copy qualification. Explicit antenna keepouts remain in input.",
+    "Preset finish is Lead-Free despite input ENIG metadata; final factory process is unresolved.",
+    "No completed routing, electrical qualification, BOM/DFM approval or manufacturing release."
+  ]
+}

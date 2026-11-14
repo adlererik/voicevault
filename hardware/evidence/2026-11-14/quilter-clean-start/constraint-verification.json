@@ -1,0 +1,41 @@
+[
+  {
+    "file": "bga_components.csv",
+    "rows": 7,
+    "saved_fields_match": true,
+    "download_sha256": "316e47d0e907da709f0142462576c9b905a1a0584e714ce6005ae672e2d2b16a"
+  },
+  {
+    "file": "bypass_capacitors.csv",
+    "rows": 115,
+    "saved_fields_match": true,
+    "download_sha256": "0aa5bf8e31cb185eabc97753b5cff7ce4121140efd21086a0f9305fc362447b8"
+  },
+  {
+    "file": "crystal_oscillators.csv",
+    "rows": 5,
+    "saved_fields_match": true,
+    "download_sha256": "4a7e0e56959b4469caa04478d19cd2f293dde236d0ba2ba3d939afe1ac84f828"
+  },
+  {
+    "file": "high_current_nets.csv",
+    "rows": 30,
+    "saved_fields_match": true,
+    "download_sha256": "7807e4bebf841c4400e34cae7fbcf9c1235557c042f879b666721f1d466229b7"
+  },
+  {
+    "file": "switching_converters.csv",
+    "rows": 4,
+    "saved_fields_match": true,
+    "download_sha256": "985c92aabc191692ad72df451c74284b5b44ae0e424d738c221d995a44805ca2"
+  },
+  {
+    "file": "single_ended_impedance_signals.csv",
+    "rows": 1,
+    "net": "RAD_RF_50",
+    "target_ohms": 50,
+    "requested_frequency_GHz": 2.45,
+    "actual_fixed_solver_frequency_GHz": 1,
+    "note": "UI explicitly fixes all impedance calculations at 1 GHz and frequency is not editable. This is a nominal impedance constraint, not 2.4 GHz RF/antenna qualification."
+  }
+]

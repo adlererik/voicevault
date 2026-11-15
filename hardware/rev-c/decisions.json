@@ -7,8 +7,8 @@
   "manufacturing_ready": false,
   "preserved_b0_pcb_sha256": "7e82425a6895dc75763a0df97c2fb472d34389b821d46791485e6d5a137d53c1",
   "approved_direction": {
-    "battery_size": "AAA",
-    "battery_location": "external-pack-connected-to-device",
+    "battery_size": "BL-5C-style",
+    "battery_location": "replaceable-pack-in-device-battery-compartment",
     "wired_in_device_charging": true,
     "qi": false,
     "nfc": false,
@@ -22,29 +22,40 @@
     "radio": "nRF52832-QFAA-G-R7",
     "radio_package": "QFN48 6x6mm 0.4mm pitch",
     "radio_migration_status": "pin-table-only-footprint-and-circuit-pending",
-    "single_secure_element_candidate": "TROPIC01",
-    "battery_chemistry_assumption": "NiMH",
-    "series_cells_starting_candidate": 2,
-    "series_cells_finalized": false,
-    "charger_candidate": "BQ25172DSGR",
+    "series_cells_finalized": true,
+    "charger_candidate": "BQ24074",
     "charger_approved_for_circuit": false,
     "charging_input_candidate": "protected-5V-power-only-no-USB-data",
     "cell_current_thermal_and_load_policy": "pending",
-    "haptics": "retained-pending-any-later-owner-decision"
+    "haptics": "retained-pending-any-later-owner-decision",
+    "secure_element": "SE050E2HQ1/Z01Z3Z",
+    "secure_element_qualification": "pending-integration-provisioning-and-delivered-revision-review",
+    "battery_chemistry": "single-cell-lithium-ion",
+    "battery_pack_candidate": "protected-BL-5C-style-exact-supplier-and-pack-pending",
+    "series_cells": 1,
+    "superseded_battery_proposal": "NiMH-AAA-with-BQ25172",
+    "replacement_voltage_regulators": "pending-load-dropout-and-thermal-study"
   },
   "security_requirements": {
-    "session_entropy_sources": ["STM32 hardware RNG", "TROPIC01 RNG"],
+    "session_entropy_sources": [
+      "STM32 hardware RNG",
+      "NXP SE050E2 random generator"
+    ],
     "both_sources_required": true,
-    "absent_optiga_model_slot": "unavailable-not-synthetic-randomness",
     "phone_or_radio_entropy_fallback": false,
-    "identity_key_goal": "generate-and-sign-inside-TROPIC01-with-no-private-key-export",
+    "identity_key_goal": "generate-and-sign-inside-SE050E2-with-no-private-key-export",
     "identity_key_entropy_note": "internal-generation-uses-chip-RNG-not-the-host-two-source-pool",
     "pairing_display": "full-256-bit-transcript-fingerprint-on-both-trusted-devices",
     "six_digit_sas": false,
     "local_call_consent": true,
     "radio_trust": "hostile-bounded-ciphertext-interface-only",
     "keep_existing_hybrid_and_media_requirements": true,
-    "contact_and_update_rollback_protection": "required-hardware-mapping-pending"
+    "contact_and_update_rollback_protection": "required-hardware-mapping-pending",
+    "absent_second_secure_element_model_slot": "unavailable-not-synthetic-randomness",
+    "secure_element_interface": "MCU-controlled-I2C-with-authenticated-encrypted-host-channel",
+    "contactless_interface": "not-enabled-in-selected-E-variant",
+    "host_crypto_note": "NXP-internal-RNG-and-secure-channel-use-NIST-standard-components-call-suite-unchanged",
+    "counter_and_storage_port": "pending-access-policy-endurance-and-power-loss-qualification"
   },
   "workflow": {
     "preserve_live_b0": true,
@@ -56,12 +67,15 @@
   },
   "sources": {
     "trezor_entropy": "https://trezor.io/guides/trezor-devices/trezor-fundamentals/what-is-entropy-and-how-does-trezor-generate-your-wallet",
-    "tropic_capabilities": "https://www.tropicsquare.com/tropic01",
-    "tropic_api": "https://github.com/tropicsquare/libtropic/blob/master/include/libtropic.h",
     "nordic_ordering": "https://docs.nordicsemi.com/r/bundle/ps_nrf52832/page/ordering_info.html",
     "nordic_pin_assignments": "https://docs.nordicsemi.com/r/bundle/ps_nrf52832/page/pin.html",
     "nordic_reference_circuit": "https://docs.nordicsemi.com/r/bundle/ps_nrf52832/page/ref_circuitry.html",
-    "charger": "https://www.ti.com/product/BQ25172",
-    "charger_datasheet": "https://www.ti.com/lit/ds/symlink/bq25172.pdf"
-  }
+    "charger": "https://www.ti.com/product/BQ24074",
+    "charger_datasheet": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+    "nxp_configurations": "https://www.nxp.com/docs/en/application-note/AN12436.pdf",
+    "nxp_apdu": "https://www.nxp.com/docs/en/application-note/AN12413.pdf",
+    "nxp_datasheet": "https://www.nxp.com/docs/en/data-sheet/SE050-DATASHEET.pdf",
+    "battery_candidate": "https://www.batteriexperten.com/sv/artiklar/bl-5c-ersattningsbatteri.html"
+  },
+  "owner_accepted_recommendations": true
 }

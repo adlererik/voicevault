@@ -1,0 +1,67 @@
+{
+  "revision": "C",
+  "recorded": "2026-11-15",
+  "status": "requirements-and-pin-migration-only",
+  "schematic_generated": false,
+  "pcb_generated": false,
+  "manufacturing_ready": false,
+  "preserved_b0_pcb_sha256": "7e82425a6895dc75763a0df97c2fb472d34389b821d46791485e6d5a137d53c1",
+  "approved_direction": {
+    "battery_size": "AAA",
+    "battery_location": "external-pack-connected-to-device",
+    "wired_in_device_charging": true,
+    "qi": false,
+    "nfc": false,
+    "secure_element_count": 1,
+    "in_person_fingerprint_comparison": true,
+    "local_confirmation_on_both_devices": true,
+    "larger_qfn_ble_package": true
+  },
+  "engineering_selections": {
+    "mcu": "STM32U5G9ZJJ6Q",
+    "radio": "nRF52832-QFAA-G-R7",
+    "radio_package": "QFN48 6x6mm 0.4mm pitch",
+    "radio_migration_status": "pin-table-only-footprint-and-circuit-pending",
+    "single_secure_element_candidate": "TROPIC01",
+    "battery_chemistry_assumption": "NiMH",
+    "series_cells_starting_candidate": 2,
+    "series_cells_finalized": false,
+    "charger_candidate": "BQ25172DSGR",
+    "charger_approved_for_circuit": false,
+    "charging_input_candidate": "protected-5V-power-only-no-USB-data",
+    "cell_current_thermal_and_load_policy": "pending",
+    "haptics": "retained-pending-any-later-owner-decision"
+  },
+  "security_requirements": {
+    "session_entropy_sources": ["STM32 hardware RNG", "TROPIC01 RNG"],
+    "both_sources_required": true,
+    "absent_optiga_model_slot": "unavailable-not-synthetic-randomness",
+    "phone_or_radio_entropy_fallback": false,
+    "identity_key_goal": "generate-and-sign-inside-TROPIC01-with-no-private-key-export",
+    "identity_key_entropy_note": "internal-generation-uses-chip-RNG-not-the-host-two-source-pool",
+    "pairing_display": "full-256-bit-transcript-fingerprint-on-both-trusted-devices",
+    "six_digit_sas": false,
+    "local_call_consent": true,
+    "radio_trust": "hostile-bounded-ciphertext-interface-only",
+    "keep_existing_hybrid_and_media_requirements": true,
+    "contact_and_update_rollback_protection": "required-hardware-mapping-pending"
+  },
+  "workflow": {
+    "preserve_live_b0": true,
+    "preserve_existing_quilter_runs_and_evidence": true,
+    "placement_and_routing": "Quilter-clean-input-after-circuit-checks",
+    "local_autorouter": false,
+    "new_cloud_job_started": false,
+    "purchases_or_manufacturing_submissions": false
+  },
+  "sources": {
+    "trezor_entropy": "https://trezor.io/guides/trezor-devices/trezor-fundamentals/what-is-entropy-and-how-does-trezor-generate-your-wallet",
+    "tropic_capabilities": "https://www.tropicsquare.com/tropic01",
+    "tropic_api": "https://github.com/tropicsquare/libtropic/blob/master/include/libtropic.h",
+    "nordic_ordering": "https://docs.nordicsemi.com/r/bundle/ps_nrf52832/page/ordering_info.html",
+    "nordic_pin_assignments": "https://docs.nordicsemi.com/r/bundle/ps_nrf52832/page/pin.html",
+    "nordic_reference_circuit": "https://docs.nordicsemi.com/r/bundle/ps_nrf52832/page/ref_circuitry.html",
+    "charger": "https://www.ti.com/product/BQ25172",
+    "charger_datasheet": "https://www.ti.com/lit/ds/symlink/bq25172.pdf"
+  }
+}

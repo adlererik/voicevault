@@ -1,5 +1,7 @@
 # VoiceVault hardware laboratory
 
+The owner has selected a [simpler Rev C direction](rev-c/README.md): wired charging of NiMH AAA cells, one secure element, a larger QFN BLE package, and in-person verification on both devices, with Qi and NFC removed. Rev C currently contains requirements and a radio pin-migration table; it has no generated schematic or PCB yet. The existing B0 CAD below remains the preserved working checkpoint.
+
 The active design is the **[standalone Rev B prototype](rev-b/README.md)**: a rectangular 70 × 45 mm SMD board using Safe 7 core ICs, with audio, microSD, independent debug interfaces and sourceable display/battery candidates. It contains **296 electrical components, 14 probe pads and four mounting holes**. The complete-board FreeRouting result has been imported through kipy and its copper zones refilled. Native KiCad reports **280 open connections, 33 layout errors and 100 warnings**. [Actual run and final DRC](evidence/2026-11-12/autoroute/README.md). **Manufacturing remains blocked.** [Status](rev-b/STATUS.json) · [Actual B0 images and results](evidence/2026-11-12/README.md)
 
 ## Open the active PCB

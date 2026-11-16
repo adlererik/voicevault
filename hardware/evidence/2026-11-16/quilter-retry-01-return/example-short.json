@@ -1,0 +1,23 @@
+{
+  "description": "Items shorting two nets (nets SD_DETECT_N and GND)",
+  "items": [
+    {
+      "description": "Via [SD_DETECT_N] on Top Layer - Bottom Layer",
+      "pos": {
+        "x": 66.208288,
+        "y": 48.1714
+      },
+      "uuid": "1b01cadf-68da-456e-8534-4ff82d40a084"
+    },
+    {
+      "description": "Pad 2 [GND] of C107 on Top Layer",
+      "pos": {
+        "x": 66.311725,
+        "y": 48.586855
+      },
+      "uuid": "ef4708ee-68ee-4e42-8676-f0062281304e"
+    }
+  ],
+  "severity": "error",
+  "type": "shorting_items"
+}

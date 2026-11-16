@@ -1,0 +1,85 @@
+{
+  "job": "https://app.quilter.ai/jobs/6afadd5b82651a6067c78f92",
+  "observed_finished": "2026-11-16 14:45 CET",
+  "observed_launched": "2026-11-16 11:53 CET",
+  "status": "REJECTED FOR RELEASE",
+  "candidates_checked": [
+    {
+      "candidate": "1.1",
+      "pcb_sha256": "872b377771b7c586c5197b92d5d713e55f86e15813a4c01f9d4395a5521226c4",
+      "footprints": 213,
+      "component_values_and_all_pad_nets_preserved": true,
+      "mounting_holes_preserved": true,
+      "antenna_side": "B.Cu",
+      "antenna_other_layers": [
+        "B.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "native_refilled_violations": {
+        "items_not_allowed": 4,
+        "shorting_items": 27,
+        "clearance": 15,
+        "hole_clearance": 17,
+        "solder_mask_bridge": 8,
+        "track_dangling": 26,
+        "lib_footprint_mismatch": 1,
+        "silk_over_copper": 21,
+        "silk_overlap": 24
+      },
+      "accepted": false,
+      "native_unconnected_items": 32,
+      "native_drc_total": 143,
+      "native_missing_connections_are_under_499_report_cap": true,
+      "manual_component_moves_or_routes": false
+    },
+    {
+      "candidate": "4.1",
+      "pcb_sha256": "fa9511cbac5fa3eb30e46b11ad6aed4dd9926345d26bf578873e45da677ea231",
+      "footprints": 213,
+      "component_values_and_all_pad_nets_preserved": true,
+      "mounting_holes_preserved": true,
+      "antenna_side": "B.Cu",
+      "antenna_other_layers": [
+        "B.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "native_refilled_violations": {
+        "items_not_allowed": 4,
+        "shorting_items": 29,
+        "clearance": 7,
+        "hole_clearance": 29,
+        "solder_mask_bridge": 9,
+        "track_dangling": 20,
+        "lib_footprint_mismatch": 1,
+        "silk_over_copper": 23,
+        "silk_overlap": 26
+      },
+      "accepted": false,
+      "native_unconnected_items": 30,
+      "cloud_profile_refilled_violations": {
+        "items_not_allowed": 4,
+        "shorting_items": 28,
+        "clearance": 8,
+        "hole_clearance": 8,
+        "solder_mask_bridge": 9,
+        "track_dangling": 20,
+        "lib_footprint_mismatch": 1,
+        "silk_over_copper": 23,
+        "silk_overlap": 26
+      },
+      "native_drc_total": 148,
+      "native_missing_connections_are_under_499_report_cap": true,
+      "manual_component_moves_or_routes": false
+    }
+  ],
+  "all_circuit_values_and_pad_nets_preserved": true,
+  "original_and_live_designs_unchanged": true,
+  "orders_or_payments": false,
+  "quilter_support_message_status": "Prepared; awaiting specific authorization to send this new report"
+}

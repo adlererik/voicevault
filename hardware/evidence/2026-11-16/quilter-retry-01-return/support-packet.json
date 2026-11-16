@@ -1,0 +1,9 @@
+{
+  "status": "PREPARED; NOT SENT",
+  "path": "/home/erikclean/src/secure-voice-lab/.lab-runs/hardware/quilter/2026-11-16-c0-retry-review/voicevault-c0-quilter-retry01-repro.zip",
+  "bytes": 1115842,
+  "sha256": "9ea8746fc698eaca0f0b418084f644bc407a1024a2add403a927eff5dc5fc4dc",
+  "contents": "Checked input PCB and native project/rules; unmodified returned boards 1.1 and 4.1; original returned project profiles; exact footprint library; native reports; reproduction instructions. No credentials or firmware secrets included.",
+  "source_and_returned_pcb_files_unchanged": true,
+  "portable_reproduction": "36 copper findings and 30 opens reproduced; exact short/clearance classification counts vary"
+}

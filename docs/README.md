@@ -16,7 +16,7 @@ VoiceVault is a device project with a working software laboratory. The documenta
 | [Fuzzing](FUZZING.md) | What each campaign feeds into the code, asserts and leaves untested |
 | [Hybrid call establishment](POST_QUANTUM.md) | Recorded-call goal, exact handshake, erasure and embedded evidence |
 | [Platform fit](PLATFORM.md) | ARM linking/execution, memory budgets and hardware evidence limits |
-| [Simplified Rev C hardware direction](../hardware/rev-c/README.md) | 196-component draft, KiCad/ngspice evidence, first 93% cloud return and corrected fanout/RF retry |
+| [Simplified Rev C hardware direction](../hardware/rev-c/README.md) | 196-component draft, KiCad/ngspice evidence, completed 95% cloud retry and native shorts/opens blocking release |
 | [Command-deck feature checks](COMMAND_DECK_CHECKS.md) | Latest UI/audio behavior and explicitly scoped validation |
 | [Live device dashboard](LIVE_DASHBOARD.md) | Fixed local address, live progress, device activity and saved replay |
 | [Development guide](DEVELOPMENT.md) | Setup, commands, repository layout and reproducing results |

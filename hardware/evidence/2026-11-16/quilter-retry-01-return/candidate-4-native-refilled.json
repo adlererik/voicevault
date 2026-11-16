@@ -1,0 +1,3748 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-16T15:30:08",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.8",
+    "schematic_parity": [],
+    "source": "voicevault-standalone-c0.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 42.276171,
+                        "y": 43.261839
+                    },
+                    "uuid": "9177a09b-bb18-47c0-bc35-b3fa57733ae0"
+                },
+                {
+                    "description": "Pad 2 [GND] of C211 on Bottom Layer",
+                    "pos": {
+                        "x": 43.0786,
+                        "y": 43.387764
+                    },
+                    "uuid": "fa8145b9-8acf-43bf-90cb-0e3b38c7b0d8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C405 on Bottom Layer",
+                    "pos": {
+                        "x": 44.525788,
+                        "y": 52.129582
+                    },
+                    "uuid": "f35025b9-ece2-467f-97b3-214abd641785"
+                },
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,3887 mm",
+                    "pos": {
+                        "x": 45.072663,
+                        "y": 53.18776
+                    },
+                    "uuid": "984ac55c-3323-4420-8c4c-f9e5189d9614"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Top Layer, length 0,7381 mm",
+                    "pos": {
+                        "x": 59.28485,
+                        "y": 52.178665
+                    },
+                    "uuid": "87895bd7-8a1e-49cd-8fce-fdacc2826c40"
+                },
+                {
+                    "description": "Pad 2 [GND] of C301 on Bottom Layer",
+                    "pos": {
+                        "x": 58.227663,
+                        "y": 51.3414
+                    },
+                    "uuid": "fd4e3b38-4ece-44e4-b0cb-87dc3c0b55e8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Top Layer, length 0,2928 mm",
+                    "pos": {
+                        "x": 62.932887,
+                        "y": 53.250491
+                    },
+                    "uuid": "40448da1-c6e3-4243-81c0-fae994974619"
+                },
+                {
+                    "description": "Pad 4 [GND] of X301 on Bottom Layer",
+                    "pos": {
+                        "x": 63.1661,
+                        "y": 53.116855
+                    },
+                    "uuid": "c0796290-3838-4505-8a28-6418dce3bef6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Top Layer, length 0,4764 mm",
+                    "pos": {
+                        "x": 66.311725,
+                        "y": 48.586855
+                    },
+                    "uuid": "cf3f04b6-a4e5-4581-b3b5-e3d417e3f792"
+                },
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 48.5714
+                    },
+                    "uuid": "3058b1d0-3c44-4f8b-93bc-afb33d574a3e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.008287,
+                        "y": 42.9714
+                    },
+                    "uuid": "e7090132-2b05-4ab0-b90e-9a474939d902"
+                },
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 43.3714
+                    },
+                    "uuid": "42917e6c-2d1b-495e-8360-9e671cbe4d78"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Top Layer, length 0,1750 mm",
+                    "pos": {
+                        "x": 68.591413,
+                        "y": 46.639829
+                    },
+                    "uuid": "163f5472-8e0b-4d93-8c19-258a0e9f8d94"
+                },
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 68.208287,
+                        "y": 46.5714
+                    },
+                    "uuid": "934a4d6e-2f82-42f1-ab5a-519f84a2fe40"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 6 [TOUCH_RESET_N] of J702 on Bottom Layer",
+                    "pos": {
+                        "x": 77.85985,
+                        "y": 50.653218
+                    },
+                    "uuid": "139fc272-0269-492a-9709-044f11efb974"
+                },
+                {
+                    "description": "Track [TOUCH_RESET_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 48.9714
+                    },
+                    "uuid": "bc860c31-0788-4acb-9498-18c8c914c001"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [MCU_VDD11] on Bottom Layer, length 0,6735 mm",
+                    "pos": {
+                        "x": 65.658224,
+                        "y": 51.033028
+                    },
+                    "uuid": "a1e63d68-ab16-45d7-bcf5-1f60752b1aae"
+                },
+                {
+                    "description": "Track [MCU_VDD11] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 50.1714
+                    },
+                    "uuid": "0b0c900d-900d-48ab-adb2-45642d27e08c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LINK_TX] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 49.7714
+                    },
+                    "uuid": "b567a10b-a7ef-4236-8086-9201cca6627f"
+                },
+                {
+                    "description": "Pad 3 [LINK_TX] of U201 on Top Layer",
+                    "pos": {
+                        "x": 59.28485,
+                        "y": 55.428665
+                    },
+                    "uuid": "749e3970-4747-42d2-b3a2-6131fa3137de"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LINK_RTS] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 48.9714
+                    },
+                    "uuid": "9aa8bd0a-781a-483e-bde6-01e4f4ea77d0"
+                },
+                {
+                    "description": "Pad 5 [LINK_RTS] of U201 on Top Layer",
+                    "pos": {
+                        "x": 59.28485,
+                        "y": 54.128665
+                    },
+                    "uuid": "4db04b01-9bca-423a-bb0c-203629d64d15"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LINK_CTS] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "cfbcc32b-d71e-4a64-a3fd-df50be078943"
+                },
+                {
+                    "description": "Track [LINK_CTS] on Top Layer, length 0,7381 mm",
+                    "pos": {
+                        "x": 59.28485,
+                        "y": 53.478665
+                    },
+                    "uuid": "22fd28fc-d76c-4191-bd3b-68010616588a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad B4 [BTN_UPDATE_N] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 69.008287,
+                        "y": 47.7714
+                    },
+                    "uuid": "98ffce8e-a0d8-4c5b-ae70-dc82970b3bb5"
+                },
+                {
+                    "description": "Pad 1 [BTN_UPDATE_N] of SW302 on Bottom Layer",
+                    "pos": {
+                        "x": 56.306725,
+                        "y": 36.812309
+                    },
+                    "uuid": "e7fce9d3-d466-4dfa-8342-faba1804c8cf"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [CHARGER_500_EN] on Top Layer, length 0,5032 mm",
+                    "pos": {
+                        "x": 39.080163,
+                        "y": 64.430491
+                    },
+                    "uuid": "9713c0be-60fd-4853-a8bb-6c28242576ab"
+                },
+                {
+                    "description": "Pad 6 [CHARGER_500_EN] of U3 on Bottom Layer",
+                    "pos": {
+                        "x": 56.438287,
+                        "y": 51.027764
+                    },
+                    "uuid": "87bbb61b-fd81-40d5-bb9a-65bc78060aa1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SD_SCK_MCU] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 62.608287,
+                        "y": 49.3714
+                    },
+                    "uuid": "597509a3-d7f7-4c4a-80dc-80110769a7da"
+                },
+                {
+                    "description": "Pad 3 [SD_SCK_MCU] of U402 on Bottom Layer",
+                    "pos": {
+                        "x": 48.354006,
+                        "y": 45.0589
+                    },
+                    "uuid": "5f9b9359-89f6-437f-956b-01106e37ebd7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad K1 [SD_MOSI_MCU] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 62.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "649b820a-1741-4f5b-a48d-a90fb22aa1d1"
+                },
+                {
+                    "description": "Pad 4 [SD_MOSI_MCU] of U402 on Bottom Layer",
+                    "pos": {
+                        "x": 49.004006,
+                        "y": 45.0589
+                    },
+                    "uuid": "8f247564-6dab-4983-add9-b0ac71ad3740"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 6 [SD_CS_MCU] of U402 on Bottom Layer",
+                    "pos": {
+                        "x": 50.304006,
+                        "y": 45.0589
+                    },
+                    "uuid": "4e456417-1caf-45e7-b372-caa88b6d7829"
+                },
+                {
+                    "description": "Pad F9 [SD_CS_MCU] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 43.7714
+                    },
+                    "uuid": "4802e266-cf46-4dfc-9203-1b3dbdc5aa68"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SD_IO_DISABLE] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 46.5714
+                    },
+                    "uuid": "67f48c45-a4d4-4539-bacb-0d50dedfb14d"
+                },
+                {
+                    "description": "Track [SD_IO_DISABLE] on Layer 3, length 1,1849 mm",
+                    "pos": {
+                        "x": 52.356724,
+                        "y": 49.618929
+                    },
+                    "uuid": "89fd0ae7-c09c-4dbe-9838-299983eb901b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [BTN_RESET_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 44.9714
+                    },
+                    "uuid": "1030d03a-f173-4c5a-9493-ba76889d82b6"
+                },
+                {
+                    "description": "Track [BTN_RESET_N] on Bottom Layer, length 0,5369 mm",
+                    "pos": {
+                        "x": 52.50334,
+                        "y": 42.354132
+                    },
+                    "uuid": "19217ee7-6400-44fc-905f-18c0a2ba7ef2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 9 [SD_DETECT_N] of J401 on Top Layer",
+                    "pos": {
+                        "x": 44.3711,
+                        "y": 47.5714
+                    },
+                    "uuid": "4ac39728-62fb-4f4c-94de-96209a2d8b05"
+                },
+                {
+                    "description": "Track [SD_DETECT_N] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 66.608287,
+                        "y": 47.7714
+                    },
+                    "uuid": "546aac28-37f3-41a8-8d6d-c343f48735c3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [TOUCH_IRQ_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.808287,
+                        "y": 50.1714
+                    },
+                    "uuid": "4977a73f-ba01-4758-a886-53d5bfd5a9f4"
+                },
+                {
+                    "description": "Track [TOUCH_IRQ_N] on Bottom Layer, length 0,7749 mm",
+                    "pos": {
+                        "x": 76.838266,
+                        "y": 52.618653
+                    },
+                    "uuid": "5f160116-0489-4f85-9cb6-f079bdf76709"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_SDA] on Layer 4, length 6,1159 mm",
+                    "pos": {
+                        "x": 68.418541,
+                        "y": 59.874466
+                    },
+                    "uuid": "99374d2e-915b-467d-b448-5efb3c7fa2e2"
+                },
+                {
+                    "description": "Pad 10 [AUD_SDA] of U601 on Top Layer",
+                    "pos": {
+                        "x": 65.842975,
+                        "y": 53.664127
+                    },
+                    "uuid": "e3d473a5-ebe8-4f4c-a823-d7b93ab50d50"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 3 [REG_VAUX] of U1201 on Top Layer",
+                    "pos": {
+                        "x": 56.219225,
+                        "y": 46.5714
+                    },
+                    "uuid": "2945ffc5-9543-466c-892c-3b31c2203444"
+                },
+                {
+                    "description": "Pad 1 [REG_VAUX] of C1206 on Top Layer",
+                    "pos": {
+                        "x": 63.667975,
+                        "y": 46.405036
+                    },
+                    "uuid": "1ede36e6-c940-4478-8e90-605967298400"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 7 [CHARGER_PGOOD_N] of U3 on Bottom Layer",
+                    "pos": {
+                        "x": 56.438287,
+                        "y": 51.527764
+                    },
+                    "uuid": "c4aacf86-8ce0-445c-a65e-45533033ef33"
+                },
+                {
+                    "description": "Pad B12 [CHARGER_PGOOD_N] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 69.008287,
+                        "y": 41.3714
+                    },
+                    "uuid": "d83b9c0b-7858-48ab-942f-41878760b97b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_SCL] on Top Layer, length 0,2928 mm",
+                    "pos": {
+                        "x": 65.112302,
+                        "y": 53.164127
+                    },
+                    "uuid": "40c3d65c-482f-4dcc-9169-46c273b4a4c4"
+                },
+                {
+                    "description": "Track [AUD_SCL] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 50.1714
+                    },
+                    "uuid": "07df586a-def8-4472-8d11-a2e6e60e3dab"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad L11 [SE_ENABLE] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 61.808287,
+                        "y": 42.1714
+                    },
+                    "uuid": "ab37c5db-5c0d-47c4-a9a4-c67dd8980969"
+                },
+                {
+                    "description": "Track [SE_ENABLE] on Top Layer, length 0,8967 mm",
+                    "pos": {
+                        "x": 85.602264,
+                        "y": 56.166462
+                    },
+                    "uuid": "e21df098-0837-4c8a-9bd6-74035056fda7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 5 [AUD_ADC_DATA] of U601 on Top Layer",
+                    "pos": {
+                        "x": 68.030475,
+                        "y": 52.476627
+                    },
+                    "uuid": "347b9c23-b116-4b5e-b6ed-f097ccaf23f8"
+                },
+                {
+                    "description": "Track [AUD_ADC_DATA] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.408287,
+                        "y": 50.1714
+                    },
+                    "uuid": "24eeef4c-a6ed-4797-928b-1b7ed985bf9b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad C3 [AUD_WCLK] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 68.208287,
+                        "y": 48.5714
+                    },
+                    "uuid": "4e38138d-265c-417e-988b-659ffd116c3e"
+                },
+                {
+                    "description": "Pad 3 [AUD_WCLK] of U601 on Top Layer",
+                    "pos": {
+                        "x": 69.030475,
+                        "y": 52.476627
+                    },
+                    "uuid": "ebe77323-82bc-41b2-8a8e-33ef930e550c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad C4 [AUD_BCLK] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 68.208287,
+                        "y": 47.7714
+                    },
+                    "uuid": "a90e8a23-2c12-493e-8c60-1c8296886760"
+                },
+                {
+                    "description": "Pad 2 [AUD_BCLK] of U601 on Top Layer",
+                    "pos": {
+                        "x": 69.530475,
+                        "y": 52.476627
+                    },
+                    "uuid": "4859386e-fcaa-4d5c-8738-c847a7671d9c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [AUD_HPR_DC] of C612 on Bottom Layer",
+                    "pos": {
+                        "x": 68.370788,
+                        "y": 56.514129
+                    },
+                    "uuid": "cf42ea29-428c-496e-8324-895e0e352dcc"
+                },
+                {
+                    "description": "Pad 27 [AUD_HPR_DC] of U601 on Top Layer",
+                    "pos": {
+                        "x": 70.717975,
+                        "y": 55.664127
+                    },
+                    "uuid": "41a10139-43da-4df6-8d8e-7f558767a4a6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Items not allowed",
+            "items": [
+                {
+                    "description": "Track [BLE_ANT_FEED] on Bottom Layer, length 0,6016 mm",
+                    "pos": {
+                        "x": 27.772713,
+                        "y": 30.324873
+                    },
+                    "uuid": "cdad7960-2e3c-427f-8ad5-2bf17239a09e"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Items not allowed",
+            "items": [
+                {
+                    "description": "Track [BLE_ANT_FEED] on Bottom Layer, length 0,2928 mm",
+                    "pos": {
+                        "x": 27.171125,
+                        "y": 30.324873
+                    },
+                    "uuid": "5fc42de6-beb3-408d-b99f-eca9a77aaefa"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Items not allowed",
+            "items": [
+                {
+                    "description": "Track [BLE_ANT_FEED] on Bottom Layer, length 0,5607 mm",
+                    "pos": {
+                        "x": 26.878351,
+                        "y": 30.324873
+                    },
+                    "uuid": "3964a07e-de36-491d-8366-de6ec38c5732"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Items not allowed",
+            "items": [
+                {
+                    "description": "Track [BLE_ANT_FEED] on Bottom Layer, length 0,7496 mm",
+                    "pos": {
+                        "x": 26.317627,
+                        "y": 30.324873
+                    },
+                    "uuid": "9325eff3-2c97-49da-ae29-cbd909f2b347"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Items shorting two nets (nets VDD_3V3 and GND)",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 43.3714
+                    },
+                    "uuid": "42917e6c-2d1b-495e-8360-9e671cbe4d78"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 43.3714
+                    },
+                    "uuid": "9a1a5259-49be-453d-9420-3e623d1548df"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets VDD_3V3 and BTN_RESET_N)",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Top Layer, length 6,4503 mm",
+                    "pos": {
+                        "x": 66.608304,
+                        "y": 44.752397
+                    },
+                    "uuid": "4ccf8d25-ca18-4045-8e00-d53c196adedb"
+                },
+                {
+                    "description": "Via [BTN_RESET_N] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 63.008287,
+                        "y": 44.9714
+                    },
+                    "uuid": "ee0b1bcc-eb53-48a2-8e78-4ff52efe6857"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0,1000 mm; actual 0,0199 mm)",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Top Layer, length 1,8366 mm",
+                    "pos": {
+                        "x": 68.727386,
+                        "y": 44.469947
+                    },
+                    "uuid": "1fd4b8dc-aa7d-4716-ab6b-48d5058d7daf"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 67.808287,
+                        "y": 44.1714
+                    },
+                    "uuid": "56b170f7-3d90-4f55-b745-c5858e5b4ff2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1110 mm)",
+            "items": [
+                {
+                    "description": "Track [BL_K4] on Top Layer, length 2,5297 mm",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 55.435212
+                    },
+                    "uuid": "87a5a121-5df8-4850-aa09-af19e1c336b7"
+                },
+                {
+                    "description": "NPTH pad of J601",
+                    "pos": {
+                        "x": 82.705163,
+                        "y": 55.157764
+                    },
+                    "uuid": "9a705a28-0b18-41ce-b3c0-852ff287fabd"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets VDD_3V3 and GND)",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Top Layer, length 1,9688 mm",
+                    "pos": {
+                        "x": 71.729188,
+                        "y": 49.402309
+                    },
+                    "uuid": "6508c8a8-5bcd-402f-848b-17f7ad8f1396"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 70.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "f6572ad9-e0db-4925-8cb8-6d011cf41ebb"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets BAT_TS and AUD_WCLK)",
+            "items": [
+                {
+                    "description": "Track [BAT_TS] on Layer 3, length 4,0714 mm",
+                    "pos": {
+                        "x": 68.550125,
+                        "y": 48.101988
+                    },
+                    "uuid": "5fbd0e91-66f9-4d73-bb60-f8c903676bba"
+                },
+                {
+                    "description": "Via [AUD_WCLK] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 68.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "cc3b4dc3-18a0-458a-8592-cba22c91184d"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets BAT_TS and GND)",
+            "items": [
+                {
+                    "description": "Track [BAT_TS] on Layer 3, length 1,1915 mm",
+                    "pos": {
+                        "x": 65.110249,
+                        "y": 51.660041
+                    },
+                    "uuid": "546ac95f-988d-4c26-92ab-ba2c1b16e34e"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 50.9714
+                    },
+                    "uuid": "68c0087e-7c7e-488b-b91f-5639c6836fb3"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets BAT_TS and AUD_WCLK)",
+            "items": [
+                {
+                    "description": "Track [BAT_TS] on Layer 3, length 4,3408 mm",
+                    "pos": {
+                        "x": 71.873464,
+                        "y": 45.03258
+                    },
+                    "uuid": "13a0ac89-9a8a-4465-b03b-f6c15b8f1362"
+                },
+                {
+                    "description": "Via [AUD_WCLK] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 68.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "cc3b4dc3-18a0-458a-8592-cba22c91184d"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets VDD_3V3 and GND)",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 2,0369 mm",
+                    "pos": {
+                        "x": 63.559,
+                        "y": 50.627
+                    },
+                    "uuid": "2d08d9cd-1516-4654-9251-033ffc9ee0fa"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 50.9714
+                    },
+                    "uuid": "68c0087e-7c7e-488b-b91f-5639c6836fb3"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1325 mm)",
+            "items": [
+                {
+                    "description": "Via [BL_K4] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 54.975255
+                    },
+                    "uuid": "4a94d189-04cb-440a-ae7d-32cc63d97460"
+                },
+                {
+                    "description": "NPTH pad of J601",
+                    "pos": {
+                        "x": 82.705163,
+                        "y": 55.157764
+                    },
+                    "uuid": "9a705a28-0b18-41ce-b3c0-852ff287fabd"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1325 mm)",
+            "items": [
+                {
+                    "description": "Via [BL_K4] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 54.975255
+                    },
+                    "uuid": "4a94d189-04cb-440a-ae7d-32cc63d97460"
+                },
+                {
+                    "description": "NPTH pad of J601",
+                    "pos": {
+                        "x": 82.705163,
+                        "y": 55.157764
+                    },
+                    "uuid": "9a705a28-0b18-41ce-b3c0-852ff287fabd"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1325 mm)",
+            "items": [
+                {
+                    "description": "Via [BL_K4] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 54.975255
+                    },
+                    "uuid": "4a94d189-04cb-440a-ae7d-32cc63d97460"
+                },
+                {
+                    "description": "NPTH pad of J601",
+                    "pos": {
+                        "x": 82.705163,
+                        "y": 55.157764
+                    },
+                    "uuid": "9a705a28-0b18-41ce-b3c0-852ff287fabd"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1325 mm)",
+            "items": [
+                {
+                    "description": "Via [BL_K4] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 54.975255
+                    },
+                    "uuid": "4a94d189-04cb-440a-ae7d-32cc63d97460"
+                },
+                {
+                    "description": "NPTH pad of J601",
+                    "pos": {
+                        "x": 82.705163,
+                        "y": 55.157764
+                    },
+                    "uuid": "9a705a28-0b18-41ce-b3c0-852ff287fabd"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1325 mm)",
+            "items": [
+                {
+                    "description": "Via [BL_K4] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 54.975255
+                    },
+                    "uuid": "4a94d189-04cb-440a-ae7d-32cc63d97460"
+                },
+                {
+                    "description": "NPTH pad of J601",
+                    "pos": {
+                        "x": 82.705163,
+                        "y": 55.157764
+                    },
+                    "uuid": "9a705a28-0b18-41ce-b3c0-852ff287fabd"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1325 mm)",
+            "items": [
+                {
+                    "description": "Via [BL_K4] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 54.975255
+                    },
+                    "uuid": "4a94d189-04cb-440a-ae7d-32cc63d97460"
+                },
+                {
+                    "description": "NPTH pad of J601",
+                    "pos": {
+                        "x": 82.705163,
+                        "y": 55.157764
+                    },
+                    "uuid": "9a705a28-0b18-41ce-b3c0-852ff287fabd"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets REG_VAUX and VDD_3V3)",
+            "items": [
+                {
+                    "description": "Pad 1 [REG_VAUX] of C1206 on Top Layer",
+                    "pos": {
+                        "x": 63.667975,
+                        "y": 46.405036
+                    },
+                    "uuid": "1ede36e6-c940-4478-8e90-605967298400"
+                },
+                {
+                    "description": "Via [VDD_3V3] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 45.7714
+                    },
+                    "uuid": "33f2ad6f-4e10-4e58-9756-b222e53f4722"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets REG_VAUX and VDD_3V3)",
+            "items": [
+                {
+                    "description": "Pad 1 [REG_VAUX] of C1206 on Top Layer",
+                    "pos": {
+                        "x": 63.667975,
+                        "y": 46.405036
+                    },
+                    "uuid": "1ede36e6-c940-4478-8e90-605967298400"
+                },
+                {
+                    "description": "Via [VDD_3V3] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 46.5714
+                    },
+                    "uuid": "24c08a34-dbc4-4639-b59f-e01e3234aba0"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0,1000 mm; actual 0,0891 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 67.808287,
+                        "y": 46.5714
+                    },
+                    "uuid": "7a8a91c5-e103-499e-9da9-a9f2f442ca53"
+                },
+                {
+                    "description": "Pad 1 [VDD_3V3] of C108 on Top Layer",
+                    "pos": {
+                        "x": 68.591413,
+                        "y": 45.848673
+                    },
+                    "uuid": "892269e0-90af-445d-9638-d6e928d78534"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets MCU_VDD11 and VDD_3V3)",
+            "items": [
+                {
+                    "description": "Via [MCU_VDD11] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 48.1714
+                    },
+                    "uuid": "78c8cbcb-b039-49c7-8c0b-8acc6e0c274f"
+                },
+                {
+                    "description": "Track [VDD_3V3] on Top Layer, length 1,5714 mm",
+                    "pos": {
+                        "x": 67.177686,
+                        "y": 47.671084
+                    },
+                    "uuid": "ba1f7ad5-ad21-4593-99e3-55c56a19d0b5"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets SD_DETECT_N and GND)",
+            "items": [
+                {
+                    "description": "Via [SD_DETECT_N] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 48.1714
+                    },
+                    "uuid": "1b01cadf-68da-456e-8534-4ff82d40a084"
+                },
+                {
+                    "description": "Pad 2 [GND] of C107 on Top Layer",
+                    "pos": {
+                        "x": 66.311725,
+                        "y": 48.586855
+                    },
+                    "uuid": "ef4708ee-68ee-4e42-8676-f0062281304e"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets LINK_CTS and MCU_VDD11)",
+            "items": [
+                {
+                    "description": "Via [LINK_CTS] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "422fe9ef-a9c1-4832-9c13-c834a13a959c"
+                },
+                {
+                    "description": "Pad 1 [MCU_VDD11] of C107 on Top Layer",
+                    "pos": {
+                        "x": 64.761725,
+                        "y": 48.586855
+                    },
+                    "uuid": "fda1be51-4d14-42ce-b855-bd37618fe1fa"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets GND and SD_CS_MCU)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 42.5714
+                    },
+                    "uuid": "55520cc4-c303-4671-b53a-1fa2099a69df"
+                },
+                {
+                    "description": "Track [SD_CS_MCU] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 42.5714
+                    },
+                    "uuid": "5e4eee9b-35fb-472b-b924-74f3fe205dd0"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets RAD_RESET_ASSERT and MCU_LX)",
+            "items": [
+                {
+                    "description": "Via [RAD_RESET_ASSERT] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 62.208287,
+                        "y": 47.3714
+                    },
+                    "uuid": "09e0a572-81c0-44f4-8a1d-bec2ee038f79"
+                },
+                {
+                    "description": "Track [MCU_LX] on Top Layer, length 1,5500 mm",
+                    "pos": {
+                        "x": 62.472,
+                        "y": 46.916997
+                    },
+                    "uuid": "aa96d413-92fa-43da-9b6c-2927cf827d51"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets AUD_WCLK and GND)",
+            "items": [
+                {
+                    "description": "Via [AUD_WCLK] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 68.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "cc3b4dc3-18a0-458a-8592-cba22c91184d"
+                },
+                {
+                    "description": "Pad 2 [GND] of C108 on Top Layer",
+                    "pos": {
+                        "x": 68.591413,
+                        "y": 47.748673
+                    },
+                    "uuid": "f332bc56-c89a-4e6f-bdc7-c8e2e673b870"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets GND and MCU_VDD11)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.9714
+                    },
+                    "uuid": "a12dedb0-7ba8-4f6f-9ae8-4c314d5f93b0"
+                },
+                {
+                    "description": "Pad 1 [MCU_VDD11] of C107 on Top Layer",
+                    "pos": {
+                        "x": 64.761725,
+                        "y": 48.586855
+                    },
+                    "uuid": "fda1be51-4d14-42ce-b855-bd37618fe1fa"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets AUD_WCLK and BAT_TS)",
+            "items": [
+                {
+                    "description": "Via [AUD_WCLK] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 68.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "cc3b4dc3-18a0-458a-8592-cba22c91184d"
+                },
+                {
+                    "description": "Track [BAT_TS] on Layer 3, length 0,2539 mm",
+                    "pos": {
+                        "x": 68.804056,
+                        "y": 48.101988
+                    },
+                    "uuid": "e8468e3b-515b-419e-93ee-9f48248f0e66"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets GND and AUD_SCL)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.9714
+                    },
+                    "uuid": "a12dedb0-7ba8-4f6f-9ae8-4c314d5f93b0"
+                },
+                {
+                    "description": "Track [AUD_SCL] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.9714
+                    },
+                    "uuid": "e30e8745-e763-4b62-bf7f-b73a353a1ee2"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0,1000 mm; actual 0,0259 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 40.5714
+                    },
+                    "uuid": "78808484-e30e-4e8c-a284-52bc760b2645"
+                },
+                {
+                    "description": "Track [MCU_VDD11] on Top Layer, length 3,0533 mm",
+                    "pos": {
+                        "x": 60.27457,
+                        "y": 40.875934
+                    },
+                    "uuid": "f100760c-0634-435e-b6b2-a592c0ce5e7d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets VDD_3V3 and GND)",
+            "items": [
+                {
+                    "description": "Pad 1 [VDD_3V3] of C1205 on Top Layer",
+                    "pos": {
+                        "x": 59.88485,
+                        "y": 50.245945
+                    },
+                    "uuid": "0441be46-16b9-423f-8ee7-ec05e0e37378"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 60.208288,
+                        "y": 50.1714
+                    },
+                    "uuid": "f72080b9-ae26-4970-a99e-e42fef86ccdd"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0,1000 mm; actual 0,0899 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 50.9714
+                    },
+                    "uuid": "68c0087e-7c7e-488b-b91f-5639c6836fb3"
+                },
+                {
+                    "description": "Pad 1 [VDD_3V3] of C7 on Top Layer",
+                    "pos": {
+                        "x": 63.96985,
+                        "y": 50.3814
+                    },
+                    "uuid": "6c71d0c7-fc7a-421f-b8df-626163b58913"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets GND and BAT_TS)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 50.9714
+                    },
+                    "uuid": "68c0087e-7c7e-488b-b91f-5639c6836fb3"
+                },
+                {
+                    "description": "Track [BAT_TS] on Layer 3, length 9,6067 mm",
+                    "pos": {
+                        "x": 64.267717,
+                        "y": 50.817509
+                    },
+                    "uuid": "cf0bbd6d-b263-4b1c-b803-11070e8447ff"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets GND and MCU_LX)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 61.408287,
+                        "y": 44.9714
+                    },
+                    "uuid": "547d3f8f-6702-46a4-b68e-0878f878dc74"
+                },
+                {
+                    "description": "Pad 1 [MCU_LX] of L1 on Top Layer",
+                    "pos": {
+                        "x": 61.031725,
+                        "y": 45.7464
+                    },
+                    "uuid": "b33bbee8-0167-4846-ac8b-d1b76da4e086"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets GND and BTN_RESET_N)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 61.408287,
+                        "y": 44.9714
+                    },
+                    "uuid": "547d3f8f-6702-46a4-b68e-0878f878dc74"
+                },
+                {
+                    "description": "Track [BTN_RESET_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.408287,
+                        "y": 44.9714
+                    },
+                    "uuid": "67754e33-8f88-4ac6-a577-277293e666aa"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0,1000 mm; actual 0,0656 mm)",
+            "items": [
+                {
+                    "description": "Via [AUD_SDA] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 47.3714
+                    },
+                    "uuid": "1d6eb33f-2d80-4f91-9624-4d1dc4b9abc7"
+                },
+                {
+                    "description": "Track [VDD_3V3] on Top Layer, length 1,5714 mm",
+                    "pos": {
+                        "x": 67.177686,
+                        "y": 47.671084
+                    },
+                    "uuid": "ba1f7ad5-ad21-4593-99e3-55c56a19d0b5"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets GND and LINK_CREDIT)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 40.5714
+                    },
+                    "uuid": "78808484-e30e-4e8c-a284-52bc760b2645"
+                },
+                {
+                    "description": "Track [LINK_CREDIT] on Layer 3, length 2,5545 mm",
+                    "pos": {
+                        "x": 62.099055,
+                        "y": 40.402439
+                    },
+                    "uuid": "90e098c8-2ecb-425a-8451-54ca0d24f0c1"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets GND and AUD_POWER_EN)",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 40.5714
+                    },
+                    "uuid": "78808484-e30e-4e8c-a284-52bc760b2645"
+                },
+                {
+                    "description": "Track [AUD_POWER_EN] on Layer 4, length 0,5663 mm",
+                    "pos": {
+                        "x": 60.407035,
+                        "y": 40.754224
+                    },
+                    "uuid": "ca541a02-0d50-40ca-9ae5-78a915b51845"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0,1000 mm; actual 0,0026 mm)",
+            "items": [
+                {
+                    "description": "Via [AUD_SCL] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.1714
+                    },
+                    "uuid": "fa32bcd9-266e-42cd-bf9c-67cbb2885eff"
+                },
+                {
+                    "description": "Pad 1 [MCU_VDD11] of C107 on Top Layer",
+                    "pos": {
+                        "x": 64.761725,
+                        "y": 48.586855
+                    },
+                    "uuid": "fda1be51-4d14-42ce-b855-bd37618fe1fa"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1297 mm)",
+            "items": [
+                {
+                    "description": "Track [BL_FB] on Bottom Layer, length 7,0245 mm",
+                    "pos": {
+                        "x": 93.280547,
+                        "y": 42.791577
+                    },
+                    "uuid": "8d88fa7f-e729-4691-a34a-e43a86df79c0"
+                },
+                {
+                    "description": "NPTH pad of H2",
+                    "pos": {
+                        "x": 92.0,
+                        "y": 44.0
+                    },
+                    "uuid": "1618527b-a0c5-40ab-914f-76337a5f1a97"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1405 mm)",
+            "items": [
+                {
+                    "description": "Track [REG_ENABLE] on Layer 4, length 1,8986 mm",
+                    "pos": {
+                        "x": 50.080872,
+                        "y": 56.339041
+                    },
+                    "uuid": "89f4d646-9ae7-41af-9270-4326777c27a1"
+                },
+                {
+                    "description": "NPTH pad of SW503",
+                    "pos": {
+                        "x": 49.439538,
+                        "y": 54.825945
+                    },
+                    "uuid": "b0ba0e3c-0b0f-417c-8d2d-ea1daed2b90d"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1895 mm)",
+            "items": [
+                {
+                    "description": "Track [RAD_RESET_ASSERT] on Layer 4, length 14,0719 mm",
+                    "pos": {
+                        "x": 38.009285,
+                        "y": 65.659629
+                    },
+                    "uuid": "25a24569-b517-4d16-92a3-f329019c141c"
+                },
+                {
+                    "description": "NPTH pad of H3",
+                    "pos": {
+                        "x": 46.0,
+                        "y": 67.0
+                    },
+                    "uuid": "d7f08c6c-e665-470c-a543-9c00f8f81468"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1174 mm)",
+            "items": [
+                {
+                    "description": "Track [HEADSET_L] on Top Layer, length 5,0769 mm",
+                    "pos": {
+                        "x": 77.662648,
+                        "y": 62.817866
+                    },
+                    "uuid": "b669a32c-1e99-4829-9b54-0928e57234e6"
+                },
+                {
+                    "description": "NPTH pad of SW601",
+                    "pos": {
+                        "x": 80.42235,
+                        "y": 64.703218
+                    },
+                    "uuid": "9a1de425-6f82-4593-af13-cb003ac83597"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1824 mm)",
+            "items": [
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 1,6071 mm",
+                    "pos": {
+                        "x": 73.672018,
+                        "y": 65.705091
+                    },
+                    "uuid": "5190f55e-d3cf-444c-806f-7cd05c696c4f"
+                },
+                {
+                    "description": "NPTH pad of H4",
+                    "pos": {
+                        "x": 74.0,
+                        "y": 67.0
+                    },
+                    "uuid": "3a28872b-fdd6-46d7-a5e7-87e64e0f20ca"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1824 mm)",
+            "items": [
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 4,3786 mm",
+                    "pos": {
+                        "x": 76.768178,
+                        "y": 62.60893
+                    },
+                    "uuid": "1693246c-fd5d-4c66-8673-036d0d36a6b9"
+                },
+                {
+                    "description": "NPTH pad of H4",
+                    "pos": {
+                        "x": 74.0,
+                        "y": 67.0
+                    },
+                    "uuid": "3a28872b-fdd6-46d7-a5e7-87e64e0f20ca"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0,1000 mm; actual 0,0531 mm)",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Top Layer, length 1,2834 mm",
+                    "pos": {
+                        "x": 68.085204,
+                        "y": 46.763565
+                    },
+                    "uuid": "30c04905-77dc-4006-a437-7f453a6764b7"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 67.808287,
+                        "y": 46.5714
+                    },
+                    "uuid": "7a8a91c5-e103-499e-9da9-a9f2f442ca53"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1843 mm)",
+            "items": [
+                {
+                    "description": "Track [HEADSET_R] on Top Layer, length 2,3499 mm",
+                    "pos": {
+                        "x": 85.710505,
+                        "y": 47.170333
+                    },
+                    "uuid": "94f2b1ed-9337-49df-9c68-b905498e0052"
+                },
+                {
+                    "description": "NPTH pad of J601",
+                    "pos": {
+                        "x": 82.705163,
+                        "y": 48.157764
+                    },
+                    "uuid": "0a951aa4-3bf1-4415-94cd-e367d4aeef92"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1843 mm)",
+            "items": [
+                {
+                    "description": "Track [HEADSET_R] on Top Layer, length 2,3992 mm",
+                    "pos": {
+                        "x": 83.360623,
+                        "y": 47.170333
+                    },
+                    "uuid": "b68f808a-7d2e-476a-92fd-8cd1dc9d410a"
+                },
+                {
+                    "description": "NPTH pad of J601",
+                    "pos": {
+                        "x": 82.705163,
+                        "y": 48.157764
+                    },
+                    "uuid": "0a951aa4-3bf1-4415-94cd-e367d4aeef92"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1124 mm)",
+            "items": [
+                {
+                    "description": "Track [RAD_RX] on Top Layer, length 2,6232 mm",
+                    "pos": {
+                        "x": 50.156436,
+                        "y": 55.439226
+                    },
+                    "uuid": "6d558177-6dba-43f1-b4e4-e13134596248"
+                },
+                {
+                    "description": "NPTH pad of SW503",
+                    "pos": {
+                        "x": 49.439538,
+                        "y": 54.825945
+                    },
+                    "uuid": "b0ba0e3c-0b0f-417c-8d2d-ea1daed2b90d"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1929 mm)",
+            "items": [
+                {
+                    "description": "Track [HP_R_AC] on Top Layer, length 2,5982 mm",
+                    "pos": {
+                        "x": 82.233407,
+                        "y": 65.533218
+                    },
+                    "uuid": "49449a9d-9198-42f7-891c-e29ac1a54f72"
+                },
+                {
+                    "description": "NPTH pad of SW601",
+                    "pos": {
+                        "x": 80.42235,
+                        "y": 64.703218
+                    },
+                    "uuid": "9a1de425-6f82-4593-af13-cb003ac83597"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1059 mm)",
+            "items": [
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 2,7349 mm",
+                    "pos": {
+                        "x": 50.048849,
+                        "y": 60.672887
+                    },
+                    "uuid": "ec2d0cf2-c4f2-4dbf-b988-283c26fc1a68"
+                },
+                {
+                    "description": "NPTH pad of SW503",
+                    "pos": {
+                        "x": 49.439538,
+                        "y": 61.625945
+                    },
+                    "uuid": "0ebb6036-d9ef-4b57-a680-0fc95668952d"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets VDD_3V3 and GND)",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 43.7714
+                    },
+                    "uuid": "1a5d6944-04b6-4e6d-b835-a78b41bd8f82"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 43.3714
+                    },
+                    "uuid": "9a1a5259-49be-453d-9420-3e623d1548df"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets VDD_3V3 and GND)",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.808287,
+                        "y": 46.5714
+                    },
+                    "uuid": "22169a00-e2ab-4a0a-9f70-6b83bcc5275f"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 67.808287,
+                        "y": 46.5714
+                    },
+                    "uuid": "7a8a91c5-e103-499e-9da9-a9f2f442ca53"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets VDD_3V3 and GND)",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.408287,
+                        "y": 46.5714
+                    },
+                    "uuid": "040980b1-6edb-4a6b-ba88-1f622bc861bd"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 67.808287,
+                        "y": 46.5714
+                    },
+                    "uuid": "7a8a91c5-e103-499e-9da9-a9f2f442ca53"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets BTN_RESET_N and GND)",
+            "items": [
+                {
+                    "description": "Track [BTN_RESET_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.808287,
+                        "y": 44.9714
+                    },
+                    "uuid": "35a18d8b-2d23-411f-be47-a134a3dfa514"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 61.408287,
+                        "y": 44.9714
+                    },
+                    "uuid": "547d3f8f-6702-46a4-b68e-0878f878dc74"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets AUD_SCL and GND)",
+            "items": [
+                {
+                    "description": "Track [AUD_SCL] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.5714
+                    },
+                    "uuid": "31bb49b7-2591-434b-9938-8eb1ec183eff"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.9714
+                    },
+                    "uuid": "a12dedb0-7ba8-4f6f-9ae8-4c314d5f93b0"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,0499 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [MCU_LX] of L1 on Top Layer",
+                    "pos": {
+                        "x": 61.031725,
+                        "y": 45.7464
+                    },
+                    "uuid": "b33bbee8-0167-4846-ac8b-d1b76da4e086"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 61.408287,
+                        "y": 44.9714
+                    },
+                    "uuid": "547d3f8f-6702-46a4-b68e-0878f878dc74"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,0093 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [MCU_VDD11] of L1 on Top Layer",
+                    "pos": {
+                        "x": 61.031725,
+                        "y": 47.8964
+                    },
+                    "uuid": "6ebf3f81-04b5-4452-b6e1-8316d2e40547"
+                },
+                {
+                    "description": "Via [RAD_RESET_ASSERT] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 62.208287,
+                        "y": 47.3714
+                    },
+                    "uuid": "09e0a572-81c0-44f4-8a1d-bec2ee038f79"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C108 on Top Layer",
+                    "pos": {
+                        "x": 68.591413,
+                        "y": 47.748673
+                    },
+                    "uuid": "f332bc56-c89a-4e6f-bdc7-c8e2e673b870"
+                },
+                {
+                    "description": "Via [AUD_WCLK] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 68.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "cc3b4dc3-18a0-458a-8592-cba22c91184d"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [VDD_3V3] of C1205 on Top Layer",
+                    "pos": {
+                        "x": 59.88485,
+                        "y": 50.245945
+                    },
+                    "uuid": "0441be46-16b9-423f-8ee7-ec05e0e37378"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 60.208288,
+                        "y": 50.1714
+                    },
+                    "uuid": "f72080b9-ae26-4970-a99e-e42fef86ccdd"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [REG_VAUX] of C1206 on Top Layer",
+                    "pos": {
+                        "x": 63.667975,
+                        "y": 46.405036
+                    },
+                    "uuid": "1ede36e6-c940-4478-8e90-605967298400"
+                },
+                {
+                    "description": "Via [VDD_3V3] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 46.5714
+                    },
+                    "uuid": "24c08a34-dbc4-4639-b59f-e01e3234aba0"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,0585 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [REG_VAUX] of C1206 on Top Layer",
+                    "pos": {
+                        "x": 63.667975,
+                        "y": 46.405036
+                    },
+                    "uuid": "1ede36e6-c940-4478-8e90-605967298400"
+                },
+                {
+                    "description": "Via [VDD_3V3] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 45.7714
+                    },
+                    "uuid": "33f2ad6f-4e10-4e58-9756-b222e53f4722"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1174 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [MCU_VDD11] of C107 on Top Layer",
+                    "pos": {
+                        "x": 64.761725,
+                        "y": 48.586855
+                    },
+                    "uuid": "fda1be51-4d14-42ce-b855-bd37618fe1fa"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.9714
+                    },
+                    "uuid": "a12dedb0-7ba8-4f6f-9ae8-4c314d5f93b0"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1278 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [MCU_VDD11] of C107 on Top Layer",
+                    "pos": {
+                        "x": 64.761725,
+                        "y": 48.586855
+                    },
+                    "uuid": "fda1be51-4d14-42ce-b855-bd37618fe1fa"
+                },
+                {
+                    "description": "Via [AUD_SCL] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.1714
+                    },
+                    "uuid": "fa32bcd9-266e-42cd-bf9c-67cbb2885eff"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [MCU_VDD11] of C107 on Top Layer",
+                    "pos": {
+                        "x": 64.761725,
+                        "y": 48.586855
+                    },
+                    "uuid": "fda1be51-4d14-42ce-b855-bd37618fe1fa"
+                },
+                {
+                    "description": "Via [LINK_CTS] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "422fe9ef-a9c1-4832-9c13-c834a13a959c"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1746 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C107 on Top Layer",
+                    "pos": {
+                        "x": 66.311725,
+                        "y": 48.586855
+                    },
+                    "uuid": "ef4708ee-68ee-4e42-8676-f0062281304e"
+                },
+                {
+                    "description": "Via [MCU_VDD11] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 48.1714
+                    },
+                    "uuid": "78c8cbcb-b039-49c7-8c0b-8acc6e0c274f"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C107 on Top Layer",
+                    "pos": {
+                        "x": 66.311725,
+                        "y": 48.586855
+                    },
+                    "uuid": "ef4708ee-68ee-4e42-8676-f0062281304e"
+                },
+                {
+                    "description": "Via [SD_DETECT_N] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 48.1714
+                    },
+                    "uuid": "1b01cadf-68da-456e-8534-4ff82d40a084"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 60.208288,
+                        "y": 50.1714
+                    },
+                    "uuid": "f72080b9-ae26-4970-a99e-e42fef86ccdd"
+                },
+                {
+                    "description": "Pad 1 [VDD_3V3] of C1205 on Top Layer",
+                    "pos": {
+                        "x": 59.88485,
+                        "y": 50.245945
+                    },
+                    "uuid": "0441be46-16b9-423f-8ee7-ec05e0e37378"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 61.408287,
+                        "y": 44.9714
+                    },
+                    "uuid": "547d3f8f-6702-46a4-b68e-0878f878dc74"
+                },
+                {
+                    "description": "Pad 1 [MCU_LX] of L1 on Top Layer",
+                    "pos": {
+                        "x": 61.031725,
+                        "y": 45.7464
+                    },
+                    "uuid": "b33bbee8-0167-4846-ac8b-d1b76da4e086"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.9714
+                    },
+                    "uuid": "a12dedb0-7ba8-4f6f-9ae8-4c314d5f93b0"
+                },
+                {
+                    "description": "Pad 1 [MCU_VDD11] of C107 on Top Layer",
+                    "pos": {
+                        "x": 64.761725,
+                        "y": 48.586855
+                    },
+                    "uuid": "fda1be51-4d14-42ce-b855-bd37618fe1fa"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [AUD_WCLK] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 68.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "cc3b4dc3-18a0-458a-8592-cba22c91184d"
+                },
+                {
+                    "description": "Pad 2 [GND] of C108 on Top Layer",
+                    "pos": {
+                        "x": 68.591413,
+                        "y": 47.748673
+                    },
+                    "uuid": "f332bc56-c89a-4e6f-bdc7-c8e2e673b870"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [RAD_RESET_ASSERT] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 62.208287,
+                        "y": 47.3714
+                    },
+                    "uuid": "09e0a572-81c0-44f4-8a1d-bec2ee038f79"
+                },
+                {
+                    "description": "Pad 2 [MCU_VDD11] of L1 on Top Layer",
+                    "pos": {
+                        "x": 61.031725,
+                        "y": 47.8964
+                    },
+                    "uuid": "6ebf3f81-04b5-4452-b6e1-8316d2e40547"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [LINK_CTS] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "422fe9ef-a9c1-4832-9c13-c834a13a959c"
+                },
+                {
+                    "description": "Pad 1 [MCU_VDD11] of C107 on Top Layer",
+                    "pos": {
+                        "x": 64.761725,
+                        "y": 48.586855
+                    },
+                    "uuid": "fda1be51-4d14-42ce-b855-bd37618fe1fa"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [SD_DETECT_N] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 48.1714
+                    },
+                    "uuid": "1b01cadf-68da-456e-8534-4ff82d40a084"
+                },
+                {
+                    "description": "Pad 2 [GND] of C107 on Top Layer",
+                    "pos": {
+                        "x": 66.311725,
+                        "y": 48.586855
+                    },
+                    "uuid": "ef4708ee-68ee-4e42-8676-f0062281304e"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [VDD_3V3] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 46.5714
+                    },
+                    "uuid": "24c08a34-dbc4-4639-b59f-e01e3234aba0"
+                },
+                {
+                    "description": "Pad 1 [REG_VAUX] of C1206 on Top Layer",
+                    "pos": {
+                        "x": 63.667975,
+                        "y": 46.405036
+                    },
+                    "uuid": "1ede36e6-c940-4478-8e90-605967298400"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [VDD_3V3] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 45.7714
+                    },
+                    "uuid": "33f2ad6f-4e10-4e58-9756-b222e53f4722"
+                },
+                {
+                    "description": "Pad 1 [REG_VAUX] of C1206 on Top Layer",
+                    "pos": {
+                        "x": 63.667975,
+                        "y": 46.405036
+                    },
+                    "uuid": "1ede36e6-c940-4478-8e90-605967298400"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [TOUCH_IRQ_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.808287,
+                        "y": 50.1714
+                    },
+                    "uuid": "4977a73f-ba01-4758-a886-53d5bfd5a9f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_MOSI_MCU] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 62.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "d184871d-2a98-4816-ac93-f630965d062b"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [LINK_TX] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 49.7714
+                    },
+                    "uuid": "b567a10b-a7ef-4236-8086-9201cca6627f"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_SCK_MCU] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 62.208287,
+                        "y": 50.1714
+                    },
+                    "uuid": "007906b6-0ab9-419f-8cff-4d31b3f8cc60"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_ADC_DATA] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.408287,
+                        "y": 50.1714
+                    },
+                    "uuid": "24eeef4c-a6ed-4797-928b-1b7ed985bf9b"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [TOUCH_RESET_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 48.9714
+                    },
+                    "uuid": "bc860c31-0788-4acb-9498-18c8c914c001"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BTN_UPDATE_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 48.1714
+                    },
+                    "uuid": "d9737692-4297-4f85-8b1e-2b5a1ba0e739"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SE_ENABLE] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 41.7714
+                    },
+                    "uuid": "de9c69e6-88f9-498b-9d10-bdfcb152e5f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [LINK_RTS] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 48.9714
+                    },
+                    "uuid": "9aa8bd0a-781a-483e-bde6-01e4f4ea77d0"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_WCLK] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 48.1714
+                    },
+                    "uuid": "d25d2c66-210d-46be-807c-10d234e4a582"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_BCLK] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 47.3714
+                    },
+                    "uuid": "a5b85871-688d-4f00-9b70-71c0356bf752"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_IO_DISABLE] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 46.5714
+                    },
+                    "uuid": "67f48c45-a4d4-4539-bacb-0d50dedfb14d"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [LINK_CTS] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "cfbcc32b-d71e-4a64-a3fd-df50be078943"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_SCL] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 50.1714
+                    },
+                    "uuid": "07df586a-def8-4472-8d11-a2e6e60e3dab"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_DETECT_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 50.1714
+                    },
+                    "uuid": "a5bf14e8-17fb-48e2-a32a-6dd2a00ffe1a"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [MCU_VDD11] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 50.1714
+                    },
+                    "uuid": "0b0c900d-900d-48ab-adb2-45642d27e08c"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BTN_RESET_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 44.9714
+                    },
+                    "uuid": "1030d03a-f173-4c5a-9493-ba76889d82b6"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_CS_MCU] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 41.3714
+                    },
+                    "uuid": "b99dd86e-1e5f-4de2-a31b-125c64087613"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 46.5714
+                    },
+                    "uuid": "53cb559c-450c-472d-a74c-a2674787d902"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 41.3714
+                    },
+                    "uuid": "4bf81cfa-4e62-4aeb-a5de-9be1ad16736a"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Footprint 'Johanson_2450AT18x100' does not match copy in library 'VoiceVault_B0'",
+            "items": [
+                {
+                    "description": "Footprint AE201",
+                    "pos": {
+                        "x": 29.222713,
+                        "y": 30.324873
+                    },
+                    "uuid": "798a6c3c-8bba-479b-83c7-ee439f8c95f0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 68.0
+                    },
+                    "uuid": "848d1672-48ea-4181-9792-e886f3fcc46c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 65.0
+                    },
+                    "uuid": "cc9b2c4c-a5ed-4756-9ae1-f16e8189f612"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of L1",
+                    "pos": {
+                        "x": 63.081725,
+                        "y": 46.8214
+                    },
+                    "uuid": "2d631041-18ef-433c-a95a-9f81cd040643"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of Q201",
+                    "pos": {
+                        "x": 32.62735,
+                        "y": 64.307764
+                    },
+                    "uuid": "0a1dc5df-b258-4426-8b5b-792a25064bb0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U401",
+                    "pos": {
+                        "x": 87.570788,
+                        "y": 28.7214
+                    },
+                    "uuid": "ef2f44b4-4b0b-4114-be8f-ebff4a22a2d2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of X201",
+                    "pos": {
+                        "x": 35.0911,
+                        "y": 46.998673
+                    },
+                    "uuid": "494532e7-9bf5-4235-a425-3ddf8b65ec9d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of X301",
+                    "pos": {
+                        "x": 61.7161,
+                        "y": 53.816855
+                    },
+                    "uuid": "50496c21-0bf2-420f-b739-5ccfbe23c78d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of X202",
+                    "pos": {
+                        "x": 42.302038,
+                        "y": 46.453218
+                    },
+                    "uuid": "7f57f94f-a8f1-406e-8b29-a28e6411c71c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U202",
+                    "pos": {
+                        "x": 43.755568,
+                        "y": 34.490491
+                    },
+                    "uuid": "52932655-5443-4096-bb6a-497261c76cac"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U602",
+                    "pos": {
+                        "x": 57.754538,
+                        "y": 60.357764
+                    },
+                    "uuid": "80195da5-10ba-44cd-a1dc-e4ed160f1c4a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U3",
+                    "pos": {
+                        "x": 52.145787,
+                        "y": 51.277764
+                    },
+                    "uuid": "e210edf0-20a1-4a44-999b-e117b9f3cdcf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of F501",
+                    "pos": {
+                        "x": 34.838288,
+                        "y": 66.625945
+                    },
+                    "uuid": "c946c559-3d2e-416c-89a6-01af61396326"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of J502",
+                    "pos": {
+                        "x": 50.062942,
+                        "y": 42.107764
+                    },
+                    "uuid": "c1a56190-b619-4e35-b4d5-38c370fa38c2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of D601",
+                    "pos": {
+                        "x": 77.92235,
+                        "y": 43.625948
+                    },
+                    "uuid": "29487683-8350-4b05-b12e-201bfb15644b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of D603",
+                    "pos": {
+                        "x": 51.67235,
+                        "y": 42.262312
+                    },
+                    "uuid": "7248e6d7-c073-4363-b528-e73de9945114"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U11",
+                    "pos": {
+                        "x": 91.752038,
+                        "y": 55.6214
+                    },
+                    "uuid": "fb00d34b-9c7e-4b3b-bff3-041db4e6a959"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of J503",
+                    "pos": {
+                        "x": 78.980163,
+                        "y": 40.416855
+                    },
+                    "uuid": "3e57cf42-de12-44bc-b5d1-883eb7867b6d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of L201",
+                    "pos": {
+                        "x": 33.541413,
+                        "y": 48.495036
+                    },
+                    "uuid": "c9e612e4-f095-4e41-a570-a9f526f44b8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U1201",
+                    "pos": {
+                        "x": 55.069225,
+                        "y": 49.4714
+                    },
+                    "uuid": "b440fd29-fd67-410b-a9f5-0ce157856234"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of TP13",
+                    "pos": {
+                        "x": 43.629983,
+                        "y": 43.439237
+                    },
+                    "uuid": "72f23462-e9ee-4648-9c83-4e7515ae39bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW302",
+                    "pos": {
+                        "x": 54.606725,
+                        "y": 33.212309
+                    },
+                    "uuid": "7c2e275b-1806-4a38-aac1-053457ebe3eb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U6",
+                    "pos": {
+                        "x": 38.67235,
+                        "y": 43.8714
+                    },
+                    "uuid": "becef99e-3c9b-466b-94be-4278a8373da0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U601",
+                    "pos": {
+                        "x": 72.110475,
+                        "y": 54.914127
+                    },
+                    "uuid": "7b9f1d17-1577-4a33-99eb-9185167e54ca"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 65.0
+                    },
+                    "uuid": "cc9b2c4c-a5ed-4756-9ae1-f16e8189f612"
+                },
+                {
+                    "description": "Segment of C609 on Top Overlay",
+                    "pos": {
+                        "x": 67.591368,
+                        "y": 64.713218
+                    },
+                    "uuid": "eddb35fb-7d75-4e79-b1f7-fb8cfad1c0de"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C1201 on Top Overlay",
+                    "pos": {
+                        "x": 55.104848,
+                        "y": 49.510945
+                    },
+                    "uuid": "56dd9bd1-dc05-46c0-aeac-1258a5c65be9"
+                },
+                {
+                    "description": "Reference field of U1201",
+                    "pos": {
+                        "x": 55.069225,
+                        "y": 49.4714
+                    },
+                    "uuid": "b440fd29-fd67-410b-a9f5-0ce157856234"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R501 on Top Overlay",
+                    "pos": {
+                        "x": 52.935788,
+                        "y": 67.59685
+                    },
+                    "uuid": "2c77756f-1141-4b3d-bba1-9869597536b6"
+                },
+                {
+                    "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 68.0
+                    },
+                    "uuid": "848d1672-48ea-4181-9792-e886f3fcc46c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R501 on Top Overlay",
+                    "pos": {
+                        "x": 53.695788,
+                        "y": 67.59685
+                    },
+                    "uuid": "29b085c8-fe07-4536-9920-3aa4a720578f"
+                },
+                {
+                    "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 68.0
+                    },
+                    "uuid": "848d1672-48ea-4181-9792-e886f3fcc46c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R504 on Top Overlay",
+                    "pos": {
+                        "x": 50.748288,
+                        "y": 65.415032
+                    },
+                    "uuid": "0a297145-bf08-4df5-afea-f7cf7ee5be3e"
+                },
+                {
+                    "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 65.0
+                    },
+                    "uuid": "cc9b2c4c-a5ed-4756-9ae1-f16e8189f612"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R504 on Top Overlay",
+                    "pos": {
+                        "x": 51.508288,
+                        "y": 65.415032
+                    },
+                    "uuid": "2eb716d4-d9dd-4838-ad41-6503efdb5004"
+                },
+                {
+                    "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 65.0
+                    },
+                    "uuid": "cc9b2c4c-a5ed-4756-9ae1-f16e8189f612"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of Q201",
+                    "pos": {
+                        "x": 32.62735,
+                        "y": 64.307764
+                    },
+                    "uuid": "0a1dc5df-b258-4426-8b5b-792a25064bb0"
+                },
+                {
+                    "description": "Segment of R405 on Top Overlay",
+                    "pos": {
+                        "x": 33.421616,
+                        "y": 63.954127
+                    },
+                    "uuid": "6f6c1c38-c2ef-41df-aee7-190e34718887"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of D503",
+                    "pos": {
+                        "x": 37.209186,
+                        "y": 66.170945
+                    },
+                    "uuid": "47e7423e-7930-4523-a51a-ce365aa5025c"
+                },
+                {
+                    "description": "Reference field of JP501",
+                    "pos": {
+                        "x": 39.730163,
+                        "y": 66.230491
+                    },
+                    "uuid": "8cfd481b-5c84-40ab-a9a7-78fb6b0d89a2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R602 on Top Overlay",
+                    "pos": {
+                        "x": 68.248288,
+                        "y": 67.59685
+                    },
+                    "uuid": "6f64240d-8b74-4a17-a25a-167f58d57a81"
+                },
+                {
+                    "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 68.0
+                    },
+                    "uuid": "848d1672-48ea-4181-9792-e886f3fcc46c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of L1201",
+                    "pos": {
+                        "x": 66.375475,
+                        "y": 28.866855
+                    },
+                    "uuid": "49ec31c1-c3ba-495c-beaf-e77af76c2cfe"
+                },
+                {
+                    "description": "Circle of TP4 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 67.212752,
+                        "y": 26.789205
+                    },
+                    "uuid": "d4021379-5ec0-452a-97c6-221144e68c2d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of L1201",
+                    "pos": {
+                        "x": 66.375475,
+                        "y": 28.866855
+                    },
+                    "uuid": "49ec31c1-c3ba-495c-beaf-e77af76c2cfe"
+                },
+                {
+                    "description": "Reference field of TP4",
+                    "pos": {
+                        "x": 67.212752,
+                        "y": 28.237205
+                    },
+                    "uuid": "78bbb79e-0047-46db-a56a-8d39e27ab1f1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U6 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 41.78235,
+                        "y": 45.3014
+                    },
+                    "uuid": "1f5d1dab-9225-4497-a1ab-cc71142cd7f2"
+                },
+                {
+                    "description": "Reference field of X202",
+                    "pos": {
+                        "x": 42.302038,
+                        "y": 46.453218
+                    },
+                    "uuid": "7f57f94f-a8f1-406e-8b29-a28e6411c71c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of X202",
+                    "pos": {
+                        "x": 42.302038,
+                        "y": 46.453218
+                    },
+                    "uuid": "7f57f94f-a8f1-406e-8b29-a28e6411c71c"
+                },
+                {
+                    "description": "Polygon of U6 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 41.78235,
+                        "y": 45.0614
+                    },
+                    "uuid": "baafbc1e-df9a-4922-9f17-ba6d651fcaba"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of X201",
+                    "pos": {
+                        "x": 35.0911,
+                        "y": 46.998673
+                    },
+                    "uuid": "494532e7-9bf5-4235-a425-3ddf8b65ec9d"
+                },
+                {
+                    "description": "Segment of U6 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 35.56235,
+                        "y": 45.6114
+                    },
+                    "uuid": "4bc27655-a3df-4d8a-a56d-e6bc59d86d68"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of X201",
+                    "pos": {
+                        "x": 35.0911,
+                        "y": 46.998673
+                    },
+                    "uuid": "494532e7-9bf5-4235-a425-3ddf8b65ec9d"
+                },
+                {
+                    "description": "Reference field of L201",
+                    "pos": {
+                        "x": 33.541413,
+                        "y": 48.495036
+                    },
+                    "uuid": "c9e612e4-f095-4e41-a570-a9f526f44b8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of X201 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 31.8811,
+                        "y": 48.408673
+                    },
+                    "uuid": "a62d7915-9f57-497a-9cc8-c7f53091ed7e"
+                },
+                {
+                    "description": "Reference field of L201",
+                    "pos": {
+                        "x": 33.541413,
+                        "y": 48.495036
+                    },
+                    "uuid": "c9e612e4-f095-4e41-a570-a9f526f44b8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of X301",
+                    "pos": {
+                        "x": 61.7161,
+                        "y": 53.816855
+                    },
+                    "uuid": "50496c21-0bf2-420f-b739-5ccfbe23c78d"
+                },
+                {
+                    "description": "Segment of C109 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 61.4686,
+                        "y": 53.977435
+                    },
+                    "uuid": "eaab241f-a99b-450e-af89-890d98121e8c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of D603",
+                    "pos": {
+                        "x": 51.67235,
+                        "y": 42.262312
+                    },
+                    "uuid": "7248e6d7-c073-4363-b528-e73de9945114"
+                },
+                {
+                    "description": "Reference field of J502",
+                    "pos": {
+                        "x": 50.062942,
+                        "y": 42.107764
+                    },
+                    "uuid": "c1a56190-b619-4e35-b4d5-38c370fa38c2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U4 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 49.982975,
+                        "y": 42.18128
+                    },
+                    "uuid": "5441e476-2cd3-4395-a37d-8e38c781b978"
+                },
+                {
+                    "description": "Reference field of J502",
+                    "pos": {
+                        "x": 50.062942,
+                        "y": 42.107764
+                    },
+                    "uuid": "c1a56190-b619-4e35-b4d5-38c370fa38c2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U4 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 51.652975,
+                        "y": 42.18128
+                    },
+                    "uuid": "1123ba16-5896-4fd6-b91a-5415cf4fab14"
+                },
+                {
+                    "description": "Reference field of D603",
+                    "pos": {
+                        "x": 51.67235,
+                        "y": 42.262312
+                    },
+                    "uuid": "7248e6d7-c073-4363-b528-e73de9945114"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U4",
+                    "pos": {
+                        "x": 52.817975,
+                        "y": 42.68128
+                    },
+                    "uuid": "0dfdec1d-a9b3-4db3-9377-a8c27bc7f124"
+                },
+                {
+                    "description": "Segment of D603 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 52.67235,
+                        "y": 43.312312
+                    },
+                    "uuid": "8d3af638-e401-438c-bb18-ab03f9eb4b38"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of D603",
+                    "pos": {
+                        "x": 51.67235,
+                        "y": 42.262312
+                    },
+                    "uuid": "7248e6d7-c073-4363-b528-e73de9945114"
+                },
+                {
+                    "description": "Polygon of U4 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 51.647975,
+                        "y": 43.311279999999996
+                    },
+                    "uuid": "aca9a0ce-cef3-4cab-9e76-5aa57e524f8e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R201 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 36.122147,
+                        "y": 66.6814
+                    },
+                    "uuid": "6f0f0da4-bb29-40e5-8b88-63ef56b0edb0"
+                },
+                {
+                    "description": "Reference field of F501",
+                    "pos": {
+                        "x": 34.838288,
+                        "y": 66.625945
+                    },
+                    "uuid": "c946c559-3d2e-416c-89a6-01af61396326"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U1202 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 26.92235,
+                        "y": 68.077764
+                    },
+                    "uuid": "434e5bdb-d489-492f-9644-8cc66e9787e3"
+                },
+                {
+                    "description": "Reference field of U1202",
+                    "pos": {
+                        "x": 28.37235,
+                        "y": 68.967764
+                    },
+                    "uuid": "93f18b5f-d747-4657-b680-b6241a4355ed"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U401 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 86.680788,
+                        "y": 30.1714
+                    },
+                    "uuid": "e78f2889-35c2-415a-9a9d-abb1fd493082"
+                },
+                {
+                    "description": "Reference field of U401",
+                    "pos": {
+                        "x": 87.570788,
+                        "y": 28.7214
+                    },
+                    "uuid": "ef2f44b4-4b0b-4114-be8f-ebff4a22a2d2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of J503",
+                    "pos": {
+                        "x": 78.980163,
+                        "y": 40.416855
+                    },
+                    "uuid": "3e57cf42-de12-44bc-b5d1-883eb7867b6d"
+                },
+                {
+                    "description": "Circle of TP1 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 79.804545,
+                        "y": 40.439237
+                    },
+                    "uuid": "5216d8c9-e80c-4202-b543-f9170bb2bb5f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        }
+    ]
+}

@@ -2,6 +2,8 @@
 
 This is a separate checked input for [Quilter job 6afadd5b82651a6067c78f92](https://app.quilter.ai/jobs/6afadd5b82651a6067c78f92), started on 16 November 2026 at 11:53 CET. It is **not a completed or manufacturing-ready PCB**.
 
+**Return status:** the job finished at 14:45 CET. Native checks reject the exported layouts despite 95% reported routing. [Checked return, shorts/opens and support report](../../evidence/2026-11-16/quilter-retry-01-return/README.md). The input below remains preserved unchanged.
+
 The 196 electrical components, 13 probe pads, four mounting holes, all pad nets and all component positions are unchanged from the original clean C0 inventory. Electrical components remain unlocked and outside the outline; Quilter owns all actual placement and routing. The circuit/schematics are unchanged. Additional same-side RF feed geometry and explicit cloud proximity requirements address findings in the first return.
 
 [Full diagnosis, changes and checked evidence](../../evidence/2026-11-16/quilter-retry-01/README.md) · [Preparation record](preparation.json) · [Proximity settings](user_defined_component_proximity.csv) · [Parent circuit design](../README.md)

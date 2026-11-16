@@ -1,0 +1,11 @@
+{
+  "status": "REPRODUCED_FAILURE",
+  "shorting_findings": 27,
+  "clearance_findings": 9,
+  "combined_copper_findings": 36,
+  "unconnected_items": 30,
+  "check": "Portable support packet candidate 4.1, native KiCad C++ CLI with zone refill",
+  "missing_library_findings": 0,
+  "no_native_python_bridge_used": true,
+  "classification_note": "Snapshots label 27/29/28 shorts and 9/7/8 clearances respectively; all retain 36 copper violations and 30 opens."
+}

@@ -1,0 +1,11 @@
+{
+  "non_mcu_existing_functional_connections_unchanged": true,
+  "added_functional_capacitor_connections": 6,
+  "changed_existing_component_values": {
+    "U1": [
+      "STM32U5G9ZJJ6Q",
+      "STM32U5G9ZJT6Q"
+    ]
+  },
+  "mounting_hole_positions_unchanged": true
+}

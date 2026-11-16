@@ -34,7 +34,7 @@ def run(args,name,timeout=180,allowed_codes=(0,)):
     return code
 
 
-def validate(nodes):
+def validate(nodes, mcu_package='bga'):
     # Independently specified critical connections based on vendor pin tables
     # and the intended trust boundary, not copied from an exported netlist.
     expected={
@@ -63,6 +63,12 @@ def validate(nodes):
       ('C212','1'):'RAD_RF_50',('C212','2'):'RAD_MATCH',('L202','1'):'RAD_MATCH',('L202','2'):'GND',
       ('L203','1'):'RAD_MATCH',('L203','2'):'BLE_ANT_FEED',('AE201','1'):'BLE_ANT_FEED',
     }
+    if mcu_package == 'lqfp':
+        expected = {key:value for key,value in expected.items() if key[0] != 'U1'}
+        expected.update({('U1','77'):'SE_SCL',('U1','78'):'SE_SDA',('U1','75'):'SE_ENABLE',
+                         ('U1','67'):'MCU_VDD11',('U1','142'):'MCU_VDD11',('U1','107'):'MCU_SWDIO'})
+    elif mcu_package != 'bga':
+        raise ValueError('Unknown exact MCU package')
     for key,value in expected.items():
         if nodes.get(key)!=value:raise ValueError(f'Critical connection {key}: expected {value}, got {nodes.get(key)}')
     forbidden=('SE_','MCU_','AUD_','HEADSET_','REG_','CHARGER_','BAT_',

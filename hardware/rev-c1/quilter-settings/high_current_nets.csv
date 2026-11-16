@@ -1,0 +1,15 @@
+net_name,max_current,use_power_pour,source_component,source_pin
+VDD_3V3,500,false,U1201,7
+VSYS,1000,false,U3,10
+BAT_PACK,1000,false,J502,1
+USB_5V_RAW,500,false,J501,A9
+USB_5V_FUSED,500,false,F501,2
+RADIO_3V3,160,false,U1202,6
+SD_3V3,500,false,U401,6
+AUD_2V8_REG,200,false,U602,5
+AUD_LDOIN_2V8,200,false,R609,2
+AUD_AVDD_1V8,100,false,U601,24
+AUD_DVDD_1V72,100,false,U601,29
+MCU_VBAT_3V3,10,false,R101,2
+MCU_VDD11,200,false,L1,2
+SE_VCC,100,false,U11,15

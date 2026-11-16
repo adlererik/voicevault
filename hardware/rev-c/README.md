@@ -1,5 +1,7 @@
 # VoiceVault Rev C — simpler hardware, preserved trust boundary
 
+**Latest prototype: [separate C1 LQFP144 revision](../rev-c1/README.md).** The owner approved the package change and its clean cloud placement/routing run started at 19:42 CET on 16 November. This directory preserves the original BGA C0 revision and its historical evidence.
+
 **Native circuit draft, not a manufacturing release.** The corrected C0 retry finished at 14:45 CET on 16 November with a best 95% routing result. Native checks after refill found 30 open connections and 29 short-circuit findings in candidate 4.1; candidate 1.1 also fails. An antenna keepout layer transformation is incorrect. The exports are rejected. The owner-approved [report and CAD reproduction packet were sent to Quilter support](../evidence/2026-11-16/quilter-retry-01-support/README.md); an engineer's diagnosis is pending. [Latest return evidence and next action](../evidence/2026-11-16/quilter-retry-01-return/README.md) · [Checked clean input](quilter-retry-01/README.md) · [Earlier return diagnosis and retry rationale](../evidence/2026-11-16/quilter-retry-01/README.md). Live B0 CAD, all original inputs and cloud results remain preserved.
 
 [Open the KiCad project](voicevault-standalone-c0.kicad_pro) · [Root schematic](voicevault-standalone-c0.kicad_sch) · [PCB input](voicevault-standalone-c0.kicad_pcb) · [Checked evidence](../evidence/2026-11-16/quilter-launch/README.md) · [Decisions](decisions.json) · [Manufacturer reference hashes](references.json)

@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """Run bounded passive core-output sensitivity; no regulator control-loop claim."""
 from pathlib import Path
-import itertools,json,re,subprocess
+import argparse,itertools,json,re,subprocess
 from spice_executable import ngspice
+from spice_results import measurements_from_log
 ROOT=Path(__file__).resolve().parents[2]
-source=(ROOT/'hardware/rev-b/spice/core-output-sensitivity.cir').read_text()
-out=ROOT/'.lab-runs/hardware/standalone-b0/spice-core';out.mkdir(parents=True,exist_ok=True)
+parser=argparse.ArgumentParser()
+parser.add_argument('--source',type=Path,default=ROOT/'hardware/rev-b/spice/core-output-sensitivity.cir')
+parser.add_argument('--out',type=Path,default=ROOT/'.lab-runs/hardware/standalone-b0/spice-core')
+args=parser.parse_args()
+source=args.source.read_text()
+out=args.out;out.mkdir(parents=True,exist_ok=True)
 results=[]
 spice=ngspice()
 version=subprocess.check_output([spice,'--version'],text=True)
@@ -17,8 +22,7 @@ for index,(inductance,capacitance,resistance) in enumerate(itertools.product([1.
     (directory/'input.cir').write_text(text)
     process=subprocess.run([spice,'-b','input.cir'],cwd=directory,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,timeout=15)
     (directory/'ngspice.log').write_text(process.stdout)
-    values={key:float(value) for key,value in re.findall(r'(core_min|core_max)\s*=\s*([\d.eE+-]+)',process.stdout)}
-    if process.returncode or len(values)!=2:raise RuntimeError(f'Incomplete SPICE experiment {index}: {process.stdout[-1000:]}')
+    values=measurements_from_log(process.stdout,['core_min','core_max'],process.returncode)
     results.append(dict(case=index,l_h=inductance,each_cap_f=capacitance,dcr_ohm=resistance,**values))
 report={'status':'analysis completed','model':'Passive output network with an ideal averaged source; regulator control loop absent','claim':'27 sensitivity experiments, not electrical stability or hardware qualification','cases':results}
 (out/'summary.json').write_text(json.dumps(report,indent=2)+'\n')

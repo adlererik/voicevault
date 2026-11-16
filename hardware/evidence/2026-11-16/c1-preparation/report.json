@@ -1,0 +1,82 @@
+{
+  "revision": "C1",
+  "available_circuit_checks": "PASS",
+  "manufacturing_ready": false,
+  "layout": "UNPLACED / UNROUTED \u2014 QUILTER INPUT",
+  "mcu": "STM32U5G9ZJT6Q",
+  "footprints": 216,
+  "electrical_components": 199,
+  "probe_pads": 13,
+  "mounting_holes": 4,
+  "erc_violations": 0,
+  "drc_layout_violations": 0,
+  "schematic_parity_violations": 0,
+  "netlist_nodes": 826,
+  "functional_pin_nets": 711,
+  "checked_mcu_pins": 144,
+  "connected_mcu_pins": 91,
+  "available_signal_functions": 55,
+  "prior_critical_checks": 72,
+  "negative_controls": [
+    {
+      "corrupt_pin": "U1.70",
+      "detected": true
+    },
+    {
+      "corrupt_pin": "U1.29",
+      "detected": true
+    },
+    {
+      "corrupt_pin": "U1.20",
+      "detected": true
+    },
+    {
+      "corrupt_pin": "U1.142",
+      "detected": true
+    },
+    {
+      "corrupt_pin": "U1.107",
+      "detected": true
+    },
+    {
+      "corrupt_pin": "U6.26",
+      "detected": true
+    },
+    {
+      "corrupt_pin": "C115.1",
+      "detected": true
+    }
+  ],
+  "bypass_entries": 76,
+  "tracks": 0,
+  "vias": 0,
+  "copper_pours": 0,
+  "unconnected_items_in_report": 499,
+  "full_native_unrouted_connections": 587,
+  "native_copper_layers": 6,
+  "source_hashes": {
+    "circuit-charging.kicad_sch": "c1cb9eca5873f4bd440c909fcd776f49bf8f45af23fb168bdc4248af1f93072d",
+    "circuit-regulation.kicad_sch": "c3b9e4dbdbeccebb3a45719bb071c89cadb631b4a2a45de8ed2367420b65f6a3",
+    "circuit-secure.kicad_sch": "0792ff8785a097b9545219909abb41398943307a219991c008fdce1aa1643314",
+    "circuit-radio.kicad_sch": "ccc39c26051ce079c6cfcf74a4d777b567c7f4c8c7d52bcf4678425258972112",
+    "circuit-radio-interface.kicad_sch": "c42cdb4b7e6e8fe9f3b6bee127939854eaebac14d9b17fb6134af7dd83d6d5fc",
+    "circuit-control.kicad_sch": "d85c43f6ff6ede3d16863c583a96607daad8dcd9f3f53f5050db536e37d8d00d",
+    "circuit-microsd.kicad_sch": "4d9e4fdd1043e10d438c9f8321f45ea0957d836a637ae44e6162f41c82834ce8",
+    "circuit-power-entry.kicad_sch": "17e52280f336c2381e5522d3f1409a959e91ae01427d3205a0d86dd2de5bc151",
+    "circuit-audio-codec.kicad_sch": "7bae8b608c4420bb5f42684481b490d83c8d4bfea52ae92456068651d206b87f",
+    "circuit-headset.kicad_sch": "00b574fabf4b9977b55fe4e0b0331a919a2fbc4b4338ff49cfa214a14fad6597",
+    "circuit-display.kicad_sch": "78e2399921deb1a58efc7d9259e7889dccf3c83cf7eb9dd7c7cca56ef6591350",
+    "circuit-backlight.kicad_sch": "d84ba6e77f4f80680b27ee09ac104bb1e8c5297642778b4f723ffb02d533f60e",
+    "circuit-audio-power.kicad_sch": "48c5b60b515282734004e14deba2bc51a46607c058c28e4d7194613fe09ed0b5",
+    "circuit-load-switches.kicad_sch": "5a3e2496c0b60b6146a92a523cc807a8bb81a72cb0a52c9ea6859f0d7bdd26c5",
+    "circuit-test-access.kicad_sch": "b2535fa961e19ce0506e61fad78d4314be559ee09b5a866b749af6bf6c2052b5",
+    "voicevault-standalone-c1.kicad_sch": "38f0247876672a63d613c15e56bdd32de8e6816e7ad9221ab58cb43925f7b7b1",
+    "voicevault-standalone-c1.kicad_pro": "f006989f5c2491a963da2debadd64aed83d828f1e596b7616323b9b6e6237d59",
+    "voicevault-standalone-c1.kicad_pcb": "bf35338997a8bda30e875cc7cb52dcff7498e930fbd47fab24b1b7b611dd73b5",
+    "voicevault-standalone-c1.kicad_dru": "31e944bfe31bf7513ef68a7dc36c382237e9d44eb8fa995f729bba6f581d574c"
+  },
+  "warnings": [
+    "Native no-error checks apply to off-board inventory, not a placed/routed board.",
+    "Silicon, clock/DMA firmware, full power/charging, RF and physical security remain unqualified."
+  ]
+}

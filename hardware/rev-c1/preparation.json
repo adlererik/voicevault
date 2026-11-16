@@ -1,0 +1,22 @@
+{
+  "revision": "C1",
+  "status": "native-checked-C1-cloud-layout-started",
+  "mcu": "STM32U5G9ZJT6Q",
+  "footprints": 216,
+  "electrical_components": 199,
+  "added_components": [
+    "C113",
+    "C114",
+    "C115"
+  ],
+  "sd_clock": "PB13 / LQFP pin 70",
+  "electrical_placement": "off-board inventory only; Quilter selects actual placement",
+  "tracks": 0,
+  "vias": 0,
+  "copper_pours": 0,
+  "footprint_antenna_keepouts": 3,
+  "board_thickness_mm": 1.538,
+  "manufacturing_ready": false,
+  "source_preserved": true,
+  "cloud_job_url": "https://app.quilter.ai/jobs/6afb49addfae511781423d99"
+}

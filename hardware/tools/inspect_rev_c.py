@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 """Read actual Rev C native copper pads, without editing or placing components."""
 import json
+import argparse
+import hashlib
 from pathlib import Path
 import pcbnew
 
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'.lab-runs/hardware/standalone-c0'
-board=pcbnew.LoadBoard(str(ROOT/'hardware/rev-c/voicevault-standalone-c0.kicad_pcb'))
+parser=argparse.ArgumentParser()
+parser.add_argument('--board',type=Path,default=ROOT/'hardware/rev-c/voicevault-standalone-c0.kicad_pcb')
+parser.add_argument('--out',type=Path,default=OUT)
+args=parser.parse_args();OUT=args.out
+board=pcbnew.LoadBoard(str(args.board))
 board.BuildConnectivity()
 board.GetConnectivity().RecalculateRatsnest()
 parts=[]
@@ -21,6 +27,7 @@ for fp in board.GetFootprints():
         x_mm=pcbnew.ToMM(fp.GetPosition().x),y_mm=pcbnew.ToMM(fp.GetPosition().y),
         placed=fp.IsPlaced(),needs_placed=fp.NeedsPlaced(),locked=fp.IsLocked(),pads=pads))
 report=dict(parts=parts,tracks_vias=len(list(board.GetTracks())),
+    input_board_sha256=hashlib.sha256(args.board.read_bytes()).hexdigest(),
     unrouted_connections=board.GetConnectivity().GetUnconnectedCount(False),
     copper_pours=sum(not z.GetIsRuleArea() for z in board.Zones()),
     copper_layers=board.GetCopperLayerCount(),

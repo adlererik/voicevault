@@ -1,0 +1,28 @@
+{
+  "board": "VoiceVault C1 custom prototype",
+  "mcu": "STM32U5G9ZJT6Q",
+  "package": "LQFP144",
+  "bench_reference": "STM32U5G9J-DK2; board wiring is different",
+  "silicon_revision_requested": "Z",
+  "expected_rev_id": "0x1001",
+  "actual_unit_verified": false,
+  "oscillators": {"HSE_Hz": 32000000, "LSE_Hz": 32768, "load_tuning_verified": false},
+  "intended_peripherals": {
+    "audio": "SAI1 A transmit/master and B synchronous receive; PE2/PE3/PE4/PE5/PE6",
+    "audio_control": "I2C2 PF0/PF1",
+    "display": "SPI3 PC10/PC11/PC12",
+    "touch": "I2C5 PD0/PD1",
+    "secure_element": "I2C4 PD12/PD13",
+    "radio_transport": "USART2 PA0/PA1/PA2/PA3 with separate GPIO credit/control",
+    "microSD": "SPI2 PB13 clock / PC1 MOSI / PC2 MISO / PC7 software CS",
+    "development_uart": "USART6 PC8 RX / PC9 TX"
+  },
+  "production_firmware_available": false,
+  "qualified_peripheral_models": [],
+  "hardware_measurements": [],
+  "notes": [
+    "This is a circuit target, not a working board support package.",
+    "Do not treat the historical DK2 SAI2 register/model tests as C1 SAI1/DMA qualification.",
+    "Firmware clock tree, AF registers, interrupts, DMA and TrustZone attribution remain implementation and bench gates."
+  ]
+}

@@ -1,0 +1,213 @@
+reference,value,footprint,status
+AE201,2450AT18B0100001E,VoiceVault_B0:Johanson_2450AT18x100,REVIEW — not purchasing/fabrication approval
+C10,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C107,2.2u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C108,10u 10V,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C109,4.7u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C11,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C110,1u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C1101,100n 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C1102,100n 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C1103,1u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C111,1u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C112,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C113,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C114,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C115,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C12,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C1201,10u 25V X7S,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C1202,10u 25V X7S,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C1203,22u 16V X6S,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C1204,22u 16V X6S,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C1205,22u 16V X6S,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C1206,100n 25V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C1207,100n 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C1208,10n,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C13,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C14,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C15,4.7u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C16,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C17,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C18,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C19,4.7u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C20,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C201,16p C0G 2%,VoiceVault_B0:C_0201_0603Metric,REVIEW — not purchasing/fabrication approval
+C202,16p C0G 2%,VoiceVault_B0:C_0201_0603Metric,REVIEW — not purchasing/fabrication approval
+C203,0.8p C0G 5%,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C204,100n X7R 10%,VoiceVault_B0:C_0201_0603Metric,REVIEW — not purchasing/fabrication approval
+C205,100n X7R 10%,VoiceVault_B0:C_0201_0603Metric,REVIEW — not purchasing/fabrication approval
+C207,100p C0G 5%,VoiceVault_B0:C_0201_0603Metric,REVIEW — not purchasing/fabrication approval
+C208,4.7u X5R 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C209,1u X5R 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C21,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C210,12p C0G 2%,VoiceVault_B0:C_0201_0603Metric,REVIEW — not purchasing/fabrication approval
+C211,12p C0G 2%,VoiceVault_B0:C_0201_0603Metric,REVIEW — not purchasing/fabrication approval
+C212,1.2p C0G; VNA tune,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C213,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C214,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C215,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C216,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C22,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C23,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C24,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C25,10u 10V,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C26,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C27,2.2u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C301,12p C0G 5%,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C302,12p C0G 5%,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C303,12p C0G 5%,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C304,12p C0G 5%,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C305,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C306,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C401,2.2u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C402,10u 10V,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C403,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C404,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C405,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C501,100n 16V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C502,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C503,4.7u 16V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C504,10u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C505,10u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C6,4.7u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C601,10u 10V,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C602,10u 10V,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C603,10u 10V,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C604,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C605,10u 10V,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C606,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C607,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C608,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C609,1u 10V X7R,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C610,33p C0G,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C611,220u 6.3V polymer; exact MPN qualification pending,VoiceVault_B0:CP_EIA-7343-31_Kemet-D,REVIEW — not purchasing/fabrication approval
+C612,220u 6.3V polymer; exact MPN qualification pending,VoiceVault_B0:CP_EIA-7343-31_Kemet-D,REVIEW — not purchasing/fabrication approval
+C614,2.2u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C615,2.2u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C7,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C701,4.7u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C702,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C703,1u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C704,2.2u 10V,VoiceVault_B0:C_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+C705,1u 50V X7R,VoiceVault_B0:C_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+C8,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+C9,100n 10V,VoiceVault_B0:C_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+D503,SMF5.0A,VoiceVault_B0:D_SOD-123F,REVIEW — not purchasing/fabrication approval
+D601,BAT54WS; DLDO to ALDO pop suppression,VoiceVault_B0:D_SOD-323,REVIEW — not purchasing/fabrication approval
+D602,"PESD5V0S1BA,115; bidirectional ESD",VoiceVault_B0:D_SOD-323,REVIEW — not purchasing/fabrication approval
+D603,"PESD5V0S1BA,115; bidirectional ESD",VoiceVault_B0:D_SOD-323,REVIEW — not purchasing/fabrication approval
+D604,"PESD5V0S1BA,115; bidirectional ESD",VoiceVault_B0:D_SOD-323,REVIEW — not purchasing/fabrication approval
+D701,"BZT52H-C6V2,115; open-load clamp",VoiceVault_B0:D_SOD-123F,REVIEW — not purchasing/fabrication approval
+F501,MF-PSMF050X-2,VoiceVault_B0:Fuse_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+J101,FTSH-107-01-L-DV / STDC14,VoiceVault_B0:Samtec_FTSH-107-01-L-DV,REVIEW — not purchasing/fabrication approval
+J102,FTSH-105-01-L-DV / radio SWD,VoiceVault_B0:Samtec_FTSH-105-01-L-DV,REVIEW — not purchasing/fabrication approval
+J401,1040310811,VoiceVault_B0:microSD_HC_Molex_104031-0811,REVIEW — not purchasing/fabrication approval
+J501,USB4125-GF-A,VoiceVault_B0:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal,REVIEW — not purchasing/fabrication approval
+J502,S2B-PH-SM4-TB(LF)(SN); BL-5C holder harness; exact holder pending,VoiceVault_B0:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal,REVIEW — not purchasing/fabrication approval
+J503,BM02B-SRSS-TB(LF)(SN); EXTERNAL NTC,VoiceVault_B0:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical,REVIEW — not purchasing/fabrication approval
+J601,SJ-43514-SMT-TR; CTIA headset,VoiceVault_B0:SJ43514SMT,REVIEW — not purchasing/fabrication approval
+J701,FH12-40S-0.5SH(55); TFT FFC,VoiceVault_B0:Hirose_FH12-40S-0.5SH_1x40-1MP_P0.50mm_Horizontal,REVIEW — not purchasing/fabrication approval
+J702,2005280060; TOUCH FFC,VoiceVault_B0:Molex_200528-0060_1x06-1MP_P1.00mm_Horizontal,REVIEW — not purchasing/fabrication approval
+JP501,OPEN default 100mA input; bridge only with qualified 500mA supply,VoiceVault_B0:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,REVIEW — not purchasing/fabrication approval
+L1,VLS252012HBX-2R2M-1 / 2.2uH,VoiceVault_B0:L_1008_2520Metric,REVIEW — not purchasing/fabrication approval
+L1201,XFL4020-152MEC / 1.5uH; saturation acceptance pending,VoiceVault_B0:Coilcraft_XFL4020,REVIEW — not purchasing/fabrication approval
+L201,3.9nH RF 5%,VoiceVault_B0:L_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+L202,2.7nH RF; VNA tune,VoiceVault_B0:L_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+L203,3.3nH RF; VNA tune,VoiceVault_B0:L_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+L701,SRN4018-220M / 22uH,VoiceVault_B0:L_Bourns-SRN4018,REVIEW — not purchasing/fabrication approval
+Q201,2N7002,VoiceVault_B0:SOT-23,REVIEW — not purchasing/fabrication approval
+R101,0R - VBAT from regulated rail,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1101,4.7k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1102,4.7k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1103,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1201,312k 0.1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1202,100k 0.1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1203,180k 0.1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1204,100k 0.1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1205,232k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1206,100,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1207,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1209,100k 0.1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1210,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R1211,3.3k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R201,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R202,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R203,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R204,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R205,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R206,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R301,10k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R302,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R303,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R304,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R401,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R402,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R403,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R404,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R405,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R406,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R407,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R501,5.1k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R502,5.1k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R503,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R504,4.42k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R505,68.1k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R506,3.48k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R507,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R508,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R601,2.2k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R602,2.2k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R603,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R604,2.2k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R605,1k 1%,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R606,10R 1% 0.1W,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R607,10R 1% 0.1W,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R608,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R609,0R - removable audio-current link,VoiceVault_B0:R_0603_1608Metric,REVIEW — not purchasing/fabrication approval
+R701,4.7k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R702,4.7k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R703,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R704,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R705,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R706,47k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R707,12R 1% 0.1W,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R708,100k,VoiceVault_B0:R_0402_1005Metric,REVIEW — not purchasing/fabrication approval
+R709,200R 1% 0.25W,VoiceVault_B0:R_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+R710,200R 1% 0.25W,VoiceVault_B0:R_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+R711,200R 1% 0.25W,VoiceVault_B0:R_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+R712,200R 1% 0.25W,VoiceVault_B0:R_0805_2012Metric,REVIEW — not purchasing/fabrication approval
+SW301,TL3305AF160QG,VoiceVault_B0:SW_SPST_TL3305A,REVIEW — not purchasing/fabrication approval
+SW302,TL3305AF160QG,VoiceVault_B0:SW_SPST_TL3305A,REVIEW — not purchasing/fabrication approval
+SW503,JS102011SAQN; hard system power; charging remains connected,VoiceVault_B0:SW_SPDT_CK_JS102011SAQN,REVIEW — not purchasing/fabrication approval
+SW601,JS102011SAQN; physical microphone disconnect,VoiceVault_B0:SW_SPDT_CK_JS102011SAQN,REVIEW — not purchasing/fabrication approval
+TP1,PROBE VSYS,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP10,PROBE SE_SDA,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP11,PROBE AUD_LDOIN_2V8,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP13,PROBE BAT_PACK,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP14,PROBE GND,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP2,PROBE GND,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP3,PROBE VDD_3V3,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP4,PROBE REG_ENABLE,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP5,PROBE MCU_VDD11,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP6,PROBE RADIO_3V3,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP7,PROBE SE_VCC,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP8,PROBE SE_SCL,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+TP9,PROBE SD_3V3,VoiceVault_B0:TestPoint_Pad_D1.0mm,REVIEW — not purchasing/fabrication approval
+U1,STM32U5G9ZJT6Q,VoiceVault_B0:LQFP-144_20x20mm_P0.5mm,REVIEW — not purchasing/fabrication approval
+U11,SE050E2HQ1/Z01Z3Z,VoiceVault_B0:NXP_SOT1969-1,REVIEW — not purchasing/fabrication approval
+U1201,TPS63070RNMR,VoiceVault_B0:TPS63070_RNM0015A,REVIEW — not purchasing/fabrication approval
+U1202,TPS2553DBVR,VoiceVault_B0:SOT-23-6,REVIEW — not purchasing/fabrication approval
+U201,SN74AXC4T774PWR,VoiceVault_B0:TSSOP-16_4.4x5mm_P0.65mm,REVIEW — not purchasing/fabrication approval
+U202,SN74AXC4T774PWR,VoiceVault_B0:TSSOP-16_4.4x5mm_P0.65mm,REVIEW — not purchasing/fabrication approval
+U3,BQ24074RGTR,VoiceVault_B0:VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm,REVIEW — not purchasing/fabrication approval
+U4,TPS3420DDRYR,VoiceVault_B0:Texas_USON-6_1x1.45mm_P0.5mm_SMD,REVIEW — not purchasing/fabrication approval
+U401,TPS22918DBVR,VoiceVault_B0:SOT-23-6,REVIEW — not purchasing/fabrication approval
+U402,SN74AXC4T774PWR,VoiceVault_B0:TSSOP-16_4.4x5mm_P0.65mm,REVIEW — not purchasing/fabrication approval
+U6,nRF52832-QFAA-G-R7,VoiceVault_B0:QFN-48-1EP_6x6mm_P0.4mm_EP4.66x4.66mm,REVIEW — not purchasing/fabrication approval
+U601,TLV320AIC3204IRHBR,VoiceVault_B0:QFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm,REVIEW — not purchasing/fabrication approval
+U602,TPS7A2028PDBVR,VoiceVault_B0:SOT-23-5,REVIEW — not purchasing/fabrication approval
+U9,TPS61062YZFR,VoiceVault_B0:TPS61062_YZF8_REVIEW,REVIEW — not purchasing/fabrication approval
+X201,830059597 / 32MHz CL10pF; load tuning required,VoiceVault_B0:Crystal_SMD_2016-4Pin_2.0x1.6mm,REVIEW — not purchasing/fabrication approval
+X202,830062558 / 32.768kHz CL9pF,VoiceVault_B0:Crystal_SMD_2012-2Pin_2.0x1.2mm,REVIEW — not purchasing/fabrication approval
+X301,830059597 / 32MHz CL10pF,VoiceVault_B0:Crystal_SMD_2016-4Pin_2.0x1.6mm,REVIEW — not purchasing/fabrication approval
+X302,830062558 / 32.768kHz CL9pF,VoiceVault_B0:Crystal_SMD_2012-2Pin_2.0x1.2mm,REVIEW — not purchasing/fabrication approval

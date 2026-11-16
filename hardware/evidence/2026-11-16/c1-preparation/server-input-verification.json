@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "job_id": "6afb49addfae511781423d99",
+  "downloaded_input_files": 18,
+  "all_byte_identical": true,
+  "files": [
+    {
+      "file": "circuit-audio-codec.kicad_sch",
+      "sha256": "7bae8b608c4420bb5f42684481b490d83c8d4bfea52ae92456068651d206b87f",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-audio-power.kicad_sch",
+      "sha256": "48c5b60b515282734004e14deba2bc51a46607c058c28e4d7194613fe09ed0b5",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-backlight.kicad_sch",
+      "sha256": "d84ba6e77f4f80680b27ee09ac104bb1e8c5297642778b4f723ffb02d533f60e",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-charging.kicad_sch",
+      "sha256": "c1cb9eca5873f4bd440c909fcd776f49bf8f45af23fb168bdc4248af1f93072d",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-control.kicad_sch",
+      "sha256": "d85c43f6ff6ede3d16863c583a96607daad8dcd9f3f53f5050db536e37d8d00d",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-display.kicad_sch",
+      "sha256": "78e2399921deb1a58efc7d9259e7889dccf3c83cf7eb9dd7c7cca56ef6591350",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-headset.kicad_sch",
+      "sha256": "00b574fabf4b9977b55fe4e0b0331a919a2fbc4b4338ff49cfa214a14fad6597",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-load-switches.kicad_sch",
+      "sha256": "5a3e2496c0b60b6146a92a523cc807a8bb81a72cb0a52c9ea6859f0d7bdd26c5",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-microsd.kicad_sch",
+      "sha256": "4d9e4fdd1043e10d438c9f8321f45ea0957d836a637ae44e6162f41c82834ce8",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-power-entry.kicad_sch",
+      "sha256": "17e52280f336c2381e5522d3f1409a959e91ae01427d3205a0d86dd2de5bc151",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-radio-interface.kicad_sch",
+      "sha256": "c42cdb4b7e6e8fe9f3b6bee127939854eaebac14d9b17fb6134af7dd83d6d5fc",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-radio.kicad_sch",
+      "sha256": "ccc39c26051ce079c6cfcf74a4d777b567c7f4c8c7d52bcf4678425258972112",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-regulation.kicad_sch",
+      "sha256": "c3b9e4dbdbeccebb3a45719bb071c89cadb631b4a2a45de8ed2367420b65f6a3",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-secure.kicad_sch",
+      "sha256": "0792ff8785a097b9545219909abb41398943307a219991c008fdce1aa1643314",
+      "byte_identical": true
+    },
+    {
+      "file": "circuit-test-access.kicad_sch",
+      "sha256": "b2535fa961e19ce0506e61fad78d4314be559ee09b5a866b749af6bf6c2052b5",
+      "byte_identical": true
+    },
+    {
+      "file": "voicevault-standalone-c1.kicad_pcb",
+      "sha256": "bf35338997a8bda30e875cc7cb52dcff7498e930fbd47fab24b1b7b611dd73b5",
+      "byte_identical": true
+    },
+    {
+      "file": "voicevault-standalone-c1.kicad_pro",
+      "sha256": "f006989f5c2491a963da2debadd64aed83d828f1e596b7616323b9b6e6237d59",
+      "byte_identical": true
+    },
+    {
+      "file": "voicevault-standalone-c1.kicad_sch",
+      "sha256": "38f0247876672a63d613c15e56bdd32de8e6816e7ad9221ab58cb43925f7b7b1",
+      "byte_identical": true
+    }
+  ]
+}

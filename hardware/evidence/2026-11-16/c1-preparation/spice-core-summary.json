@@ -1,0 +1,223 @@
+{
+  "status": "analysis completed",
+  "model": "Passive output network with an ideal averaged source; regulator control loop absent",
+  "claim": "27 sensitivity experiments, not electrical stability or hardware qualification",
+  "cases": [
+    {
+      "case": 0,
+      "l_h": 1.76e-06,
+      "each_cap_f": 1.1e-06,
+      "dcr_ohm": 0.05,
+      "core_min": 1.03986,
+      "core_max": 1.15907
+    },
+    {
+      "case": 1,
+      "l_h": 1.76e-06,
+      "each_cap_f": 1.1e-06,
+      "dcr_ohm": 0.12,
+      "core_min": 1.03667,
+      "core_max": 1.15032
+    },
+    {
+      "case": 2,
+      "l_h": 1.76e-06,
+      "each_cap_f": 1.1e-06,
+      "dcr_ohm": 0.199,
+      "core_min": 1.03299,
+      "core_max": 1.14512
+    },
+    {
+      "case": 3,
+      "l_h": 1.76e-06,
+      "each_cap_f": 1.76e-06,
+      "dcr_ohm": 0.05,
+      "core_min": 1.04688,
+      "core_max": 1.15035
+    },
+    {
+      "case": 4,
+      "l_h": 1.76e-06,
+      "each_cap_f": 1.76e-06,
+      "dcr_ohm": 0.12,
+      "core_min": 1.04402,
+      "core_max": 1.14286
+    },
+    {
+      "case": 5,
+      "l_h": 1.76e-06,
+      "each_cap_f": 1.76e-06,
+      "dcr_ohm": 0.199,
+      "core_min": 1.04068,
+      "core_max": 1.13743
+    },
+    {
+      "case": 6,
+      "l_h": 1.76e-06,
+      "each_cap_f": 2.2e-06,
+      "dcr_ohm": 0.05,
+      "core_min": 1.04995,
+      "core_max": 1.14729
+    },
+    {
+      "case": 7,
+      "l_h": 1.76e-06,
+      "each_cap_f": 2.2e-06,
+      "dcr_ohm": 0.12,
+      "core_min": 1.04783,
+      "core_max": 1.13909
+    },
+    {
+      "case": 8,
+      "l_h": 1.76e-06,
+      "each_cap_f": 2.2e-06,
+      "dcr_ohm": 0.199,
+      "core_min": 1.04461,
+      "core_max": 1.1335
+    },
+    {
+      "case": 9,
+      "l_h": 2.2e-06,
+      "each_cap_f": 1.1e-06,
+      "dcr_ohm": 0.05,
+      "core_min": 1.0294,
+      "core_max": 1.16802
+    },
+    {
+      "case": 10,
+      "l_h": 2.2e-06,
+      "each_cap_f": 1.1e-06,
+      "dcr_ohm": 0.12,
+      "core_min": 1.02684,
+      "core_max": 1.16008
+    },
+    {
+      "case": 11,
+      "l_h": 2.2e-06,
+      "each_cap_f": 1.1e-06,
+      "dcr_ohm": 0.199,
+      "core_min": 1.02341,
+      "core_max": 1.1547
+    },
+    {
+      "case": 12,
+      "l_h": 2.2e-06,
+      "each_cap_f": 1.76e-06,
+      "dcr_ohm": 0.05,
+      "core_min": 1.03899,
+      "core_max": 1.16113
+    },
+    {
+      "case": 13,
+      "l_h": 2.2e-06,
+      "each_cap_f": 1.76e-06,
+      "dcr_ohm": 0.12,
+      "core_min": 1.03632,
+      "core_max": 1.15083
+    },
+    {
+      "case": 14,
+      "l_h": 2.2e-06,
+      "each_cap_f": 1.76e-06,
+      "dcr_ohm": 0.199,
+      "core_min": 1.03316,
+      "core_max": 1.14496
+    },
+    {
+      "case": 15,
+      "l_h": 2.2e-06,
+      "each_cap_f": 2.2e-06,
+      "dcr_ohm": 0.05,
+      "core_min": 1.04361,
+      "core_max": 1.15681
+    },
+    {
+      "case": 16,
+      "l_h": 2.2e-06,
+      "each_cap_f": 2.2e-06,
+      "dcr_ohm": 0.12,
+      "core_min": 1.04098,
+      "core_max": 1.14631
+    },
+    {
+      "case": 17,
+      "l_h": 2.2e-06,
+      "each_cap_f": 2.2e-06,
+      "dcr_ohm": 0.199,
+      "core_min": 1.03792,
+      "core_max": 1.14022
+    },
+    {
+      "case": 18,
+      "l_h": 2.64e-06,
+      "each_cap_f": 1.1e-06,
+      "dcr_ohm": 0.05,
+      "core_min": 1.02088,
+      "core_max": 1.18543
+    },
+    {
+      "case": 19,
+      "l_h": 2.64e-06,
+      "each_cap_f": 1.1e-06,
+      "dcr_ohm": 0.12,
+      "core_min": 1.01807,
+      "core_max": 1.17001
+    },
+    {
+      "case": 20,
+      "l_h": 2.64e-06,
+      "each_cap_f": 1.1e-06,
+      "dcr_ohm": 0.199,
+      "core_min": 1.0148,
+      "core_max": 1.1634
+    },
+    {
+      "case": 21,
+      "l_h": 2.64e-06,
+      "each_cap_f": 1.76e-06,
+      "dcr_ohm": 0.05,
+      "core_min": 1.03203,
+      "core_max": 1.16957
+    },
+    {
+      "case": 22,
+      "l_h": 2.64e-06,
+      "each_cap_f": 1.76e-06,
+      "dcr_ohm": 0.12,
+      "core_min": 1.02942,
+      "core_max": 1.15832
+    },
+    {
+      "case": 23,
+      "l_h": 2.64e-06,
+      "each_cap_f": 1.76e-06,
+      "dcr_ohm": 0.199,
+      "core_min": 1.02638,
+      "core_max": 1.15183
+    },
+    {
+      "case": 24,
+      "l_h": 2.64e-06,
+      "each_cap_f": 2.2e-06,
+      "dcr_ohm": 0.05,
+      "core_min": 1.03738,
+      "core_max": 1.14871
+    },
+    {
+      "case": 25,
+      "l_h": 2.64e-06,
+      "each_cap_f": 2.2e-06,
+      "dcr_ohm": 0.12,
+      "core_min": 1.03484,
+      "core_max": 1.15102
+    },
+    {
+      "case": 26,
+      "l_h": 2.64e-06,
+      "each_cap_f": 2.2e-06,
+      "dcr_ohm": 0.199,
+      "core_min": 1.03187,
+      "core_max": 1.14618
+    }
+  ]
+}

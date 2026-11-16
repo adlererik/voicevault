@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "job_id": "6afb49addfae511781423d99",
+  "settings": {
+    "bypass_capacitors.csv": {
+      "entries": 76,
+      "semantic_match": true,
+      "download_sha256": "26e1f63c90894aad462b5b89cc00565fa4b1b45051de33960cd7bc81875fae74"
+    },
+    "high_current_nets.csv": {
+      "entries": 14,
+      "semantic_match": true,
+      "download_sha256": "f1693f9cfb585a697eb860e47307553bb8fe395e7de3a0ff3f0621974263189e"
+    },
+    "switching_converters.csv": {
+      "entries": 3,
+      "semantic_match": true,
+      "download_sha256": "b8c73ef4ad681e9370cb0229d24fb228034fecffbfcfac21d822d29e7d7fea27"
+    },
+    "single_ended_impedance_signals.csv": {
+      "entries": 1,
+      "semantic_match": true,
+      "download_sha256": "d943c7c523339641d4eb43b14ccc51055b377a45fd118184127d14b487cf6d07"
+    },
+    "custom_component_proximity.csv": {
+      "entries": 21,
+      "semantic_match": true,
+      "download_sha256": "68781665d35dbe519b4b93a2ac14755488ec495b7d69e389cf631b60a834bc9a"
+    },
+    "ground_nets.csv": {
+      "entries": 1,
+      "independent_expected_values_match": true
+    },
+    "crystal_oscillators.csv": {
+      "entries": 4,
+      "independent_expected_values_match": true
+    }
+  },
+  "impedance_model_frequency_ghz": 1,
+  "radio_operating_band_ghz": 2.4,
+  "not_an_rf_qualification": true
+}

@@ -9,4 +9,8 @@ if [[ "${1:-}" == "--rev-c" ]]; then
     shift
     exec python3 "$voicevault_root/hardware/tools/check_rev_c.py" "$@"
 fi
+if [[ "${1:-}" == "--rev-c1" ]]; then
+    shift
+    exec python3 "$voicevault_root/hardware/tools/check_rev_c1.py" "$@"
+fi
 exec python3 "$voicevault_root/hardware/tools/check_standalone.py" "$@"

@@ -1,0 +1,95 @@
+{
+  "retrieved_local_date": "2026-11-15",
+  "scope": "Manufacturer-authored circuit/package references; supplier PDFs/models are not redistributed",
+  "cache_relative": ".lab-cache/hardware-research/2026-11-15/revc",
+  "sources": [
+    {
+      "cache_file": "bq24074.pdf",
+      "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+      "bytes": 3739103,
+      "sha256": "4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1"
+    },
+    {
+      "cache_file": "tps63070.pdf",
+      "url": "https://www.ti.com/lit/ds/symlink/tps63070.pdf",
+      "bytes": 1680561,
+      "sha256": "a88ef66f3493156ff6e7da0849de0e0e1068647f2553d08c1844d4a90c5c65ef"
+    },
+    {
+      "cache_file": "tps22918.pdf",
+      "url": "https://www.ti.com/lit/ds/symlink/tps22918.pdf",
+      "bytes": 1072926,
+      "sha256": "1b28eb58003d28b18bf919a15734056f296a499bebee2bd493a1e4358c4dfb1c"
+    },
+    {
+      "cache_file": "tps7a20.pdf",
+      "url": "https://www.ti.com/lit/ds/symlink/tps7a20.pdf",
+      "bytes": 8987703,
+      "sha256": "3b7c1495906b88f48223f21a9bba1aad2f1d90a673fc3394aa6b5b5ece52ff53"
+    },
+    {
+      "cache_file": "tlv320aic3204.pdf",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv320aic3204.pdf",
+      "bytes": 1561342,
+      "sha256": "31b8b4e12b86f4e5c44a125ef671bac9a9d1dd6f20e6c37986da4f2945887ccd"
+    },
+    {
+      "cache_file": "se050.pdf",
+      "url": "https://www.nxp.com/docs/en/data-sheet/SE050-DATASHEET.pdf",
+      "bytes": 377642,
+      "sha256": "b47c8a5d40191f31b78e48f6c60c6ba17c3eac56bf97976212ade786ee3ee83c"
+    },
+    {
+      "cache_file": "nxp-sot1969.pdf",
+      "url": "https://www.nxp.com/docs/en/package-information/SOT1969-1.pdf",
+      "bytes": 244863,
+      "sha256": "9c65cd921f21847d95e3061dcd6f5772db47a2cefd29627ebc880c15ccc26f72"
+    },
+    {
+      "cache_file": "tps2553.pdf",
+      "url": "https://www.ti.com/lit/ds/symlink/tps2553.pdf",
+      "bytes": 2281908,
+      "sha256": "aa9d1177386b5a919074f0e50fa0ba5269fae82ab94e80710f60419d5f68c2e9"
+    },
+    {
+      "cache_file": "xfl-legacy.pdf",
+      "url": "https://www.coilcraft.com/pdfs/xfl4020.pdf",
+      "bytes": 232753,
+      "sha256": "6dca915ac1daa47210f7708a7540221ffef4f34a88a8621c94bd50cdf48647e6"
+    },
+    {
+      "cache_file": "tps2553-model.zip",
+      "url": "https://www.ti.com/lit/zip/SLVM425",
+      "bytes": 48186,
+      "sha256": "615c68db56115e44fda07a3d871ea2d29f8890ebc26c4b90374291d003417f0e",
+      "model_member": "SLVM425A/TPS2553_PSPICE_TRANS/tps2553_trans.lib",
+      "model_cache_directory": "tps2553-model",
+      "model_sha256": "7e40f58d8c69445d15f9f153c9624a945191cb83b113f7651a20a7b44df289d8"
+    },
+    {
+      "cache_file": "tps63070-model.zip",
+      "url": "https://www.ti.com/lit/zip/SLVMBP8",
+      "bytes": 89078,
+      "sha256": "235d1a8efd991f8340dafd2e5b7f2d72280a1e1ab129fcc26b6cabf6a0e1cb5f",
+      "model_member": "SLVMBP8/TPS63070_PSPICE_TRANS/TPS63070_TRANS.LIB",
+      "model_cache_directory": "tps63070-model",
+      "model_sha256": "251545a36d3a9d9295eb00a061f622ef492035feacaaef2a61bf33f606caddb8"
+    }
+  ],
+  "mcu_package_sources": [
+    {
+      "document": "DS14102 Rev 5; LQFP144 pinout, supply scheme and package",
+      "url": "https://www.st.com/resource/en/datasheet/stm32u5g9zj.pdf",
+      "local_pdf_hash": null
+    },
+    {
+      "document": "ST official LQFP pin XML",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32U5G9ZJTxQ.xml",
+      "sha256": "b568a8ab9ea2fc7baf33c5848f39e6bb02618ab1f35411e8523f0913eef1a55e"
+    },
+    {
+      "document": "ES0595 Rev 4; silicon revision qualification remains pending",
+      "url": "https://www.st.com/resource/en/errata_sheet/es0595-stm32u5fxxx-and-stm32u5gxxx-device-errata-stmicroelectronics.pdf"
+    }
+  ]
+}

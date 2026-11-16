@@ -63,6 +63,8 @@ def main():
     parser.add_argument('--design-dir', type=Path, default=DEST,
                         help='Separate destination; defaults to preserved Rev B.')
     parser.add_argument('--project-name', default='voicevault-standalone-b0')
+    parser.add_argument('--mcu-package', choices=['bga', 'lqfp'], default='bga',
+                        help='Exact STM32U5G9ZJ package; never a footprint-only substitution.')
     parser.add_argument('--unplaced', action='store_true',
                         help='Park all electrical components outside the outline for cloud placement; do not design a placement.')
     parser.add_argument('--replace', action='store_true')
@@ -78,7 +80,11 @@ def main():
         raise SystemExit('Cloud-placement input cannot preserve electrical component positions.')
     if name != 'voicevault-standalone-b0':
         NAMESPACE = uuid.uuid5(NAMESPACE, name)
-    revision = 'C0' if name == 'voicevault-standalone-c0' else 'B0'
+    revision = {'voicevault-standalone-c0': 'C0', 'voicevault-standalone-c1': 'C1'}.get(name, 'B0')
+    mcu_symbol = 'STM32U5G9ZJTxQ' if args.mcu_package == 'lqfp' else 'STM32U5G9ZJJxQ'
+    mcu_value = 'STM32U5G9ZJT6Q' if args.mcu_package == 'lqfp' else 'STM32U5G9ZJJ6Q'
+    mcu_fp = 'LQFP-144_20x20mm_P0.5mm' if args.mcu_package == 'lqfp' else 'UFBGA-144_10x10mm_Layout12x12_P0.8mm'
+    mcu_fp_library = 'Package_QFP' if args.mcu_package == 'lqfp' else 'Package_BGA'
     if not (args.replace or args.schematic_only) and any((DEST / (name + suffix)).exists()
                                 for suffix in ['.kicad_pro', '.kicad_sch', '.kicad_pcb']):
         raise SystemExit('CAD already exists; preserve edits or explicitly use --replace.')
@@ -89,18 +95,17 @@ def main():
             raise SystemExit('Preserve existing copper/rule areas. Use --schematic-only and explicitly merge PCB changes.')
     DEST.mkdir(parents=True, exist_ok=True)
     library = (LIB / 'symbols/MCU_ST_STM32U5.kicad_sym').read_text()
-    symbol = extract_symbol(library, 'STM32U5G9ZJJxQ')
+    symbol = extract_symbol(library, mcu_symbol)
     # The installed library omits VDD11 balls J9 and D4. Restore both from
     # DS14102 Rev 5, UFBGA144 ballout (Figure 10 / Table 27).
     new_pins = []
-    for ball, x in [('J9', -22.86), ('D4', -20.32)]:
+    for ball, x in ([] if args.mcu_package == 'lqfp' else [('J9', -22.86), ('D4', -20.32)]):
         new_pins.append(f'(pin power_in line (at {x} 91.44 270) (length 5.08) '
                         f'(name "VDD11" {effects(1.27)}) (number "{ball}" {effects(1.27)}))')
-    original_unit = extract_symbol(symbol, 'STM32U5G9ZJJxQ_1_1')
+    original_unit = extract_symbol(symbol, mcu_symbol + '_1_1')
     symbol = symbol.replace(original_unit, original_unit[:-1] + ''.join(new_pins) + ')', 1)
-    symbol = symbol.replace('"STM32U5G9ZJJxQ"', '"VoiceVault_B0:STM32U5G9ZJJxQ"', 1)
-    symbol = symbol.replace('Package_BGA:UFBGA-144_10x10mm_Layout12x12_P0.8mm',
-                            'VoiceVault_B0:UFBGA-144_10x10mm_Layout12x12_P0.8mm')
+    symbol = symbol.replace('"' + mcu_symbol + '"', '"VoiceVault_B0:' + mcu_symbol + '"', 1)
+    symbol = symbol.replace(mcu_fp_library + ':' + mcu_fp, 'VoiceVault_B0:' + mcu_fp)
     # DS14102 describes VLXSMPS as the internal SMPS switch output. The stock
     # library's power-input type is incorrect for electrical-rule propagation.
     symbol = re.sub(r'\(pin power_in line(?=\s*\(at[^)]*\)\s*\(length[^)]*\)\s*\(name "VLXSMPS")',
@@ -120,12 +125,19 @@ def main():
                    'NRST': 'MCU_NRST', 'PC8': 'MCU_UART_RX', 'PC9': 'MCU_UART_TX'}
     circuits_file = DEST / 'circuits.json'
     if circuits_file.exists():
-        mcu_signals.update(json.loads(circuits_file.read_text()).get('mcu_signals', {}))
+        manifest = json.loads(circuits_file.read_text())
+        declared_part = manifest.get('mcu', {}).get('part')
+        if declared_part and declared_part != mcu_value:
+            raise RuntimeError('Selected MCU package conflicts with the circuit manifest; preserve existing CAD.')
+        mcu_signals.update(manifest.get('mcu_signals', {}))
     absent = set(mcu_signals) - {pin['name'] for pin in pins}
     if absent:
         raise RuntimeError('Signals assigned to pins absent from the selected UFBGA144 part: ' + ', '.join(sorted(absent)))
     expected = {'PA13': 'C10', 'PA14': 'B11', 'PB3': 'D6', 'NRST': 'J2',
                 'PC8': 'D12', 'PC9': 'F8'}
+    if args.mcu_package == 'lqfp':
+        expected = {'PA13': '107', 'PA14': '111', 'PB3': '133', 'NRST': '28',
+                    'PC8': '100', 'PC9': '101'}
     for pin_name, ball in expected.items():
         assert next(pin for pin in pins if pin['name'] == pin_name)['number'] == ball
     root_id = uid('schematic')
@@ -163,11 +175,11 @@ def main():
         else:
             instances.append(f'(no_connect (at {round(110.49 + pin["x"], 4)} {round(139.7 - pin["y"], 4)}) '
                              f'(uuid "{uid("U1-unused-" + pin["number"])}"))')
-    instances.append(f'''(symbol (lib_id "VoiceVault_B0:STM32U5G9ZJJxQ") (at 110.49 139.7 0)
+    instances.append(f'''(symbol (lib_id "VoiceVault_B0:{mcu_symbol}") (at 110.49 139.7 0)
       (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "{uid('U1')}")
       (property "Reference" "U1" (at 90 51.1 0) {effects()})
-      (property "Value" "STM32U5G9ZJJ6Q" (at 125 51.1 0) {effects()})
-      (property "Footprint" "VoiceVault_B0:UFBGA-144_10x10mm_Layout12x12_P0.8mm" (at 110 140 0) {effects(1, '(hide yes)')})
+      (property "Value" "{mcu_value}" (at 125 51.1 0) {effects()})
+      (property "Footprint" "VoiceVault_B0:{mcu_fp}" (at 110 140 0) {effects(1, '(hide yes)')})
       (instances (project "{name}" (path "/{root_id}" (reference "U1") (unit 1)))))''')
     header_pins = []
     for number in range(1, 15):
@@ -220,6 +232,8 @@ def main():
                       nets={'1': 'MCU_LX', '2': 'MCU_VDD11'}),
                  dict(ref='R101', value='0R - VBAT from regulated rail', kind='R',
                       nets={'1': 'VDD_3V3', '2': 'MCU_VBAT_3V3'})]
+    if circuits_file.exists():
+        passives.extend(json.loads(circuits_file.read_text()).get('root_extra_parts', []))
     device_source = (LIB / 'symbols/Device.kicad_sym').read_text()
     extra_symbols = []
     for kind in ['C', 'L', 'R']:
@@ -266,10 +280,10 @@ def main():
         (190, 141, 'Pins 13/14 use TARGET RX/TX naming. UART6 on PC8/PC9.'),
         (190, 158, 'Power, radio, secure elements, controls and offline-update interfaces: see child sheets.'),
         (190, 166, 'Main debug and radio debug are separate; probes measure target voltage only.'),
-        (190, 174, 'Display/touch: see child sheets. Rev C removes Qi, NFC and vibration.' if revision == 'C0' else 'Display/touch, haptic, Qi and NFC are on separate reviewed-source circuit sheets.'),
+        (190, 174, 'Display/touch: see child sheets. Rev C removes Qi, NFC and vibration.' if revision.startswith('C') else 'Display/touch, haptic, Qi and NFC are on separate reviewed-source circuit sheets.'),
         (190, 182, 'Audio codec, CTIA headset, physical microphone disconnect and microSD are additions.'),
         (25, 258, 'Prototype has open debug access and public diagnostic material. Physical security remains unqualified.'),
-        (25, 266, 'Safe 7 source: TS7 rev_D, STM32U5G9ZJJ6Q / UFBGA144. New PCB outline is provisional 70 x 45 mm.'),
+        (25, 266, f'MCU: {mcu_value}. Safe 7-derived platform; prototype package and provisional 70 x 45 mm outline need qualification.'),
     ]:
         instances.append(f'(text {quote(message)} (at {x} {y} 0) {effects(1, "(justify left)")} (uuid "{uid(message)}"))')
     (DEST / (name + '.kicad_sch')).write_text(f'''(kicad_sch (version 20250114) (generator "eeschema")
@@ -305,7 +319,7 @@ def main():
     footprints = DEST / 'VoiceVault_B0.pretty'
     footprints.mkdir(exist_ok=True)
     pcb_parts = [
-        ('U1', 'Package_BGA', 'UFBGA-144_10x10mm_Layout12x12_P0.8mm', 'STM32U5G9ZJJ6Q', (58, 47), mcu_nets),
+        ('U1', mcu_fp_library, mcu_fp, mcu_value, (58, 47), mcu_nets),
         ('J101', 'VoiceVault_B0', header_fp, 'FTSH-107-01-L-DV / STDC14', (32, 48), debug),
     ] + [(p['ref'], p['footprint_library'], p['footprint'], p['value'], p['position'], p['nets']) for p in passives]
     pcb_parts += [(p['ref'], p['library'], p['footprint'], p['value'], p['position'], p['nets']) for p in child_parts]

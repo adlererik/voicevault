@@ -1,0 +1,40 @@
+{
+  "unique_pin_identifier_differences": [
+    {
+      "reference": "J502",
+      "extra_board_pad_identifiers": [
+        "MP"
+      ],
+      "missing_board_pad_identifiers": []
+    },
+    {
+      "reference": "J701",
+      "extra_board_pad_identifiers": [
+        "MP"
+      ],
+      "missing_board_pad_identifiers": []
+    },
+    {
+      "reference": "J702",
+      "extra_board_pad_identifiers": [
+        "MP"
+      ],
+      "missing_board_pad_identifiers": []
+    },
+    {
+      "reference": "J503",
+      "extra_board_pad_identifiers": [
+        "MP"
+      ],
+      "missing_board_pad_identifiers": []
+    }
+  ],
+  "all_functional_pin_identifiers_present": true,
+  "mechanical_only_anchors": [
+    "H1",
+    "H2",
+    "H3",
+    "H4"
+  ],
+  "interpretation": "Cloud parsing warning is consistent with connector mounting-pad identifiers absent from symbols; zero native schematic parity errors. Exact cloud parser internals are not observable."
+}

@@ -81,5 +81,6 @@
   "all_circuit_values_and_pad_nets_preserved": true,
   "original_and_live_designs_unchanged": true,
   "orders_or_payments": false,
-  "quilter_support_message_status": "Prepared; awaiting specific authorization to send this new report"
+  "quilter_support_message_status": "SENT after explicit owner authorization; engineer response pending",
+  "support_receipt": "../quilter-retry-01-support/receipt.json"
 }

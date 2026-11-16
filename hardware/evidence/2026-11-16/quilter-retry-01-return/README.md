@@ -36,7 +36,7 @@ The antenna was moved from front to back. Its footprint-attached `VV_ANTENNA_OTH
 
 ## Next action
 
-Prepare a reproducible support packet for the new fanout/export findings, obtain Quilter's engineering guidance, and correct the constraint/input handling before another layout attempt. The earlier support conversation concerned the stalled B0 job; sending this new report needs the owner's specific authorization. A draft is supplied in [SUPPORT_REPORT.md](SUPPORT_REPORT.md). No new message has been sent by this review.
+The owner authorized sending the new report, and the full report plus verified CAD reproduction packet were posted to Quilter support on **16 November 2026**. [Posting receipt and screenshot](../quilter-retry-01-support/README.md) · [Report](SUPPORT_REPORT.md). The messenger shows **Waiting for a teammate**; an engineer's diagnosis is still pending. Obtain the engineering guidance and correct the constraint/input handling before another layout attempt.
 
 Keep all actual component placement and routing with Quilter. Do not launch an identical job, erase evidence, import unqualified copper, relax checks to obtain a pass, or submit this board to manufacture. A larger prototype or a different manufacturable escape strategy may be evaluated after the returned-layout problem is understood; extra layers alone do not repair shorts or a failed keepout transformation.
 

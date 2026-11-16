@@ -1,0 +1,33 @@
+Follow-up: this is a NEW, completed VoiceVault C0 job, separate from the older stalled B0 job already in this conversation. Please add it to the human engineer review queue.
+
+# VoiceVault C0 retry: native shorts and antenna keepout transformation
+
+Please have an engineer inspect this completed free-plan job:
+
+https://app.quilter.ai/jobs/6afadd5b82651a6067c78f92
+
+It uses a clean unplaced/unrouted 70 x 45 mm KiCad input, 213 footprints, the JLCPCB six-layer 4mil preset, 0.45/0.20 mm ordinary vias and two reference-ground layers. Automatic U1 BGA fanout was enabled. The input circuit and bypass settings were checked; all 18 files downloaded from your server matched the submitted source exactly. There was no local routing or previous FreeRouting copper in this input.
+
+Candidate 4.1 reports 95% routing, 25 incomplete nets, 26 dimension violations, two padstack collisions and seven physics errors. We downloaded it and checked it independently in KiCad 10.0.8:
+
+* With the original input project limits, native DRC after zone refill reports 30 missing connections and 29 short-circuit findings.
+* With the returned Quilter project limits, native DRC after refill still reports 30 missing connections and 28 short-circuit findings.
+* A separate 94% export, candidate 1.1, has 32 missing connections and 27 short-circuit findings after refill under the original project limits.
+* Component values, all pad-net assignments and H1-H4 locations are preserved against the input.
+
+An independent load from the portable packet gives 27 shorts plus nine clearance findings, versus 29 plus seven in the first input-profile report and 28 plus eight in the returned-profile report. All three have 36 copper short/clearance findings and 30 missing connections. Exact native classification counts vary across loads; the complete reports are included and the unsafe result reproduces.
+
+One concrete short is a GND through-via at approximately (65.408287, 48.971400) mm intersecting C107 pad 1 (MCU_VDD11) on F.Cu. Several other findings involve fanout vias/tracks and opposite-side power/decoupling parts. The exported vias have nominal 0.45045 mm diameter and 0.2002 mm drills. Please investigate how the internal fanout dimensions, collision checking and native export interact; we cannot infer the internal cause from the exported board alone.
+
+There is also a footprint keepout transformation issue. In the input, AE201 is on F.Cu and its attached `VV_ANTENNA_OTHER_LAYERS` rule area blocks B.Cu and all inner layers. In both checked returns AE201 is on B.Cu, but that rule area still blocks B.Cu rather than F.Cu. Its outline moved with the footprint, but the outer-layer membership did not swap. Native KiCad flags its B.Cu feed and a footprint/library mismatch. Could you confirm how attached keepouts are transformed during front/back placement and export?
+
+The packet includes the original clean board, checked native project/library/rules, untouched downloaded candidate boards, returned project files and native reports. Reproduce each candidate with:
+
+```sh
+kicad-cli pcb drc --refill-zones --format json --output candidate-4-drc.json candidate-4/voicevault-standalone-c0.kicad_pcb
+kicad-cli pcb drc --refill-zones --format json --output candidate-1-drc.json candidate-1/voicevault-standalone-c0.kicad_pcb
+```
+
+The candidate directories use the submitted project rules; `quilter-returned.kicad_pro` preserves your original returned profile for comparison. Reports for both profiles are included. No candidate was manually rerouted or imported into our live design.
+
+Please advise whether this is a known limitation, which input/configuration change is supported, and whether your engineer can reproduce the native shorts and keepout issue. Please keep the request open and email the account holder with the diagnosis or any questions. We are requesting support triage, not authorizing a paid service or plan upgrade.

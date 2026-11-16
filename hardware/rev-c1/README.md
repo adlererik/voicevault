@@ -1,8 +1,8 @@
 # VoiceVault C1 — LQFP144 prototype
 
-**Native circuit input checked; Quilter full-layout run started at 19:42 CET on 16 November 2026. Not for fabrication.** The owner approved **STM32U5G9ZJT6Q** on 16 November 2026. C1 is a separate revision; the original C0 inputs, rejected Quilter results, isolated local repair and live B0 remain preserved.
+**Quilter finished at 21:19 CET on 16 November 2026: six candidates, all reporting 98% routing. Not for fabrication.** Independent KiCad review of candidate 3.1 confirms **six missing connections, zero copper shorts and zero schematic-parity mismatches**, but hole-clearance and antenna-rule failures remain. [Actual returned board views, exact findings and next work](../evidence/2026-11-17/c1-return-review/README.md). The owner approved **STM32U5G9ZJT6Q** on 16 November 2026. C1 is a separate revision; all earlier revisions and results remain preserved.
 
-[Open the running C1 job](https://app.quilter.ai/jobs/6afb49addfae511781423d99) · [Recorded launch and settings](../evidence/2026-11-16/c1-preparation/launch.json). Quilter continues in the cloud when this computer is off. No returned C1 candidate has been reviewed or accepted.
+[Open the completed C1 job](https://app.quilter.ai/jobs/6afb49addfae511781423d99?candidate=3) · [Recorded launch and settings](../evidence/2026-11-16/c1-preparation/launch.json). Candidate 3.1 was downloaded and reviewed in separate work folders; it has not replaced the checked input or live board and is not accepted for release.
 
 [KiCad project](voicevault-standalone-c1.kicad_pro) · [Root schematic](voicevault-standalone-c1.kicad_sch) · [Clean PCB input](voicevault-standalone-c1.kicad_pcb) · [Review inventory](BOM-REVIEW.csv) · [Exact circuit target](board-target.json) · [Checked evidence](../evidence/2026-11-16/c1-preparation/README.md) · [Package evaluation](../rev-c/LQFP_EVALUATION.md)
 

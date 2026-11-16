@@ -1,0 +1,1450 @@
+{
+  "$schema": "https://schemas.kicad.org/drc.v1.json",
+  "coordinate_units": "mm",
+  "date": "2026-11-17T00:05:54",
+  "ignored_checks": [
+    {
+      "description": "Footprint has no courtyard defined",
+      "key": "missing_courtyard"
+    },
+    {
+      "description": "Track endpoint not centered on via",
+      "key": "track_not_centered_on_via"
+    },
+    {
+      "description": "Tuning profile track geometries",
+      "key": "tuning_profile_track_geometries"
+    },
+    {
+      "description": "Footprint doesn't match symbol's footprint filters",
+      "key": "footprint_filters_mismatch"
+    },
+    {
+      "description": "Footprint component type doesn't match footprint pads",
+      "key": "footprint_type_mismatch"
+    }
+  ],
+  "included_severities": [
+    "error",
+    "warning"
+  ],
+  "kicad_version": "10.0.8",
+  "schematic_parity": [],
+  "source": "voicevault-standalone-c1.kicad_pcb",
+  "unconnected_items": [
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [AUD_RESET_N] on Top Layer, length 0,3209 mm",
+          "pos": {
+            "x": 66.664225,
+            "y": 55.889633
+          },
+          "uuid": "42357c64-38e5-4660-908a-2900d37a2d15"
+        },
+        {
+          "description": "Pad 31 [AUD_RESET_N] of U601 on Top Layer",
+          "pos": {
+            "x": 82.475788,
+            "y": 64.845945
+          },
+          "uuid": "edcf94fd-242c-48a3-be90-2d1d83a5316c"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [BL_FB] on Layer 3, length 1,8510 mm",
+          "pos": {
+            "x": 88.188817,
+            "y": 51.069346
+          },
+          "uuid": "8178a50a-53ed-4a43-8739-d5003804f770"
+        },
+        {
+          "description": "Pad B3 [BL_FB] of U9 on Bottom Layer",
+          "pos": {
+            "x": 88.969996,
+            "y": 51.321405
+          },
+          "uuid": "5df29274-91f1-479e-9cc5-49ecf762d6fe"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 3 [LINK_TX] of U201 on Top Layer",
+          "pos": {
+            "x": 54.636413,
+            "y": 58.701392
+          },
+          "uuid": "feec1a09-535e-4a94-8a30-d71cbde3161a"
+        },
+        {
+          "description": "Pad 38 [LINK_TX] of U1 on Bottom Layer",
+          "pos": {
+            "x": 70.011413,
+            "y": 57.874809
+          },
+          "uuid": "c1e3b8f2-0e0d-44f1-a5e6-cb48e63fe8ed"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [LINK_RX] on Layer 3, length 1,0905 mm",
+          "pos": {
+            "x": 56.730615,
+            "y": 61.988258
+          },
+          "uuid": "e8458345-0d65-44fb-be3b-d0614cc99181"
+        },
+        {
+          "description": "Pad 4 [LINK_RX] of U201 on Top Layer",
+          "pos": {
+            "x": 54.636413,
+            "y": 58.051392
+          },
+          "uuid": "5e273167-8763-4564-9754-712d625d4bfb"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 9 [SE_SDA] of U11 on Bottom Layer",
+          "pos": {
+            "x": 47.4661,
+            "y": 59.265218
+          },
+          "uuid": "9b450c37-2e2c-4d1e-a5d7-0fded2792f98"
+        },
+        {
+          "description": "Track [SE_SDA] on Layer 4, length 2,3763 mm",
+          "pos": {
+            "x": 49.454732,
+            "y": 59.343181
+          },
+          "uuid": "a711c01a-f029-4ce4-b0f5-0bb0b73b8a2a"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [BACKLIGHT_PWM] on Top Layer, length 2,8351 mm",
+          "pos": {
+            "x": 92.366818,
+            "y": 53.231001
+          },
+          "uuid": "a9462947-b425-4d4e-9ad0-6ac115ea1dfe"
+        },
+        {
+          "description": "Pad A2 [BACKLIGHT_PWM] of U9 on Bottom Layer",
+          "pos": {
+            "x": 88.469996,
+            "y": 50.821405
+          },
+          "uuid": "b5dde06f-3b4b-4d9f-b76d-e42c42fd37d4"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    }
+  ],
+  "violations": [
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [MCU_NRST] on Layer 3, length 6,4217 mm",
+          "pos": {
+            "x": 38.742025,
+            "y": 30.462303
+          },
+          "uuid": "7d20e6b5-f3a1-4bf9-9b65-1abf06f15d2e"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [MCU_NRST] on Layer 3, length 6,4217 mm",
+          "pos": {
+            "x": 38.742025,
+            "y": 30.462303
+          },
+          "uuid": "7d20e6b5-f3a1-4bf9-9b65-1abf06f15d2e"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed (rule 'VV antenna: only antenna feed in exclusion')",
+      "items": [
+        {
+          "description": "Track [MCU_NRST] on Layer 3, length 6,4217 mm",
+          "pos": {
+            "x": 38.742025,
+            "y": 30.462303
+          },
+          "uuid": "7d20e6b5-f3a1-4bf9-9b65-1abf06f15d2e"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [MCU_NRST] on Layer 3, length 6,2415 mm",
+          "pos": {
+            "x": 43.282847,
+            "y": 35.003126
+          },
+          "uuid": "6b0ed268-5072-4682-b873-dfdeb518f075"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [MCU_NRST] on Layer 3, length 6,2415 mm",
+          "pos": {
+            "x": 43.282847,
+            "y": 35.003126
+          },
+          "uuid": "6b0ed268-5072-4682-b873-dfdeb518f075"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed (rule 'VV antenna: only antenna feed in exclusion')",
+      "items": [
+        {
+          "description": "Track [MCU_NRST] on Layer 3, length 6,2415 mm",
+          "pos": {
+            "x": 43.282847,
+            "y": 35.003126
+          },
+          "uuid": "6b0ed268-5072-4682-b873-dfdeb518f075"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [MCU_SWO] on Layer 4, length 7,1498 mm",
+          "pos": {
+            "x": 52.536529,
+            "y": 34.904004
+          },
+          "uuid": "b448abdc-7fee-4ee2-a509-c78385d1d282"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [MCU_SWO] on Layer 4, length 7,1498 mm",
+          "pos": {
+            "x": 52.536529,
+            "y": 34.904004
+          },
+          "uuid": "b448abdc-7fee-4ee2-a509-c78385d1d282"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed (rule 'VV antenna: only antenna feed in exclusion')",
+      "items": [
+        {
+          "description": "Track [MCU_SWO] on Layer 4, length 7,1498 mm",
+          "pos": {
+            "x": 52.536529,
+            "y": 34.904004
+          },
+          "uuid": "b448abdc-7fee-4ee2-a509-c78385d1d282"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [MCU_SWO] on Layer 4, length 9,0958 mm",
+          "pos": {
+            "x": 45.386747,
+            "y": 34.904004
+          },
+          "uuid": "5afeb867-faf8-4b21-a068-e589aafba104"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [MCU_SWO] on Layer 4, length 9,0958 mm",
+          "pos": {
+            "x": 45.386747,
+            "y": 34.904004
+          },
+          "uuid": "5afeb867-faf8-4b21-a068-e589aafba104"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed (rule 'VV antenna: only antenna feed in exclusion')",
+      "items": [
+        {
+          "description": "Track [MCU_SWO] on Layer 4, length 9,0958 mm",
+          "pos": {
+            "x": 45.386747,
+            "y": 34.904004
+          },
+          "uuid": "5afeb867-faf8-4b21-a068-e589aafba104"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [BLE_ANT_FEED] on Bottom Layer, length 1,0428 mm",
+          "pos": {
+            "x": 39.233957,
+            "y": 34.143055
+          },
+          "uuid": "b48f6301-39a7-4dff-87ac-2025c0dc6991"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [BLE_ANT_FEED] on Bottom Layer, length 0,2928 mm",
+          "pos": {
+            "x": 40.276789,
+            "y": 34.143055
+          },
+          "uuid": "a36166a5-4bac-4957-a8f2-8d619eb71ddd"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Items not allowed",
+      "items": [
+        {
+          "description": "Track [BLE_ANT_FEED] on Bottom Layer, length 0,6016 mm",
+          "pos": {
+            "x": 40.569562,
+            "y": 34.143055
+          },
+          "uuid": "e1ef6713-f797-42b0-9cc2-843ca081066e"
+        }
+      ],
+      "severity": "error",
+      "type": "items_not_allowed"
+    },
+    {
+      "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1136 mm)",
+      "items": [
+        {
+          "description": "Track [MIC_BIASED] on Top Layer, length 5,6363 mm",
+          "pos": {
+            "x": 42.776946,
+            "y": 68.264481
+          },
+          "uuid": "4e3b5bef-f2ea-4acb-8320-a043b46a9dca"
+        },
+        {
+          "description": "NPTH pad of H3",
+          "pos": {
+            "x": 46.0,
+            "y": 67.0
+          },
+          "uuid": "98ede395-7e89-491a-a82c-ec636e41f0a1"
+        }
+      ],
+      "severity": "error",
+      "type": "hole_clearance"
+    },
+    {
+      "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1404 mm)",
+      "items": [
+        {
+          "description": "Track [HEADSET_MIC] on Top Layer, length 7,2664 mm",
+          "pos": {
+            "x": 37.911964,
+            "y": 66.00391
+          },
+          "uuid": "d0021788-8813-4d99-895d-02282e80bbcf"
+        },
+        {
+          "description": "NPTH pad of H3",
+          "pos": {
+            "x": 46.0,
+            "y": 67.0
+          },
+          "uuid": "98ede395-7e89-491a-a82c-ec636e41f0a1"
+        }
+      ],
+      "severity": "error",
+      "type": "hole_clearance"
+    },
+    {
+      "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1404 mm)",
+      "items": [
+        {
+          "description": "Track [HEADSET_MIC] on Top Layer, length 1,0858 mm",
+          "pos": {
+            "x": 45.178317,
+            "y": 66.00391
+          },
+          "uuid": "798d1c56-2cc4-4af6-b4c1-2644105e805f"
+        },
+        {
+          "description": "NPTH pad of H3",
+          "pos": {
+            "x": 46.0,
+            "y": 67.0
+          },
+          "uuid": "98ede395-7e89-491a-a82c-ec636e41f0a1"
+        }
+      ],
+      "severity": "error",
+      "type": "hole_clearance"
+    },
+    {
+      "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1804 mm)",
+      "items": [
+        {
+          "description": "Track [REG_ENABLE] on Top Layer, length 0,5657 mm",
+          "pos": {
+            "x": 89.198923,
+            "y": 57.919666
+          },
+          "uuid": "39d3793d-48a0-4506-9e0d-a754d8d3326e"
+        },
+        {
+          "description": "NPTH pad of SW503",
+          "pos": {
+            "x": 88.517663,
+            "y": 58.098673
+          },
+          "uuid": "8cd5c9c3-7289-4a2b-ace5-879dfb839f47"
+        }
+      ],
+      "severity": "error",
+      "type": "hole_clearance"
+    },
+    {
+      "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1669 mm)",
+      "items": [
+        {
+          "description": "Track [AUD_HPL_DC] on Bottom Layer, length 5,4545 mm",
+          "pos": {
+            "x": 90.795265,
+            "y": 61.676716
+          },
+          "uuid": "b4a0531c-b9d9-440b-93cd-a45697b3b04f"
+        },
+        {
+          "description": "NPTH pad of SW503",
+          "pos": {
+            "x": 88.517663,
+            "y": 64.898673
+          },
+          "uuid": "346e0ae5-4420-446f-84ec-9ca22e6ac1f6"
+        }
+      ],
+      "severity": "error",
+      "type": "hole_clearance"
+    },
+    {
+      "description": "Hole clearance violation (board setup constraints hole clearance 0,2000 mm; actual 0,1811 mm)",
+      "items": [
+        {
+          "description": "Track [VSYS] on Bottom Layer, length 1,0259 mm",
+          "pos": {
+            "x": 84.406789,
+            "y": 49.924003
+          },
+          "uuid": "162165ac-77c7-4dd0-b7b8-5dab10c65ff1"
+        },
+        {
+          "description": "NPTH pad of J601",
+          "pos": {
+            "x": 83.252038,
+            "y": 49.339582
+          },
+          "uuid": "f9e863eb-33a1-4c80-9f1d-ac38a0ffc43f"
+        }
+      ],
+      "severity": "error",
+      "type": "hole_clearance"
+    },
+    {
+      "description": "Silkscreen clipped by board edge",
+      "items": [
+        {
+          "description": "Segment on Edge.Cuts",
+          "pos": {
+            "x": 25.0,
+            "y": 25.0
+          },
+          "uuid": "bdcd1288-0424-4f93-8f8a-ad92f0a378fe"
+        },
+        {
+          "description": "Reference field of U6",
+          "pos": {
+            "x": 31.0161,
+            "y": 25.325945
+          },
+          "uuid": "0585284c-3bc6-4c60-85da-baba3efedbb6"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_edge_clearance"
+    },
+    {
+      "description": "Footprint 'Johanson_2450AT18x100' does not match copy in library 'VoiceVault_B0'",
+      "items": [
+        {
+          "description": "Footprint AE201",
+          "pos": {
+            "x": 42.62115,
+            "y": 34.143055
+          },
+          "uuid": "5aa311fd-fd19-4e85-ba5e-73b05355df14"
+        }
+      ],
+      "severity": "warning",
+      "type": "lib_footprint_mismatch"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 68.0
+          },
+          "uuid": "757de5f5-38e7-417c-974c-003f9ca4e54f"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 65.0
+          },
+          "uuid": "d624c044-abcc-4eb8-99ef-9aec7688b545"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "PCB text 'VOICEVAULT C1 DEV' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 30.0
+          },
+          "uuid": "0242bf1b-edc3-4ca6-b2a9-e63af6f0ae17"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of X201",
+          "pos": {
+            "x": 28.095788,
+            "y": 33.198673
+          },
+          "uuid": "9767d697-0eda-4000-9c24-b59291169fc2"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of J502",
+          "pos": {
+            "x": 82.328567,
+            "y": 66.380491
+          },
+          "uuid": "d4503249-08b7-44fd-ab55-e69171db1529"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of SW601",
+          "pos": {
+            "x": 38.431725,
+            "y": 59.085036
+          },
+          "uuid": "73329006-7dca-4880-8a6e-1a668eea0eab"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U1",
+          "pos": {
+            "x": 61.761413,
+            "y": 34.862309
+          },
+          "uuid": "d55d272c-ef1d-49a4-895c-f6cee0f421ed"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of L203",
+          "pos": {
+            "x": 37.642975,
+            "y": 29.404127
+          },
+          "uuid": "7dd3a1d4-a2fe-48b5-9e99-0b76021742a7"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of L202",
+          "pos": {
+            "x": 39.010163,
+            "y": 27.653218
+          },
+          "uuid": "5b8404ed-794d-4032-b707-a4b8b1c4fc89"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of D604",
+          "pos": {
+            "x": 68.181462,
+            "y": 64.789582
+          },
+          "uuid": "26ba63ae-fc4b-4409-8267-427c5bbb79dd"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U3",
+          "pos": {
+            "x": 65.092975,
+            "y": 50.016855
+          },
+          "uuid": "6c691092-d2a8-4291-ad83-dd787400ce9c"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U11",
+          "pos": {
+            "x": 47.0661,
+            "y": 63.653218
+          },
+          "uuid": "cc5554f5-b0d8-45e1-8dc6-4e3162ffbb86"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of Q201",
+          "pos": {
+            "x": 92.236725,
+            "y": 64.853218
+          },
+          "uuid": "99a4e629-b52c-474b-9b50-4165f6bef118"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U602",
+          "pos": {
+            "x": 56.536413,
+            "y": 29.398673
+          },
+          "uuid": "ba6314e1-5620-4e1a-b5a5-256a577507d5"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of J601",
+          "pos": {
+            "x": 76.752038,
+            "y": 46.839582
+          },
+          "uuid": "f7123117-c97c-4504-a2f6-a1b640fd8502"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of TP5",
+          "pos": {
+            "x": 68.239358,
+            "y": 56.530146
+          },
+          "uuid": "4693e412-dfe3-4a35-aba9-9261e1faeec6"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U202",
+          "pos": {
+            "x": 43.63735,
+            "y": 47.540028
+          },
+          "uuid": "6385f428-a892-44cf-aa05-8f1326d2feca"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of X202",
+          "pos": {
+            "x": 34.645788,
+            "y": 27.907764
+          },
+          "uuid": "c8f9dafa-eb05-4111-b2d7-a6cc002e3600"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of X302",
+          "pos": {
+            "x": 73.200475,
+            "y": 42.089582
+          },
+          "uuid": "fbeb39dc-eb41-408d-af12-a5a36a1dc07e"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of D602",
+          "pos": {
+            "x": 92.180159,
+            "y": 44.880491
+          },
+          "uuid": "274e5230-79ea-4b5a-85e1-d379f490281c"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U402",
+          "pos": {
+            "x": 41.383288,
+            "y": 51.003665
+          },
+          "uuid": "8a45c380-08d1-4413-8b85-0151c853fa17"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U601",
+          "pos": {
+            "x": 83.868288,
+            "y": 66.095945
+          },
+          "uuid": "da7cf7d6-1618-4638-bf7c-d7a70a1e3d98"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U201",
+          "pos": {
+            "x": 51.773913,
+            "y": 61.176392
+          },
+          "uuid": "68959802-d9c1-4a61-8de3-424deb5d8734"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U1202",
+          "pos": {
+            "x": 59.270788,
+            "y": 65.967764
+          },
+          "uuid": "6bac6822-0680-474b-9540-2d314992e66c"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U1201",
+          "pos": {
+            "x": 55.069225,
+            "y": 52.198673
+          },
+          "uuid": "d59f0107-e7d4-4517-9a47-3127ddebbe95"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of X301",
+          "pos": {
+            "x": 73.200475,
+            "y": 51.089582
+          },
+          "uuid": "20cad4a8-e3ec-4c90-96df-754f22cfa497"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 68.0
+          },
+          "uuid": "757de5f5-38e7-417c-974c-003f9ca4e54f"
+        },
+        {
+          "description": "Segment of D604 on Top Overlay",
+          "pos": {
+            "x": 66.571462,
+            "y": 65.789582
+          },
+          "uuid": "d0416960-6a3c-42fe-badf-aff60b9f4026"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Circle of TP13 on Top Overlay",
+          "pos": {
+            "x": 66.952983,
+            "y": 64.16651
+          },
+          "uuid": "a8208167-6fd0-475a-b26c-95c017be0050"
+        },
+        {
+          "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 65.0
+          },
+          "uuid": "d624c044-abcc-4eb8-99ef-9aec7688b545"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Reference field of D604",
+          "pos": {
+            "x": 68.181462,
+            "y": 64.789582
+          },
+          "uuid": "26ba63ae-fc4b-4409-8267-427c5bbb79dd"
+        },
+        {
+          "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 65.0
+          },
+          "uuid": "d624c044-abcc-4eb8-99ef-9aec7688b545"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Reference field of D604",
+          "pos": {
+            "x": 68.181462,
+            "y": 64.789582
+          },
+          "uuid": "26ba63ae-fc4b-4409-8267-427c5bbb79dd"
+        },
+        {
+          "description": "Circle of TP13 on Top Overlay",
+          "pos": {
+            "x": 66.952983,
+            "y": 64.16651
+          },
+          "uuid": "a8208167-6fd0-475a-b26c-95c017be0050"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Segment of C1201 on Top Overlay",
+          "pos": {
+            "x": 55.104848,
+            "y": 52.238218
+          },
+          "uuid": "7f34f557-6888-48bb-93ab-38fba8be137a"
+        },
+        {
+          "description": "Reference field of U1201",
+          "pos": {
+            "x": 55.069225,
+            "y": 52.198673
+          },
+          "uuid": "d59f0107-e7d4-4517-9a47-3127ddebbe95"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Segment of D604 on Top Overlay",
+          "pos": {
+            "x": 66.571462,
+            "y": 67.489582
+          },
+          "uuid": "10df4522-1d0d-497d-ae1b-5cc5a465579d"
+        },
+        {
+          "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 68.0
+          },
+          "uuid": "757de5f5-38e7-417c-974c-003f9ca4e54f"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Reference field of TP13",
+          "pos": {
+            "x": 68.400983,
+            "y": 64.16651
+          },
+          "uuid": "68690070-d131-4a6b-a255-5c2429c98a2c"
+        },
+        {
+          "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 65.0
+          },
+          "uuid": "d624c044-abcc-4eb8-99ef-9aec7688b545"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Reference field of D604",
+          "pos": {
+            "x": 68.181462,
+            "y": 64.789582
+          },
+          "uuid": "26ba63ae-fc4b-4409-8267-427c5bbb79dd"
+        },
+        {
+          "description": "Reference field of TP13",
+          "pos": {
+            "x": 68.400983,
+            "y": 64.16651
+          },
+          "uuid": "68690070-d131-4a6b-a255-5c2429c98a2c"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 68.0
+          },
+          "uuid": "757de5f5-38e7-417c-974c-003f9ca4e54f"
+        },
+        {
+          "description": "Segment of R1206 on Top Overlay",
+          "pos": {
+            "x": 52.388913,
+            "y": 67.631405
+          },
+          "uuid": "f0667033-e69a-4633-9c7a-889356ec302c"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+          "pos": {
+            "x": 60.0,
+            "y": 68.0
+          },
+          "uuid": "757de5f5-38e7-417c-974c-003f9ca4e54f"
+        },
+        {
+          "description": "Segment of R1206 on Top Overlay",
+          "pos": {
+            "x": 53.148913,
+            "y": 67.631405
+          },
+          "uuid": "e05e11a8-a67b-463f-8cef-30dd5666ea7d"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Segment of U6 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 27.9061,
+            "y": 32.735945
+          },
+          "uuid": "0af0b7d7-675e-4d9f-b81e-d88f8a6506bf"
+        },
+        {
+          "description": "Reference field of X201",
+          "pos": {
+            "x": 28.095788,
+            "y": 33.198673
+          },
+          "uuid": "9767d697-0eda-4000-9c24-b59291169fc2"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Segment of U6 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 28.4561,
+            "y": 32.735945
+          },
+          "uuid": "7e70958a-3001-4b23-a35d-a788ee74e20a"
+        },
+        {
+          "description": "Reference field of X201",
+          "pos": {
+            "x": 28.095788,
+            "y": 33.198673
+          },
+          "uuid": "9767d697-0eda-4000-9c24-b59291169fc2"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Reference field of L203",
+          "pos": {
+            "x": 37.642975,
+            "y": 29.404127
+          },
+          "uuid": "7dd3a1d4-a2fe-48b5-9e99-0b76021742a7"
+        },
+        {
+          "description": "Segment of X202 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 37.305788,
+            "y": 29.167764
+          },
+          "uuid": "d8c50384-cba0-45bf-b592-859d6a0eecf8"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Polygon of U6 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 34.1261,
+            "y": 26.515945
+          },
+          "uuid": "b186ec12-1869-45ae-a71c-5036f0aac4bf"
+        },
+        {
+          "description": "Reference field of X202",
+          "pos": {
+            "x": 34.645788,
+            "y": 27.907764
+          },
+          "uuid": "c8f9dafa-eb05-4111-b2d7-a6cc002e3600"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Segment of U6 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 34.1261,
+            "y": 26.755945
+          },
+          "uuid": "542d379f-11d1-4c67-8748-041e9adf0d0f"
+        },
+        {
+          "description": "Reference field of X202",
+          "pos": {
+            "x": 34.645788,
+            "y": 27.907764
+          },
+          "uuid": "c8f9dafa-eb05-4111-b2d7-a6cc002e3600"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Reference field of SW601",
+          "pos": {
+            "x": 38.431725,
+            "y": 59.085036
+          },
+          "uuid": "73329006-7dca-4880-8a6e-1a668eea0eab"
+        },
+        {
+          "description": "Segment of R402 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 39.129959,
+            "y": 58.772309
+          },
+          "uuid": "857181ed-1930-4581-bbf9-77b319aca530"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Segment of C401 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 46.25552,
+            "y": 63.895036
+          },
+          "uuid": "83270a03-fad0-4653-a55b-614425a76579"
+        },
+        {
+          "description": "Reference field of U11",
+          "pos": {
+            "x": 47.0661,
+            "y": 63.653218
+          },
+          "uuid": "cc5554f5-b0d8-45e1-8dc6-4e3162ffbb86"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Reference field of U1202",
+          "pos": {
+            "x": 59.270788,
+            "y": 65.967764
+          },
+          "uuid": "6bac6822-0680-474b-9540-2d314992e66c"
+        },
+        {
+          "description": "Polygon of U1202 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 57.820788,
+            "y": 65.077764
+          },
+          "uuid": "a0be92e8-cc64-471e-a0c4-1f40bab64978"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Reference field of U1202",
+          "pos": {
+            "x": 59.270788,
+            "y": 65.967764
+          },
+          "uuid": "6bac6822-0680-474b-9540-2d314992e66c"
+        },
+        {
+          "description": "Segment of F501 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 59.706241,
+            "y": 66.202309
+          },
+          "uuid": "9cf842d5-9fa6-4831-80ea-30efffb0c38b"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Segment of J503 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 92.352663,
+            "y": 64.362309
+          },
+          "uuid": "9426d4b9-8598-499d-9fb9-31d26c507479"
+        },
+        {
+          "description": "Reference field of Q201",
+          "pos": {
+            "x": 92.236725,
+            "y": 64.853218
+          },
+          "uuid": "99a4e629-b52c-474b-9b50-4165f6bef118"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Segment of C605 on Board Layer Stack Bottom Overlay",
+          "pos": {
+            "x": 81.354848,
+            "y": 66.692764
+          },
+          "uuid": "86e68c0d-50c4-4683-9e41-4d2946d9a4ee"
+        },
+        {
+          "description": "Reference field of J502",
+          "pos": {
+            "x": 82.328567,
+            "y": 66.380491
+          },
+          "uuid": "d4503249-08b7-44fd-ab55-e69171db1529"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    }
+  ]
+}

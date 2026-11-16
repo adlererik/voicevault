@@ -1,0 +1,11 @@
+{
+  "footprints": 216,
+  "values_and_all_pad_nets_preserved": true,
+  "mounting_hole_positions_preserved": true,
+  "critical_boundary_checks": 72,
+  "antenna_side": "B.Cu",
+  "antenna_other_layer_membership_correct": false,
+  "raw_board_sha256": "9dd8b00cb72809a7b252615c985ae6f2feabc22705ff30dd6830d22630637d96",
+  "no_live_import": true,
+  "manufacturing_ready": false
+}

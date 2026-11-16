@@ -14,7 +14,7 @@ The intended adversary has **NSA-class capabilities**: both phones may already b
 
 ## Hardware laboratory
 
-**The new [VoiceVault C1 LQFP144 prototype](hardware/rev-c1/README.md) is running in Quilter.** The clean full-layout job [started at 19:42 CET on 16 November](https://app.quilter.ai/jobs/6afb49addfae511781423d99). Quilter owns placement and routing; no earlier cloud, local or FreeRouting copper is mixed into C1. The job continues in the cloud when the local computer is off.
+**The [VoiceVault C1 LQFP144 layout](hardware/rev-c1/README.md) reached 98% routing.** Quilter finished six candidates at **21:19 CET on 16 November**. Independent KiCad review of candidate 3.1 confirms **six unfinished connections, zero copper shorts and zero schematic mismatches**. Hole-clearance, antenna and placement findings remain; no board is accepted for manufacture. [Actual returned PCB views and native findings](hardware/evidence/2026-11-17/c1-return-review/README.md). Quilter owns placement/routing, with no earlier local or FreeRouting copper mixed into C1.
 
 C1 uses **STM32U5G9ZJT6Q LQFP144**, retaining the STM32U5G9ZJ platform while moving the MCU connections to accessible perimeter leads. The [package evaluation](hardware/rev-c/LQFP_EVALUATION.md) led to a complete 144-pin remap, a corrected hardware microSD clock on **PB13**, and three additional supply bypass capacitors. It retains **one NXP SE050E2 secure element, QFN nRF52832 BLE, a replaceable protected BL-5C-style lithium-ion pack interface, wired charging, trusted display/touch, wired audio, physical mic disconnect, offline microSD and separate development debug connectors**. Qi, NFC and vibration remain removed.
 
@@ -22,9 +22,9 @@ There are **199 electrical components—97 fewer than B0—plus 13 probes and fo
 
 **Checked input:** KiCad 10.0.8 reports **zero ERC violations and zero schematic-to-PCB mismatches**. All 144 MCU pins, 55 signal functions, 711 functional pin-net assignments and 72 retained critical circuit checks pass. Seven corrupted-pin controls and five isolated RF rule controls pass. The empty input has **587 connections to route**; that is intentionally a fresh layout, not a repaired-board result. All 18 server input files exactly match the checked source, and downloaded cloud settings match 76 reviewed bypass entries, 14 current budgets, three converter loops, four crystals and 21 proximity requirements. [Actual checks, hashes and limits](hardware/evidence/2026-11-16/c1-preparation/README.md).
 
-![Recorded C1 cloud-run start](hardware/evidence/2026-11-16/c1-preparation/quilter-started.png)
+![Actual returned C1 back-side layout, mirrored](hardware/evidence/2026-11-17/c1-return-review/back.png)
 
-*Recorded launch view, not a live progress display. Quilter is computing candidates; no returned C1 board has been accepted.*
+*Native KiCad view of candidate 3.1, showing the central LQFP144 MCU. This reviewed cloud return has remaining failures and has not replaced the live board.*
 
 **ngspice 47** completed 27 revised passive MCU core-output sensitivity cases. The model has no MCU regulator control loop and does not qualify stability or hardware behavior. Earlier unchanged C0 subcircuit studies include 772 passive audio/backlight cases, 16 secure-bus RC cases and a supplier radio-switch model; the main buck-boost supplier model remains numerically blocked. [C1 evidence](hardware/evidence/2026-11-16/c1-preparation/README.md) · [Earlier subcircuit reports and plot](hardware/evidence/2026-11-16/quilter-launch/README.md).
 

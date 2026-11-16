@@ -1,0 +1,73 @@
+{
+  "status": "REJECTED_FOR_RELEASE; substantial improvement; review only",
+  "review_client_date": "2026-11-17",
+  "job_url": "https://app.quilter.ai/jobs/6afb49addfae511781423d99",
+  "candidate": "3.1",
+  "job_finished_local": "2026-11-16 21:19 Europe/Stockholm",
+  "job_launched_local": "2026-11-16 19:42 Europe/Stockholm",
+  "cloud_candidates": 6,
+  "cloud_all_candidates_routed_percent": 98,
+  "cloud_candidate_3": {
+    "successful_prc_checks": 105,
+    "prc_warnings": 19,
+    "prc_errors": 0,
+    "padstack_collision_findings": 2,
+    "incomplete_nets": 6
+  },
+  "native": {
+    "kicad_version": "10.0.8",
+    "zone_refill": true,
+    "schematic_parity_issues": 0,
+    "full_native_unrouted_connections": 6,
+    "open_nets": [
+      "AUD_RESET_N",
+      "BACKLIGHT_PWM",
+      "BL_FB",
+      "LINK_RX",
+      "LINK_TX",
+      "SE_SDA"
+    ],
+    "copper_shorts": 0,
+    "copper_clearance_findings": 0,
+    "original_profile_violations": {
+      "items_not_allowed": 15,
+      "hole_clearance": 6,
+      "silk_edge_clearance": 1,
+      "lib_footprint_mismatch": 1,
+      "silk_over_copper": 26,
+      "silk_overlap": 21
+    },
+    "returned_profile_violations": {
+      "items_not_allowed": 15,
+      "silk_edge_clearance": 1,
+      "lib_footprint_mismatch": 1,
+      "silk_over_copper": 26,
+      "silk_overlap": 21
+    },
+    "original_profile_hole_clearance_mm": 0.2,
+    "returned_profile_hole_clearance_mm": 0.1016,
+    "source_checks_not_relaxed": true
+  },
+  "antenna": {
+    "returned_side": "B.Cu",
+    "opposite_side_keepout_retained_wrong_outer_layer": "B.Cu; should be F.Cu for back-side antenna",
+    "additional_keepout_intrusions": [
+      "MCU_NRST: two Layer 3 track segments",
+      "MCU_SWO: two Layer 4 track segments"
+    ],
+    "native_findings_include_duplicates_across_rules": true
+  },
+  "footprints": 216,
+  "all_values_pad_nets_and_mounting_positions_preserved": true,
+  "critical_boundary_checks": 72,
+  "copper_items": 5041,
+  "ground_pours": 2,
+  "copper_layers": 6,
+  "download_zip_sha256": "a33d6175679915ba5f36ff01a28390cc3ee3a27aee806d55a063f031e8dfb2c7",
+  "raw_candidate_board_sha256": "9dd8b00cb72809a7b252615c985ae6f2feabc22705ff30dd6830d22630637d96",
+  "source_cad_unchanged": true,
+  "live_board_imported": false,
+  "local_routing_performed": false,
+  "cloud_job_changed_or_restarted": false,
+  "manufacturing_ready": false
+}

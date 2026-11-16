@@ -1,0 +1,1 @@
+(fp_lib_table (lib (name "VoiceVault_B0") (type "KiCad") (uri "${KIPRJMOD}/../quilter-retry-01/VoiceVault_B0.pretty") (options "") (descr "Checked Rev C library")))

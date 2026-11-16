@@ -1,0 +1,23 @@
+2026-11-16 18:29:27.959 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-11-16 18:29:29.003 INFO   Hardware: 1 CPU cores, 41 CPU score, 618 MB RAM
+2026-11-16 18:29:29.014 WARN   GUI is disabled and you don't have a console available, so the only feedback from Freerouting is in the log.
+2026-11-16 18:29:33.460 INFO   [CE1562\7B5391] Loading board file 'repair.dsn'...
+2026-11-16 18:29:41.166 WARN   DSN file 'repair.dsn' was loaded with 1 warning(s).
+2026-11-16 18:29:42.351 INFO   Applied drill-hole clearance override: 200.0 um (2000 board units), 60 hole keepouts reclassified.
+2026-11-16 18:29:42.760 INFO   [CE1562\7B5391] Job 'CE1562\7B5391' started at 2026-11-16T17:29:42.759605279Z.
+2026-11-16 18:30:15.870 WARN   Design Warning: Board has 153 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 153 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 153 fixed trace/via clearance violations (first 5 shown):
+          - FixedVia#6959 [net SE_SCL] <-> U11.6
+          - FixedVia#6941 [net MCU_LSE_IN] <-> FixedTrace#4977 [net SE_SDA]
+          - FixedVia#6934 [net RAD_CREDIT] <-> U6.17
+          - FixedVia#6930 [net LINK_CREDIT] <-> FixedTrace#4351 [net MCU_NRST]
+          - FixedVia#6928 [net RADIO_POWER_EN] <-> FixedTrace#3868 [net MCU_VDD11]
+          ... and 148 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 153 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-11-16 18:30:16.776 INFO   [CE1562\7B5391] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=1.
+2026-11-16 18:30:43.380 INFO   [CE1562\7B5391] Auto-routing stage started on board '06f2e610e80182083904e0fa5dadf3ef' with baseline score 583.67 for 182 unrouted items.
+2026-11-16 18:33:13.235 INFO   Saving output file '/home/erikclean/src/secure-voice-lab/.lab-runs/hardware/quilter/2026-11-16-local-repair-02/repair.ses' (SES)...
+2026-11-16 18:33:13.313 INFO   Successfully saved output file '/home/erikclean/src/secure-voice-lab/.lab-runs/hardware/quilter/2026-11-16-local-repair-02/repair.ses' (732591 bytes).

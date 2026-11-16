@@ -20,6 +20,7 @@ __pycache__/
 /hardware/rev-b/fp-info-cache
 /hardware/rev-c/*.kicad_prl
 /hardware/rev-c/quilter-retry-01/*.kicad_prl
+/hardware/rev-c/local-repair-01/*.kicad_prl
 /hardware/rev-c/*-backups/
 /hardware/rev-c/~*.lck
 /hardware/rev-c/fp-info-cache

@@ -1,0 +1,5 @@
+{
+  "placement_only_regions_omitted_from_export": 13,
+  "reason": "Native DSN exporter incorrectly converted nonblocking placement hints to copper keepouts. Actual copper/antenna restrictions remain.",
+  "native_repair_board_unchanged": true
+}

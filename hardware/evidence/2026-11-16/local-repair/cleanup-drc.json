@@ -1,0 +1,3480 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-16T18:25:34",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.8",
+    "schematic_parity": [],
+    "source": "voicevault-standalone-c0.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C211 on Bottom Layer",
+                    "pos": {
+                        "x": 43.0786,
+                        "y": 43.387764
+                    },
+                    "uuid": "fa8145b9-8acf-43bf-90cb-0e3b38c7b0d8"
+                },
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 42.276171,
+                        "y": 43.261839
+                    },
+                    "uuid": "20663a06-51d5-45f6-b557-3410e18f2457"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,3887 mm",
+                    "pos": {
+                        "x": 45.072663,
+                        "y": 53.18776
+                    },
+                    "uuid": "16b89195-e237-4b4c-abb0-19f4e39ed0fa"
+                },
+                {
+                    "description": "Pad 2 [GND] of C405 on Bottom Layer",
+                    "pos": {
+                        "x": 44.525788,
+                        "y": 52.129582
+                    },
+                    "uuid": "f35025b9-ece2-467f-97b3-214abd641785"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,2393 mm",
+                    "pos": {
+                        "x": 58.66873,
+                        "y": 39.502575
+                    },
+                    "uuid": "354f6f1d-36d6-48af-8e89-a0b5f5278959"
+                },
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008287,
+                        "y": 40.9714
+                    },
+                    "uuid": "049e49c8-6336-45a0-b5c3-21e80066012a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 8 [GND] of U201 on Top Layer",
+                    "pos": {
+                        "x": 59.28485,
+                        "y": 52.178665
+                    },
+                    "uuid": "7e0d1cb1-81f8-44ab-bf27-1a1a20882cf9"
+                },
+                {
+                    "description": "Pad 2 [GND] of C301 on Bottom Layer",
+                    "pos": {
+                        "x": 58.227663,
+                        "y": 51.3414
+                    },
+                    "uuid": "fd4e3b38-4ece-44e4-b0cb-87dc3c0b55e8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 50.1714
+                    },
+                    "uuid": "ad83044b-e263-4493-8c94-1d13bb7dd474"
+                },
+                {
+                    "description": "Pad 2 [GND] of C1205 on Top Layer",
+                    "pos": {
+                        "x": 61.78485,
+                        "y": 50.245945
+                    },
+                    "uuid": "f8a7b2fb-3d6e-483b-8e0f-d7dbfe9e492d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 61.808287,
+                        "y": 44.5714
+                    },
+                    "uuid": "6cfb7216-2c2a-4dcc-a5db-4def47c90486"
+                },
+                {
+                    "description": "Pad H10 [GND] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 64.208287,
+                        "y": 42.9714
+                    },
+                    "uuid": "82b12526-f4e3-4288-ac5e-395e2c7070fe"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Top Layer, length 0,2928 mm",
+                    "pos": {
+                        "x": 62.932887,
+                        "y": 53.250491
+                    },
+                    "uuid": "9975588d-5d69-481f-95c4-7fc2e8ec8f32"
+                },
+                {
+                    "description": "Pad 4 [GND] of X301 on Bottom Layer",
+                    "pos": {
+                        "x": 63.1661,
+                        "y": 53.116855
+                    },
+                    "uuid": "c0796290-3838-4505-8a28-6418dce3bef6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [GND] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 63.008287,
+                        "y": 48.9714
+                    },
+                    "uuid": "8bac0eec-807b-4380-8b69-4a471f4aec6a"
+                },
+                {
+                    "description": "Track [GND] on Top Layer, length 1,5492 mm",
+                    "pos": {
+                        "x": 62.553734,
+                        "y": 50.245945
+                    },
+                    "uuid": "242705dd-5904-46a5-a66f-77c186e6e5b1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 50.5714
+                    },
+                    "uuid": "5ebc7a3c-3d87-4ace-90e3-97e7f183d5a9"
+                },
+                {
+                    "description": "Pad 2 [GND] of C7 on Top Layer",
+                    "pos": {
+                        "x": 63.96985,
+                        "y": 51.3414
+                    },
+                    "uuid": "532d702e-8658-43ff-ad7a-125637040168"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 42.9714
+                    },
+                    "uuid": "d28e3094-4318-4320-9408-8b657a892611"
+                },
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 42.9714
+                    },
+                    "uuid": "6c9d01f0-73ed-476a-a485-df956ddb73fb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 45.3714
+                    },
+                    "uuid": "41b01897-5413-4980-a2db-0e0c9f0e00e6"
+                },
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 42.9714
+                    },
+                    "uuid": "d28e3094-4318-4320-9408-8b657a892611"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Top Layer, length 0,1781 mm",
+                    "pos": {
+                        "x": 65.580475,
+                        "y": 50.004199
+                    },
+                    "uuid": "e6831578-3123-42c9-8f1d-e5304e62a30f"
+                },
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 50.1714
+                    },
+                    "uuid": "2517fad9-2930-4d6a-9f8d-30f10901ef8b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C107 on Top Layer",
+                    "pos": {
+                        "x": 66.311725,
+                        "y": 48.586855
+                    },
+                    "uuid": "ef4708ee-68ee-4e42-8676-f0062281304e"
+                },
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 48.5714
+                    },
+                    "uuid": "9a05e417-c605-4c89-9a8f-a53c6e8216e0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 67.408287,
+                        "y": 43.7714
+                    },
+                    "uuid": "279656d2-df18-4300-82b7-9aac36e73fea"
+                },
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 42.9714
+                    },
+                    "uuid": "6c9d01f0-73ed-476a-a485-df956ddb73fb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 67.408287,
+                        "y": 46.9714
+                    },
+                    "uuid": "08b260bd-2acf-4cc6-8e2d-fbc6535fab28"
+                },
+                {
+                    "description": "Pad 2 [GND] of C108 on Top Layer",
+                    "pos": {
+                        "x": 68.591413,
+                        "y": 47.748673
+                    },
+                    "uuid": "f332bc56-c89a-4e6f-bdc7-c8e2e673b870"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 70.208287,
+                        "y": 50.1714
+                    },
+                    "uuid": "8ee5cc6a-ef32-4914-9f8a-c869f2f1c9cb"
+                },
+                {
+                    "description": "Pad 2 [GND] of C21 on Top Layer",
+                    "pos": {
+                        "x": 70.642038,
+                        "y": 49.675036
+                    },
+                    "uuid": "2a859728-291a-4d1e-878f-a19f9228c7c9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C22 on Top Layer",
+                    "pos": {
+                        "x": 71.46235,
+                        "y": 47.765945
+                    },
+                    "uuid": "da82d8e4-6f28-42e3-99d6-c5f4ef4947d9"
+                },
+                {
+                    "description": "Track [GND] on Top Layer, length 0,9445 mm",
+                    "pos": {
+                        "x": 69.598037,
+                        "y": 47.748673
+                    },
+                    "uuid": "77546c64-7334-4053-b1db-83ba1989d455"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 45.7714
+                    },
+                    "uuid": "b8567d2f-b84c-4c1a-852a-a6b174b5785a"
+                },
+                {
+                    "description": "Track [VDD_3V3] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 45.3714
+                    },
+                    "uuid": "ba10c3f4-7917-43e7-8040-a8e21c10cfa6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 46.5714
+                    },
+                    "uuid": "6eec677a-ff8d-4f18-ad33-c64c756eeb0c"
+                },
+                {
+                    "description": "Track [VDD_3V3] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 46.9714
+                    },
+                    "uuid": "2144d981-e944-45f6-ba10-496a7e1067b4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 43.3714
+                    },
+                    "uuid": "231d0878-9ea3-4ced-90b9-871157b3d247"
+                },
+                {
+                    "description": "Track [VDD_3V3] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.008287,
+                        "y": 42.9714
+                    },
+                    "uuid": "a4b965b2-f50d-46ab-b52c-6be7a10eabd6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 68.208287,
+                        "y": 46.5714
+                    },
+                    "uuid": "92431391-0a0c-4af0-afe6-a8f2e1080265"
+                },
+                {
+                    "description": "Track [VDD_3V3] on Top Layer, length 0,1750 mm",
+                    "pos": {
+                        "x": 68.591413,
+                        "y": 46.639829
+                    },
+                    "uuid": "8473ebcb-82a9-474b-8e12-5ca582bc179a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [MCU_VDD11] on Bottom Layer, length 0,3935 mm",
+                    "pos": {
+                        "x": 65.658224,
+                        "y": 51.426484
+                    },
+                    "uuid": "300d97e3-81e3-47f1-9850-c0c5b5794a0a"
+                },
+                {
+                    "description": "Track [MCU_VDD11] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 50.1714
+                    },
+                    "uuid": "056041e3-56f1-4661-a713-b45c9051427a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [MCU_VDD11] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 67.408287,
+                        "y": 47.7714
+                    },
+                    "uuid": "04c40f87-39d5-4824-91b8-bf704a87a90a"
+                },
+                {
+                    "description": "Track [MCU_VDD11] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 48.1714
+                    },
+                    "uuid": "43565f30-7b98-4e9c-978e-809d708525ea"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 0,8296 mm",
+                    "pos": {
+                        "x": 49.462222,
+                        "y": 60.08626
+                    },
+                    "uuid": "c09c6bc0-32a9-42f7-8114-ea9c50743393"
+                },
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 1,0722 mm",
+                    "pos": {
+                        "x": 50.048849,
+                        "y": 63.407819
+                    },
+                    "uuid": "bac7c2a1-2ce2-473a-a649-bbeac0f27181"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 4,4410 mm",
+                    "pos": {
+                        "x": 72.064887,
+                        "y": 65.705091
+                    },
+                    "uuid": "2983c2e5-612e-4dfe-acfd-9430e848617b"
+                },
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 8,0729 mm",
+                    "pos": {
+                        "x": 76.768178,
+                        "y": 54.536027
+                    },
+                    "uuid": "08c20ba8-1ad7-432d-bd36-0730405a76f9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [BL_K4] on Layer 3, length 2,0813 mm",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 52.894003
+                    },
+                    "uuid": "5c8a626a-60f9-4af0-96dc-2ac304e2086c"
+                },
+                {
+                    "description": "Track [BL_K4] on Top Layer, length 0,4600 mm",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 54.975255
+                    },
+                    "uuid": "8fbcfceb-d98a-4c3c-b730-b45b39c465ef"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [BL_K4] on Top Layer, length 0,4600 mm",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 54.975255
+                    },
+                    "uuid": "8fbcfceb-d98a-4c3c-b730-b45b39c465ef"
+                },
+                {
+                    "description": "Track [BL_K4] on Top Layer, length 1,9109 mm",
+                    "pos": {
+                        "x": 83.19901,
+                        "y": 57.223963
+                    },
+                    "uuid": "c066dfe4-7264-445e-a5b5-ed80f3f0f241"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [REG_ENABLE] on Layer 4, length 1,3453 mm",
+                    "pos": {
+                        "x": 50.080872,
+                        "y": 54.440391
+                    },
+                    "uuid": "3602ddbe-a163-4403-86ab-532ed0f76903"
+                },
+                {
+                    "description": "Track [REG_ENABLE] on Layer 4, length 0,2486 mm",
+                    "pos": {
+                        "x": 49.905057,
+                        "y": 56.514855
+                    },
+                    "uuid": "aa77be31-3958-48de-af05-8c7f4eea27d4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LINK_TX] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 49.7714
+                    },
+                    "uuid": "ac1cfaf6-bdfe-404b-9da0-ec96076a3fd0"
+                },
+                {
+                    "description": "Pad 3 [LINK_TX] of U201 on Top Layer",
+                    "pos": {
+                        "x": 59.28485,
+                        "y": 55.428665
+                    },
+                    "uuid": "749e3970-4747-42d2-b3a2-6131fa3137de"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LINK_RTS] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 48.9714
+                    },
+                    "uuid": "7f9536c3-3549-44fb-b98b-b7c78b805a81"
+                },
+                {
+                    "description": "Pad 5 [LINK_RTS] of U201 on Top Layer",
+                    "pos": {
+                        "x": 59.28485,
+                        "y": 54.128665
+                    },
+                    "uuid": "4db04b01-9bca-423a-bb0c-203629d64d15"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LINK_CTS] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 47.7714
+                    },
+                    "uuid": "de111000-801f-4e08-b874-c0ae69417663"
+                },
+                {
+                    "description": "Track [LINK_CTS] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "1165a744-84d1-48b4-87a4-7106a758ab0d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [LINK_CTS] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "d1e1c17a-31ea-4ae2-aa3e-f8ec18579e7b"
+                },
+                {
+                    "description": "Pad 6 [LINK_CTS] of U201 on Top Layer",
+                    "pos": {
+                        "x": 59.28485,
+                        "y": 53.478665
+                    },
+                    "uuid": "ee59c234-b8de-4e66-9f5b-eff56fc2c253"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [RAD_RX] on Top Layer, length 3,4001 mm",
+                    "pos": {
+                        "x": 47.533256,
+                        "y": 55.439226
+                    },
+                    "uuid": "23ae5486-83a9-4585-8e24-a0afe8df334d"
+                },
+                {
+                    "description": "Track [RAD_RX] on Top Layer, length 0,0149 mm",
+                    "pos": {
+                        "x": 50.166998,
+                        "y": 55.428665
+                    },
+                    "uuid": "0775c634-d697-484d-a09c-a2853c3e559b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [RAD_RESET_ASSERT] on Layer 4, length 0,8506 mm",
+                    "pos": {
+                        "x": 37.407796,
+                        "y": 66.261117
+                    },
+                    "uuid": "12da1965-eff0-4f90-8252-1324b7a41102"
+                },
+                {
+                    "description": "Track [RAD_RESET_ASSERT] on Layer 4, length 4,4014 mm",
+                    "pos": {
+                        "x": 52.081203,
+                        "y": 65.659629
+                    },
+                    "uuid": "92c97df9-10a8-46e4-ac61-c60dbb04fb83"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [RAD_RESET_ASSERT] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 62.208287,
+                        "y": 47.3714
+                    },
+                    "uuid": "2005aa3b-f944-4815-9ea4-9b8e6e2829fa"
+                },
+                {
+                    "description": "Track [RAD_RESET_ASSERT] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 62.608287,
+                        "y": 46.9714
+                    },
+                    "uuid": "6ad31bc5-d1d4-4289-b603-a319fbd69cce"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [CHARGER_500_EN] of JP501 on Top Layer",
+                    "pos": {
+                        "x": 39.080163,
+                        "y": 64.430491
+                    },
+                    "uuid": "cbf92b5f-fc70-44eb-86a8-e52debadea90"
+                },
+                {
+                    "description": "Pad 6 [CHARGER_500_EN] of U3 on Bottom Layer",
+                    "pos": {
+                        "x": 56.438287,
+                        "y": 51.027764
+                    },
+                    "uuid": "87bbb61b-fd81-40d5-bb9a-65bc78060aa1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [BTN_RESET_N] on Bottom Layer, length 0,5369 mm",
+                    "pos": {
+                        "x": 52.50334,
+                        "y": 42.354132
+                    },
+                    "uuid": "5cbac051-a811-4fd1-b211-38c8183eabad"
+                },
+                {
+                    "description": "Track [BTN_RESET_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 44.9714
+                    },
+                    "uuid": "6b843285-7190-4bbb-b0fd-52447af5f9d8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [BTN_RESET_N] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 63.408288,
+                        "y": 45.3714
+                    },
+                    "uuid": "1109b0b5-43b1-4887-9488-4a93813f2892"
+                },
+                {
+                    "description": "Track [BTN_RESET_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 63.008287,
+                        "y": 44.9714
+                    },
+                    "uuid": "52339a13-8bef-492e-839b-70c88a7893c3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [TOUCH_IRQ_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.808287,
+                        "y": 50.1714
+                    },
+                    "uuid": "b885817c-6338-410f-bbf8-7a16efea4912"
+                },
+                {
+                    "description": "Track [TOUCH_IRQ_N] on Bottom Layer, length 1,2067 mm",
+                    "pos": {
+                        "x": 76.838266,
+                        "y": 53.825371
+                    },
+                    "uuid": "57f9824a-9bf1-41bb-a62f-f21b1bdc6866"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [HP_R_AC] on Top Layer, length 0,2928 mm",
+                    "pos": {
+                        "x": 82.52618,
+                        "y": 65.533218
+                    },
+                    "uuid": "fc74ee29-076f-4043-a0f7-644cdf6fa7da"
+                },
+                {
+                    "description": "Track [HP_R_AC] on Top Layer, length 2,4904 mm",
+                    "pos": {
+                        "x": 80.396222,
+                        "y": 63.696033
+                    },
+                    "uuid": "4ed02367-5382-44ab-bc62-fab4374f21a4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [HEADSET_R] on Top Layer, length 4,0055 mm",
+                    "pos": {
+                        "x": 81.664149,
+                        "y": 45.473859
+                    },
+                    "uuid": "0fe5e7e1-fac7-4567-ad30-ef84a22f2435"
+                },
+                {
+                    "description": "Track [HEADSET_R] on Top Layer, length 0,6996 mm",
+                    "pos": {
+                        "x": 86.205163,
+                        "y": 47.664991
+                    },
+                    "uuid": "6c6d40ff-9245-4cb9-97bf-12670e225ae8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [HEADSET_L] on Top Layer, length 4,1296 mm",
+                    "pos": {
+                        "x": 77.662648,
+                        "y": 58.688251
+                    },
+                    "uuid": "e0937c95-2c9f-40d2-8cf4-0d877d2e3463"
+                },
+                {
+                    "description": "Track [HEADSET_L] on Top Layer, length 0,7635 mm",
+                    "pos": {
+                        "x": 81.25255,
+                        "y": 66.407768
+                    },
+                    "uuid": "8f2be1d7-0357-47e4-8532-cca6dc72f7c9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [BL_FB] on Bottom Layer, length 0,5141 mm",
+                    "pos": {
+                        "x": 88.5805,
+                        "y": 39.912309
+                    },
+                    "uuid": "3a2a33e4-bbf0-4064-b260-40843cd7f9ec"
+                },
+                {
+                    "description": "Pad B3 [BL_FB] of U9 on Bottom Layer",
+                    "pos": {
+                        "x": 84.594996,
+                        "y": 43.139587
+                    },
+                    "uuid": "d64c6e96-989d-40bb-af18-e6ab548dd57d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_SDA] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 47.3714
+                    },
+                    "uuid": "a2cf38ec-b0f2-4cd1-965f-9a8fbe97f368"
+                },
+                {
+                    "description": "Track [AUD_SDA] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 66.608287,
+                        "y": 46.9714
+                    },
+                    "uuid": "8eddd493-1239-42ff-aa33-d1aabf749f96"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_SDA] on Layer 4, length 6,1159 mm",
+                    "pos": {
+                        "x": 68.418541,
+                        "y": 59.874466
+                    },
+                    "uuid": "0a900c2a-1812-4514-89bb-62bd97b67b67"
+                },
+                {
+                    "description": "Pad 10 [AUD_SDA] of U601 on Top Layer",
+                    "pos": {
+                        "x": 65.842975,
+                        "y": 53.664127
+                    },
+                    "uuid": "e3d473a5-ebe8-4f4c-a823-d7b93ab50d50"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 3 [REG_VAUX] of U1201 on Top Layer",
+                    "pos": {
+                        "x": 56.219225,
+                        "y": 46.5714
+                    },
+                    "uuid": "2945ffc5-9543-466c-892c-3b31c2203444"
+                },
+                {
+                    "description": "Pad 1 [REG_VAUX] of C1206 on Top Layer",
+                    "pos": {
+                        "x": 63.667975,
+                        "y": 46.405036
+                    },
+                    "uuid": "1ede36e6-c940-4478-8e90-605967298400"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SD_DETECT_N] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 66.608287,
+                        "y": 47.7714
+                    },
+                    "uuid": "4d5ff36c-93b1-4eb2-ab84-51491ee31171"
+                },
+                {
+                    "description": "Track [SD_DETECT_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 48.1714
+                    },
+                    "uuid": "73393049-e0bc-4fd5-a962-e2c75000fc2d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SD_DETECT_N] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 66.608287,
+                        "y": 47.7714
+                    },
+                    "uuid": "4d5ff36c-93b1-4eb2-ab84-51491ee31171"
+                },
+                {
+                    "description": "Pad 9 [SD_DETECT_N] of J401 on Top Layer",
+                    "pos": {
+                        "x": 44.3711,
+                        "y": 47.5714
+                    },
+                    "uuid": "4ac39728-62fb-4f4c-94de-96209a2d8b05"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_BCLK] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 68.208287,
+                        "y": 47.7714
+                    },
+                    "uuid": "601dbbe9-6c0a-4571-bc25-ee64881c86ab"
+                },
+                {
+                    "description": "Pad 2 [AUD_BCLK] of U601 on Top Layer",
+                    "pos": {
+                        "x": 69.530475,
+                        "y": 52.476627
+                    },
+                    "uuid": "4859386e-fcaa-4d5c-8738-c847a7671d9c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_WCLK] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 68.208287,
+                        "y": 48.5714
+                    },
+                    "uuid": "c97bbb73-b414-4b6f-8a5c-5907523d9589"
+                },
+                {
+                    "description": "Pad 3 [AUD_WCLK] of U601 on Top Layer",
+                    "pos": {
+                        "x": 69.030475,
+                        "y": 52.476627
+                    },
+                    "uuid": "ebe77323-82bc-41b2-8a8e-33ef930e550c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_WCLK] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 68.208287,
+                        "y": 48.5714
+                    },
+                    "uuid": "c97bbb73-b414-4b6f-8a5c-5907523d9589"
+                },
+                {
+                    "description": "Track [AUD_WCLK] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 68.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "18c228f6-dc02-46a6-92d6-9568adf2ebbe"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 5 [AUD_ADC_DATA] of U601 on Top Layer",
+                    "pos": {
+                        "x": 68.030475,
+                        "y": 52.476627
+                    },
+                    "uuid": "347b9c23-b116-4b5e-b6ed-f097ccaf23f8"
+                },
+                {
+                    "description": "Track [AUD_ADC_DATA] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.408287,
+                        "y": 50.1714
+                    },
+                    "uuid": "92fe5457-d0cb-4261-9029-d854f7d561af"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_SCL] on Top Layer, length 0,2928 mm",
+                    "pos": {
+                        "x": 65.112302,
+                        "y": 53.164127
+                    },
+                    "uuid": "2cb82e04-22fb-414a-88ae-005ebcd28100"
+                },
+                {
+                    "description": "Track [AUD_SCL] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 50.1714
+                    },
+                    "uuid": "c2e89949-f783-4436-824f-4293c86fb65e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [AUD_SCL] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 47.7714
+                    },
+                    "uuid": "dd71a59b-fc48-4c31-a63a-dc8c559f8195"
+                },
+                {
+                    "description": "Track [AUD_SCL] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.1714
+                    },
+                    "uuid": "c35a5e7d-3383-4d41-8edc-f2b76596b105"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [AUD_HPR_DC] of C612 on Bottom Layer",
+                    "pos": {
+                        "x": 68.370788,
+                        "y": 56.514129
+                    },
+                    "uuid": "cf42ea29-428c-496e-8324-895e0e352dcc"
+                },
+                {
+                    "description": "Pad 27 [AUD_HPR_DC] of U601 on Top Layer",
+                    "pos": {
+                        "x": 70.717975,
+                        "y": 55.664127
+                    },
+                    "uuid": "41a10139-43da-4df6-8d8e-7f558767a4a6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [TOUCH_RESET_N] on Bottom Layer, length 0,5000 mm",
+                    "pos": {
+                        "x": 78.35985,
+                        "y": 50.653218
+                    },
+                    "uuid": "22637181-b3b4-4239-81bc-0525809bb299"
+                },
+                {
+                    "description": "Track [TOUCH_RESET_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 48.9714
+                    },
+                    "uuid": "89a0163c-2a43-4c71-97a6-7b6677cf79b1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad B4 [BTN_UPDATE_N] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 69.008287,
+                        "y": 47.7714
+                    },
+                    "uuid": "98ffce8e-a0d8-4c5b-ae70-dc82970b3bb5"
+                },
+                {
+                    "description": "Track [BTN_UPDATE_N] on Bottom Layer, length 0,8000 mm",
+                    "pos": {
+                        "x": 56.306725,
+                        "y": 36.012309
+                    },
+                    "uuid": "9c24592a-7ad3-4b2f-9031-3bd02e74f33c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SD_SCK_MCU] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 62.208287,
+                        "y": 49.7714
+                    },
+                    "uuid": "74911180-e455-45a6-881e-c152093c44fb"
+                },
+                {
+                    "description": "Pad 3 [SD_SCK_MCU] of U402 on Bottom Layer",
+                    "pos": {
+                        "x": 48.354006,
+                        "y": 45.0589
+                    },
+                    "uuid": "5f9b9359-89f6-437f-956b-01106e37ebd7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SD_MOSI_MCU] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 62.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "9b38bb8e-98da-4e09-91bf-f2592232b26a"
+                },
+                {
+                    "description": "Pad 4 [SD_MOSI_MCU] of U402 on Bottom Layer",
+                    "pos": {
+                        "x": 49.004006,
+                        "y": 45.0589
+                    },
+                    "uuid": "8f247564-6dab-4983-add9-b0ac71ad3740"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 6 [SD_CS_MCU] of U402 on Bottom Layer",
+                    "pos": {
+                        "x": 50.304006,
+                        "y": 45.0589
+                    },
+                    "uuid": "4e456417-1caf-45e7-b372-caa88b6d7829"
+                },
+                {
+                    "description": "Track [SD_CS_MCU] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 43.7714
+                    },
+                    "uuid": "2e0b5301-737f-4a2a-9b52-044cc3c9c7e7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SD_IO_DISABLE] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 46.5714
+                    },
+                    "uuid": "29caba1d-400c-4631-99ec-fac46d23423f"
+                },
+                {
+                    "description": "Via [SD_IO_DISABLE] on Top Layer - Bottom Layer",
+                    "pos": {
+                        "x": 52.356724,
+                        "y": 49.618929
+                    },
+                    "uuid": "85fb5739-2b3a-44ff-9563-a88c87711135"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 7 [CHARGER_PGOOD_N] of U3 on Bottom Layer",
+                    "pos": {
+                        "x": 56.438287,
+                        "y": 51.527764
+                    },
+                    "uuid": "c4aacf86-8ce0-445c-a65e-45533033ef33"
+                },
+                {
+                    "description": "Pad B12 [CHARGER_PGOOD_N] of U1 on Bottom Layer",
+                    "pos": {
+                        "x": 69.008287,
+                        "y": 41.3714
+                    },
+                    "uuid": "d83b9c0b-7858-48ab-942f-41878760b97b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [SE_ENABLE] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 61.808287,
+                        "y": 42.1714
+                    },
+                    "uuid": "c33e5c87-3dfe-4989-944e-54c2fd0446dd"
+                },
+                {
+                    "description": "Track [SE_ENABLE] on Top Layer, length 0,8967 mm",
+                    "pos": {
+                        "x": 85.602264,
+                        "y": 56.166462
+                    },
+                    "uuid": "2a4f7f90-4bb8-43b9-a213-165c982ecee6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008287,
+                        "y": 40.9714
+                    },
+                    "uuid": "049e49c8-6336-45a0-b5c3-21e80066012a"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 67.408287,
+                        "y": 46.9714
+                    },
+                    "uuid": "08b260bd-2acf-4cc6-8e2d-fbc6535fab28"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 60.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "27049a1b-6f37-495f-9a4b-b4adfa640254"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 67.408287,
+                        "y": 43.7714
+                    },
+                    "uuid": "279656d2-df18-4300-82b7-9aac36e73fea"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 50.5714
+                    },
+                    "uuid": "5ebc7a3c-3d87-4ace-90e3-97e7f183d5a9"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 42.9714
+                    },
+                    "uuid": "6c9d01f0-73ed-476a-a485-df956ddb73fb"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 61.808287,
+                        "y": 44.5714
+                    },
+                    "uuid": "6cfb7216-2c2a-4dcc-a5db-4def47c90486"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 70.208287,
+                        "y": 50.1714
+                    },
+                    "uuid": "8ee5cc6a-ef32-4914-9f8a-c869f2f1c9cb"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 48.5714
+                    },
+                    "uuid": "9a05e417-c605-4c89-9a8f-a53c6e8216e0"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 42.9714
+                    },
+                    "uuid": "d28e3094-4318-4320-9408-8b657a892611"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 46.9714
+                    },
+                    "uuid": "2144d981-e944-45f6-ba10-496a7e1067b4"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 45.3714
+                    },
+                    "uuid": "ba10c3f4-7917-43e7-8040-a8e21c10cfa6"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 41.3714
+                    },
+                    "uuid": "587c0d91-d484-4e6a-adc1-f36dcc099ec0"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 46.5714
+                    },
+                    "uuid": "6eec677a-ff8d-4f18-ad33-c64c756eeb0c"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 63.808288,
+                        "y": 45.7714
+                    },
+                    "uuid": "b8567d2f-b84c-4c1a-852a-a6b174b5785a"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VDD_3V3] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 46.5714
+                    },
+                    "uuid": "cbbabb77-f7bc-43ce-8273-40823d509260"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [TOUCH_RESET_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 48.9714
+                    },
+                    "uuid": "89a0163c-2a43-4c71-97a6-7b6677cf79b1"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [MCU_VDD11] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 67.408287,
+                        "y": 47.7714
+                    },
+                    "uuid": "04c40f87-39d5-4824-91b8-bf704a87a90a"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [MCU_VDD11] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 50.1714
+                    },
+                    "uuid": "056041e3-56f1-4661-a713-b45c9051427a"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [MCU_VDD11] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 48.1714
+                    },
+                    "uuid": "43565f30-7b98-4e9c-978e-809d708525ea"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 8,0729 mm",
+                    "pos": {
+                        "x": 76.768178,
+                        "y": 54.536027
+                    },
+                    "uuid": "08c20ba8-1ad7-432d-bd36-0730405a76f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 4,4410 mm",
+                    "pos": {
+                        "x": 72.064887,
+                        "y": 65.705091
+                    },
+                    "uuid": "2983c2e5-612e-4dfe-acfd-9430e848617b"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 1,0722 mm",
+                    "pos": {
+                        "x": 50.048849,
+                        "y": 63.407819
+                    },
+                    "uuid": "bac7c2a1-2ce2-473a-a649-bbeac0f27181"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_LDOIN_2V8] on Top Layer, length 0,8296 mm",
+                    "pos": {
+                        "x": 49.462222,
+                        "y": 60.08626
+                    },
+                    "uuid": "c09c6bc0-32a9-42f7-8114-ea9c50743393"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BL_K4] on Top Layer, length 0,4600 mm",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 54.975255
+                    },
+                    "uuid": "8fbcfceb-d98a-4c3c-b730-b45b39c465ef"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BL_K4] on Top Layer, length 1,9109 mm",
+                    "pos": {
+                        "x": 83.19901,
+                        "y": 57.223963
+                    },
+                    "uuid": "c066dfe4-7264-445e-a5b5-ed80f3f0f241"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BL_K4] on Layer 3, length 2,0813 mm",
+                    "pos": {
+                        "x": 81.410259,
+                        "y": 52.894003
+                    },
+                    "uuid": "5c8a626a-60f9-4af0-96dc-2ac304e2086c"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [REG_ENABLE] on Layer 4, length 1,3453 mm",
+                    "pos": {
+                        "x": 50.080872,
+                        "y": 54.440391
+                    },
+                    "uuid": "3602ddbe-a163-4403-86ab-532ed0f76903"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [LINK_TX] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 49.7714
+                    },
+                    "uuid": "ac1cfaf6-bdfe-404b-9da0-ec96076a3fd0"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [LINK_RTS] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 48.9714
+                    },
+                    "uuid": "7f9536c3-3549-44fb-b98b-b7c78b805a81"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [LINK_CTS] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 64.208288,
+                        "y": 47.7714
+                    },
+                    "uuid": "de111000-801f-4e08-b874-c0ae69417663"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [LINK_CTS] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "1165a744-84d1-48b4-87a4-7106a758ab0d"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [LINK_CTS] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 64.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "d1e1c17a-31ea-4ae2-aa3e-f8ec18579e7b"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [RAD_RX] on Top Layer, length 0,0149 mm",
+                    "pos": {
+                        "x": 50.166998,
+                        "y": 55.428665
+                    },
+                    "uuid": "0775c634-d697-484d-a09c-a2853c3e559b"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [RAD_RX] on Top Layer, length 3,4001 mm",
+                    "pos": {
+                        "x": 47.533256,
+                        "y": 55.439226
+                    },
+                    "uuid": "23ae5486-83a9-4585-8e24-a0afe8df334d"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [RAD_RESET_ASSERT] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 62.608287,
+                        "y": 46.9714
+                    },
+                    "uuid": "6ad31bc5-d1d4-4289-b603-a319fbd69cce"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [RAD_RESET_ASSERT] on Layer 4, length 0,8506 mm",
+                    "pos": {
+                        "x": 37.407796,
+                        "y": 66.261117
+                    },
+                    "uuid": "12da1965-eff0-4f90-8252-1324b7a41102"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [RAD_RESET_ASSERT] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 62.208287,
+                        "y": 47.3714
+                    },
+                    "uuid": "2005aa3b-f944-4815-9ea4-9b8e6e2829fa"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [RAD_RESET_ASSERT] on Layer 4, length 4,4014 mm",
+                    "pos": {
+                        "x": 52.081203,
+                        "y": 65.659629
+                    },
+                    "uuid": "92c97df9-10a8-46e4-ac61-c60dbb04fb83"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BTN_UPDATE_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 48.1714
+                    },
+                    "uuid": "bd28bd39-22e2-4818-bc30-813885787b0d"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_SCK_MCU] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 62.208287,
+                        "y": 50.1714
+                    },
+                    "uuid": "a8a33d38-7684-4c46-90c9-7ad50f5a9838"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_MOSI_MCU] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 62.608287,
+                        "y": 50.1714
+                    },
+                    "uuid": "9b38bb8e-98da-4e09-91bf-f2592232b26a"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_CS_MCU] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 41.3714
+                    },
+                    "uuid": "7d66cab2-c450-47ab-92f4-dd38900b9264"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_IO_DISABLE] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 46.5714
+                    },
+                    "uuid": "29caba1d-400c-4631-99ec-fac46d23423f"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BTN_RESET_N] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 63.408288,
+                        "y": 45.3714
+                    },
+                    "uuid": "1109b0b5-43b1-4887-9488-4a93813f2892"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BTN_RESET_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 63.008287,
+                        "y": 44.9714
+                    },
+                    "uuid": "52339a13-8bef-492e-839b-70c88a7893c3"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BTN_RESET_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 44.9714
+                    },
+                    "uuid": "6b843285-7190-4bbb-b0fd-52447af5f9d8"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BL_FB] on Bottom Layer, length 1,0812 mm",
+                    "pos": {
+                        "x": 92.516031,
+                        "y": 42.027061
+                    },
+                    "uuid": "07249661-ec41-479a-a33f-abed9f150f6e"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [BL_FB] on Bottom Layer, length 1,9925 mm",
+                    "pos": {
+                        "x": 93.280547,
+                        "y": 49.816103
+                    },
+                    "uuid": "c22a7559-abe9-4ef8-bb93-26aa25df8e12"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_DETECT_N] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 66.608287,
+                        "y": 47.7714
+                    },
+                    "uuid": "4d5ff36c-93b1-4eb2-ab84-51491ee31171"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_DETECT_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 48.1714
+                    },
+                    "uuid": "73393049-e0bc-4fd5-a962-e2c75000fc2d"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SD_DETECT_N] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 66.208288,
+                        "y": 50.1714
+                    },
+                    "uuid": "b3c1f007-83c7-4cef-b32e-4bf28b2ab5b1"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [TOUCH_IRQ_N] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.808287,
+                        "y": 50.1714
+                    },
+                    "uuid": "b885817c-6338-410f-bbf8-7a16efea4912"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [HP_R_AC] on Top Layer, length 2,4904 mm",
+                    "pos": {
+                        "x": 80.396222,
+                        "y": 63.696033
+                    },
+                    "uuid": "4ed02367-5382-44ab-bc62-fab4374f21a4"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [HP_R_AC] on Top Layer, length 0,2928 mm",
+                    "pos": {
+                        "x": 82.52618,
+                        "y": 65.533218
+                    },
+                    "uuid": "fc74ee29-076f-4043-a0f7-644cdf6fa7da"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [HEADSET_R] on Top Layer, length 4,0055 mm",
+                    "pos": {
+                        "x": 81.664149,
+                        "y": 45.473859
+                    },
+                    "uuid": "0fe5e7e1-fac7-4567-ad30-ef84a22f2435"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [HEADSET_R] on Top Layer, length 0,6996 mm",
+                    "pos": {
+                        "x": 86.205163,
+                        "y": 47.664991
+                    },
+                    "uuid": "6c6d40ff-9245-4cb9-97bf-12670e225ae8"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [HEADSET_L] on Top Layer, length 0,7635 mm",
+                    "pos": {
+                        "x": 81.25255,
+                        "y": 66.407768
+                    },
+                    "uuid": "8f2be1d7-0357-47e4-8532-cca6dc72f7c9"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [HEADSET_L] on Top Layer, length 4,1296 mm",
+                    "pos": {
+                        "x": 77.662648,
+                        "y": 58.688251
+                    },
+                    "uuid": "e0937c95-2c9f-40d2-8cf4-0d877d2e3463"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_SDA] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 66.608287,
+                        "y": 46.9714
+                    },
+                    "uuid": "8eddd493-1239-42ff-aa33-d1aabf749f96"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_SDA] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 67.008287,
+                        "y": 47.3714
+                    },
+                    "uuid": "a2cf38ec-b0f2-4cd1-965f-9a8fbe97f368"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_SCL] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 65.808287,
+                        "y": 47.7714
+                    },
+                    "uuid": "dd71a59b-fc48-4c31-a63a-dc8c559f8195"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_SCL] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 50.1714
+                    },
+                    "uuid": "c2e89949-f783-4436-824f-4293c86fb65e"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_SCL] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 65.408287,
+                        "y": 48.1714
+                    },
+                    "uuid": "c35a5e7d-3383-4d41-8edc-f2b76596b105"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [SE_ENABLE] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 61.008288,
+                        "y": 41.7714
+                    },
+                    "uuid": "a5288f2f-f775-4575-8054-f00bfd23c4b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_ADC_DATA] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.408287,
+                        "y": 50.1714
+                    },
+                    "uuid": "92fe5457-d0cb-4261-9029-d854f7d561af"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_WCLK] on Bottom Layer, length 0,5657 mm",
+                    "pos": {
+                        "x": 68.208287,
+                        "y": 48.5714
+                    },
+                    "uuid": "c97bbb73-b414-4b6f-8a5c-5907523d9589"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_WCLK] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 68.608287,
+                        "y": 48.1714
+                    },
+                    "uuid": "18c228f6-dc02-46a6-92d6-9568adf2ebbe"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_WCLK] on Layer 4, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 48.1714
+                    },
+                    "uuid": "fc223c29-a770-4ff4-8602-2f94fb2b9f29"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [AUD_BCLK] on Bottom Layer, length 0,4000 mm",
+                    "pos": {
+                        "x": 69.808287,
+                        "y": 47.3714
+                    },
+                    "uuid": "14e52ea6-1dfa-487a-95be-a46df64c0743"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 68.0
+                    },
+                    "uuid": "848d1672-48ea-4181-9792-e886f3fcc46c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 65.0
+                    },
+                    "uuid": "cc9b2c4c-a5ed-4756-9ae1-f16e8189f612"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of L1",
+                    "pos": {
+                        "x": 63.081725,
+                        "y": 46.8214
+                    },
+                    "uuid": "2d631041-18ef-433c-a95a-9f81cd040643"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of Q201",
+                    "pos": {
+                        "x": 32.62735,
+                        "y": 64.307764
+                    },
+                    "uuid": "0a1dc5df-b258-4426-8b5b-792a25064bb0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U1201",
+                    "pos": {
+                        "x": 55.069225,
+                        "y": 49.4714
+                    },
+                    "uuid": "b440fd29-fd67-410b-a9f5-0ce157856234"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U601",
+                    "pos": {
+                        "x": 72.110475,
+                        "y": 54.914127
+                    },
+                    "uuid": "7b9f1d17-1577-4a33-99eb-9185167e54ca"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U401",
+                    "pos": {
+                        "x": 87.570788,
+                        "y": 28.7214
+                    },
+                    "uuid": "ef2f44b4-4b0b-4114-be8f-ebff4a22a2d2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of X201",
+                    "pos": {
+                        "x": 35.0911,
+                        "y": 46.998673
+                    },
+                    "uuid": "494532e7-9bf5-4235-a425-3ddf8b65ec9d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of X301",
+                    "pos": {
+                        "x": 61.7161,
+                        "y": 53.816855
+                    },
+                    "uuid": "50496c21-0bf2-420f-b739-5ccfbe23c78d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of X202",
+                    "pos": {
+                        "x": 42.302038,
+                        "y": 46.453218
+                    },
+                    "uuid": "7f57f94f-a8f1-406e-8b29-a28e6411c71c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U202",
+                    "pos": {
+                        "x": 43.755568,
+                        "y": 34.490491
+                    },
+                    "uuid": "52932655-5443-4096-bb6a-497261c76cac"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U602",
+                    "pos": {
+                        "x": 57.754538,
+                        "y": 60.357764
+                    },
+                    "uuid": "80195da5-10ba-44cd-a1dc-e4ed160f1c4a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U3",
+                    "pos": {
+                        "x": 52.145787,
+                        "y": 51.277764
+                    },
+                    "uuid": "e210edf0-20a1-4a44-999b-e117b9f3cdcf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of F501",
+                    "pos": {
+                        "x": 34.838288,
+                        "y": 66.625945
+                    },
+                    "uuid": "c946c559-3d2e-416c-89a6-01af61396326"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of J502",
+                    "pos": {
+                        "x": 50.062942,
+                        "y": 42.107764
+                    },
+                    "uuid": "c1a56190-b619-4e35-b4d5-38c370fa38c2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of D601",
+                    "pos": {
+                        "x": 77.92235,
+                        "y": 43.625948
+                    },
+                    "uuid": "29487683-8350-4b05-b12e-201bfb15644b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of D603",
+                    "pos": {
+                        "x": 51.67235,
+                        "y": 42.262312
+                    },
+                    "uuid": "7248e6d7-c073-4363-b528-e73de9945114"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U11",
+                    "pos": {
+                        "x": 91.752038,
+                        "y": 55.6214
+                    },
+                    "uuid": "fb00d34b-9c7e-4b3b-bff3-041db4e6a959"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of J503",
+                    "pos": {
+                        "x": 78.980163,
+                        "y": 40.416855
+                    },
+                    "uuid": "3e57cf42-de12-44bc-b5d1-883eb7867b6d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of L201",
+                    "pos": {
+                        "x": 33.541413,
+                        "y": 48.495036
+                    },
+                    "uuid": "c9e612e4-f095-4e41-a570-a9f526f44b8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of TP13",
+                    "pos": {
+                        "x": 43.629983,
+                        "y": 43.439237
+                    },
+                    "uuid": "72f23462-e9ee-4648-9c83-4e7515ae39bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW302",
+                    "pos": {
+                        "x": 54.606725,
+                        "y": 33.212309
+                    },
+                    "uuid": "7c2e275b-1806-4a38-aac1-053457ebe3eb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U6",
+                    "pos": {
+                        "x": 38.67235,
+                        "y": 43.8714
+                    },
+                    "uuid": "becef99e-3c9b-466b-94be-4278a8373da0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 65.0
+                    },
+                    "uuid": "cc9b2c4c-a5ed-4756-9ae1-f16e8189f612"
+                },
+                {
+                    "description": "Segment of C609 on Top Overlay",
+                    "pos": {
+                        "x": 67.591368,
+                        "y": 64.713218
+                    },
+                    "uuid": "eddb35fb-7d75-4e79-b1f7-fb8cfad1c0de"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C1201 on Top Overlay",
+                    "pos": {
+                        "x": 55.104848,
+                        "y": 49.510945
+                    },
+                    "uuid": "56dd9bd1-dc05-46c0-aeac-1258a5c65be9"
+                },
+                {
+                    "description": "Reference field of U1201",
+                    "pos": {
+                        "x": 55.069225,
+                        "y": 49.4714
+                    },
+                    "uuid": "b440fd29-fd67-410b-a9f5-0ce157856234"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R501 on Top Overlay",
+                    "pos": {
+                        "x": 52.935788,
+                        "y": 67.59685
+                    },
+                    "uuid": "2c77756f-1141-4b3d-bba1-9869597536b6"
+                },
+                {
+                    "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 68.0
+                    },
+                    "uuid": "848d1672-48ea-4181-9792-e886f3fcc46c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R501 on Top Overlay",
+                    "pos": {
+                        "x": 53.695788,
+                        "y": 67.59685
+                    },
+                    "uuid": "29b085c8-fe07-4536-9920-3aa4a720578f"
+                },
+                {
+                    "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 68.0
+                    },
+                    "uuid": "848d1672-48ea-4181-9792-e886f3fcc46c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R504 on Top Overlay",
+                    "pos": {
+                        "x": 50.748288,
+                        "y": 65.415032
+                    },
+                    "uuid": "0a297145-bf08-4df5-afea-f7cf7ee5be3e"
+                },
+                {
+                    "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 65.0
+                    },
+                    "uuid": "cc9b2c4c-a5ed-4756-9ae1-f16e8189f612"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R504 on Top Overlay",
+                    "pos": {
+                        "x": 51.508288,
+                        "y": 65.415032
+                    },
+                    "uuid": "2eb716d4-d9dd-4838-ad41-6503efdb5004"
+                },
+                {
+                    "description": "PCB text 'INCOMPLETE - DO NOT FABRICATE' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 65.0
+                    },
+                    "uuid": "cc9b2c4c-a5ed-4756-9ae1-f16e8189f612"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of Q201",
+                    "pos": {
+                        "x": 32.62735,
+                        "y": 64.307764
+                    },
+                    "uuid": "0a1dc5df-b258-4426-8b5b-792a25064bb0"
+                },
+                {
+                    "description": "Segment of R405 on Top Overlay",
+                    "pos": {
+                        "x": 33.421616,
+                        "y": 63.954127
+                    },
+                    "uuid": "6f6c1c38-c2ef-41df-aee7-190e34718887"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of D503",
+                    "pos": {
+                        "x": 37.209186,
+                        "y": 66.170945
+                    },
+                    "uuid": "47e7423e-7930-4523-a51a-ce365aa5025c"
+                },
+                {
+                    "description": "Reference field of JP501",
+                    "pos": {
+                        "x": 39.730163,
+                        "y": 66.230491
+                    },
+                    "uuid": "8cfd481b-5c84-40ab-a9a7-78fb6b0d89a2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R602 on Top Overlay",
+                    "pos": {
+                        "x": 68.248288,
+                        "y": 67.59685
+                    },
+                    "uuid": "6f64240d-8b74-4a17-a25a-167f58d57a81"
+                },
+                {
+                    "description": "PCB text 'CIRCUIT REVIEW - UNROUTED' on Top Overlay",
+                    "pos": {
+                        "x": 60.0,
+                        "y": 68.0
+                    },
+                    "uuid": "848d1672-48ea-4181-9792-e886f3fcc46c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of L1201",
+                    "pos": {
+                        "x": 66.375475,
+                        "y": 28.866855
+                    },
+                    "uuid": "49ec31c1-c3ba-495c-beaf-e77af76c2cfe"
+                },
+                {
+                    "description": "Circle of TP4 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 67.212752,
+                        "y": 26.789205
+                    },
+                    "uuid": "d4021379-5ec0-452a-97c6-221144e68c2d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of L1201",
+                    "pos": {
+                        "x": 66.375475,
+                        "y": 28.866855
+                    },
+                    "uuid": "49ec31c1-c3ba-495c-beaf-e77af76c2cfe"
+                },
+                {
+                    "description": "Reference field of TP4",
+                    "pos": {
+                        "x": 67.212752,
+                        "y": 28.237205
+                    },
+                    "uuid": "78bbb79e-0047-46db-a56a-8d39e27ab1f1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U6 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 41.78235,
+                        "y": 45.3014
+                    },
+                    "uuid": "1f5d1dab-9225-4497-a1ab-cc71142cd7f2"
+                },
+                {
+                    "description": "Reference field of X202",
+                    "pos": {
+                        "x": 42.302038,
+                        "y": 46.453218
+                    },
+                    "uuid": "7f57f94f-a8f1-406e-8b29-a28e6411c71c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of X202",
+                    "pos": {
+                        "x": 42.302038,
+                        "y": 46.453218
+                    },
+                    "uuid": "7f57f94f-a8f1-406e-8b29-a28e6411c71c"
+                },
+                {
+                    "description": "Polygon of U6 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 41.78235,
+                        "y": 45.0614
+                    },
+                    "uuid": "baafbc1e-df9a-4922-9f17-ba6d651fcaba"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of X201",
+                    "pos": {
+                        "x": 35.0911,
+                        "y": 46.998673
+                    },
+                    "uuid": "494532e7-9bf5-4235-a425-3ddf8b65ec9d"
+                },
+                {
+                    "description": "Segment of U6 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 35.56235,
+                        "y": 45.6114
+                    },
+                    "uuid": "4bc27655-a3df-4d8a-a56d-e6bc59d86d68"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U4 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 49.982975,
+                        "y": 42.18128
+                    },
+                    "uuid": "5441e476-2cd3-4395-a37d-8e38c781b978"
+                },
+                {
+                    "description": "Reference field of J502",
+                    "pos": {
+                        "x": 50.062942,
+                        "y": 42.107764
+                    },
+                    "uuid": "c1a56190-b619-4e35-b4d5-38c370fa38c2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of D603",
+                    "pos": {
+                        "x": 51.67235,
+                        "y": 42.262312
+                    },
+                    "uuid": "7248e6d7-c073-4363-b528-e73de9945114"
+                },
+                {
+                    "description": "Polygon of U4 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 51.647975,
+                        "y": 43.311279999999996
+                    },
+                    "uuid": "aca9a0ce-cef3-4cab-9e76-5aa57e524f8e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U4",
+                    "pos": {
+                        "x": 52.817975,
+                        "y": 42.68128
+                    },
+                    "uuid": "0dfdec1d-a9b3-4db3-9377-a8c27bc7f124"
+                },
+                {
+                    "description": "Segment of D603 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 52.67235,
+                        "y": 43.312312
+                    },
+                    "uuid": "8d3af638-e401-438c-bb18-ab03f9eb4b38"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U4 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 51.652975,
+                        "y": 42.18128
+                    },
+                    "uuid": "1123ba16-5896-4fd6-b91a-5415cf4fab14"
+                },
+                {
+                    "description": "Reference field of D603",
+                    "pos": {
+                        "x": 51.67235,
+                        "y": 42.262312
+                    },
+                    "uuid": "7248e6d7-c073-4363-b528-e73de9945114"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of X201",
+                    "pos": {
+                        "x": 35.0911,
+                        "y": 46.998673
+                    },
+                    "uuid": "494532e7-9bf5-4235-a425-3ddf8b65ec9d"
+                },
+                {
+                    "description": "Reference field of L201",
+                    "pos": {
+                        "x": 33.541413,
+                        "y": 48.495036
+                    },
+                    "uuid": "c9e612e4-f095-4e41-a570-a9f526f44b8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of X201 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 31.8811,
+                        "y": 48.408673
+                    },
+                    "uuid": "a62d7915-9f57-497a-9cc8-c7f53091ed7e"
+                },
+                {
+                    "description": "Reference field of L201",
+                    "pos": {
+                        "x": 33.541413,
+                        "y": 48.495036
+                    },
+                    "uuid": "c9e612e4-f095-4e41-a570-a9f526f44b8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of D603",
+                    "pos": {
+                        "x": 51.67235,
+                        "y": 42.262312
+                    },
+                    "uuid": "7248e6d7-c073-4363-b528-e73de9945114"
+                },
+                {
+                    "description": "Reference field of J502",
+                    "pos": {
+                        "x": 50.062942,
+                        "y": 42.107764
+                    },
+                    "uuid": "c1a56190-b619-4e35-b4d5-38c370fa38c2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of R201 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 36.122147,
+                        "y": 66.6814
+                    },
+                    "uuid": "6f0f0da4-bb29-40e5-8b88-63ef56b0edb0"
+                },
+                {
+                    "description": "Reference field of F501",
+                    "pos": {
+                        "x": 34.838288,
+                        "y": 66.625945
+                    },
+                    "uuid": "c946c559-3d2e-416c-89a6-01af61396326"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U1202 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 26.92235,
+                        "y": 68.077764
+                    },
+                    "uuid": "434e5bdb-d489-492f-9644-8cc66e9787e3"
+                },
+                {
+                    "description": "Reference field of U1202",
+                    "pos": {
+                        "x": 28.37235,
+                        "y": 68.967764
+                    },
+                    "uuid": "93f18b5f-d747-4657-b680-b6241a4355ed"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U401 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 86.680788,
+                        "y": 30.1714
+                    },
+                    "uuid": "e78f2889-35c2-415a-9a9d-abb1fd493082"
+                },
+                {
+                    "description": "Reference field of U401",
+                    "pos": {
+                        "x": 87.570788,
+                        "y": 28.7214
+                    },
+                    "uuid": "ef2f44b4-4b0b-4114-be8f-ebff4a22a2d2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of J503",
+                    "pos": {
+                        "x": 78.980163,
+                        "y": 40.416855
+                    },
+                    "uuid": "3e57cf42-de12-44bc-b5d1-883eb7867b6d"
+                },
+                {
+                    "description": "Circle of TP1 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 79.804545,
+                        "y": 40.439237
+                    },
+                    "uuid": "5216d8c9-e80c-4202-b543-f9170bb2bb5f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of X301",
+                    "pos": {
+                        "x": 61.7161,
+                        "y": 53.816855
+                    },
+                    "uuid": "50496c21-0bf2-420f-b739-5ccfbe23c78d"
+                },
+                {
+                    "description": "Segment of C109 on Board Layer Stack Bottom Overlay",
+                    "pos": {
+                        "x": 61.4686,
+                        "y": 53.977435
+                    },
+                    "uuid": "eaab241f-a99b-450e-af89-890d98121e8c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        }
+    ]
+}

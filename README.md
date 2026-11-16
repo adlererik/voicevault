@@ -14,6 +14,8 @@ The intended adversary has **NSA-class capabilities**: both phones may already b
 
 ## Hardware laboratory
 
+**Local repair update:** the [separate repaired C0 checkpoint](hardware/rev-c/local-repair-01/README.md) clears the returned shorts and antenna-rule errors after removing invalid copper. **62 connections still need routing**; this is not a manufacturing release. [Native checks and limitations](hardware/evidence/2026-11-16/local-repair/README.md).
+
 The new **[Rev C circuit draft](hardware/rev-c/README.md)** simplifies the physical device around the STM32U5G9ZJJ6Q: **one NXP SE050E2 secure element, a larger QFN BLE chip, a replaceable protected BL-5C-style lithium-ion pack and wired charging**. Qi and NFC are removed. Trusted display/touch, wired audio, physical microphone disconnect, offline microSD and separate MCU/radio development debug interfaces remain.
 
 Native KiCad contains **196 electrical components instead of 296—100 fewer, about 34%**. Including 13 probe pads and four mounting holes, that is **213 footprints instead of 314**. Vibration was removed by the owner; alerts use the trusted display. The separate 70 × 45 mm, provisional six-layer input has **no electrical placement, tracks, vias or copper pours**. Quilter is reserved for placement and routing; no local router is being mixed into this design.

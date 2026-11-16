@@ -1,0 +1,1247 @@
+{
+  "status": "PARTIAL REPAIR - NOT ACCEPTED",
+  "source_sha256": "fa9511cbac5fa3eb30e46b11ad6aed4dd9926345d26bf578873e45da677ea231",
+  "board_sha256": "af7eeff783be3ebf9b90ea35c664b008d1aef6bde15e53b5cb029d333f5cfb60",
+  "antenna_layer_membership_corrected": true,
+  "component_values_pad_nets_and_poses_preserved": true,
+  "max_native_position_rounding_mm": 5.000000058430487e-07,
+  "invalid_copper_removed": 33,
+  "removed": [
+    {
+      "uuid": "53d87af0-11db-46c2-a600-13e8e42ea728",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items",
+        "solder_mask_bridge"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "61.408287",
+          "44.9714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "53d87af0-11db-46c2-a600-13e8e42ea728"
+        ]
+      ]
+    },
+    {
+      "uuid": "ff1b4318-2a2e-40a2-8946-a96dff278484",
+      "kind": "via",
+      "reasons": [
+        "clearance",
+        "shorting_items"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "67.808287",
+          "46.5714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "ff1b4318-2a2e-40a2-8946-a96dff278484"
+        ]
+      ]
+    },
+    {
+      "uuid": "1b5bd4f5-0912-4135-bad7-feac731f04d2",
+      "kind": "via",
+      "reasons": [
+        "shorting_items"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "64.608287",
+          "43.3714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "1b5bd4f5-0912-4135-bad7-feac731f04d2"
+        ]
+      ]
+    },
+    {
+      "uuid": "91ca9f6d-fbd9-4647-828c-e4170e678042",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "85.710505",
+          "47.170333"
+        ],
+        [
+          "end",
+          "83.360623",
+          "47.170333"
+        ],
+        [
+          "width",
+          "0.101702"
+        ],
+        [
+          "layer",
+          "F.Cu"
+        ],
+        [
+          "net",
+          "HEADSET_R"
+        ],
+        [
+          "uuid",
+          "91ca9f6d-fbd9-4647-828c-e4170e678042"
+        ]
+      ]
+    },
+    {
+      "uuid": "09cb785c-d0e7-4141-a1c6-fad47043c4c6",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "83.360623",
+          "47.170333"
+        ],
+        [
+          "end",
+          "81.664149",
+          "45.473859"
+        ],
+        [
+          "width",
+          "0.101702"
+        ],
+        [
+          "layer",
+          "F.Cu"
+        ],
+        [
+          "net",
+          "HEADSET_R"
+        ],
+        [
+          "uuid",
+          "09cb785c-d0e7-4141-a1c6-fad47043c4c6"
+        ]
+      ]
+    },
+    {
+      "uuid": "d6eff1e6-2ee4-4344-a25c-754dd647678e",
+      "kind": "via",
+      "reasons": [
+        "clearance"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "67.008287",
+          "47.3714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "AUD_SDA"
+        ],
+        [
+          "uuid",
+          "d6eff1e6-2ee4-4344-a25c-754dd647678e"
+        ]
+      ]
+    },
+    {
+      "uuid": "67704880-d3db-4d2a-8655-f3ac589b39bd",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items",
+        "solder_mask_bridge"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "68.608287",
+          "48.1714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "AUD_WCLK"
+        ],
+        [
+          "uuid",
+          "67704880-d3db-4d2a-8655-f3ac589b39bd"
+        ]
+      ]
+    },
+    {
+      "uuid": "34626b76-7e87-40d0-8bee-6db1126122de",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "38.009285",
+          "65.659629"
+        ],
+        [
+          "end",
+          "52.081203",
+          "65.659629"
+        ],
+        [
+          "width",
+          "0.101702"
+        ],
+        [
+          "layer",
+          "In3.Cu"
+        ],
+        [
+          "net",
+          "RAD_RESET_ASSERT"
+        ],
+        [
+          "uuid",
+          "34626b76-7e87-40d0-8bee-6db1126122de"
+        ]
+      ]
+    },
+    {
+      "uuid": "9e3d0a68-a81a-4258-b7d6-f1ea689e4b67",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "50.080872",
+          "56.339041"
+        ],
+        [
+          "end",
+          "50.080872",
+          "54.440391"
+        ],
+        [
+          "width",
+          "0.101702"
+        ],
+        [
+          "layer",
+          "In3.Cu"
+        ],
+        [
+          "net",
+          "REG_ENABLE"
+        ],
+        [
+          "uuid",
+          "9e3d0a68-a81a-4258-b7d6-f1ea689e4b67"
+        ]
+      ]
+    },
+    {
+      "uuid": "9fad12b2-3050-4114-8939-292344e5ec83",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "77.662648",
+          "62.817866"
+        ],
+        [
+          "end",
+          "81.25255",
+          "66.407768"
+        ],
+        [
+          "width",
+          "0.101702"
+        ],
+        [
+          "layer",
+          "F.Cu"
+        ],
+        [
+          "net",
+          "HEADSET_L"
+        ],
+        [
+          "uuid",
+          "9fad12b2-3050-4114-8939-292344e5ec83"
+        ]
+      ]
+    },
+    {
+      "uuid": "4856cf79-ff0f-47b6-90bc-f4a4499668b4",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "81.410259",
+          "55.435212"
+        ],
+        [
+          "end",
+          "83.19901",
+          "57.223963"
+        ],
+        [
+          "width",
+          "0.101702"
+        ],
+        [
+          "layer",
+          "F.Cu"
+        ],
+        [
+          "net",
+          "BL_K4"
+        ],
+        [
+          "uuid",
+          "4856cf79-ff0f-47b6-90bc-f4a4499668b4"
+        ]
+      ]
+    },
+    {
+      "uuid": "6d495abf-38f9-402d-8243-21947dac19d1",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "93.280547",
+          "42.791577"
+        ],
+        [
+          "end",
+          "93.280547",
+          "49.816103"
+        ],
+        [
+          "width",
+          "0.101702"
+        ],
+        [
+          "layer",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "BL_FB"
+        ],
+        [
+          "uuid",
+          "6d495abf-38f9-402d-8243-21947dac19d1"
+        ]
+      ]
+    },
+    {
+      "uuid": "b2334043-344f-4c10-af8f-7291650dd946",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items",
+        "solder_mask_bridge"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "63.808288",
+          "46.5714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "VDD_3V3"
+        ],
+        [
+          "uuid",
+          "b2334043-344f-4c10-af8f-7291650dd946"
+        ]
+      ]
+    },
+    {
+      "uuid": "813a4d6a-c574-4d3a-9836-13cb0f4be3bc",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items",
+        "solder_mask_bridge"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "63.808288",
+          "45.7714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "VDD_3V3"
+        ],
+        [
+          "uuid",
+          "813a4d6a-c574-4d3a-9836-13cb0f4be3bc"
+        ]
+      ]
+    },
+    {
+      "uuid": "a1ae29ec-6a52-4243-b64d-f234422a6f63",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "81.410259",
+          "54.975255"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "BL_K4"
+        ],
+        [
+          "uuid",
+          "a1ae29ec-6a52-4243-b64d-f234422a6f63"
+        ]
+      ]
+    },
+    {
+      "uuid": "874bfd80-2299-4915-94e9-977d3e928a2f",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "67.008287",
+          "48.1714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "MCU_VDD11"
+        ],
+        [
+          "uuid",
+          "874bfd80-2299-4915-94e9-977d3e928a2f"
+        ]
+      ]
+    },
+    {
+      "uuid": "0c876367-e691-484a-811d-cda1d5178478",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items",
+        "solder_mask_bridge"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "66.208288",
+          "48.1714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "SD_DETECT_N"
+        ],
+        [
+          "uuid",
+          "0c876367-e691-484a-811d-cda1d5178478"
+        ]
+      ]
+    },
+    {
+      "uuid": "520def75-c367-43ce-91bf-0f1ae8daa760",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items",
+        "solder_mask_bridge"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "64.608287",
+          "48.1714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "LINK_CTS"
+        ],
+        [
+          "uuid",
+          "520def75-c367-43ce-91bf-0f1ae8daa760"
+        ]
+      ]
+    },
+    {
+      "uuid": "da4980bd-66b8-4421-bd80-c5d630ee0d8a",
+      "kind": "via",
+      "reasons": [
+        "clearance",
+        "hole_clearance"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "65.408287",
+          "48.1714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "AUD_SCL"
+        ],
+        [
+          "uuid",
+          "da4980bd-66b8-4421-bd80-c5d630ee0d8a"
+        ]
+      ]
+    },
+    {
+      "uuid": "3eaf8316-1093-45e4-9568-51b379aaabd8",
+      "kind": "via",
+      "reasons": [
+        "shorting_items"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "66.208288",
+          "42.5714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "3eaf8316-1093-45e4-9568-51b379aaabd8"
+        ]
+      ]
+    },
+    {
+      "uuid": "2d876183-9249-4f95-bad7-6714baabe05c",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items",
+        "solder_mask_bridge"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "62.208287",
+          "47.3714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "RAD_RESET_ASSERT"
+        ],
+        [
+          "uuid",
+          "2d876183-9249-4f95-bad7-6714baabe05c"
+        ]
+      ]
+    },
+    {
+      "uuid": "0f65437d-d060-472a-b8fe-db3ee33161e8",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items",
+        "solder_mask_bridge"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "65.408287",
+          "48.9714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "0f65437d-d060-472a-b8fe-db3ee33161e8"
+        ]
+      ]
+    },
+    {
+      "uuid": "031776c5-f972-4c2b-b1a7-282dc9cb0c36",
+      "kind": "via",
+      "reasons": [
+        "clearance",
+        "shorting_items"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "61.008288",
+          "40.5714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "031776c5-f972-4c2b-b1a7-282dc9cb0c36"
+        ]
+      ]
+    },
+    {
+      "uuid": "8da82c2d-2a83-44e4-81b9-bde270f97d27",
+      "kind": "via",
+      "reasons": [
+        "shorting_items"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "70.608287",
+          "50.1714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "8da82c2d-2a83-44e4-81b9-bde270f97d27"
+        ]
+      ]
+    },
+    {
+      "uuid": "2cf66d42-2405-4596-8bb1-c18de34c1717",
+      "kind": "via",
+      "reasons": [
+        "clearance",
+        "shorting_items"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "64.208288",
+          "50.9714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "2cf66d42-2405-4596-8bb1-c18de34c1717"
+        ]
+      ]
+    },
+    {
+      "uuid": "9ee3ad3c-6b22-48c0-9645-83a314cf44d0",
+      "kind": "via",
+      "reasons": [
+        "hole_clearance",
+        "shorting_items",
+        "solder_mask_bridge"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "60.208288",
+          "50.1714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "9ee3ad3c-6b22-48c0-9645-83a314cf44d0"
+        ]
+      ]
+    },
+    {
+      "uuid": "e9254954-dcda-4e1a-880e-df7d04e12113",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "73.672018",
+          "65.705091"
+        ],
+        [
+          "end",
+          "72.064887",
+          "65.705091"
+        ],
+        [
+          "width",
+          "0.106787"
+        ],
+        [
+          "layer",
+          "F.Cu"
+        ],
+        [
+          "net",
+          "AUD_LDOIN_2V8"
+        ],
+        [
+          "uuid",
+          "e9254954-dcda-4e1a-880e-df7d04e12113"
+        ]
+      ]
+    },
+    {
+      "uuid": "de197d6a-1507-4989-b238-644167b4a1a1",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "76.768178",
+          "62.60893"
+        ],
+        [
+          "end",
+          "73.672018",
+          "65.705091"
+        ],
+        [
+          "width",
+          "0.106787"
+        ],
+        [
+          "layer",
+          "F.Cu"
+        ],
+        [
+          "net",
+          "AUD_LDOIN_2V8"
+        ],
+        [
+          "uuid",
+          "de197d6a-1507-4989-b238-644167b4a1a1"
+        ]
+      ]
+    },
+    {
+      "uuid": "9f72b9e0-d2b3-40d6-aecf-58db10b782b2",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "50.156436",
+          "55.439226"
+        ],
+        [
+          "end",
+          "47.533256",
+          "55.439226"
+        ],
+        [
+          "width",
+          "0.101702"
+        ],
+        [
+          "layer",
+          "F.Cu"
+        ],
+        [
+          "net",
+          "RAD_RX"
+        ],
+        [
+          "uuid",
+          "9f72b9e0-d2b3-40d6-aecf-58db10b782b2"
+        ]
+      ]
+    },
+    {
+      "uuid": "1d5f32f2-8d3b-4f5c-a79a-c607238db8f3",
+      "kind": "via",
+      "reasons": [
+        "clearance"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "67.808287",
+          "44.1714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "GND"
+        ],
+        [
+          "uuid",
+          "1d5f32f2-8d3b-4f5c-a79a-c607238db8f3"
+        ]
+      ]
+    },
+    {
+      "uuid": "7c9c271e-19a3-4ab4-9749-a5c1eda6a5cf",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "82.233407",
+          "65.533218"
+        ],
+        [
+          "end",
+          "80.396222",
+          "63.696033"
+        ],
+        [
+          "width",
+          "0.101702"
+        ],
+        [
+          "layer",
+          "F.Cu"
+        ],
+        [
+          "net",
+          "HP_R_AC"
+        ],
+        [
+          "uuid",
+          "7c9c271e-19a3-4ab4-9749-a5c1eda6a5cf"
+        ]
+      ]
+    },
+    {
+      "uuid": "6927f3df-c44b-40d2-85b9-dc26748db835",
+      "kind": "segment",
+      "reasons": [
+        "hole_clearance"
+      ],
+      "geometry": [
+        "segment",
+        [
+          "start",
+          "50.048849",
+          "60.672887"
+        ],
+        [
+          "end",
+          "50.048849",
+          "63.407819"
+        ],
+        [
+          "width",
+          "0.106787"
+        ],
+        [
+          "layer",
+          "F.Cu"
+        ],
+        [
+          "net",
+          "AUD_LDOIN_2V8"
+        ],
+        [
+          "uuid",
+          "6927f3df-c44b-40d2-85b9-dc26748db835"
+        ]
+      ]
+    },
+    {
+      "uuid": "6602c284-3363-4d9f-97fb-9968ea8046a8",
+      "kind": "via",
+      "reasons": [
+        "shorting_items"
+      ],
+      "geometry": [
+        "via",
+        [
+          "at",
+          "63.008287",
+          "44.9714"
+        ],
+        [
+          "size",
+          "0.45045"
+        ],
+        [
+          "drill",
+          "0.2002"
+        ],
+        [
+          "layers",
+          "F.Cu",
+          "B.Cu"
+        ],
+        [
+          "net",
+          "BTN_RESET_N"
+        ],
+        [
+          "uuid",
+          "6602c284-3363-4d9f-97fb-9968ea8046a8"
+        ]
+      ]
+    }
+  ],
+  "history": [
+    {
+      "iteration": 0,
+      "violations": {
+        "shorting_items": 27,
+        "hole_clearance": 29,
+        "clearance": 8,
+        "solder_mask_bridge": 9,
+        "track_dangling": 20,
+        "silk_over_copper": 23,
+        "silk_overlap": 26
+      },
+      "opens": 30
+    },
+    {
+      "iteration": 1,
+      "violations": {
+        "track_dangling": 70,
+        "silk_over_copper": 23,
+        "silk_overlap": 26
+      },
+      "opens": 63
+    }
+  ],
+  "manufacturing_ready": false
+}

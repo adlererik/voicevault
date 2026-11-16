@@ -1,0 +1,5 @@
+# Local editor state and regenerable footprint cache are not design inputs.
+*.kicad_prl
+*.lck
+fp-info-cache
+*-backups/

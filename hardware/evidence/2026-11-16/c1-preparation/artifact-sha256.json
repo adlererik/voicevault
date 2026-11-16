@@ -106,5 +106,6 @@
   "hardware/evidence/2026-11-16/c1-preparation/cloud-settings/single_ended_impedance_signals.csv": "d943c7c523339641d4eb43b14ccc51055b377a45fd118184127d14b487cf6d07",
   "hardware/evidence/2026-11-16/c1-preparation/cloud-settings/custom_component_proximity.csv": "68781665d35dbe519b4b93a2ac14755488ec495b7d69e389cf631b60a834bc9a",
   "hardware/evidence/2026-11-16/c1-preparation/cloud-settings/ground_nets.csv": "4ee06ceba463de2a7ceed763e88e466b3b73a947fb356d3b69fcfa0dd21f0766",
-  "hardware/evidence/2026-11-16/c1-preparation/cloud-settings/crystal_oscillators.csv": "3afdb4096ce676ef5c1748a7e512259abbc062250efd528a614db21027792f87"
+  "hardware/evidence/2026-11-16/c1-preparation/cloud-settings/crystal_oscillators.csv": "3afdb4096ce676ef5c1748a7e512259abbc062250efd528a614db21027792f87",
+  "hardware/rev-c1/.gitignore": "ee1a77e46c6516de8878b0ad1efd4f123ea84d5c99bbbebbf0fe0a6204d92f42"
 }

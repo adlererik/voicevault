@@ -1,0 +1,45 @@
+{
+  "scope": "Component-library land geometry; no PCB placement or routing",
+  "NXP_SOT1969-1": {
+    "terminals": 20,
+    "ep_number": "21",
+    "pitch_mm": 0.4,
+    "land_center_mm": 1.538,
+    "perimeter_land_mm": [
+      0.725,
+      0.2
+    ],
+    "ep_copper_mm": 1.9,
+    "ep_mask_mm": 2.0,
+    "ep_paste_windows_mm": [
+      0.75,
+      0.75
+    ],
+    "source": "https://www.nxp.com/docs/en/package-information/SOT1969-1.pdf"
+  },
+  "Coilcraft_XFL4020": {
+    "terminals": 2,
+    "land_mm": [
+      0.98,
+      3.4
+    ],
+    "gap_mm": 2.37,
+    "pitch_mm": 3.35,
+    "source": "https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf"
+  },
+  "TPS63070_RNM0015A": {
+    "terminals": 15,
+    "paired_same_net_lands": [
+      [
+        "7",
+        "8"
+      ],
+      [
+        "12",
+        "13"
+      ]
+    ],
+    "source": "https://www.ti.com/lit/ds/symlink/tps63070.pdf",
+    "review": "Solder-mask-defined power lands transcribed; independent native/assembly review required"
+  }
+}

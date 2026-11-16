@@ -1,0 +1,22 @@
+PSpice Boolean-port truth table
+.include "/home/erikclean/src/secure-voice-lab/.lab-runs/hardware/standalone-c0/model-ports/tps2553-ngspice.lib"
+Vzero zero 0 0
+Vone one 0 1
+Xxnor200 zero zero xnor200 XNOR2_BASIC_GEN
+Xand200 zero zero and200 AND2_BASIC_GEN
+Xor200 zero zero or200 OR2_BASIC_GEN
+Xxnor201 zero one xnor201 XNOR2_BASIC_GEN
+Xand201 zero one and201 AND2_BASIC_GEN
+Xor201 zero one or201 OR2_BASIC_GEN
+Xxnor210 one zero xnor210 XNOR2_BASIC_GEN
+Xand210 one zero and210 AND2_BASIC_GEN
+Xor210 one zero or210 OR2_BASIC_GEN
+Xxnor211 one one xnor211 XNOR2_BASIC_GEN
+Xand211 one one and211 AND2_BASIC_GEN
+Xor211 one one or211 OR2_BASIC_GEN
+.control
+op
+print v(xnor200) v(and200) v(or200) v(xnor201) v(and201) v(or201) v(xnor210) v(and210) v(or210) v(xnor211) v(and211) v(or211)
+quit
+.endc
+.end

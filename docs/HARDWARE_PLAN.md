@@ -1,4 +1,4 @@
-> **Current active design, 2026-11-12:** [VoiceVault standalone B0](../hardware/rev-b/README.md), STM32U5G9ZJJ6Q UFBGA144, replaces the development-board approach for the new prototype. It has a native hierarchical circuit and two-sided placement, with routing, sourcing/HDI acceptance and physical qualification incomplete. The DK2/Nucleo discussion below is historical bench planning. No hardware was fabricated.
+> **Current direction, 2026-11-16:** [VoiceVault standalone C0](../hardware/rev-c/README.md), retaining STM32U5G9ZJJ6Q UFBGA144 with one NXP secure element, QFN BLE, wired charging and no Qi/NFC. Native circuit draft and scoped checks exist; all electrical placement/routing is reserved for Quilter and physical qualification is incomplete. Preserved B0, DK2 and Nucleo work below is historical. No hardware was fabricated.
 
 # From the Safe 7 reference to a VoiceVault prototype
 

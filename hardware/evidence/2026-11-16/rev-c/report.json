@@ -1,0 +1,317 @@
+{
+  "revision": "C0",
+  "checked_utc": "2026-11-16T00:15:35.327303+00:00",
+  "manufacturing": "BLOCKED",
+  "layout": "UNPLACED / UNROUTED FOR QUILTER",
+  "checks": [
+    {
+      "check": "Manufacturer critical pin maps / radio boundary",
+      "status": "PASS",
+      "pins": 62
+    },
+    {
+      "check": "Four corrupt-net negative controls",
+      "status": "PASS"
+    },
+    {
+      "check": "Native pads match schematic; all electrical parts unplaced; no routed copper",
+      "status": "PASS",
+      "footprints": 222,
+      "connected_nodes": 845
+    },
+    {
+      "check": "Native KiCad electrical rules",
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "check": "Placement/routing/final DRC",
+      "status": "BLOCKED",
+      "reason": "Quilter placement and routing not performed; raw DRC retained"
+    },
+    {
+      "check": "Simulator result/abort regression",
+      "status": "PASS",
+      "tests": 6
+    }
+  ],
+  "kicad_version": "10.0.8",
+  "input_sha256": {
+    "circuit-audio-codec.kicad_sch": "d0e0b5372ba43d5b5d6f9d58d35bc8abdbe4aafa4bc7fd8198968a56dc905d84",
+    "circuit-audio-power.kicad_sch": "89d3eed1c0907b8709694890d9cc8f8711e11c008aa0a51e2bd8a4ad7b2dbcc0",
+    "circuit-backlight.kicad_sch": "a9bff486effc12264829fddae85575db311e22407822b8cbefc1738d32d0be2e",
+    "circuit-charging.kicad_sch": "0266a7747d26c65de4d24aa0afe644419152a9fe616a2ebc7e4d441bfebcd621",
+    "circuit-control.kicad_sch": "7fbf46e9e628c15b52ac277c5497341928eeb00f1231122bf9577a9be93432dc",
+    "circuit-display.kicad_sch": "990026e005c109880cc177296093a5f80a771b93065bf3f1cfef07a2f4345561",
+    "circuit-haptic.kicad_sch": "1413e1d18dab1fa4061350d3153638157b5b2911113d5d8f6e2c8af4f78f923c",
+    "circuit-headset.kicad_sch": "506deb9a058f63d66e05c8d5bed9ef185002b0b569b9740e32e144d70fa9cf4b",
+    "circuit-load-switches.kicad_sch": "4bf75513898786f2979ac01e83edc048d058628e7b73ea3ced5b7457598f5f7c",
+    "circuit-microsd.kicad_sch": "afe89d986f21c35514f1ff762a83f24ed37507648dfec2a8748345f5262009f3",
+    "circuit-power-entry.kicad_sch": "3e92c61c6be4b928839b6c8c37d2b7cbf0633b58ed33177eaadf9d02341542d3",
+    "circuit-radio-interface.kicad_sch": "3aff3c3d21f4a9f10f1d5fdd4ac2c750c216e5cc962337ebf66bc84bd4072c32",
+    "circuit-radio.kicad_sch": "5b4248c251c6921484e21e4eda588f3a320d9c8a4953615a6b6a3b6c6332f004",
+    "circuit-regulation.kicad_sch": "64bddaa86c8ee311ea4070d1791bf00cf8feb18dcb8660ad88808168399f7073",
+    "circuit-secure.kicad_sch": "e96ba6c8d099a2501d0e5ce0145e28ce5a82f3d45a60b6f3b4f06ff757e61359",
+    "circuit-test-access.kicad_sch": "ac3be3588949736d2134cc224aeb6910c37d7674794b612ecb3cae2df27c2efe",
+    "circuits.json": "d8adb10484b08922ea5078d990713d66511a6714079c9c566ccf98606557e9d7",
+    "package-geometry.json": "c9b0ab6bc2df6160685cbd0ab81c508bfed49537d0ef6ae158763f3a37c956bf",
+    "references.json": "9a0a66b231f75a45e7de1b061ad2b46c9afd13ef876605b49a830925ed1749c7",
+    "voicevault-standalone-c0.kicad_pcb": "c44c9f072220bdd7ac7e674fb2dc2b41e7b42cba116c87bfd748c50e3cdc901a",
+    "voicevault-standalone-c0.kicad_pro": "d59289c30cb54e09559f208bbd237c4b4537edec1f16d76e3ce14c28834e65db",
+    "voicevault-standalone-c0.kicad_sch": "b857ae88f8971a793cafc117fc9b1340dc3528dbf3bfdf12b3f460e91f410709"
+  },
+  "inventory": {
+    "old_schematic_components": 296,
+    "old_total_footprints": 314,
+    "new_electrical_components": 205,
+    "new_probe_pads": 13,
+    "new_mounting_holes": 4,
+    "new_total_footprints": 222
+  },
+  "unplaced_drc_counts": {
+    "violations": 0,
+    "unconnected_items": 499,
+    "schematic_parity": 0
+  },
+  "unplaced_drc_types": {},
+  "full_native_unrouted_connections": 603,
+  "spice": {
+    "checked_utc": "2026-11-16T00:15:38.683707+00:00",
+    "scope": "Scoped models, not complete-device qualification",
+    "simulator": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html\n** Creation Date: Tue Aug 11 00:00:00 UTC 2026\n******",
+    "circuits_sha256": "d8adb10484b08922ea5078d990713d66511a6714079c9c566ccf98606557e9d7",
+    "groups": [
+      {
+        "name": "Secure-bus RC sensitivity",
+        "status": "PASS",
+        "cases": [
+          {
+            "vdd_v": 3.25,
+            "pullup_ohm": 4653,
+            "assumed_bus_cap_f": 2e-11,
+            "low_v": 0.574916,
+            "rise_s": 7.88434e-08
+          },
+          {
+            "vdd_v": 3.25,
+            "pullup_ohm": 4653,
+            "assumed_bus_cap_f": 5e-11,
+            "low_v": 0.574916,
+            "rise_s": 1.97125e-07
+          },
+          {
+            "vdd_v": 3.25,
+            "pullup_ohm": 4653,
+            "assumed_bus_cap_f": 1e-10,
+            "low_v": 0.574916,
+            "rise_s": 3.94247e-07
+          },
+          {
+            "vdd_v": 3.25,
+            "pullup_ohm": 4653,
+            "assumed_bus_cap_f": 2e-10,
+            "low_v": 0.574916,
+            "rise_s": 7.88495e-07
+          },
+          {
+            "vdd_v": 3.25,
+            "pullup_ohm": 4747,
+            "assumed_bus_cap_f": 2e-11,
+            "low_v": 0.565512,
+            "rise_s": 8.04425e-08
+          },
+          {
+            "vdd_v": 3.25,
+            "pullup_ohm": 4747,
+            "assumed_bus_cap_f": 5e-11,
+            "low_v": 0.565512,
+            "rise_s": 2.01105e-07
+          },
+          {
+            "vdd_v": 3.25,
+            "pullup_ohm": 4747,
+            "assumed_bus_cap_f": 1e-10,
+            "low_v": 0.565512,
+            "rise_s": 4.02212e-07
+          },
+          {
+            "vdd_v": 3.25,
+            "pullup_ohm": 4747,
+            "assumed_bus_cap_f": 2e-10,
+            "low_v": 0.565512,
+            "rise_s": 8.04424e-07
+          },
+          {
+            "vdd_v": 3.35,
+            "pullup_ohm": 4653,
+            "assumed_bus_cap_f": 2e-11,
+            "low_v": 0.592606,
+            "rise_s": 7.88434e-08
+          },
+          {
+            "vdd_v": 3.35,
+            "pullup_ohm": 4653,
+            "assumed_bus_cap_f": 5e-11,
+            "low_v": 0.592606,
+            "rise_s": 1.97125e-07
+          },
+          {
+            "vdd_v": 3.35,
+            "pullup_ohm": 4653,
+            "assumed_bus_cap_f": 1e-10,
+            "low_v": 0.592606,
+            "rise_s": 3.94247e-07
+          },
+          {
+            "vdd_v": 3.35,
+            "pullup_ohm": 4653,
+            "assumed_bus_cap_f": 2e-10,
+            "low_v": 0.592606,
+            "rise_s": 7.88495e-07
+          },
+          {
+            "vdd_v": 3.35,
+            "pullup_ohm": 4747,
+            "assumed_bus_cap_f": 2e-11,
+            "low_v": 0.582913,
+            "rise_s": 8.04425e-08
+          },
+          {
+            "vdd_v": 3.35,
+            "pullup_ohm": 4747,
+            "assumed_bus_cap_f": 5e-11,
+            "low_v": 0.582913,
+            "rise_s": 2.01105e-07
+          },
+          {
+            "vdd_v": 3.35,
+            "pullup_ohm": 4747,
+            "assumed_bus_cap_f": 1e-10,
+            "low_v": 0.582913,
+            "rise_s": 4.02212e-07
+          },
+          {
+            "vdd_v": 3.35,
+            "pullup_ohm": 4747,
+            "assumed_bus_cap_f": 2e-10,
+            "low_v": 0.582913,
+            "rise_s": 8.04424e-07
+          }
+        ],
+        "limitation": "1kOhm sink is a datasheet-based conservative assumption, not a transistor model; actual routed bus capacitance unmeasured"
+      },
+      {
+        "name": "Native-value / datasheet arithmetic",
+        "status": "PASS",
+        "not_spice": true,
+        "main_feedback_v": [
+          3.2581028571428576,
+          3.3340069669669674
+        ],
+        "uvlo_v": {
+          "rise": [
+            3.5184795384615386,
+            3.8419999819819814
+          ],
+          "fall": [
+            3.0591988191808195,
+            3.3812792612612608
+          ]
+        },
+        "charge_current_a": [
+          0.17853142780341383,
+          0.22281639928698752
+        ],
+        "charge_timer_h": [
+          6.741899999999999,
+          11.4635
+        ],
+        "radio_limit_ma": [
+          98.671320904747,
+          138.64181513270137
+        ],
+        "audio_headroom_v": 0.40210285714285776,
+        "audio_ldo_max_dropout_v": 0.14,
+        "limitations": [
+          "Charger current/timer and NTC network still require exact battery acceptance",
+          "Feedback DC accuracy excludes switching ripple and transient behavior",
+          "No charger silicon, thermal loop, cell chemistry or NXP RNG simulation"
+        ]
+      },
+      {
+        "name": "PSpice Boolean-port truth table",
+        "status": "PASS",
+        "outputs": 12,
+        "port": {
+          "source_sha256": "7e40f58d8c69445d15f9f153c9624a945191cb83b113f7651a20a7b44df289d8",
+          "adapted_sha256": "0165c8828d95c317fb8bfef95f5bfe572ab1b55cec8cb2f88a674701ed55518d",
+          "edits": [
+            "Explicit Boolean inequality for PSpice XOR in .SUBCKT XNOR2_BASIC_GEN A B Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 "
+          ],
+          "note": "Numerically explicit Boolean syntax, not a new semiconductor model; supplier original unchanged"
+        }
+      },
+      {
+        "name": "Supplier radio-switch model",
+        "status": "PASS",
+        "measurements": {
+          "default_off_v": -2.31329e-09,
+          "normal_v": 3.29335,
+          "limited_a": 0.116949,
+          "transient_peak_a": 0.661622,
+          "fault_v": 0.00420229,
+          "recovered_v": 3.29335,
+          "disabled_v": 0.0433078
+        },
+        "model_port": {
+          "source_sha256": "7e40f58d8c69445d15f9f153c9624a945191cb83b113f7651a20a7b44df289d8",
+          "adapted_sha256": "0165c8828d95c317fb8bfef95f5bfe572ab1b55cec8cb2f88a674701ed55518d",
+          "edits": [
+            "Explicit Boolean inequality for PSpice XOR in .SUBCKT XNOR2_BASIC_GEN A B Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 "
+          ],
+          "note": "Numerically explicit Boolean syntax, not a new semiconductor model; supplier original unchanged"
+        },
+        "schedule": {
+          "on_ms": 0.101,
+          "steady_window_ms": [
+            4,
+            5
+          ],
+          "short_ms": [
+            6,
+            21
+          ],
+          "disable_ms": 30.001,
+          "unloaded_discharge_check_ms": 130,
+          "output_cap_f": 6.9e-06,
+          "bleed_ohm": 3300
+        },
+        "limitation": "Supplier PSpice model under ngspice compatibility; steady current limit is not the transient peak. Temperature, main regulator coupling and malicious electrical/RF faults not qualified"
+      },
+      {
+        "name": "Retained passive audio/backlight sensitivity",
+        "status": "PASS",
+        "cases": 772,
+        "limitation": "Ideal sources/static networks; not codec or converter silicon/acoustic qualification"
+      },
+      {
+        "name": "Supplier main-converter model",
+        "status": "BLOCKED",
+        "reason": "3ms run exceeded the bounded CPU budget; shorter PSpice port hit timestep-too-small near the load step. No complete converter result claimed.",
+        "raw_log_sha256": "3eb31e1b6cb4e9b024d9f0580d473ec08dc7cde1c4c5d797b752a33e8401858f",
+        "exit_zero_is_not_pass": true
+      }
+    ],
+    "full_device": "BLOCKED",
+    "available_model_checks": "PASS",
+    "silicon_and_system_simulation": "BLOCKED"
+  },
+  "available_design_checks": "PASS",
+  "open_hardware_gates": [
+    "Exact battery/holder and temperature profile acceptance",
+    "Converter/charger model limitations and stability/thermal bench evidence",
+    "RF/antenna constraints and returned-layout qualification",
+    "Real NXP provisioning, RNG and storage atomicity",
+    "MCU peripheral/firmware, audio/DMA, trusted UI and hostile-radio hardware tests"
+  ]
+}

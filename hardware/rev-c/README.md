@@ -1,63 +1,92 @@
-# VoiceVault Rev C — approved simplification
+# VoiceVault Rev C — simpler hardware, preserved trust boundary
 
-Decision record: 2026-11-15. The owner accepted the BL-5C-style lithium-ion battery and NXP SE050E2 recommendations, superseding the earlier AAA/NiMH and TROPIC01 proposals. **Requirements and migration planning only. No Rev C schematic, PCB, charging simulation or manufacturing release exists yet.** Existing Rev B CAD and cloud-routing evidence are preserved. [Structured decisions](decisions.json) · [Radio pin migration](ble-pin-migration.csv)
+**Native circuit draft, not a manufacturing release.** C0 implements the approved simplification in a separate KiCad project. Initial circuit checks and scoped ngspice studies are recorded. The entire electrical inventory remains unplaced and unrouted for Quilter. Live B0 CAD, backups and earlier cloud results are preserved.
 
-## Accepted direction
+[Open the KiCad project](voicevault-standalone-c0.kicad_pro) · [Root schematic](voicevault-standalone-c0.kicad_sch) · [PCB input](voicevault-standalone-c0.kicad_pcb) · [Checked evidence](../evidence/2026-11-16/rev-c/README.md) · [Decisions](decisions.json) · [Manufacturer reference hashes](references.json)
 
-Keep the STM32U5G9ZJJ6Q, dedicated wired audio, trusted color display and local controls, offline microSD updates, isolated ciphertext-only radio interface, and separate development debug connectors. Use a replaceable protected BL-5C-style single-cell lithium-ion pack, chargeable while installed through a wired power input. Remove Qi and NFC. Use one NXP SE050E2 and the larger QFN BLE package. Other optional functions, including haptics, have not been removed by this decision.
+## Component reduction
 
-The accepted chemistry is **single-cell lithium-ion**. Exact pack, capacity, discharge/charge limits, contact polarity and mechanical retention remain selections to verify. The intermediate two-AAA NiMH proposal and BQ25172 charger are superseded. Runtime and simultaneous charge/call power margins need measurement.
+| Inventory | Preserved B0 | C0 draft | Reduction |
+|---|---:|---:|---:|
+| Electrical components | 296 | **205** | **91, about 31%** |
+| Probe pads | 14 | 13 | 1 |
+| Mounting holes | 4 | 4 | 0 |
+| Total PCB footprints | 314 | **222** | **92, about 29%** |
 
-## Complete circuit and integration change list
+The dedicated Qi and NFC sheets contained 45 and 44 components respectively. Removing them eliminates 89 old parts; replacing the charger/power system and two secure elements changes the net total further. Replacement regulators, protection, temperature-sensor connections, pullups and power controls are included in the final 205 count. This is circuit inventory, not an assembler-approved purchasing BOM. The selected replaceable battery, holder, display assembly, enclosure and external accessories require separate sourcing and mechanical acceptance.
 
-| Area | Change from the preserved B0 design |
-|---|---|
-| Battery | Replace the pouch-pack candidate and harness with reviewed BL-5C-style contacts, retention and a replaceable protected pack. Rework the battery compartment and temperature sensing. |
-| Charger and power rails | Replace nPM1300-CAAA and its exclusive support circuitry with the BQ24074 charger candidate, suitable regulators and supply controls. Preserve safe sequencing, undervoltage shutdown, radio power control, isolated card power and clean audio power. Final regulator parts remain open. |
-| Qi | Remove STWLC38, receive coil/connector, matching/control components, coil-temperature interface and Qi power-input branch. |
-| NFC | Remove ST25R3916B, antenna/matching circuit, clock, dedicated supply and interface bridges. |
-| Secure elements | Remove TROPIC01 and OPTIGA Trust M plus their exclusive support parts; fit one SE050E2HQ1/Z01Z3Z. |
-| Secure-element interface | Replace the old secure-element interfaces with MCU-controlled I2C and an authenticated/encrypted host channel. Provision device-specific keys and access policies; keep the radio disconnected from this bus. |
-| Identity, storage and entropy | Port internal Ed25519 key generation/signing, protected storage roots and persistent generation/rollback state to NXP. Combine STM32 and NXP random output under the two-source policy. Check real API semantics, byte order, endurance and power-loss atomicity. |
-| BLE | Fit nRF52832-QFAA-G-R7 QFN48 instead of CIAA WLCSP; revise pin map, footprint, decoupling and package-specific RF circuitry/layout. |
-| Pairing | Compare the full transcript fingerprint in person on both trusted displays and confirm on each; remove the NFC enrollment path. Calls still require local consent. |
-| PCB and enclosure | Create separate Rev C circuits and CAD, review all removed/shared-net dependencies, then revisit placement, antenna reservation, battery access, connectors and test points. Six layers remain provisional; a reduction has not been established feasible. |
-| Software and checks | Add board-specific charger, power, secure-element and radio integration; update the BOM, MCU configuration, simulator hardware profile, circuit studies and checks. Preserve all existing protocol/security gates. |
+## Circuit changes now present
 
-The inventory has **45 Qi and 44 NFC components** on their dedicated sheets: **89 existing components** are removal candidates before power/secure-element changes and replacement circuitry. This is an inventory calculation, not a completed deletion or a final component count. Copper, unused controls, connectors and shared-net dependencies need review before generating the new design.
+| Area | Implemented in the C0 draft | Remaining acceptance |
+|---|---|---|
+| Compute | STM32U5G9ZJJ6Q UFBGA144, existing clocks/reset, local controls and development debug | Fine-pitch escape feasibility, peripheral/firmware bring-up, lifecycle/debug lockdown |
+| Identity/security | **One SE050E2HQ1/Z01Z3Z**, replacing TROPIC01 and OPTIGA; MCU I2C4 and enable control | Delivered applet/OS revision, errata, provisioning, authenticated channel, drivers and persistence semantics |
+| BLE | **nRF52832-QFAA-G-R7**, QFN48 6 × 6 mm; package-specific pin map, decoupling and primary RF matching | Antenna placement constraints, reference return paths, VNA tuning and hostile-radio bench tests |
+| Battery | Protected single-cell **BL-5C-style Li-ion** pack through a JST-PH-2 harness; separate real 10 kΩ NTC connection | Exact protected pack, holder/retention, polarity, thermal contact, current and temperature limits |
+| Wired charging | **BQ24074RGTR**, system power path, nominal 201 mA charging, real NTC, charge/input status | Battery approval, full charging/thermal/fault studies and load budget |
+| Charging input | Fused/TVS-protected power-only USB-C, two 5.1 kΩ CC resistors; no USB data to phone or MCU | Source/input compliance, power integrity, ESD and abnormal-input qualification |
+| Main supply | **TPS63070RNMR**, 1.5 µH XFL4020 inductor, nominal 3.296 V buck-boost, local hard switch and undervoltage divider | Complete converter transient/stability model and bench evidence |
+| Radio supply | **TPS2553DBVR** current limiter, default-off enable, fault feedback and passive output discharge | Whole-system fault containment, load extremes and real discharge/backfeed checks |
+| microSD | **TPS22918DBVR** switched supply and retained isolated interface | Card current/transients, power-loss behavior, firmware/offline-update integration |
+| Audio | **TPS7A2028PDBVR** low-noise 2.8 V audio supply; retained TLV320AIC3204, wired jack and physical microphone disconnect | Codec supply sequencing/configuration, headroom, noise, acoustic and DMA tests |
+| Display and haptics | Retained trusted color display/touch and DRV2624 haptics; independent haptic I2C pullups | Assembly fit, fine-pitch escape, driver and trusted UI qualification |
+| Removed | Qi receiver/coil path, NFC reader/antenna path, both old secure elements and superseded power management | Verify returned layout contains no removed interfaces or unintended shared-net dependency |
 
-Audio codec/headset jack/physical mic disconnect, trusted display and local controls, MCU and radio debug access, haptics, microSD, the hybrid X25519 + ML-KEM-768 suite, Ed25519 identities, ChaCha20-Poly1305, fixed-cadence records, replay controls and offline authenticated update requirements remain. Production debug lockdown, radio isolation and secret-erasure requirements/limitations remain too.
+The larger radio uses Nordic's QFN reference rather than copying its WLCSP RF circuit: DEC2 is unconnected in the selected reference configuration and the primary RF values change. The [pin-migration table](ble-pin-migration.csv) covers all 48 perimeter terminals plus exposed ground. Package land geometry for NXP, the main converter and inductor is recorded in [package-geometry.json](package-geometry.json); it still needs independent assembly review. The `VoiceVault_B0` library namespace is retained for reused component assets; this does not reuse old PCB copper or component placement.
 
-## Charging candidate
+The local hard switch replaces the old power-management arrangement. Charging remains connected while the system is switched off. JP501 defaults to the 100 mA input configuration; selecting the 500 mA option requires an appropriate source policy. This input choice is not a demonstration of universal USB compliance. BSI on a BL-5C-style pack is **not** assumed to be a temperature sensor. A separate physically coupled sensor is required; a fixed resistor must not bypass battery temperature safety.
 
-Evaluate **TI BQ24074**, a single-cell 4.2 V lithium-ion charger with system power-path management and temperature monitoring. Select charge current from the actual pack limits, input-power capability and thermal calculations; operation during charging depends on the available power budget. Its system output does not replace the required MCU/radio/audio voltage regulators. [TI product and datasheet](https://www.ti.com/product/BQ24074)
+## Security boundary retained
 
-Use protected 5 V power-only USB-C, with no USB data connection to the MCU or phone. Replacing the fine-pitch nPM1300 is a simplification choice, not a claim that it cannot charge lithium-ion cells. The selected BL-5C-style pack needs charging and mechanical acceptance. Its BSI contact is battery identification, not an assumed NTC sensor; provide real temperature sensing as required. Review reverse insertion, pack removal during writes, missing-pack operation, open/shorted sensors and brownouts. [Example replacement pack](https://www.batteriexperten.com/sv/artiklar/bl-5c-ersattningsbatteri.html) · [Nokia battery interface documentation](https://electronicsandbooks.com/edt/manual/Hardware/N/Nokia/Phone/NOKIA%201110%20RH-70/NOKIA%201110%20RH-70.pdf)
+The STM32 owns plaintext audio, call approval, verified contacts and session keys. The radio and phone remain hostile ciphertext carriers, with no direct secure-element bus, audio or main MCU debug connection. Wired charging carries power only. Separate debug connectors are for development; production debug lockdown remains a release gate.
 
-## Entropy and the single secure element
+Calls keep fresh **X25519 + ML-KEM-768**, authenticated transcript/peer/suite binding, mandatory hybrid selection, **ChaCha20-Poly1305**, replay controls, fixed-size/cadence audio and local consent. In-person enrollment compares the full 256-bit transcript fingerprint on both trusted displays and requires confirmation on each. NFC is unnecessary for that comparison. [Threat model](../../docs/THREAT_MODEL.md) · [Security controls](../../docs/SECURITY_CONTROLS.md) · [Cryptographic design](../../docs/CRYPTOGRAPHY.md)
 
-Safe 7 wallet creation combines STM32, OPTIGA, TROPIC01 and host OS randomness. That describes wallet generation, not every use of randomness in its firmware. [Trezor entropy documentation](https://trezor.io/guides/trezor-devices/trezor-fundamentals/what-is-entropy-and-how-does-trezor-generate-your-wallet)
+SE050E2 is selected for internal Ed25519 operations and its disabled contactless interface; other variants are not interchangeable. Identity keys are intended to be generated and used internally without export. Its internal identity-key generation uses its own RNG. Separately, session entropy must require passing contributions from **both STM32 and NXP**, with no phone/radio fallback. The existing model requires at least two of three source slots; the absent second secure element must be reported unavailable, never replaced with synthetic entropy. Physical randomness and independence remain unmeasured. [NXP configuration](https://www.nxp.com/docs/en/application-note/AN12436.pdf) · [Command specification](https://www.nxp.com/docs/en/application-note/AN12413.pdf)
 
-The accepted part is **NXP SE050E2HQ1/Z01Z3Z**, pending integration qualification. Its E configuration supports Ed25519, random generation and no enabled contactless interface; other SE050 variants are not interchangeable. Configure internal identity-key generation/signing without private-key export. Separately, condition contributions from **both STM32 and NXP** for session entropy, refuse new key generation when either source fails, and never trust the phone or BLE processor as a replacement. Internal identity-key generation uses the secure element's own randomness, not the MCU's two-source pool. [NXP configurations](https://www.nxp.com/docs/en/application-note/AN12436.pdf) · [Command specification](https://www.nxp.com/docs/en/application-note/AN12413.pdf)
+Real secure-channel provisioning, protected counter deletion/reset policy, contact generations, antirollback floors, endurance and power-loss atomicity still require a chip-specific implementation. No production NXP driver, real MCU DMA implementation or completed firmware is supplied by this CAD change. Removing one security chip is an engineering simplification; these circuit checks do not establish equivalent physical attack resistance.
 
-The existing model has three source slots and requires at least two passing sources. A future driver can report the absent second secure-element slot unavailable, requiring both remaining sources without weakening the threshold. Physical source quality and independence are unmeasured. Real NXP storage, access policy, generation counters, endurance, counter deletion/reset restrictions and atomicity must satisfy contact-storage and firmware-rollback requirements. Pin the delivered applet/OS revision and errata and provision the protected channel before acceptance. The chip's internal RNG/channel uses NIST-standard components; the approved VoiceVault call suite stays unchanged. No production chip drivers are implemented here, and comparable four-unit cost savings over TROPIC01 are not yet established.
+## What was checked
 
-## Verification and radio
+On **16 November 2026**, using **KiCad 10.0.8** and **ngspice 47**:
 
-In-person enrollment compares the complete transcript fingerprint on **both trusted device displays**, requires explicit approval on each, and exchanges authenticated confirmations before pinning contacts. No NFC or physical electrical connection is required for that comparison. Public enrollment bytes may traverse hostile transport; the authenticated exchange and human comparison establish trust. The software implements a full 256-bit fingerprint, not an improvised six-digit SAS. Every call still requires verified contacts and local consent.
+- Native netlist/pad correspondence: **845 connected nodes**; **62 independently specified critical pin/net checks** and **four corrupt-net negative controls** passed.
+- Native electrical-rule check: **zero violations**. Native unplaced-inventory DRC: **zero layout violations and zero schematic-parity findings**.
+- Native PCB inspection: **222 footprints**, all electrical/probe footprints unlocked and unplaced outside the outline; **zero tracks, vias or copper pours**. Four existing mounting-hole geometries remain.
+- **772** passive audio/backlight sensitivity cases and **16** secure-bus RC cases passed within their stated assumptions.
+- The supplier radio-switch model passed startup, current limiting, fault reporting, recovery and unloaded discharge. A narrow PSpice Boolean-syntax port is recorded and checked against **12 independently expected logic outputs**. Original supplier files remain unchanged.
+- Six regression tests ensure simulator aborts, nonzero exits and missing/non-finite measurements cannot become passes, including the observed exit-zero abort failure mode.
+- Main regulator supplier model: **BLOCKED** after a bounded timeout and a numerical timestep abort. No complete main-supply/charger/MCU/secure-element simulation is claimed.
 
-Select **nRF52832-QFAA-G-R7**, QFN48, **6 × 6 mm**, replacing B0's CIAA WLCSP. Nordic lists the older non-G QFAA order codes as not recommended for new designs. This changes packaging, not the trusted endpoint boundary: the radio remains hostile and carries bounded ciphertext only. [Nordic ordering information](https://docs.nordicsemi.com/r/bundle/ps_nrf52832/page/ordering_info.html)
+The unplaced board has **603 missing connections**, by the full native connectivity count. KiCad's JSON DRC list truncates at 499 items; that is not the true total. These are expected before layout. Zero clearance errors in an off-board inventory does **not** mean a routed board passed final DRC.
 
-The migration table preserves GPIO signal assignments and explicitly adds the QFN supply/ground pads. It is not an approved land pattern. Check the complete schematic, exposed-pad soldering, decoupling, reset/debug lifecycle and package-specific RF components/layout against [Nordic's pin assignments](https://docs.nordicsemi.com/r/bundle/ps_nrf52832/page/pin.html) and [QFN reference circuit](https://docs.nordicsemi.com/r/bundle/ps_nrf52832/page/ref_circuitry.html). The pitch remains 0.4 mm, but the contacts are on the perimeter. Do not copy the WLCSP RF matching circuit or assume the larger package guarantees a routed board.
+![Actual supplier-model radio supply experiment](../evidence/2026-11-16/rev-c/radio-switch.png)
 
-## Verification of the existing model
+*Simulation, not hardware measurement. The radio rail reaches about 3.293 V, settles to about 117 mA during overload, reports fault, recovers, and falls to about 43 mV after 100 ms unloaded discharge. The initial overload transient peaks at about 662 mA; the steady limit is not an instantaneous peak limit. This does not establish complete electrical fault isolation.*
 
-On 2026-11-15, before the updated battery/secure-element selection, `cargo test --locked -p protocol --test lifecycle` passed **18 tests**, including mutual local enrollment approval, different MITM fingerprints, malformed/replayed confirmations, two-source entropy failure handling, hostile-radio bounds, sealed contacts and offline-update fault handling. This was a focused existing-model run, not a new full verdict or validation of NXP hardware or charging. The migration CSV covers all 48 numbered QFN terminals plus exposed ground, preserving every connected B0 radio net. The preserved B0 PCB hash is recorded in `decisions.json`.
+The feedback allocation is 3.258–3.334 V before switching ripple/transients. Datasheet arithmetic places charging at approximately 179–223 mA and radio current limiting at 99–139 mA. These are separately labeled arithmetic estimates, not additional SPICE chip simulations. Actual routed I2C capacitance, charging temperature, supply transients and RF behavior are unmeasured.
 
-## Next implementation gates
+## Reproduce the available checks
 
-1. Accept the exact lithium-ion pack and charging/load policy, then calculate current, energy, voltage margins and charger heat. Review NXP operations, provisioning and errata.
-2. Replace power circuitry, remove Qi/NFC and both old secure elements with a net-by-net dependency review, and implement NXP and QFN radio circuits in separate Rev C CAD.
-3. Recheck schematic pin maps, radio containment, contact/update persistence, entropy failures, charging faults and power-loss behavior. SPICE results need appropriate models and clearly stated limits.
-4. Submit a clean, checked Rev C input to Quilter for placement/routing only when ready; review returned copper with native KiCad checks. No competing local autorouter pass.
-5. Complete power, audio, radio, entropy and trusted-UI bench qualification before relying on a physical device. Four assembled prototypes to Sweden remain the eventual procurement target; no purchase or fabrication is authorized.
+From the repository root, with the existing KiCad Flatpak and ngspice toolchain installed:
+
+```sh
+python3 hardware/tools/fetch_rev_c_references.py
+./hardware/check --rev-c --design-only --spice
+```
+
+The downloader verifies pinned public supplier archives and extracts only the reviewed model files into the ignored cache. Supplier PDFs/models are not redistributed under the project's license. Changed hashes require review. `--all` also fetches the pinned reference PDFs. A model or numerical failure cannot count as a successful full-device simulation.
+
+Results go to `.lab-runs/hardware/standalone-c0/`, including native XML, pad inspection, ERC/DRC JSON, SPICE inputs/logs/waveforms and the report. `--design-only` can pass available circuit checks while manufacturing stays blocked. Without that option the command returns a blocked release result. The default `./hardware/check`, single-editor launcher and MCP still target preserved B0; use the explicit Rev C command and C0 project when inspecting this revision. The checker uses a small isolated CLI configuration and runs checks serially to reduce memory pressure; user GUI settings are preserved.
+
+To regenerate a disposable unplaced C0 copy, use `prepare_rev_c.py`, `make_rev_c_packages.py` and `create_standalone_draft.py --design-dir hardware/rev-c --project-name voicevault-standalone-c0 --unplaced`. The generator refuses to overwrite routed/zone-bearing work. Regeneration is not a way to merge a future Quilter return.
+
+## Before placement and manufacture
+
+1. Complete RF/antenna and connector/mechanical placement constraints, low-inductance power-loop/return requirements and remaining fine-pitch escape feasibility. All actual electrical placement and routing belongs to Quilter; no competing local routing pass.
+2. Resolve the converter model or obtain another defensible stability/transient analysis; complete charging/thermal/fault analysis and accept the exact pack/holder/sensor and input/load policy. The provisional outline remains 70 × 45 mm, six layers, 1.0 mm. Layer/via rules are not a manufacturer-approved process.
+3. Start a separate clean Rev C Quilter job only with a checked, constrained input. Recheck returned component identities, pad nets, antenna rules, stack, actual copper, full connectivity and native DRC. Completion percentage alone is not acceptance.
+4. Implement and test NXP provisioning, entropy, persistence and MCU peripherals. Qualify actual power, audio/DMA, trusted UI, radio isolation, acoustic leakage and offline updates on physical prototypes.
+5. Prepare an assembler-approved BOM and manufacturing files only after those release gates. Four fully assembled prototypes delivered to Sweden remain the procurement target. **No purchase, paid service, order or manufacturing submission has been made.**
+
+The focused existing software lifecycle suite passed 18 tests on 15 November before this CAD work. That result is retained as historical policy evidence; it is not a new full software-suite verdict or validation of these physical chips. The [assurance case](../../docs/ASSURANCE.md) keeps simulation, bounded proofs and physical qualification distinct.

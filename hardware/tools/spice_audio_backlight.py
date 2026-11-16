@@ -6,12 +6,14 @@ The static LED models bound chosen forward voltages; they do not predict LED
 temperature, brightness, startup, EMI or the TPS61062 feedback loop.
 """
 from pathlib import Path
+import argparse
 import itertools
 import json
 import re
 import subprocess
 import xml.etree.ElementTree as ET
 from spice_executable import ngspice
+from spice_results import measurements_from_log
 
 ROOT = Path(__file__).resolve().parents[2]
 DESIGN = ROOT / 'hardware/rev-b'
@@ -27,17 +29,17 @@ def experiment(group, index, source, measurements):
                             capture_output=True, text=True, timeout=15)
     log = result.stdout + result.stderr
     (directory / 'ngspice.log').write_text(log)
-    values = {}
-    for name in measurements:
-        match = re.search(re.escape(name) + r'\s*=\s*([\d.eE+-]+)', log)
-        if match:
-            values[name] = float(match[1])
-    if result.returncode or set(values) != set(measurements):
-        raise RuntimeError(f'Incomplete {group}/{index}: {log[-1800:]}')
+    values = measurements_from_log(log, measurements, result.returncode)
     return dict(case=index, **values)
 
 
 def main():
+    global DESIGN, OUT
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--design-dir',type=Path,default=DESIGN)
+    parser.add_argument('--out',type=Path,default=OUT)
+    parser.add_argument('--project-name',default='voicevault-standalone-b0')
+    args=parser.parse_args();DESIGN=args.design_dir;OUT=args.out
     OUT.mkdir(parents=True, exist_ok=True)
     version = subprocess.check_output([str(SPICE), '--version'], text=True)
     assert 'ngspice-47' in version, 'Record and review a changed simulator version.'
@@ -71,10 +73,11 @@ def main():
     parts = {p['ref']: p for page in manifest['pages'] for p in page['parts']}
     assert parts['R707']['value'].startswith('12R ')
     assert all(parts['R' + str(n)]['value'].startswith('200R ') for n in range(709, 713))
-    subprocess.run(['flatpak', 'run', '--user', '--command=kicad-cli', 'org.kicad.KiCad',
+    profile=([f'--env=KICAD_CONFIG_HOME={ROOT / ".lab-cache/kicad-revc-checks"}'] if DESIGN.name=='rev-c' else [])
+    subprocess.run(['flatpak', 'run', '--user', *profile, '--command=kicad-cli', 'org.kicad.KiCad',
                     'sch', 'export', 'netlist', '--format', 'kicadxml', '--output',
                     str(OUT / 'native-netlist.xml'),
-                    str(DESIGN / 'voicevault-standalone-b0.kicad_sch')], check=True,
+                    str(DESIGN / (args.project_name+'.kicad_sch'))], check=True,
                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=60)
     native = ET.parse(OUT / 'native-netlist.xml').getroot()
     values = {p.get('ref'): p.findtext('value') for p in native.findall('./components/comp')}

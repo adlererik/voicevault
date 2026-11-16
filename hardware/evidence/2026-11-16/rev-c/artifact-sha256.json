@@ -1,0 +1,20 @@
+{
+  "source_waveform": ".lab-runs/hardware/standalone-c0/spice-radio-switch/waveform.txt",
+  "source_waveform_sha256": "ee492d0ce7998ee60e6c543665ce49ca090825bef3f91c1e7153c57793b81218",
+  "files": {
+    "README.md": "d89680db799b97a8fbbd03a01dbcd10147f3226d681086a4d6f586d1c0fd4b81",
+    "converter-execution-short.json": "2e079837ee1028d9f23222f4d3d5b05d0c45a2cdf11efcd7fce8b944deeb0e8d",
+    "converter-execution.json": "ee625dfc29e88ba34e03637da926b7424633c11664245cc768ea7ac1693b94cc",
+    "converter-ngspice-short.log": "3eb31e1b6cb4e9b024d9f0580d473ec08dc7cde1c4c5d797b752a33e8401858f",
+    "drc.json": "98836ea1873392b133c2ca88ba59494cfe9a33e21e2a87d136eee543f45bf812",
+    "erc.json": "16ebac9984064d53c20b49599246131d59d1b6a2b1a628d5e43d51a1e1fbad1b",
+    "radio-switch.png": "5ee4854c4abe39732453cbbbe512ad52029188b25a50bdf72d8153090f9521ed",
+    "report.json": "c2f21b8cf28169fec377aebd899a43b479f4b485e2932dd95bf1ffbe7f37a603",
+    "spice-model-logic-input.cir": "3062ba4f7c3117bdd04d80d572a36eda6ec5434e0c92fcf9d04072a84e09abc8",
+    "spice-model-logic-ngspice.log": "80ccff3d75130ab237aa13ec4659744bd96d516f59939d0ca8f9928fed292b59",
+    "spice-radio-switch-input.cir": "f4f12e7cf87851374982124b1ff47b7e23f0c8804504bf5a8d79f4e83e5ac52c",
+    "spice-radio-switch-ngspice.log": "572df6a22f012fb7ec22721fe2b180328942434b4907d2aea72a56bb88cbc5b4",
+    "spice-result-regression.log": "c6b9b1f09add0403cc07e90bfdf272129b1ddfa2f8f7675ea8218862f2516371",
+    "spice-summary.json": "9171515ea076e48310ab1e9d175ebfd2f06ef1b8341492be1fb0bbb0247ece68"
+  }
+}

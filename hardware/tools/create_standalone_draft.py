@@ -58,13 +58,27 @@ def extract_symbol(source, name):
 
 
 def main():
+    global DEST, NAMESPACE
     parser = argparse.ArgumentParser()
+    parser.add_argument('--design-dir', type=Path, default=DEST,
+                        help='Separate destination; defaults to preserved Rev B.')
+    parser.add_argument('--project-name', default='voicevault-standalone-b0')
+    parser.add_argument('--unplaced', action='store_true',
+                        help='Park all electrical components outside the outline for cloud placement; do not design a placement.')
     parser.add_argument('--replace', action='store_true')
     parser.add_argument('--preserve-layout', type=Path)
     parser.add_argument('--schematic-only', action='store_true',
                         help='Regenerate sheets/library only; preserve existing project, PCB, rules and routed work.')
     args = parser.parse_args()
-    name = 'voicevault-standalone-b0'
+    name = args.project_name
+    if not re.fullmatch(r'[a-z0-9-]+', name):
+        raise SystemExit('Project name must contain only lower-case letters, digits and hyphens.')
+    DEST = args.design_dir.resolve()
+    if args.unplaced and args.preserve_layout:
+        raise SystemExit('Cloud-placement input cannot preserve electrical component positions.')
+    if name != 'voicevault-standalone-b0':
+        NAMESPACE = uuid.uuid5(NAMESPACE, name)
+    revision = 'C0' if name == 'voicevault-standalone-c0' else 'B0'
     if not (args.replace or args.schematic_only) and any((DEST / (name + suffix)).exists()
                                 for suffix in ['.kicad_pro', '.kicad_sch', '.kicad_pcb']):
         raise SystemExit('CAD already exists; preserve edits or explicitly use --replace.')
@@ -245,22 +259,22 @@ def main():
     sheets, child_symbols, child_parts = build_pages(ROOT, DEST, name, root_id, uid, quote, effects, extract_symbol)
     instances.extend(sheets)
     for x, y, message in [
-        (25, 15, 'VOICEVAULT B0 | STANDALONE SECURE AUDIO ENDPOINT | CIRCUIT REVIEW'),
+        (25, 15, f'VOICEVAULT {revision} | STANDALONE SECURE AUDIO ENDPOINT | CIRCUIT REVIEW'),
         (25, 23, 'NOT FOR FABRICATION. Hierarchical circuits under review; all PCB routing remains incomplete.'),
         (190, 125, 'STDC14 pin 3 is target voltage sense, NOT a power input.'),
         (190, 133, 'Use an external STLINK-V3MINIE. Target supply is separate.'),
         (190, 141, 'Pins 13/14 use TARGET RX/TX naming. UART6 on PC8/PC9.'),
         (190, 158, 'Power, radio, secure elements, controls and offline-update interfaces: see child sheets.'),
         (190, 166, 'Main debug and radio debug are separate; probes measure target voltage only.'),
-        (190, 174, 'Display/touch, haptic, Qi and NFC are on separate reviewed-source circuit sheets.'),
+        (190, 174, 'Display/touch and haptic: see child sheets. Rev C removes Qi and NFC.' if revision == 'C0' else 'Display/touch, haptic, Qi and NFC are on separate reviewed-source circuit sheets.'),
         (190, 182, 'Audio codec, CTIA headset, physical microphone disconnect and microSD are additions.'),
         (25, 258, 'Prototype has open debug access and public diagnostic material. Physical security remains unqualified.'),
         (25, 266, 'Safe 7 source: TS7 rev_D, STM32U5G9ZJJ6Q / UFBGA144. New PCB outline is provisional 70 x 45 mm.'),
     ]:
         instances.append(f'(text {quote(message)} (at {x} {y} 0) {effects(1, "(justify left)")} (uuid "{uid(message)}"))')
     (DEST / (name + '.kicad_sch')).write_text(f'''(kicad_sch (version 20250114) (generator "eeschema")
-      (uuid "{root_id}") (paper "A2") (title_block (title "VoiceVault B0 - standalone circuit review")
-      (rev "B0-INCOMPLETE") (company "VoiceVault"))
+      (uuid "{root_id}") (paper "A2") (title_block (title "VoiceVault {revision} - standalone circuit review")
+      (rev "{revision}-INCOMPLETE") (company "VoiceVault"))
       (lib_symbols {symbol} {header} {''.join(extra_symbols)}) {''.join(instances)} (sheet_instances (path "/" (page "1"))))''')
     local_lib = (symbol + header + ''.join(extra_symbols) + ''.join(child_symbols)).replace('(symbol "VoiceVault_B0:', '(symbol "')
     (DEST / 'VoiceVault_B0.kicad_sym').write_text('(kicad_symbol_lib (version 20250114) (generator "kicad_symbol_editor") ' + local_lib + ')')
@@ -299,7 +313,10 @@ def main():
     pcb_parts += [(p['ref'], p['footprint'].split(':')[0], p['footprint'].split(':')[1],
                    p['value'], p['position'], p.get('nets', {})) for p in mechanical]
     preserved = json.loads(args.preserve_layout.read_text()) if args.preserve_layout else {}
-    for ref, library_name, fp_name, value, position, pin_nets in pcb_parts:
+    for part_index, (ref, library_name, fp_name, value, position, pin_nets) in enumerate(pcb_parts):
+        if args.unplaced and not ref.startswith('H'):
+            # Off-board inventory parking only. Quilter chooses the PCB pose.
+            position = (150 + 30 * (part_index % 12), 30 + 30 * (part_index // 12))
         if ref in preserved:
             position = (preserved[ref]['x'], preserved[ref]['y'])
         source = footprints if library_name == 'VoiceVault_B0' else LIB / ('footprints/' + library_name + '.pretty')
@@ -327,9 +344,16 @@ def main():
         # KiCad 10 resolves layer pairs through the parent board during Flip.
         # Flipping a detached footprint can crash the native library.
         board.Add(fp)
+        if args.unplaced:
+            fp.SetLocked(False)
+            fp.SetIsPlaced(False)
+            fp.SetNeedsPlaced(True)
+            fp.Reference().SetTextSize(pcbnew.VECTOR2I(pcbnew.FromMM(.8),pcbnew.FromMM(.8)))
+            if ref.startswith('H'):
+                fp.Reference().SetVisible(False)
         if ref in preserved and preserved[ref].get('back', False):
             fp.Flip(fp.GetPosition(), pcbnew.FLIP_DIRECTION_LEFT_RIGHT)
-        if ref in ['U1', 'L1']:
+        if ref in ['U1', 'L1'] and not args.unplaced:
             label_position = (74, 47) if ref == 'U1' else (60, 57.5)
             fp.Reference().SetPosition(pcbnew.VECTOR2I(*(pcbnew.FromMM(v) for v in label_position)))
         if ref in preserved:
@@ -348,7 +372,7 @@ def main():
         line.SetEnd(pcbnew.VECTOR2I(*(pcbnew.FromMM(v) for v in end)))
         line.SetWidth(pcbnew.FromMM(.05))
         board.Add(line)
-    for message, x, y, size in [('VOICEVAULT B0 DEV', 60, 30, 1.5),
+    for message, x, y, size in [(f'VOICEVAULT {revision} DEV', 60, 30, 1.5),
                                ('INCOMPLETE - DO NOT FABRICATE', 60, 65, 1),
                                ('CIRCUIT REVIEW - UNROUTED', 60, 68, .8)]:
         label = pcbnew.PCB_TEXT(board)

@@ -80,9 +80,10 @@ def build_pages(root, destination, project_name, root_id, uid, quote, effects, e
                 if symbol_name not in ['C', 'R', 'L']:
                     local_symbols.append(body)
             rotation = 0 if 'pins' in part else 90
+            in_bom = 'yes' if part.get('in_bom', True) else 'no'
             fp_name = part['footprint'].split(':')[1]
             instances.append(f'''(symbol (lib_id {quote(lib_id)}) (at {x} {y} {rotation}) (unit 1)
-              (in_bom yes) (on_board yes) (dnp no) (uuid "{uid(reference)}")
+              (in_bom {in_bom}) (on_board yes) (dnp no) (uuid "{uid(reference)}")
               (property "Reference" {quote(reference)} (at {x} {y-6.35} 0) {effects()})
               (property "Value" {quote(part['value'])} (at {x} {y-3.81} 0) {effects(.85)})
               (property "Footprint" {quote('VoiceVault_B0:' + fp_name)} (at {x} {y} 0) {effects(1, '(hide yes)')})
@@ -110,7 +111,7 @@ def build_pages(root, destination, project_name, root_id, uid, quote, effects, e
             instances.append(f'(text {quote(note)} (at 20 {notes_y+index*6} 0) '
                              f'{effects(1, "(justify left)")} (uuid "{uid(page["name"]+note)}"))')
         text = f'''(kicad_sch (version 20250114) (generator "eeschema") (uuid "{page_id}") (paper {quote(page.get('paper', 'A3'))})
-          (title_block (title {quote(page['title'])}) (rev "B0-REVIEW") (company "VoiceVault"))
+          (title_block (title {quote(page['title'])}) (rev "{manifest.get('revision', 'B0')}-REVIEW") (company "VoiceVault"))
           (lib_symbols {''.join(s for _, s in page_symbols)}) {''.join(instances)}
           (sheet_instances (path {quote(instance_path)} (page "{page_number}"))))'''
         (destination / filename).write_text(text)

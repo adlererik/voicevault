@@ -19,7 +19,7 @@ The future endpoint encrypts outgoing media before passing it to the phone and a
 | Analog headset jack | Wired microphone/headphone audio connects to the endpoint, not the phone | Synthetic PCM/Opus/WAV pipeline; no ADC/DAC/headset driver |
 | Physical mic disconnect | A local hardware action can disconnect capture | Hardware requirement, not a simulated switch security claim |
 | Separate BLE controller | Minimal standards-compliant services and a bounded ciphertext-data interface | Hostile-radio policy model; real radio/driver/isolation work pending |
-| Own battery and inductive charging | No power/data cable to the phone during intended use | Architecture requirement; no power hardware built |
+| Own replaceable battery and wired power-only charging | Independent power; phone communicates wirelessly over BLE | Rev C circuit draft; Qi removed, pack/thermal/physical qualification pending |
 | Trusted MCU and secure elements | Protect persistent secrets/state and isolate radio/audio/control responsibilities | STM32U585-class capacity reference; chip operations and bill of materials undecided |
 | Protected first-stage verifier | A small manufacturing-protected boot trust root checks later code | Signed-image/two-bank/version model; no physical immutability established |
 | Local offline firmware introduction | Physically initiated microSD updates, bounded image parsing and on-device verification | Raw-image policy and fault tests; no SD filesystem/driver |

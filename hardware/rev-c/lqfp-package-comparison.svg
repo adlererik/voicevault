@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-labelledby="title desc">
+  <title id="title">VoiceVault MCU package comparison</title>
+  <desc id="desc">Two illustrative 70 by 45 millimeter board outlines at the same scale. Current BGA body is 10 by 10 millimeters. Candidate LQFP body is 20 by 20 millimeters with 22 millimeter lead span and a 23.3 millimeter courtyard bounding box. This is not a placement or fit test.</desc>
+  <rect width="960" height="400" fill="#101a29"/>
+  <g font-family="sans-serif" fill="#edf5ff">
+    <text x="32" y="36" font-size="23" font-weight="bold">Same processor platform. More accessible connections.</text>
+    <text x="32" y="63" font-size="14" fill="#b8c9dc">Package dimensions at equal scale • illustrative bare board outlines, not component placement</text>
+    <text x="58" y="101" font-size="17" font-weight="bold">Current: UFBGA144</text>
+    <text x="535" y="101" font-size="17" font-weight="bold">Candidate: LQFP144</text>
+    <rect x="58" y="119" width="315" height="202.5" rx="5" fill="#173c37" stroke="#659f8f"/>
+    <rect x="535" y="119" width="315" height="202.5" rx="5" fill="#173c37" stroke="#659f8f"/>
+    <rect x="193" y="198" width="45" height="45" fill="#303b50" stroke="#c8d4e6"/>
+    <g fill="#d5ddeb">
+      <circle cx="201" cy="206" r="2"/><circle cx="215.5" cy="206" r="2"/><circle cx="230" cy="206" r="2"/>
+      <circle cx="201" cy="220.5" r="2"/><circle cx="215.5" cy="220.5" r="2"/><circle cx="230" cy="220.5" r="2"/>
+      <circle cx="201" cy="235" r="2"/><circle cx="215.5" cy="235" r="2"/><circle cx="230" cy="235" r="2"/>
+    </g>
+    <text x="215" y="268" text-anchor="middle" font-size="13">10 × 10 mm body</text>
+    <text x="215" y="287" text-anchor="middle" font-size="12" fill="#b8c9dc">Underside balls · 0.80 mm pitch</text>
+    <rect x="640.075" y="168.075" width="104.85" height="104.85" fill="none" stroke="#ffcb71" stroke-dasharray="4 3"/>
+    <rect x="643" y="171" width="99" height="99" fill="#c8d4e6"/>
+    <rect x="647.5" y="175.5" width="90" height="90" fill="#303b50" stroke="#c8d4e6"/>
+    <circle cx="654" cy="182" r="2.3" fill="#ffcb71"/>
+    <text x="692.5" y="213" text-anchor="middle" font-size="12">20 × 20 mm</text>
+    <text x="692.5" y="232" text-anchor="middle" font-size="12">body</text>
+    <text x="692.5" y="290" text-anchor="middle" font-size="12">22 mm lead span · 0.50 mm pitch</text>
+    <text x="58" y="346" font-size="13" fill="#b8c9dc">Both outlines: 70 × 45 mm</text>
+    <text x="535" y="346" font-size="13" fill="#ffcb71">Dashed: 23.3 mm courtyard bounding box</text>
+    <text x="32" y="380" font-size="14">Full board fit, power integrity, routing and hardware qualification remain pending.</text>
+  </g>
+</svg>

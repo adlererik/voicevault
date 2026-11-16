@@ -4,6 +4,8 @@
 
 [Open the KiCad project](voicevault-standalone-c0.kicad_pro) · [Root schematic](voicevault-standalone-c0.kicad_sch) · [PCB input](voicevault-standalone-c0.kicad_pcb) · [Checked evidence](../evidence/2026-11-16/quilter-launch/README.md) · [Decisions](decisions.json) · [Manufacturer reference hashes](references.json)
 
+**Package evaluation:** [STM32U5G9ZJT6Q LQFP144 is recommended for a separate prototype revision](LQFP_EVALUATION.md), with a verified 55-signal migration plan. The audit also found an existing functional blocker: PC0 has no SPI2 clock function; move SD_SCK_MCU to unused PB13 if adopting hardware SPI2. Neither correction nor package migration has been applied. The [isolated BGA repair checkpoint](local-repair-01/README.md) remains at 62 opens, with zero native shorts/clearances/antenna violations. Neither board is a manufacturing release.
+
 ## Component reduction
 
 | Inventory | Preserved B0 | C0 draft | Reduction |

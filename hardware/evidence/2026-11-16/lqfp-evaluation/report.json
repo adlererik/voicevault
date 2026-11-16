@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-16",
+  "status": "evaluation-only-candidate-recommended-with-correction",
+  "cad_changed": false,
+  "manufacturing_ready": false,
+  "current_part": "STM32U5G9ZJJ6Q",
+  "candidate_part": "STM32U5G9ZJT6Q",
+  "vendor_commit": "7d1f1514ed5583ec5007ad91236b4e1d377295b1",
+  "vendor_xml_sha256": {
+    "bga": "0e1f9cc90b2de934061711ce525709518007fb00caa73cf5ea61f0aa1213b6fe",
+    "lqfp": "b568a8ab9ea2fc7baf33c5848f39e6bb02618ab1f35411e8523f0913eef1a55e"
+  },
+  "shared_vendor_metadata": {
+    "Core": "ARM Cortex-M33",
+    "Die": "DIE476",
+    "Ram": "3026",
+    "Flash": "4096",
+    "IONb": "101",
+    "TrustZone": "Available"
+  },
+  "protected_input_sha256": {
+    "hardware/rev-c/voicevault-standalone-c0.kicad_pcb": "ef09f4facdfb4a2ae0ad3373b838bdda55c12bc668807726400435d2626f7fb0",
+    "hardware/rev-c/circuits.json": "1510212d1d6143ae5dcd66b9eaf446559932eac74de5dd7d5e6e29d87c79604c",
+    "hardware/rev-b/voicevault-standalone-b0.kicad_pcb": "7e82425a6895dc75763a0df97c2fb472d34389b821d46791485e6d5a137d53c1",
+    "hardware/rev-c/local-repair-01/voicevault-standalone-c0.kicad_pcb": "35819cee0b85467916b121beec45ffabb0ad522ec12bb7677bcc83b2a417465e"
+  },
+  "connected_bga_pins_including_supplies": 91,
+  "signal_count": 55,
+  "unavailable_selected_peripheral_functions": [
+    "SD_SCK_MCU"
+  ],
+  "proposed_sd_clock_correction": {
+    "from": "PC0 / BGA K2 / LQFP 29",
+    "to": "PB13 / BGA M10 / LQFP 70",
+    "applied": false
+  },
+  "proposed_signal_functions_available": 55,
+  "kicad_symbol_matches_vendor_all_pins": true,
+  "kicad_footprint_pad_count": 144,
+  "kicad_footprint_perimeter_numbering_and_0_5mm_pitch_checked": true,
+  "kicad_footprint_courtyard_bounds_mm": [
+    -11.65,
+    -11.65,
+    11.65,
+    11.65
+  ],
+  "kicad_footprint": "LQFP-144_20x20mm_P0.5mm.kicad_mod",
+  "kicad_footprint_sha256": "c56afb80b84306b4ae3639fdd270987fc47b46ee531bbae036cc2ee25f2cf165",
+  "kicad_symbol_library_sha256": "3db8a4a78223dbdbc14e19a6cd194cb0aa6bf591ba651598a07d5c0aef2bc133",
+  "supply_pin_counts": {
+    "bga": {
+      "VSS": 12,
+      "VBAT": 1,
+      "VSSDSI": 3,
+      "VDD11": 2,
+      "VDDUSB": 1,
+      "VDDDSI": 1,
+      "VDDIO2": 1,
+      "VDD": 8,
+      "VDD11DSI": 1,
+      "VSSA": 1,
+      "VDDA": 1,
+      "VSSSMPS": 1,
+      "VLXSMPS": 1,
+      "VDDSMPS": 1
+    },
+    "lqfp": {
+      "VBAT": 1,
+      "VDDDSI": 1,
+      "VDD11DSI": 2,
+      "VSSDSI": 2,
+      "VSS": 10,
+      "VDD": 10,
+      "VSSA": 1,
+      "VDDA": 1,
+      "VLXSMPS": 1,
+      "VDDSMPS": 1,
+      "VSSSMPS": 1,
+      "VDD11": 2,
+      "VDDUSB": 1,
+      "VDDIO2": 1
+    }
+  },
+  "not_checked": [
+    "populated-board mechanical fit",
+    "placement or routing",
+    "firmware AF register settings, clock tree and DMA allocation",
+    "power integrity, EMC, RF, audio quality, thermal behavior",
+    "actual silicon revision, hardware isolation and security qualification"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "source_waveform": ".lab-runs/hardware/standalone-c0/spice-radio-switch/waveform.txt",
+  "source_waveform_sha256": "ee492d0ce7998ee60e6c543665ce49ca090825bef3f91c1e7153c57793b81218",
+  "files": {
+    "antenna-negative-findings.json": "320e5fec50d62c1b10e7cbed4630af7bc9172c5e5a02d8fead09a7cade269e7c",
+    "converter-execution-short.json": "2e079837ee1028d9f23222f4d3d5b05d0c45a2cdf11efcd7fce8b944deeb0e8d",
+    "converter-execution.json": "ee625dfc29e88ba34e03637da926b7424633c11664245cc768ea7ac1693b94cc",
+    "converter-ngspice-short.log": "3eb31e1b6cb4e9b024d9f0580d473ec08dc7cde1c4c5d797b752a33e8401858f",
+    "drc.json": "1355ae657e8ead648f5b4e358ce58254bb068199867477a459c4c9df374c3fde",
+    "erc.json": "e3457e40f79f71019808ca9b6f91b5d2a931436401737507ccba8c9eba71e4eb",
+    "quilter-policy-report.json": "41858925375166008376f6b91b608ce97aa525d7871be7d0e1667df723cdc652",
+    "radio-switch.png": "5ee4854c4abe39732453cbbbe512ad52029188b25a50bdf72d8153090f9521ed",
+    "report.json": "c60f27a9b48f160d5bca6c80100cd62389022aee656b61defaa4cf091e715ff2",
+    "spice-model-logic-input.cir": "3062ba4f7c3117bdd04d80d572a36eda6ec5434e0c92fcf9d04072a84e09abc8",
+    "spice-model-logic-ngspice.log": "80ccff3d75130ab237aa13ec4659744bd96d516f59939d0ca8f9928fed292b59",
+    "spice-radio-switch-input.cir": "f4f12e7cf87851374982124b1ff47b7e23f0c8804504bf5a8d79f4e83e5ac52c",
+    "spice-radio-switch-ngspice.log": "64a9a21ffb6ad46ac6ffafb46ab20406ebe0aea3c9b41d932d89f4c2bed303f1",
+    "spice-result-regression.log": "62cfbeb2911bb226088bfb0918eb4b05008ea70b20bce854ee2ca8a564bd37a5",
+    "spice-summary.json": "9a1f87e4951b913a6905867a60168c48f1e0585b273712af77f339cb52854719"
+  }
+}

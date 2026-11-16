@@ -57,7 +57,7 @@ def main():
     original = json.loads((OLD/'circuits.json').read_text())
     data = copy.deepcopy(original)
     data['revision']='C0'
-    removed_pages = {'power','secure','qi','qi-control','nfc','nfc-matching','nfc-interface'}
+    removed_pages = {'power','secure','qi','qi-control','nfc','nfc-matching','nfc-interface','haptic'}
     removed = [p['ref'] for pg in data['pages'] if pg['name'] in removed_pages for p in pg['parts']]
     data['pages'] = [p for p in data['pages'] if p['name'] not in removed_pages]
     data = rename(data, {'AUX_3V3':'VDD_3V3','PMIC_VBUS':'USB_5V_FUSED',
@@ -65,7 +65,7 @@ def main():
         'PMIC_SDA':'HAPTIC_SDA','PMIC_SCL':'HAPTIC_SCL'})
     signals = data['mcu_signals']
     for pin in list(signals):
-        if signals[pin].startswith(('TR_','OP_','QI_','NFC_','PMIC_')):
+        if signals[pin].startswith(('TR_','OP_','QI_','NFC_','PMIC_','HAPTIC_')):
             del signals[pin]
     signals.update(PD12='SE_SCL',PD13='SE_SDA',PD10='SE_ENABLE',
                    PH10='RADIO_POWER_EN',PB11='RADIO_FAULT_N',
@@ -208,8 +208,6 @@ def main():
         if x['ref']=='C401' and 'nets' in x:x['nets']['1']='VDD_3V3'
     by_page['microsd']['notes']=['TPS22918 switches regulated main 3.3V; I/O isolation remains default disabled.',
         'Card peak current and real inrush need bench qualification; this switch is not a current limiter.']
-    by_page['haptic']['parts'].extend([passive('R810','4.7k','HAPTIC_SDA','VDD_3V3'),
-                                     passive('R811','4.7k','HAPTIC_SCL','VDD_3V3')])
 
     radio=by_page['radio']
     old_radio=next(p for p in radio['parts'] if p['ref']=='U6')
@@ -227,9 +225,13 @@ def main():
     for p in radio['parts']:
         if p['ref']=='L201':p['value']='3.9nH RF 5%';p['footprint']='Inductor_SMD:L_0402_1005Metric'
         if p['ref']=='C203':p['value']='0.8p C0G 5%';p['footprint']='Capacitor_SMD:C_0402_1005Metric'
+        # Johanson page 2: series 1.2pF, shunt 2.7nH, series 3.3nH.
+        # Preserve the part identities; correct the inherited reversed roles.
+        if p['ref']=='C212':p['nets']={'1':'RAD_RF_50','2':'RAD_MATCH'}
+        if p['ref']=='L202':p['nets']={'1':'RAD_MATCH','2':'GND'}
     radio.setdefault('notes',[]).extend(['QFAA LDO circuit: DEC2 NC, DCC NC; package-specific RF C=0.8pF/L=3.9nH.',
         'Crystal load and complete antenna matching/keepout require final-layout/RF qualification.'])
-    for name in ['microsd','audio-power','radio','haptic']:
+    for name in ['microsd','audio-power','radio']:
         pg=by_page[name];pg.update(page(name,pg['title'],pg['parts'],pg.get('notes',[])))
 
     # Put probe pads in the electrical schematic so cloud placement can place

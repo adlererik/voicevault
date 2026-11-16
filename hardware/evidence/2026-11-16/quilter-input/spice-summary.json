@@ -1,0 +1,231 @@
+{
+  "checked_utc": "2026-11-16T01:00:08.988656+00:00",
+  "scope": "Scoped models, not complete-device qualification",
+  "simulator": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html\n** Creation Date: Tue Aug 11 00:00:00 UTC 2026\n******",
+  "circuits_sha256": "a6923357255b27db948a4d0bf1ef655c7d3935062faccc1f4f43bb2246b99f69",
+  "groups": [
+    {
+      "name": "Secure-bus RC sensitivity",
+      "status": "PASS",
+      "cases": [
+        {
+          "vdd_v": 3.25,
+          "pullup_ohm": 4653,
+          "assumed_bus_cap_f": 2e-11,
+          "low_v": 0.574916,
+          "rise_s": 7.88434e-08
+        },
+        {
+          "vdd_v": 3.25,
+          "pullup_ohm": 4653,
+          "assumed_bus_cap_f": 5e-11,
+          "low_v": 0.574916,
+          "rise_s": 1.97125e-07
+        },
+        {
+          "vdd_v": 3.25,
+          "pullup_ohm": 4653,
+          "assumed_bus_cap_f": 1e-10,
+          "low_v": 0.574916,
+          "rise_s": 3.94247e-07
+        },
+        {
+          "vdd_v": 3.25,
+          "pullup_ohm": 4653,
+          "assumed_bus_cap_f": 2e-10,
+          "low_v": 0.574916,
+          "rise_s": 7.88495e-07
+        },
+        {
+          "vdd_v": 3.25,
+          "pullup_ohm": 4747,
+          "assumed_bus_cap_f": 2e-11,
+          "low_v": 0.565512,
+          "rise_s": 8.04425e-08
+        },
+        {
+          "vdd_v": 3.25,
+          "pullup_ohm": 4747,
+          "assumed_bus_cap_f": 5e-11,
+          "low_v": 0.565512,
+          "rise_s": 2.01105e-07
+        },
+        {
+          "vdd_v": 3.25,
+          "pullup_ohm": 4747,
+          "assumed_bus_cap_f": 1e-10,
+          "low_v": 0.565512,
+          "rise_s": 4.02212e-07
+        },
+        {
+          "vdd_v": 3.25,
+          "pullup_ohm": 4747,
+          "assumed_bus_cap_f": 2e-10,
+          "low_v": 0.565512,
+          "rise_s": 8.04424e-07
+        },
+        {
+          "vdd_v": 3.35,
+          "pullup_ohm": 4653,
+          "assumed_bus_cap_f": 2e-11,
+          "low_v": 0.592606,
+          "rise_s": 7.88434e-08
+        },
+        {
+          "vdd_v": 3.35,
+          "pullup_ohm": 4653,
+          "assumed_bus_cap_f": 5e-11,
+          "low_v": 0.592606,
+          "rise_s": 1.97125e-07
+        },
+        {
+          "vdd_v": 3.35,
+          "pullup_ohm": 4653,
+          "assumed_bus_cap_f": 1e-10,
+          "low_v": 0.592606,
+          "rise_s": 3.94247e-07
+        },
+        {
+          "vdd_v": 3.35,
+          "pullup_ohm": 4653,
+          "assumed_bus_cap_f": 2e-10,
+          "low_v": 0.592606,
+          "rise_s": 7.88495e-07
+        },
+        {
+          "vdd_v": 3.35,
+          "pullup_ohm": 4747,
+          "assumed_bus_cap_f": 2e-11,
+          "low_v": 0.582913,
+          "rise_s": 8.04425e-08
+        },
+        {
+          "vdd_v": 3.35,
+          "pullup_ohm": 4747,
+          "assumed_bus_cap_f": 5e-11,
+          "low_v": 0.582913,
+          "rise_s": 2.01105e-07
+        },
+        {
+          "vdd_v": 3.35,
+          "pullup_ohm": 4747,
+          "assumed_bus_cap_f": 1e-10,
+          "low_v": 0.582913,
+          "rise_s": 4.02212e-07
+        },
+        {
+          "vdd_v": 3.35,
+          "pullup_ohm": 4747,
+          "assumed_bus_cap_f": 2e-10,
+          "low_v": 0.582913,
+          "rise_s": 8.04424e-07
+        }
+      ],
+      "limitation": "1kOhm sink is a datasheet-based conservative assumption, not a transistor model; actual routed bus capacitance unmeasured"
+    },
+    {
+      "name": "Native-value / datasheet arithmetic",
+      "status": "PASS",
+      "not_spice": true,
+      "main_feedback_v": [
+        3.2581028571428576,
+        3.3340069669669674
+      ],
+      "uvlo_v": {
+        "rise": [
+          3.5184795384615386,
+          3.8419999819819814
+        ],
+        "fall": [
+          3.0591988191808195,
+          3.3812792612612608
+        ]
+      },
+      "charge_current_a": [
+        0.17853142780341383,
+        0.22281639928698752
+      ],
+      "charge_timer_h": [
+        6.741899999999999,
+        11.4635
+      ],
+      "radio_limit_ma": [
+        98.671320904747,
+        138.64181513270137
+      ],
+      "audio_headroom_v": 0.40210285714285776,
+      "audio_ldo_max_dropout_v": 0.14,
+      "limitations": [
+        "Charger current/timer and NTC network still require exact battery acceptance",
+        "Feedback DC accuracy excludes switching ripple and transient behavior",
+        "No charger silicon, thermal loop, cell chemistry or NXP RNG simulation"
+      ]
+    },
+    {
+      "name": "PSpice Boolean-port truth table",
+      "status": "PASS",
+      "outputs": 12,
+      "port": {
+        "source_sha256": "7e40f58d8c69445d15f9f153c9624a945191cb83b113f7651a20a7b44df289d8",
+        "adapted_sha256": "0165c8828d95c317fb8bfef95f5bfe572ab1b55cec8cb2f88a674701ed55518d",
+        "edits": [
+          "Explicit Boolean inequality for PSpice XOR in .SUBCKT XNOR2_BASIC_GEN A B Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 "
+        ],
+        "note": "Numerically explicit Boolean syntax, not a new semiconductor model; supplier original unchanged"
+      }
+    },
+    {
+      "name": "Supplier radio-switch model",
+      "status": "PASS",
+      "measurements": {
+        "default_off_v": -2.31329e-09,
+        "normal_v": 3.29335,
+        "limited_a": 0.116949,
+        "transient_peak_a": 0.661622,
+        "fault_v": 0.00420229,
+        "recovered_v": 3.29335,
+        "disabled_v": 0.0433078
+      },
+      "model_port": {
+        "source_sha256": "7e40f58d8c69445d15f9f153c9624a945191cb83b113f7651a20a7b44df289d8",
+        "adapted_sha256": "0165c8828d95c317fb8bfef95f5bfe572ab1b55cec8cb2f88a674701ed55518d",
+        "edits": [
+          "Explicit Boolean inequality for PSpice XOR in .SUBCKT XNOR2_BASIC_GEN A B Y PARAMS: VDD=1 VSS=0 VTHRESH=0.5 "
+        ],
+        "note": "Numerically explicit Boolean syntax, not a new semiconductor model; supplier original unchanged"
+      },
+      "schedule": {
+        "on_ms": 0.101,
+        "steady_window_ms": [
+          4,
+          5
+        ],
+        "short_ms": [
+          6,
+          21
+        ],
+        "disable_ms": 30.001,
+        "unloaded_discharge_check_ms": 130,
+        "output_cap_f": 6.9e-06,
+        "bleed_ohm": 3300
+      },
+      "limitation": "Supplier PSpice model under ngspice compatibility; steady current limit is not the transient peak. Temperature, main regulator coupling and malicious electrical/RF faults not qualified"
+    },
+    {
+      "name": "Retained passive audio/backlight sensitivity",
+      "status": "PASS",
+      "cases": 772,
+      "limitation": "Ideal sources/static networks; not codec or converter silicon/acoustic qualification"
+    },
+    {
+      "name": "Supplier main-converter model",
+      "status": "BLOCKED",
+      "reason": "3ms run exceeded the bounded CPU budget; shorter PSpice port hit timestep-too-small near the load step. No complete converter result claimed.",
+      "raw_log_sha256": "3eb31e1b6cb4e9b024d9f0580d473ec08dc7cde1c4c5d797b752a33e8401858f",
+      "exit_zero_is_not_pass": true
+    }
+  ],
+  "full_device": "BLOCKED",
+  "available_model_checks": "PASS",
+  "silicon_and_system_simulation": "BLOCKED"
+}

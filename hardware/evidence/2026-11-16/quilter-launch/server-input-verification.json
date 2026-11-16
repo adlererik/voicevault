@@ -1,0 +1,24 @@
+{
+  "input_zip_sha256": "b81bfd2368ec2e919cf3c2d2092546af2690a3d273794fed581c40e54233bdf7",
+  "all_18_native_files_match": true,
+  "files": {
+    "circuit-charging.kicad_sch": "0266a7747d26c65de4d24aa0afe644419152a9fe616a2ebc7e4d441bfebcd621",
+    "circuit-regulation.kicad_sch": "64bddaa86c8ee311ea4070d1791bf00cf8feb18dcb8660ad88808168399f7073",
+    "circuit-secure.kicad_sch": "e96ba6c8d099a2501d0e5ce0145e28ce5a82f3d45a60b6f3b4f06ff757e61359",
+    "circuit-radio.kicad_sch": "61a099161cde5303b9c988fc33f3bea0eaf397956904eee7797c787d31e0a6c9",
+    "circuit-radio-interface.kicad_sch": "3aff3c3d21f4a9f10f1d5fdd4ac2c750c216e5cc962337ebf66bc84bd4072c32",
+    "circuit-control.kicad_sch": "7fbf46e9e628c15b52ac277c5497341928eeb00f1231122bf9577a9be93432dc",
+    "circuit-microsd.kicad_sch": "afe89d986f21c35514f1ff762a83f24ed37507648dfec2a8748345f5262009f3",
+    "circuit-power-entry.kicad_sch": "3e92c61c6be4b928839b6c8c37d2b7cbf0633b58ed33177eaadf9d02341542d3",
+    "circuit-audio-codec.kicad_sch": "d0e0b5372ba43d5b5d6f9d58d35bc8abdbe4aafa4bc7fd8198968a56dc905d84",
+    "circuit-headset.kicad_sch": "506deb9a058f63d66e05c8d5bed9ef185002b0b569b9740e32e144d70fa9cf4b",
+    "circuit-display.kicad_sch": "990026e005c109880cc177296093a5f80a771b93065bf3f1cfef07a2f4345561",
+    "circuit-backlight.kicad_sch": "a9bff486effc12264829fddae85575db311e22407822b8cbefc1738d32d0be2e",
+    "circuit-audio-power.kicad_sch": "ef58600c067ae915be338fd2bdac5d9b4b919d8d610cdd7b5e9a2d36a1b74a4c",
+    "circuit-load-switches.kicad_sch": "99aaefac69ae3b32a9d30f9d4696ab64936ec2b514b8fe4756188882fa5a1170",
+    "circuit-test-access.kicad_sch": "8fe124e4fe6835f84411d5a39ff4817779c001802a29c70e2a921ed16e0bfd87",
+    "voicevault-standalone-c0.kicad_sch": "54596f04071e086cb442ffa141d4acb07a07a3451c4ff2297bc89c234a466fdb",
+    "voicevault-standalone-c0.kicad_pro": "7aac62dcf69bd14dff14185fcdff19e7e8abe8d1259d9c1fc51fb944a8cb54a2",
+    "voicevault-standalone-c0.kicad_pcb": "ef09f4facdfb4a2ae0ad3373b838bdda55c12bc668807726400435d2626f7fb0"
+  }
+}

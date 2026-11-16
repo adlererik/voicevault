@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Archive actual C0 reports and plot their recorded radio-switch waveform."""
 import hashlib
+import argparse
 import json
 from pathlib import Path
 import shutil
@@ -16,6 +17,10 @@ DEST = ROOT/'hardware/evidence/2026-11-16/rev-c'
 
 
 def main():
+    global DEST
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--destination',type=Path,default=DEST)
+    args=parser.parse_args();DEST=args.destination.resolve()
     report = json.loads((OUT/'report.json').read_text())
     if report['available_design_checks'] != 'PASS':
         raise RuntimeError('Inspect failures before recording the checked C0 snapshot')
@@ -23,10 +28,22 @@ def main():
         actual = hashlib.sha256((ROOT/'hardware/rev-c'/name).read_bytes()).hexdigest()
         if actual != expected:
             raise RuntimeError('Circuit input changed after checks: '+name)
+    if (DEST/'report.json').exists():
+        previous=json.loads((DEST/'report.json').read_text())
+        if previous['input_sha256']!=report['input_sha256']:
+            raise RuntimeError('Preserve the historical snapshot; select a new --destination for changed circuit inputs')
     DEST.mkdir(parents=True, exist_ok=True)
     for name in ['report.json', 'spice-summary.json', 'erc.json', 'drc.json']:
         shutil.copyfile(OUT/name, DEST/name)
     shutil.copyfile(OUT/'spice-result-regression.log', DEST/'spice-result-regression.log')
+    if 'quilter_policy' in report:
+        shutil.copyfile(OUT/'quilter-policy/report.json',DEST/'quilter-policy-report.json')
+        findings={}
+        for folder in sorted((OUT/'quilter-policy').iterdir()):
+            if (folder/'drc.json').is_file():
+                data=json.loads((folder/'drc.json').read_text())
+                findings[folder.name]=[x for x in data['violations'] if x['type']=='items_not_allowed']
+        (DEST/'antenna-negative-findings.json').write_text(json.dumps(findings,indent=2)+'\n')
     converter = ROOT/'.lab-cache/hardware-research/2026-11-15/revc/converter-compatibility'
     for name in ['execution.json', 'execution-short.json', 'ngspice-short.log']:
         if (converter/name).exists():

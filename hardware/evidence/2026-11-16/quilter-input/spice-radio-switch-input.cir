@@ -1,0 +1,40 @@
+Rev C current-limited radio switch; supplier PSpice model portability experiment
+.include "/home/erikclean/src/secure-voice-lab/.lab-runs/hardware/standalone-c0/model-ports/tps2553-ngspice.lib"
+Vsource supply 0 3.296
+Vmonitor supply vin 0
+Venable enable 0 PWL(0 0 100u 0 101u 3.296 30m 3.296 30.001m 0)
+Xswitch vin 0 enable 0 fault ilim radio TPS2553_TRANS
+Rilim ilim 0 232k
+Rfault supply fault 47k
+Cin vin 0 100n
+Cout radio 0 6.9u
+Rbleed radio 0 3.3k
+* 6.9u is above the 5.1u nominal external capacitance on RADIO_3V3.
+* Disconnect the nominal load on disable: passive discharge must work unloaded.
+Sload radio normal_load enable 0 load_switch
+Rnormal normal_load 0 100
+.model load_switch SW(Ron=0.01 Roff=1e12 Vt=1 Vh=0)
+Vshort control 0 PWL(0 0 6m 0 6.001m 1 21m 1 21.001m 0)
+Sshort radio rs control 0 short_switch
+Rshort rs 0 5
+.model short_switch SW(Ron=0.01 Roff=1e12 Vt=0.5 Vh=0)
+.save v(radio) v(fault) i(Vmonitor)
+.options reltol=0.003 method=gear
+.control
+tran 2u 140m
+meas tran default_off_v MAX v(radio) FROM=0 TO=80u
+* The datasheet allows up to 3ms turn-on at its specified load; do not sample
+* startup at 1ms and mistake the intentional soft-start for a failed switch.
+meas tran normal_v MIN v(radio) FROM=4m TO=5m
+meas tran limited_a MAX i(Vmonitor) FROM=7m TO=19m
+meas tran transient_peak_a MAX i(Vmonitor) FROM=6m TO=7m
+meas tran fault_v FIND v(fault) AT=20m
+meas tran recovered_v FIND v(radio) AT=27m
+* TPS2553 has no quick-output-discharge. 3.3k x 6.9u = 22.77ms;
+* allow 100ms after disable, independent of any helpful radio load.
+meas tran disabled_v FIND v(radio) AT=130m
+set wr_vecnames
+wrdata waveform.txt v(radio) v(fault) i(Vmonitor)
+quit
+.endc
+.end

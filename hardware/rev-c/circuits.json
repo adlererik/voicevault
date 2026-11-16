@@ -1,7 +1,5 @@
 {
   "mcu_signals": {
-    "PG13": "HAPTIC_SDA",
-    "PG14": "HAPTIC_SCL",
     "PA2": "LINK_TX",
     "PA3": "LINK_RX",
     "PA1": "LINK_RTS",
@@ -43,8 +41,6 @@
     "PC3": "TOUCH_IRQ_N",
     "PE0": "TOUCH_RESET_N",
     "PB9": "BACKLIGHT_PWM",
-    "PE11": "HAPTIC_RESET_N",
-    "PE12": "HAPTIC_IRQ_N",
     "PB10": "AUD_POWER_EN",
     "PD12": "SE_SCL",
     "PD13": "SE_SDA",
@@ -1592,8 +1588,8 @@
           "kind": "L",
           "footprint": "Inductor_SMD:L_0402_1005Metric",
           "nets": {
-            "1": "RAD_RF_50",
-            "2": "RAD_MATCH"
+            "1": "RAD_MATCH",
+            "2": "GND"
           },
           "schematic": [
             390,
@@ -1610,8 +1606,8 @@
           "kind": "C",
           "footprint": "Capacitor_SMD:C_0402_1005Metric",
           "nets": {
-            "1": "RAD_MATCH",
-            "2": "GND"
+            "1": "RAD_RF_50",
+            "2": "RAD_MATCH"
           },
           "schematic": [
             280,
@@ -4829,242 +4825,6 @@
         "Input is raw VSYS (2.7-6V driver range), with full operation gated at VSYS >=3.6V pending bench qualification; do not use the MCU/AUX buck for boost input."
       ],
       "paper": "A2",
-      "power_flags": []
-    },
-    {
-      "name": "haptic",
-      "title": "Haptic feedback driver",
-      "parts": [
-        {
-          "ref": "U10",
-          "value": "DRV2624YFFR",
-          "footprint": "VoiceVault_B0:DRV2624_YFF9",
-          "pins": [
-            {
-              "number": "A1",
-              "name": "TRIG_INT_N",
-              "type": "bidirectional",
-              "net": "HAPTIC_IRQ_N"
-            },
-            {
-              "number": "A2",
-              "name": "REG",
-              "type": "power_out",
-              "net": "HAPTIC_REG"
-            },
-            {
-              "number": "A3",
-              "name": "OUT_PLUS",
-              "type": "output",
-              "net": "HAPTIC_PLUS"
-            },
-            {
-              "number": "B1",
-              "name": "SDA",
-              "type": "bidirectional",
-              "net": "HAPTIC_SDA"
-            },
-            {
-              "number": "B2",
-              "name": "NRST",
-              "type": "input",
-              "net": "HAPTIC_RESET_N"
-            },
-            {
-              "number": "B3",
-              "name": "GND",
-              "type": "power_in",
-              "net": "GND"
-            },
-            {
-              "number": "C1",
-              "name": "SCL",
-              "type": "input",
-              "net": "HAPTIC_SCL"
-            },
-            {
-              "number": "C2",
-              "name": "VDD",
-              "type": "power_in",
-              "net": "VSYS"
-            },
-            {
-              "number": "C3",
-              "name": "OUT_MINUS",
-              "type": "output",
-              "net": "HAPTIC_MINUS"
-            }
-          ],
-          "schematic": [
-            75,
-            35
-          ],
-          "pcb": [
-            88,
-            52
-          ]
-        },
-        {
-          "ref": "J801",
-          "value": "BM02B-SRSS-TB(LF)(SN); LRA",
-          "footprint": "Connector_JST:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical",
-          "pins": [
-            {
-              "number": "1",
-              "name": "LRA_PLUS",
-              "type": "passive",
-              "net": "HAPTIC_PLUS"
-            },
-            {
-              "number": "2",
-              "name": "LRA_MINUS",
-              "type": "passive",
-              "net": "HAPTIC_MINUS"
-            }
-          ],
-          "schematic": [
-            185,
-            35
-          ],
-          "pcb": [
-            91,
-            47
-          ]
-        },
-        {
-          "ref": "C801",
-          "value": "100n 10V",
-          "kind": "C",
-          "footprint": "Capacitor_SMD:C_0402_1005Metric",
-          "nets": {
-            "1": "VSYS",
-            "2": "GND"
-          },
-          "schematic": [
-            280,
-            35
-          ],
-          "pcb": [
-            86,
-            53
-          ]
-        },
-        {
-          "ref": "C802",
-          "value": "100n 10V",
-          "kind": "C",
-          "footprint": "Capacitor_SMD:C_0402_1005Metric",
-          "nets": {
-            "1": "HAPTIC_REG",
-            "2": "GND"
-          },
-          "schematic": [
-            335,
-            35
-          ],
-          "pcb": [
-            89,
-            54
-          ]
-        },
-        {
-          "ref": "C803",
-          "value": "10u 10V",
-          "kind": "C",
-          "footprint": "Capacitor_SMD:C_0805_2012Metric",
-          "nets": {
-            "1": "VSYS",
-            "2": "GND"
-          },
-          "schematic": [
-            390,
-            35
-          ],
-          "pcb": [
-            88,
-            56
-          ]
-        },
-        {
-          "ref": "R801",
-          "value": "100k",
-          "kind": "R",
-          "footprint": "Resistor_SMD:R_0402_1005Metric",
-          "nets": {
-            "1": "HAPTIC_RESET_N",
-            "2": "GND"
-          },
-          "schematic": [
-            280,
-            57
-          ],
-          "pcb": [
-            86,
-            55
-          ]
-        },
-        {
-          "ref": "R802",
-          "value": "47k",
-          "kind": "R",
-          "footprint": "Resistor_SMD:R_0402_1005Metric",
-          "nets": {
-            "1": "HAPTIC_IRQ_N",
-            "2": "VDD_3V3"
-          },
-          "schematic": [
-            335,
-            57
-          ],
-          "pcb": [
-            89,
-            58
-          ]
-        },
-        {
-          "ref": "R810",
-          "value": "4.7k",
-          "kind": "R",
-          "nets": {
-            "1": "HAPTIC_SDA",
-            "2": "VDD_3V3"
-          },
-          "footprint": "Resistor_SMD:R_0402_1005Metric",
-          "schematic": [
-            390,
-            57
-          ],
-          "pcb": [
-            0,
-            0
-          ]
-        },
-        {
-          "ref": "R811",
-          "value": "4.7k",
-          "kind": "R",
-          "nets": {
-            "1": "HAPTIC_SCL",
-            "2": "VDD_3V3"
-          },
-          "footprint": "Resistor_SMD:R_0402_1005Metric",
-          "schematic": [
-            280,
-            79
-          ],
-          "pcb": [
-            0,
-            0
-          ]
-        }
-      ],
-      "notes": [
-        "DRV2624 9-ball YFF map and 0.225mm pad / 0.4mm pitch from TI SLOS893D package drawing.",
-        "Actuator is an external LRA assembly. Its exact MPN, rated drive and auto-calibration settings remain qualification gates.",
-        "NRST defaults low; no startup vibration. Use I2C address 0x5A on trusted power-control bus."
-      ],
-      "paper": "A2",
-      "notes_y": 330,
       "power_flags": []
     },
     {

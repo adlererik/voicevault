@@ -59,6 +59,9 @@ def validate(nodes):
       ('R501','1'):'USB_CC1',('R501','2'):'GND',('R502','1'):'USB_CC2',('R502','2'):'GND',
       ('U1','K11'):'SE_SCL',('U1','K9'):'SE_SDA',('U1','L11'):'SE_ENABLE',
       ('U1','J9'):'MCU_VDD11',('U1','D4'):'MCU_VDD11',('U1','C10'):'MCU_SWDIO',
+      ('U6','30'):'RAD_ANT',('L201','1'):'RAD_ANT',('L201','2'):'RAD_RF_50',
+      ('C212','1'):'RAD_RF_50',('C212','2'):'RAD_MATCH',('L202','1'):'RAD_MATCH',('L202','2'):'GND',
+      ('L203','1'):'RAD_MATCH',('L203','2'):'BLE_ANT_FEED',('AE201','1'):'BLE_ANT_FEED',
     }
     for key,value in expected.items():
         if nodes.get(key)!=value:raise ValueError(f'Critical connection {key}: expected {value}, got {nodes.get(key)}')
@@ -81,8 +84,8 @@ def main():
     try:
         report['kicad_version']=subprocess.check_output(CAD+['version'],text=True).strip()
         report['input_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest()
-            for p in sorted(DESIGN.iterdir()) if p.suffix in {'.kicad_sch','.kicad_pcb','.kicad_pro'}
-            or p.name in {'circuits.json','package-geometry.json','references.json'}}
+            for p in sorted(DESIGN.iterdir()) if p.suffix in {'.kicad_sch','.kicad_pcb','.kicad_pro','.kicad_dru'}
+            or p.name in {'circuits.json','package-geometry.json','references.json','quilter-intent.json'}}
         d=json.loads((DESIGN/'decisions.json').read_text())
         if hashlib.sha256((ROOT/'hardware/rev-b/voicevault-standalone-b0.kicad_pcb').read_bytes()).hexdigest()!=d['preserved_b0_pcb_sha256']:
             raise RuntimeError('Preserved B0 PCB changed')
@@ -91,15 +94,16 @@ def main():
         nodes={(n.get('ref'),n.get('pin')):net.get('name').removeprefix('/')
                for net in tree.findall('./nets/net') for n in net.findall('node')}
         components={x.get('ref'):x.findtext('value') for x in tree.findall('./components/comp')}
-        if 'U8' in components or 'U5' in components or 'U7' in components:raise ValueError('Removed secure/Qi/NFC core remains')
+        if any(x in components for x in ['U8','U5','U7','U10','J801']):raise ValueError('Removed secure/Qi/NFC/vibration core remains')
+        if any(n.startswith('HAPTIC_') for n in nodes.values()):raise ValueError('Removed vibration interface remains')
         if components.get('U11')!='SE050E2HQ1/Z01Z3Z':raise ValueError('Incorrect secure-element variant')
         checks.append(dict(check='Manufacturer critical pin maps / radio boundary',status='PASS',pins=validate(nodes)))
-        for key,wrong in [(('U11','9'),'SE_SCL'),(('U11','18'),'GND'),(('U6','26'),'SE_SDA'),(('R502','2'),'USB_CC1')]:
+        for key,wrong in [(('U11','9'),'SE_SCL'),(('U11','18'),'GND'),(('U6','26'),'SE_SDA'),(('R502','2'),'USB_CC1'),(('C212','2'),'GND')]:
             corrupt=nodes|{key:wrong}
             try:validate(corrupt)
             except ValueError:continue
             raise RuntimeError('Negative control accepted corrupt critical net: '+str(key))
-        checks.append(dict(check='Four corrupt-net negative controls',status='PASS'))
+        checks.append(dict(check='Five corrupt-net negative controls including antenna-match regression',status='PASS'))
         run(['flatpak','run','--user','--command=python3','org.kicad.KiCad',ROOT/'hardware/tools/inspect_rev_c.py'],'pad-inspection.log')
         native=json.loads((OUT/'board-pads.json').read_text())
         migration=json.loads((DESIGN/'migration-summary.json').read_text())
@@ -129,6 +133,10 @@ def main():
         if any(x.get('type') in {'shorting_items','clearance','hole_clearance'} for x in drc.get('violations',[])):
             raise RuntimeError('Native DRC finds an electrical clearance/short within the unplaced inventory')
         checks.append(dict(check='Placement/routing/final DRC',status='BLOCKED',reason='Quilter placement and routing not performed; raw DRC retained'))
+        if (DESIGN/'quilter-intent.json').exists():
+            run([sys.executable,ROOT/'hardware/tools/check_rev_c_quilter.py'],'quilter-policy.log',timeout=180)
+            report['quilter_policy']=json.loads((OUT/'quilter-policy/report.json').read_text())
+            checks.append(dict(check='Native antenna policy / isolated positive and negative controls',status='PASS',cases=7))
         if args.spice:
             run([sys.executable,'-m','unittest','discover','-s','hardware/tests','-p','test_spice_results.py'],
                 'spice-result-regression.log')

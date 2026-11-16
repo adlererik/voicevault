@@ -1,0 +1,12 @@
+{
+  "antenna_reference": {
+    "url": "https://www.johansontechnology.com/docs/1187/2450AT18B100_X8XXogU.pdf",
+    "sha256": "63a97b13585ba8f45408e746669e4cc9899fe0956d3ba8251932a1206ce3a2c7",
+    "retrieved_local_date": "2026-11-16",
+    "used_pages": [
+      1,
+      2
+    ],
+    "note": "6.5mm exclusion is a provisional adaptation; this board/enclosure has not been RF-qualified"
+  }
+}

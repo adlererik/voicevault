@@ -1,0 +1,15 @@
+{
+  "README.md": "683d3d71845f0c7447936f4a694415d3eef2b5af51ac0606d009eff1d47bad59",
+  "drc.json": "1a522572f8e28ac723f519896f381815ff8d42b73e663a24b4147e9a056435f1",
+  "erc.json": "e8d961f610c1ff566a33c5ca68386e2b35dcd4a78a81a4f9617184d318b9fda6",
+  "job.json": "bc61163fa3e889fcf4db3052a42a69d6062f66b4a6293024b26cbe69558efbe1",
+  "local-crash.json": "5baf805e9a83a727c2c0214d8604f5a4787648610cf7bd3a03f8d4269b64d39e",
+  "quilter-status.jpg": "4a4b6c9f5bda42cd7495c96790f2e767b4b3152e59c4faebb16b4d75d96fd759",
+  "quilter-submission.jpg": "857f41a96e5a6229c4a25b46aba7299bf48bb94f10fdcb2ddec33941c089494b",
+  "report.json": "6c35e6a86e9d60e79780a48952e5fa6284c3abf9a98a7b21a63cc771aff083b5",
+  "server-input-verification.json": "5408ef9b95cc5a8441d9ea965545f78c8db3f68c69a487993b43eb7aae0e576f",
+  "uploaded-settings/bypass_capacitors.csv": "0de213826795c228ade062bd9d20d357cfda2416ec0bf48bee498eed326a29de",
+  "uploaded-settings/high_current_nets.csv": "3f0bc94113e0cdba5c75ed48662cbfd9c96485bca76516ba26f531a0cb9adb3f",
+  "uploaded-settings/single_ended_impedance_signals.csv": "6f442da963d1c853ae2bc74165586b8b5ad0559440842cb1fb52cf1e57edfba1",
+  "uploaded-settings/switching_converters.csv": "a381ca3e634a72cfe7259ac16aabc5c5676bb3d104cf39a989b2505795bcdfde"
+}

@@ -1,0 +1,430 @@
+Note: gnd in a subcircuit is not set to 0 automatically
+
+Note: Compatibility modes selected: ps
+
+
+Circuit: rev c current-limited radio switch; supplier pspice model portability experiment
+
+Reducing trtol to 1 for xspice 'A' devices
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+supply                                   3.296
+vin                                      3.296
+enable                                       0
+xswitch.isense                       3.296e-11
+xswitch.ilim_int                      0.110474
+xswitch.u2_n16902812                         0
+xswitch.x_u2_u648.evclp_int1                 0
+xswitch.x_u2_u825.yint                       0
+xswitch.x_u2_u825.e_abmgate_int1               0
+xswitch.u2_toff                              0
+xswitch.u2_n16950270                         1
+xswitch.u2_neg                               0
+xswitch.u2_gate                     -0.0520354
+xswitch.x_u2_u44.yint                        1
+xswitch.x_u2_u44.e_abmgate_int1               1
+xswitch.powerok                              0
+xswitch.x_u2_u651.gout_int1                  0
+xswitch.x_u2_u6.yint                         0
+xswitch.x_u2_u6.e_abmgate_int1               0
+xswitch.u2_ton                               0
+xswitch.u2_n16950314                         0
+xswitch.x_u2_u37.yint                        1
+xswitch.x_u2_u37.e_abmgate_int1               1
+xswitch.u2_n17001126                         1
+xswitch.gate_off                             0
+xswitch.u2_n17000403                         1
+xswitch.u2_n16885192                      -0.7
+xswitch.x_u2_u655.yint                       1
+xswitch.x_u2_u655.e_abmgate_int1               1
+radio                             -2.31329e-09
+xswitch.x_u2_u650.gout_int1           5.45e-07
+xswitch.u2_n16959572                        12
+xswitch.g_u2_abmii1_int1                     0
+xswitch.u2_d                             3.296
+xswitch.x_u2_u646.yp                         0
+xswitch.x_u2_u646.eon_int1                   0
+xswitch.x_u2_u646.gout_int1                  0
+xswitch.x_u1_u41.yint                        0
+xswitch.x_u1_u41.e_abmgate_int1               0
+xswitch.u1_change_r                          0
+xswitch.u1_rev_delay                         0
+xswitch.u1_set1_r                            0
+xswitch.u1_n16728223                       0.4
+xswitch.x_u1_u37.yint                        0
+xswitch.x_u1_u37.e_abmgate_int1               0
+xswitch.u1_pos                               0
+xswitch.u1_neg                               0
+xswitch.u1_change                            0
+xswitch.x_u1_u54.yint                        0
+xswitch.x_u1_u54.e_abmgate_int1               0
+xswitch.u1_n16834500                         0
+xswitch.u1_n16834188                         0
+xswitch.u1_n16836259                         0
+xswitch.u1_ilim_det                9.99978e-10
+xswitch.u1_7_5ms                   1.08008e-05
+xswitch.u1_n16908271                     3.431
+xswitch.x_u1_u26.yint                        0
+xswitch.x_u1_u26.e_abmgate_int1               0
+xswitch.u1_n16917215                         0
+xswitch.u1_reverse                 9.99988e-10
+xswitch.u1_n7638368                       2.35
+xswitch.x_u1_u826.yint                       0
+xswitch.x_u1_u826.e_abmgate_int1               0
+xswitch.u1_n16726884                         0
+xswitch.u1_n16726205                         1
+xswitch.u1_enok                              0
+xswitch.u1_set0_r                            0
+xswitch.u1_4ms                     5.76093e-06
+xswitch.x_u1_u830.yint1                      1
+xswitch.x_u1_u830.e_abmgate1_int1               1
+xswitch.u1_vccok                             1
+xswitch.x_u1_u830.yint2                      1
+xswitch.x_u1_u830.yint3                      0
+xswitch.x_u1_u830.e_abmgate2_int1               0
+xswitch.u1_n16750307                         0
+xswitch.u1_n16729790                       0.7
+xswitch.x_u1_u51.yint                        0
+xswitch.x_u1_u51.e_abm_int1                  0
+xswitch.u1_n16652853                         0
+xswitch.u1_set1                              0
+xswitch.u1_n7640425                          1
+xswitch.x_u1_u43.yint                        1
+xswitch.x_u1_u43.e_abmgate_int1               1
+xswitch.u1_ios_delay                         0
+xswitch.u1_n7639915                          1
+xswitch.g_u1_abm2i2_int1                 1e-07
+xswitch.u1_n16652885                         0
+xswitch.u1_n16652897                         0
+xswitch.x_u1_u843.yint                       0
+xswitch.x_u1_u843.e_abmgate_int1               0
+xswitch.u1_n16745657                         1
+xswitch.u1_pos_r                             0
+xswitch.x_u1_u25.yint                        0
+xswitch.x_u1_u25.e_abmgate_int1               0
+xswitch.u1_n16746063                         1
+xswitch.x_u1_u831.yint                       0
+xswitch.x_u1_u831.e_abmgate_int1               0
+xswitch.u1_n16750477                         0
+xswitch.x_u1_u21.yint                        0
+xswitch.x_u1_u21.e_abmgate_int1               0
+xswitch.x_u1_u35.yint                        0
+xswitch.x_u1_u35.e_abmgate_int1               0
+xswitch.x_u1_u28.yint                        0
+xswitch.x_u1_u28.e_abmgate_int1               0
+xswitch.u1_n7649534                          0
+xswitch.u1_n7643416                      0.025
+xswitch.u1_n7637958                       0.78
+xswitch.x_u1_u822.yint1                      0
+xswitch.x_u1_u822.e_abmgate1_int1               0
+xswitch.x_u1_u822.yint2                      0
+xswitch.x_u1_u822.yint3                      1
+xswitch.x_u1_u822.e_abmgate2_int1               1
+xswitch.u1_n16522411                         1
+xswitch.x_u1_u834.yint1                      1
+xswitch.x_u1_u834.e_abmgate1_int1               1
+xswitch.u1_n16746243                         1
+xswitch.x_u1_u834.yint2                      1
+xswitch.x_u1_u834.yint3                      0
+xswitch.x_u1_u834.e_abmgate2_int1               0
+xswitch.u1_n16746275                         0
+xswitch.x_u1_u47.yint                        0
+xswitch.x_u1_u47.e_abmgate_int1               0
+xswitch.u1_neg_r                             0
+xswitch.e_u1_limit1_int1              0.110474
+xswitch.u1_n16798453                  0.110474
+xswitch.u1_n7643981                       0.02
+xswitch.x_u1_u24.yint                        0
+xswitch.x_u1_u24.e_abmgate_int1               0
+xswitch.u1_set0                              0
+xswitch.x_u1_u832.yint1                      0
+xswitch.x_u1_u832.e_abmgate1_int1               0
+xswitch.x_u1_u832.yint2                      0
+xswitch.x_u1_u832.yint3                      1
+xswitch.x_u1_u832.e_abmgate2_int1               1
+xswitch.u1_n16750385                         1
+xswitch.x_u1_u829.qint                       0
+xswitch.x_u1_u829.gq_int1                    0
+xswitch.u1_toggle                            0
+xswitch.x_u1_u829.my5                        1
+xswitch.x_u1_u829.myvss                      0
+xswitch.x_u1_u829.qqq                        0
+xswitch.x_u1_u829.x3.yint                    0
+xswitch.x_u1_u829.x3.e_abmgate_int1               0
+xswitch.x_u1_u829.qqqd1                      0
+xswitch.u1_n16755476                         0
+xswitch.x_u1_u829.qbr                        1
+xswitch.x_u1_u829.eqb_int1                   1
+xswitch.n16755422                            1
+xswitch.x_u1_u823.yint                       0
+xswitch.x_u1_u823.e_abmgate_int1               0
+xswitch.u1_n7653480                   0.108265
+xswitch.e_u1_abm1_int1                0.108265
+xswitch.x_u1_u34.yint                        0
+xswitch.x_u1_u34.e_abmgate_int1               0
+xswitch.u1_n16745839                         1
+xswitch.x_u1_u827.yint                       0
+xswitch.x_u1_u827.e_abmgate_int1               0
+xswitch.x_u1_u22.yint                        0
+xswitch.x_u1_u22.e_abmgate_int1               0
+xswitch.u1_comp_out                          0
+xswitch.x_u1_u31.yint                        0
+xswitch.x_u1_u31.e_abmgate_int1               0
+xswitch.u1_n16652857                         1
+xswitch.x_u1_u7.yint                         0
+xswitch.x_u1_u7.e_abmgate_int1               0
+xswitch.u1_latch                             0
+xswitch.x_u1_u49.inp1                        0
+xswitch.x_u1_u49.inm1                   -0.946
+xswitch.x_u1_u49.inp2                    0.025
+xswitch.x_u1_u49.ehys_int1              -0.025
+xswitch.x_u1_u49.1                           1
+xswitch.x_u1_u49.eout_int1                   1
+xswitch.x_u1_u48.inp1                        0
+xswitch.x_u1_u48.inm1                     0.78
+xswitch.x_u1_u48.inp2                        0
+xswitch.x_u1_u48.ehys_int1                   0
+xswitch.x_u1_u48.1                           0
+xswitch.x_u1_u48.eout_int1                   0
+xswitch.x_u1_u833.yint                       0
+xswitch.x_u1_u833.e_abmgate_int1               0
+xswitch.u1_n16750489                         0
+xswitch.u1_n16822250                       0.4
+ilim                                       0.4
+xswitch.x_u1_u844.yint                       0
+xswitch.x_u1_u844.e_abm_int1                 0
+xswitch.x_u1_u27.yint                        0
+xswitch.x_u1_u27.e_abmgate_int1               0
+xswitch.x_u1_u46.yint                        1
+xswitch.x_u1_u46.e_abmgate_int1               1
+xswitch.x_u1_u45.yint                        1
+xswitch.x_u1_u45.e_abmgate_int1               1
+xswitch.x_u1_u55.yint                        0
+xswitch.x_u1_u55.e_abmgate_int1               0
+xswitch.u1_n16872405                         0
+xswitch.x_u1_u824.yint1                      1
+xswitch.x_u1_u824.e_abmgate1_int1               1
+xswitch.u1_n16522669                         1
+xswitch.x_u1_u824.yint2                      1
+xswitch.x_u1_u824.yint3                      0
+xswitch.x_u1_u824.e_abmgate2_int1               0
+xswitch.u1_n16522727                         0
+fault                                  3.29585
+xswitch.x_u1_u53.yint                        1
+xswitch.x_u1_u53.e_abmgate_int1               1
+xswitch.x_u1_u835.qint                       0
+xswitch.x_u1_u835.gq_int1                    0
+xswitch.x_u1_u835.my5                        1
+xswitch.x_u1_u835.myvss                      0
+xswitch.x_u1_u835.qqq                        0
+xswitch.x_u1_u835.x3.yint                    0
+xswitch.x_u1_u835.x3.e_abmgate_int1               0
+xswitch.x_u1_u835.qqqd1                      0
+xswitch.u1_ios_latch                         0
+xswitch.x_u1_u835.qbr                        1
+xswitch.x_u1_u835.eqb_int1                   1
+xswitch.n16854058                            1
+xswitch.x_u1_u32.yint                        0
+xswitch.x_u1_u32.e_abmgate_int1               0
+xswitch.x_u1_u44.yint                        1
+xswitch.x_u1_u44.e_abmgate_int1               1
+xswitch.x_u1_u38.yint                        0
+xswitch.x_u1_u38.e_abmgate_int1               0
+xswitch.x_u1_u825.yint                       0
+xswitch.x_u1_u825.e_abmgate_int1               0
+xswitch.x_u1_u8.yint                         0
+xswitch.x_u1_u8.e_abmgate_int1               0
+xswitch.x_u1_u23.yint                        0
+xswitch.x_u1_u23.e_abmgate_int1               0
+xswitch.x_u1_u828.yint1                      0
+xswitch.x_u1_u828.e_abmgate1_int1               0
+xswitch.x_u1_u828.yint2                      0
+xswitch.x_u1_u828.yint3                      1
+xswitch.x_u1_u828.e_abmgate2_int1               1
+xswitch.x_u1_u50.yint                        0
+xswitch.x_u1_u50.e_abm_int1                  0
+normal_load                       -2.31329e-19
+control                                      0
+rs                                -1.15665e-20
+b.xswitch.x_u1_u50.be_abm#branch               0
+b.xswitch.x_u1_u828.be_abmgate2#branch               0
+b.xswitch.x_u1_u828.be_abmgate1#branch               0
+b.xswitch.x_u1_u23.be_abmgate#branch               0
+b.xswitch.x_u1_u8.be_abmgate#branch               0
+b.xswitch.x_u1_u825.be_abmgate#branch               0
+b.xswitch.x_u1_u38.be_abmgate#branch               0
+b.xswitch.x_u1_u44.be_abmgate#branch               0
+b.xswitch.x_u1_u32.be_abmgate#branch               0
+b.xswitch.x_u1_u835.beqb#branch               0
+b.xswitch.x_u1_u835.x3.be_abmgate#branch               0
+b.xswitch.x_u1_u835.bgq#branch               0
+b.xswitch.x_u1_u53.be_abmgate#branch               0
+b.xswitch.x_u1_u824.be_abmgate2#branch               0
+b.xswitch.x_u1_u824.be_abmgate1#branch               0
+b.xswitch.x_u1_u55.be_abmgate#branch               0
+b.xswitch.x_u1_u45.be_abmgate#branch               0
+b.xswitch.x_u1_u46.be_abmgate#branch               0
+b.xswitch.x_u1_u27.be_abmgate#branch               0
+b.xswitch.x_u1_u844.be_abm#branch               0
+b.xswitch.x_u1_u833.be_abmgate#branch               0
+b.xswitch.x_u1_u48.beout#branch               0
+b.xswitch.x_u1_u48.behys#branch               0
+b.xswitch.x_u1_u49.beout#branch               0
+b.xswitch.x_u1_u49.behys#branch               0
+b.xswitch.x_u1_u7.be_abmgate#branch               0
+b.xswitch.x_u1_u31.be_abmgate#branch               0
+b.xswitch.x_u1_u22.be_abmgate#branch               0
+b.xswitch.x_u1_u827.be_abmgate#branch               0
+b.xswitch.x_u1_u34.be_abmgate#branch               0
+b.xswitch.be_u1_abm1#branch                  0
+b.xswitch.x_u1_u823.be_abmgate#branch               0
+b.xswitch.x_u1_u829.beqb#branch               0
+b.xswitch.x_u1_u829.x3.be_abmgate#branch               0
+b.xswitch.x_u1_u829.bgq#branch               0
+b.xswitch.x_u1_u832.be_abmgate2#branch               0
+b.xswitch.x_u1_u832.be_abmgate1#branch               0
+b.xswitch.x_u1_u24.be_abmgate#branch               0
+b.xswitch.be_u1_limit1#branch                0
+b.xswitch.x_u1_u47.be_abmgate#branch               0
+b.xswitch.x_u1_u834.be_abmgate2#branch               0
+b.xswitch.x_u1_u834.be_abmgate1#branch               0
+b.xswitch.x_u1_u822.be_abmgate2#branch               0
+b.xswitch.x_u1_u822.be_abmgate1#branch               0
+b.xswitch.x_u1_u28.be_abmgate#branch               0
+b.xswitch.x_u1_u35.be_abmgate#branch               0
+b.xswitch.x_u1_u21.be_abmgate#branch               0
+b.xswitch.x_u1_u831.be_abmgate#branch               0
+b.xswitch.x_u1_u25.be_abmgate#branch               0
+b.xswitch.x_u1_u843.be_abmgate#branch               0
+b.xswitch.bg_u1_abm2i2#branch                0
+b.xswitch.x_u1_u43.be_abmgate#branch               0
+b.xswitch.x_u1_u51.be_abm#branch               0
+b.xswitch.x_u1_u830.be_abmgate2#branch               0
+b.xswitch.x_u1_u830.be_abmgate1#branch               0
+b.xswitch.x_u1_u826.be_abmgate#branch               0
+b.xswitch.x_u1_u26.be_abmgate#branch               0
+b.xswitch.x_u1_u54.be_abmgate#branch               0
+b.xswitch.x_u1_u37.be_abmgate#branch               0
+b.xswitch.x_u1_u41.be_abmgate#branch               0
+b.xswitch.x_u2_u646.bgout#branch               0
+b.xswitch.x_u2_u646.beon#branch               0
+b.xswitch.bg_u2_abmii1#branch                0
+b.xswitch.x_u2_u650.bgout#branch               0
+b.xswitch.x_u2_u655.be_abmgate#branch               0
+b.xswitch.x_u2_u37.be_abmgate#branch               0
+b.xswitch.x_u2_u6.be_abmgate#branch               0
+b.xswitch.x_u2_u651.bgout#branch               0
+b.xswitch.x_u2_u44.be_abmgate#branch               0
+b.xswitch.x_u2_u825.be_abmgate#branch               0
+b.xswitch.x_u2_u648.bevclp#branch               0
+h.xswitch.x_u1_h1.h_u1_h1#branch               0
+v.xswitch.x_u1_h1.vh_u1_h1#branch    -1.72414e-06
+h.xswitch.x_u2_h1.h_u2_h1#branch      -3.296e-22
+v.xswitch.x_u2_h1.vh_u2_h1#branch       3.296e-11
+e.xswitch.x_u1_u50.e_abm#branch               0
+e.xswitch.x_u1_u828.e_abmgate2#branch               0
+e.xswitch.x_u1_u828.e_abmgate1#branch               0
+e.xswitch.x_u1_u23.e_abmgate#branch               0
+e.xswitch.x_u1_u8.e_abmgate#branch               0
+e.xswitch.x_u1_u825.e_abmgate#branch               0
+e.xswitch.x_u1_u38.e_abmgate#branch               0
+e.xswitch.x_u1_u44.e_abmgate#branch               0
+e.xswitch.x_u1_u32.e_abmgate#branch               0
+e.xswitch.x_u1_u835.eqb#branch               0
+e.xswitch.x_u1_u835.x3.e_abmgate#branch               0
+e.xswitch.x_u1_u835.eq#branch                0
+e.xswitch.x_u1_u53.e_abmgate#branch               0
+e.xswitch.x_u1_u824.e_abmgate2#branch               0
+e.xswitch.x_u1_u824.e_abmgate1#branch               0
+e.xswitch.x_u1_u55.e_abmgate#branch               0
+e.xswitch.x_u1_u45.e_abmgate#branch               0
+e.xswitch.x_u1_u46.e_abmgate#branch               0
+e.xswitch.x_u1_u27.e_abmgate#branch               0
+e.xswitch.x_u1_u844.e_abm#branch               0
+e.xswitch.x_u1_u833.e_abmgate#branch               0
+e.xswitch.x_u1_u48.eout#branch               0
+e.xswitch.x_u1_u48.ehys#branch               0
+e.xswitch.x_u1_u48.ein#branch                0
+e.xswitch.x_u1_u49.eout#branch               0
+e.xswitch.x_u1_u49.ehys#branch               0
+e.xswitch.x_u1_u49.ein#branch                0
+e.xswitch.x_u1_u7.e_abmgate#branch               0
+e.xswitch.x_u1_u31.e_abmgate#branch               0
+e.xswitch.x_u1_u22.e_abmgate#branch     9.99978e-10
+e.xswitch.x_u1_u827.e_abmgate#branch               0
+e.xswitch.x_u1_u34.e_abmgate#branch               0
+e.xswitch.e_u1_abm1#branch                   0
+e.xswitch.x_u1_u823.e_abmgate#branch               0
+e.xswitch.x_u1_u829.eqb#branch               0
+e.xswitch.x_u1_u829.x3.e_abmgate#branch               0
+e.xswitch.x_u1_u829.eq#branch                0
+e.xswitch.x_u1_u832.e_abmgate2#branch               0
+e.xswitch.x_u1_u832.e_abmgate1#branch               0
+e.xswitch.x_u1_u24.e_abmgate#branch               0
+e.xswitch.e_u1_limit1#branch      -1.10474e-12
+e.xswitch.x_u1_u47.e_abmgate#branch               0
+e.xswitch.x_u1_u834.e_abmgate2#branch               0
+e.xswitch.x_u1_u834.e_abmgate1#branch               0
+e.xswitch.x_u1_u822.e_abmgate2#branch               0
+e.xswitch.x_u1_u822.e_abmgate1#branch               0
+e.xswitch.x_u1_u28.e_abmgate#branch               0
+e.xswitch.x_u1_u35.e_abmgate#branch               0
+e.xswitch.x_u1_u21.e_abmgate#branch               0
+e.xswitch.x_u1_u831.e_abmgate#branch               0
+e.xswitch.x_u1_u25.e_abmgate#branch               0
+e.xswitch.x_u1_u843.e_abmgate#branch               0
+e.xswitch.x_u1_u43.e_abmgate#branch               0
+e.xswitch.x_u1_u51.e_abm#branch               0
+e.xswitch.x_u1_u830.e_abmgate2#branch               0
+e.xswitch.x_u1_u830.e_abmgate1#branch               0
+e.xswitch.x_u1_u826.e_abmgate#branch               0
+e.xswitch.x_u1_u26.e_abmgate#branch     9.99988e-10
+e.xswitch.x_u1_u54.e_abmgate#branch               0
+e.xswitch.x_u1_u37.e_abmgate#branch               0
+e.xswitch.x_u1_u41.e_abmgate#branch               0
+e.xswitch.x_u2_u646.eon#branch               0
+e.xswitch.x_u2_u655.e_abmgate#branch               0
+e.xswitch.x_u2_u37.e_abmgate#branch          -1e-11
+e.xswitch.x_u2_u6.e_abmgate#branch               0
+e.xswitch.x_u2_u44.e_abmgate#branch               0
+e.xswitch.x_u2_u825.e_abmgate#branch               0
+e.xswitch.x_u2_u648.evclp#branch               0
+vshort#branch                                0
+v.xswitch.v_u1_v5#branch                     0
+v.xswitch.x_u1_u835.v2#branch    -1.67378e-237
+v.xswitch.x_u1_u835.v1#branch       -1.001e-12
+v.xswitch.x_u1_u829.v2#branch    -1.67378e-237
+v.xswitch.x_u1_u829.v1#branch       -1.001e-12
+v.xswitch.v_u1_v14#branch                    0
+v.xswitch.v_u1_v9#branch                     0
+v.xswitch.v_u1_v4#branch          -9.99994e-10
+v.xswitch.v_u1_v13#branch                    0
+v.xswitch.v_u1_v16#branch                    0
+v.xswitch.v_u1_v1#branch          -9.99989e-10
+v.xswitch.v_u1_v46#branch                    0
+v.xswitch.v_u1_v11#branch                    0
+v.xswitch.v_u1_v3#branch                     0
+v.xswitch.v_u1_v45#branch         -1.72414e-06
+v.xswitch.v_u2_v2#branch           -1.2053e-11
+v.xswitch.v_u2_v1#branch          -6.99885e-13
+venable#branch                               0
+vmonitor#branch                    1.00033e-07
+vsource#branch                    -1.03329e-07
+
+ Reference value :  1.08062e-04 Reference value :  9.43503e-04 Reference value :  2.45735e-03 Reference value :  4.34335e-03 Reference value :  6.00954e-03 Reference value :  7.95863e-03 Reference value :  9.94463e-03 Reference value :  1.18866e-02 Reference value :  1.36836e-02 Reference value :  1.59016e-02 Reference value :  1.80456e-02 Reference value :  2.01116e-02 Reference value :  2.18011e-02 Reference value :  2.38191e-02 Reference value :  2.57751e-02 Reference value :  2.77051e-02 Reference value :  2.93265e-02 Reference value :  3.10845e-02 Reference value :  3.30869e-02 Reference value :  3.51229e-02 Reference value :  3.71709e-02 Reference value :  3.93429e-02 Reference value :  4.14689e-02 Reference value :  4.34529e-02 Reference value :  4.55029e-02 Reference value :  4.76569e-02 Reference value :  4.96609e-02 Reference value :  5.16669e-02 Reference value :  5.37829e-02 Reference value :  5.59429e-02 Reference value :  5.80609e-02 Reference value :  6.01269e-02 Reference value :  6.18389e-02 Reference value :  6.29869e-02 Reference value :  6.41249e-02 Reference value :  6.56409e-02 Reference value :  6.71089e-02 Reference value :  6.85229e-02 Reference value :  7.03769e-02 Reference value :  7.23169e-02 Reference value :  7.41969e-02 Reference value :  7.60309e-02 Reference value :  7.79229e-02 Reference value :  7.98729e-02 Reference value :  8.20449e-02 Reference value :  8.39369e-02 Reference value :  8.59609e-02 Reference value :  8.79689e-02 Reference value :  9.01029e-02 Reference value :  9.20629e-02 Reference value :  9.42569e-02 Reference value :  9.62349e-02 Reference value :  9.82789e-02 Reference value :  1.00337e-01 Reference value :  1.02425e-01 Reference value :  1.04531e-01 Reference value :  1.06723e-01 Reference value :  1.08905e-01 Reference value :  1.11031e-01 Reference value :  1.13077e-01 Reference value :  1.15211e-01 Reference value :  1.17205e-01 Reference value :  1.19253e-01 Reference value :  1.21299e-01 Reference value :  1.23289e-01 Reference value :  1.25037e-01 Reference value :  1.26471e-01 Reference value :  1.27891e-01 Reference value :  1.29325e-01 Reference value :  1.31109e-01 Reference value :  1.32863e-01 Reference value :  1.34783e-01 Reference value :  1.36795e-01 Reference value :  1.38847e-01
+No. of Data Rows : 70489
+default_off_v       =  -2.31329e-09 at=  4.56000e-06
+normal_v            =  3.29335e+00 at=  4.58335e-03
+limited_a           =  1.16949e-01 at=  1.34996e-02
+transient_peak_a    =  6.61622e-01 at=  6.00306e-03
+fault_v             =  4.20229e-03
+recovered_v         =  3.29335e+00
+disabled_v          =  4.33078e-02
+ngspice-47 done

@@ -1,0 +1,9 @@
+{
+  "reported_local_time": "2026-11-16 02:35:41 CET",
+  "signal": "SIGSEGV",
+  "command": "python3 hardware/tools/prepare_rev_c_quilter.py",
+  "runtime": "KiCad Flatpak bundled Python 3.14",
+  "response": "Stopped replacement of existing native rule-area objects; current input verified using host read-only parsing and KiCad C++ CLI instead.",
+  "exact_native_fault": "Not established from the available non-symbolized stack; not claimed to be an upstream Python bug.",
+  "memory_context": "RAM and swap also under pressure, but this crash was reported as SIGSEGV, not an OOM-kill."
+}

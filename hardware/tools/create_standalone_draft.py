@@ -266,7 +266,7 @@ def main():
         (190, 141, 'Pins 13/14 use TARGET RX/TX naming. UART6 on PC8/PC9.'),
         (190, 158, 'Power, radio, secure elements, controls and offline-update interfaces: see child sheets.'),
         (190, 166, 'Main debug and radio debug are separate; probes measure target voltage only.'),
-        (190, 174, 'Display/touch and haptic: see child sheets. Rev C removes Qi and NFC.' if revision == 'C0' else 'Display/touch, haptic, Qi and NFC are on separate reviewed-source circuit sheets.'),
+        (190, 174, 'Display/touch: see child sheets. Rev C removes Qi, NFC and vibration.' if revision == 'C0' else 'Display/touch, haptic, Qi and NFC are on separate reviewed-source circuit sheets.'),
         (190, 182, 'Audio codec, CTIA headset, physical microphone disconnect and microSD are additions.'),
         (25, 258, 'Prototype has open debug access and public diagnostic material. Physical security remains unqualified.'),
         (25, 266, 'Safe 7 source: TS7 rev_D, STM32U5G9ZJJ6Q / UFBGA144. New PCB outline is provisional 70 x 45 mm.'),

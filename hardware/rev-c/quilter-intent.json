@@ -1,0 +1,446 @@
+{
+  "components_or_routes_placed": false,
+  "source_board_sha256": "ef09f4facdfb4a2ae0ad3373b838bdda55c12bc668807726400435d2626f7fb0",
+  "regions": [
+    {
+      "name": "VV_REGION_GROUP_CHARGER",
+      "mode": "offboard-free-location-group",
+      "refs": [
+        "C501",
+        "C502",
+        "C503",
+        "C504",
+        "C505",
+        "D503",
+        "F501",
+        "J502",
+        "J503",
+        "JP501",
+        "R501",
+        "R502",
+        "R503",
+        "R504",
+        "R505",
+        "R506",
+        "R507",
+        "R508",
+        "U3"
+      ]
+    },
+    {
+      "name": "VV_REGION_GROUP_MAIN_SUPPLY",
+      "mode": "offboard-free-location-group",
+      "refs": [
+        "C1201",
+        "C1202",
+        "C1203",
+        "C1204",
+        "C1205",
+        "C1206",
+        "L1201",
+        "R1201",
+        "R1202",
+        "R1203",
+        "R1204",
+        "R1209",
+        "SW503",
+        "U1201"
+      ]
+    },
+    {
+      "name": "VV_REGION_GROUP_SECURE_ELEMENT",
+      "mode": "offboard-free-location-group",
+      "refs": [
+        "C1101",
+        "C1102",
+        "C1103",
+        "R1101",
+        "R1102",
+        "R1103",
+        "U11"
+      ]
+    },
+    {
+      "name": "VV_REGION_GROUP_RADIO",
+      "mode": "offboard-free-location-group",
+      "refs": [
+        "C1207",
+        "C201",
+        "C202",
+        "C203",
+        "C204",
+        "C205",
+        "C207",
+        "C208",
+        "C209",
+        "C210",
+        "C211",
+        "C212",
+        "C213",
+        "C214",
+        "C215",
+        "C216",
+        "J102",
+        "L201",
+        "L202",
+        "L203",
+        "Q201",
+        "R1205",
+        "R1207",
+        "R1210",
+        "R1211",
+        "R201",
+        "R202",
+        "R203",
+        "R204",
+        "R205",
+        "R206",
+        "U1202",
+        "U201",
+        "U202",
+        "U6",
+        "X201",
+        "X202"
+      ]
+    },
+    {
+      "name": "VV_REGION_GROUP_AUDIO",
+      "mode": "offboard-free-location-group",
+      "refs": [
+        "C601",
+        "C602",
+        "C603",
+        "C604",
+        "C605",
+        "C606",
+        "C607",
+        "C608",
+        "C609",
+        "C610",
+        "C611",
+        "C612",
+        "C614",
+        "C615",
+        "D601",
+        "D602",
+        "D603",
+        "D604",
+        "R601",
+        "R602",
+        "R603",
+        "R604",
+        "R605",
+        "R606",
+        "R607",
+        "R608",
+        "R609",
+        "SW601",
+        "U601",
+        "U602"
+      ]
+    },
+    {
+      "name": "VV_REGION_GROUP_DISPLAY",
+      "mode": "offboard-free-location-group",
+      "refs": [
+        "C701",
+        "C702",
+        "C703",
+        "C704",
+        "C705",
+        "D701",
+        "J702",
+        "L701",
+        "R701",
+        "R702",
+        "R703",
+        "R704",
+        "R705",
+        "R706",
+        "R707",
+        "R708",
+        "R709",
+        "R710",
+        "R711",
+        "R712",
+        "U9"
+      ]
+    },
+    {
+      "name": "VV_REGION_GROUP_CARD",
+      "mode": "offboard-free-location-group",
+      "refs": [
+        "C1208",
+        "C401",
+        "C402",
+        "C403",
+        "C404",
+        "C405",
+        "R1206",
+        "R401",
+        "R402",
+        "R403",
+        "R404",
+        "R405",
+        "R406",
+        "R407",
+        "U401",
+        "U402"
+      ]
+    },
+    {
+      "name": "VV_REGION_GROUP_MCU",
+      "mode": "offboard-free-location-group",
+      "refs": [
+        "C10",
+        "C107",
+        "C108",
+        "C109",
+        "C11",
+        "C110",
+        "C111",
+        "C112",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C301",
+        "C302",
+        "C303",
+        "C304",
+        "C305",
+        "C306",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "J101",
+        "L1",
+        "R101",
+        "R301",
+        "R302",
+        "R303",
+        "R304",
+        "SW301",
+        "SW302",
+        "U1",
+        "U4",
+        "X301",
+        "X302"
+      ]
+    },
+    {
+      "name": "VV_REGION_ANTENNA_CORNERS",
+      "mode": "onboard-top-side-placement-region",
+      "refs": [
+        "AE201"
+      ],
+      "polygons_mm": [
+        [
+          [
+            25,
+            25
+          ],
+          [
+            34,
+            25
+          ],
+          [
+            34,
+            34
+          ],
+          [
+            25,
+            34
+          ]
+        ],
+        [
+          [
+            86,
+            25
+          ],
+          [
+            95,
+            25
+          ],
+          [
+            95,
+            34
+          ],
+          [
+            86,
+            34
+          ]
+        ],
+        [
+          [
+            25,
+            61
+          ],
+          [
+            34,
+            61
+          ],
+          [
+            34,
+            70
+          ],
+          [
+            25,
+            70
+          ]
+        ],
+        [
+          [
+            86,
+            61
+          ],
+          [
+            95,
+            61
+          ],
+          [
+            95,
+            70
+          ],
+          [
+            86,
+            70
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "VV_REGION_USB_BOTTOM",
+      "mode": "onboard-top-side-placement-region",
+      "refs": [
+        "J501"
+      ],
+      "polygons_mm": [
+        [
+          [
+            30,
+            55
+          ],
+          [
+            90,
+            55
+          ],
+          [
+            90,
+            70
+          ],
+          [
+            30,
+            70
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "VV_REGION_HEADSET_RIGHT",
+      "mode": "onboard-top-side-placement-region",
+      "refs": [
+        "J601"
+      ],
+      "polygons_mm": [
+        [
+          [
+            77,
+            32
+          ],
+          [
+            95,
+            32
+          ],
+          [
+            95,
+            63
+          ],
+          [
+            77,
+            63
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "VV_REGION_CARD_LEFT",
+      "mode": "onboard-top-side-placement-region",
+      "refs": [
+        "J401"
+      ],
+      "polygons_mm": [
+        [
+          [
+            25,
+            32
+          ],
+          [
+            48,
+            32
+          ],
+          [
+            48,
+            63
+          ],
+          [
+            25,
+            63
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "VV_REGION_DISPLAY_TOP",
+      "mode": "onboard-top-side-placement-region",
+      "refs": [
+        "J701"
+      ],
+      "polygons_mm": [
+        [
+          [
+            35,
+            25
+          ],
+          [
+            90,
+            25
+          ],
+          [
+            90,
+            45
+          ],
+          [
+            35,
+            45
+          ]
+        ]
+      ]
+    }
+  ],
+  "antenna_keepouts": "Footprint-attached 6.5mm square, no pours/vias/other footprints; feed corridor and native net/layer restrictions",
+  "antenna_qualification": "Provisional adaptation of Johanson evaluation layout; final RF/enclosure tuning remains required",
+  "cloud_region_associations": "Must be verified and assigned in Quilter before launch",
+  "stack": "Signal / GND / signal / signal / GND / signal; provisional 1.0mm",
+  "manufacturing_ready": false,
+  "constraint_preparation_preserved_component_poses_and_pad_nets": true,
+  "post_constraint_circuit_correction": {
+    "source": "https://www.johansontechnology.com/docs/1187/2450AT18B100_X8XXogU.pdf",
+    "topology": "C212 series 1.2pF; L202 shunt 2.7nH; L203 series 3.3nH",
+    "component_poses_unchanged": true,
+    "no_tracks_or_vias_added": true
+  }
+}

@@ -1,0 +1,111 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-16T05:34:56",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a",
+            "violations": []
+        },
+        {
+            "path": "/Wired lithium-ion charger and system power path/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/3ef221cb-45a6-5280-8841-3a404feb0873",
+            "violations": []
+        },
+        {
+            "path": "/Regulated main supply and hardware power switch/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/bb2cc7d0-6e0a-5ac4-8423-014b1875c228",
+            "violations": []
+        },
+        {
+            "path": "/One secure element: Ed25519, entropy and protected state/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/e0a33ab4-c35d-5f09-911f-5a421ce0b8b4",
+            "violations": []
+        },
+        {
+            "path": "/Untrusted Bluetooth radio and RF front end/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/f68485ce-5e66-5e4d-a4ad-5a27c12470b8",
+            "violations": []
+        },
+        {
+            "path": "/Default-disabled radio signal boundary/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/a7ebfa77-947b-5721-9584-5aadb9858d9d",
+            "violations": []
+        },
+        {
+            "path": "/MCU clocks and local recovery controls/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/95db12e2-0a61-5fad-a5ee-16d8e4b9afdd",
+            "violations": []
+        },
+        {
+            "path": "/Locally enabled offline-update card/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/820f3e10-bdde-5a18-95ff-8be411c55102",
+            "violations": []
+        },
+        {
+            "path": "/USB, battery and local power entry/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/59d2327c-6efb-58e8-a025-4e6b21945d41",
+            "violations": []
+        },
+        {
+            "path": "/Trusted full-duplex audio codec/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/5db5a1a3-6bd4-5777-942b-e96ecc881e88",
+            "violations": []
+        },
+        {
+            "path": "/Wired headset and physical microphone disconnect/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/7502c779-e9eb-5a4b-b48e-b59952654da7",
+            "violations": []
+        },
+        {
+            "path": "/Trusted color display and touch/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/f2df8f6f-8230-5b6e-9081-18af688ef6ff",
+            "violations": []
+        },
+        {
+            "path": "/40mA current-regulated parallel backlight/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/ddb93a2e-b83a-589f-b7aa-fe2eda31fa93",
+            "violations": []
+        },
+        {
+            "path": "/Dedicated switched audio supply/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/457d0dda-f72d-5d51-8ba7-863b9a340854",
+            "violations": []
+        },
+        {
+            "path": "/Default-off radio and card power controls/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/01fb3e51-9522-59de-b605-c1d1bee0d110",
+            "violations": []
+        },
+        {
+            "path": "/Probe access (cloud placement)/",
+            "uuid_path": "/c44c303f-903c-56af-9bf1-b0f3cbda394a/7fd4eb9e-640c-5bac-9050-98974a3a40ff",
+            "violations": []
+        }
+    ],
+    "source": "voicevault-standalone-c0.kicad_sch"
+}

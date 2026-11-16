@@ -1,0 +1,65 @@
+{
+  "scope": "Native rule enforcement on test copies, not RF performance or cloud-parser proof",
+  "source_board_sha256": "0409a66de8d461c719b5d425ec33e207357753bdf96c401dc80350537b80a3da",
+  "live_design_modified": false,
+  "inventory": {
+    "footprints": 213,
+    "physical_pad_objects": 888,
+    "regions": 13,
+    "antenna_rule_areas": 2
+  },
+  "cases": [
+    {
+      "case": "clean",
+      "status": "PASS",
+      "violation_types": {}
+    },
+    {
+      "case": "allowed-feed",
+      "status": "PASS",
+      "violation_types": {
+        "track_dangling": 1
+      }
+    },
+    {
+      "case": "wrong-net",
+      "status": "PASS",
+      "violation_types": {
+        "items_not_allowed": 1,
+        "track_dangling": 1
+      }
+    },
+    {
+      "case": "guard-track",
+      "status": "PASS",
+      "violation_types": {
+        "items_not_allowed": 1,
+        "track_dangling": 1
+      }
+    },
+    {
+      "case": "wrong-layer",
+      "status": "PASS",
+      "violation_types": {
+        "items_not_allowed": 1,
+        "track_dangling": 1
+      }
+    },
+    {
+      "case": "forbidden-via",
+      "status": "PASS",
+      "violation_types": {
+        "items_not_allowed": 1,
+        "via_dangling": 1
+      }
+    },
+    {
+      "case": "other-footprint",
+      "status": "PASS",
+      "violation_types": {
+        "items_not_allowed": 1
+      }
+    }
+  ],
+  "status": "PASS"
+}

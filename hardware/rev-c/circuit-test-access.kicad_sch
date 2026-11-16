@@ -131,4 +131,4 @@
               (property "Value" "PROBE GND" (at 69.85 226.06 0) (effects (font (size 0.85 0.85)) ))
               (property "Footprint" "VoiceVault_B0:TestPoint_Pad_D1.0mm" (at 69.85 229.87 0) (effects (font (size 1 1)) (hide yes)))
               (instances (project "voicevault-standalone-c0" (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/7fd4eb9e-640c-5bac-9050-98974a3a40ff" (reference "TP14") (unit 1)))))
-          (sheet_instances (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/7fd4eb9e-640c-5bac-9050-98974a3a40ff" (page "17"))))
+          (sheet_instances (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/7fd4eb9e-640c-5bac-9050-98974a3a40ff" (page "16"))))

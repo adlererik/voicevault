@@ -17,3 +17,7 @@ hardware/rev-b/VoiceVault_B0.pretty/nRF52832_CIAA_Nordic.kicad_mod whitespace=-b
 hardware/rev-b/reference/*LICENSE* whitespace=-blank-at-eol,-blank-at-eof
 hardware/rev-c/quilter-settings/*.csv -text
 hardware/evidence/2026-11-16/quilter-launch/uploaded-settings/*.csv -text
+hardware/rev-c/quilter-retry-01/*.csv -text whitespace=cr-at-eol
+hardware/evidence/2026-11-16/quilter-retry-01/*.csv -text
+# Keep the native input byte-identical to the confirmed cloud upload.
+hardware/rev-c/quilter-retry-01/*.kicad_pcb whitespace=-blank-at-eol

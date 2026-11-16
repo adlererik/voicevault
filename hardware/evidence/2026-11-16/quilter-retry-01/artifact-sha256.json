@@ -1,0 +1,13 @@
+{
+  "diagnosis.json": "6f961e28724d0c8824013da34bdffea4a584d04c49cb5182d962ec5a27ee3a2d",
+  "drc-original.json": "63a34ebc8023b3eb1646dd2993a275734288c933135b661fa1d786d99919ad1d",
+  "drc-cloud-rules.json": "3eb90f608b3f6ae2e061652e1b461aba1e32eb9b501215682f3f6d9d5def946d",
+  "retry-checks.json": "a4059a5e8d7a2e052764ff6ad6c379b308610b07cc5d88312dd66aa84a60744a",
+  "retry-input-drc.json": "f2693f63e7d5ea6d6881d2f6dfee8749b9ab9a1da7d5f67b95af27a6d1b6ea8c",
+  "returned-artifacts.json": "0242e4f6973a6077a419e052594c5f500a549ab277f7ae6d238e88e23a188791",
+  "server-input-verification.json": "b45e4624d9da7f21f7f2f8d76cd824c7258d36993511d07269cc8bf2da1d7d2c",
+  "README.md": "4bc1b3040130d82280d9d772b77f9eb21e913a86f1a90e392655b9e9d0440a83",
+  "quilter-started.jpg": "ba7dd4c63f56f2e3016d7eb50d38d673435dd88e8ee4695c4985ca6442f691bd",
+  "bypass-capacitors-confirmed.csv": "ad95113c4c516b214dc744598afe2d61d3b7a25ead2fa1de2fa8e49288fc35a6",
+  "job.json": "4206bd513e7baf48b8f424445b1562fc397bdd843069e204771eab3c93a21c7f"
+}

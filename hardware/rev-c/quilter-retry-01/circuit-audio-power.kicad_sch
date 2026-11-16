@@ -1,0 +1,445 @@
+(kicad_sch (version 20250114) (generator "eeschema") (uuid "022f9037-715e-533a-97f8-3f28bc47a066") (paper "A2")
+          (title_block (title "Dedicated switched audio supply") (rev "C0-REVIEW") (company "VoiceVault"))
+          (lib_symbols (symbol "VoiceVault_B0:U602_circuit" (pin_names (offset .5)) (in_bom yes) (on_board yes)
+                  (property "Reference" "U" (at 0 7.62 0) (effects (font (size 1 1)) ))
+                  (property "Value" "TPS7A2028PDBVR" (at 0 5.08 0) (effects (font (size 1 1)) ))
+                  (symbol "U602_circuit_0_1" (rectangle (start -25.4 5.08) (end 25.4 -10.16)
+                    (stroke (width .254) (type default)) (fill (type background))))
+                  (symbol "U602_circuit_1_1" (pin power_in line (at -30.48 0.0 0) (length 5.08) (name "IN" (effects (font (size 0.8 0.8)) )) (number "1" (effects (font (size 0.8 0.8)) )))(pin power_in line (at -30.48 -2.54 0) (length 5.08) (name "GND" (effects (font (size 0.8 0.8)) )) (number "2" (effects (font (size 0.8 0.8)) )))(pin input line (at -30.48 -5.08 0) (length 5.08) (name "EN" (effects (font (size 0.8 0.8)) )) (number "3" (effects (font (size 0.8 0.8)) )))(pin passive line (at 30.48 0.0 180) (length 5.08) (name "NC" (effects (font (size 0.8 0.8)) )) (number "4" (effects (font (size 0.8 0.8)) )))(pin power_out line (at 30.48 -2.54 180) (length 5.08) (name "OUT" (effects (font (size 0.8 0.8)) )) (number "5" (effects (font (size 0.8 0.8)) )))))(symbol "VoiceVault_B0:C"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0.254)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "C"
+			(at 0.635 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 0.635 -2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 0.9652 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "cap capacitor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "C_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "C_0_1"
+			(polyline
+				(pts
+					(xy -2.032 0.762) (xy 2.032 0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -2.032 -0.762) (xy 2.032 -0.762)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "C_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 2.794)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "VoiceVault_B0:R"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "R"
+			(at 2.032 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 0 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at -1.778 0 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "R res resistor"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "R_*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "R_0_1"
+			(rectangle
+				(start -1.016 -2.54)
+				(end 1.016 2.54)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "R_1_1"
+			(pin passive line
+				(at 0 3.81 270)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -3.81 90)
+				(length 1.27)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)(symbol "VoiceVault_B0:PWR_FLAG"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#FLG"
+			(at 0 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 0 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "flag power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_0"
+			(pin power_out line
+				(at 0 0 90)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)) (wire (pts (xy 44.45 35.56) (xy 39.37 35.56)) (stroke (width 0) (type default)) (uuid "ffd16084-0259-5df7-b1a8-ff3b032c412e"))(global_label "VDD_3V3" (shape bidirectional) (at 39.37 35.56 0) (effects (font (size 0.8 0.8)) ) (uuid "d29b783c-0ff8-585c-8c6d-c729cb7bc2e7"))(wire (pts (xy 44.45 38.1) (xy 39.37 38.1)) (stroke (width 0) (type default)) (uuid "1ca0679a-b6d3-56d2-bddd-286b47bd593b"))(global_label "GND" (shape bidirectional) (at 39.37 38.1 0) (effects (font (size 0.8 0.8)) ) (uuid "b9682d48-1fd7-5708-813d-45eb4ea2ec96"))(wire (pts (xy 44.45 40.64) (xy 39.37 40.64)) (stroke (width 0) (type default)) (uuid "2c91b96e-5ab2-5be8-b5c9-47cfafd55fa5"))(global_label "AUD_POWER_EN" (shape bidirectional) (at 39.37 40.64 0) (effects (font (size 0.8 0.8)) ) (uuid "3380aafc-bbdc-522a-816f-ef5ec7d24074"))(no_connect (at 105.41 35.56) (uuid "33a3b9f7-591d-51cf-b542-1f5de99a3dcb"))(wire (pts (xy 105.41 38.1) (xy 110.49 38.1)) (stroke (width 0) (type default)) (uuid "06f85452-54f3-556e-a98b-2234b303512b"))(global_label "AUD_2V8_REG" (shape bidirectional) (at 110.49 38.1 180) (effects (font (size 0.8 0.8)) ) (uuid "bc57a150-9ce5-566f-b7ec-94bf4aee7beb"))(symbol (lib_id "VoiceVault_B0:U602_circuit") (at 74.93 35.56 0) (unit 1)
+              (in_bom yes) (on_board yes) (dnp no) (uuid "2d0acf9c-691c-5c91-99c3-da9c59a9bfb1")
+              (property "Reference" "U602" (at 74.93 29.21 0) (effects (font (size 1 1)) ))
+              (property "Value" "TPS7A2028PDBVR" (at 74.93 31.750000000000004 0) (effects (font (size 0.85 0.85)) ))
+              (property "Footprint" "VoiceVault_B0:SOT-23-5" (at 74.93 35.56 0) (effects (font (size 1 1)) (hide yes)))
+              (instances (project "voicevault-standalone-c0" (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/457d0dda-f72d-5d51-8ba7-863b9a340854" (reference "U602") (unit 1)))))(wire (pts (xy 275.59 35.56) (xy 270.51 35.56)) (stroke (width 0) (type default)) (uuid "4c680a1a-eb21-535b-93b1-52f0994a5134"))(global_label "VDD_3V3" (shape bidirectional) (at 270.51 35.56 0) (effects (font (size 0.8 0.8)) ) (uuid "25362ddc-64e4-56a4-8bbf-6d8ab784f694"))(wire (pts (xy 283.21 35.56) (xy 288.29 35.56)) (stroke (width 0) (type default)) (uuid "db891246-e81c-5ff6-9893-f78cf8f548aa"))(global_label "GND" (shape bidirectional) (at 288.29 35.56 180) (effects (font (size 0.8 0.8)) ) (uuid "1c061cc9-7cb8-5e33-a78d-9fae8f23b61c"))(symbol (lib_id "VoiceVault_B0:C") (at 279.4 35.56 90) (unit 1)
+              (in_bom yes) (on_board yes) (dnp no) (uuid "513cb326-0f27-5ac9-9a24-0b42f926aa6d")
+              (property "Reference" "C614" (at 279.4 29.21 0) (effects (font (size 1 1)) ))
+              (property "Value" "2.2u 10V" (at 279.4 31.750000000000004 0) (effects (font (size 0.85 0.85)) ))
+              (property "Footprint" "VoiceVault_B0:C_0603_1608Metric" (at 279.4 35.56 0) (effects (font (size 1 1)) (hide yes)))
+              (instances (project "voicevault-standalone-c0" (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/457d0dda-f72d-5d51-8ba7-863b9a340854" (reference "C614") (unit 1)))))(wire (pts (xy 331.47 35.56) (xy 326.39 35.56)) (stroke (width 0) (type default)) (uuid "95988e35-cc19-5db3-a773-5d27b8a07d94"))(global_label "AUD_2V8_REG" (shape bidirectional) (at 326.39 35.56 0) (effects (font (size 0.8 0.8)) ) (uuid "726a168f-52fd-5b63-bd7e-7df9ed4f3268"))(wire (pts (xy 339.09 35.56) (xy 344.17 35.56)) (stroke (width 0) (type default)) (uuid "61303196-4d17-5e9a-af7f-106b0db1c2c1"))(global_label "GND" (shape bidirectional) (at 344.17 35.56 180) (effects (font (size 0.8 0.8)) ) (uuid "6c1cdbfa-a874-5f53-9f29-c1d0fe9f1840"))(symbol (lib_id "VoiceVault_B0:C") (at 335.28 35.56 90) (unit 1)
+              (in_bom yes) (on_board yes) (dnp no) (uuid "c8e51b18-199d-5e75-9705-64bdb0f2de44")
+              (property "Reference" "C615" (at 335.28 29.21 0) (effects (font (size 1 1)) ))
+              (property "Value" "2.2u 10V" (at 335.28 31.750000000000004 0) (effects (font (size 0.85 0.85)) ))
+              (property "Footprint" "VoiceVault_B0:C_0603_1608Metric" (at 335.28 35.56 0) (effects (font (size 1 1)) (hide yes)))
+              (instances (project "voicevault-standalone-c0" (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/457d0dda-f72d-5d51-8ba7-863b9a340854" (reference "C615") (unit 1)))))(wire (pts (xy 386.08 35.56) (xy 381.0 35.56)) (stroke (width 0) (type default)) (uuid "1377891c-d586-5baa-b7e3-c56bdbd2e46b"))(global_label "AUD_POWER_EN" (shape bidirectional) (at 381.0 35.56 0) (effects (font (size 0.8 0.8)) ) (uuid "a002a0d8-6db1-5901-995f-3e1395d69d86"))(wire (pts (xy 393.7 35.56) (xy 398.78 35.56)) (stroke (width 0) (type default)) (uuid "5ad18ba7-7374-578c-946b-b33046fba51f"))(global_label "GND" (shape bidirectional) (at 398.78 35.56 180) (effects (font (size 0.8 0.8)) ) (uuid "b49562fd-0070-534f-9f6a-dd80ed75c374"))(symbol (lib_id "VoiceVault_B0:R") (at 389.89 35.56 90) (unit 1)
+              (in_bom yes) (on_board yes) (dnp no) (uuid "8f15ca9a-9d49-5c5e-bd6b-9df2d2977751")
+              (property "Reference" "R608" (at 389.89 29.21 0) (effects (font (size 1 1)) ))
+              (property "Value" "100k" (at 389.89 31.750000000000004 0) (effects (font (size 0.85 0.85)) ))
+              (property "Footprint" "VoiceVault_B0:R_0402_1005Metric" (at 389.89 35.56 0) (effects (font (size 1 1)) (hide yes)))
+              (instances (project "voicevault-standalone-c0" (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/457d0dda-f72d-5d51-8ba7-863b9a340854" (reference "R608") (unit 1)))))(wire (pts (xy 275.59 57.15) (xy 270.51 57.15)) (stroke (width 0) (type default)) (uuid "f248c7a0-060a-559d-84e6-a0e05c7a154b"))(global_label "AUD_2V8_REG" (shape bidirectional) (at 270.51 57.15 0) (effects (font (size 0.8 0.8)) ) (uuid "06d9aaaf-3b51-5579-b14c-c696c6c144f2"))(wire (pts (xy 283.21 57.15) (xy 288.29 57.15)) (stroke (width 0) (type default)) (uuid "95469044-9a95-560b-8148-027219767860"))(global_label "AUD_LDOIN_2V8" (shape bidirectional) (at 288.29 57.15 180) (effects (font (size 0.8 0.8)) ) (uuid "c7615b4d-c47a-5ba2-afa2-a6e866597df0"))(symbol (lib_id "VoiceVault_B0:R") (at 279.4 57.15 90) (unit 1)
+              (in_bom yes) (on_board yes) (dnp no) (uuid "7f0a9fd1-bf8d-5a44-9e22-fffef7559371")
+              (property "Reference" "R609" (at 279.4 50.8 0) (effects (font (size 1 1)) ))
+              (property "Value" "0R - removable audio-current link" (at 279.4 53.339999999999996 0) (effects (font (size 0.85 0.85)) ))
+              (property "Footprint" "VoiceVault_B0:R_0603_1608Metric" (at 279.4 57.15 0) (effects (font (size 1 1)) (hide yes)))
+              (instances (project "voicevault-standalone-c0" (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/457d0dda-f72d-5d51-8ba7-863b9a340854" (reference "R609") (unit 1)))))(wire (pts (xy 35.56 233.68) (xy 30.48 233.68)) (stroke (width 0) (type default)) (uuid "36062d39-6086-523f-9990-151224eb0d00"))(global_label "AUD_LDOIN_2V8" (shape bidirectional) (at 30.48 233.68 0) (effects (font (size 0.8 0.8)) ) (uuid "9bc53c9f-8833-5261-9694-fecfdeec9fa5"))(symbol (lib_id "VoiceVault_B0:PWR_FLAG") (at 35.56 233.68 0) (unit 1)
+                  (in_bom no) (on_board no) (dnp no) (uuid "7c659a8f-6c54-5fd2-91bb-58079b708385")
+                  (property "Reference" "#FLG1400" (at 35.56 236.22 0) (effects (font (size 0.8 0.8)) (hide yes)))
+                  (property "Value" "PWR_FLAG" (at 35.56 228.6 0) (effects (font (size 0.8 0.8)) ))
+                  (instances (project "voicevault-standalone-c0" (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/457d0dda-f72d-5d51-8ba7-863b9a340854" (reference "#FLG1400") (unit 1)))))(text "Dedicated 2.8V low-noise audio LDO from regulated main supply, default off." (at 20 330 0) (effects (font (size 1 1)) (justify left)) (uuid "ee3439fe-6a4b-519a-a663-5aa3d0d34a9a"))(text "Codec LDOIN range 1.9-3.6V. Revalidate headphone settings/sequence for 2.8V; no acoustic claim." (at 20 336 0) (effects (font (size 1 1)) (justify left)) (uuid "2603d0fe-4c84-507d-91b9-626f2b6cdd4e"))
+          (sheet_instances (path "/c44c303f-903c-56af-9bf1-b0f3cbda394a/457d0dda-f72d-5d51-8ba7-863b9a340854" (page "14"))))

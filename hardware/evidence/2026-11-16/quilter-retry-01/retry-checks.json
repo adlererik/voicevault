@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "native_input_drc_findings": 0,
+  "critical_pin_nets": 72,
+  "schematic_files_byte_unchanged": 16,
+  "rf_controls": [
+    {
+      "case": "same-side-feed",
+      "forbidden_item_detected": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "case": "opposite-side-feed",
+      "forbidden_item_detected": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "inner-layer-feed",
+      "forbidden_item_detected": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "wrong-net-feed",
+      "forbidden_item_detected": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "outside-corridor",
+      "forbidden_item_detected": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "fabricated_or_routed": false,
+  "manufacturing_ready": false
+}

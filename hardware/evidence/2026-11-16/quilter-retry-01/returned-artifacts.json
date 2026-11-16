@@ -1,0 +1,14 @@
+[
+  {
+    "candidate": "2.1",
+    "zip_sha256": "f565486853851a129aaa6762c53e6e21aad81aaf1b9113647087b1c741d9e7a5",
+    "download_path": "/home/erikclean/Downloads/Quilter_voicevault-standalone-c0.kicad_pcb_Candidate_2_1.zip",
+    "pcb_sha256": "7f10209a7e2eec5e654419ad944d328ffc1ce5fd87f9508288f4511e57a1ba2b"
+  },
+  {
+    "candidate": "3.1",
+    "zip_sha256": "5b05c2da712537b0d57fc847f5b2768b4b7a8ea9d8ba81c1c20b9bf29ba213f9",
+    "download_path": "/home/erikclean/Downloads/Quilter_voicevault-standalone-c0.kicad_pcb_Candidate_3_1.zip",
+    "pcb_sha256": "7f10209a7e2eec5e654419ad944d328ffc1ce5fd87f9508288f4511e57a1ba2b"
+  }
+]

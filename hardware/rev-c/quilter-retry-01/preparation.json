@@ -1,0 +1,20 @@
+{
+  "source_board_sha256": "ef09f4facdfb4a2ae0ad3373b838bdda55c12bc668807726400435d2626f7fb0",
+  "retry_board_sha256": "5ed6a8e437762d80377b7b3963606ea3341a2f992854ef2973fb758b83bd14c1",
+  "component_positions_values_pads_and_nets_unchanged": true,
+  "footprints": 213,
+  "electrical_components": 196,
+  "tracks": 0,
+  "vias": 0,
+  "copper_pours": 0,
+  "antenna_change": "A third footprint-attached keepout blocks ALL tracks on the opposite outer layer and every inner layer. The same-side feed corridor remains. This follows footprint flips; same-side RF routing is required on either outer face.",
+  "native_rule_change": "Native geometry excludes zone fills. Custom net rule checks routed items, avoiding false findings against whole-zone outlines.",
+  "hole_clearance_mm": 0.2,
+  "hole_clearance_source": "https://jlcpcb.com/capabilities/pcb-capabilities",
+  "planned_cloud_changes": [
+    "Force automatic BGA fanout for U1",
+    "Add RF and converter proximity requirements",
+    "Retain reviewed 6-layer ordinary-via stack and circuit settings"
+  ],
+  "fabrication_ready": false
+}

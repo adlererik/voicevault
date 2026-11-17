@@ -1,0 +1,218 @@
+{
+  "placements": [
+    {
+      "ref": "L1201",
+      "before": {
+        "xy": [
+          28.498913,
+          66.230491
+        ],
+        "angle": -90.0,
+        "layer": 0
+      },
+      "after": {
+        "xy": [
+          50.494225,
+          49.948673
+        ],
+        "angle": 90.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        4.1134687308888065,
+        3.8782244648808013
+      ],
+      "feasible_candidates": 432
+    },
+    {
+      "ref": "U9",
+      "before": {
+        "xy": [
+          88.969996,
+          50.821405
+        ],
+        "angle": -90.0,
+        "layer": 2
+      },
+      "after": {
+        "xy": [
+          78.00985,
+          57.311855
+        ],
+        "angle": -90.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        3.0
+      ],
+      "feasible_candidates": 550
+    },
+    {
+      "ref": "C108",
+      "before": {
+        "xy": [
+          72.419538,
+          46.798673
+        ],
+        "angle": -90.0,
+        "layer": 0
+      },
+      "after": {
+        "xy": [
+          58.061413,
+          55.274809
+        ],
+        "angle": 0.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        2.6683328128252684
+      ],
+      "feasible_candidates": 267
+    },
+    {
+      "ref": "C107",
+      "before": {
+        "xy": [
+          67.724225,
+          50.768673
+        ],
+        "angle": 0.0,
+        "layer": 0
+      },
+      "after": {
+        "xy": [
+          60.952037,
+          57.010036
+        ],
+        "angle": 90.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        1.7999999999999972
+      ],
+      "feasible_candidates": 407
+    },
+    {
+      "ref": "C704",
+      "before": {
+        "xy": [
+          75.997663,
+          50.2914
+        ],
+        "angle": 90.0,
+        "layer": 0
+      },
+      "after": {
+        "xy": [
+          80.05985,
+          57.411855
+        ],
+        "angle": 90.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        2.4684256115994234,
+        1.5598477489806466
+      ],
+      "feasible_candidates": 1110
+    },
+    {
+      "ref": "C705",
+      "before": {
+        "xy": [
+          92.280163,
+          50.245945
+        ],
+        "angle": 0.0,
+        "layer": 2
+      },
+      "after": {
+        "xy": [
+          78.10985,
+          60.311855
+        ],
+        "angle": -90.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        2.619637379485943,
+        3.5017852589786274
+      ],
+      "feasible_candidates": 352
+    },
+    {
+      "ref": "R707",
+      "before": {
+        "xy": [
+          88.862663,
+          53.295945
+        ],
+        "angle": -90.0,
+        "layer": 2
+      },
+      "after": {
+        "xy": [
+          79.75985,
+          60.011855
+        ],
+        "angle": 90.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        3.225926223582921,
+        2.8140007107319627
+      ],
+      "feasible_candidates": 486
+    },
+    {
+      "ref": "C1202",
+      "before": {
+        "xy": [
+          50.717662,
+          51.064127
+        ],
+        "angle": 180.0,
+        "layer": 0
+      },
+      "after": {
+        "xy": [
+          51.781725,
+          53.648673
+        ],
+        "angle": 0.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        4.390775130885207,
+        4.452966005933574
+      ],
+      "feasible_candidates": 434
+    },
+    {
+      "ref": "C1204",
+      "before": {
+        "xy": [
+          50.717662,
+          48.609582
+        ],
+        "angle": 180.0,
+        "layer": 0
+      },
+      "after": {
+        "xy": [
+          54.631725,
+          43.848673
+        ],
+        "angle": 180.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        4.371516470288091,
+        5.754142529517325
+      ],
+      "feasible_candidates": 616
+    }
+  ],
+  "scope": "Placement repair only; native DRC/routing required."
+}

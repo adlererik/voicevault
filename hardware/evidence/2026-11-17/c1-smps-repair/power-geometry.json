@@ -1,0 +1,19 @@
+{
+  "converter_faces": {
+    "U1": {
+      "controller": "B.Cu",
+      "inductor": "B.Cu"
+    },
+    "U1201": {
+      "controller": "F.Cu",
+      "inductor": "F.Cu"
+    },
+    "U9": {
+      "controller": "F.Cu",
+      "inductor": "F.Cu"
+    }
+  },
+  "mcu_switching_trace_length_mm": 2.923668401147819,
+  "mcu_switching_vias": 0,
+  "signal_tracks_on_ground_reference_layers": 0
+}

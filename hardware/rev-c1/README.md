@@ -1,5 +1,7 @@
 # VoiceVault C1 — LQFP144 prototype
 
+**Local repair is now authorized and in progress.** See the [preferred same-face power-layout study](local-repair-02/README.md), the [preserved earlier repair](local-repair-01/README.md) and [native repair evidence](../evidence/2026-11-17/c1-local-repair/README.md). The six-open count below describes the untouched cloud return. Moving power parts and removing invalid copper required additional connections to be rebuilt in the repair copy.
+
 **Quilter finished at 21:19 CET on 16 November 2026: six candidates, all reporting 98% routing. Not for fabrication.** Independent KiCad review of candidate 3.1 confirms **six missing connections, zero copper shorts and zero schematic-parity mismatches**, but hole-clearance and antenna-rule failures remain. [Actual returned board views, exact findings and next work](../evidence/2026-11-17/c1-return-review/README.md). The owner approved **STM32U5G9ZJT6Q** on 16 November 2026. C1 is a separate revision; all earlier revisions and results remain preserved.
 
 [Open the completed C1 job](https://app.quilter.ai/jobs/6afb49addfae511781423d99?candidate=3) · [Recorded launch and settings](../evidence/2026-11-16/c1-preparation/launch.json). Candidate 3.1 was downloaded and reviewed in separate work folders; it has not replaced the checked input or live board and is not accepted for release.
@@ -53,7 +55,7 @@ Run `./hardware/check --rev-c1` for the native circuit/pin checks. [Evidence and
 
 ## Placement and routing plan
 
-Quilter owns electrical placement and routing. C1 contains no FreeRouting copper, prior cloud copper or manually designed electrical placement. The first outline remains a provisional **70 × 45 mm** rectangle. The 23.3 mm MCU courtyard bounding box fits the bare outline; populated-board fit must be established by placement and mechanical review. A larger serviceable rectangle remains an option if the actual layout requires it.
+Quilter performed the original full placement and routing. The original uploaded C1 input in this directory contains no FreeRouting copper, prior cloud copper or local electrical placement. The owner later authorized local repairs in the separate checkpoint linked above. The first outline remains a provisional **70 × 45 mm** rectangle. The 23.3 mm MCU courtyard bounding box fits the bare outline; populated-board fit must be established by placement and mechanical review. A larger serviceable rectangle remains an option if the actual layout requires it.
 
 Use the standard JLCPCB **six-layer 4 mil preset**, S/GND/S/S/GND/S, **1.538 mm modeled thickness**, ordinary **0.45/0.20 mm vias**, and 0.50 mm board margin. This is a layout study against provisional published limits, not a manufacturing-stack approval or price quote. Two ground references are retained; a dedicated power plane is not required by this study. Real trace/pour current capacity and RF impedance still need review.
 

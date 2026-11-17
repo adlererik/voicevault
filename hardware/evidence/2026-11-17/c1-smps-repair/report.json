@@ -1,0 +1,70 @@
+{
+  "status": "INCOMPLETE \u2014 NOT FOR FABRICATION",
+  "checkpoint": "same-face MCU power repair",
+  "native_unconnected_items": 19,
+  "native_violations": {
+    "track_dangling": 1
+  },
+  "schematic_parity_issues": 0,
+  "source_rules_relaxed": false,
+  "board_sha256": "c3bcc4977de9c8a8cd253c68b23531ef919fa568cca6f41d16f1cc77101acd20",
+  "component_identity": {
+    "status": "PASS",
+    "board_sha256": "c3bcc4977de9c8a8cd253c68b23531ef919fa568cca6f41d16f1cc77101acd20",
+    "reference_sha256": "9dd8b00cb72809a7b252615c985ae6f2feabc22705ff30dd6830d22630637d96",
+    "footprints": 216,
+    "critical_pins": 72,
+    "mcu_physical_pins": 144,
+    "mcu_function_checks": 55,
+    "connected_mcu_pins": 91,
+    "corrupt_mapping_controls_rejected": [
+      "U1.70",
+      "U1.29",
+      "U1.20",
+      "U1.142",
+      "U1.107",
+      "U6.26",
+      "C115.1"
+    ],
+    "moved_refs": [
+      "C107",
+      "C108",
+      "C1202",
+      "C1204",
+      "C1207",
+      "C17",
+      "C22",
+      "C25",
+      "C26",
+      "C704",
+      "C705",
+      "L1",
+      "L1201",
+      "R707",
+      "U9"
+    ],
+    "mounting_anchors_preserved": true,
+    "scope": "Circuit identity/authorized pose changes only; not physical qualification."
+  },
+  "manufacturing_ready": false,
+  "power_geometry": {
+    "converter_faces": {
+      "U1": {
+        "controller": "B.Cu",
+        "inductor": "B.Cu"
+      },
+      "U1201": {
+        "controller": "F.Cu",
+        "inductor": "F.Cu"
+      },
+      "U9": {
+        "controller": "F.Cu",
+        "inductor": "F.Cu"
+      }
+    },
+    "mcu_switching_trace_length_mm": 2.923668401147819,
+    "mcu_switching_vias": 0,
+    "signal_tracks_on_ground_reference_layers": 0
+  },
+  "full_native_unrouted_connections": 19
+}

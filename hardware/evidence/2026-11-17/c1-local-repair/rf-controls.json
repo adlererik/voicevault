@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scope": "isolated controls of supplied board RF policy",
+  "antenna_side": "B.Cu",
+  "cases": [
+    {
+      "case": "same-side-feed",
+      "forbidden_item_detected": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "case": "opposite-side-feed",
+      "forbidden_item_detected": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "inner-layer-feed",
+      "forbidden_item_detected": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "wrong-net-feed",
+      "forbidden_item_detected": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "case": "outside-corridor",
+      "forbidden_item_detected": true,
+      "expected": true,
+      "passed": true
+    }
+  ]
+}

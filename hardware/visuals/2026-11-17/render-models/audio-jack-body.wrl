@@ -1,0 +1,4 @@
+#VRML V2.0 utf8
+Transform { translation 2.7559055118110236 0.0 1.200787401574803 children [ Shape { appearance Appearance { material Material { diffuseColor .035 .038 .04 specularColor .35 .35 .35 shininess .35 } } geometry Box { size 6.692913385826771 2.6377952755905514 2.3228346456692917 } } ] }
+Transform { translation -0.7283464566929134 0.0 1.200787401574803 rotation 0 0 1 1.570796 children [ Shape { appearance Appearance { material Material { diffuseColor .5 .52 .54 specularColor .6 .6 .6 shininess .6 } } geometry Cylinder { radius 1.0433070866141732 height 0.31496062992125984 } } ] }
+Transform { translation -0.9015748031496063 0.0 1.200787401574803 rotation 0 0 1 1.570796 children [ Shape { appearance Appearance { material Material { diffuseColor .012 .013 .015 specularColor .6 .6 .6 shininess .6 } } geometry Cylinder { radius 0.7007874015748031 height 0.03543307086614173 } } ] }

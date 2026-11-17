@@ -1,0 +1,30 @@
+{
+  "history": [
+    {
+      "pad": "C108.2",
+      "accepted": true,
+      "remaining": 35
+    },
+    {
+      "pad": "C705.2",
+      "accepted": true,
+      "remaining": 34
+    },
+    {
+      "pad": "U9.A3",
+      "accepted": false,
+      "remaining": 34
+    },
+    {
+      "pad": "U9.A1",
+      "accepted": true,
+      "remaining": 33
+    },
+    {
+      "pad": "C704.2",
+      "accepted": true,
+      "remaining": 32
+    }
+  ],
+  "remaining_native_opens": 32
+}

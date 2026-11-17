@@ -1,0 +1,167 @@
+{
+  "placements": [
+    {
+      "ref": "C26",
+      "before": {
+        "xy": [
+          59.321413,
+          60.406855
+        ],
+        "angle": -90.0,
+        "layer": 2
+      },
+      "after": {
+        "xy": [
+          56.511413,
+          59.854809
+        ],
+        "angle": -90.0,
+        "layer": 2
+      },
+      "pin_distances_mm": [
+        1.500000000000007
+      ],
+      "feasible_candidates": 3717
+    },
+    {
+      "ref": "C22",
+      "before": {
+        "xy": [
+          57.680788,
+          60.406855
+        ],
+        "angle": -90.0,
+        "layer": 2
+      },
+      "after": {
+        "xy": [
+          55.511413,
+          59.854809
+        ],
+        "angle": -90.0,
+        "layer": 2
+      },
+      "pin_distances_mm": [
+        1.500000000000007
+      ],
+      "feasible_candidates": 2823
+    },
+    {
+      "ref": "L1",
+      "before": {
+        "xy": [
+          58.077037,
+          57.785036
+        ],
+        "angle": 0.0,
+        "layer": 0
+      },
+      "after": {
+        "xy": [
+          59.086413,
+          60.374809
+        ],
+        "angle": 0.0,
+        "layer": 2
+      },
+      "pin_distances_mm": [
+        2.692582403567252
+      ],
+      "feasible_candidates": 63
+    },
+    {
+      "ref": "C107",
+      "before": {
+        "xy": [
+          60.952037,
+          57.010036
+        ],
+        "angle": 90.0,
+        "layer": 0
+      },
+      "after": {
+        "xy": [
+          62.636413,
+          60.374809
+        ],
+        "angle": 0.0,
+        "layer": 2
+      },
+      "pin_distances_mm": [
+        1.6999999999999957
+      ],
+      "feasible_candidates": 331
+    },
+    {
+      "ref": "C17",
+      "before": {
+        "xy": [
+          61.508913,
+          60.406855
+        ],
+        "angle": -90.0,
+        "layer": 2
+      },
+      "after": {
+        "xy": [
+          62.391413,
+          61.674809
+        ],
+        "angle": 0.0,
+        "layer": 2
+      },
+      "pin_distances_mm": [
+        3.820994634908565
+      ],
+      "feasible_candidates": 2853
+    },
+    {
+      "ref": "C1207",
+      "before": {
+        "xy": [
+          55.763288,
+          60.927764
+        ],
+        "angle": 90.0,
+        "layer": 2
+      },
+      "after": {
+        "xy": [
+          55.533288,
+          62.142764
+        ],
+        "angle": 0.0,
+        "layer": 2
+      },
+      "pin_distances_mm": [
+        4.126893504804794,
+        2.3154373237036676
+      ],
+      "feasible_candidates": 1500
+    },
+    {
+      "ref": "C25",
+      "before": {
+        "xy": [
+          53.55235,
+          61.253218
+        ],
+        "angle": -90.0,
+        "layer": 2
+      },
+      "after": {
+        "xy": [
+          57.861413,
+          57.874809
+        ],
+        "angle": 0.0,
+        "layer": 0
+      },
+      "pin_distances_mm": [
+        0.3999999999999986
+      ],
+      "feasible_candidates": 3501
+    }
+  ],
+  "scope": "Placement repair only; native DRC/routing required."
+}

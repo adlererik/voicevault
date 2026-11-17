@@ -24,3 +24,11 @@ __pycache__/
 /hardware/rev-c/*-backups/
 /hardware/rev-c/~*.lck
 /hardware/rev-c/fp-info-cache
+
+# Native local repair editor state
+/hardware/rev-c1/local-repair-*/*.kicad_prl
+/hardware/rev-c1/local-repair-*/*.lck
+/hardware/rev-c1/local-repair-*/fp-info-cache
+/hardware/rev-c1/local-repair-*/*-backups/
+/hardware/visuals/**/*.kicad_prl
+/hardware/visuals/**/*.lck

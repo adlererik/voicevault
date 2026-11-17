@@ -1,0 +1,52 @@
+{
+  "source_board_sha256": "c3bcc4977de9c8a8cd253c68b23531ef919fa568cca6f41d16f1cc77101acd20",
+  "source": "C1 local-repair-02, 19-open reviewed checkpoint",
+  "models_added_for_visualization_only": {
+    "U11": "se050-body.wrl",
+    "U9": "wlcsp-body.wrl",
+    "U1201": "tps63070-body.wrl",
+    "L1201": "xfl4020-body.wrl",
+    "J601": "audio-jack-body.wrl",
+    "J101": "j101-header.wrl",
+    "J102": "j102-header.wrl"
+  },
+  "note": "Approximate package bodies for missing 3D models; PCB source/positions/copper unchanged. These are CAD illustrations, not manufactured hardware or mechanical qualification.",
+  "additional_visual_model_substitutions": {
+    "J702": {
+      "old_model": "${KICAD10_3DMODEL_DIR}/Connector_FFC-FPC.3dshapes/Molex_200528-0060_1x06-1MP_P1.00mm_Horizontal.step",
+      "render_model": "${KIPRJMOD}/render-models/j702-approx.wrl"
+    },
+    "U3": {
+      "old_model": "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm.step",
+      "render_model": "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/WQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm.step"
+    },
+    "SW503": {
+      "old_model": "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPDT_CK_JS102011SAQN.step",
+      "render_model": "${KIPRJMOD}/render-models/sw503-approx.wrl"
+    },
+    "J401": {
+      "old_model": "${KICAD10_3DMODEL_DIR}/Connector_Card.3dshapes/microSD_HC_Molex_104031-0811.step",
+      "render_model": "${KIPRJMOD}/render-models/j401-approx.wrl"
+    },
+    "J502": {
+      "old_model": "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal.step",
+      "render_model": "${KIPRJMOD}/render-models/j502-approx.wrl"
+    },
+    "SW601": {
+      "old_model": "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPDT_CK_JS102011SAQN.step",
+      "render_model": "${KIPRJMOD}/render-models/sw601-approx.wrl"
+    },
+    "U6": {
+      "old_model": "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/QFN-48-1EP_6x6mm_P0.4mm_EP4.66x4.66mm.step",
+      "render_model": "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/UQFN-48-1EP_6x6mm_P0.4mm_EP4.45x4.45mm.step"
+    },
+    "X202": {
+      "old_model": "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_2012-2Pin_2.0x1.2mm.step",
+      "render_model": "${KIPRJMOD}/render-models/x202-approx.wrl"
+    },
+    "X302": {
+      "old_model": "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_2012-2Pin_2.0x1.2mm.step",
+      "render_model": "${KIPRJMOD}/render-models/x302-approx.wrl"
+    }
+  }
+}

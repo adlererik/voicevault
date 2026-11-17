@@ -1,0 +1,135 @@
+{
+  "history": [
+    {
+      "iteration": 0,
+      "violations": {
+        "track_dangling": 3,
+        "via_dangling": 1
+      },
+      "opens": 17
+    },
+    {
+      "iteration": 1,
+      "violations": {
+        "track_dangling": 2
+      },
+      "opens": 17
+    },
+    {
+      "iteration": 2,
+      "violations": {
+        "track_dangling": 2
+      },
+      "opens": 17
+    },
+    {
+      "iteration": 3,
+      "violations": {
+        "track_dangling": 2
+      },
+      "opens": 17
+    },
+    {
+      "iteration": 4,
+      "violations": {
+        "track_dangling": 1
+      },
+      "opens": 17
+    },
+    {
+      "iteration": 5,
+      "violations": {},
+      "opens": 17
+    }
+  ],
+  "removed": [
+    {
+      "uuid": "f6598484-f822-493c-8211-4007128e83eb",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 49.4712 55.5642)\n\t\t(end 49.4712 56.9503)\n\t\t(width 0.1068)\n\t\t(layer \"B.Cu\")\n\t\t(net \"VDD_3V3\")\n\t\t(uuid \"f6598484-f822-493c-8211-4007128e83eb\")\n\t)"
+    },
+    {
+      "uuid": "d089876b-7541-45a4-8414-1dce42d9a553",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 78.88005 60.3715)\n\t\t(end 78.63005 60.1215)\n\t\t(width 0.1016)\n\t\t(layer \"In2.Cu\")\n\t\t(net \"RAD_RESET_ASSERT\")\n\t\t(uuid \"d089876b-7541-45a4-8414-1dce42d9a553\")\n\t)"
+    },
+    {
+      "uuid": "3d675ab7-379b-4b47-978c-102a3e81b2f0",
+      "kind": "via",
+      "reasons": [
+        "via_dangling"
+      ],
+      "sexpr": "(via\n\t\t(at 51.6972 56.6881)\n\t\t(size 0.45)\n\t\t(drill 0.2)\n\t\t(layers \"F.Cu\" \"B.Cu\")\n\t\t(net \"SD_SCK_MCU\")\n\t\t(uuid \"3d675ab7-379b-4b47-978c-102a3e81b2f0\")\n\t)"
+    },
+    {
+      "uuid": "32e3df2b-20d9-431e-a23f-09370f3fdb7d",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 49.4868 54.4428)\n\t\t(end 48.669 54.4428)\n\t\t(width 0.1018)\n\t\t(layer \"B.Cu\")\n\t\t(net \"SD_SCK_MCU\")\n\t\t(uuid \"32e3df2b-20d9-431e-a23f-09370f3fdb7d\")\n\t)"
+    },
+    {
+      "uuid": "37d34533-19ba-4d9a-a0e5-3811aa3744f6",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 53.8555 56.6881)\n\t\t(end 51.6972 56.6881)\n\t\t(width 0.1018)\n\t\t(layer \"B.Cu\")\n\t\t(net \"SD_SCK_MCU\")\n\t\t(uuid \"37d34533-19ba-4d9a-a0e5-3811aa3744f6\")\n\t)"
+    },
+    {
+      "uuid": "5483945c-92b6-4ac5-a780-0ee91e76116b",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 48.669 54.4428)\n\t\t(end 47.4605 53.2343)\n\t\t(width 0.1018)\n\t\t(layer \"B.Cu\")\n\t\t(net \"SD_SCK_MCU\")\n\t\t(uuid \"5483945c-92b6-4ac5-a780-0ee91e76116b\")\n\t)"
+    },
+    {
+      "uuid": "182374ae-a09b-46f1-941d-51b565f0846d",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 47.4605 53.2343)\n\t\t(end 45.4701 53.2343)\n\t\t(width 0.1018)\n\t\t(layer \"B.Cu\")\n\t\t(net \"SD_SCK_MCU\")\n\t\t(uuid \"182374ae-a09b-46f1-941d-51b565f0846d\")\n\t)"
+    },
+    {
+      "uuid": "5602279b-b292-4e04-8e31-a07aba59667c",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 54.0114 56.8441)\n\t\t(end 53.8555 56.6881)\n\t\t(width 0.1018)\n\t\t(layer \"B.Cu\")\n\t\t(net \"SD_SCK_MCU\")\n\t\t(uuid \"5602279b-b292-4e04-8e31-a07aba59667c\")\n\t)"
+    },
+    {
+      "uuid": "166509a9-6c2b-40db-9bfd-849f29b1e47f",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 54.0114 57.1368)\n\t\t(end 54.0114 56.8441)\n\t\t(width 0.1018)\n\t\t(layer \"B.Cu\")\n\t\t(net \"SD_SCK_MCU\")\n\t\t(uuid \"166509a9-6c2b-40db-9bfd-849f29b1e47f\")\n\t)"
+    },
+    {
+      "uuid": "d31acfe7-20b1-4e0a-9df2-7dff6ff6fb08",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 45.4701 53.2343)\n\t\t(end 45.2257 53.4787)\n\t\t(width 0.1018)\n\t\t(layer \"B.Cu\")\n\t\t(net \"SD_SCK_MCU\")\n\t\t(uuid \"d31acfe7-20b1-4e0a-9df2-7dff6ff6fb08\")\n\t)"
+    },
+    {
+      "uuid": "b8ec2f79-ddc0-4078-ad7a-52ac4220e839",
+      "kind": "segment",
+      "reasons": [
+        "track_dangling"
+      ],
+      "sexpr": "(segment\n\t\t(start 45.2257 53.4787)\n\t\t(end 44.9839 53.4787)\n\t\t(width 0.1018)\n\t\t(layer \"B.Cu\")\n\t\t(net \"SD_SCK_MCU\")\n\t\t(uuid \"b8ec2f79-ddc0-4078-ad7a-52ac4220e839\")\n\t)"
+    }
+  ]
+}

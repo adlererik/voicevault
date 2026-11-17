@@ -1,0 +1,53 @@
+{
+  "history": [
+    {
+      "net": "VDD_3V3",
+      "accepted": false
+    },
+    {
+      "net": "SE_SDA",
+      "accepted": false
+    },
+    {
+      "net": "VDD_3V3",
+      "accepted": true,
+      "opens": 18,
+      "hard_findings": []
+    },
+    {
+      "net": "VSYS",
+      "accepted": false
+    },
+    {
+      "net": "BL_ANODE",
+      "accepted": false
+    },
+    {
+      "net": "VSYS",
+      "accepted": false
+    },
+    {
+      "net": "SD_SCK_MCU",
+      "accepted": false
+    },
+    {
+      "net": "BL_FB",
+      "accepted": false
+    },
+    {
+      "net": "VDD_3V3",
+      "accepted": true,
+      "opens": 17,
+      "hard_findings": []
+    },
+    {
+      "net": "SD_SCK_MCU",
+      "accepted": false
+    },
+    {
+      "net": "MCU_VDD11",
+      "accepted": false
+    }
+  ],
+  "remaining_native_opens": 17
+}

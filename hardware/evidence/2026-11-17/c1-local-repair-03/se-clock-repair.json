@@ -1,0 +1,125 @@
+{
+  "history": [
+    {
+      "net": "SE_SCL",
+      "accepted": true,
+      "rip_items": [
+        "1e73d4b6-acfc-4587-9bb1-5f7ff7145937",
+        "5c95067c-d0f5-4c05-9a24-a9dc8da0676f",
+        "bdc68e4a-8991-4c74-905b-bb8d4a1c6f4c",
+        "bff4d54e-eb52-49ac-98d5-03b6a9a7c489",
+        "d131c96d-91f8-409f-8257-ecb262afaf67",
+        "f6e512ef-e097-4263-86a0-7ce89af4a7b7"
+      ],
+      "removed_copper": [
+        {
+          "uuid": "bdc68e4a-8991-4c74-905b-bb8d4a1c6f4c",
+          "kind": "track",
+          "net": "VDD_3V3",
+          "start": [
+            50.1912,
+            53.3637
+          ],
+          "end": [
+            50.1912,
+            54.8442
+          ],
+          "w": 0.1068,
+          "layers": [
+            "B.Cu"
+          ]
+        },
+        {
+          "uuid": "bff4d54e-eb52-49ac-98d5-03b6a9a7c489",
+          "kind": "track",
+          "net": "VDD_3V3",
+          "start": [
+            50.1912,
+            54.8442
+          ],
+          "end": [
+            49.4712,
+            55.5642
+          ],
+          "w": 0.1068,
+          "layers": [
+            "B.Cu"
+          ]
+        },
+        {
+          "uuid": "1e73d4b6-acfc-4587-9bb1-5f7ff7145937",
+          "kind": "track",
+          "net": "SD_SCK_MCU",
+          "start": [
+            51.6972,
+            56.6881
+          ],
+          "end": [
+            49.7537,
+            54.7446
+          ],
+          "w": 0.1018,
+          "layers": [
+            "F.Cu"
+          ]
+        },
+        {
+          "uuid": "5c95067c-d0f5-4c05-9a24-a9dc8da0676f",
+          "kind": "track",
+          "net": "SD_SCK_MCU",
+          "start": [
+            49.7537,
+            54.7446
+          ],
+          "end": [
+            49.7537,
+            54.7097
+          ],
+          "w": 0.1018,
+          "layers": [
+            "F.Cu"
+          ]
+        },
+        {
+          "uuid": "f6e512ef-e097-4263-86a0-7ce89af4a7b7",
+          "kind": "via",
+          "microvia": false,
+          "net": "SD_SCK_MCU",
+          "x": 49.7537,
+          "y": 54.7097,
+          "w": 0.45,
+          "drill": 0.2,
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ]
+        },
+        {
+          "uuid": "d131c96d-91f8-409f-8257-ecb262afaf67",
+          "kind": "track",
+          "net": "SD_SCK_MCU",
+          "start": [
+            49.7537,
+            54.7097
+          ],
+          "end": [
+            49.4868,
+            54.4428
+          ],
+          "w": 0.1018,
+          "layers": [
+            "B.Cu"
+          ]
+        }
+      ],
+      "source_sha256": "bc89d10c703b23e9c2d232a969c9193c1fa7ef284d1126b80ebf507ff8a8f18e",
+      "opens": 19,
+      "hard_findings": []
+    }
+  ],
+  "remaining_native_opens": 19
+}

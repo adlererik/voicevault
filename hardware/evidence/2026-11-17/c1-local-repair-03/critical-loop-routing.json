@@ -1,0 +1,15 @@
+{
+  "history": [
+    {
+      "net": "REG_L1",
+      "accepted": true,
+      "rip_items": [
+        "3e7b895b-c528-4447-912e-94319261f7cb",
+        "9166abe9-3560-4f9f-a6f2-31e6a82d6b92"
+      ],
+      "opens": 19,
+      "hard_findings": []
+    }
+  ],
+  "remaining_native_opens": 19
+}

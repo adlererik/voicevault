@@ -76,10 +76,13 @@ def obstacles(data, net, layer):
     return result
 
 
-def search(start, end, shapes, margin=3.0, budget_seconds=4):
+def search(start, end, shapes, margin=3.0, budget_seconds=4, origin_anchor=None, heuristic_weight=1.0):
     lo = np.floor((np.minimum(start, end)-margin)/STEP)*STEP
     hi = np.ceil((np.maximum(start, end)+margin)/STEP)*STEP
     lo = np.maximum(lo, [25.4, 25.4]); hi = np.minimum(hi, [94.6, 69.6])
+    if origin_anchor is not None:
+        anchor=np.asarray(origin_anchor)
+        lo=anchor-np.floor((anchor-lo)/STEP)*STEP
     nx, ny = (np.rint((hi-lo)/STEP).astype(int)+1)
     free = np.ones((ny, nx), dtype=bool)
     for g in shapes:
@@ -100,7 +103,8 @@ def search(start, end, shapes, margin=3.0, budget_seconds=4):
         return max(dx,dy)+(math.sqrt(2)-1)*min(dx,dy)
     # Prefer progress toward the goal among equal-cost paths. Preferring the
     # smallest travelled distance explores an enormous open rectangle first.
-    dist={a:0.}; parent={}; queue=[(h(*a),0.,0.,a)]
+    assert heuristic_weight>=1.0
+    dist={a:0.}; parent={}; queue=[(heuristic_weight*h(*a),0.,0.,a)]
     directions=[(1,0),(-1,0),(0,1),(0,-1),(1,1),(1,-1),(-1,1),(-1,-1)]
     deadline=time.monotonic()+budget_seconds
     expanded=0
@@ -132,7 +136,7 @@ def search(start, end, shapes, margin=3.0, budget_seconds=4):
             if dx and dy and not (free[y,xx] and free[yy,x]): continue
             v=(xx,yy); ng=g+(math.sqrt(2) if dx and dy else 1)
             if ng+1e-9>=dist.get(v,float('inf')): continue
-            dist[v]=ng;parent[v]=u;heapq.heappush(queue,(round(ng+h(xx,yy),8),-ng,ng,v))
+            dist[v]=ng;parent[v]=u;heapq.heappush(queue,(round(ng+heuristic_weight*h(xx,yy),8),-ng,ng,v))
     return None,'no path'
 
 

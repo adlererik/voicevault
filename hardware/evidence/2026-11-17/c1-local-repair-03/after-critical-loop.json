@@ -1,0 +1,87 @@
+{
+  "history": [
+    {
+      "net": "SE_SCL",
+      "accepted": false
+    },
+    {
+      "net": "GND",
+      "accepted": true,
+      "opens": 18,
+      "hard_findings": []
+    },
+    {
+      "net": "SE_SCL",
+      "accepted": false
+    },
+    {
+      "net": "VDD_3V3",
+      "accepted": false
+    },
+    {
+      "net": "SE_SDA",
+      "accepted": false
+    },
+    {
+      "net": "VSYS",
+      "accepted": false
+    },
+    {
+      "net": "BL_ANODE",
+      "accepted": false
+    },
+    {
+      "net": "VSYS",
+      "accepted": false
+    },
+    {
+      "net": "BL_FB",
+      "accepted": false
+    },
+    {
+      "net": "VDD_3V3",
+      "accepted": false
+    },
+    {
+      "net": "MCU_VDD11",
+      "accepted": false
+    },
+    {
+      "net": "USB_5V_FUSED",
+      "accepted": false
+    },
+    {
+      "net": "LINK_CREDIT",
+      "accepted": false
+    },
+    {
+      "net": "BL_FB",
+      "accepted": false
+    },
+    {
+      "net": "LINK_TX",
+      "accepted": false
+    },
+    {
+      "net": "BTN_RESET_N",
+      "accepted": false
+    },
+    {
+      "net": "AUD_RESET_N",
+      "accepted": false
+    },
+    {
+      "net": "BL_FB",
+      "accepted": false
+    },
+    {
+      "net": "BL_ANODE",
+      "accepted": false
+    },
+    {
+      "net": "RAD_TX",
+      "accepted": false
+    }
+  ],
+  "remaining_native_opens": 18
+}

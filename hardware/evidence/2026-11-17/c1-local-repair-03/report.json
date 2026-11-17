@@ -1,0 +1,64 @@
+{
+  "status": "INCOMPLETE \u2014 NOT FOR FABRICATION",
+  "native_unconnected_items": 17,
+  "native_violations": 0,
+  "schematic_parity_issues": 0,
+  "board_sha256": "f8711f8fcd6b1255984cb0808a1d1358a79439b4c463c456e368b8ef539064a6",
+  "source_rules_relaxed": false,
+  "signal_tracks_on_ground_reference_layers": 0,
+  "power_geometry": {
+    "converter_faces": {
+      "U1": {
+        "controller": "B.Cu",
+        "inductor": "B.Cu"
+      },
+      "U1201": {
+        "controller": "F.Cu",
+        "inductor": "F.Cu"
+      },
+      "U9": {
+        "controller": "F.Cu",
+        "inductor": "F.Cu"
+      }
+    },
+    "mcu_switching_trace_length_mm": 2.923668401147819,
+    "mcu_switching_vias": 0,
+    "signal_tracks_on_ground_reference_layers": 0,
+    "switching_connections": {
+      "MCU_LX": {
+        "total_track_length_mm": 2.923668401147819,
+        "layers": [
+          "B.Cu"
+        ],
+        "vias": 0,
+        "native_open_items": 0
+      },
+      "REG_L1": {
+        "total_track_length_mm": 4.452386360737618,
+        "layers": [
+          "F.Cu"
+        ],
+        "vias": 0,
+        "native_open_items": 0
+      },
+      "REG_L2": {
+        "total_track_length_mm": 4.120986225663546,
+        "layers": [
+          "F.Cu"
+        ],
+        "vias": 0,
+        "native_open_items": 0
+      },
+      "BL_SW": {
+        "total_track_length_mm": 3.425301996676598,
+        "layers": [
+          "F.Cu"
+        ],
+        "vias": 0,
+        "native_open_items": 0
+      }
+    }
+  },
+  "manufacturing_ready": false,
+  "render_note": "Images use local-repair-02 component positions; later routing differs."
+}

@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "controls": {
+    "unanchored": {
+      "result": "endpoint blocked",
+      "path": null
+    },
+    "anchored": {
+      "result": "proposed",
+      "path": [
+        [
+          40.0123,
+          40.0123
+        ],
+        [
+          42.0123,
+          40.0123
+        ]
+      ]
+    },
+    "weighted_anchored": {
+      "result": "proposed",
+      "path": [
+        [
+          40.0123,
+          40.0123
+        ],
+        [
+          42.0123,
+          40.0123
+        ]
+      ]
+    },
+    "blocked_wall": {
+      "result": "no path",
+      "path": null
+    }
+  },
+  "scope": "Search geometry regression only; actual board proposals require unchanged native KiCad rules."
+}

@@ -1,0 +1,2 @@
+(fp_lib_table (version 7)
+ (lib (name "VoiceVault_B0")(type "KiCad")(uri "${KIPRJMOD}/VoiceVault_B0.pretty")(options "")(descr "VoiceVault reviewed footprint copies")))

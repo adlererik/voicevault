@@ -1,0 +1,4 @@
+(version 1)
+(rule "VV antenna: only antenna feed in exclusion"
+ (condition "A.intersectsArea('VV_ANTENNA_NO_COPPER') && A.NetName != 'BLE_ANT_FEED'")
+ (constraint disallow track via micro_via buried_via))

@@ -179,6 +179,51 @@ def plan(A,B,data,net,width):
     if pm:return [(la,pa),(middle,pm),(lb,pb)],[va,vb]
  return None,None
 
+def local_escape_repair(A,B,data,net,width):
+ """Bounded two-via repair that displaces copper only at chip escapes.
+
+ Keep the long inner-layer route obstacle-aware. Removing all ordinary copper
+ before planning can select an unnecessarily destructive straight path.
+ """
+ protected=lambda n:n==net or n.startswith(('RAD_','BLE_','MCU_HSE','MCU_LSE')) or n in {'MCU_LX','REG_L1','REG_L2','BL_SW','SE_SCL'}
+ hard=data|{'tracks':[q for q in data['tracks'] if protected(q['net'])]}
+ obs,trees,via_tree=model(hard,net,width)
+ soft=[q for q in data['tracks'] if not protected(q['net'])]
+ soft_shapes=[geometry_shape(q) for q in soft]
+ soft_trees={l:STRtree([s.buffer(width/2+.100001) if l in q['layers'] else Point(-1000,-1000) for q,s in zip(soft,soft_shapes)]) for l in SIGNALS}
+ via_soft=STRtree([s.buffer(.225+.100001) for s in soft_shapes])
+ def escapes(obj):
+  found=[]
+  for s in endpoints(obj)[:2]:
+   for ix in range(-20,21):
+    for iy in range(-20,21):
+     v=(round(s[0]+ix*.1,6),round(s[1]+iy*.1,6))
+     if not(25.73<=v[0]<=94.27 and 25.73<=v[1]<=69.27) or len(via_tree.query(Point(v),predicate='intersects')):continue
+     via_rip={soft[i]['uuid'] for i in via_soft.query(Point(v),predicate='intersects')}
+     if len(via_rip)>3:continue
+     dx,dy=v[0]-s[0],v[1]-s[1];sx=1 if dx>=0 else -1;sy=1 if dy>=0 else -1
+     bends=([[s[0]+sx*abs(dy),v[1]],[v[0]-sx*abs(dy),s[1]]] if abs(dx)>=abs(dy) else [[v[0],s[1]+sy*abs(dx)],[s[0],v[1]-sy*abs(dx)]])
+     for layer in set(obj['layers'])&set(SIGNALS):
+      for bend in bends:
+       pts=[s,bend,v];line=LineString(pts)
+       if len(trees[layer].query(line,predicate='intersects')):continue
+       rip=via_rip|{soft[i]['uuid'] for i in soft_trees[layer].query(line,predicate='intersects')}
+       if len(rip)<=3:found.append((len(rip),line.length,v,layer,pts,rip))
+  unique={}
+  for f in sorted(found,key=lambda f:f[:2]):unique.setdefault((f[2],f[3]),f)
+  return list(unique.values())[:10]
+ left,right=escapes(A),escapes(B)
+ options=sorted(itertools.product(left,right),key=lambda c:(len(c[0][5]|c[1][5]),c[0][1]+c[1][1]+math.dist(c[0][2],c[1][2])))
+ for one,two in options[:24]:
+  rip=one[5]|two[5]
+  if len(rip)>6 or math.dist(one[2],two[2])<.55:continue
+  kept=data|{'tracks':[q for q in data['tracks'] if q['uuid'] not in rip]}
+  full,full_trees,_=model(kept,net,width)
+  for middle in ['In2.Cu','In3.Cu']:
+   pts=path(one[2],two[2],middle,full,full_trees,width,budget=1)
+   if pts:return [(one[3],one[4]),(middle,pts),(two[3],list(reversed(two[4])))],[one[2],two[2]],rip
+ return None,None,set()
+
 report=drc(a.board,a.out/'initial-drc.json',save=True);data=export(0)
 for iteration in range(a.max_links):
  objects={q['uuid']:q for q in data['pads']+data['tracks']};choices=[]
@@ -197,6 +242,9 @@ for iteration in range(a.max_links):
  print('Planning',net,'native opens',len(report['unconnected_items']),flush=True)
  routes,vias=plan(A,B,data,net,width);entry=dict(net=net,accepted=False);rip=set()
  if not routes and a.allow_ripup_net==net:
+  routes,vias,rip=local_escape_repair(A,B,data,net,width)
+  if routes:entry['repair_strategy']='bounded local chip escapes'
+ if not routes and a.allow_ripup_net==net:
   protected=lambda n:n==net or n.startswith(('RAD_','BLE_','MCU_HSE','MCU_LSE')) or n in {'MCU_LX','REG_L1','REG_L2','BL_SW','SE_SCL'}
   relaxed=data|{'tracks':[q for q in data['tracks'] if protected(q['net'])]}
   routes,vias=plan(A,B,relaxed,net,width)
@@ -208,6 +256,11 @@ for iteration in range(a.max_links):
     shape=geometry_shape(q)
     if any(layer in q['layers'] and shape.intersects(area) for layer,area in envelopes):rip.add(q['uuid'])
    if len(rip)>6:routes=None;entry['rejected_rip_items']=len(rip)
+  entry['rip_items']=sorted(rip)
+  entry['removed_copper']=[q for q in data['tracks'] if q['uuid'] in rip]
+  entry['source_sha256']=hashlib.sha256(a.board.read_bytes()).hexdigest()
+
+ if rip and routes:
   entry['rip_items']=sorted(rip)
   entry['removed_copper']=[q for q in data['tracks'] if q['uuid'] in rip]
   entry['source_sha256']=hashlib.sha256(a.board.read_bytes()).hexdigest()

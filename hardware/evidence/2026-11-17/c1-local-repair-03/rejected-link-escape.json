@@ -1,0 +1,10 @@
+{
+  "net": "LINK_TX",
+  "accepted": false,
+  "proposed_copper_removals": 21,
+  "maximum_allowed": 6,
+  "source_sha256": "f8711f8fcd6b1255984cb0808a1d1358a79439b4c463c456e368b8ef539064a6",
+  "unchanged_board_sha256": "f8711f8fcd6b1255984cb0808a1d1358a79439b4c463c456e368b8ef539064a6",
+  "remaining_native_opens": 17,
+  "scope": "A bounded local escape search did not find an accepted route. Its global fallback proposed excessive displacement and was rejected before changing the board."
+}

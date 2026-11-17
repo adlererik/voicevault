@@ -11,3 +11,5 @@ Critical-net repair may deliberately remove a bounded set of ordinary foreign co
 [Main-converter repair](critical-loop-repair.json), [ground restoration](after-critical-loop.json), [secure-element clock repair](se-clock-repair.json), [supply completion](supply-completion.json) and [native-reported dangling cleanup](dangling-cleanup.json) record the progression. The supplied Quilter support findings and earlier checkpoints remain preserved. A longer FreeRouting pass was rejected because its imported native count did not improve.
 
 The final copied checkpoint was independently checked for all 216 component values/pad nets, mounting anchors, 144 MCU pins, 55 functions, 72 critical connections and seven corrupt mappings. These checks establish circuit identity, not physical operation. All hardware qualification and manufacturing gates remain open.
+
+A subsequent [radio-link escape attempt](rejected-link-escape.json) was rejected: the fallback proposed removing 21 copper items, exceeding the six-item limit. The board hash and 17-open checkpoint remain unchanged. No routing process is left running by this attempt.

@@ -1,5 +1,4 @@
 """Suite orchestration and report generation. All calls themselves run in Rust."""
-import argparse
 import fcntl
 import hashlib
 import json
@@ -450,24 +449,10 @@ def latest():
 
 
 def main():
-    parser = argparse.ArgumentParser(prog="./lab", description="Local secure voice simulation and verification")
-    commands = parser.add_subparsers(dest="command", metavar="COMMAND")
-    commands.add_parser("help", help="show this usage")
-    for name, message in [("test", "run the full automated suite"),
-                          ("watch", "run the same suite with the loopback dashboard"),
-                          ("demo", "run a short isolated call and save WAVs")]:
-        command = commands.add_parser(name, help=message)
-        command.add_argument("--out", metavar="ABS_DIR", help="write to an empty absolute directory")
-        if name == "demo":
-            command.add_argument("--seconds", type=int, choices=range(8,31), default=8,
-                                 metavar="8..30", help="seconds per live call (default 8)")
-    commands.add_parser("ui", help="open the persistent dashboard at http://127.0.0.1:8765/")
-    commands.add_parser("status", help="show the last full suite verdict and failure reasons")
-    replay = commands.add_parser("replay", help="open a saved offline dashboard")
-    replay.add_argument("run", nargs="?", help="run directory or dashboard.html, defaults to last run")
-    args = parser.parse_args()
-    if args.command in (None, "help"):
-        parser.print_help()
+    from command_help import native_parser,show_help
+    parser,topics=native_parser()
+    args=parser.parse_args()
+    if show_help(args,parser,topics,'command'):
         return 0
     if args.command == "ui":
         url=ensure_service();print(url,flush=True);open_browser(url);return 0

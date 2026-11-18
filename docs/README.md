@@ -4,6 +4,9 @@ VoiceVault is a device project with a working software laboratory. The documenta
 
 | Read this | To understand |
 |---|---|
+| [Using both labs: beginner's guide](LABS_GUIDE.md) | Which lab to choose, exact commands, controls, results, publication status and troubleshooting |
+| [Native command reference](CLI_REFERENCE.md) | Detailed lab help and examples for each command |
+| [Local firmware command reference](../hardware/firmware-lab/CLI.md) | Configured-workstation firmware commands and development limits |
 | [Project vision](PROJECT_VISION.md) | The future device, its purpose and the full intended scope |
 | [Why a separate device?](DEVICE_RATIONALE.md) | The trust-boundary benefit and the physical audio requirements |
 | [Threat model](THREAT_MODEL.md) | NSA-capability phone/network control, assumptions and exclusions |

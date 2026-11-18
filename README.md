@@ -12,6 +12,21 @@ The intended adversary has **NSA-class capabilities**: both phones may already b
 
 [Project vision](docs/PROJECT_VISION.md) · [Architecture](docs/ARCHITECTURE.md) · [Threat model](docs/THREAT_MODEL.md) · [Every security control](docs/SECURITY_CONTROLS.md) · [Why these algorithms](docs/CRYPTOGRAPHY.md) · [Test evidence](docs/RESULTS.md) · [Hardware roadmap](docs/ROADMAP.md) · [Hybrid call security](docs/POST_QUANTUM.md)
 
+## Start here: using the two labs
+
+**[Read the beginner's guide to `lab` and `firmware-lab`](docs/LABS_GUIDE.md)** for step-by-step instructions, screen controls, listening, test results, saved files and troubleshooting.
+
+| I want to… | Use |
+|---|---|
+| Watch software voice calls through hostile phone processes | `./lab demo --seconds 30` at <http://127.0.0.1:8765/> |
+| Run the full eleven-group native verification suite | `./lab watch` |
+| Use the ARM device screen on the configured local workstation | `./firmware-lab device` at <http://127.0.0.1:8765/firmware> |
+| Understand every option before starting anything | `./lab --help`, or local `./firmware-lab --help`; add `COMMAND --help` for details |
+
+The labs reuse trusted Rust building blocks and test different surroundings. They have separate verdicts; neither automatically qualifies the other or a physical board. **The firmware runtime is currently local development work, not a runnable package in this GitHub checkout.** The guide explains that availability boundary and its public-test-key, timing and hardware limits.
+
+[Native command reference](docs/CLI_REFERENCE.md) · [Local firmware command reference](hardware/firmware-lab/CLI.md) · [Native tool setup](docs/DEVELOPMENT.md)
+
 ## Hardware laboratory
 
 **The [VoiceVault C1 LQFP144 layout](hardware/rev-c1/README.md) reached 98% routing.** Quilter finished six candidates at **21:19 CET on 16 November**. Independent KiCad review of candidate 3.1 confirms **six unfinished connections, zero copper shorts and zero schematic mismatches**. Hole-clearance, antenna and placement findings remain; no board is accepted for manufacture. [Actual returned PCB views and native findings](hardware/evidence/2026-11-17/c1-return-review/README.md). The owner subsequently authorized local KiCad repairs in a [separate checkpoint](hardware/rev-c1/local-repair-01/README.md). The uploaded input and raw cloud result remain preserved; [repair evidence](hardware/evidence/2026-11-17/c1-local-repair/README.md) tracks the additional wiring required by power-layout corrections.

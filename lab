@@ -2,6 +2,15 @@
 set -euo pipefail
 umask 077
 project="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+# Help is available before the compiler, caches and dashboard are installed.
+if [[ $# -eq 0 || "${1:-}" == help ]]; then
+    exec python3 "$project/scripts/command_help.py" native "$@"
+fi
+for voicevault_argument in "$@"; do
+    if [[ "$voicevault_argument" == --help || "$voicevault_argument" == -h ]]; then
+        exec python3 "$project/scripts/command_help.py" native "$@"
+    fi
+done
 export CARGO_HOME="$project/.lab-cache/cargo"
 export KANI_HOME="$project/.lab-cache/kani"
 export CARGO_TARGET_DIR="$project/target"

@@ -1,5 +1,7 @@
 # Development and reproducing the lab
 
+For a first visit, start with the [plain-language guide to both laboratories](LABS_GUIDE.md). It explains the difference between the native lab and the currently local C1 firmware lab, how their pages and results relate, and how to start and stop each. The [native command reference](CLI_REFERENCE.md) describes every command and option.
+
 The native laboratory currently targets **Linux x86-64**. Calls are synthetic and local. The ARM target is a separate diagnostic, not deployable firmware. No real microphone, physical phone, BLE network or cloud calling API is required.
 
 ## Start with a short call

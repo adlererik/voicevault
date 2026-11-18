@@ -109,7 +109,11 @@ def firmware_parser():
         Start the page service with ./firmware-lab ui, then run this command.
         Controls: PAIR, compare all 64 fingerprint digits, MATCH, CALL, MUTE, END.
         One pairing/call is supported per session. Restart for a fresh session.
-        The firmware page does not currently play the decoded audio in a browser.
+        Click Listen to hear buffered, actual received speech. Choose the ARM
+        device or native test peer. The emulator can run slower than real time;
+        this monitor is not a latency measurement. Received WAVs remain afterward.
+        --auto-call verifies the fixture pairing and starts a call automatically,
+        then leaves it running for listening and local MUTE/END controls.
 
         Stop with Ctrl+C, or ./firmware-lab screen --stop in another terminal.
         --wall-seconds is elapsed host time, not emulated MCU time. Default: 3600;
@@ -124,6 +128,7 @@ def firmware_parser():
     """, """
         ./firmware-lab ui
         ./firmware-lab device
+        ./firmware-lab device --auto-call --attack tamper --wall-seconds 600
         ./firmware-lab device --wall-seconds 600
         ./firmware-lab device --self-test --wall-seconds 300
         ./firmware-lab device --self-test --attack tamper --wall-seconds 300
@@ -131,7 +136,9 @@ def firmware_parser():
         ./firmware-lab device --out "$PWD/.lab-runs/firmware-lab/device-01"
     """)
     output(p)
-    p.add_argument("--self-test", action="store_true", help="automatically exercise pairing, fingerprint pixels, call establishment, audio, mute and END")
+    automation=p.add_mutually_exclusive_group()
+    automation.add_argument("--self-test", action="store_true", help="automatically exercise pairing, fingerprint pixels, call establishment, audio, mute and END")
+    automation.add_argument("--auto-call", action="store_true", help="automatically verify test pairing/start a speech call, then leave it running for listening and local controls")
     p.add_argument("--wall-seconds", type=float, default=3600, metavar="SECONDS", help="maximum real elapsed session time; default: 3600, maximum: 43200")
     p.add_argument("--attack", choices=["none", "tamper", "downgrade"], default="none", help="none: normal forwarding; tamper: corrupt/repeat media; downgrade: truncate the hybrid response; default: none")
 

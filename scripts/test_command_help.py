@@ -75,6 +75,10 @@ class CommandHelpControls(unittest.TestCase):
         self.assertEqual(parser.parse_args(["run"]).seconds, .03)
         device = parser.parse_args(["device"])
         self.assertEqual((device.wall_seconds, device.attack, device.self_test), (3600, "none", False))
+        self.assertFalse(device.auto_call)
+        self.assertTrue(parser.parse_args(["device", "--auto-call", "--attack", "tamper"]).auto_call)
+        with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
+            parser.parse_args(["device", "--self-test", "--auto-call"])
         run = parser.parse_args(["run", "--elf", "/tmp/example.elf", "--report-symbol", "REPORT", "--audio-fixture", "--power-fixture"])
         self.assertEqual(run.elf, Path("/tmp/example.elf"))
         self.assertEqual(run.report_symbol, "REPORT")

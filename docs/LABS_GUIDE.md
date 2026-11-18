@@ -16,7 +16,7 @@ Think of the two labs as different workshops for the same device project.
 | Quick interactive command | `./lab demo --seconds 30` | `./firmware-lab device` |
 | Test command | `./lab watch` or `./lab test` | Several separate commands: base `test`, device `--self-test`, screen `--self-test` |
 | What the pictures mean | An event-backed explanation of software endpoints and transport | Pixels the ARM firmware actually sends to the modeled LCD |
-| Audio | Generated test audio; optional browser listening in live native calls | Generated samples encoded/decrypted/decoded by real code; currently no browser listening control |
+| Audio | Generated test audio; optional browser listening in live native calls | Offline-generated voices; buffered listening to the ARM or native receiver’s actual output |
 | Main limitation | A secure process experiment is not proof of physical device security | The board model is incomplete and is not a timing-accurate replica of the chip |
 
 **For a quick demonstration, start with `lab demo`. For the device screen and firmware application, use `firmware-lab device`.**
@@ -194,7 +194,19 @@ Open <http://127.0.0.1:8765/firmware>. Compilation and initial display drawing c
 
 The prototype currently supports **one pairing/call per process lifetime**. To make another call after END, stop and restart the session. It does not yet provide a finished contact-management, discovery or incoming-call product interface.
 
-The firmware page currently has no browser listening feature. Decoded audio is checked in the software path, but production capture/playback drivers and the firmware-page audio monitor are not delivered features. The native lab's Listen live control does not automatically apply here.
+### Hear a generated test voice
+
+For automatic pairing and a call that stays running for listening:
+
+```bash
+./firmware-lab device --auto-call --attack tamper --wall-seconds 600
+```
+
+Open the firmware page, follow **Hear the received test voice**, and click **Listen**. The default **Device hears Bob — ARM decoded** plays actual samples returned by the ARM firmware after authentication and Opus decoding. The other direction plays the native test peer’s actual receiver output. Neither option plays the original speech file as a substitute for a working call. Alice and Bob use offline-generated test phrases; no microphone or paid voice service is used.
+
+Playback buffers half a second of received output because the emulator can run slower than real time. It can pause to refill, and missed deadlines/concealment may make speech choppy. It is not a latency measurement. After a call finishes, use the received-recording player or WAV download. Actual filler/PLC/startup frames are preserved; missing virtual slots are not expanded into additional playback gaps. Production audio/SAI/DMA drivers remain unfinished.
+
+`--auto-call` verifies the test fingerprint and starts the call, leaving MUTE/END available. `--self-test` instead finishes its finite checks and hangs up; choose one mode, not both. [Received-audio details](../hardware/firmware-lab/AUDIO.md).
 
 ### Stop or restart
 
@@ -332,7 +344,7 @@ Neither a green screen nor a successful algorithm test proves the complete produ
 | A register/peripheral is unsupported | Preserve the report. That driver mode needs a real model and independent checks |
 | A short touch seems slow | Wait for the ARM polling loop and display update. Browser journals preserve actual press/release observation; drawing is incremental |
 | END leaves no new-call screen | The current prototype supports one call per session. Stop and restart it |
-| I cannot hear the firmware page | Only the native lab currently has the browser listening monitor |
+| I cannot hear the firmware page | Start a device call, follow Hear the received test voice, click Listen and allow the half-second buffer to fill. Check volume; the emulator may produce audio slowly |
 | Audio slots are skipped | This is an open scheduling/performance problem. Do not hide the counter or infer hardware readiness |
 | A negative test prints an error | Check its final expected-rejection result and raw reason; an error alone is not a pass |
 | An output directory already exists | Choose a new run name; preserve previous evidence |

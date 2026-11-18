@@ -82,7 +82,7 @@ More detail: ./firmware-lab COMMAND --help or ./firmware-lab help COMMAND
 ## device
 
 ```text
-usage: ./firmware-lab device [-h] [--out NEW_DIR] [--self-test]
+usage: ./firmware-lab device [-h] [--out NEW_DIR] [--self-test | --auto-call]
                              [--wall-seconds SECONDS]
                              [--attack {none,tamper,downgrade}]
 
@@ -95,7 +95,11 @@ synthetic audio and public deterministic keys, not private conversations.
 Start the page service with ./firmware-lab ui, then run this command.
 Controls: PAIR, compare all 64 fingerprint digits, MATCH, CALL, MUTE, END.
 One pairing/call is supported per session. Restart for a fresh session.
-The firmware page does not currently play the decoded audio in a browser.
+Click Listen to hear buffered, actual received speech. Choose the ARM
+device or native test peer. The emulator can run slower than real time;
+this monitor is not a latency measurement. Received WAVs remain afterward.
+--auto-call verifies the fixture pairing and starts a call automatically,
+then leaves it running for listening and local MUTE/END controls.
 
 Stop with Ctrl+C, or ./firmware-lab screen --stop in another terminal.
 --wall-seconds is elapsed host time, not emulated MCU time. Default: 3600;
@@ -114,6 +118,8 @@ options:
                         default: a new folder under .lab-runs/firmware-lab
   --self-test           automatically exercise pairing, fingerprint pixels,
                         call establishment, audio, mute and END
+  --auto-call           automatically verify test pairing/start a speech call,
+                        then leave it running for listening and local controls
   --wall-seconds SECONDS
                         maximum real elapsed session time; default: 3600,
                         maximum: 43200
@@ -124,6 +130,7 @@ options:
 Examples:
   ./firmware-lab ui
   ./firmware-lab device
+  ./firmware-lab device --auto-call --attack tamper --wall-seconds 600
   ./firmware-lab device --wall-seconds 600
   ./firmware-lab device --self-test --wall-seconds 300
   ./firmware-lab device --self-test --attack tamper --wall-seconds 300
